@@ -1,0 +1,692 @@
+[
+  {
+    "slug": "urbanismo-tactico",
+    "titulo": "Urbanismo Táctico: Transformando Ciudades con Intervenciones Simples",
+    "subtitulo": "Descubre cómo pequeñas acciones pueden generar grandes cambios en el espacio público, mejorando la habitabilidad y la vida comunitaria.",
+    "categoria": "Tendencias",
+    "fecha": "2025-10-20",
+    "imagen": "/hero05.jpg",
+    "extracto": "El urbanismo táctico utiliza intervenciones a corto plazo y bajo costo para revitalizar espacios públicos y probar nuevas ideas de diseño urbano. Una herramienta poderosa para la participación ciudadana.",
+    "autor": {
+      "nombre": "Arq. Sofía Mendiola",
+      "cargo": "Especialista en Urbanismo Participativo",
+      "avatar": "/autores/sofia-mendiola.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "De la teoría a la práctica",
+        "texto": "El urbanismo táctico es una filosofía de diseño urbano que promueve intervenciones reversibles y temporales, como pintar un cruce de peatones o colocar mobiliario urbano portátil. Su objetivo es observar el impacto antes de realizar una inversión a gran escala, permitiendo a las comunidades ser parte activa del proceso.",
+        "imagen": "/tactical-intro.jpg"
+      },
+      {
+        "titulo": "Casos de éxito globales",
+        "texto": "Ciudades como Nueva York y Bogotá han implementado proyectos de urbanismo táctico para crear 'plazas de bolsillo', carriles de bicicleta temporales y zonas de juego en calles que antes eran dominadas por automóviles. Estas intervenciones han demostrado reducir accidentes y fomentar la interacción social.",
+        "imagen": "/tactical-case.jpg"
+      },
+      {
+        "titulo": "Retos y futuro",
+        "texto": "- Falta de financiación: Muchas iniciativas dependen de voluntarios y presupuestos limitados.\n- Marco legal: A menudo, las regulaciones no están adaptadas a este tipo de proyectos.\n- Escalabilidad: Convertir un proyecto temporal en una solución permanente es un desafío.\n\nEl futuro del urbanismo táctico está en la colaboración entre gobiernos, diseñadores y ciudadanos para co-crear ciudades más resilientes y humanas.",
+        "imagen": "/tactical-future.jpg"
+      }
+    ],
+    "relacionados": ["urbanismo-sostenible", "ciudades-inteligentes"],
+    "tags": ["Urbanismo", "Diseño", "Comunidad", "Ciudades"],
+    "esPopular": true
+  },
+  {
+    "slug": "arquitectura-modular",
+    "titulo": "Arquitectura Modular: Construyendo Rápido y Sostenible",
+    "subtitulo": "Descubre cómo los edificios prefabricados están revolucionando la industria con su eficiencia, reducción de residuos y flexibilidad de diseño.",
+    "categoria": "Tendencias",
+    "fecha": "2025-10-10",
+    "imagen": "/hero04.jpg",
+    "extracto": "La arquitectura modular, lejos de ser solo para casas pequeñas, está siendo adoptada para hospitales, escuelas y hoteles, prometiendo un futuro más eficiente y ecológico.",
+    "autor": {
+      "nombre": "Arq. Ricardo Valdés",
+      "cargo": "Especialista en Construcción Industrializada",
+      "avatar": "/autores/ricardo.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "El proceso detrás de la modularidad",
+        "texto": "La arquitectura modular se basa en la fabricación de secciones de edificios en un ambiente controlado de fábrica. Estos módulos, que pueden incluir acabados, instalaciones eléctricas y fontanería, son transportados y ensamblados en el sitio, reduciendo los tiempos de construcción en un 30-50%.",
+        "imagen": "/modular-proceso.jpg"
+      },
+      {
+        "titulo": "Ventajas y beneficios",
+        "texto": "- Reducción de residuos: Se optimizan los materiales en la fábrica.\n- Control de calidad: El entorno industrializado asegura acabados precisos.\n- Tiempo de ejecución: Los proyectos se completan en semanas, no en meses.\n- Sostenibilidad: Menor impacto en el entorno de la obra y mayor eficiencia energética.",
+        "imagen": "/modular-ventajas.jpg"
+      },
+      {
+        "titulo": "Más allá de las viviendas",
+        "texto": "La aplicación de la arquitectura modular ha crecido exponencialmente. Ahora se usa para construir hoteles de lujo, hospitales de emergencia y escuelas. Esto demuestra la flexibilidad y la capacidad de la tecnología para adaptarse a diferentes necesidades y escalas.",
+        "imagen": "/modular-aplicaciones.jpg"
+      }
+    ],
+    "relacionados": ["tecnologia-en-construccion", "construccion-sostenible"],
+    "tags": ["Arquitectura", "Construcción", "Innovación", "Sostenibilidad"],
+    "esPopular": false
+  },
+  {
+    "slug": "realidad-virtual-arquitectura",
+    "titulo": "Realidad Virtual y Aumentada en el Diseño",
+    "subtitulo": "Cómo la RV y la RA están transformando la visualización, colaboración y toma de decisiones en el sector de la construcción.",
+    "categoria": "Tendencias",
+    "fecha": "2025-11-05",
+    "imagen": "/hero05.jpg",
+    "extracto": "Adéntrate en el futuro de la arquitectura con la Realidad Virtual y Aumentada, herramientas que permiten a clientes e ingenieros 'caminar' por un edificio antes de que se construya.",
+    "autor": {
+      "nombre": "Ing. Patricio Ramos",
+      "cargo": "Especialista en Visualización 3D",
+      "avatar": "/autores/patricio.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Del plano a la experiencia inmersiva",
+        "texto": "La Realidad Virtual (RV) permite a los arquitectos crear entornos digitales inmersivos de sus proyectos. Los clientes pueden usar cascos de RV para explorar cada rincón, entender la escala y la iluminación, lo que mejora la comunicación y la aprobación del diseño. Esto reduce los cambios de último minuto y los costos asociados.",
+        "imagen": "/vr-intro.jpg"
+      },
+      {
+        "titulo": "Realidad Aumentada en obra",
+        "texto": "La Realidad Aumentada (RA) superpone información digital sobre el mundo real. En la construcción, esto se traduce en la posibilidad de ver los planos y los sistemas MEP (mecánicos, eléctricos y de fontanería) en tiempo real, a través de una tablet o un casco, lo que facilita la inspección y la detección de conflictos.",
+        "imagen": "/ar-obra.jpg"
+      },
+      {
+        "titulo": "El futuro de la visualización",
+        "texto": "- Colaboración remota: Los equipos pueden reunirse virtualmente en el modelo 3D.\n- Capacitación: Simular escenarios de seguridad en entornos virtuales para los trabajadores.\n- Ventas inmobiliarias: Ofrecer tours virtuales de propiedades no construidas.\n\nEstas tecnologías no son un lujo, sino una herramienta esencial para la eficiencia y la seguridad en la industria.",
+        "imagen": "/vr-future.jpg"
+      }
+    ],
+    "relacionados": ["tecnologia-en-construccion", "ciudades-inteligentes"],
+    "tags": ["Tecnología", "Realidad Virtual", "Arquitectura", "Diseño"],
+    "esPopular": true
+  },
+  {
+    "slug": "diseno-biofilico",
+    "titulo": "Diseño Biofílico: Conexión con la Naturaleza en Espacios Urbanos",
+    "subtitulo": "Aprende cómo la integración de elementos naturales en el diseño interior y exterior mejora el bienestar, la productividad y la creatividad.",
+    "categoria": "Tendencias",
+    "fecha": "2025-11-20",
+    "imagen": "/hero03.jpg",
+    "extracto": "El diseño biofílico es una tendencia que busca conectar a los habitantes de la ciudad con la naturaleza a través del diseño de los edificios y los espacios. Una respuesta a la desconexión moderna.",
+    "autor": {
+      "nombre": "Dra. Paula Flores",
+      "cargo": "Investigadora en Psicología Ambiental",
+      "avatar": "/autores/paula.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "El principio de la biofilia",
+        "texto": "La biofilia es la afinidad innata de los seres humanos por la naturaleza. El diseño biofílico aplica este concepto en la arquitectura, buscando incorporar elementos como la luz natural, la vegetación, el agua y los materiales orgánicos para crear entornos que promuevan la salud y el bienestar. Se ha demostrado que reduce el estrés, mejora la concentración y acelera la recuperación en pacientes hospitalizados.",
+        "imagen": "/biofilico-intro.jpg"
+      },
+      {
+        "titulo": "Estrategias de diseño",
+        "texto": "- Conexión visual: Vistas a la naturaleza a través de grandes ventanas.\n- Presencia de agua: Fuentes interiores o exteriores que crean un ambiente relajante.\n- Patrones y formas naturales: Uso de la madera, piedra y patrones geométricos inspirados en la naturaleza.\n- Aire y luz: Sistemas que maximizan la ventilación natural y la iluminación diurna.",
+        "imagen": "/biofilico-estrategias.jpg"
+      },
+      {
+        "titulo": "Impacto en el entorno laboral",
+        "texto": "Estudios han mostrado que las oficinas con elementos de diseño biofílico experimentan un aumento en la productividad y una reducción en el ausentismo. Las plantas de interior, las vistas al exterior y la presencia de madera natural crean un ambiente de trabajo más agradable y eficiente.",
+        "imagen": "/biofilico-oficina.jpg"
+      }
+    ],
+    "relacionados": ["construccion-sostenible", "diseno-bioclimatico"],
+    "tags": ["Diseño", "Salud", "Naturaleza", "Arquitectura"],
+    "esPopular": false
+  },
+
+  {
+    "slug": "certificaciones-sostenibilidad",
+    "titulo": "Certificaciones en Sostenibilidad: ¿Cuál Elegir?",
+    "subtitulo": "Una guía para entender las certificaciones LEED, BREEAM y WELL y su impacto en proyectos de construcción sostenibles.",
+    "categoria": "Formacion",
+    "fecha": "2025-10-25",
+    "imagen": "/hero02.jpg",
+    "extracto": "Aprende sobre las certificaciones de edificios verdes más importantes del mundo y cómo te pueden ayudar a validar la sostenibilidad de tus proyectos.",
+    "autor": {
+      "nombre": "Ing. Andrea Gómez",
+      "cargo": "Asesora de Certificaciones Verdes",
+      "avatar": "/autores/andrea.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "LEED: Liderazgo en Diseño Energético y Ambiental",
+        "texto": "El sistema de certificación LEED (Leadership in Energy and Environmental Design) es el más conocido a nivel global. Evalúa la sostenibilidad de un edificio en base a criterios como la eficiencia energética, el uso de agua, los materiales y la calidad del ambiente interior. Ofrece cuatro niveles: Certificado, Plata, Oro y Platino.",
+        "imagen": "/leed.jpg"
+      },
+      {
+        "titulo": "BREEAM: Evaluación de Métodos Ambientales de Investigación de Edificios",
+        "texto": "BREEAM (Building Research Establishment Environmental Assessment Method) es la certificación más utilizada en Europa. Se enfoca en la gestión, energía, agua, salud y bienestar, transporte, materiales, residuos y uso del suelo. Es muy detallada y se adapta a las particularidades de cada país.",
+        "imagen": "/breeam.jpg"
+      },
+      {
+        "titulo": "WELL: El enfoque en la salud y el bienestar",
+        "texto": "WELL es una certificación que se centra en el impacto de los edificios en la salud humana. Evalúa aspectos como la calidad del aire, el agua, la nutrición, la iluminación, el movimiento, el confort térmico y el diseño que promueve el bienestar mental. Es un complemento ideal para certificaciones como LEED o BREEAM.",
+        "imagen": "/well.jpg"
+      },
+      {
+        "titulo": "Conclusión",
+        "texto": "La elección de una certificación depende de los objetivos del proyecto y la ubicación. Todas ellas son una inversión en un futuro más sostenible y en el bienestar de las personas que habitan o trabajan en estos espacios.",
+        "imagen": "/certificaciones-conclusion.jpg"
+      }
+    ],
+    "relacionados": ["construccion-sostenible", "gestion-de-residuos"],
+    "tags": ["Sostenibilidad", "Certificaciones", "Formación", "Ingeniería"],
+    "esPopular": true
+  },
+  {
+    "slug": "cursos-bim",
+    "titulo": "Cursos de BIM para Ingenieros",
+    "subtitulo": "Todo lo que necesitas saber para iniciar tu carrera en el modelado de información de construcción y gestionar proyectos de manera más eficiente.",
+    "categoria": "Formacion",
+    "fecha": "2025-11-15",
+    "imagen": "/hero01.jpg",
+    "extracto": "El BIM es una metodología que revoluciona el diseño y la gestión de proyectos. Descubre los cursos más recomendados y cómo el BIM es una habilidad indispensable en el sector.",
+    "autor": {
+      "nombre": "Ing. David Torres",
+      "cargo": "Formador en Metodología BIM",
+      "avatar": "/autores/david.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Qué es BIM y por qué es crucial",
+        "texto": "BIM (Building Information Modeling) es un proceso inteligente basado en modelos 3D que permite a los profesionales de la arquitectura, la ingeniería y la construcción planificar, diseñar, construir y gestionar proyectos de manera más eficiente. A diferencia del CAD tradicional, BIM integra toda la información del proyecto en un solo modelo, facilitando la colaboración y la detección de conflictos.",
+        "imagen": "/bim-intro.jpg"
+      },
+      {
+        "titulo": "Tipos de cursos y software",
+        "texto": "La formación en BIM se divide en niveles: básico, intermedio y avanzado. Los softwares más utilizados son Autodesk Revit, ArchiCAD y Civil 3D. Es crucial que los cursos no solo se centren en el uso del software, sino también en la metodología de trabajo colaborativo.",
+        "imagen": "/bim-cursos.jpg"
+      },
+      {
+        "titulo": "BIM en el futuro de la ingeniería",
+        "texto": "La adopción de BIM es cada vez más obligatoria en proyectos públicos y privados. La Unión Europea y varios países de Latinoamérica ya han establecido mandatos para su uso. Por ello, la formación en BIM se ha convertido en una ventaja competitiva clave para ingenieros y arquitectos.",
+        "imagen": "/bim-futuro.jpg"
+      }
+    ],
+    "relacionados": ["tecnologia-en-construccion", "gestion-de-residuos"],
+    "tags": ["BIM", "Formación", "Ingeniería", "Tecnología"],
+    "esPopular": true
+  },
+  {
+    "slug": "sistemas-drenaje-sostenible",
+    "titulo": "Sistemas de Drenaje Urbano Sostenible (SUDS)",
+    "subtitulo": "Una alternativa a los sistemas de alcantarillado tradicionales para gestionar el agua de lluvia y crear ciudades más resilientes.",
+    "categoria": "Formacion",
+    "fecha": "2025-12-01",
+    "imagen": "/hero06.jpg",
+    "extracto": "Conoce los principios, beneficios y ejemplos de SUDS, una solución de ingeniería que ayuda a mitigar inundaciones y a mejorar la calidad del agua en entornos urbanos.",
+    "autor": {
+      "nombre": "Ing. Marcos Pérez",
+      "cargo": "Hidrólogo y Urbanista",
+      "avatar": "/autores/marcos.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "El problema del drenaje convencional",
+        "texto": "Los sistemas de drenaje convencionales, con alcantarillados subterráneos, se sobrecargan con las lluvias intensas, provocando inundaciones y la contaminación de los cuerpos de agua. El asfalto y el hormigón evitan que el agua se filtre al subsuelo, interrumpiendo el ciclo natural del agua.",
+        "imagen": "/suds-problema.jpg"
+      },
+      {
+        "titulo": "Qué son los SUDS",
+        "texto": "Los SUDS (Sistemas de Drenaje Urbano Sostenible) imitan los procesos naturales del ciclo del agua. Utilizan elementos como pavimentos permeables, cunetas verdes, techos ajardinados y estanques de detención para retener, filtrar y gestionar el agua de lluvia. Esto reduce la presión sobre el alcantarillado y recarga los acuíferos subterráneos.",
+        "imagen": "/suds-tipos.jpg"
+      },
+      {
+        "titulo": "Beneficios de implementar SUDS",
+        "texto": "- Reducción de inundaciones: Almacenan el agua de lluvia en lugar de desviarla.\n- Mejora de la calidad del agua: La vegetación y los suelos filtran los contaminantes.\n- Creación de hábitats: Promueven la biodiversidad urbana.\n- Mejora del paisaje: Aportan valor estético y recreativo.",
+        "imagen": "/suds-beneficios.jpg"
+      }
+    ],
+    "relacionados": ["urbanismo-sostenible", "diseno-bioclimatico"],
+    "tags": ["Formación", "Ingeniería", "Sostenibilidad", "Urbanismo"],
+    "esPopular": false
+  },
+  {
+    "slug": "ia-gestion-proyectos",
+    "titulo": "Gestión de Proyectos de Construcción con Inteligencia Artificial",
+    "subtitulo": "Descubre cómo la IA está transformando la planificación, la toma de decisiones y la gestión de riesgos en la industria.",
+    "categoria": "Formacion",
+    "fecha": "2025-12-10",
+    "imagen": "/hero06.jpg",
+    "extracto": "La IA no solo automatiza tareas, sino que también ofrece insights predictivos para optimizar la cadena de suministro, el presupuesto y los plazos de entrega de proyectos.",
+    "autor": {
+      "nombre": "Dr. Luis Aguilar",
+      "cargo": "Especialista en IA aplicada a la Construcción",
+      "avatar": "/autores/luis.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "IA en la planificación de proyectos",
+        "texto": "La Inteligencia Artificial puede analizar enormes volúmenes de datos para predecir los plazos de entrega con mayor precisión. Los algoritmos de aprendizaje automático pueden identificar patrones de retrasos históricos y recomendar ajustes en el cronograma, optimizando la asignación de recursos y la logística.",
+        "imagen": "/ai-planning.jpg"
+      },
+      {
+        "titulo": "Gestión de riesgos y seguridad",
+        "texto": "Las cámaras con IA pueden monitorear las obras para detectar comportamientos inseguros en tiempo real, como la falta de uso de casco o la entrada a zonas de riesgo. Esto no solo previene accidentes, sino que también permite analizar los datos para mejorar la formación en seguridad.",
+        "imagen": "/ai-riesgos.jpg"
+      },
+      {
+        "titulo": "El futuro de la gestión de proyectos",
+        "texto": "Los 'gemelos digitales' de las obras, modelos virtuales que se actualizan en tiempo real con datos de sensores, permitirán a los gestores de proyectos tomar decisiones basadas en datos precisos. La IA es el cerebro detrás de esta nueva era de la construcción, haciendo que los proyectos sean más seguros, rápidos y eficientes.",
+        "imagen": "/ai-futuro.jpg"
+      }
+    ],
+    "relacionados": ["tecnologia-en-construccion", "ciudades-inteligentes"],
+    "tags": ["IA", "Tecnología", "Gestión", "Formación"],
+    "esPopular": true
+  },
+
+  {
+    "slug": "gas-summit",
+    "titulo": "Conferencia Global de Arquitectura Sostenible (GAS Summit)",
+    "subtitulo": "Cobertura completa del evento más importante del año, donde expertos de todo el mundo se reúnen para debatir el futuro de la construcción verde.",
+    "categoria": "Eventos",
+    "fecha": "2025-10-30",
+    "imagen": "/hero07.jpg",
+    "extracto": "El GAS Summit reunió a líderes de la industria para discutir las últimas innovaciones en materiales, diseño bioclimático y tecnologías que promueven la sostenibilidad en la construcción.",
+    "autor": {
+      "nombre": "Reportero",
+      "cargo": "Equipo Editorial",
+      "avatar": "/autores/reportero.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Ponencias destacadas",
+        "texto": "El evento contó con la participación de arquitectos y expertos en sostenibilidad que presentaron proyectos vanguardistas. Entre ellos, el diseño de rascacielos que capturan carbono y la creación de barrios enteros de cero emisiones.",
+        "imagen": "/gas-ponencias.jpg"
+      },
+      {
+        "titulo": "Nuevos materiales en exhibición",
+        "texto": "Se presentaron innovaciones como el hormigón con residuos de plástico, ladrillos hechos de hongos y pinturas que limpian el aire. Estos materiales buscan reducir la huella de carbono y el impacto ambiental de las construcciones.",
+        "imagen": "/gas-materiales.jpg"
+      },
+      {
+        "titulo": "Tendencias del debate",
+        "texto": "Los paneles de discusión se centraron en la importancia de la colaboración intersectorial, la necesidad de políticas públicas que incentiven la construcción sostenible y el papel de la tecnología en la mitigación del cambio climático. Se concluyó que la sostenibilidad debe ser el estándar, no la excepción.",
+        "imagen": "/gas-debate.jpg"
+      }
+    ],
+    "relacionados": ["construccion-sostenible", "urbanismo-sostenible"],
+    "tags": ["Eventos", "Sostenibilidad", "Arquitectura", "Conferencia"],
+    "esPopular": true
+  },
+  {
+    "slug": "expo-construccion",
+    "titulo": "Expo Construcción Latinoamérica: Innovación y Negocios",
+    "subtitulo": "Un recorrido por la feria comercial más grande de la región, donde se presentaron las últimas tecnologías, maquinaria y soluciones para el sector.",
+    "categoria": "Eventos",
+    "fecha": "2025-11-01",
+    "imagen": "/hero05.jpg",
+    "extracto": "Cientos de empresas mostraron sus productos, desde maquinaria pesada con IA hasta software de gestión de proyectos. Un evento que marcó el rumbo de la industria.",
+    "autor": {
+      "nombre": "Reportero",
+      "cargo": "Equipo Editorial",
+      "avatar": "/autores/reportero.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Maquinaria con tecnología de punta",
+        "texto": "Los visitantes pudieron ver demostraciones de excavadoras autónomas, drones para topografía y robots que pueden instalar paneles de yeso. La automatización y la robótica son clave para la seguridad y la eficiencia en la obra.",
+        "imagen": "/expo-maquinaria.jpg"
+      },
+      {
+        "titulo": "Software y soluciones digitales",
+        "texto": "Empresas de tecnología presentaron plataformas de gestión de proyectos que integran BIM, IA y realidad virtual, permitiendo a los equipos colaborar en tiempo real y optimizar cada etapa del proyecto. El software es el nuevo motor de la construcción.",
+        "imagen": "/expo-software.jpg"
+      },
+      {
+        "titulo": "El futuro de la construcción regional",
+        "texto": "El evento sirvió como barómetro para las tendencias regionales. Se evidenció un fuerte interés en la construcción prefabricada, los materiales sostenibles y las soluciones que abordan el déficit habitacional en la región de manera rápida y eficiente.",
+        "imagen": "/expo-futuro.jpg"
+      }
+    ],
+    "relacionados": ["tecnologia-en-construccion", "arquitectura-modular"],
+    "tags": ["Eventos", "Innovación", "Construcción", "Negocios"],
+    "esPopular": false
+  },
+  {
+    "slug": "simposio-infraestructura",
+    "titulo": "Simposio de Infraestructura Inteligente",
+    "subtitulo": "Análisis de las tecnologías que están haciendo que nuestras ciudades sean más resilientes, seguras y eficientes.",
+    "categoria": "Eventos",
+    "fecha": "2025-11-10",
+    "imagen": "/hero04.jpg",
+    "extracto": "Expertos en ingeniería y tecnología se reunieron para discutir el uso de sensores, IoT y Big Data para la gestión de puentes, carreteras y redes de servicios públicos.",
+    "autor": {
+      "nombre": "Reportero",
+      "cargo": "Equipo Editorial",
+      "avatar": "/autores/reportero.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Monitorización en tiempo real",
+        "texto": "Se presentaron proyectos de puentes con sensores integrados que detectan fallas estructurales antes de que sean visibles. Estos sistemas envían alertas a los ingenieros, permitiendo un mantenimiento predictivo y previniendo colapsos.",
+        "imagen": "/infra-monitoreo.jpg"
+      },
+      {
+        "titulo": "Gestión de tráfico con IA",
+        "texto": "Los sistemas de gestión de tráfico basados en Inteligencia Artificial pueden analizar el flujo vehicular en tiempo real y ajustar los semáforos para reducir la congestión. Esto no solo mejora la movilidad, sino que también disminuye las emisiones de carbono.",
+        "imagen": "/infra-trafico.jpg"
+      },
+      {
+        "titulo": "La ciudad como un sistema vivo",
+        "texto": "El simposio concluyó que la infraestructura del futuro no debe ser estática. Debe ser un sistema vivo y adaptable que reacciona a las necesidades de la población, optimizando el uso de energía y recursos de manera continua. La colaboración entre el sector público y privado es esencial para lograrlo.",
+        "imagen": "/infra-futuro.jpg"
+      }
+    ],
+    "relacionados": ["ciudades-inteligentes", "tecnologia-en-construccion"],
+    "tags": ["Eventos", "Infraestructura", "Tecnología", "Urbanismo"],
+    "esPopular": true
+  },
+  {
+    "slug": "hackathon-urbanismo",
+    "titulo": "Hackathon de Urbanismo Sostenible",
+    "subtitulo": "El evento que reunió a desarrolladores, urbanistas y diseñadores para crear soluciones tecnológicas para los desafíos urbanos del futuro.",
+    "categoria": "Eventos",
+    "fecha": "2025-12-05",
+    "imagen": "/hero05.jpg",
+    "extracto": "Durante 48 horas, los equipos trabajaron en aplicaciones y plataformas para mejorar la movilidad, la gestión de residuos y la integración de espacios verdes en la ciudad.",
+    "autor": {
+      "nombre": "Reportero",
+      "cargo": "Equipo Editorial",
+      "avatar": "/autores/reportero.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Las ideas más innovadoras",
+        "texto": "Entre los proyectos presentados, destacaron una aplicación de realidad aumentada que muestra el impacto de las nuevas construcciones en el paisaje urbano, una plataforma que conecta a productores de residuos de construcción con recicladores y un sistema para optimizar las rutas de recolección de basura con IA.",
+        "imagen": "/hackathon-ideas.jpg"
+      },
+      {
+        "titulo": "La colaboración como motor de cambio",
+        "texto": "El éxito del hackathon demostró que la interdisciplinariedad es clave para resolver los problemas complejos de las ciudades. La fusión de mentes técnicas con creativas y urbanistas genera soluciones que son a la vez funcionales, sostenibles y centradas en el ser humano.",
+        "imagen": "/hackathon-equipo.jpg"
+      },
+      {
+        "titulo": "Un futuro más verde y conectado",
+        "texto": "El evento concluyó que el futuro del urbanismo está en la tecnología al servicio de la gente. Las herramientas digitales pueden democratizar el acceso a la información y empoderar a los ciudadanos para que participen en la construcción de su propio entorno.",
+        "imagen": "/hackathon-conclusion.jpg"
+      }
+    ],
+    "relacionados": ["urbanismo-sostenible", "tecnologia-en-construccion"],
+    "tags": ["Eventos", "Urbanismo", "Tecnología", "Hackathon"],
+    "esPopular": false
+  },
+
+  {
+    "slug": "revista-diseno-estructural",
+    "titulo": "Revista de Ingeniería Civil: Nuevos Paradigmas en Diseño Estructural",
+    "subtitulo": "Análisis de la última edición, que explora las metodologías de diseño y los materiales innovadores que están cambiando la forma de construir edificios y puentes.",
+    "categoria": "Publicaciones",
+    "fecha": "2025-10-15",
+    "imagen": "/hero01.jpg",
+    "extracto": "La revista destaca investigaciones sobre estructuras sismo-resistentes, el uso de materiales compuestos y el modelado computacional para optimizar la seguridad y eficiencia de los diseños.",
+    "autor": {
+      "nombre": "Redacción",
+      "cargo": "Equipo Editorial",
+      "avatar": "/autores/redaccion.jpg"
+    },
+    "contenido": [
+      {
+        "titulo": "Diseño sismo-resistente avanzado",
+        "texto": "Un artículo clave detalla el uso de amortiguadores sísmicos y aisladores de base en edificios altos para disipar la energía de un terremoto. Esta tecnología, inspirada en la ingeniería japonesa, es crucial para la seguridad en zonas de alta sismicidad como América Latina.",
+        "imagen": "/revista-sismico.jpg"
+      },
+      {
+        "titulo": "Materiales compuestos y su potencial",
+        "texto": "La revista presenta un estudio sobre las fibras de carbono y polímeros reforzados (FRP) como alternativa al acero en estructuras de puentes. Estos materiales son más ligeros, resistentes a la corrosión y tienen una vida útil más larga, lo que reduce los costos de mantenimiento a largo plazo.",
+        "imagen": "/revista-compuestos.jpg"
+      },
+      {
+        "titulo": "Modelado computacional 3D",
+        "texto": "Otro artículo se centra en el uso de software de modelado 3D para simular el comportamiento de estructuras complejas bajo diferentes cargas. La simulación permite a los ingenieros optimizar el diseño, reducir el uso de materiales y garantizar la estabilidad antes de iniciar la construcción.",
+        "imagen": "/revista-modelado.jpg"
+      }
+    ],
+    "relacionados": ["tecnologia-en-construccion", "geotecnia-en-peru"],
+    "tags": ["Publicaciones", "Ingeniería", "Estructuras", "Diseño"],
+    "esPopular": true
+  },
+ 
+{
+  "slug": "libro-materiales-futuro",
+  "titulo": "Libro: El Futuro de los Materiales de Construcción",
+  "subtitulo": "Reseña del nuevo libro que explora los materiales innovadores, desde hormigón que se auto-repara hasta ladrillos hechos con residuos.",
+  "categoria": "Publicaciones",
+  "fecha": "2025-11-25",
+  "imagen": "/hero06.jpg",
+  "extracto": "Un compendio indispensable para arquitectos e ingenieros que quieren estar al día de las últimas investigaciones en materiales de construcción sostenibles y de alto rendimiento.",
+  "autor": {
+    "nombre": "Crítico Literario",
+    "cargo": "Equipo Editorial",
+    "avatar": "/autores/critico.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "Hormigón de bajo carbono",
+      "texto": "El libro dedica un capítulo a los nuevos tipos de hormigón que reducen drásticamente sus emisiones de CO2. Se explora el uso de aditivos y la incorporación de materiales reciclados, como cenizas volantes y escoria de alto horno, para crear un material más ecológico y resistente.",
+      "imagen": "/libro-hormigon.jpg"
+    },
+    {
+      "titulo": "Materiales vivos y biológicos",
+      "texto": "Una de las secciones más fascinantes es la dedicada a los materiales vivos, como los ladrillos de micelio (hongos) o el hormigón que contiene bacterias que 'reparan' las grietas con el tiempo. Estos materiales tienen el potencial de hacer que los edificios sean más resilientes y sostenibles.",
+      "imagen": "/libro-micelio.jpg"
+    },
+    {
+      "titulo": "El rol de la impresión 3D",
+      "texto": "El libro también analiza cómo la impresión 3D está democratizando el acceso a materiales complejos y a la construcción de prototipos. Permite el uso de materiales reciclados para crear componentes estructurales únicos y a medida, reduciendo el desperdicio.",
+      "imagen": "/libro-3d.jpg"
+    }
+  ],
+  "relacionados": ["construccion-sostenible", "bioconstruccion"],
+  "tags": ["Publicaciones", "Materiales", "Innovación", "Sostenibilidad"],
+  "esPopular": true
+},
+{
+  "slug": "articulo-fachadas",
+  "titulo": "Artículo Científico: Análisis del Rendimiento de Fachadas Bioclimáticas",
+  "subtitulo": "Un resumen de la investigación que demuestra cómo las fachadas activas pueden reducir significativamente el consumo de energía en edificios.",
+  "categoria": "Publicaciones",
+  "fecha": "2025-12-15",
+  "imagen": "/hero07.jpg",
+  "extracto": "El estudio utiliza datos de sensores y simulaciones para cuantificar el ahorro energético y el confort térmico que proporcionan las fachadas bioclimáticas en diferentes climas.",
+  "autor": {
+    "nombre": "Redacción",
+    "cargo": "Equipo Editorial",
+    "avatar": "/autores/redaccion.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "Metodología de la investigación",
+      "texto": "Los investigadores instalaron sensores en fachadas con diferentes estrategias de diseño bioclimático, como muros Trombe y fachadas ventiladas. Recopilaron datos sobre la temperatura, la humedad y el flujo de aire durante un año, comparándolos con un edificio de referencia.",
+      "imagen": "/fachadas-metodologia.jpg"
+    },
+    {
+      "titulo": "Resultados y conclusiones",
+      "texto": "Los resultados mostraron que las fachadas bioclimáticas pueden reducir la demanda de calefacción en un 30% y la de refrigeración en un 50%. El estudio concluyó que el diseño bioclimático es una de las estrategias más efectivas y pasivas para la eficiencia energética.",
+      "imagen": "/fachadas-resultados.jpg"
+    },
+    {
+      "titulo": "Aplicaciones prácticas",
+      "texto": "La investigación sugiere que la integración de estos principios en el diseño inicial de los edificios es más rentable que la implementación de soluciones tecnológicas posteriores. El artículo también ofrece recomendaciones para adaptar estas estrategias a diferentes zonas climáticas, desde el desierto hasta la selva.",
+      "imagen": "/fachadas-aplicaciones.jpg"
+    }
+  ],
+  "relacionados": ["diseno-bioclimatico", "energias-renovables"],
+  "tags": ["Publicaciones", "Investigación", "Arquitectura", "Sostenibilidad"],
+  "esPopular": false
+},
+{
+  "slug": "e-book-restauracion",
+  "titulo": "E-book: Guía Práctica para la Restauración de Edificios Antiguos",
+  "subtitulo": "Descarga gratuita de la guía que te enseña los principios básicos y las técnicas para preservar el patrimonio arquitectónico de forma sostenible.",
+  "categoria": "Publicaciones",
+  "fecha": "2025-12-20",
+  "imagen": "/hero06.jpg",
+  "extracto": "Un recurso esencial para estudiantes, arquitectos y constructores interesados en la restauración. Incluye estudios de caso, consejos sobre materiales y normativas de conservación.",
+  "autor": {
+    "nombre": "Redacción",
+    "cargo": "Equipo Editorial",
+    "avatar": "/autores/redaccion.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "Principios de la restauración",
+      "texto": "La restauración va más allá de la reparación; se trata de preservar la historia. La guía enfatiza el principio de intervención mínima y el uso de materiales compatibles con los originales para no comprometer la integridad de la estructura.",
+      "imagen": "/restauracion-principios.jpg"
+    },
+    {
+      "titulo": "Materiales y técnicas tradicionales",
+      "texto": "El e-book detalla cómo trabajar con materiales como la cal, el yeso, la madera y la piedra de forma artesanal. Explica la importancia de entender las patologías de los edificios antiguos para aplicar las soluciones correctas.",
+      "imagen": "/restauracion-tecnicas.jpg"
+    },
+    {
+      "titulo": "El valor del patrimonio",
+      "texto": "La guía concluye que la restauración es una inversión en nuestra identidad cultural. Al rehabilitar edificios antiguos, no solo salvamos estructuras, sino que revitalizamos barrios y conservamos la memoria histórica de nuestras ciudades. Es un acto de sostenibilidad social y económica.",
+      "imagen": "/restauracion-valor.jpg"
+    }
+  ],
+  "relacionados": ["restauracion-historica", "innovacion-en-arquitectura"],
+  "tags": ["Publicaciones", "Restauración", "Patrimonio", "Arquitectura"],
+  "esPopular": false
+},
+{
+  "slug": "entrevista-calatrava",
+  "titulo": "Entrevista con Santiago Calatrava: El Artista de la Estructura",
+  "subtitulo": "Un acercamiento a la mente de uno de los arquitectos-ingenieros más influyentes del siglo XXI, conocido por sus diseños biomórficos y escultóricos.",
+  "categoria": "Artistas",
+  "fecha": "2025-10-05",
+  "imagen": "/hero07.jpg",
+  "extracto": "Calatrava nos habla de su proceso creativo, la fusión de arte y ciencia, y la inspiración en las formas de la naturaleza para sus icónicas obras.",
+  "autor": {
+    "nombre": "Redacción",
+    "cargo": "Equipo Editorial",
+    "avatar": "/autores/redaccion.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "La ingeniería como forma de arte",
+      "texto": "Para Calatrava, la ingeniería no es solo un cálculo, es una expresión artística. Sus puentes y estaciones de tren, como el Puente de la Mujer en Buenos Aires o la Estación de Lieja-Guillemins, son una demostración de cómo la estructura puede ser bella y funcional al mismo tiempo.",
+      "imagen": "/calatrava-obra.jpg"
+    },
+    {
+      "titulo": "Inspiración biomórfica",
+      "texto": "La naturaleza es la musa de Calatrava. El diseño del Auditorio de Tenerife se asemeja a una ola, y su proyecto para el WTC en Nueva York, el Oculus, evoca a un ave en vuelo. Esta fascinación por las formas vivas le da a sus obras una cualidad única y orgánica.",
+      "imagen": "/calatrava-inspiracion.jpg"
+    },
+    {
+      "titulo": "El futuro de la arquitectura escultural",
+      "texto": "El arquitecto aboga por una arquitectura que vaya más allá de la simple función, que genere emoción y un sentido de asombro en las personas. Su legado es un recordatorio de que la arquitectura puede y debe ser una de las más grandes formas de arte público.",
+      "imagen": "/calatrava-futuro.jpg"
+    }
+  ],
+  "relacionados": ["innovacion-en-arquitectura", "bioconstruccion"],
+  "tags": ["Arquitectura", "Artistas", "Diseño", "Ingeniería"],
+  "esPopular": true
+},
+{
+  "slug": "zaha-hadid",
+  "titulo": "Zaha Hadid: La Arquitecta que Desafió la Gravedad",
+  "subtitulo": "Un homenaje a la 'reina de la curva', cuya visión futurista y fluidas estructuras cambiaron para siempre el panorama de la arquitectura moderna.",
+  "categoria": "Artistas",
+  "fecha": "2025-10-10",
+  "imagen": "/hero05.jpg",
+  "extracto": "Conoce el legado de Zaha Hadid, la primera mujer en ganar el Premio Pritzker, y su influencia en el diseño de edificios que parecen salidos de una película de ciencia ficción.",
+  "autor": {
+    "nombre": "Crítico de Arte",
+    "cargo": "Equipo Editorial",
+    "avatar": "/autores/critico-arte.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "Una visión más allá de lo convencional",
+      "texto": "Zaha Hadid se hizo famosa por sus diseños que rechazaban las líneas rectas y los ángulos tradicionales. Sus edificios, como el Centro Acuático de Londres o el Galaxy SOHO en Pekín, son dinámicos, complejos y parecen estar en constante movimiento.",
+      "imagen": "/hadid-vision.jpg"
+    },
+    {
+      "titulo": "De lo teórico a lo construido",
+      "texto": "Durante años, sus diseños fueron considerados 'imposibles' de construir. Sin embargo, con el avance de la tecnología y el software de modelado 3D, su visión se hizo realidad. Hadid demostró que la arquitectura puede ser una forma de escultura a gran escala.",
+      "imagen": "/hadid-obra.jpg"
+    },
+    {
+      "titulo": "El legado de la innovación",
+      "texto": "El trabajo de Hadid abrió un nuevo camino en la arquitectura, inspirando a una nueva generación de diseñadores a pensar sin límites. Su influencia se ve en la experimentación con formas, materiales y el uso de la tecnología para llevar la creatividad a nuevas alturas.",
+      "imagen": "/hadid-legado.jpg"
+    }
+  ],
+  "relacionados": ["innovacion-en-arquitectura", "tecnologia-en-construccion"],
+  "tags": ["Arquitectura", "Artistas", "Diseño", "Hadid"],
+  "esPopular": true
+},
+{
+  "slug": "arquitectura-vernacula",
+  "titulo": "La Arquitectura Vernácula como Inspiración",
+  "subtitulo": "Un viaje a través de las construcciones tradicionales de América Latina y cómo sus principios de diseño sostenible y uso de materiales locales inspiran a los arquitectos de hoy.",
+  "categoria": "Artistas",
+  "fecha": "2025-10-20",
+  "imagen": "/hero04.jpg",
+  "extracto": "Conoce el valor de las técnicas de construcción ancestrales, desde el adobe de los Andes hasta las casas de bahareque del Caribe, y su relevancia en el diseño contemporáneo.",
+  "autor": {
+    "nombre": "Arq. Julia Castro",
+    "cargo": "Historiadora de Arquitectura",
+    "avatar": "/autores/julia.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "Sabiduría ancestral y sostenibilidad",
+      "texto": "La arquitectura vernácula es un testimonio de la sabiduría de las comunidades para construir con lo que tienen a mano y adaptarse a su entorno. El uso de la tierra (adobe), la caña y la paja no solo minimiza el impacto ambiental, sino que también ofrece un aislamiento térmico y acústico superior, adaptado al clima local.",
+      "imagen": "/vernacula-intro.jpg"
+    },
+    {
+      "titulo": "Ejemplos en América Latina",
+      "texto": "Desde las casas de tierra de la Sierra de Perú, que resisten los cambios de temperatura, hasta las construcciones de bahareque en Colombia, resistentes a los sismos, la arquitectura vernácula es una lección de resiliencia y eficiencia. Estas construcciones son el resultado de un diálogo íntimo con el entorno natural.",
+      "imagen": "/vernacula-ejemplos.jpg"
+    },
+    {
+      "titulo": "Relevancia en la arquitectura moderna",
+      "texto": "Hoy en día, arquitectos de vanguardia están revisitando estos principios. Proyectos de bioconstrucción y arquitectura sostenible utilizan técnicas como el tapial o el adobe estabilizado para crear edificios modernos que son al mismo tiempo ecológicos y culturalmente relevantes.",
+      "imagen": "/vernacula-moderno.jpg"
+    }
+  ],
+  "relacionados": ["bioconstruccion", "restauracion-historica"],
+  "tags": ["Arquitectura", "Vernácula", "Historia", "Sostenibilidad"],
+  "esPopular": false
+},
+{
+  "slug": "frida-escobedo",
+  "titulo": "Frida Escobedo: La Nueva Voz del Pabellón Serpentine",
+  "subtitulo": "Un vistazo al trabajo de la arquitecta mexicana que, con su diseño minimalista y socialmente consciente, ha dejado una huella global.",
+  "categoria": "Artistas",
+  "fecha": "2025-11-01",
+  "imagen": "/hero06.jpg",
+  "extracto": "Conocida por su uso de materiales simples y su habilidad para crear espacios que fomentan la interacción social, Escobedo es una figura clave en la arquitectura contemporánea.",
+  "autor": {
+    "nombre": "Redacción",
+    "cargo": "Equipo Editorial",
+    "avatar": "/autores/redaccion.jpg"
+  },
+  "contenido": [
+    {
+      "titulo": "Minimalismo con significado",
+      "texto": "El trabajo de Frida Escobedo se caracteriza por la simplicidad material y la complejidad espacial. En su icónico Pabellón Serpentine, utilizó tejas de cemento para crear una celosía que jugaba con la luz y la sombra, generando un espacio que era a la vez público y íntimo.",
+      "imagen": "/escobedo-serpentine.jpg"
+    },
+    {
+      "titulo": "La arquitectura como reflejo de la sociedad",
+      "texto": "Para Escobedo, la arquitectura es una herramienta para entender y moldear la sociedad. Su enfoque se centra en cómo los materiales, la luz y el espacio pueden influir en el comportamiento humano y en la forma en que las personas se relacionan entre sí. Su trabajo es una crítica y una propuesta para un futuro mejor.",
+      "imagen": "/escobedo-enfoque.jpg"
+    },
+    {
+      "titulo": "El legado de una joven promesa",
+      "texto": "A pesar de su corta carrera, Escobedo ha logrado reconocimiento internacional, demostrando que un enfoque minimalista y humanista puede tener un impacto global. Su trabajo es un recordatorio de que la arquitectura no solo debe ser un objeto de contemplación, sino también un espacio para la vida.",
+      "imagen": "/escobedo-legado.jpg"
+    }
+  ],
+  "relacionados": ["innovacion-en-arquitectura", "urbanismo-sostenible"],
+  "tags": ["Arquitectura", "Artistas", "Diseño", "Minimalismo"],
+  "esPopular": false
+}
+
+]

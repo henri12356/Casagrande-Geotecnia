@@ -1,0 +1,141 @@
+[
+  {
+    "slug": "cbr-in-situ",
+    "titulo": "Proyecto CBR In Situ",
+    "cliente": "CAFISAC",
+    "obra": "Puerto del Callao",
+    "trabajo": "CBR In Situ",
+    "categoria": "ENSAYOS DE CAMPO",
+    "imagen": "/hero01.jpg",
+    "descripcion": "Ensayo de capacidad de soporte del terreno en obra real para garantizar la resistencia del suelo.",
+    "detalles": {
+      "objetivo": "Evaluar la capacidad de carga del suelo en condiciones reales de campo.",
+      "metodologia": "Se realizaron pruebas in situ siguiendo la norma ASTM D1883.",
+      "resultados": [
+        "Determinación del CBR en diferentes profundidades",
+        "Validación de la compactación del terreno",
+        "Informe técnico para el cliente"
+      ]
+    },
+    "numerosClave": [
+      { "label": "Ensayos realizados", "value": 12 },
+      { "label": "Días de trabajo", "value": 5 },
+      { "label": "Ingenieros", "value": 3 },
+      { "label": "Muestras analizadas", "value": 24 }
+    ],
+    "fases": [
+      {
+        "titulo": "Planificación",
+        "descripcion": "Diseño de la estrategia de ensayos en campo."
+      },
+      {
+        "titulo": "Ejecución",
+        "descripcion": "Realización de los ensayos CBR in situ."
+      },
+      {
+        "titulo": "Análisis",
+        "descripcion": "Procesamiento de datos y validación de resultados."
+      },
+      {
+        "titulo": "Informe final",
+        "descripcion": "Entrega del reporte técnico al cliente."
+      }
+    ],
+    "galeria": ["/hero01.jpg", "/hero02.jpg", "/hero03.jpg"]
+  },
+  {
+    "slug": "Aeropuerto",
+    "titulo": "Proyecto Aeropuerto",
+    "cliente": "CAFISAC",
+    "obra": "Puerto del Callao",
+    "trabajo": "CBR In Situ",
+    "categoria": "ENSAYOS DE CAMPO",
+    "imagen": "/hero05.jpg",
+    "descripcion": "Ensayo de capacidad de soporte del terreno en obra real para garantizar la resistencia del suelo.",
+    "detalles": {
+      "objetivo": "Evaluar la capacidad de carga del suelo en condiciones reales de campo.",
+      "metodologia": "Se realizaron pruebas in situ siguiendo la norma ASTM D1883.",
+      "resultados": [
+        "Determinación del CBR en diferentes profundidades",
+        "Validación de la compactación del terreno",
+        "Informe técnico para el cliente"
+      ]
+    },
+    "numerosClave": [
+      { "label": "Ensayos realizados", "value": 12 },
+      { "label": "Días de trabajo", "value": 5 },
+      { "label": "Ingenieros", "value": 3 },
+      { "label": "Muestras analizadas", "value": 24 }
+    ],
+    "fases": [
+      {
+        "titulo": "Planificación",
+        "descripcion": "Diseño de la estrategia de ensayos en campo."
+      },
+      {
+        "titulo": "Ejecución",
+        "descripcion": "Realización de los ensayos CBR in situ."
+      },
+      {
+        "titulo": "Análisis",
+        "descripcion": "Procesamiento de datos y validación de resultados."
+      },
+      {
+        "titulo": "Informe final",
+        "descripcion": "Entrega del reporte técnico al cliente."
+      }
+    ],
+    "galeria": [
+      "/hero04.jpg",
+      "/hero05.jpg",
+      "/hero05.jpg",
+      "/hero.jpg",
+      "/hero.jpg",
+      "/hero.jpg"
+    ]
+  },
+  {
+    "slug": "Callao-pista",
+    "titulo": "Proyecto Callao Pista",
+    "cliente": "CAFISAC",
+    "obra": "Puerto del Callao",
+    "trabajo": "CBR In Situ",
+    "categoria": "ENSAYOS DE CAMPO",
+    "imagen": "/hero03.jpg",
+    "descripcion": "Ensayo de capacidad de soporte del terreno en obra real para garantizar la resistencia del suelo.",
+    "detalles": {
+      "objetivo": "Evaluar la capacidad de carga del suelo en condiciones reales de campo.",
+      "metodologia": "Se realizaron pruebas in situ siguiendo la norma ASTM D1883.",
+      "resultados": [
+        "Determinación del CBR en diferentes profundidades",
+        "Validación de la compactación del terreno",
+        "Informe técnico para el cliente"
+      ]
+    },
+    "numerosClave": [
+      { "label": "Ensayos realizados", "value": 12 },
+      { "label": "Días de trabajo", "value": 5 },
+      { "label": "Ingenieros", "value": 3 },
+      { "label": "Muestras analizadas", "value": 24 }
+    ],
+    "fases": [
+      {
+        "titulo": "Planificación",
+        "descripcion": "Diseño de la estrategia de ensayos en campo."
+      },
+      {
+        "titulo": "Ejecución",
+        "descripcion": "Realización de los ensayos CBR in situ."
+      },
+      {
+        "titulo": "Análisis",
+        "descripcion": "Procesamiento de datos y validación de resultados."
+      },
+      {
+        "titulo": "Informe final",
+        "descripcion": "Entrega del reporte técnico al cliente."
+      }
+    ],
+    "galeria": ["/hero01.jpg", "/hero02.jpg", "/hero03.jpg"]
+  }
+]

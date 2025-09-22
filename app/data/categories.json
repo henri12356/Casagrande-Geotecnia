@@ -1,0 +1,27 @@
+[
+  {
+    "id": "tendencias",
+    "nombre": "Tendencias",
+    "color": "bg-blue-600"
+  },
+  {
+    "id": "formacion",
+    "nombre": "Formacion",
+    "color": "bg-green-600"
+  },
+  {
+    "id": "eventos",
+    "nombre": "Eventos",
+    "color": "bg-purple-600"
+  },
+  {
+    "id": "publicaciones",
+    "nombre": "Publicaciones",
+    "color": "bg-yellow-600"
+  },
+  {
+    "id": "artistas",
+    "nombre": "Artistas",
+    "color": "bg-red-600"
+  }
+]

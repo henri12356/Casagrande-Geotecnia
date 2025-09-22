@@ -1,0 +1,555 @@
+[
+  {
+    "slug": "geologia",
+    "titulo": "Geología",
+    "descripcion": "Análisis del terreno y su historia natural, estudios de riesgos, cartografía y supervisión de zonas críticas.",
+    "contenido": "Ofrecemos estudios geológicos completos para proyectos seguros, evaluando la historia y características del terreno. Nuestros análisis permiten identificar fallas, fracturas, subsidencias y riesgos naturales que puedan afectar la construcción.",
+    "imagen": "/hero05.jpg",
+    "titulo01": "Estudios Geológicos",
+    "subtitulo01": "Realizamos análisis de terreno, cartografía y estudios de riesgo con equipos de última generación.",
+    "categorias": [
+      {
+        "titulo": "Estudios de Campo",
+        "imagenes": ["/hero05.jpg"],
+        "ensayos": [
+          "Mapeo geológico del terreno",
+          "Identificación de fallas y fracturas",
+          "Evaluación de riesgos geológicos",
+          "Levantamiento topográfico",
+          "Supervisión de perforaciones exploratorias"
+        ],
+        "descripcion": "Caracterización geológica del área con inspección directa y muestreo."
+      },
+      {
+        "titulo": "Cartografía y Modelado",
+        "imagenes": ["/hero05.jpg", "/hero02.jpg"],
+        "ensayos": [
+          "Cartografía geológica detallada",
+          "Modelado 3D del subsuelo",
+          "Mapas de susceptibilidad a deslizamientos",
+          "Mapas de fallas y fracturas",
+          "Interpretación de imágenes satelitales"
+        ],
+        "descripcion": "Creación de mapas y modelos geológicos precisos para planificación de obras."
+      },
+      {
+        "titulo": "Estudios de Rocas y Minerales",
+        "imagenes": ["/hero05.jpg"],
+        "ensayos": [
+          "Clasificación de rocas",
+          "Determinación de propiedades mecánicas",
+          "Análisis petrográfico",
+          "Pruebas de resistencia a compresión",
+          "Mineralogía aplicada al terreno"
+        ],
+        "descripcion": "Caracterización de rocas y minerales para proyectos de construcción."
+      },
+      {
+        "titulo": "Evaluación de Riesgos",
+        "imagenes": ["/hero05.jpg"],
+        "ensayos": [
+          "Análisis de riesgo sísmico",
+          "Identificación de zonas de deslizamiento",
+          "Monitoreo de movimientos de terreno",
+          "Estudios de subsidencia",
+          "Estudios hidrológicos y erosión"
+        ],
+        "descripcion": "Detección de peligros naturales que puedan afectar la obra."
+      },
+      {
+        "titulo": "Consultoría y Asesoría",
+        "imagenes": ["/hero05.jpg"],
+        "ensayos": [
+          "Asesoría técnica en construcción",
+          "Evaluación de impactos ambientales",
+          "Recomendaciones de cimentación",
+          "Planes de mitigación de riesgos",
+          "Soporte en permisos y normativas"
+        ],
+        "descripcion": "Apoyo especializado durante todas las etapas del proyecto."
+      }
+    ],
+    "puntos": [
+      "Equipos de alta precisión",
+      "Personal especializado en geología",
+      "Informes técnicos confiables",
+      "Asesoría profesional integral",
+      "Estudios actualizados con tecnología avanzada"
+    ],
+    "detalles": [
+      "Tiempo de entrega: 7-10 días hábiles",
+      "Asesoría técnica incluida",
+      "Muestreo en campo disponible",
+      "Reportes digitales y físicos",
+      "Certificación de estudios según normas ISO"
+    ],
+    "numeros": [
+      { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 120, "suffix": "+" },
+      { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" },
+      { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 10, "suffix": "+" },
+      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 110, "suffix": "+" },
+      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 15, "suffix": "+" }
+    ]
+  },
+  {
+    "slug": "geotecnia",
+    "titulo": "Geotecnia",
+    "descripcion": "Estudios de cimentaciones, muros de contención, túneles y estabilidad de taludes para proyectos seguros.",
+    "contenido": "Realizamos estudios geotécnicos completos que aseguran la estabilidad y seguridad de estructuras, evaluando suelos, rocas y la interacción con las cargas aplicadas.",
+    "imagen": "/hero06.jpg",
+    "titulo01": "Estudios Geotécnicos",
+    "subtitulo01": "Ensayos en suelos y rocas para cimentaciones, túneles, muros y taludes.",
+    "categorias": [
+      {
+        "titulo": "Caracterización de Suelos",
+        "imagenes": ["/hero06.jpg"],
+        "ensayos": [
+          "Densidad y humedad natural",
+          "Pruebas de permeabilidad",
+          "Análisis granulométrico",
+          "Límites líquido y plástico",
+          "CBR y compactación in situ"
+        ],
+        "descripcion": "Evaluación completa de suelos para cimentaciones y estructuras."
+      },
+      {
+        "titulo": "Estudios de Taludes",
+        "imagenes": ["/hero06.jpg"],
+        "ensayos": [
+          "Análisis de estabilidad de taludes",
+          "Simulación de cargas y factores de seguridad",
+          "Monitoreo de deslizamientos",
+          "Modelos numéricos de taludes",
+          "Evaluación de riesgo ante lluvias y sismos"
+        ],
+        "descripcion": "Garantizamos seguridad en pendientes y laderas."
+      },
+      {
+        "titulo": "Diseño de Cimentaciones",
+        "imagenes": ["/hero06.jpg"],
+        "ensayos": [
+          "Cimentaciones superficiales y profundas",
+          "Pilotes y zapatas",
+          "Recomendaciones de refuerzo",
+          "Pruebas in situ de capacidad portante",
+          "Optimización de diseño estructural"
+        ],
+        "descripcion": "Aseguramos estabilidad estructural según tipo de suelo."
+      },
+      {
+        "titulo": "Muros de Contención y Pavimentos",
+        "imagenes": ["/hero06.jpg"],
+        "ensayos": [
+          "Diseño de muros de contención",
+          "Pruebas de presión lateral",
+          "Modelado estructural de muros",
+          "Diseño y control de pavimentos",
+          "Simulación de cargas dinámicas"
+        ],
+        "descripcion": "Soluciones de soporte y durabilidad para estructuras y carreteras."
+      },
+      {
+        "titulo": "Supervisión y Asesoría",
+        "imagenes": ["/hero06.jpg"],
+        "ensayos": [
+          "Revisión de estudios geotécnicos",
+          "Asesoría durante ejecución de obra",
+          "Supervisión de ensayos in situ",
+          "Recomendaciones de mitigación de riesgos",
+          "Consultoría integral para proyectos"
+        ],
+        "descripcion": "Acompañamiento técnico durante todas las fases de la obra."
+      }
+    ],
+    "puntos": [
+      "Equipos de última generación",
+      "Resultados precisos y confiables",
+      "Asesoría profesional integral",
+      "Monitoreo en tiempo real",
+      "Estudios adaptados a cada terreno"
+    ],
+    "detalles": [
+      "Tiempo de entrega: 5-7 días hábiles",
+      "Muestreo in situ disponible",
+      "Certificados de calidad",
+      "Reportes gráficos y detallados",
+      "Asesoría personalizada"
+    ],
+    "numeros": [
+      { "id": 1, "label": "TRABAJOS REALIZADOS", "value": 200, "suffix": "+" },
+      { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 180, "suffix": "+" },
+      { "id": 3, "label": "PROYECTOS EN CURSO", "value": 15, "suffix": "+" },
+      { "id": 4, "label": "EQUIPOS EN CAMPO", "value": 12, "suffix": "+" },
+      { "id": 5, "label": "INFORMES ENTREGADOS", "value": 150, "suffix": "+" }
+    ]
+  },
+  {
+    "slug": "laboratorio-geotecnico",
+    "titulo": "Laboratorio Geotécnico",
+    "descripcion": "Ensayos en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar calidad de materiales.",
+    "contenido": "Nuestro laboratorio realiza ensayos de control de calidad en materiales y suelos para certificar su idoneidad en proyectos de construcción.",
+    "imagen": "/hero04.jpg",
+    "titulo01": "Ensayos de Laboratorio",
+    "subtitulo01": "Análisis especializados con equipos de última generación y personal calificado.",
+    "categorias": [
+      {
+        "titulo": "Ensayos en Suelo",
+        "imagenes": ["/hero04.jpg"],
+        "ensayos": [
+          "Granulometría",
+          "Límites líquidos y plásticos",
+          "CBR de suelos compactados",
+          "Compresión triaxial",
+          "Consolidación unidimensional"
+        ],
+        "descripcion": "Evaluación completa de propiedades físicas y mecánicas de suelos."
+      },
+      {
+        "titulo": "Ensayos en Concreto y Agregados",
+        "imagenes": ["/hero03.jpg", "/hero04.jpg"],
+        "ensayos": [
+          "Compresión de testigos cilíndricos",
+          "Análisis granulométrico de agregados",
+          "Pruebas de abrasión y fractura",
+          "Determinación de finos y gruesos",
+          "Ensayos de adherencia y slump"
+        ],
+        "descripcion": "Control de calidad para garantizar durabilidad de estructuras."
+      },
+      {
+        "titulo": "Ensayos Químicos",
+        "imagenes": ["/hero04.jpg"],
+        "ensayos": [
+          "Análisis de agua, suelos y agregados",
+          "pH, sulfatos y cloruros",
+          "Contenido de humedad",
+          "Determinación de contaminantes",
+          "Otros ensayos especializados"
+        ],
+        "descripcion": "Análisis químicos que aseguran la calidad de materiales y recursos."
+      },
+      {
+        "titulo": "Ensayos en Asfalto y Pavimentos",
+        "imagenes": ["/hero04.jpg"],
+        "ensayos": [
+          "Determinación de contenido de betún",
+          "Prueba de estabilidad Marshall",
+          "Resistencia a tracción",
+          "Densidad y absorción",
+          "Durabilidad frente a ciclos de carga"
+        ],
+        "descripcion": "Ensayos especializados para pavimentos y mezclas asfálticas."
+      },
+      {
+        "titulo": "Control Integral de Calidad",
+        "imagenes": ["/hero04.jpg"],
+        "ensayos": [
+          "Supervisión de ensayos en campo",
+          "Certificación de materiales",
+          "Seguimiento de resultados",
+          "Optimización de procesos",
+          "Asesoría técnica integral"
+        ],
+        "descripcion": "Garantizamos resultados confiables y consistentes en todos los ensayos."
+      }
+    ],
+    "puntos": [
+      "Equipos de última generación",
+      "Personal técnico calificado",
+      "Resultados confiables y precisos",
+      "Acreditación INACAL vigente",
+      "Supervisión constante de ensayos"
+    ],
+    "detalles": [
+      "Tiempo de entrega: 5-7 días hábiles",
+      "Muestreo in situ disponible",
+      "Asesoría técnica incluida",
+      "Certificados de calidad",
+      "Reportes gráficos y digitales"
+    ],
+    "numeros": [
+      { "id": 1, "label": "TRABAJOS REALIZADOS", "value": 600, "suffix": "+" },
+      { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 500, "suffix": "+" },
+      { "id": 3, "label": "PROYECTOS EN CURSO", "value": 25, "suffix": "+" },
+      { "id": 4, "label": "ENSAYOS REALIZADOS", "value": 1200, "suffix": "+" },
+      { "id": 5, "label": "EQUIPOS DE LABORATORIO", "value": 20, "suffix": "+" }
+    ]
+  },
+  {
+    "slug": "geofisica",
+    "titulo": "Geofísica",
+    "descripcion": "Exploración del subsuelo mediante ensayos sísmicos, geoeléctricos y métodos no invasivos para identificar zonas críticas.",
+    "contenido": "Realizamos estudios geofísicos avanzados para caracterizar el subsuelo sin intervención directa, detectando anomalías y zonas de riesgo mediante tecnología de punta.",
+    "imagen": "/hero03.jpg",
+    "titulo01": "Estudios Geofísicos",
+    "subtitulo01": "Métodos sísmicos, geoeléctricos y electromagnéticos para detección de riesgos y características del terreno.",
+    "categorias": [
+      {
+        "titulo": "Métodos Sísmicos",
+        "imagenes": ["/hero03.jpg"],
+        "ensayos": [
+          "Sísmica de refracción",
+          "Sísmica de reflexión",
+          "Ensayos de microtremor",
+          "Análisis de velocidad de ondas",
+          "Detección de fallas subsuperficiales"
+        ],
+        "descripcion": "Caracterización de la estructura geológica mediante ondas sísmicas."
+      },
+      {
+        "titulo": "Métodos Geoeléctricos",
+        "imagenes": ["/hero03.jpg"],
+        "ensayos": [
+          "Resistividad eléctrica",
+          "Tomografía eléctrica",
+          "Ensayos de polarización inducida",
+          "Medición de conductividad",
+          "Cartografía de anomalías"
+        ],
+        "descripcion": "Evaluación de propiedades eléctricas del subsuelo para identificar heterogeneidades."
+      },
+      {
+        "titulo": "Métodos Electromagnéticos",
+        "imagenes": ["/hero03.jpg"],
+        "ensayos": [
+          "Prospección electromagnética",
+          "Cartografía de resistividad",
+          "Detección de aguas subterráneas",
+          "Análisis de capas conductoras",
+          "Modelado de datos EM"
+        ],
+        "descripcion": "Detección de características del subsuelo mediante campos electromagnéticos."
+      },
+      {
+        "titulo": "Monitoreo y Supervisión",
+        "imagenes": ["/hero03.jpg"],
+        "ensayos": [
+          "Monitoreo sísmico continuo",
+          "Seguimiento de vibraciones",
+          "Control de interferencias",
+          "Registro de datos en tiempo real",
+          "Evaluación de seguridad de obras"
+        ],
+        "descripcion": "Supervisión constante para garantizar confiabilidad de los estudios."
+      },
+      {
+        "titulo": "Consultoría y Asesoría",
+        "imagenes": ["/hero03.jpg"],
+        "ensayos": [
+          "Interpretación de resultados geofísicos",
+          "Recomendaciones técnicas",
+          "Integración con estudios geológicos",
+          "Asesoría en diseño de obras",
+          "Planificación de muestreos"
+        ],
+        "descripcion": "Apoyo técnico especializado durante todas las etapas del proyecto."
+      }
+    ],
+    "puntos": [
+      "Tecnología de vanguardia",
+      "Métodos no invasivos",
+      "Informes confiables y detallados",
+      "Monitoreo en tiempo real",
+      "Integración con estudios geotécnicos"
+    ],
+    "detalles": [
+      "Tiempo de entrega: 7-10 días hábiles",
+      "Asesoría técnica incluida",
+      "Muestreo y mediciones en campo",
+      "Reportes digitales y gráficos",
+      "Certificación de estudios según normas ISO"
+    ],
+    "numeros": [
+      { "id": 1, "label": "ESTUDIOS REALIZADOS", "value": 80, "suffix": "+" },
+      { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 70, "suffix": "+" },
+      { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 8, "suffix": "+" },
+      { "id": 4, "label": "PROYECTOS ENTREGADOS", "value": 75, "suffix": "+" },
+      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 10, "suffix": "+" }
+    ]
+  },
+    {
+    "slug": "geomecanica",
+    "titulo": "Geomecánica",
+    "descripcion": "Análisis de estabilidad de rocas, taludes y túneles con modelos numéricos y ensayos in situ.",
+    "contenido": "Realizamos estudios geomecánicos para evaluar la resistencia y comportamiento de rocas y suelos bajo cargas, asegurando la seguridad de estructuras subterráneas y taludes.",
+    "imagen": "/hero02.jpg",
+    "titulo01": "Estudios Geomecánicos",
+    "subtitulo01": "Modelos numéricos y ensayos en campo para análisis de estabilidad y diseño seguro.",
+    "categorias": [
+      {
+        "titulo": "Estabilidad de Taludes y Rocas",
+        "imagenes": ["/hero02.jpg"],
+        "ensayos": [
+          "Análisis de estabilidad de taludes",
+          "Modelos numéricos de deformación",
+          "Ensayos de resistencia in situ",
+          "Monitoreo de fracturas",
+          "Evaluación de riesgo de desprendimientos"
+        ],
+        "descripcion": "Evaluación de la seguridad de taludes y estructuras rocosas."
+      },
+      {
+        "titulo": "Diseño de Túneles y Excavaciones",
+        "imagenes": ["/hero02.jpg"],
+        "ensayos": [
+          "Estudios de presión de roca",
+          "Simulación de excavaciones",
+          "Optimización de revestimientos",
+          "Evaluación de deformaciones",
+          "Recomendaciones de sostenimiento"
+        ],
+        "descripcion": "Garantizamos la seguridad y durabilidad de túneles y excavaciones."
+      },
+      {
+        "titulo": "Caracterización de Materiales",
+        "imagenes": ["/hero02.jpg"],
+        "ensayos": [
+          "Pruebas de compresión y tracción",
+          "Determinación de propiedades mecánicas",
+          "Análisis de microfracturas",
+          "Estudios de anisotropía",
+          "Modelado de comportamiento de rocas y suelos"
+        ],
+        "descripcion": "Caracterización detallada de rocas y suelos para diseño estructural."
+      },
+      {
+        "titulo": "Monitoreo y Seguimiento",
+        "imagenes": ["/hero02.jpg"],
+        "ensayos": [
+          "Instrumentación de taludes",
+          "Medición de desplazamientos y deformaciones",
+          "Registro de datos en tiempo real",
+          "Control de seguridad en excavaciones",
+          "Análisis de tendencia de fallas"
+        ],
+        "descripcion": "Monitoreo continuo para prevenir riesgos y optimizar diseños."
+      },
+      {
+        "titulo": "Consultoría Especializada",
+        "imagenes": ["/hero02.jpg"],
+        "ensayos": [
+          "Asesoría en proyectos geomecánicos",
+          "Interpretación de datos y modelados",
+          "Recomendaciones de mitigación de riesgos",
+          "Integración con estudios geotécnicos",
+          "Planes de seguridad y sostenimiento"
+        ],
+        "descripcion": "Apoyo técnico integral durante todas las etapas del proyecto."
+      }
+    ],
+    "puntos": [
+      "Personal especializado en geomecánica",
+      "Equipos de medición avanzados",
+      "Informes técnicos confiables",
+      "Monitoreo en tiempo real",
+      "Optimización de diseño y seguridad"
+    ],
+    "detalles": [
+      "Tiempo de entrega: 7-10 días hábiles",
+      "Asesoría técnica incluida",
+      "Ensayos in situ disponibles",
+      "Reportes digitales y gráficos",
+      "Certificación según normas ISO"
+    ],
+    "numeros": [
+      { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 90, "suffix": "+" },
+      { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 85, "suffix": "+" },
+      { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 9, "suffix": "+" },
+      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 80, "suffix": "+" },
+      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 8, "suffix": "+" }
+    ]
+  },
+  {
+    "slug": "hidrogeologia",
+    "titulo": "Hidrogeología",
+    "descripcion": "Estudio y monitoreo del agua subterránea, interacción con suelos y estructuras, garantizando seguridad hídrica.",
+    "contenido": "Realizamos estudios hidrogeológicos para evaluar el comportamiento de acuíferos, niveles freáticos y la interacción con estructuras, asegurando la gestión eficiente y segura del agua subterránea.",
+    "imagen": "/hero01.jpg",
+    "titulo01": "Estudios Hidrogeológicos",
+    "subtitulo01": "Monitoreo y modelado de aguas subterráneas para garantizar seguridad y sostenibilidad.",
+    "categorias": [
+      {
+        "titulo": "Estudios de Acuíferos",
+        "imagenes": ["/hero01.jpg"],
+        "ensayos": [
+          "Determinación de niveles freáticos",
+          "Caracterización de acuíferos",
+          "Pruebas de bombeo",
+          "Evaluación de recarga y descarga",
+          "Mapeo de flujos subterráneos"
+        ],
+        "descripcion": "Análisis detallado de acuíferos para planificación y seguridad hídrica."
+      },
+      {
+        "titulo": "Interacción Suelo-Agua",
+        "imagenes": ["/hero01.jpg"],
+        "ensayos": [
+          "Estudios de permeabilidad",
+          "Evaluación de filtraciones y drenajes",
+          "Monitoreo de saturación del suelo",
+          "Simulación de flujo subterráneo",
+          "Determinación de riesgos por erosión"
+        ],
+        "descripcion": "Evaluación de la interacción entre suelos y aguas subterráneas."
+      },
+      {
+        "titulo": "Control y Monitoreo",
+        "imagenes": ["/hero01.jpg"],
+        "ensayos": [
+          "Instalación de piezómetros",
+          "Medición de niveles de agua",
+          "Registro de datos en tiempo real",
+          "Monitoreo de impactos de obras",
+          "Alertas ante variaciones críticas"
+        ],
+        "descripcion": "Seguimiento constante para garantizar seguridad y estabilidad."
+      },
+      {
+        "titulo": "Modelado Hidrológico",
+        "imagenes": ["/hero01.jpg"],
+        "ensayos": [
+          "Simulación de flujo subterráneo",
+          "Predicción de niveles freáticos",
+          "Evaluación de impacto de construcción",
+          "Optimización de gestión de agua",
+          "Modelos de transporte de contaminantes"
+        ],
+        "descripcion": "Herramientas predictivas para la gestión eficiente de recursos hídricos."
+      },
+      {
+        "titulo": "Asesoría y Planificación",
+        "imagenes": ["/hero01.jpg"],
+        "ensayos": [
+          "Planes de manejo de agua",
+          "Recomendaciones para construcción segura",
+          "Mitigación de riesgos hídricos",
+          "Integración con estudios geotécnicos",
+          "Informes técnicos detallados"
+        ],
+        "descripcion": "Soporte integral para proyectos con interacción hídrica."
+      }
+    ],
+    "puntos": [
+      "Monitoreo avanzado de aguas subterráneas",
+      "Informes técnicos confiables",
+      "Asesoría especializada en hidrogeología",
+      "Modelado predictivo y análisis de riesgo",
+      "Integración con estudios geotécnicos y ambientales"
+    ],
+    "detalles": [
+      "Tiempo de entrega: 7-10 días hábiles",
+      "Asesoría técnica incluida",
+      "Muestreo y mediciones en campo",
+      "Reportes digitales y gráficos",
+      "Certificación de estudios según normas ISO"
+    ],
+    "numeros": [
+      { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 70, "suffix": "+" },
+      { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 65, "suffix": "+" },
+      { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 7, "suffix": "+" },
+      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 60, "suffix": "+" },
+      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 6, "suffix": "+" }
+    ]
+  }
+  
+]
