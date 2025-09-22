@@ -1,12 +1,12 @@
 [
   {
-    "id": "tendencias",
-    "nombre": "Tendencias",
+    "id": "blog",
+    "nombre": "Blog",
     "color": "bg-blue-600"
   },
   {
-    "id": "formacion",
-    "nombre": "Formacion",
+    "id": "articulos",
+    "nombre": "Articulos",
     "color": "bg-green-600"
   },
   {
@@ -15,12 +15,12 @@
     "color": "bg-purple-600"
   },
   {
-    "id": "publicaciones",
+    "id": "noticias",
     "nombre": "Publicaciones",
     "color": "bg-yellow-600"
   },
   {
-    "id": "artistas",
+    "id": "proyectos",
     "nombre": "Artistas",
     "color": "bg-red-600"
   }
