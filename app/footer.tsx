@@ -260,14 +260,14 @@ const Footer = () => {
           </div>
           <nav className="flex flex-wrap justify-center gap-x-3 sm:gap-x-4 gap-y-1 sm:gap-y-2 items-center">
             <Link
-              href="/terminosycondiciones"
+              href="/terminos"
               className="text-gray-600 hover:text-[#0a5c8a] text-xs sm:text-sm whitespace-nowrap"
             >
               Términos de servicio
             </Link>
             <span className="hidden sm:inline text-gray-400">|</span>
             <Link
-              href="/politicadeprivacidad"
+              href="/politica"
               className="text-gray-600 hover:text-[#0a5c8a] text-xs sm:text-sm whitespace-nowrap"
             >
               Política de privacidad
