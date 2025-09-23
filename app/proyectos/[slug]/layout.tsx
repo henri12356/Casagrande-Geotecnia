@@ -39,7 +39,6 @@ export async function generateMetadata({ params }: ProjectLayoutProps): Promise<
     return baseTitle
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getDescripcionSEO = (proyecto: any) => {
     return `${proyecto.descripcion} Proyecto realizado para ${proyecto.cliente}. ${proyecto.detalles?.objetivo || 'Ingeniería especializada con resultados certificados.'}`
   }
