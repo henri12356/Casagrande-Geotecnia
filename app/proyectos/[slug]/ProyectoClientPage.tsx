@@ -20,6 +20,8 @@ import {
 } from "@/components/ui/carousel";
 
 // --- Contador animado ---
+
+
 const CountingNumber: React.FC<{
   value: number;
   suffix?: string;
