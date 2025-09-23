@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Proyectos| Club de Ingenieros",
+    default: "Proyectos| Casa Grande S.A.C.",
     template: "%s | Club de Ingenieros"
   },
   description: "Certificados avalados y con validez profesional para ingenieros civiles, mecánicos, eléctricos e industriales. Mejora tu currículum con nuestras certificaciones reconocidas.",
