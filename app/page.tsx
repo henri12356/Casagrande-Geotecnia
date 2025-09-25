@@ -7,6 +7,7 @@ import Galeria from "./galeria";
 import Proyectos from "./proyectos";
 import Footer from "./footer";
 import Clientes from "./clientes";
+import Newsletter from "./Newsletter";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Galeria />
       <Proyectos />
       <Clientes />
+      <Newsletter />
       <Footer />
     </div>
   );
