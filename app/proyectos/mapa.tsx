@@ -5,10 +5,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-// ... (Interface Proyecto y Array proyectos se mantienen igual)
-// ... (Funciones getEstadoColor y getMarkerColorClass se mantienen igual)
-// ... (La función getTooltipPosition se mantiene igual)
-
 // Definición de las interfaces y el array de proyectos
 interface Proyecto {
   id: number;
@@ -246,9 +242,8 @@ const MapaProyectos = () => {
     height: 0,
     width: 0,
   });
-
-  // 1. NUEVO ESTADO: Bandera para saber si ya estamos en el cliente
   const [isClient, setIsClient] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const calculateMapBounds = () => {
     if (mapImageRef.current) {
@@ -277,25 +272,27 @@ const MapaProyectos = () => {
   };
 
   useEffect(() => {
-    // 2. Montaje: Marcar que el componente ya está en el cliente
-    setIsClient(true); 
+    setIsClient(true);
+    setWindowWidth(window.innerWidth);
     
-    // El resto de la lógica de useEffect es segura aquí
     calculateMapBounds();
-    window.addEventListener("resize", calculateMapBounds);
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+      calculateMapBounds();
+    });
     return () => window.removeEventListener("resize", calculateMapBounds);
   }, []);
 
-  // La función handleMarkerInteraction ahora accede a window.innerWidth de forma segura
+  // CORREGIDO: Usar windowWidth del estado en lugar de window.innerWidth
   const handleMarkerInteraction = (proyecto: Proyecto) => {
-    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+    if (windowWidth < 1024) {
       setActiveProject(activeProject?.id === proyecto.id ? null : proyecto);
     }
   };
 
-  // La función handleMarkerMouseEnter ahora accede a window.innerWidth de forma segura
+  // CORREGIDO: Usar windowWidth del estado en lugar de window.innerWidth
   const handleMarkerMouseEnter = (proyecto: Proyecto) => {
-    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+    if (windowWidth >= 1024) {
       setHoveredProject(proyecto);
     }
   };
@@ -307,27 +304,32 @@ const MapaProyectos = () => {
 
     // Posición vertical
     if (proyecto.y < 25) {
-      verticalClass = "top-full mt-3"; // Si está muy arriba, poner abajo
+      verticalClass = "top-full mt-3";
     } else if (proyecto.y > 75) {
-      verticalClass = "bottom-full mb-3"; // Si está muy abajo, poner arriba
+      verticalClass = "bottom-full mb-3";
     } else {
-      verticalClass = "top-full mt-3"; // Por defecto abajo
+      verticalClass = "top-full mt-3";
     }
 
     // Posición horizontal
     if (proyecto.x < 20) {
-      horizontalClass = "left-0"; // Si está a la izquierda, alinear a la izquierda
+      horizontalClass = "left-0";
     } else if (proyecto.x > 80) {
-      horizontalClass = "right-0"; // Si está a la derecha, alinear a la derecha
+      horizontalClass = "right-0";
     } else {
-      horizontalClass = "left-1/2 transform -translate-x-1/2"; // Centrado
+      horizontalClass = "left-1/2 transform -translate-x-1/2";
     }
 
     return `${verticalClass} ${horizontalClass}`;
   };
 
+  // CORREGIDO: Función segura para determinar si mostrar tooltip
+  const shouldShowTooltip = (proyecto: Proyecto) => {
+    return isClient && windowWidth >= 1024 && hoveredProject?.id === proyecto.id;
+  };
+
   return (
-    <div className="font-sans py-12 px-4 sm:px-6 lg:px-8 md:pt-56 pt-24">
+    <div className="font-sans py-12 px-4 sm:px-6 lg:px-8 md:pt-56 pt-2">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto gap-8 lg:gap-12 ">
         
         {/* Panel izquierdo */}
@@ -350,11 +352,10 @@ const MapaProyectos = () => {
               + 152 Proyectos
             </p>
           </div>
-
         </div>
 
         {/* Panel derecho: Mapa */}
-        <div className="lg:w-2/3 relative h-[320px] lg:h-[550px] rounded-2xl   ">
+        <div className="lg:w-2/3 relative h-[320px] lg:h-[550px] rounded-2xl">
           <div className="relative w-full h-full">
             <img
               ref={mapImageRef}
@@ -377,8 +378,8 @@ const MapaProyectos = () => {
                   onMouseEnter={() => handleMarkerMouseEnter(proyecto)}
                   onMouseLeave={() => setHoveredProject(null)}
                   onClick={(e) => {
-                    // Verifica la existencia de window antes de usarlo
-                    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+                    // CORREGIDO: Usar windowWidth del estado
+                    if (windowWidth < 1024) {
                       e.preventDefault();
                       handleMarkerInteraction(proyecto);
                     }
@@ -415,9 +416,9 @@ const MapaProyectos = () => {
                     top: mapOffset.top + (proyecto.y / 100) * mapOffset.height,
                   }}
                 >
-                  {/* 3. CORRECCIÓN PRINCIPAL: Usar isClient para la condición de renderizado */}
+                  {/* CORREGIDO: Usar la función segura shouldShowTooltip */}
                   <AnimatePresence>
-                    {isClient && window.innerWidth >= 1024 && hoveredProject?.id === proyecto.id && (
+                    {shouldShowTooltip(proyecto) && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -565,7 +566,7 @@ const MapaProyectos = () => {
                   </div>
                 <Link
                   href={activeProject.url}
-                  className=" w-52 text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
+                  className="w-52 text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
                 >
                   Ver Proyecto
                 </Link>
@@ -579,7 +580,6 @@ const MapaProyectos = () => {
                     </span>
                   </div>
                 </div>
-
               </div>
             </motion.div>
           )}
