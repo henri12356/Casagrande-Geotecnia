@@ -2,7 +2,7 @@
 // src/app/blog/[slug]/page.tsx
 "use client";
 
-import React, { use, useState, useMemo } from "react";
+import React, { use, useState, useMemo, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import blogsData from "@/app/data/blogs.json";
@@ -25,7 +25,8 @@ interface BlogPostProps {
   params: Promise<{ slug: string }>;
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
+// Componente principal que usa el hook use
+function BlogPostContent({ params }: BlogPostProps) {
   const { slug } = use(params);
   const currentBlog = blogsData.find((b: Blog) => b.slug === slug);
 
@@ -80,7 +81,6 @@ export default function BlogPost({ params }: BlogPostProps) {
       .filter((blog) => blog.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, 4);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentBlog, blogsData]);
 
   const pageUrl = `https://www.clubdeingeniero.com/blog/${currentBlog.slug}`;
@@ -137,7 +137,6 @@ export default function BlogPost({ params }: BlogPostProps) {
         <div className="max-w-[1500px] mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Sidebar índice - Columna izquierda */}
           <aside className="hidden xl:block xl:col-span-2">
-            {/* CAMBIO: top-32 en lugar de top-28 para compensar navbar fijo */}
             <nav className="bg-white rounded-xl shadow p-6 sticky top-40 self-start">
               <h3 className="text-xl font-semibold mb-4 text-[#1b4772]">
                 Contenido
@@ -185,7 +184,6 @@ export default function BlogPost({ params }: BlogPostProps) {
                   <section
                     key={idx}
                     id={`section-${idx}`}
-                    // CAMBIO: Aumentar scroll-margin-top para compensar navbar
                     className="space-y-6 scroll-mt-32"
                   >
                     {section.titulo && (
@@ -233,7 +231,6 @@ export default function BlogPost({ params }: BlogPostProps) {
 
           {/* Sidebar DERECHO - Columna derecha */}
           <aside className="lg:col-span-3 space-y-8">
-            {/* CAMBIO: top-32 en lugar de top-28 para compensar navbar fijo */}
             <div className="sticky top-40 space-y-8">
               {currentBlog.autor && (
                 <div className="rounded-xl shadow p-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
@@ -331,8 +328,6 @@ export default function BlogPost({ params }: BlogPostProps) {
             Ver todos los artículos
           </Link>
         </section>
-
-        {/* Sección de categorías */}
 
         {/* Redes sociales */}
         <section className="bg-gradient-to-r from-[#1b4772] to-[#1b4772] text-white py-16 text-center">
@@ -437,5 +432,18 @@ export default function BlogPost({ params }: BlogPostProps) {
         </div>
       )}
     </>
+  );
+}
+
+// Componente principal con Suspense
+export default function BlogPost({ params }: BlogPostProps) {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Cargando artículo...</div>
+      </div>
+    }>
+      <BlogPostContent params={params} />
+    </Suspense>
   );
 }
