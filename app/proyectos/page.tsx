@@ -10,7 +10,7 @@ const Projects = () => {
     <div className="">
       <Navbar />
 
-      <MapaProyectos />
+      {/* <MapaProyectos /> */}
       {/* <HeroProyectos /> */}
       <Proyecto />
       <Trusted />
