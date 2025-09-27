@@ -1,4 +1,3 @@
-// src/app/blog/[slug]/page.tsx
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
@@ -18,16 +17,19 @@ import blogsData from "@/app/data/blogs.json";
 import { Blog } from "@/app/types/blog";
 import Navbar from "@/app/navbar";
 import Footer from "@/app/footer";
-import NotFoundPage from "@/app/not-found";
+// Se comenta la línea de importación no utilizada para eliminar el warning de ESLint
+// import NotFoundPage from "@/app/not-found"; 
 
-// Tipado correcto para los parámetros de la página
+// Tipado corregido para los parámetros de la página (Next.js usa 'params' directamente en el Server Component,
+// pero al ser un Client Component que lo espera como promesa, se mantiene tu implementación asíncrona)
 interface BlogPostProps {
   params: Promise<{ slug: string }>;
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
   const [slug, setSlug] = useState<string>("");
-  const [currentBlog, setCurrentBlog] = useState<Blog | undefined>(undefined);
+  // Definición explícita de Blog para asegurar las propiedades necesarias para el JSON-LD final
+  const [currentBlog, setCurrentBlog] = useState<Blog | undefined>(undefined); 
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [modalImageUrl, setModalImageUrl] = useState("");
   const [modalImageAlt, setModalImageAlt] = useState("");
@@ -58,8 +60,10 @@ export default function BlogPost({ params }: BlogPostProps) {
 
   // Función mejorada para encontrar blogs relacionados
   const relatedBlogs = useMemo(() => {
-    if (!currentBlog) return [];
+    // Protección garantizada para que currentBlog exista
+    if (!currentBlog) return []; 
 
+    // 💡 CORRECCIÓN TS (Línea 71): currentBlog.tags ya está garantizado al pasar la verificación superior.
     return blogsData
       .filter((blog) => blog.slug !== currentBlog.slug)
       .map((blog) => {
@@ -67,8 +71,15 @@ export default function BlogPost({ params }: BlogPostProps) {
         if (blog.categoria === currentBlog.categoria) {
           score += 3;
         }
-        const commonTags = blog.tags.filter((tag) =>
-          currentBlog.tags.includes(tag)
+        // Uso de optional chaining (?.) con un fallback si tags puede ser undefined o null
+        // Aunque la interfaz Blog debería forzar 'tags' a ser un array, TypeScript necesita confirmación si es un campo opcional.
+        // Si 'Blog' define tags: string[], esta corrección no sería estrictamente necesaria
+        // si currentBlog no fuera un estado inicializado como undefined, pero aquí es la forma segura:
+        const currentTags = currentBlog.tags || []; 
+        const blogTags = blog.tags || [];
+
+        const commonTags = blogTags.filter((tag) =>
+          currentTags.includes(tag)
         ).length;
         score += commonTags * 2;
         const currentTitleWords = currentBlog.titulo.toLowerCase().split(/\s+/);
@@ -84,15 +95,19 @@ export default function BlogPost({ params }: BlogPostProps) {
       .slice(0, 4);
   }, [currentBlog]);
 
-  // Loading state
-  if (!slug || !currentBlog) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Cargando artículo...</div>
-      </div>
-    );
+  // Manejo de estado de carga para evitar renderizar sin datos
+  if (!currentBlog) {
+    // Mejor práctica profesional: Mostrar un indicador de carga en lugar de NotFoundPage
+    // si el error es solo por la asincronía de `params`. Si `slug` no existe, esto
+    // se maneja implícitamente si currentBlog sigue siendo undefined después del fetch.
+     return (
+       <div className="min-h-screen flex items-center justify-center">
+         <div className="text-xl">Cargando artículo...</div>
+       </div>
+     );
   }
-
+  
+  // A partir de aquí, currentBlog está GARANTIZADO de ser un objeto 'Blog'.
   const pageUrl = `https://www.clubdeingeniero.com/blog/${currentBlog.slug}`;
   const pageTitle = `${currentBlog.titulo} | Blog de Casagrande`;
   const pageDescription =
@@ -370,7 +385,8 @@ export default function BlogPost({ params }: BlogPostProps) {
             },
             editor: currentBlog.autor?.nombre || "Editor",
             genre: currentBlog.categoria,
-            keywords: currentBlog.tags.join(", "),
+            // 💡 CORRECCIÓN TS (Línea 373): Se usa el operador '|| []' para garantizar que tags sea un array antes de usar .join()
+            keywords: (currentBlog.tags || []).join(", "),
             wordcount: Array.isArray(currentBlog.contenido)
               ? currentBlog.contenido.reduce(
                   (acc, s) => acc + (s.texto?.split(" ").length || 0),
