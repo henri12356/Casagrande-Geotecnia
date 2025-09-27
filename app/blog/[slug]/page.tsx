@@ -17,24 +17,20 @@ import blogsData from "@/app/data/blogs.json";
 import { Blog } from "@/app/types/blog";
 import Navbar from "@/app/navbar";
 import Footer from "@/app/footer";
-// Se comenta la línea de importación no utilizada para eliminar el warning de ESLint
-// import NotFoundPage from "@/app/not-found"; 
 
-// Tipado corregido para los parámetros de la página (Next.js usa 'params' directamente en el Server Component,
-// pero al ser un Client Component que lo espera como promesa, se mantiene tu implementación asíncrona)
+// Tipado correcto para los parámetros de la página
 interface BlogPostProps {
   params: Promise<{ slug: string }>;
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
   const [slug, setSlug] = useState<string>("");
-  // Definición explícita de Blog para asegurar las propiedades necesarias para el JSON-LD final
-  const [currentBlog, setCurrentBlog] = useState<Blog | undefined>(undefined); 
+  const [currentBlog, setCurrentBlog] = useState<Blog | undefined>(undefined);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [modalImageUrl, setModalImageUrl] = useState("");
   const [modalImageAlt, setModalImageAlt] = useState("");
 
-  // Efecto para obtener los params de forma asíncrona
+  // Obtener el slug y blog de forma asíncrona
   useEffect(() => {
     const getParams = async () => {
       const resolvedParams = await params;
@@ -42,7 +38,6 @@ export default function BlogPost({ params }: BlogPostProps) {
       const blog = blogsData.find((b: Blog) => b.slug === resolvedParams.slug);
       setCurrentBlog(blog);
     };
-    
     getParams();
   }, [params]);
 
@@ -58,36 +53,30 @@ export default function BlogPost({ params }: BlogPostProps) {
     setModalImageAlt("");
   };
 
-  // Función mejorada para encontrar blogs relacionados
+  // Blogs relacionados (seguro para tags undefined)
   const relatedBlogs = useMemo(() => {
-    // Protección garantizada para que currentBlog exista
-    if (!currentBlog) return []; 
+    if (!currentBlog) return [];
 
-    // 💡 CORRECCIÓN TS (Línea 71): currentBlog.tags ya está garantizado al pasar la verificación superior.
+    const currentTags = currentBlog.tags ?? [];
+
     return blogsData
       .filter((blog) => blog.slug !== currentBlog.slug)
       .map((blog) => {
         let score = 0;
-        if (blog.categoria === currentBlog.categoria) {
-          score += 3;
-        }
-        // Uso de optional chaining (?.) con un fallback si tags puede ser undefined o null
-        // Aunque la interfaz Blog debería forzar 'tags' a ser un array, TypeScript necesita confirmación si es un campo opcional.
-        // Si 'Blog' define tags: string[], esta corrección no sería estrictamente necesaria
-        // si currentBlog no fuera un estado inicializado como undefined, pero aquí es la forma segura:
-        const currentTags = currentBlog.tags || []; 
-        const blogTags = blog.tags || [];
 
-        const commonTags = blogTags.filter((tag) =>
-          currentTags.includes(tag)
-        ).length;
+        if (blog.categoria === currentBlog.categoria) score += 3;
+
+        const blogTags = blog.tags ?? [];
+        const commonTags = blogTags.filter((tag) => currentTags.includes(tag)).length;
         score += commonTags * 2;
+
         const currentTitleWords = currentBlog.titulo.toLowerCase().split(/\s+/);
         const blogTitleWords = blog.titulo.toLowerCase().split(/\s+/);
         const commonWords = currentTitleWords.filter(
           (word) => blogTitleWords.includes(word) && word.length > 3
         ).length;
         score += commonWords;
+
         return { ...blog, score };
       })
       .filter((blog) => blog.score > 0)
@@ -95,25 +84,18 @@ export default function BlogPost({ params }: BlogPostProps) {
       .slice(0, 4);
   }, [currentBlog]);
 
-  // Manejo de estado de carga para evitar renderizar sin datos
-  if (!currentBlog) {
-    // Mejor práctica profesional: Mostrar un indicador de carga en lugar de NotFoundPage
-    // si el error es solo por la asincronía de `params`. Si `slug` no existe, esto
-    // se maneja implícitamente si currentBlog sigue siendo undefined después del fetch.
-     return (
-       <div className="min-h-screen flex items-center justify-center">
-         <div className="text-xl">Cargando artículo...</div>
-       </div>
-     );
+  if (!slug || !currentBlog) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Cargando artículo...</div>
+      </div>
+    );
   }
-  
-  // A partir de aquí, currentBlog está GARANTIZADO de ser un objeto 'Blog'.
+
   const pageUrl = `https://www.clubdeingeniero.com/blog/${currentBlog.slug}`;
   const pageTitle = `${currentBlog.titulo} | Blog de Casagrande`;
   const pageDescription =
-    currentBlog.extracto ||
-    currentBlog.subtitulo ||
-    "Artículo de ingeniería civil y geotecnia en Perú";
+    currentBlog.extracto || currentBlog.subtitulo || "Artículo de ingeniería civil y geotecnia en Perú";
 
   return (
     <>
@@ -131,6 +113,7 @@ export default function BlogPost({ params }: BlogPostProps) {
 
       <Navbar />
 
+      {/* Portada */}
       <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         <Image
           src={currentBlog.imagen}
@@ -152,8 +135,10 @@ export default function BlogPost({ params }: BlogPostProps) {
         </div>
       </section>
 
+      {/* Contenido */}
       <main className="min-h-screen bg-gray-50">
         <div className="max-w-[1500px] mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Sidebar contenido */}
           <aside className="hidden xl:block xl:col-span-2">
             <nav className="bg-white rounded-xl shadow p-6 sticky top-40 self-start">
               <h3 className="text-xl font-semibold mb-4 text-[#1b4772]">
@@ -175,6 +160,7 @@ export default function BlogPost({ params }: BlogPostProps) {
             </nav>
           </aside>
 
+          {/* Artículo */}
           <div className="lg:col-span-7 space-y-10">
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-4 text-lg text-[#1b4772]">
@@ -244,6 +230,7 @@ export default function BlogPost({ params }: BlogPostProps) {
             </article>
           </div>
 
+          {/* Sidebar lateral */}
           <aside className="lg:col-span-3 space-y-8">
             <div className="sticky top-40 space-y-8">
               {currentBlog.autor && (
@@ -326,6 +313,7 @@ export default function BlogPost({ params }: BlogPostProps) {
           </aside>
         </div>
 
+        {/* CTA */}
         <section className="bg-[#1b4772] text-white rounded-xl p-8 my-12 text-center max-w-4xl mx-auto shadow-lg">
           <h2 className="text-3xl font-bold mb-4">
             ¿Quieres aprender más sobre Geotecnia?
@@ -343,13 +331,11 @@ export default function BlogPost({ params }: BlogPostProps) {
           </Link>
         </section>
 
+        {/* Redes sociales */}
         <section className="bg-gradient-to-r from-[#1b4772] to-[#1b4772] text-white py-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Síguenos en nuestras redes
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">Síguenos en nuestras redes</h2>
           <p className="text-base mb-6 max-w-2xl mx-auto">
-            Comparte este artículo y mantente al día con nuestras últimas
-            publicaciones.
+            Comparte este artículo y mantente al día con nuestras últimas publicaciones.
           </p>
           <div className="flex justify-center gap-6">
             <a href="#" className="hover:text-gray-200">
@@ -364,51 +350,11 @@ export default function BlogPost({ params }: BlogPostProps) {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
       <Footer />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": pageUrl,
-            },
-            headline: currentBlog.titulo,
-            alternativeHeadline: currentBlog.subtitulo || currentBlog.titulo,
-            image: [currentBlog.imagen],
-            author: {
-              "@type": "Person",
-              name: currentBlog.autor?.nombre || "Autor",
-            },
-            editor: currentBlog.autor?.nombre || "Editor",
-            genre: currentBlog.categoria,
-            // 💡 CORRECCIÓN TS (Línea 373): Se usa el operador '|| []' para garantizar que tags sea un array antes de usar .join()
-            keywords: (currentBlog.tags || []).join(", "),
-            wordcount: Array.isArray(currentBlog.contenido)
-              ? currentBlog.contenido.reduce(
-                  (acc, s) => acc + (s.texto?.split(" ").length || 0),
-                  0
-                )
-              : (currentBlog.contenido as string).split(" ").length,
-            publisher: {
-              "@type": "Organization",
-              name: "Casagrande",
-              logo: {
-                "@type": "ImageObject",
-                url: "/logo.png",
-              },
-            },
-            url: pageUrl,
-            datePublished: currentBlog.fecha,
-            dateModified: currentBlog.fecha,
-            description: pageDescription,
-          }),
-        }}
-      />
-
+      {/* Modal de imagen */}
       {isImageModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
