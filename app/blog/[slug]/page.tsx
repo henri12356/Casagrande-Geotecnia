@@ -1,15 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 // src/app/blog/[slug]/page.tsx
 "use client";
 
-import React, { use, useState, useMemo, Suspense } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import blogsData from "@/app/data/blogs.json";
-import categoriesData from "@/app/data/categories.json";
-import { Blog, Category } from "@/app/types/blog";
-import Navbar from "@/app/navbar";
-import Footer from "@/app/footer";
+import Head from "next/head";
+import ReactMarkdown from "react-markdown";
 import {
   FaUsers,
   FaFacebook,
@@ -17,22 +13,36 @@ import {
   FaLinkedin,
   FaTimes,
 } from "react-icons/fa";
-import ReactMarkdown from "react-markdown";
-import NotFoundPage from "@/app/not-found";
-import Head from "next/head";
 
+import blogsData from "@/app/data/blogs.json";
+import { Blog } from "@/app/types/blog";
+import Navbar from "@/app/navbar";
+import Footer from "@/app/footer";
+import NotFoundPage from "@/app/not-found";
+
+// Tipado correcto para los parámetros de la página
 interface BlogPostProps {
   params: Promise<{ slug: string }>;
 }
 
-// Componente principal que usa el hook use
-function BlogPostContent({ params }: BlogPostProps) {
-  const { slug } = use(params);
-  const currentBlog = blogsData.find((b: Blog) => b.slug === slug);
-
+export default function BlogPost({ params }: BlogPostProps) {
+  const [slug, setSlug] = useState<string>("");
+  const [currentBlog, setCurrentBlog] = useState<Blog | undefined>(undefined);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [modalImageUrl, setModalImageUrl] = useState("");
   const [modalImageAlt, setModalImageAlt] = useState("");
+
+  // Efecto para obtener los params de forma asíncrona
+  useEffect(() => {
+    const getParams = async () => {
+      const resolvedParams = await params;
+      setSlug(resolvedParams.slug);
+      const blog = blogsData.find((b: Blog) => b.slug === resolvedParams.slug);
+      setCurrentBlog(blog);
+    };
+    
+    getParams();
+  }, [params]);
 
   const openImageModal = (imageUrl: string, imageAlt: string) => {
     setModalImageUrl(imageUrl);
@@ -46,8 +56,6 @@ function BlogPostContent({ params }: BlogPostProps) {
     setModalImageAlt("");
   };
 
-  if (!currentBlog) return <NotFoundPage />;
-
   // Función mejorada para encontrar blogs relacionados
   const relatedBlogs = useMemo(() => {
     if (!currentBlog) return [];
@@ -56,32 +64,34 @@ function BlogPostContent({ params }: BlogPostProps) {
       .filter((blog) => blog.slug !== currentBlog.slug)
       .map((blog) => {
         let score = 0;
-
-        // Puntos por categoría coincidente
         if (blog.categoria === currentBlog.categoria) {
           score += 3;
         }
-
-        // Puntos por tags comunes
         const commonTags = blog.tags.filter((tag) =>
           currentBlog.tags.includes(tag)
         ).length;
         score += commonTags * 2;
-
-        // Puntos por palabras clave similares en el título
         const currentTitleWords = currentBlog.titulo.toLowerCase().split(/\s+/);
         const blogTitleWords = blog.titulo.toLowerCase().split(/\s+/);
         const commonWords = currentTitleWords.filter(
           (word) => blogTitleWords.includes(word) && word.length > 3
         ).length;
         score += commonWords;
-
         return { ...blog, score };
       })
       .filter((blog) => blog.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, 4);
-  }, [currentBlog, blogsData]);
+  }, [currentBlog]);
+
+  // Loading state
+  if (!slug || !currentBlog) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Cargando artículo...</div>
+      </div>
+    );
+  }
 
   const pageUrl = `https://www.clubdeingeniero.com/blog/${currentBlog.slug}`;
   const pageTitle = `${currentBlog.titulo} | Blog de Casagrande`;
@@ -106,9 +116,7 @@ function BlogPostContent({ params }: BlogPostProps) {
 
       <Navbar />
 
-      {/* Hero Section de ancho completo */}
       <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-        {/* Imagen de fondo */}
         <Image
           src={currentBlog.imagen}
           alt={`Imagen de portada del artículo: ${currentBlog.titulo}`}
@@ -116,11 +124,7 @@ function BlogPostContent({ params }: BlogPostProps) {
           priority
           className="object-cover object-center scale-105 blur-[2px] brightness-75"
         />
-
-        {/* Overlay con degradado */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent"></div>
-
-        {/* Contenido */}
         <div className="relative z-10 max-w-5xl pt-20 md:pt-32 text-center text-white px-4">
           <h1 className="text-3xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
             {currentBlog.titulo}
@@ -135,7 +139,6 @@ function BlogPostContent({ params }: BlogPostProps) {
 
       <main className="min-h-screen bg-gray-50">
         <div className="max-w-[1500px] mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Sidebar índice - Columna izquierda */}
           <aside className="hidden xl:block xl:col-span-2">
             <nav className="bg-white rounded-xl shadow p-6 sticky top-40 self-start">
               <h3 className="text-xl font-semibold mb-4 text-[#1b4772]">
@@ -157,13 +160,11 @@ function BlogPostContent({ params }: BlogPostProps) {
             </nav>
           </aside>
 
-          {/* Contenido principal - Columna central */}
           <div className="lg:col-span-7 space-y-10">
-            {/* Breadcrumb y Metadatos */}
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-4 text-lg text-[#1b4772]">
                 <span className="flex items-center gap-1 font-semibold text-2xl">
-                  <div className="text-[#1b4772] " /> {currentBlog.categoria}
+                  <div className="text-[#1b4772]" /> {currentBlog.categoria}
                 </span>
                 <span className="flex items-center gap-1 font-semi">
                   <time dateTime={new Date(currentBlog.fecha).toISOString()}>
@@ -177,7 +178,6 @@ function BlogPostContent({ params }: BlogPostProps) {
               </div>
             </div>
 
-            {/* Contenido del blog */}
             <article className="space-y-12">
               {Array.isArray(currentBlog.contenido) ? (
                 currentBlog.contenido.map((section, idx) => (
@@ -229,7 +229,6 @@ function BlogPostContent({ params }: BlogPostProps) {
             </article>
           </div>
 
-          {/* Sidebar DERECHO - Columna derecha */}
           <aside className="lg:col-span-3 space-y-8">
             <div className="sticky top-40 space-y-8">
               {currentBlog.autor && (
@@ -329,7 +328,6 @@ function BlogPostContent({ params }: BlogPostProps) {
           </Link>
         </section>
 
-        {/* Redes sociales */}
         <section className="bg-gradient-to-r from-[#1b4772] to-[#1b4772] text-white py-16 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Síguenos en nuestras redes
@@ -353,7 +351,6 @@ function BlogPostContent({ params }: BlogPostProps) {
       </main>
       <Footer />
 
-      {/* JSON-LD completo para SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -396,7 +393,6 @@ function BlogPostContent({ params }: BlogPostProps) {
         }}
       />
 
-      {/* Modal de imagen mejorado */}
       {isImageModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
@@ -432,18 +428,5 @@ function BlogPostContent({ params }: BlogPostProps) {
         </div>
       )}
     </>
-  );
-}
-
-// Componente principal con Suspense
-export default function BlogPost({ params }: BlogPostProps) {
-  return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Cargando artículo...</div>
-      </div>
-    }>
-      <BlogPostContent params={params} />
-    </Suspense>
   );
 }
