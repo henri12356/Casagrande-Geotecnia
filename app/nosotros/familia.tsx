@@ -7,8 +7,8 @@ const imageSrc = "/sobrenosotros.png";
 const containerTransition = { staggerChildren: 0.2, delayChildren: 0.3 } as const;
 const itemTransition = { duration: 0.6, ease: "easeOut" as const };
 const imageTransition = { duration: 0.8, ease: "easeOut" as const };
-const buttonTransition = { duration: 0.5, ease: "easeOut" as const };
-const buttonHoverTransition = { duration: 0.2, ease: "easeInOut" as const };
+// const buttonTransition = { duration: 0.5, ease: "easeOut" as const };
+// const buttonHoverTransition = { duration: 0.2, ease: "easeInOut" as const };
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,11 +25,11 @@ const imageVariants = {
   visible: { opacity: 1, x: 0, transition: imageTransition }
 };
 
-const buttonVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: buttonTransition },
-  hover: { scale: 1.05, transition: buttonHoverTransition }
-};
+// const buttonVariants = {
+//   hidden: { opacity: 0, scale: 0.8 },
+//   visible: { opacity: 1, scale: 1, transition: buttonTransition },
+//   hover: { scale: 1.05, transition: buttonHoverTransition }
+// };
 
 const Familia = () => {
   return (
@@ -57,7 +57,7 @@ const Familia = () => {
 
           {/* Texto */}
           <motion.div className="w-full lg:w-1/2" variants={containerVariants}>
-            <motion.div className="mb-8" variants={itemVariants}>
+            <motion.div className="" variants={itemVariants}>
               <motion.span 
                 className="inline-block bg-[#1b4772] text-white text-sm font-semibold px-4 py-1 rounded-full mb-4"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -68,7 +68,7 @@ const Familia = () => {
                 Nuestra Familia
               </motion.span>
               <motion.h2 
-                className="text-4xl font-extrabold text-[#1b4772] tracking-tight mb-4"
+                className="text-4xl font-extrabold text-[#1b4772] tracking-tight mb-2"
                 variants={itemVariants}
               >
                 Casagrande S.A.C. <br /> Experiencia y Confiabilidad
@@ -76,21 +76,21 @@ const Familia = () => {
             </motion.div>
 
             <motion.div className="space-y-2" variants={containerVariants}>
-              <motion.p className="text-gray-700 leading-relaxed text-lg" variants={itemVariants}>
+              <motion.p className="text-gray-700 leading-relaxed text-md" variants={itemVariants}>
                 En <span className="font-semibold text-[#1b4772]">Casagrande</span>, desde nuestra fundación, nos dedicamos a la <span className="font-semibold">investigación de suelos, rocas, agua y materiales</span>, asegurando que cada proyecto de construcción tenga bases sólidas y resultados confiables.
               </motion.p>
 
-              <motion.p className="text-gray-700 leading-relaxed text-lg" variants={itemVariants}>
+              <motion.p className="text-gray-700 leading-relaxed text-md" variants={itemVariants}>
                 Contamos con más de <span className="font-semibold text-[#1b4772]">12 años de experiencia</span> en consultoría de ingeniería civil, realizando estudios geológicos, geotécnicos, de laboratorio, geofísica y geomecánica para garantizar la seguridad y eficiencia de cada obra.
               </motion.p>
 
-              <motion.p className="text-gray-700 leading-relaxed text-lg" variants={itemVariants}>
+              <motion.p className="text-gray-700 leading-relaxed text-md" variants={itemVariants}>
                 Nuestro equipo de profesionales altamente capacitados ofrece un servicio <span className="font-semibold text-[#1b4772]">transparente, confiable y certificado</span>, siguiendo normas ISO 9001, ISO 14001 e ISO 37001, asegurando calidad, ética y sostenibilidad en todos nuestros proyectos.
               </motion.p>
             </motion.div>
 
             {/* Botón */}
-            <motion.button 
+            {/* <motion.button 
               className='group mt-8 px-4 py-4 md:px-8 md:py-4 cursor-pointer bg-[#1b4772] text-white font-semibold rounded-lg shadow-lg transition-all duration-300'
               variants={buttonVariants}
               whileHover="hover"
@@ -103,7 +103,7 @@ const Familia = () => {
               >
                 →
               </motion.span>
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </motion.div>
       </div>

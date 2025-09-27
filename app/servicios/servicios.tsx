@@ -92,10 +92,10 @@ const Servicios = () => {
                   <h3 className="text-white text-2xl font-bold mb-2">
                     {servicio.titulo}
                   </h3>
-                  <p className="text-gray-200 text-sm mb-4">
+                  <p className="text-white text-sm mb-4">
                     {servicio.descripcion}
                   </p>
-                  <Button className="w-full md:w-1/2 bg-[#1b4772] hover:bg-[#1a242f] text-white cursor-pointer">
+                  <Button className="w-1/2 md:w-1/3 bg-[#1b4772] hover:bg-[#1a242f] text-white cursor-pointer">
                     Ver más
                   </Button>
                 </div>
@@ -133,7 +133,7 @@ const Servicios = () => {
       </div>
 
       {/* --- Sección de contacto --- */}
-      <div className="py-16 md:py-24">
+      <div className="py-16 md:py-24 ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -146,11 +146,11 @@ const Servicios = () => {
                 Contáctanos
               </h3>
               <div className="space-y-4">
-                <p className="flex items-center   text-lg">
+                <p className="flex items-center text-lg">
                   <FaPhoneAlt className="text-[#1b4772]  w-5 h-5 mr-4" />
                   +51 945 513 323
                 </p>
-                <p className="flex items-center   text-lg">
+                <p className="flex items-center text-sm  md:text-lg">
                   <FaEnvelope className="text-[#1b4772]  w-5 h-5 mr-4" />
                   comercial@casagrandegeotecnia.com.pe
                 </p>

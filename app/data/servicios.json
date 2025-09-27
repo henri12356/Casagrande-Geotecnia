@@ -87,8 +87,7 @@
       { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 120, "suffix": "+" },
       { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" },
       { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 10, "suffix": "+" },
-      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 110, "suffix": "+" },
-      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 15, "suffix": "+" }
+      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 110, "suffix": "+" }
     ]
   },
   {
@@ -179,8 +178,7 @@
       { "id": 1, "label": "TRABAJOS REALIZADOS", "value": 200, "suffix": "+" },
       { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 180, "suffix": "+" },
       { "id": 3, "label": "PROYECTOS EN CURSO", "value": 15, "suffix": "+" },
-      { "id": 4, "label": "EQUIPOS EN CAMPO", "value": 12, "suffix": "+" },
-      { "id": 5, "label": "INFORMES ENTREGADOS", "value": 150, "suffix": "+" }
+      { "id": 4, "label": "EQUIPOS EN CAMPO", "value": 12, "suffix": "+" }
     ]
   },
   {
@@ -271,8 +269,7 @@
       { "id": 1, "label": "TRABAJOS REALIZADOS", "value": 600, "suffix": "+" },
       { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 500, "suffix": "+" },
       { "id": 3, "label": "PROYECTOS EN CURSO", "value": 25, "suffix": "+" },
-      { "id": 4, "label": "ENSAYOS REALIZADOS", "value": 1200, "suffix": "+" },
-      { "id": 5, "label": "EQUIPOS DE LABORATORIO", "value": 20, "suffix": "+" }
+      { "id": 4, "label": "ENSAYOS REALIZADOS", "value": 1200, "suffix": "+" }
     ]
   },
   {
@@ -363,11 +360,10 @@
       { "id": 1, "label": "ESTUDIOS REALIZADOS", "value": 80, "suffix": "+" },
       { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 70, "suffix": "+" },
       { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 8, "suffix": "+" },
-      { "id": 4, "label": "PROYECTOS ENTREGADOS", "value": 75, "suffix": "+" },
-      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 10, "suffix": "+" }
+      { "id": 4, "label": "PROYECTOS ENTREGADOS", "value": 75, "suffix": "+" }
     ]
   },
-    {
+  {
     "slug": "geomecanica",
     "titulo": "Geomecánica",
     "descripcion": "Análisis de estabilidad de rocas, taludes y túneles con modelos numéricos y ensayos in situ.",
@@ -455,8 +451,7 @@
       { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 90, "suffix": "+" },
       { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 85, "suffix": "+" },
       { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 9, "suffix": "+" },
-      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 80, "suffix": "+" },
-      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 8, "suffix": "+" }
+      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 80, "suffix": "+" }
     ]
   },
   {
@@ -547,9 +542,7 @@
       { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 70, "suffix": "+" },
       { "id": 2, "label": "CLIENTES SATISFECHOS", "value": 65, "suffix": "+" },
       { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 7, "suffix": "+" },
-      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 60, "suffix": "+" },
-      { "id": 5, "label": "EQUIPOS EN CAMPO", "value": 6, "suffix": "+" }
+      { "id": 4, "label": "INFORMES ENTREGADOS", "value": 60, "suffix": "+" }
     ]
   }
-  
 ]

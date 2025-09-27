@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion, Variants, Transition } from "framer-motion";
-import { LuPhone, } from "react-icons/lu";
+import { LuPhone } from "react-icons/lu";
 import Link from "next/link";
 import { ReactNode, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const slidesData: {
   buttonLink: string;
   buttonIcon?: ReactNode;
 }[] = [
- {
+  {
     id: 1,
     title: "BIENVENIDO A CASAGRANDE",
     subtitle: "Acreditados ante el INACAL con ISO/IEC 17025:2017",
@@ -86,20 +86,20 @@ const contentVariants: Variants = {
   animate: {
     opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.5, 
-      staggerChildren: 0.2, 
-      delayChildren: 0.3 
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     } as Transition,
   },
 };
 
 const itemVariants: Variants = {
   initial: { opacity: 0, y: 20 },
-  animate: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.5 } as Transition 
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 } as Transition,
   },
 };
 
@@ -150,7 +150,7 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1b4772] to-[#0f172a]/30" />
         </motion.div>
       </AnimatePresence>
 
@@ -167,7 +167,7 @@ export default function HeroCarousel() {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={onDragEnd}
-            className="absolute w-full max-w-2xl"
+            className="absolute w-full max-w-2xl md:pt-36 pt-10"
           >
             <motion.div
               className="flex flex-col items-center space-y-4 text-center lg:items-start lg:space-y-5 lg:text-left"
@@ -177,7 +177,7 @@ export default function HeroCarousel() {
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg"
+                className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg cursor-pointer"
               >
                 {activeSlide.title}
               </motion.h1>
@@ -193,7 +193,7 @@ export default function HeroCarousel() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-4 rounded-lg bg-[#1b4772] px-8 py-3 text-base font-bold text-white shadow-lg transition-transform duration-300 hover:bg-[#1b4b52] hover:scale-105 active:scale-95"
+                  className="mt-4 rounded-lg bg-white px-8 py-3 text-base font-bold text-[#1b4772] shadow-lg transition-transform duration-300 hover:bg-[#1b4b52] hover:scale-105 active:scale-95"
                 >
                   <Link
                     href={activeSlide.buttonLink}
@@ -223,8 +223,6 @@ export default function HeroCarousel() {
           />
         ))}
       </div>
-
-    
     </main>
   );
 }

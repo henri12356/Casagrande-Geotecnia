@@ -97,7 +97,7 @@ const ContactInfoItem = ({ text, href, Icon }: ContactInfoItemProps) => (
   <a
     href={href}
     className="flex items-center gap-2 text-xs text-white transition-opacity hover:opacity-80"
-    target="_blank"
+    target="_blank" 
     rel="noopener noreferrer"
   >
     <Icon className="h-4 w-4" />
@@ -106,7 +106,7 @@ const ContactInfoItem = ({ text, href, Icon }: ContactInfoItemProps) => (
 );
 
 const SocialLinks = ({ className = "text-white" }: { className?: string }) => (
-  <div className="flex items-center gap-4">
+  <div className="flex items-center gap-4 ">
     {socialLinks.map(({ href, label, Icon }) => (
       <a
         key={href}
@@ -123,8 +123,8 @@ const SocialLinks = ({ className = "text-white" }: { className?: string }) => (
 );
 
 const TopBar = () => (
-  <div className="hidden bg-[#1b4772] text-white md:block">
-    <div className="container mx-auto flex h-10 items-center justify-between px-4">
+  <div className="hidden bg-[#1b4772] text-white md:block ">
+    <div className="container  flex h-10 items-center justify-between px-4 max-w-7xl mx-auto">
       <div className="flex items-center gap-6">
         {contactInfo.map((item) => (
           <ContactInfoItem key={item.text} {...item} />
@@ -152,17 +152,17 @@ const DesktopMenu = ({
       >
         <Link
           href={link.href}
-          className={`relative px-4 py-2 font-medium text-gray-700 transition-colors duration-300 ${
+          className={`relative px-4 py-2 font-medium text-[#1b4772] transition-colors duration-300 ${
             pathname === link.href
-              ? "font-bold text-[#373737]"
-              : "hover:text-[#737373]"
+              ? "font-bold text-[#1b4772]"
+              : "hover:text-sky-950"
           }`}
         >
           {link.label}
           {pathname === link.href && (
             <motion.span
               layoutId="nav-underline"
-              className="absolute bottom-0 left-0 h-0.5 w-full bg-[#373737]"
+              className="absolute bottom-0 left-0 h-0.5 w-full bg-[#1b4772]"
               transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
             />
           )}
@@ -291,7 +291,7 @@ const Navbar = () => {
         initial="hidden"
       >
         <TopBar />
-        <div className="  max-2xl:max-w-[1200px]  container mx-auto flex h-16 items-center justify-between  md:h-20">
+        <div className="  max-w-7xl container mx-auto flex h-20 items-center justify-between  md:h-28">
           <Link href="/" className="flex items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -299,11 +299,11 @@ const Navbar = () => {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
-                src="/logo.svg"
-                alt="Logo de la empresa"
+                src="/logocasagrande.svg"
+                alt="Logo de Casagrande Geotecnia"
                 width={100}
                 height={48}
-                className="h-12 w-auto md:h-15"
+                className="h-11 w-auto md:h-13"
               />
             </motion.div>
           </Link>
@@ -324,7 +324,7 @@ const Navbar = () => {
             <Link href="/cotiza">
               <Button
                 size="lg"
-                className="bg-[#1b4772] cursor-pointer text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#373737]"
+                className="bg-[#1b4772] cursor-pointer text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-slate-900"
               >
                 ¡COTIZAR AHORA!
               </Button>
@@ -364,7 +364,7 @@ const Navbar = () => {
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Cerrar menú"
-                  className="rounded-md p-1 text-[#373737] transition-colors hover:bg-gray-100 hover:text-[#373737]"
+                  className="rounded-md p-1 text-[#373737] transition-colors cursor-pointer hover:bg-gray-100 hover:text-[#373737]"
                 >
                   <LuX className="h-6 w-6" />
                 </button>
@@ -416,7 +416,7 @@ const Navbar = () => {
                     <a
                       key={item.text}
                       href={item.href}
-                      className="flex items-center gap-3 text-[#373737] transition-colors hover:text-red-600"
+                      className="flex items-center gap-3 text-[#1b4772] transition-colors hover:text-red-600"
                     >
                       <item.Icon className="h-4 w-4 flex-shrink-0" />
                       <span>{item.text}</span>
@@ -424,7 +424,7 @@ const Navbar = () => {
                   ))}
                 </div>
                 <div className="border-t pt-4">
-                  <SocialLinks className="text-[#373737]" />
+                  <SocialLinks className="text-[#1b4772]" />
                 </div>
               </div>
             </motion.div>

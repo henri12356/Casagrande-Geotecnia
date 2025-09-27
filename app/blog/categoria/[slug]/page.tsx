@@ -49,7 +49,7 @@ export default async function CategoriaPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-16">
+      <main className="max-w-7xl mx-auto px-4 py-16 md:pt-52 pt-36">
         {/* Hero */}
         <h1 className="text-4xl font-bold mb-12 flex items-center gap-2">
           <span className={`${categoria.color} w-4 h-4 rounded-full`} />
@@ -67,7 +67,7 @@ export default async function CategoriaPage({ params }: Props) {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-white">
               <h2 className="text-3xl font-bold">{mainBlog.titulo}</h2>
               <p className="line-clamp-2">{renderContenido(mainBlog.contenido)}</p>

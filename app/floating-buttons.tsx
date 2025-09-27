@@ -116,7 +116,7 @@ const FloatingButtons: React.FC = () => {
       <div className="hidden md:flex fixed bottom-6 right-6 flex-col space-y-4 z-50">
         <SocialFloatingButton
           icon={<FaWhatsapp />}
-          label="WhatsApp"
+          label="Necesitas Asesoría?"
           href="https://wa.me/51945513323?text=Quiero%20mayor%20información" // REMEMBER TO REPLACE!
           bgColor="bg-green-500"
           hoverBgColor="hover:bg-green-600"

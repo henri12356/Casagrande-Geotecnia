@@ -1,8 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion, Variants, Transition } from "framer-motion";
-import Link from "next/link";
 import { ReactNode, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
@@ -24,12 +22,10 @@ const slidesData: {
     imageSrc: "/hero05.jpg",
     buttonText: "Ver Brouchure",
     buttonLink: "/",
-    
   },
-
 ];
 
-// --- Variantes de Animación (Completamente tipadas) ---
+// --- Variantes de Animación ---
 const slideVariants: Variants = {
   enter: (direction: number) => ({
     x: direction > 0 ? "100%" : "-100%",
@@ -107,7 +103,8 @@ export default function HeroContacto() {
   };
 
   return (
-    <main className="relative flex h-[70vh] md:h-[70vh] w-full flex-col items-center justify-center overflow-hidden bg-black px-2">
+    <main className="relative flex h-[70vh] md:h-[70vh] w-full items-center justify-center overflow-hidden bg-black">
+      {/* Fondo con imagen */}
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -124,11 +121,12 @@ export default function HeroContacto() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 flex h-full w-full max-w-7xl items-center justify-center px-4 lg:justify-start sm:px-6 lg:px-8">
+      {/* Contenido centrado */}
+      <div className="relative z-20 flex h-full w-full max-w-5xl items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 md:pt-36">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={page}
@@ -141,10 +139,10 @@ export default function HeroContacto() {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={onDragEnd}
-            className="absolute w-full max-w-2xl"
+            className="w-full"
           >
             <motion.div
-              className="flex flex-col items-center space-y-4 text-center lg:items-start lg:space-y-5 lg:text-left"
+              className="flex flex-col items-center justify-center text-center space-y-6"
               variants={contentVariants}
               initial="initial"
               animate="animate"
@@ -158,33 +156,18 @@ export default function HeroContacto() {
 
               <motion.p
                 variants={itemVariants}
-                className="text-base font-medium leading-relaxed text-gray-200 sm:text-lg lg:text-xl drop-shadow-md"
+                className="max-w-2xl text-base font-medium leading-relaxed text-gray-200 sm:text-lg lg:text-xl drop-shadow-md"
               >
                 {activeSlide.subtitle}
               </motion.p>
 
-              {activeSlide.buttonText && activeSlide.buttonLink && (
-                <motion.div variants={itemVariants}>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="mt-4 rounded-lg bg-orange-500 px-8 py-3 text-base font-bold text-white shadow-lg transition-transform duration-300 hover:bg-orange-600 hover:scale-105 active:scale-95"
-                  >
-                    <Link
-                      href={activeSlide.buttonLink}
-                      className="flex items-center gap-2"
-                    >
-                      {activeSlide.buttonIcon}
-                      {activeSlide.buttonText}
-                    </Link>
-                  </Button>
-                </motion.div>
-              )}
+             
             </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
 
+      {/* Indicadores */}
       <div className="absolute inset-x-0 bottom-5 z-40 flex justify-center space-x-2 md:bottom-8">
         {slidesData.map((_slide, index) => (
           <button

@@ -8,7 +8,7 @@ import proyectos from "@/app/data/proyectos.json";
 
 const ProyectosPage = () => {
   return (
-    <div className=" bg-gradient-to-b from-gray-50 to-white">
+    <div className=" ">
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div

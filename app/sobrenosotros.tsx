@@ -7,9 +7,9 @@ const imageSrc = "/sobrenosotros.png";
 
 const Sobrenosotros = () => {
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="bg-white md:py-28 py-10 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
+        <div className="flex flex-col-reverse   lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
           {/* Imagen */}
           <div className="relative w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-2xl">
@@ -22,11 +22,11 @@ const Sobrenosotros = () => {
 
           {/* Texto y contenido */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-4xl font-extrabold text-[#2c3e50] tracking-tight mb-4">
-              Sobre nosotros
+            <h2 className="text-4xl font-extrabold text-[#1b4772] tracking-tight mb-4">
+              ¿Quiénes Somos?
             </h2>
-            <h3 className="text-3xl font-bold text-[#2c3e50] mb-6">
-              Casagrande S.A.C.
+            <h3 className="text-3xl font-bold text-[#1b4772] mb-6">
+              Casagrande Geotecnia
             </h3>
             
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -36,21 +36,21 @@ const Sobrenosotros = () => {
             {/* Certificaciones */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#e74c3c] text-2xl flex-shrink-0 mt-1" />
-                <p className="text-gray-700">
-                  <span className="font-semibold text-gray-800">ISO 9001 – Sistema de Gestión de Calidad:</span> garantiza procesos claros y eficientes, asegurando confiabilidad en nuestros informes técnicos.
+                <FaAward className="text-[#1b4772] text-2xl flex-shrink-0 mt-1" />
+                <p className="text-black">
+                  <span className="font-bold text-[#1b4772]">ISO 9001 – Sistema de Gestión de Calidad:</span> garantiza procesos claros y eficientes, asegurando confiabilidad en nuestros informes técnicos.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <LuMapPin className="text-[#e74c3c] text-2xl flex-shrink-0 mt-1" />
-                <p className="text-gray-700">
-                  <span className="font-semibold text-gray-800">ISO 37001 – Sistema de Gestión Antisoborno:</span> protege la transparencia y ética en contratos y supervisiones.
+                <LuMapPin className="text-[#1b4772] text-2xl flex-shrink-0 mt-1" />
+                <p className="text-black">
+                  <span className="font-bold text-[#1b4772]">ISO 37001 – Sistema de Gestión Antisoborno:</span> protege la transparencia y ética en contratos y supervisiones.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#e74c3c] text-2xl flex-shrink-0 mt-1" />
-                <p className="text-gray-700">
-                  <span className="font-semibold text-gray-800">ISO 14001 – Sistema de Gestión Ambiental:</span> asegura que todos nuestros estudios y ensayos respeten el medio ambiente y cumplan regulaciones.
+                <FaAward className="text-[#1b4772] text-2xl flex-shrink-0 mt-1" />
+                <p className="text-black">
+                  <span className="font-bold text-[#1b4772]">ISO 14001 – Sistema de Gestión Ambiental:</span> asegura que todos nuestros estudios y ensayos respeten el medio ambiente y cumplan regulaciones.
                 </p>
               </div>
             </div>
@@ -58,7 +58,7 @@ const Sobrenosotros = () => {
       
 
             {/* Botón de acción */}
-            <button className='px-6 py-3 bg-[#e74c3c] text-white font-semibold rounded-lg shadow-md hover:bg-[#c0392b] transition duration-200'>
+            <button className='px-6 py-3 bg-[#1b4772] text-white font-semibold rounded-lg shadow-md hover:bg-[#2a6cad] transition duration-200 cursor-pointer'>
               Descargar nuestro brochure
             </button>
           </div>

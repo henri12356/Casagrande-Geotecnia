@@ -2,7 +2,7 @@
   {
     "id": "blog",
     "nombre": "Blog",
-    "color": "bg-blue-600"
+    "color": "bg-[#1b4772]"
   },
   {
     "id": "articulos",
@@ -10,18 +10,14 @@
     "color": "bg-green-600"
   },
   {
-    "id": "eventos",
-    "nombre": "Eventos",
+    "id": "noticias",
+    "nombre": "Noticias",
     "color": "bg-purple-600"
   },
   {
-    "id": "noticias",
-    "nombre": "Publicaciones",
-    "color": "bg-yellow-600"
-  },
-  {
     "id": "proyectos",
-    "nombre": "Artistas",
-    "color": "bg-red-600"
+    "nombre": "Proyectos",
+    "color": "bg-yellow-600"
   }
+
 ]

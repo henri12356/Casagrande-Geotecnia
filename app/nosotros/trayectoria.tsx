@@ -12,7 +12,7 @@ const Trayectoria = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8 md:pt-56">
+    <div className="bg-slate-50 py-16 px-4 sm:px-6 lg:px-8 md:pt-32">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Columna izquierda: Título e Imagen */}
@@ -36,7 +36,7 @@ const Trayectoria = () => {
           </div>
 
           {/* Columna derecha: Línea de tiempo */}
-          <div className="relative flex-1 w-full lg:w-auto pt-20">            
+          <div className="relative flex-1 w-full lg:w-auto md:pt-20">            
             <div className="space-y-9">
               {hitos.map((hito, index) => (
                 <div key={index} className="flex relative items-center">

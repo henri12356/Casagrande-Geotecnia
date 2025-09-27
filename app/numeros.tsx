@@ -86,7 +86,7 @@ const Numeros = () => {
               <CountingNumber 
                 value={stat.value} 
                 suffix={stat.suffix} 
-                duration={2} 
+                duration={6} 
                 start={isInViewContainer} 
               />
             </div>

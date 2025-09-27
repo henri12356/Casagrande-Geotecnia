@@ -11,9 +11,6 @@ import { Blog, Category } from "@/app/types/blog";
 import Navbar from "@/app/navbar";
 import Footer from "@/app/footer";
 import {
-  FaRegClock,
-  FaTag,
-  FaHome,
   FaUsers,
   FaFacebook,
   FaTwitter,
@@ -110,22 +107,26 @@ export default function BlogPost({ params }: BlogPostProps) {
       <Navbar />
 
       {/* Hero Section de ancho completo */}
-      <section className="relative w-full h-[50vh] md:h-[80vh] flex items-end justify-center pt-28">
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Imagen de fondo */}
         <Image
           src={currentBlog.imagen}
           alt={`Imagen de portada del artículo: ${currentBlog.titulo}`}
           fill
-          className="object-cover"
           priority
+          className="object-cover object-center scale-105 blur-[2px] brightness-75"
         />
-        <div className="absolute inset-0 bg-black/50 "></div>
 
-        <div className="relative z-10 text-center text-white p-2 pb-16 md:pb-40 max-w-4xl">
-          <h1 className="text-3xl md:text-6xl font-black leading-tight mb-4 drop-shadow-md">
+        {/* Overlay con degradado */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent"></div>
+
+        {/* Contenido */}
+        <div className="relative z-10 max-w-5xl pt-20 md:pt-32 text-center text-white px-4">
+          <h1 className="text-3xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
             {currentBlog.titulo}
           </h1>
           {currentBlog.subtitulo && (
-            <h2 className="text-xl md:text-2xl font-light drop-shadow-md">
+            <h2 className="text-lg md:text-2xl font-semibold text-white drop-shadow-md">
               {currentBlog.subtitulo}
             </h2>
           )}
@@ -136,8 +137,9 @@ export default function BlogPost({ params }: BlogPostProps) {
         <div className="max-w-[1500px] mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Sidebar índice - Columna izquierda */}
           <aside className="hidden xl:block xl:col-span-2">
-            <nav className="bg-white rounded-xl shadow p-6 sticky top-28 self-start">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+            {/* CAMBIO: top-32 en lugar de top-28 para compensar navbar fijo */}
+            <nav className="bg-white rounded-xl shadow p-6 sticky top-40 self-start">
+              <h3 className="text-xl font-semibold mb-4 text-[#1b4772]">
                 Contenido
               </h3>
               <ul className="space-y-2 text-md">
@@ -146,7 +148,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                     <li key={idx}>
                       <a
                         href={`#section-${idx}`}
-                        className="text-[#1b4772] hover:underline"
+                        className="text-slate-900 hover:underline"
                       >
                         {section.titulo}
                       </a>
@@ -160,13 +162,11 @@ export default function BlogPost({ params }: BlogPostProps) {
           <div className="lg:col-span-7 space-y-10">
             {/* Breadcrumb y Metadatos */}
             <div className="space-y-4">
-             
               <div className="flex flex-wrap items-center gap-4 text-lg text-[#1b4772]">
-                <span className="flex items-center gap-1 font-black text-2xl">
-                  <div className="text-[#1b4772] "  /> {currentBlog.categoria}
+                <span className="flex items-center gap-1 font-semibold text-2xl">
+                  <div className="text-[#1b4772] " /> {currentBlog.categoria}
                 </span>
-                <span className="flex items-center gap-1 font-black">
-                  
+                <span className="flex items-center gap-1 font-semi">
                   <time dateTime={new Date(currentBlog.fecha).toISOString()}>
                     {new Date(currentBlog.fecha).toLocaleDateString("es-ES", {
                       year: "numeric",
@@ -185,7 +185,8 @@ export default function BlogPost({ params }: BlogPostProps) {
                   <section
                     key={idx}
                     id={`section-${idx}`}
-                    className="space-y-6 scroll-mt-28"
+                    // CAMBIO: Aumentar scroll-margin-top para compensar navbar
+                    className="space-y-6 scroll-mt-32"
                   >
                     {section.titulo && (
                       <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
@@ -232,9 +233,10 @@ export default function BlogPost({ params }: BlogPostProps) {
 
           {/* Sidebar DERECHO - Columna derecha */}
           <aside className="lg:col-span-3 space-y-8">
-            <div className="sticky top-28 space-y-8">
+            {/* CAMBIO: top-32 en lugar de top-28 para compensar navbar fijo */}
+            <div className="sticky top-40 space-y-8">
               {currentBlog.autor && (
-                <div className=" rounded-xl shadow p-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+                <div className="rounded-xl shadow p-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
                   <Image
                     src={currentBlog.autor.avatar}
                     alt={currentBlog.autor.nombre}
@@ -255,7 +257,7 @@ export default function BlogPost({ params }: BlogPostProps) {
 
               {relatedBlogs.length > 0 && (
                 <div className="bg-white rounded-xl shadow p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                  <h3 className="text-xl font-semibold mb-4 text-[#1b4772]">
                     Artículos relacionados
                   </h3>
                   <div className="space-y-4">
@@ -275,7 +277,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                             />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-medium text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                            <h4 className="font-medium text-gray-900 line-clamp-2 group-hover:text-[#1b4772] transition-colors">
                               {blog.titulo}
                             </h4>
                             <span className="text-sm text-gray-500">
@@ -289,7 +291,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                 </div>
               )}
 
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl p-6">
+              <div className="bg-gradient-to-br from-[#1b4772] to-[#1b4772] text-white rounded-xl p-6">
                 <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                   <FaUsers /> Únete a la comunidad
                 </h3>
@@ -312,7 +314,8 @@ export default function BlogPost({ params }: BlogPostProps) {
             </div>
           </aside>
         </div>
-        <section className="bg-blue-600 text-white rounded-xl p-8 my-12 text-center max-w-4xl mx-auto shadow-lg">
+
+        <section className="bg-[#1b4772] text-white rounded-xl p-8 my-12 text-center max-w-4xl mx-auto shadow-lg">
           <h2 className="text-3xl font-bold mb-4">
             ¿Quieres aprender más sobre Geotecnia?
           </h2>
@@ -323,35 +326,16 @@ export default function BlogPost({ params }: BlogPostProps) {
           </p>
           <Link
             href="/blog"
-            className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
+            className="inline-block bg-white text-[#1b4772] font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition"
           >
             Ver todos los artículos
           </Link>
         </section>
 
         {/* Sección de categorías */}
-        <section className="bg-gray-100 py-12">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
-              Explora por categorías
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {categoriesData.map((cat: Category) => (
-                <Link
-                  key={cat.id}
-                  href={`/categoria/${cat.id}`}
-                  className="px-4 py-2 rounded-full text-base font-medium border hover:bg-white transition"
-                  style={{ borderColor: cat.color, color: cat.color }}
-                >
-                  {cat.nombre}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Redes sociales */}
-        <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 text-center">
+        <section className="bg-gradient-to-r from-[#1b4772] to-[#1b4772] text-white py-16 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Síguenos en nuestras redes
           </h2>

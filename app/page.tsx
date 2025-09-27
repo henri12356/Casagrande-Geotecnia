@@ -4,10 +4,9 @@ import Sobrenosotros from "./sobrenosotros";
 import Certificado from "./certificado";
 import Numeros from "./numeros";
 import Galeria from "./galeria";
-import Proyectos from "./proyectos";
 import Footer from "./footer";
 import Clientes from "./clientes";
-import Newsletter from "./Newsletter";
+import MapaProyectosHero from "./proyectos";
 
 export default function Home() {
   return (
@@ -16,11 +15,11 @@ export default function Home() {
       <Hero/>
       <Sobrenosotros />
       <Certificado />
-      <Numeros />
       <Galeria />
-      <Proyectos />
+      <MapaProyectosHero />
       <Clientes />
-      <Newsletter />
+      <Numeros />
+      {/* <Newsletter /> */}
       <Footer />
     </div>
   );

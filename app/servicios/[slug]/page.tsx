@@ -82,7 +82,7 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
   };
 
   return (
-    <section className="py-20 sm:py-28 px-6 relative overflow-hidden">
+    <section className="py-20 sm:py-28 lg:px-6 relative overflow-hidden">
       <motion.div
         ref={containerRef}
         className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center"
@@ -96,11 +96,11 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
             className="flex flex-col items-center justify-center p-6 bg-[#1b4772] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             variants={statCardVariants}
           >
-            <div className="text-6xl sm:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+            <div className="md:text-5xl text-6xl lg::text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
               <CountingNumber
                 value={stat.value}
                 suffix={stat.suffix}
-                duration={2}
+                duration={6}
                 start={isInViewContainer}
               />
             </div>
@@ -200,7 +200,7 @@ const ServicioPage = ({ params }: PageProps) => {
             className="object-cover brightness-75"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -362,7 +362,7 @@ const ServicioPage = ({ params }: PageProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-blue-50 rounded-lg p-8 border border-blue-200 mb-12"
+          className="bg-blue-50 rounded-lg p-4 md:p-8 border border-blue-200 mb-12"
         >
           <h3 className="text-2xl font-bold text-[#1b4772] text-center mb-6">
             ACREDITACIONES

@@ -82,7 +82,7 @@ export default function HeroServicios() {
   };
 
   return (
-    <main className="relative flex h-[70vh] md:h-[70vh] w-full flex-col items-center justify-center overflow-hidden bg-black px-2">
+    <main className="relative flex h-[70vh] md:h-[70vh] w-full flex-col items-center justify-center overflow-hidden  pt-2 md:pt-12 px-2">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -99,11 +99,11 @@ export default function HeroServicios() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-[#1b4772]/40" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 flex h-full w-full max-w-7xl items-center justify-center px-4 lg:justify-start sm:px-6 lg:px-8">
+      <div className="relative z-20 flex h-full w-full max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={page}
@@ -116,24 +116,24 @@ export default function HeroServicios() {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={onDragEnd}
-            className="absolute w-full max-w-2xl"
+            className="absolute w-full max-w-3xl"
           >
             <motion.div
-              className="flex flex-col items-center space-y-4 text-center lg:items-start lg:space-y-5 lg:text-left"
+              className="flex flex-col items-center text-center space-y-4 pt-20"
               variants={contentVariants}
               initial="initial"
               animate="animate"
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg"
+                className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl drop-shadow-lg"
               >
                 {activeSlide.title}
               </motion.h1>
 
               <motion.p
                 variants={itemVariants}
-                className="text-base font-medium leading-relaxed text-gray-200 sm:text-lg lg:text-xl drop-shadow-md"
+                className="text-base font-medium leading-relaxed text-white sm:text-lg lg:text-xl drop-shadow-md"
               >
                 {activeSlide.subtitle}
               </motion.p>
@@ -147,7 +147,7 @@ export default function HeroServicios() {
                   >
                     <Link
                       href={activeSlide.buttonLink}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 justify-center"
                     >
                       {activeSlide.buttonIcon}
                       {activeSlide.buttonText}

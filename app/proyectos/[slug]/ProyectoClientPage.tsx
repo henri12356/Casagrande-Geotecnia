@@ -32,7 +32,7 @@ const CountingNumber: React.FC<{
     const node = nodeRef.current;
     if (node && start) {
       const controls = animate(0, value, {
-        duration: 2,
+        duration: 5,
         ease: "easeOut",
         onUpdate: (v) => {
           node.textContent = Math.round(v).toLocaleString() + suffix;
@@ -91,8 +91,8 @@ export default function ProyectoPage({ proyecto }: Props) {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1b4772]/70 to-[#1b4772]/20" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16 md:pt-36">
           <motion.h1
             className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4"
             initial={{ opacity: 0, y: 40 }}
@@ -173,7 +173,7 @@ export default function ProyectoPage({ proyecto }: Props) {
         </div>
 
         {/* Detalles */}
-        <div className="mt-12 bg-white rounded-2xl border border-[#e5e7eb] shadow-md p-8">
+        <div className="mt-12 bg-white rounded-2xl border border-[#e5e7eb] shadow-md p-5 md:p-8">
           <h2 className="text-2xl font-bold text-[#1b4772] mb-6">
             Detalles del Proyecto
           </h2>
@@ -200,7 +200,7 @@ export default function ProyectoPage({ proyecto }: Props) {
 
       {/* Cronograma */}
       <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto  px-2 md:px-6">
           <h2 className="text-2xl font-bold text-[#1b4772] mb-10 text-center">
             Fases del Proyecto
           </h2>

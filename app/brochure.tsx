@@ -2,12 +2,12 @@ import React from "react";
 
 const Brochure = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-[#1b4b52] to-[#2c3e50] py-10 px-6 sm:px-10 flex flex-col md:flex-row items-center justify-around gap-8 rounded-t-2xl shadow-lg">
+    <div className="w-full bg-[#1b4772] py-10 px-6 sm:px-10 flex flex-col md:flex-row items-center justify-around gap-8 shadow-lg">
       
       {/* Contenedor del Texto */}
       <div className="flex-1 text-center md:text-left max-w-xl">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mb-2">
-          Descarga nuestro <span className="text-red-400">Archivos</span>
+          Descarga nuestro <span className="text-red-500">Archivos</span>
         </h2>
         <p className="text-gray-300 opacity-90 text-base md:text-lg max-w-md mx-auto md:mx-0">
           Accede a nuestra experiencia y proyectos destacados en ingeniería

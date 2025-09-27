@@ -1,11 +1,8 @@
-'use client';
-import { Button } from "@/components/ui/button";
-import { AnimatePresence, motion, Variants, Transition } from "framer-motion";
-import Link from "next/link";
+"use client";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { ReactNode, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
-// --- SLIDE CON NUEVO TEXTO PROFESIONAL ---
 const slidesData: {
   id: number;
   title: string;
@@ -17,25 +14,56 @@ const slidesData: {
 }[] = [
   {
     id: 1,
-    title: "Aseguramiento de calidad y confiabilidad de resultados",
-    subtitle: "",
-    imageSrc: "/hero01.jpg",
-    buttonText: "",
+    title: "Comprometidos con la innovación",
+    subtitle:
+      "En cada proyecto garantizamos aseguramiento de calidad y confiabilidad de resultados, fortaleciendo la confianza con nuestros clientes.",
+    imageSrc: "/hero05.jpg",
+    buttonText: "Ver Servicios",
     buttonLink: "/servicios",
-    buttonIcon: null,
+  },
+  {
+    id: 2,
+    title: "El Talento Detrás de Cada Logro",
+    subtitle:
+      "Nuestro equipo humano es el motor de cada logro, combinando experiencia y dedicación para alcanzar la excelencia en cada proyecto.",
+    imageSrc: "/hero05.jpg",
+    buttonText: "Equipo",
+    buttonLink: "/equipo",
   },
 ];
 
-// --- Variantes de Animación ---
 const slideVariants: Variants = {
-  enter: (direction: number) => ({ x: direction > 0 ? "100%" : "-100%", opacity: 0 }),
-  center: { x: 0, opacity: 1, transition: { type: "tween", duration: 0.7, ease: [0.56, 0.03, 0.12, 1.04] } },
-  exit: (direction: number) => ({ x: direction < 0 ? "100%" : "-100%", opacity: 0, transition: { type: "tween", duration: 0.7, ease: [0.56, 0.03, 0.12, 1.04] } }),
+  enter: (direction: number) => ({
+    x: direction > 0 ? "100%" : "-100%",
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 0.7,
+      ease: [0.56, 0.03, 0.12, 1.04],
+    },
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? "100%" : "-100%",
+    opacity: 0,
+    transition: {
+      type: "tween",
+      duration: 0.7,
+      ease: [0.56, 0.03, 0.12, 1.04],
+    },
+  }),
 };
 
 const contentVariants: Variants = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5, staggerChildren: 0.2, delayChildren: 0.3 } },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, staggerChildren: 0.2, delayChildren: 0.3 },
+  },
 };
 
 const itemVariants: Variants = {
@@ -48,10 +76,14 @@ export default function HeroServicios() {
   const slideIndex = Math.abs(page % slidesData.length);
   const activeSlide = slidesData[slideIndex];
 
-  const paginate = useCallback((newDirection: number) => setPage(([currentPage]) => [currentPage + newDirection, newDirection]), []);
+  const paginate = useCallback(
+    (newDirection: number) =>
+      setPage(([currentPage]) => [currentPage + newDirection, newDirection]),
+    []
+  );
 
   useEffect(() => {
-    const interval = setInterval(() => paginate(1), 70000);
+    const interval = setInterval(() => paginate(1), 5000);
     return () => clearInterval(interval);
   }, [paginate]);
 
@@ -76,12 +108,18 @@ export default function HeroServicios() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
         >
-          <Image src={activeSlide.imageSrc} alt={activeSlide.title} fill className="object-cover object-center" priority />
-          <div className="absolute inset-0 bg-black/50" />
+          <Image
+            src={activeSlide.imageSrc}
+            alt={activeSlide.title}
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 flex h-full w-full max-w-7xl items-center justify-center px-4 lg:justify-start sm:px-6 lg:px-8">
+      <div className="relative z-20 flex h-full p-20 w-full max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={page}
@@ -94,35 +132,27 @@ export default function HeroServicios() {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={onDragEnd}
-            className="absolute w-full max-w-2xl"
+            className="absolute w-full max-w-6xl"
           >
             <motion.div
-              className="flex flex-col items-center space-y-4 text-center lg:items-start lg:space-y-5 lg:text-left"
+              className="flex flex-col items-center space-y-2 md:pt-20 pt-16 text-center"
               variants={contentVariants}
               initial="initial"
               animate="animate"
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg leading-snug"
+                className="text-3xl md:text-7xl font-black tracking-tight text-white drop-shadow-lg leading-tight"
               >
                 {activeSlide.title}
               </motion.h1>
 
-              {activeSlide.buttonText && activeSlide.buttonLink && (
-                <motion.div variants={itemVariants}>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="mt-6 rounded-lg bg-[#2c3e50] md:px-8 md:py-3 text-sm md:text-base font-bold text-white shadow-lg transition-transform duration-300 hover:bg-[#1b2a3b] hover:scale-105 active:scale-95"
-                  >
-                    <Link href={activeSlide.buttonLink} className="flex items-center gap-2">
-                      {activeSlide.buttonIcon}
-                      {activeSlide.buttonText}
-                    </Link>
-                  </Button>
-                </motion.div>
-              )}
+              <motion.p
+                variants={itemVariants}
+                className="text-white text-lg md:text-xl font-semibold drop-shadow-md"
+              >
+                {activeSlide.subtitle}
+              </motion.p>
             </motion.div>
           </motion.div>
         </AnimatePresence>
@@ -132,7 +162,9 @@ export default function HeroServicios() {
         {slidesData.map((_slide, index) => (
           <button
             key={index}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${index === slideIndex ? "md:w-6 bg-[#2c3e50]" : "bg-gray-400"}`}
+            className={`h-2 w-2 rounded-full transition-all duration-300 ${
+              index === slideIndex ? "md:w-6 bg-[#2c3e50]" : "bg-gray-400"
+            }`}
             onClick={() => {
               const newDirection = index > slideIndex ? 1 : -1;
               setPage([index, newDirection]);

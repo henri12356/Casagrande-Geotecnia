@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const certificados = [
   {
@@ -68,8 +70,8 @@ export default function CarouselCertificados() {
   const prev = () => setIndex((prev) => (prev - 1 + total) % total);
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-5xl mx-auto relative">
+    <div className=" px-4 sm:px-6 lg:px-8 font-sans md:py-40 py-5">
+      <div className="2xl:max-w-7xl max-w-6xl mx-auto relative">
         <AnimatePresence mode="wait">
           <motion.div
             key={certificados[index].id}
@@ -85,7 +87,8 @@ export default function CarouselCertificados() {
               if (swipe < -1000) next();
               else if (swipe > 1000) prev();
             }}
-            className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12"
+            // 🔹 En móvil: imagen primero, texto después
+            className="flex flex-col-reverse md:flex-row items-center gap-6 "
           >
             {/* Texto */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
@@ -110,39 +113,44 @@ export default function CarouselCertificados() {
                   </li>
                 ))}
               </ul>
-              <Button className="bg-[#1b4772] hover:bg-gray-900 text-white px-5 py-2 rounded-lg shadow-md">
-                {certificados[index].id === 4 ? "Ver Alcance" : "CONOCER MÁS"}
-              </Button>
+                    <Link href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-[#1b4772] hover:bg-gray-900 text-white px-5 py-2 rounded-lg shadow-md cursor-pointer">
+                  {certificados[index].id === 4 ? "Ver más" : "Ver certificado"}
+                </Button>
+            </Link>
             </div>
 
             {/* Imagen */}
-            <div className="w-full lg:w-1/2 flex justify-center">
+
+            <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0">
+                                <Link href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA" target="_blank" rel="noopener noreferrer">
               <Image
                 src={certificados[index].imageSrc}
                 alt={certificados[index].title}
-                width={350}
-                height={250}
+                width={400}
+                height={280}
                 className="rounded-lg shadow-md object-contain"
-              />
+                />
+                </Link>
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Botones de navegación solo en desktop */}
-        <div className="hidden lg:block absolute top-1/2 transform -translate-y-1/2  md:left-[-60px]">
+        {/* Botones de navegación */}
+        <div className="absolute top-1/2 left-[-60px] transform -translate-y-1/2">
           <button
             onClick={prev}
-            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 rounded-full shadow"
+            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
-            ◀
+            <ChevronLeft size={24} />
           </button>
         </div>
-        <div className="hidden lg:block absolute top-1/2 transform -translate-y-1/2 right-2">
+        <div className="absolute top-1/2 right-[10px] transform -translate-y-1/2">
           <button
             onClick={next}
-            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 rounded-full shadow"
+            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
-            ▶
+            <ChevronRight size={24} />
           </button>
         </div>
 

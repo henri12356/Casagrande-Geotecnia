@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -6,6 +5,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
+// ... (Interface Proyecto y Array proyectos se mantienen igual)
+// ... (Funciones getEstadoColor y getMarkerColorClass se mantienen igual)
+// ... (La función getTooltipPosition se mantiene igual)
+
+// Definición de las interfaces y el array de proyectos
 interface Proyecto {
   id: number;
   provincia: string;
@@ -116,7 +120,7 @@ const proyectos: Proyecto[] = [
     imagen: "/hero01.jpg",
     url: "/proyectos/Aeropuerto",
   },
-  {
+   {
     id: 9,
     provincia: "Arequipa",
     nombre: "Mall Chiclayo Plaza",
@@ -232,7 +236,7 @@ const getMarkerColorClass = (estado: string) => {
   }
 };
 
-const MapaProyectosHero = () => {
+const MapaProyectos = () => {
   const [activeProject, setActiveProject] = useState<Proyecto | null>(null);
   const [hoveredProject, setHoveredProject] = useState<Proyecto | null>(null);
   const mapImageRef = useRef<HTMLImageElement>(null);
@@ -243,10 +247,12 @@ const MapaProyectosHero = () => {
     width: 0,
   });
 
+  // 1. NUEVO ESTADO: Bandera para saber si ya estamos en el cliente
+  const [isClient, setIsClient] = useState(false);
+
   const calculateMapBounds = () => {
     if (mapImageRef.current) {
-      const parentRect =
-        mapImageRef.current.parentElement!.getBoundingClientRect();
+      const parentRect = mapImageRef.current.parentElement!.getBoundingClientRect();
       const naturalRatio = 1.3;
       let calculatedHeight = parentRect.width * naturalRatio;
 
@@ -271,19 +277,25 @@ const MapaProyectosHero = () => {
   };
 
   useEffect(() => {
+    // 2. Montaje: Marcar que el componente ya está en el cliente
+    setIsClient(true); 
+    
+    // El resto de la lógica de useEffect es segura aquí
     calculateMapBounds();
     window.addEventListener("resize", calculateMapBounds);
     return () => window.removeEventListener("resize", calculateMapBounds);
   }, []);
 
+  // La función handleMarkerInteraction ahora accede a window.innerWidth de forma segura
   const handleMarkerInteraction = (proyecto: Proyecto) => {
-    if (window.innerWidth < 1024) {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
       setActiveProject(activeProject?.id === proyecto.id ? null : proyecto);
     }
   };
 
+  // La función handleMarkerMouseEnter ahora accede a window.innerWidth de forma segura
   const handleMarkerMouseEnter = (proyecto: Proyecto) => {
-    if (window.innerWidth >= 1024) {
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
       setHoveredProject(proyecto);
     }
   };
@@ -315,10 +327,11 @@ const MapaProyectosHero = () => {
   };
 
   return (
-    <div className="font-sans md:py-12 px-4 sm:px-6 lg:px-8 pt-10  md:pt-40 ">
+    <div className="font-sans py-12 px-4 sm:px-6 lg:px-8 md:pt-56 pt-24">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto gap-8 lg:gap-12 ">
+        
         {/* Panel izquierdo */}
-        <div className="lg:w-1/3 flex flex-col justify-start pt-4 font-alfa-slab">
+        <div className="lg:w-1/3 flex flex-col justify-start pt-4">
           <p className="text-xl font-semibold text-[#1b4772] uppercase tracking-wider mb-2">
             Portfolio Corporativo
           </p>
@@ -329,23 +342,15 @@ const MapaProyectosHero = () => {
             Visualización geoespacial de nuestras inversiones estratégicas y
             desarrollos finalizados y en curso a nivel nacional.
           </p>
-
           <div className="mt-8 p-4 bg-white rounded-lg shadow-md border-t-4 border-gray-200">
             <p className="text-sm font-medium text-slate-950">
               Proyectos Totales
             </p>
-            <p className="text-4xl font-black text-[#1b4772] mt-1">
+            <p className="text-4xl font-black text-[#1b4772] mt-1 ">
               + 152 Proyectos
             </p>
-
-            {/* Botón para ver proyectos */}
           </div>
-            <a
-              href="/proyectos"
-              className="mt-4 inline-block w-full text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-[#15375a] transition-colors"
-            >
-              Ver Proyectos
-            </a>
+
         </div>
 
         {/* Panel derecho: Mapa */}
@@ -372,7 +377,8 @@ const MapaProyectosHero = () => {
                   onMouseEnter={() => handleMarkerMouseEnter(proyecto)}
                   onMouseLeave={() => setHoveredProject(null)}
                   onClick={(e) => {
-                    if (window.innerWidth < 1024) {
+                    // Verifica la existencia de window antes de usarlo
+                    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
                       e.preventDefault();
                       handleMarkerInteraction(proyecto);
                     }
@@ -409,61 +415,54 @@ const MapaProyectosHero = () => {
                     top: mapOffset.top + (proyecto.y / 100) * mapOffset.height,
                   }}
                 >
-                  {/* Tooltip escritorio - con pointer-events-auto para ser clickeable */}
+                  {/* 3. CORRECCIÓN PRINCIPAL: Usar isClient para la condición de renderizado */}
                   <AnimatePresence>
-                    {window.innerWidth >= 1024 &&
-                      hoveredProject?.id === proyecto.id && (
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                          animate={{ opacity: 1, scale: 1, y: 0 }}
-                          exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                          transition={{ duration: 0.2 }}
-                          className={`absolute rounded-xl shadow-2xl bg-white w-60 overflow-hidden text-sm border border-gray-100 pointer-events-auto ${getTooltipPosition(
-                            proyecto
-                          )}`}
-                        >
-                          <Link
-                            href={proyecto.url}
-                            className="block hover:opacity-90 transition-opacity"
-                          >
-                            <img
-                              src={proyecto.imagen}
-                              alt={proyecto.nombre}
-                              className="w-full h-32 object-cover"
-                            />
+                    {isClient && window.innerWidth >= 1024 && hoveredProject?.id === proyecto.id && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className={`absolute rounded-xl shadow-2xl bg-white w-60 overflow-hidden text-sm border border-gray-100 pointer-events-auto ${getTooltipPosition(
+                          proyecto
+                        )}`}
+                      >
+                        <Link href={proyecto.url} className="block hover:opacity-90 transition-opacity">
+                          <img
+                            src={proyecto.imagen}
+                            alt={proyecto.nombre}
+                            className="w-full h-32 object-cover"
+                          />
+                        </Link>
+                        <div className="p-3">
+                          <Link href={proyecto.url} className="hover:text-sky-600 transition-colors">
+                            <span className="font-bold text-gray-900 text-base mb-1 block">
+                              {proyecto.nombre}
+                            </span>
                           </Link>
-                          <div className="p-3">
-                            <Link
-                              href={proyecto.url}
-                              className="hover:text-sky-600 transition-colors"
-                            >
-                              <span className="font-bold text-gray-900 text-base mb-1 block">
-                                {proyecto.nombre}
-                              </span>
-                            </Link>
-                            <div className="text-gray-500 text-xs uppercase font-medium">
-                              {proyecto.provincia}
-                            </div>
-                            <div className="flex justify-between items-center mt-3 pt-2 border-t border-gray-100">
-                              <div className="flex flex-col">
-                                <span className="text-xs text-gray-500">
-                                  Inversión
-                                </span>
-                                <span className="font-bold text-lg text-emerald-700">
-                                  {proyecto.inversion}
-                                </span>
-                              </div>
-                              <span
-                                className={`text-xs font-semibold py-1 px-2 rounded-full ${getEstadoColor(
-                                  proyecto.estado
-                                )}`}
-                              >
-                                {proyecto.estado}
-                              </span>
-                            </div>
+                          <div className="text-gray-500 text-xs uppercase font-medium">
+                            {proyecto.provincia}
                           </div>
-                        </motion.div>
-                      )}
+                          <div className="flex justify-between items-center mt-3 pt-2 border-t border-gray-100">
+                            <div className="flex flex-col">
+                              <span className="text-xs text-gray-500">
+                                Inversión
+                              </span>
+                              <span className="font-bold text-lg text-emerald-700">
+                                {proyecto.inversion}
+                              </span>
+                            </div>
+                            <span
+                              className={`text-xs font-semibold py-1 px-2 rounded-full ${getEstadoColor(
+                                proyecto.estado
+                              )}`}
+                            >
+                              {proyecto.estado}
+                            </span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
                   </AnimatePresence>
                 </div>
               ))}
@@ -564,12 +563,12 @@ const MapaProyectosHero = () => {
                       {activeProject.estado}
                     </span>
                   </div>
-                  <Link
-                    href={activeProject.url}
-                    className=" w-52 text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
-                  >
-                    Ver Proyecto
-                  </Link>
+                <Link
+                  href={activeProject.url}
+                  className=" w-52 text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
+                >
+                  Ver Proyecto
+                </Link>
 
                   <div className="col-span-2 flex flex-col pt-2">
                     <span className="text-xs text-gray-500 uppercase font-medium">
@@ -580,6 +579,7 @@ const MapaProyectosHero = () => {
                     </span>
                   </div>
                 </div>
+
               </div>
             </motion.div>
           )}
@@ -589,4 +589,4 @@ const MapaProyectosHero = () => {
   );
 };
 
-export default MapaProyectosHero;
+export default MapaProyectos;

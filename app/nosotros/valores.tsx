@@ -34,7 +34,7 @@ const Valores = () => {
 
   return (
     <>
-      <div className="bg-white md:py-16 py-6 px-4 sm:px-6 lg:px-8 ">
+      <div className=" md:py-16 py-6 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-7xl mx-auto">
           {/* Contenedor Visión y Misión */}
           <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-20 md:py-10 lg:gap-20 items-center mb-16 md:mb-24">
@@ -87,7 +87,7 @@ const Valores = () => {
           </div>
 
           {/* Contenedor Calidad y Seguridad */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-20 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-20 lg:gap-20 items-center ">
             {/* Imagen */}
             <motion.div
               className="w-full"
@@ -138,15 +138,15 @@ const Valores = () => {
       </div>
 
       {/* Valores */}
-      <section className="py-8 px-6">
+      <section className="py-8 px-6 max-w-7xl mx-auto ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-around gap-10"
+          className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-between  lg:gap-10 "
         >
-          <h1 className="text-3xl lg:text-4xl font-bold text-[#1b4772] whitespace-nowrap mb-6 lg:mb-0">
+          <h1 className="text-2xl  lg:text-3xl xl:text-4xl font-bold text-[#1b4772] whitespace-nowrap mb-6 lg:mb-0">
             Nuestros Valores
           </h1>
 
@@ -161,7 +161,7 @@ const Valores = () => {
                 className="flex items-center gap-2 font-semibold text-[#1b4772] text-lg whitespace-nowrap"
               >
                 <CheckCircle className="text-[#1b4772] w-5 h-5" />
-                <span className="text-xl">{valor}</span>
+                <span className="text-xl lg:text-[17px] xl:text-xl">{valor}</span>
               </motion.div>
             ))}
           </div>

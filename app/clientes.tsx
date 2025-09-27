@@ -78,15 +78,14 @@ const Trusted = () => {
             className="text-3xl md:text-4xl font-bold mb-3 leading-tight"
             variants={itemVariants}
           >
-            Nuestros{" "}
-            <span className="text-[#1b4772] font-bold">Socios Estratégicos</span>
+            Nuestros {" "}
+            <span className="text-[#1b4772] font-bold">Clientes</span>
           </motion.h2>
           <motion.p
-            className="text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto"
+            className="text-base md:text-lg text-slate-950 font-sans leading-relaxed max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            Colaboramos con líderes del sector para ofrecer soluciones confiables y de calidad
-            que respalden tu crecimiento y profesionalismo.
+            Trabajamos de la mano con nuestros clientes, asegurando profesionalismo y confiabilidad en cada proyecto.
           </motion.p>
         </motion.div>
       </div>
