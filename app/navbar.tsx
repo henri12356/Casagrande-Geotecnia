@@ -15,7 +15,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 import { MdOutgoingMail } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 
@@ -97,7 +104,7 @@ const ContactInfoItem = ({ text, href, Icon }: ContactInfoItemProps) => (
   <a
     href={href}
     className="flex items-center gap-2 text-xs text-white transition-opacity hover:opacity-80"
-    target="_blank" 
+    target="_blank"
     rel="noopener noreferrer"
   >
     <Icon className="h-4 w-4" />
@@ -313,22 +320,31 @@ const Navbar = () => {
 
           {/* Botones de acción en el escritorio */}
           <div className="hidden items-center space-x-4 md:flex lg:flex">
-            <Link href="/asesoria-tecnica">
+            <a
+              href="https://wa.me/51962835652?text=Hola,%20quiero%20asesoría%20técnica"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
-                className="bg-white  border cursor-pointer  border-[#1b4772] text-[#1b4772] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#1b4772] hover:text-white"
+                className="bg-white border cursor-pointer border-[#1b4772] text-[#1b4772] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#1b4772] hover:text-white"
               >
                 ASESORÍA TÉCNICA
               </Button>
-            </Link>
-            <Link href="/cotiza">
+            </a>
+
+            <a
+              href="https://wa.me/51945513323?text=Hola,%20quiero%20una%20cotización"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
                 className="bg-[#1b4772] cursor-pointer text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-slate-900"
               >
                 ¡COTIZAR AHORA!
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Botón para abrir el menú móvil */}
@@ -391,7 +407,12 @@ const Navbar = () => {
                   variants={mobileMenuItemVariants}
                   className="w-full space-y-2 text-4xl"
                 >
-                  <Link href="/asesoria-tecnica">
+                  {/* Botón WhatsApp Asesoría Técnica */}
+                  <a
+                    href="https://wa.me/51962835652?text=Hola,%20quiero%20asesoría%20técnica"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button
                       size="lg"
                       className="w-full bg-white border border-[#1b4772] text-[#1b4772] font-semibold rounded-lg transition duration-300 ease-in-out cursor-pointer hover:bg-[#1b4772] hover:text-white"
@@ -399,8 +420,14 @@ const Navbar = () => {
                     >
                       ASESORÍA TÉCNICA
                     </Button>
-                  </Link>
-                  <Link href="/cotiza">
+                  </a>
+
+                  {/* Botón WhatsApp Cotización */}
+                  <a
+                    href="https://wa.me/51945513323?text=Hola,%20quiero%20una%20cotización"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button
                       size="lg"
                       className="w-full bg-[#1b4772] cursor-pointer text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#373737]"
@@ -408,7 +435,7 @@ const Navbar = () => {
                     >
                       ¡COTIZAR AHORA!
                     </Button>
-                  </Link>
+                  </a>
                 </motion.div>
 
                 <div className="space-y-3">
