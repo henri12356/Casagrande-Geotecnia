@@ -3,49 +3,57 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Proyectos| Casa Grande S.A.C.",
-    template: "%s | Club de Ingenieros"
+    default: "Proyectos de Ingeniería Geotécnica | Casagrande Geotecnia",
+    template: "%s | Casagrande Geotecnia"
   },
-  description: "Certificados avalados y con validez profesional para ingenieros civiles, mecánicos, eléctricos e industriales. Mejora tu currículum con nuestras certificaciones reconocidas.",
+  description: "Portafolio de proyectos de ingeniería geotécnica: estudios de suelos, laboratorio, geofísica y consultoría para construcción e infraestructura en Perú.",
   keywords: [
-    "certificado de ingeniería",
-    "certificación profesional ingenieros",
-    "certificados con aval de la camara de comercio de lima",
-    "aval de ingeniería",
-    "certificado válido ingeniería civil",
-    "documentación técnica certificada",
-    "reconocimiento profesional ingenieros",
-    "club de ingenieros certificados",
-    "sello profesional ingeniería",
-    "constancia de estudios ingeniería",
-    "diploma ingeniería válido"
+    "proyectos geotécnicos",
+    "estudios de suelos realizados",
+    "proyectos ingeniería civil",
+    "casos de éxito geotecnia",
+    "obras civiles Perú",
+    "proyectos construcción",
+    "infraestructura geotécnica",
+    "estudios geofísicos proyectos",
+    "laboratorio suelos proyectos",
+    "consultoría ingeniería proyectos",
+    "Casagrande Geotecnia proyectos"
   ].join(", "),
+  authors: [{ name: "Casagrande Geotecnia" }],
+  creator: "Casagrande Geotecnia",
+  publisher: "Casagrande Geotecnia",
   openGraph: {
-    title: "Certificados Profesionales de Ingeniería ",
-    description: "Obtén tu certificación con validez profesional para procesos laborales y de ascenso en el sector de ingeniería",
+    title: "Proyectos de Ingeniería Geotécnica | Casagrande Geotecnia",
+    description: "Portafolio de proyectos especializados en estudios geotécnicos, laboratorio y consultoría para construcción e infraestructura.",
     type: "website",
-    url: "https://www.clubdeingeniero.com/projects",
+    url: "https://www.casagrandegeotecnia.com.pe/proyectos",
     images: [
       {
-        url: "https://www.clubdeingeniero.com/certificadodelante.webp",
+        url: "https://www.casagrandegeotecnia.com.pe/fondoproyectos.webp",
         width: 1200,
         height: 630,
-        alt: "Certificados Profesionales Club de Ingenieros",
+        alt: "Proyectos de Ingeniería Geotécnica - Casagrande Geotecnia",
       },
     ],
-    siteName: "Club de Ingenieros",
+    siteName: "Casagrande Geotecnia",
     locale: "es_PE",
+    emails: ["comercial@casagrandegeotecnia.com.pe"],
+    phoneNumbers: ["+51 962 835 652"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Certificados Profesionales | Club de Ingenieros",
-    description: "Certificaciones válidas para ingenieros con reconocimiento en el sector industrial",
-    images: ["https://www.clubdeingeniero.com/certificadodelante.webp"],
-    site: "@ClubIngenieros",
-    creator: "@ClubIngenieros",
+    title: "Proyectos de Ingeniería Geotécnica | Casagrande Geotecnia",
+    description: "Portafolio de proyectos especializados en estudios geotécnicos y consultoría para construcción.",
+    images: ["https://www.casagrandegeotecnia.com.pe/fondoproyectos.webp"],
+    site: "@CasagrandeGeo",
+    creator: "@CasagrandeGeo",
   },
   alternates: {
-    canonical: "https://www.clubdeingeniero.com/projects",
+    canonical: "https://www.casagrandegeotecnia.com.pe/proyectos",
+    languages: {
+      'es-PE': 'https://www.casagrandegeotecnia.com.pe/proyectos',
+    },
   },
   robots: {
     index: true,
@@ -60,13 +68,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'TU_GOOGLE_VERIFICATION_CODE',
-    yandex: 'TU_YANDEX_VERIFICATION_CODE',
-  },
+  category: 'engineering',
+  classification: 'Proyectos de Ingeniería Geotécnica'
 };
 
-export default function CertificadosLayout({
+export default function ProyectosLayout({
   children,
 }: {
   children: React.ReactNode
@@ -74,23 +80,38 @@ export default function CertificadosLayout({
   return (
     <>
       {children}
-          <GoogleAnalytics gaId="G-EK501511RW" /> 
+      <GoogleAnalytics gaId="G-HSYFNDRHDW" />
       
-      {/* Schema Markup para la organización */}
+      {/* Schema Markup para página de proyectos */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Club de Ingenieros",
-            "url": "https://www.clubdeingenieros.com",
-            "logo": "https://www.clubdeingenieros.com/logo.png",
-            "sameAs": [
-              "https://www.facebook.com/clubdeingenieros",
-              "https://www.linkedin.com/company/clubdeingenieros",
-              "https://twitter.com/clubdeingenieros"
-            ]
+            "@type": "CollectionPage",
+            "name": "Proyectos de Ingeniería Geotécnica",
+            "description": "Portafolio de proyectos especializados en estudios geotécnicos, laboratorio y consultoría para construcción e infraestructura",
+            "url": "https://www.casagrandegeotecnia.com.pe/proyectos",
+            "mainEntity": {
+              "@type": "EngineeringFirm",
+              "name": "Casagrande Geotecnia",
+              "url": "https://www.casagrandegeotecnia.com.pe",
+              "email": "comercial@casagrandegeotecnia.com.pe",
+              "telephone": "+51 962 835 652",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jirón Quinua 570, Ayacucho 05003",
+                "addressLocality": "Lima",
+                "addressRegion": "Lima",
+                "addressCountry": "Perú"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/casagrande-geotecnia",
+                "https://www.facebook.com/CasagrandeGeotecnia",
+                "https://twitter.com/CasagrandeGeo",
+                "https://www.instagram.com/casagrande_geotecnia"
+              ]
+            }
           })
         }}
       />

@@ -12,7 +12,7 @@ const serviciosMetadata = {
     title: 'Estudios Geotécnicos | Casagrande Geotecnia',
     description: 'Servicios completos de geotecnia. Estudios de mecánica de suelos, capacidad portante, cimentaciones y estabilidad de taludes. Certificaciones ISO.',
     keywords: 'geotecnia, estudios geotécnicos, mecánica de suelos, capacidad portante, cimentaciones, estabilidad taludes, estudios geotécnicos edificios',
-    image: "/servicios/geotecnia.jpg"
+    image: "/hero06.jpg"
   },
   'geologia': {
     title: 'Servicios de Geología Aplicada | Casagrande Geotecnia',

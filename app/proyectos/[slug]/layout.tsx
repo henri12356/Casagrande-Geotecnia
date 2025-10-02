@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import proyectos from "@/app/data/proyectos.json";
@@ -8,56 +7,89 @@ interface ProjectLayoutProps {
   params: Promise<{ slug: string }>
 }
 
+// Definir interfaz para los proyectos
+interface Proyecto {
+  slug: string;
+  titulo: string;
+  cliente: string;
+  obra: string;
+  trabajo: string;
+  categoria: string;
+  imagen: string;
+  descripcion: string;
+  detalles: {
+    objetivo: string;
+    metodologia: string;
+    resultados: string[];
+  };
+  numerosClave: Array<{
+    numero: string;
+    descripcion: string;
+  }>;
+  fases: Array<{
+    titulo: string;
+    descripcion: string;
+  }>;
+  galeria: string[];
+  fecha?: string; // Propiedad opcional
+}
+
 export async function generateMetadata({ params }: ProjectLayoutProps): Promise<Metadata> {
   const { slug } = await params
-  const proyecto = proyectos.find((p) => p.slug === slug)
+  const proyecto = proyectos.find((p) => p.slug === slug) as Proyecto | undefined
   
   if (!proyecto) {
     return {
-      title: 'Proyecto no encontrado | Club de Ingenieros',
-      description: 'El proyecto que buscas no está disponible'
+      title: 'Proyecto no encontrado | Casagrande Geotecnia',
+      description: 'El proyecto que buscas no está disponible en nuestro portafolio'
     }
   }
 
   // Generar título SEO optimizado por categoría
-  const getTituloSEO = (proyecto: any) => {
+  const getTituloSEO = (proyecto: Proyecto) => {
     const categoria = proyecto.categoria.toLowerCase()
     const baseTitle = `${proyecto.titulo} - Proyecto de ${proyecto.categoria}`
     
     if (categoria.includes('geotecnia') || categoria.includes('geotécnico')) {
-      return `${proyecto.titulo} | Proyecto Geotécnico Lima - ${proyecto.cliente}`
+      return `${proyecto.titulo} | Proyecto Geotécnico - Casagrande Geotecnia`
     }
     if (categoria.includes('laboratorio') || categoria.includes('ensayo')) {
-      return `${proyecto.titulo} | Ensayos de Laboratorio - ${proyecto.cliente}`
+      return `${proyecto.titulo} | Ensayos de Laboratorio - Casagrande Geotecnia`
     }
     if (categoria.includes('pavimento')) {
-      return `${proyecto.titulo} | Proyecto de Pavimentos - ${proyecto.cliente}`
+      return `${proyecto.titulo} | Proyecto de Pavimentos - Casagrande Geotecnia`
     }
     if (categoria.includes('suelos')) {
-      return `${proyecto.titulo} | Estudio de Suelos - ${proyecto.cliente}`
+      return `${proyecto.titulo} | Estudio de Suelos - Casagrande Geotecnia`
+    }
+    if (categoria.includes('geofísica') || categoria.includes('geofisica')) {
+      return `${proyecto.titulo} | Estudio Geofísico - Casagrande Geotecnia`
     }
     return baseTitle
   }
 
-  const getDescripcionSEO = (proyecto: any) => {
-    return `${proyecto.descripcion} Proyecto realizado para ${proyecto.cliente}. ${proyecto.detalles?.objetivo || 'Ingeniería especializada con resultados certificados.'}`
+  const getDescripcionSEO = (proyecto: Proyecto) => {
+    return `${proyecto.descripcion} Proyecto realizado para ${proyecto.cliente}. ${proyecto.detalles?.objetivo || 'Ingeniería especializada con resultados certificados y cumplimiento de normas técnicas.'}`
   }
 
-  const getKeywordsSEO = (proyecto: any) => {
+  const getKeywordsSEO = (proyecto: Proyecto) => {
     const categoria = proyecto.categoria.toLowerCase()
-    const baseKeywords = `${proyecto.titulo}, ${proyecto.cliente}, ${proyecto.categoria}, ingeniería`
+    const baseKeywords = `${proyecto.titulo}, ${proyecto.cliente}, ${proyecto.categoria}, Casagrande Geotecnia, ingeniería geotécnica`
     
     if (categoria.includes('geotecnia')) {
-      return `${baseKeywords}, geotecnia Lima, estudio geotécnico, mecánica de suelos`
+      return `${baseKeywords}, geotecnia Lima, estudio geotécnico, mecánica de suelos, cimentaciones, estabilidad taludes`
     }
     if (categoria.includes('laboratorio')) {
-      return `${baseKeywords}, laboratorio geotécnico, ensayos de suelos, INACAL`
+      return `${baseKeywords}, laboratorio geotécnico, ensayos de suelos, INACAL, granulometría, límites Atterberg, CBR, Proctor`
     }
     if (categoria.includes('pavimento')) {
-      return `${baseKeywords}, diseño pavimentos, evaluación estructural, deflectometría`
+      return `${baseKeywords}, diseño pavimentos, evaluación estructural, deflectometría, índice PCI, rehabilitación pavimentos`
     }
     if (categoria.includes('suelos')) {
-      return `${baseKeywords}, estudio de suelos, SPT, capacidad portante`
+      return `${baseKeywords}, estudio de suelos, SPT, capacidad portante, normas ASTM, NTP`
+    }
+    if (categoria.includes('geofísica') || categoria.includes('geofisica')) {
+      return `${baseKeywords}, estudios geofísicos, métodos sísmicos, tomografía eléctrica, investigación subsuelo`
     }
     return baseKeywords
   }
@@ -70,10 +102,11 @@ export async function generateMetadata({ params }: ProjectLayoutProps): Promise<
     title: titulo,
     description: descripcion,
     keywords: keywords,
+    authors: [{ name: "Casagrande Geotecnia" }],
     openGraph: {
       title: titulo,
       description: descripcion,
-      url: `https://www.clubdeingeniero.com/projects/${slug}`,
+      url: `https://www.casagrandegeotecnia.com.pe/proyectos/${slug}`,
       type: 'article',
       images: [
         {
@@ -83,19 +116,20 @@ export async function generateMetadata({ params }: ProjectLayoutProps): Promise<
           alt: titulo,
         },
       ],
-      siteName: 'Club de Ingenieros',
+      siteName: 'Casagrande Geotecnia',
       locale: 'es_PE',
+      emails: ["comercial@casagrandegeotecnia.com.pe"],
     },
     twitter: {
       card: 'summary_large_image',
       title: titulo,
       description: descripcion,
       images: [proyecto.imagen],
-      site: '@ClubIngenieros',
-      creator: '@ClubIngenieros',
+      site: '@CasagrandeGeo',
+      creator: '@CasagrandeGeo',
     },
     alternates: {
-      canonical: `https://www.clubdeingeniero.com/projects/${slug}`,
+      canonical: `https://www.casagrandegeotecnia.com.pe/proyectos/${slug}`,
     },
     robots: {
       index: true,
@@ -117,11 +151,55 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ProjectLayout({ children }: ProjectLayoutProps) {
+export default async function ProjectLayout({ children, params }: ProjectLayoutProps) {
+  const { slug } = await params
+  const proyecto = proyectos.find((p) => p.slug === slug) as Proyecto | undefined
+  
   return (
     <>
       {children}
-      <GoogleAnalytics gaId="G-EK501511RW" />
+      <GoogleAnalytics gaId="G-HSYFNDRHDW" />
+      
+      {/* Schema Markup específico por proyecto */}
+      {proyecto && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": proyecto.titulo,
+              "description": proyecto.descripcion,
+              "url": `https://www.casagrandegeotecnia.com.pe/proyectos/${slug}`,
+              "author": {
+                "@type": "EngineeringFirm",
+                "name": "Casagrande Geotecnia",
+                "url": "https://www.casagrandegeotecnia.com.pe",
+                "email": "comercial@casagrandegeotecnia.com.pe",
+                "telephone": "+51 962 835 652",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Jirón Quinua 570, Ayacucho 05003",
+                  "addressLocality": "Lima",
+                  "addressRegion": "Lima",
+                  "addressCountry": "Perú"
+                }
+              },
+              "datePublished": proyecto.fecha || new Date().toISOString().split('T')[0],
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://www.casagrandegeotecnia.com.pe/proyectos/${slug}`
+              },
+              "workFeatured": {
+                "@type": "Project",
+                "name": proyecto.titulo,
+                "description": proyecto.descripcion,
+                "url": `https://www.casagrandegeotecnia.com.pe/proyectos/${slug}`
+              }
+            })
+          }}
+        />
+      )}
     </>
   )
 }
