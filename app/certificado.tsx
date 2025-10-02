@@ -113,26 +113,35 @@ export default function CarouselCertificados() {
                   </li>
                 ))}
               </ul>
-                    <Link href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="bg-[#1b4772] hover:bg-gray-900 text-white px-5 py-2 rounded-lg shadow-md cursor-pointer">
                   {certificados[index].id === 4 ? "Ver más" : "Ver certificado"}
                 </Button>
-            </Link>
+              </Link>
             </div>
 
             {/* Imagen */}
 
             <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0">
-                                <Link href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA" target="_blank" rel="noopener noreferrer">
-              <Image
-                src={certificados[index].imageSrc}
-                alt={certificados[index].title}
-                width={400}
-                height={280}
-                className="rounded-lg shadow-md object-contain"
-                
+              <Link
+                href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={certificados[index].imageSrc}
+                  alt={certificados[index].title}
+                  width={400}
+                  height={280}
+                  loading="lazy"
+                  quality={75}
+                  className="rounded-lg shadow-md object-contain"
                 />
-                </Link>
+              </Link>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -140,7 +149,7 @@ export default function CarouselCertificados() {
         {/* Botones de navegación */}
         <div className="absolute top-1/2 left-[-60px] transform -translate-y-1/2">
           <button
-            aria-label="Siguiente " 
+            aria-label="Siguiente "
             onClick={prev}
             className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
@@ -149,7 +158,7 @@ export default function CarouselCertificados() {
         </div>
         <div className="absolute top-1/2 right-[10px] transform -translate-y-1/2">
           <button
-            aria-label="Anterior" 
+            aria-label="Anterior"
             onClick={next}
             className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
@@ -161,7 +170,7 @@ export default function CarouselCertificados() {
         <div className="flex justify-center mt-6 space-x-2">
           {certificados.map((_, i) => (
             <button
-            aria-label="Ir a la diapositiva 1"
+              aria-label="Ir a la diapositiva 1"
               key={i}
               onClick={() => setIndex(i)}
               className={`h-2 w-2 rounded-full transition-all duration-300 p-2 max-md:hidden cursor-pointer ${

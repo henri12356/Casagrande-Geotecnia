@@ -192,7 +192,9 @@ export default function BlogPage() {
                           <Image
                             src={blog.imagen}
                             alt={blog.titulo}
-                            fill
+                             width={400}
+                  height={280}
+                  quality={75}
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                             sizes="128px"
                           />
@@ -294,7 +296,9 @@ export default function BlogPage() {
                         <Image
                           src={blog.imagen}
                           alt={blog.titulo}
-                          fill
+                           width={400}
+                  height={280}
+                  quality={75}
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />

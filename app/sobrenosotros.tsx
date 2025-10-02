@@ -17,6 +17,7 @@ const Sobrenosotros = () => {
               src={imageSrc}
               alt="Equipo de Casagrande"
               className="object-cover w-full h-full"
+              loading='lazy'
             />
           </div>
 

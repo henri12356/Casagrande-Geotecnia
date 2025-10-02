@@ -95,6 +95,7 @@ const Footer = () => {
                 src="/logo.png"
                 alt="Logo de casagrande geotecnia"
                 fill
+                
                 sizes="(max-width: 768px) 192px, (max-width: 1200px) 256px, 384px"
                 className="object-contain object-left transition-transform group-hover:scale-105"
                 priority

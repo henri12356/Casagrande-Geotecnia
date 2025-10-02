@@ -261,9 +261,9 @@ export default function RootLayout({
       <head>
         <StructuredData />
         {/* Preconnects para mejor performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="manifest" href="/manifest.json" />
+
 
         {/* Preload para fuentes críticas */}
       

@@ -146,9 +146,11 @@ export default function HeroCarousel() {
           <Image
             src={activeSlide.imageSrc}
             alt={activeSlide.title}
+            quality={75} // compresión
+            loading="lazy"
             fill
             className="object-cover object-center"
-            priority
+            
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1b4772] to-[#0f172a]/30" />
         </motion.div>
@@ -212,7 +214,7 @@ export default function HeroCarousel() {
       <div className="absolute inset-x-0 bottom-5 z-40 flex justify-center space-x-2 md:bottom-8">
         {slidesData.map((_slide, index) => (
           <button
-          aria-label="Ir a la diapositiva 1"
+            aria-label="Ir a la diapositiva 1"
             key={index}
             className={`h-2 w-2 rounded-full transition-all duration-300 p-2 cursor-pointer   ${
               index === slideIndex ? "w-6 bg-[#1b4772]" : "bg-gray-400"
