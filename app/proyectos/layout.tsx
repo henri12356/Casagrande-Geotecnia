@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   description: "Portafolio de proyectos de ingeniería geotécnica: estudios de suelos, laboratorio, geofísica y consultoría para construcción e infraestructura en Perú.",
   keywords: [
     "proyectos geotécnicos",
+    "proyectos de ingeniería geotécnica",
+    "proyectos geología",
+    "proyectos estudios de suelos",
+    "proyectos laboratorio de suelos",
+    "proyectos geofísica",
+    "tesis geotécnica",
+    "proyectos construcción Perú",
+    "ingeniería geotécnica proyectos",
+    "proyectos en ayacucho",
+    "consultoría geotécnica proyectos",
     "estudios de suelos realizados",
     "proyectos ingeniería civil",
     "casos de éxito geotecnia",
@@ -106,10 +116,11 @@ export default function ProyectosLayout({
                 "addressCountry": "Perú"
               },
               "sameAs": [
-                "https://www.linkedin.com/company/casagrande-geotecnia",
-                "https://www.facebook.com/CasagrandeGeotecnia",
-                "https://twitter.com/CasagrandeGeo",
-                "https://www.instagram.com/casagrande_geotecnia"
+                "https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/",
+                "https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA",
+                "https://www.instagram.com/casagrandegeotecnia/",
+                "https://www.youtube.com/@CasagrandeGeotecnia-s5m",
+                "https://www.tiktok.com/@casagrandegeotecnia"
               ]
             }
           })

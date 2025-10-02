@@ -3,60 +3,60 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Casagrande Geotecnia | Consultora Especializada en Ingeniería Civil",
+    default: "Blog de Ingeniería Geotécnica | Casagrande Geotecnia",
     template: "%s | Casagrande Geotecnia",
   },
-  description:
-    "Consultora peruana líder en estudios geotécnicos, geológicos y control de calidad para construcción. Certificaciones ISO 9001, 37001, 14001. Servicios de laboratorio y supervisión de obras.",
+  description: "Artículos especializados en geotecnia, estudios de suelos, ingeniería civil y construcción. Consejos técnicos, casos de estudio y novedades del sector.",
   keywords: [
+    "blog geotecnia",
+    "artículos ingeniería civil",
+    "estudios de suelos blog",
     "geotecnia Perú",
-    "laboratorio de suelos",
-    "estabilidad de taludes",
-    "supervisión de obras",
-    "Casagrande ingeniería",
-    "estudios de cimentación",
-    "análisis de suelos y rocas",
-    "ingeniería civil",
-    "construcción segura",
-    "certificaciones ISO",
-    "consultora ingeniería civil Perú",
-    "estudios geotécnicos Lima",
-    "laboratorio suelos y concreto",
-    "control de calidad obras civiles",
-    "geología aplicada construcción",
-    "estudios de cimentación",
-    "estabilidad de taludes",
-    "supervisión técnica obras",
+    "ingeniería geotécnica",
+    "consejos construcción",
+    "casos de estudio geotecnia",
+    "novedades ingeniería civil",
+    "tecnología geotécnica",
+    "normas construcción",
+    "laboratorio suelos blog",
+    "geofísica aplicada",
+    "cimentaciones blog",
+    "estabilidad taludes",
+    "Casagrande Geotecnia blog"
   ].join(", "),
+  authors: [{ name: "Casagrande Geotecnia" }],
+  creator: "Casagrande Geotecnia",
+  publisher: "Casagrande Geotecnia",
   openGraph: {
-    title: "Blog Técnico de Geotecnia e Ingeniería Civil | Casagrande",
-    description:
-      "Artículos especializados en estudios geotécnicos, control de calidad y normativas para profesionales de la construcción",
+    title: "Blog de Ingeniería Geotécnica | Casagrande Geotecnia",
+    description: "Artículos especializados en geotecnia, estudios de suelos y consultoría en ingeniería civil. Expertos en soluciones técnicas.",
     type: "website",
-    url: "https://www.casagrande.pe/blog",
+    url: "https://www.casagrandegeotecnia.com.pe/blog",
     images: [
       {
-        url: "https://www.casagrande.pe/og-blog-geotecnia.jpg",
+        url: "https://www.casagrandegeotecnia.com.pe/blog-geotecnia.jpg",
         width: 1200,
         height: 630,
-        alt: "Blog de geotecnia e ingeniería civil - Casagrande",
+        alt: "Blog de Ingeniería Geotécnica - Casagrande Geotecnia",
       },
     ],
-    siteName: "Casagrande",
+    siteName: "Casagrande Geotecnia",
     locale: "es_PE",
+    emails: ["comercial@casagrandegeotecnia.com.pe"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog de Ingeniería | Casagrande",
-    description:
-      "Contenido técnico especializado en geotecnia y construcción civil en Perú",
-    images: ["https://www.casagrande.pe/og-blog-geotecnia.jpg"],
-    site: "@CasagrandePE",
-    creator: "@CasagrandePE",
+    title: "Blog de Ingeniería Geotécnica | Casagrande Geotecnia",
+    description: "Artículos especializados en geotecnia, estudios de suelos y consultoría en ingeniería civil.",
+    images: ["https://www.casagrandegeotecnia.com.pe/blog-geotecnia.jpg"],
+    site: "@CasagrandeGeo",
+    creator: "@CasagrandeGeo",
   },
   alternates: {
-    canonical: "https://www.casagrande.pe/blog",
+    canonical: "https://www.casagrandegeotecnia.com.pe/blog",
+    languages: {
+      'es-PE': 'https://www.casagrandegeotecnia.com.pe/blog',
+    },
   },
   robots: {
     index: true,
@@ -71,9 +71,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "TU_GOOGLE_VERIFICATION_CODE", // ⚠️ Reemplazar con código real
-  },
+  category: 'engineering',
+  classification: 'Blog de Ingeniería Geotécnica y Construcción'
 };
 
 export default function BlogLayout({
@@ -84,56 +83,46 @@ export default function BlogLayout({
   return (
     <>
       {children}
-      <GoogleAnalytics gaId="G-EK501511RW" />
+      <GoogleAnalytics gaId="G-HSYFNDRHDW" />
 
-      {/* Schema Markup completo para Blog + SEO Local */}
+      {/* Schema Markup completo para Blog */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            name: "Blog de Ingeniería - Casagrande Geotecnia",
-            url: "https://www.casagrande.pe/blog",
-            description:
-              "Artículos técnicos especializados en ingeniería civil, geotecnia y construcción",
-            inLanguage: "es-PE",
-            publisher: {
-              "@type": "Organization",
-              name: "Casagrande",
-              url: "https://www.casagrande.pe",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.casagrande.pe/logo.png",
-                width: 200,
-                height: 60,
-              },
-              sameAs: [
-                "https://www.facebook.com/profile.php?id=100077864046528",
-                "https://www.linkedin.com/company/casagrande",
-                "https://www.instagram.com/casagrandegeotecnia/",
-                "https://www.tiktok.com/@casagrandegeotecnia?lang=es-419",
-                "https://www.youtube.com/@Casagrandegeotecnia",
-              ],
-              address: {
+            "name": "Blog de Ingeniería Geotécnica - Casagrande Geotecnia",
+            "description": "Artículos técnicos especializados en ingeniería civil, geotecnia y construcción",
+            "url": "https://www.casagrandegeotecnia.com.pe/blog",
+            "inLanguage": "es-PE",
+            "publisher": {
+              "@type": "EngineeringFirm",
+              "name": "Casagrande Geotecnia",
+              "url": "https://www.casagrandegeotecnia.com.pe",
+              "email": "comercial@casagrandegeotecnia.com.pe",
+              "telephone": "+51 962 835 652",
+              "address": {
                 "@type": "PostalAddress",
-                streetAddress: "Jirón Quinua 570, Ayacucho 05003",
-                addressLocality: "Ayacucho",
-                addressRegion: "PE",
-                postalCode: "05001",
-                addressCountry: "PE",
+                "streetAddress": "Jirón Quinua 570, Ayacucho 05003",
+                "addressLocality": "Lima",
+                "addressRegion": "Lima",
+                "addressCountry": "Perú"
               },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: -13.1558219,
-                longitude: -74.2236104,
-              },
+              "sameAs": [
+                "https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/",
+                "https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA",
+                "https://www.instagram.com/casagrandegeotecnia/",
+                "https://www.youtube.com/@CasagrandeGeotecnia-s5m",
+                "https://www.tiktok.com/@casagrandegeotecnia"
+              ]
+            
             },
-            mainEntityOfPage: {
+            "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://www.casagrande.pe/blog",
-            },
-          }),
+              "@id": "https://www.casagrandegeotecnia.com.pe/blog"
+            }
+          })
         }}
       />
     </>
