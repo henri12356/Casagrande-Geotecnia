@@ -214,7 +214,7 @@ export default function HeroCarousel() {
           <button
           aria-label="Ir a la diapositiva 1"
             key={index}
-            className={`h-2 w-2 rounded-full transition-all duration-300  ${
+            className={`h-2 w-2 rounded-full transition-all duration-300 p-2 cursor-pointer   ${
               index === slideIndex ? "w-6 bg-[#1b4772]" : "bg-gray-400"
             }`}
             onClick={() => {

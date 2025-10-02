@@ -161,7 +161,7 @@ export default function CertificadoNosotros() {
             aria-label="Ir a la diapositiva 1"
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
+              className={`h-2 w-2 rounded-full transition-all duration-300 p-2 cursor-pointer max-md:hidden ${
                 i === index ? "w-6 bg-[#1b4772]" : "bg-gray-400"
               }`}
             />

@@ -140,6 +140,7 @@ export default function CarouselCertificados() {
         {/* Botones de navegación */}
         <div className="absolute top-1/2 left-[-60px] transform -translate-y-1/2">
           <button
+            aria-label="Siguiente " 
             onClick={prev}
             className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
@@ -148,6 +149,7 @@ export default function CarouselCertificados() {
         </div>
         <div className="absolute top-1/2 right-[10px] transform -translate-y-1/2">
           <button
+            aria-label="Anterior" 
             onClick={next}
             className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
@@ -162,7 +164,7 @@ export default function CarouselCertificados() {
             aria-label="Ir a la diapositiva 1"
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
+              className={`h-2 w-2 rounded-full transition-all duration-300 p-2 max-md:hidden cursor-pointer ${
                 i === index ? "w-6 bg-[#1b4772]" : "bg-gray-400"
               }`}
             />

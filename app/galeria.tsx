@@ -117,7 +117,11 @@ const Galeria = () => {
                   whileHover={{ y: -5 }}
                   className="flex flex-col h-full bg-white cursor-pointer rounded-xl shadow-md overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-lg"
                 >
-                  <Link href={servicio.href} aria-label="Ver Servicio " className="flex flex-col h-full">
+                  <Link
+                    href={servicio.href}
+                    aria-label="Ver Servicio "
+                    className="flex flex-col h-full"
+                  >
                     {/* Imagen */}
                     <div className="relative h-64 bg-gray-100">
                       <Image
@@ -140,7 +144,11 @@ const Galeria = () => {
                       <p className="text-black text-sm mb-6 flex-1">
                         {servicio.description}
                       </p>
-                      <button className="mt-auto flex items-center cursor-pointer text-[#1b4772] font-bold text-sm hover:text-gray-900 transition-colors">
+                      <button 
+                      aria-label="Ver detalles del servicio" 
+                      className="mt-auto flex items-center cursor-pointer text-[#1b4772] font-bold text-sm hover:text-gray-900 transition-colors"
+                      
+                      >
                         Ver detalles <FaArrowRight className="ml-2" />
                       </button>
                     </div>

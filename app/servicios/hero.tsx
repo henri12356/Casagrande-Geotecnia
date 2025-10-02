@@ -165,7 +165,7 @@ export default function HeroServicios() {
           <button
           aria-label="Ir a la diapositiva 1"
             key={index}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${
+            className={`h-2 w-2 rounded-full transition-all duration-300 p-2 cursor-pointer max-md:hidden ${
               index === slideIndex ? "w-6 bg-[#2c3e50]" : "bg-gray-400"
             }`}
             onClick={() => {
