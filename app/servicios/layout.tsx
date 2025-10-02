@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://www.casagrandegeotecnia.com.pe/fondoservicio.webp",
-        width: 1200,
-        height: 630,
+        width: 1178.19,
+        height: 663,
         alt: "Servicios de Ingeniería Geotécnica - Casagrande Geotecnia",
       },
     ],
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Servicios de Ingeniería Geotécnica en Perú | Casagrande Geotecnia",
     description:
       "Especialistas en geotecnia, geofísica, laboratorio y estudios geotécnicos para proyectos de construcción, infraestructura y minería en todo Perú.",
-    images: ["https://www.casagrandegeotecnia.com.pe/servicios-twitter.jpg"],
+    images: ["https://www.casagrandegeotecnia.com.pe/fondoservicio.webp"],
     site: "@CasagrandeGeo",
     creator: "@CasagrandeGeo",
   },
