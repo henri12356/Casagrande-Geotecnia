@@ -81,16 +81,16 @@ const Numeros = () => {
             variants={statCardVariants}
           >
             <div
-              className="text-6xl sm:text-7xl font-extrabold mb-4 bg-gradient-to-r text-white bg-clip-text "
+              className="text-6xl sm:text-7xl font-bold mb-4 bg-gradient-to-r text-white bg-clip-text "
             >
               <CountingNumber 
                 value={stat.value} 
                 suffix={stat.suffix} 
-                duration={6} 
+                duration={4} 
                 start={isInViewContainer} 
               />
             </div>
-            <p className="text-sm sm:text-base text-white uppercase tracking-wide font-medium">
+            <p className="text-sm sm:text-base text-white uppercase tracking-wide font-bold">
               {stat.label}
             </p>
           </motion.div>

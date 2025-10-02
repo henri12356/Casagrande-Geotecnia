@@ -34,6 +34,7 @@ const CompanyLogo = ({ name, logo }: { name:string; logo:string; }) => {
         <Image
           priority
           fill
+          
           src={logo}
           alt={`${name} logo`}
           className="object-contain transition-all duration-300"

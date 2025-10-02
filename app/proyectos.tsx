@@ -28,7 +28,7 @@ const proyectos: Proyecto[] = [
     inversion: "$25M",
     x: 40,
     y: 65,
-    imagen: "/hero01.jpg",
+    imagen: "/hero01.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -40,7 +40,7 @@ const proyectos: Proyecto[] = [
     inversion: "$40M",
     x: 56,
     y: 75,
-    imagen: "/hero02.jpg",
+    imagen: "/hero02.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -52,7 +52,7 @@ const proyectos: Proyecto[] = [
     inversion: "$60M",
     x: 50,
     y: 62,
-    imagen: "/proyecto3.jpg",
+    imagen: "/proyecto3.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -64,7 +64,7 @@ const proyectos: Proyecto[] = [
     inversion: "$15M",
     x: 45,
     y: 80,
-    imagen: "/hero01.jpg",
+    imagen: "/hero01.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -76,7 +76,7 @@ const proyectos: Proyecto[] = [
     inversion: "$80M",
     x: 14,
     y: 28,
-    imagen: "/proyecto5.jpg",
+    imagen: "/proyecto5.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -88,7 +88,7 @@ const proyectos: Proyecto[] = [
     inversion: "$12M",
     x: 50,
     y: 20,
-    imagen: "/hero01.jpg",
+    imagen: "/hero01.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -100,7 +100,7 @@ const proyectos: Proyecto[] = [
     inversion: "$8M",
     x: 84,
     y: 97,
-    imagen: "/proyecto7.jpg",
+    imagen: "/proyecto7.webp",
     url: "/proyectos/Aeropuerto",
   },
   {
@@ -112,7 +112,7 @@ const proyectos: Proyecto[] = [
     inversion: "$30M",
     x: 84,
     y: 80,
-    imagen: "/hero01.jpg",
+    imagen: "/hero01.webp",
     url: "/proyectos/Aeropuerto",
   },
 ];
