@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const imageSrc = "/sobrenosotros.png";
+const imageSrc = "/sobrenosotros.webp";
 
 const containerTransition = { staggerChildren: 0.2, delayChildren: 0.3 } as const;
 const itemTransition = { duration: 0.6, ease: "easeOut" as const };
@@ -47,6 +47,7 @@ const Familia = () => {
             <motion.div className="rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
               <motion.img
                 src={imageSrc}
+                loading='lazy'
                 alt="Equipo Casagrande"
                 className="object-cover w-full h-full"
                 whileHover={{ scale: 1.05 }}

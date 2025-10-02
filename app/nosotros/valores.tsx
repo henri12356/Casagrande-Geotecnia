@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -46,18 +46,36 @@ const Valores = () => {
               viewport={{ once: true, amount: 0.3 }}
               variants={containerVariants}
             >
-              <motion.h2 className="text-3xl font-bold text-[#1b4772] mb-4" variants={itemVariants}>
+              <motion.h2
+                className="text-3xl font-bold text-[#1b4772] mb-4"
+                variants={itemVariants}
+              >
                 VISIÓN
               </motion.h2>
-              <motion.p className="text-gray-700 mb-8 text-lg leading-relaxed" variants={itemVariants}>
-                Contribuir al desarrollo sostenible del sector de la construcción a nivel nacional, garantizando la seguridad y calidad en cada obra mediante estudios técnicos confiables y soluciones innovadoras.
+              <motion.p
+                className="text-gray-700 mb-8 text-lg leading-relaxed"
+                variants={itemVariants}
+              >
+                Contribuir al desarrollo sostenible del sector de la
+                construcción a nivel nacional, garantizando la seguridad y
+                calidad en cada obra mediante estudios técnicos confiables y
+                soluciones innovadoras.
               </motion.p>
 
-              <motion.h2 className="text-3xl font-bold text-[#1b4772] mb-4" variants={itemVariants}>
+              <motion.h2
+                className="text-3xl font-bold text-[#1b4772] mb-4"
+                variants={itemVariants}
+              >
                 MISIÓN
               </motion.h2>
-              <motion.p className="text-gray-700 text-lg leading-relaxed" variants={itemVariants}>
-                Ser un referente nacional en consultoría de ingeniería civil, ofreciendo servicios integrales de geología, geotecnia, laboratorio y supervisión de obras, priorizando la innovación, eficiencia y confiabilidad.
+              <motion.p
+                className="text-gray-700 text-lg leading-relaxed"
+                variants={itemVariants}
+              >
+                Ser un referente nacional en consultoría de ingeniería civil,
+                ofreciendo servicios integrales de geología, geotecnia,
+                laboratorio y supervisión de obras, priorizando la innovación,
+                eficiencia y confiabilidad.
               </motion.p>
             </motion.div>
 
@@ -75,12 +93,12 @@ const Valores = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/hero04.jpg"
+                  src="/hero04.webp"
                   alt="Equipo Casagrande"
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
+                  loading="lazy"
                 />
               </motion.div>
             </motion.div>
@@ -102,12 +120,12 @@ const Valores = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/hero03.jpg"
+                  src="/hero03.webp"
                   alt="Supervisión de obra"
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
+                  loading="lazy"
                 />
               </motion.div>
             </motion.div>
@@ -119,18 +137,34 @@ const Valores = () => {
               viewport={{ once: true, amount: 0.3 }}
               variants={containerVariants}
             >
-              <motion.h2 className="text-3xl font-bold text-[#1b4772] mb-4" variants={itemVariants}>
+              <motion.h2
+                className="text-3xl font-bold text-[#1b4772] mb-4"
+                variants={itemVariants}
+              >
                 CALIDAD
               </motion.h2>
-              <motion.p className="text-gray-700 mb-8 text-lg leading-relaxed" variants={itemVariants}>
-                Nos comprometemos con la mejora continua, la precisión y el cumplimiento de normas y estándares internacionales en todos nuestros estudios, ensayos y supervisiones de obra.
+              <motion.p
+                className="text-gray-700 mb-8 text-lg leading-relaxed"
+                variants={itemVariants}
+              >
+                Nos comprometemos con la mejora continua, la precisión y el
+                cumplimiento de normas y estándares internacionales en todos
+                nuestros estudios, ensayos y supervisiones de obra.
               </motion.p>
 
-              <motion.h2 className="text-3xl font-bold text-[#1b4772] mb-4" variants={itemVariants}>
+              <motion.h2
+                className="text-3xl font-bold text-[#1b4772] mb-4"
+                variants={itemVariants}
+              >
                 SEGURIDAD
               </motion.h2>
-              <motion.p className="text-gray-700 text-lg leading-relaxed" variants={itemVariants}>
-                Priorizamos la seguridad laboral y ambiental en todas nuestras operaciones, implementando prácticas sostenibles y minimizando riesgos para nuestros colaboradores y el entorno.
+              <motion.p
+                className="text-gray-700 text-lg leading-relaxed"
+                variants={itemVariants}
+              >
+                Priorizamos la seguridad laboral y ambiental en todas nuestras
+                operaciones, implementando prácticas sostenibles y minimizando
+                riesgos para nuestros colaboradores y el entorno.
               </motion.p>
             </motion.div>
           </div>
@@ -161,7 +195,9 @@ const Valores = () => {
                 className="flex items-center gap-2 font-semibold text-[#1b4772] text-lg whitespace-nowrap"
               >
                 <CheckCircle className="text-[#1b4772] w-5 h-5" />
-                <span className="text-xl lg:text-[17px] xl:text-xl">{valor}</span>
+                <span className="text-xl lg:text-[17px] xl:text-xl">
+                  {valor}
+                </span>
               </motion.div>
             ))}
           </div>

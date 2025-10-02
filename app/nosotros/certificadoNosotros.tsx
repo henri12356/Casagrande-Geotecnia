@@ -10,7 +10,7 @@ import Link from "next/link";
 const certificados = [
   {
     id: 1,
-    imageSrc: "/certificado01.png",
+    imageSrc: "/certificado01.webp",
     title: "ISO 9001 – Sistema de Gestión de Calidad",
     subtitle: "Calidad y confiabilidad en nuestros servicios",
     description:
@@ -23,7 +23,7 @@ const certificados = [
   },
   {
     id: 2,
-    imageSrc: "/certificado02.png",
+    imageSrc: "/certificado02.webp",
     title: "ISO 37001 – Sistema de Gestión Antisoborno",
     subtitle: "Transparencia y ética en cada proyecto",
     description:
@@ -36,7 +36,7 @@ const certificados = [
   },
   {
     id: 3,
-    imageSrc: "/certificado02.png",
+    imageSrc: "/certificado02.webp",
     title: "ISO 14001 – Sistema de Gestión Ambiental",
     subtitle: "Responsabilidad y sostenibilidad",
     description:
@@ -49,7 +49,7 @@ const certificados = [
   },
   {
     id: 4,
-    imageSrc: "/certificado01.png",
+    imageSrc: "/certificado01.webp",
     title: "LABORATORIO DE ENSAYO ACREDITADO",
     subtitle: "ISO/IEC 17025:2017 – INACAL",
     description:
