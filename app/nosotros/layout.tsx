@@ -3,25 +3,34 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Nosotros | Casagrande Geotecnia",
+    default: "Nosotros | Casagrande Geotecnia - Expertos en Ingeniería Geotécnica",
     template: "%s | Casagrande Geotecnia"
   },
-  description: "Conoce a Casagrande Geotecnia: nuestro equipo profesional, valores, misión, visión y certificados ISO 9001, 14001 y 37001 en estudios geotécnicos y control de calidad en construcción.",
+  description: "Conoce nuestro equipo de ingenieros especializados, valores corporativos y certificaciones ISO. Más de 10 años de experiencia en estudios geotécnicos y consultoría en ingeniería civil.",
   keywords: [
-    "Casagrande Geotecnia",
-    "equipo de ingeniería",
-    "certificados ISO",
-    "valores de empresa",
-    "misión y visión",
-    "consultoría geotécnica",
-    "laboratorio de suelos",
-    "control de calidad construcción",
-    "estudios geotécnicos Perú",
-    "ingeniería civil Lima"
+    "equipo Casagrande Geotecnia",
+    "ingenieros geotécnicos Perú",
+    "consultoría ingeniería civil Lima",
+    "expertos en estudios de suelos",
+    "valores corporativos construcción",
+    "certificaciones ISO ingeniería",
+    "experiencia en geotecnia",
+    "equipo técnico especializado",
+    "historia Casagrande Geotecnia",
+    "misión y visión empresa geotécnica",
+    "profesionales ingeniería civil",
+    "consultores geotécnicos calificados",
+    "trayectoria en proyectos civiles",
+    "equipo multidisciplinario geotecnia",
+    "valores éticos construcción",
+    "compromiso calidad ingeniería"
   ].join(", "),
+  authors: [{ name: "Casagrande Geotecnia" }],
+  creator: "Casagrande Geotecnia",
+  publisher: "Casagrande Geotecnia",
   openGraph: {
-    title: "Nosotros | Casagrande Geotecnia",
-    description: "Descubre a nuestro equipo profesional, certificados ISO y valores que nos hacen líderes en estudios geotécnicos y control de calidad.",
+    title: "Nosotros | Casagrande Geotecnia - Equipo y Valores",
+    description: "Conoce a nuestro equipo de ingenieros especializados, nuestra trayectoria y compromiso con la excelencia en estudios geotécnicos.",
     type: "website",
     url: "https://www.casagrandegeotecnia.com.pe/nosotros",
     images: [
@@ -29,26 +38,32 @@ export const metadata: Metadata = {
         url: "https://www.casagrandegeotecnia.com.pe/fondo.webp",
         width: 1200,
         height: 630,
-        alt: "Equipo y valores de Casagrande Geotecnia",
+        alt: "Equipo de Ingenieros - Casagrande Geotecnia",
       },
     ],
     siteName: "Casagrande Geotecnia",
     locale: "es_PE",
+    emails: ["info@casagrandegeotecnia.com.pe"],
+    phoneNumbers: ["+51 123 456 789"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nosotros | Casagrande Geotecnia",
-    description: "Conoce nuestro equipo profesional y certificados ISO que respaldan nuestros servicios de estudios geotécnicos y control de calidad.",
-    images: ["https://www.casagrandegeotecnia.com.pe/nosotros-portada.webp"],
+    title: "Nosotros | Casagrande Geotecnia - Equipo Especializado",
+    description: "Equipo de ingenieros geotécnicos con amplia experiencia en proyectos de construcción e infraestructura.",
+    images: ["https://www.casagrandegeotecnia.com.pe/equipo-twitter.jpg"],
     site: "@CasagrandeGeo",
     creator: "@CasagrandeGeo",
   },
   alternates: {
     canonical: "https://www.casagrandegeotecnia.com.pe/nosotros",
+    languages: {
+      'es-PE': 'https://www.casagrandegeotecnia.com.pe/nosotros',
+    },
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -58,9 +73,8 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'TU_GOOGLE_VERIFICATION_CODE', // reemplaza con tu código
-  },
+  category: 'engineering',
+  classification: 'Consultoría en Ingeniería Geotécnica - Sobre Nosotros'
 };
 
 export default function NosotrosLayout({
@@ -72,56 +86,103 @@ export default function NosotrosLayout({
     <>
       {children}
       <GoogleAnalytics gaId="G-HSYFNDRHDW" />
-
-      {/* Schema JSON-LD para la empresa */}
+      
+      {/* Schema Markup para Página Nosotros */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Casagrande Geotecnia",
-            "url": "https://www.casagrandegeotecnia.com.pe",
-            "logo": "https://www.casagrandegeotecnia.com.pe/logo.png",
-            "sameAs": [
-              "https://www.facebook.com/CasagrandeGeotecnia",
-              "https://www.linkedin.com/company/casagrande-geotecnia",
-              "https://twitter.com/CasagrandeGeo",
-              "https://www.instagram.com/casagrande_geotecnia",
-              "https://youtube.com/@CasagrandeGeotecnia"
-            ],
-            "foundingDate": "2010",
-            "founder": "Nombre del Fundador",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Av. Tu Dirección 123",
-              "addressLocality": "Lima",
-              "addressRegion": "Lima",
-              "addressCountry": "Perú"
-            },
-            "employee": [
-              {
+            "@type": "AboutPage",
+            "name": "Nosotros - Casagrande Geotecnia",
+            "description": "Información sobre nuestro equipo, valores y trayectoria en ingeniería geotécnica",
+            "url": "https://www.casagrandegeotecnia.com.pe/nosotros",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Casagrande Geotecnia",
+              "description": "Consultora especializada en estudios geotécnicos, geología, laboratorio de suelos y control de calidad para construcción",
+              "foundingDate": "2013", // Reemplaza con año real
+              "founder": {
                 "@type": "Person",
-                "name": "Nombre del Director",
-                "jobTitle": "Director General"
+                "name": "Ing. Carlos Casagrande" // Reemplaza con nombre real
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Tu Dirección 123",
+                "addressLocality": "Lima",
+                "addressRegion": "Lima",
+                "addressCountry": "Perú"
+              },
+              "telephone": "+51 123 456 789",
+              "email": "info@casagrandegeotecnia.com.pe",
+              "numberOfEmployees": {
+                "@type": "QuantitativeValue",
+                "value": "25" // Reemplaza con número real
+              },
+              "knowsAbout": [
+                "Geotecnia",
+                "Ingeniería Civil",
+                "Estudios de Suelos",
+                "Geología Aplicada",
+                "Mecánica de Rocas",
+                "Hidrogeología",
+                "Control de Calidad en Construcción",
+                "Estudios Geofísicos"
+              ],
+              "memberOf": [
+                {
+                  "@type": "Organization",
+                  "name": "Colegio de Ingenieros del Perú"
+                }
+              ],
+              "award": [
+                "Certificación ISO 9001:2015",
+                "Certificación ISO 14001:2015", 
+                "Certificación ISO 37001:2016"
+              ],
+              "mission": "Proveer servicios de consultoría geotécnica de excelencia, garantizando la seguridad y calidad en proyectos de construcción mediante estudios técnicos confiables y soluciones innovadoras.",
+              "slogan": "Expertos en cimentar tu confianza"
+            }
+          })
+        }}
+      />
+
+      {/* Schema para valores corporativos */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList", 
+            "name": "Valores Corporativos - Casagrande Geotecnia",
+            "description": "Principios que guían nuestro trabajo en consultoría geotécnica",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Excelencia Técnica"
               },
               {
-                "@type": "Person",
-                "name": "Nombre del Ingeniero Principal",
-                "jobTitle": "Ingeniero Geotécnico Senior"
+                "@type": "ListItem",
+                "position": 2, 
+                "name": "Compromiso con la Seguridad"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Innovación en Soluciones"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Responsabilidad Ambiental"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Transparencia y Ética"
               }
-              // agrega más miembros según tu equipo
-            ],
-            "hasCredential": [
-              "ISO 9001:2015 - Quality Management Systems",
-              "ISO 14001:2015 - Environmental Management Systems",
-              "ISO 37001:2016 - Anti-bribery Management Systems"
-            ],
-            "memberOf": {
-              "@type": "Organization",
-              "name": "Colegio de Ingenieros del Perú",
-              "url": "https://www.cip.org.pe"
-            }
+            ]
           })
         }}
       />
