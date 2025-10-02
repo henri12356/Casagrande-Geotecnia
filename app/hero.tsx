@@ -212,8 +212,9 @@ export default function HeroCarousel() {
       <div className="absolute inset-x-0 bottom-5 z-40 flex justify-center space-x-2 md:bottom-8">
         {slidesData.map((_slide, index) => (
           <button
+          aria-label="Ir a la diapositiva 1"
             key={index}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${
+            className={`h-2 w-2 rounded-full transition-all duration-300  ${
               index === slideIndex ? "w-6 bg-[#1b4772]" : "bg-gray-400"
             }`}
             onClick={() => {

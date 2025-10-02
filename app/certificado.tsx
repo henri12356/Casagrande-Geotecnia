@@ -159,6 +159,7 @@ export default function CarouselCertificados() {
         <div className="flex justify-center mt-6 space-x-2">
           {certificados.map((_, i) => (
             <button
+            aria-label="Ir a la diapositiva 1"
               key={i}
               onClick={() => setIndex(i)}
               className={`h-2 w-2 rounded-full transition-all duration-300 ${

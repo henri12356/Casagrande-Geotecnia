@@ -153,11 +153,17 @@ const MapaProyectos = () => {
   const [isClient, setIsClient] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const mapImageRef = useRef<HTMLImageElement>(null);
-  const [mapOffset, setMapOffset] = useState({ top: 0, left: 0, height: 0, width: 0 });
+  const [mapOffset, setMapOffset] = useState({
+    top: 0,
+    left: 0,
+    height: 0,
+    width: 0,
+  });
 
   const calculateMapBounds = () => {
     if (mapImageRef.current) {
-      const parentRect = mapImageRef.current.parentElement!.getBoundingClientRect();
+      const parentRect =
+        mapImageRef.current.parentElement!.getBoundingClientRect();
       const naturalRatio = 1.3;
       let calculatedHeight = parentRect.width * naturalRatio;
 
@@ -236,11 +242,16 @@ const MapaProyectos = () => {
             Proyectos de Alto Impacto en Perú
           </h1>
           <p className="text-slate-950 text-lg border-l-4 border-[#1b4772] pl-4 italic">
-            Visualización geoespacial de nuestras inversiones estratégicas y desarrollos finalizados y en curso a nivel nacional.
+            Visualización geoespacial de nuestras inversiones estratégicas y
+            desarrollos finalizados y en curso a nivel nacional.
           </p>
           <div className="mt-8 p-4 bg-white rounded-lg shadow-md border-t-4 border-gray-200">
-            <p className="text-sm font-medium text-slate-950">Proyectos Totales</p>
-            <p className="text-4xl font-black text-[#1b4772] mt-1">+ 152 Proyectos</p>
+            <p className="text-sm font-medium text-slate-950">
+              Proyectos Totales
+            </p>
+            <p className="text-4xl font-black text-[#1b4772] mt-1">
+              + 152 Proyectos
+            </p>
           </div>
         </div>
 
@@ -274,12 +285,22 @@ const MapaProyectos = () => {
                 >
                   <div className="relative z-10">
                     <motion.div
-                      className={`w-3 h-3 rounded-full shadow-lg hover:scale-150 transition-transform ${getMarkerColorClass(proyecto.estado)} ${
+                      role="button"
+                      aria-label={`Ver proyecto ${proyecto.nombre} en ${proyecto.provincia}`}
+                      className={`w-3 h-3 rounded-full shadow-lg hover:scale-150 transition-transform ${getMarkerColorClass(
+                        proyecto.estado
+                      )} ${
                         activeProject?.id === proyecto.id ? "scale-[1.5]" : ""
                       }`}
                       animate={{ y: [0, -4, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                     />
+                        <span className="sr-only">Ir al proyecto {proyecto.nombre} en {proyecto.provincia}</span>
+
                   </div>
                 </Link>
               ))}
@@ -296,47 +317,82 @@ const MapaProyectos = () => {
                   }}
                 >
                   <AnimatePresence>
-                    {isClient && windowWidth >= 1024 && hoveredProject?.id === proyecto.id && (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className={`absolute rounded-xl shadow-2xl bg-white w-60 overflow-hidden text-sm border border-gray-100 pointer-events-auto ${getTooltipPosition(
-                          proyecto
-                        )}`}
-                      >
-                        <Link href={proyecto.url} className="block hover:opacity-90 transition-opacity">
-                          <img src={proyecto.imagen} alt={proyecto.nombre} className="w-full h-32 object-cover" />
-                        </Link>
-                        <div className="p-3">
-                          <Link href={proyecto.url} className="hover:text-sky-600 transition-colors">
-                            <span className="font-bold text-gray-900 text-base mb-1 block">{proyecto.nombre}</span>
+                    {isClient &&
+                      windowWidth >= 1024 &&
+                      hoveredProject?.id === proyecto.id && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                          animate={{ opacity: 1, scale: 1, y: 0 }}
+                          exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className={`absolute rounded-xl shadow-2xl bg-white w-60 overflow-hidden text-sm border border-gray-100 pointer-events-auto ${getTooltipPosition(
+                            proyecto
+                          )}`}
+                        >
+                          <Link
+                            href={proyecto.url}
+                            className="block hover:opacity-90 transition-opacity"
+                          >
+                            <img
+                              src={proyecto.imagen}
+                              alt={proyecto.nombre}
+                              className="w-full h-32 object-cover"
+                            />
                           </Link>
-                          <div className="text-gray-500 text-xs uppercase font-medium">{proyecto.provincia}</div>
-                          <div className="flex justify-between items-center mt-3 pt-2 border-t border-gray-100">
-                            <div className="flex flex-col">
-                              <span className="text-xs text-gray-500">Inversión</span>
-                              <span className="font-bold text-lg text-emerald-700">{proyecto.inversion}</span>
+                          <div className="p-3">
+                            <Link
+                              href={proyecto.url}
+                              className="hover:text-sky-600 transition-colors"
+                            >
+                              <span className="font-bold text-gray-900 text-base mb-1 block">
+                                {proyecto.nombre}
+                              </span>
+                            </Link>
+                            <div className="text-gray-500 text-xs uppercase font-medium">
+                              {proyecto.provincia}
                             </div>
-                            <span className={`text-xs font-semibold py-1 px-2 rounded-full ${getEstadoColor(proyecto.estado)}`}>
-                              {proyecto.estado}
-                            </span>
+                            <div className="flex justify-between items-center mt-3 pt-2 border-t border-gray-100">
+                              <div className="flex flex-col">
+                                <span className="text-xs text-gray-500">
+                                  Inversión
+                                </span>
+                                <span className="font-bold text-lg text-emerald-700">
+                                  {proyecto.inversion}
+                                </span>
+                              </div>
+                              <span
+                                className={`text-xs font-semibold py-1 px-2 rounded-full ${getEstadoColor(
+                                  proyecto.estado
+                                )}`}
+                              >
+                                {proyecto.estado}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      </motion.div>
-                    )}
+                        </motion.div>
+                      )}
                   </AnimatePresence>
                 </div>
               ))}
             </div>
 
             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 text-xs border border-gray-200 z-30 hidden lg:block">
-              <h3 className="font-bold text-gray-800 mb-2 border-b pb-1">Leyenda de Estado</h3>
+              <h2 className="font-bold text-gray-800 mb-2 border-b pb-1">
+                Leyenda de Estado
+              </h2>
               <div className="space-y-1">
-                {["Completado", "En construcción", "Operativo", "En desarrollo"].map((estado) => (
+                {[
+                  "Completado",
+                  "En construcción",
+                  "Operativo",
+                  "En desarrollo",
+                ].map((estado) => (
                   <div key={estado} className="flex items-center">
-                    <div className={`w-3 h-3 rounded-full mr-2 ${getMarkerColorClass(estado).split(" ")[0]}`}></div>
+                    <div
+                      className={`w-3 h-3 rounded-full mr-2 ${
+                        getMarkerColorClass(estado).split(" ")[0]
+                      }`}
+                    ></div>
                     <span className="text-gray-600">{estado}</span>
                   </div>
                 ))}
@@ -354,28 +410,61 @@ const MapaProyectos = () => {
                 className="fixed inset-x-0 bottom-0 bg-white rounded-t-2xl z-50 p-4 max-h-[50vh] overflow-y-auto lg:hidden shadow-2xl"
               >
                 <div className="flex justify-between items-start border-b pb-3 mb-3">
-                  <h2 className="text-lg font-bold text-gray-900 leading-tight">{activeProject.nombre}</h2>
-                  <button onClick={() => setActiveProject(null)} className="text-gray-500 hover:text-gray-800 p-1" aria-label="Cerrar detalles del proyecto">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                  <h2 className="text-lg font-bold text-gray-900 leading-tight">
+                    {activeProject.nombre}
+                  </h2>
+                  <button
+                    onClick={() => setActiveProject(null)}
+                    className="text-gray-500 hover:text-gray-800 p-1"
+                    aria-label="Cerrar detalles del proyecto"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      ></path>
                     </svg>
                   </button>
                 </div>
 
-                <img src={activeProject.imagen} alt={activeProject.nombre} className="w-full h-32 object-cover rounded-lg mb-3" />
+                <img
+                  src={activeProject.imagen}
+                  alt={activeProject.nombre}
+                  className="w-full h-32 object-cover rounded-lg mb-3"
+                />
 
                 <div className="flex flex-col space-y-2">
-                  <p className="text-gray-600 text-xs italic">{activeProject.descripcion}</p>
+                  <p className="text-gray-600 text-xs italic">
+                    {activeProject.descripcion}
+                  </p>
 
                   <div className="grid grid-cols-2 gap-4 pt-2 border-t border-gray-100">
                     <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 uppercase font-medium">Provincia</span>
-                      <span className="font-bold text-sm text-gray-800">{activeProject.provincia}</span>
+                      <span className="text-xs text-gray-500 uppercase font-medium">
+                        Provincia
+                      </span>
+                      <span className="font-bold text-sm text-gray-800">
+                        {activeProject.provincia}
+                      </span>
                     </div>
 
                     <div className="flex flex-col items-end">
-                      <span className="text-xs text-gray-500 uppercase font-medium">Estado</span>
-                      <span className={`text-sm font-semibold py-1 px-2 rounded-full ${getEstadoColor(activeProject.estado)}`}>
+                      <span className="text-xs text-gray-500 uppercase font-medium">
+                        Estado
+                      </span>
+                      <span
+                        className={`text-sm font-semibold py-1 px-2 rounded-full ${getEstadoColor(
+                          activeProject.estado
+                        )}`}
+                      >
                         {activeProject.estado}
                       </span>
                     </div>
@@ -388,8 +477,12 @@ const MapaProyectos = () => {
                     </Link>
 
                     <div className="col-span-2 flex flex-col pt-2">
-                      <span className="text-xs text-gray-500 uppercase font-medium">Inversión Estimada</span>
-                      <span className="font-bold text-xl text-emerald-700">{activeProject.inversion}</span>
+                      <span className="text-xs text-gray-500 uppercase font-medium">
+                        Inversión Estimada
+                      </span>
+                      <span className="font-bold text-xl text-emerald-700">
+                        {activeProject.inversion}
+                      </span>
                     </div>
                   </div>
                 </div>
