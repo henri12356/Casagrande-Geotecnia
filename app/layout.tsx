@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import FloatingButtons from "./floating-buttons";
 import "./globals.css";
-import Script from "next/script";
 
 const font = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -266,11 +265,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="manifest" href="/manifest.json" />
 
-        <link
-          rel="preload"
-          href="/_next/static/css/fc5f8b0d3acdb41a.css"
-          as="style"
-        />
         {/* Preload para fuentes críticas */}
       
       </head>
@@ -278,7 +272,6 @@ export default function RootLayout({
         {children}
         <FloatingButtons />
         <GoogleAnalytics gaId="G-HSYFNDRHDW" />
-                <Script src="/analytics.js" strategy="afterInteractive" />
 
       </body>
     </html>

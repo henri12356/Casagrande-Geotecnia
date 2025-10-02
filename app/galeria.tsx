@@ -144,13 +144,13 @@ const Galeria = () => {
                       <p className="text-black text-sm mb-6 flex-1">
                         {servicio.description}
                       </p>
-                      <button 
+                      <p 
                       aria-label="Ver detalles del servicio" 
                       className="mt-auto flex items-center cursor-pointer text-[#1b4772] font-bold text-sm hover:text-gray-900 transition-colors"
                       
                       >
                         Ver detalles <FaArrowRight className="ml-2" />
-                      </button>
+                      </p>
                     </div>
                   </Link>
                 </motion.div>
