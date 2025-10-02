@@ -265,20 +265,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="manifest" href="/manifest.json" />
-         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
         <link
           rel="preload"
           href="/_next/static/css/fc5f8b0d3acdb41a.css"
           as="style"
         />
         {/* Preload para fuentes críticas */}
-        <link
-          rel="preload"
-          href={companyInfo.socialMedia.linkedin}
-          as="document"
-          crossOrigin="anonymous"
-        />
+      
       </head>
       <body className={`${font.className} antialiased`}>
         {children}
