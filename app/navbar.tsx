@@ -187,7 +187,7 @@ const MobileMenuButton = ({
   toggle: () => void;
 }) => (
   <motion.button
-    className="z-[100] rounded-md p-2 text-[#373737] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-[#373737] md:hidden"
+    className="z-[100] rounded-md p-2 text-[#1b4772] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-[#373737] md:hidden"
     onClick={toggle}
     aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
     whileTap={{ scale: 0.9 }}
@@ -376,11 +376,11 @@ const Navbar = () => {
               className="fixed top-0 right-0 z-50 flex h-full w-4/5 max-w-sm flex-col bg-white shadow-xl"
             >
               <div className="flex items-center justify-between border-b p-4">
-                <span className="font-bold text-[#373737]">Menú</span>
+                <span className="font-bold text-[#1b4772]">Menú</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Cerrar menú"
-                  className="rounded-md p-1 text-[#373737] transition-colors cursor-pointer hover:bg-gray-100 hover:text-[#373737]"
+                  className="rounded-md p-1 text-[#1b4772] transition-colors cursor-pointer hover:bg-gray-100 hover:text-[#373737]"
                 >
                   <LuX className="h-6 w-6" />
                 </button>
@@ -393,7 +393,7 @@ const Navbar = () => {
                       className={`block rounded-lg px-4 py-3 text-base font-medium transition-colors ${
                         pathname === link.href
                           ? "bg-gray-300 text-black"
-                          : "text-[#373737] hover:bg-gray-100"
+                          : "text-[#1b4772] hover:bg-gray-100"
                       }`}
                     >
                       {link.label}

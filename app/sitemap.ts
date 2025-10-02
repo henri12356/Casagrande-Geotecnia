@@ -1,17 +1,30 @@
-// app/sitemap.ts
+import { MetadataRoute } from 'next'
+
+// Datos de servicios y proyectos (puedes mover esto a una base de datos después)
 const serviciosSlugs = [
   'geotecnia',
   'geologia', 
   'estudio-de-suelos',
   'laboratorio-geotecnico',
-  'servicios-pavimento'
-]
-const proyectosSlugs = [
-    'Aeropuerto',
+  'servicios-pavimento',
+  'geofisica',
+  'geomecanica',
+  'hidrogeologia',
+  'control-calidad'
 ]
 
-export default function sitemap() {
-  const baseUrl = 'https://casagrande-geotecnia.vercel.app/'
+const proyectosSlugs = [
+  'aeropuerto-internacional-jorge-chavez',
+  'hospital-nacional',
+  'carretera-interoceanica',
+  'metro-de-lima',
+  'presa-hidroelectrica',
+  'edificio-corporativo',
+  'centro-comercial'
+]
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://www.casagrandegeotecnia.com.pe'
   
   // URLs de servicios individuales
   const servicioUrls = serviciosSlugs.map((slug) => ({
@@ -20,19 +33,22 @@ export default function sitemap() {
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
-  const proyectosUrl = proyectosSlugs.map((slug) => ({
+
+  // URLs de proyectos individuales
+  const proyectosUrls = proyectosSlugs.map((slug) => ({
     url: `${baseUrl}/proyectos/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
   }))
 
-  return [
+  // URLs estáticas principales
+  const staticUrls = [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'yearly' as const,
-      priority: 1,
+      changeFrequency: 'monthly' as const, // Cambiado de yearly a monthly
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/servicios`,
@@ -40,19 +56,31 @@ export default function sitemap() {
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
-    ...servicioUrls,
     {
-      url: `${baseUrl}/projects`,
+      url: `${baseUrl}/proyectos`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: 0.7,
+      priority: 0.8, // Aumentado de 0.7 a 0.8
     },
-        ...proyectosUrl,
+    {
+      url: `${baseUrl}/nosotros`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
     {
       url: `${baseUrl}/contacto`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      priority: 0.7, // Aumentado para importancia SEO local
     }
   ]
+
+  return [...staticUrls, ...servicioUrls, ...proyectosUrls]
 }
