@@ -1,56 +1,54 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google'; 
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Certificados Profesionales | Club de Ingenieros",
-    template: "%s | Club de Ingenieros"
+    default: "Nosotros | Casagrande Geotecnia",
+    template: "%s | Casagrande Geotecnia"
   },
-  description: "Certificados avalados y con validez profesional para ingenieros civiles, mecánicos, eléctricos e industriales. Mejora tu currículum con nuestras certificaciones reconocidas.",
+  description: "Conoce a Casagrande Geotecnia: nuestro equipo profesional, valores, misión, visión y certificados ISO 9001, 14001 y 37001 en estudios geotécnicos y control de calidad en construcción.",
   keywords: [
-    "certificado de ingeniería",
-    "certificación profesional ingenieros",
-    "certificados con aval de la camara de comercio de lima",
-    "aval de ingeniería",
-    "certificado válido ingeniería civil",
-    "documentación técnica certificada",
-    "reconocimiento profesional ingenieros",
-    "club de ingenieros certificados",
-    "sello profesional ingeniería",
-    "constancia de estudios ingeniería",
-    "diploma ingeniería válido"
+    "Casagrande Geotecnia",
+    "equipo de ingeniería",
+    "certificados ISO",
+    "valores de empresa",
+    "misión y visión",
+    "consultoría geotécnica",
+    "laboratorio de suelos",
+    "control de calidad construcción",
+    "estudios geotécnicos Perú",
+    "ingeniería civil Lima"
   ].join(", "),
   openGraph: {
-    title: "Certificados Profesionales de Ingeniería ",
-    description: "Obtén tu certificación con validez profesional para procesos laborales y de ascenso en el sector de ingeniería",
+    title: "Nosotros | Casagrande Geotecnia",
+    description: "Descubre a nuestro equipo profesional, certificados ISO y valores que nos hacen líderes en estudios geotécnicos y control de calidad.",
     type: "website",
-    url: "https://www.clubdeingeniero.com/projects",
+    url: "https://www.casagrandegeotecnia.com.pe/nosotros",
     images: [
       {
-        url: "https://www.clubdeingeniero.com/certificadodelante.webp",
+        url: "https://www.casagrandegeotecnia.com.pe/fondo.webp",
         width: 1200,
         height: 630,
-        alt: "Certificados Profesionales Club de Ingenieros",
+        alt: "Equipo y valores de Casagrande Geotecnia",
       },
     ],
-    siteName: "Club de Ingenieros",
+    siteName: "Casagrande Geotecnia",
     locale: "es_PE",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Certificados Profesionales | Club de Ingenieros",
-    description: "Certificaciones válidas para ingenieros con reconocimiento en el sector industrial",
-    images: ["https://www.clubdeingeniero.com/certificadodelante.webp"],
-    site: "@ClubIngenieros",
-    creator: "@ClubIngenieros",
+    title: "Nosotros | Casagrande Geotecnia",
+    description: "Conoce nuestro equipo profesional y certificados ISO que respaldan nuestros servicios de estudios geotécnicos y control de calidad.",
+    images: ["https://www.casagrandegeotecnia.com.pe/nosotros-portada.webp"],
+    site: "@CasagrandeGeo",
+    creator: "@CasagrandeGeo",
   },
   alternates: {
-    canonical: "https://www.clubdeingeniero.com/projects",
+    canonical: "https://www.casagrandegeotecnia.com.pe/nosotros",
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -61,12 +59,11 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'TU_GOOGLE_VERIFICATION_CODE',
-    yandex: 'TU_YANDEX_VERIFICATION_CODE',
+    google: 'TU_GOOGLE_VERIFICATION_CODE', // reemplaza con tu código
   },
 };
 
-export default function CertificadosLayout({
+export default function NosotrosLayout({
   children,
 }: {
   children: React.ReactNode
@@ -74,23 +71,57 @@ export default function CertificadosLayout({
   return (
     <>
       {children}
-          <GoogleAnalytics gaId="G-EK501511RW" /> 
-      
-      {/* Schema Markup para la organización */}
+      <GoogleAnalytics gaId="G-HSYFNDRHDW" />
+
+      {/* Schema JSON-LD para la empresa */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Club de Ingenieros",
-            "url": "https://www.clubdeingenieros.com",
-            "logo": "https://www.clubdeingenieros.com/logo.png",
+            "name": "Casagrande Geotecnia",
+            "url": "https://www.casagrandegeotecnia.com.pe",
+            "logo": "https://www.casagrandegeotecnia.com.pe/logo.png",
             "sameAs": [
-              "https://www.facebook.com/clubdeingenieros",
-              "https://www.linkedin.com/company/clubdeingenieros",
-              "https://twitter.com/clubdeingenieros"
-            ]
+              "https://www.facebook.com/CasagrandeGeotecnia",
+              "https://www.linkedin.com/company/casagrande-geotecnia",
+              "https://twitter.com/CasagrandeGeo",
+              "https://www.instagram.com/casagrande_geotecnia",
+              "https://youtube.com/@CasagrandeGeotecnia"
+            ],
+            "foundingDate": "2010",
+            "founder": "Nombre del Fundador",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Tu Dirección 123",
+              "addressLocality": "Lima",
+              "addressRegion": "Lima",
+              "addressCountry": "Perú"
+            },
+            "employee": [
+              {
+                "@type": "Person",
+                "name": "Nombre del Director",
+                "jobTitle": "Director General"
+              },
+              {
+                "@type": "Person",
+                "name": "Nombre del Ingeniero Principal",
+                "jobTitle": "Ingeniero Geotécnico Senior"
+              }
+              // agrega más miembros según tu equipo
+            ],
+            "hasCredential": [
+              "ISO 9001:2015 - Quality Management Systems",
+              "ISO 14001:2015 - Environmental Management Systems",
+              "ISO 37001:2016 - Anti-bribery Management Systems"
+            ],
+            "memberOf": {
+              "@type": "Organization",
+              "name": "Colegio de Ingenieros del Perú",
+              "url": "https://www.cip.org.pe"
+            }
           })
         }}
       />

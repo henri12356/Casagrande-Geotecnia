@@ -11,22 +11,98 @@ const font = Plus_Jakarta_Sans({
   weight: ['400', '500', '600', '700'],
 });
 
+// Datos de la empresa para reutilizar
+const companyInfo = {
+  name: "Casagrande Geotecnia",
+  description: "Empresa consultora especializada en estudios geotécnicos, geología, laboratorio de suelos y control de calidad. Certificaciones ISO 9001, 14001, 37001. Servicios para construcción segura.",
+  url: "https://www.casagrandegeotecnia.com.pe/",
+  logo: "https://www.casagrandegeotecnia.com.pe/logo.png",
+  phone: "+51 962 835 652", // Reemplaza con tu teléfono real
+  email: "comercial@casagrandegeotecnia.com.pe", // Reemplaza con tu email real
+  address: {
+    street: "Jirón Quinua 570, Ayacucho 05003", // Reemplaza con tu dirección real
+    city: "Lima",
+    region: "Lima",
+    country: "Perú"
+  },
+  socialMedia: {
+    linkedin: "https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/",
+    facebook: "https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA",
+    instagram: "https://www.instagram.com/casagrandegeotecnia/",
+    youtube: "https://www.youtube.com/@CasagrandeGeotecnia-s5m",
+    tiktok: "https://www.tiktok.com/@casagrandegeotecnia" 
+  }
+};
+
+// Schema structured data para mejor SEO
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EngineeringFirm',
+  'name': companyInfo.name,
+  'description': companyInfo.description,
+  'url': companyInfo.url,
+  'logo': companyInfo.logo,
+  'telephone': companyInfo.phone,
+  'email': companyInfo.email,
+  'address': {
+    '@type': 'PostalAddress',
+    'streetAddress': companyInfo.address.street,
+    'addressLocality': companyInfo.address.city,
+    'addressRegion': companyInfo.address.region,
+    'addressCountry': companyInfo.address.country
+  },
+  'geo': {
+    '@type': 'GeoCoordinates',
+    // Agrega coordenadas si las tienes
+  },
+  'sameAs': [
+    companyInfo.socialMedia.linkedin,
+    companyInfo.socialMedia.facebook,
+    companyInfo.socialMedia.instagram,
+    companyInfo.socialMedia.youtube,
+    companyInfo.socialMedia.tiktok
+  ],
+  'serviceType': [
+    "Geotechnical Engineering",
+    "Civil Engineering Consulting",
+    "Soil Testing Laboratory",
+    "Geological Surveys",
+    "Construction Quality Control"
+  ],
+  'areaServed': 'Perú',
+  'hasCertification': [
+    {
+      '@type': 'Certification',
+      'name': 'ISO 9001:2015 - Quality Management Systems'
+    },
+    {
+      '@type': 'Certification',
+      'name': 'ISO 14001:2015 - Environmental Management Systems'
+    },
+    {
+      '@type': 'Certification',
+      'name': 'ISO 37001:2016 - Anti-bribery Management Systems'
+    }
+  ],
+  'foundingDate': '2005', // Reemplaza con año real de fundación
+  'founder': {
+    '@type': 'Person',
+    'name': 'Fundador Casagrande' // Reemplaza con nombre real
+  }
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Casagrande Geotecnia | Consultores en Ingeniería Civil y Estudios Geotécnicos",
     template: "%s | Casagrande Geotecnia",
   },
-  description: "Empresa consultora especializada en estudios geotécnicos, geología, laboratorio de suelos y control de calidad. Certificaciones ISO 9001, 14001, 37001. Servicios para construcción segura.",
+  description: companyInfo.description,
   keywords: [
-    "Geotecnia",
-    "geología",
-    "control de calidad construcción",
-    "laboratorio de suelos",
-    "estudios geotécnicos",
-    "ingeniería civil Perú",
+    "estudios geotécnicos Perú",
+    "geotecnia Lima",
     "laboratorio de suelos",
     "estudios de cimentación",
-    "geología aplicada",
+    "geología aplicada construcción",
     "control de calidad construcción",
     "estabilidad de taludes",
     "estudios geofísicos",
@@ -36,12 +112,22 @@ export const metadata: Metadata = {
     "hidrogeología",
     "ensayos de concreto",
     "estudios de pavimentos",
-    "certificaciones ISO",
-    "Casagrande Geotecnia"
+    "certificaciones ISO construcción",
+    "ingeniería civil Perú",
+    "consultoría ingeniería Lima",
+    "estudio de suelos para edificios",
+    "geotecnia para minería",
+    "estudios geotécnicos carreteras"
   ].join(", "),
+  
+  // Metadatos básicos
   authors: [{ name: "Casagrande Geotecnia" }],
   creator: "Casagrande Geotecnia",
   publisher: "Casagrande Geotecnia",
+  category: 'engineering',
+  classification: 'Consultoría en Ingeniería Civil y Geotecnia',
+  
+  // Robots y indexación
   robots: {
     index: true,
     follow: true,
@@ -51,46 +137,113 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      noimageindex: false,
     },
   },
-  icons: {
-    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+  
+  // Verificación de propiedad (opcional)
+  verification: {
+    google: 'tu-codigo-de-verificacion-google', // Reemplaza con tu código
+    // yandex: 'tu-codigo-yandex',
+    // bing: 'tu-codigo-bing'
   },
-  metadataBase: new URL('https://www.casagrandegeotecnia.com.pe/'),
+  
+  // Íconos y favicon
+  icons: {
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/icon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-32x32.png', sizes: '32x32', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#5bbad5'
+      }
+    ],
+  },
+  
+  // Open Graph para redes sociales
   openGraph: {
     type: 'website',
     locale: 'es_PE',
-    url: 'https://www.casagrandegeotecnia.com.pe/',
-    siteName: 'Casagrande Geotecnia',
-    title: 'Casagrande Geotecnia | Consultores en Ingeniería Civil y estudios Geotécnicos',
-    description: 'Especialistas en estudios geotécnicos, geología, laboratorio y control de calidad para construcción segura.',
+    url: companyInfo.url,
+    siteName: companyInfo.name,
+    title: 'Casagrande Geotecnia | Consultores en Ingeniería Civil y Estudios Geotécnicos',
+    description: companyInfo.description,
+    emails: [companyInfo.email],
+    phoneNumbers: [companyInfo.phone],
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/fondo.webp',
         width: 1200,
         height: 630,
         alt: 'Casagrande Geotecnia - Consultoría en Ingeniería Civil y estudios Geotécnicos',
+        type: 'image/jpeg',
       },
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 800,
+        alt: 'Casagrande Geotecnia - Logo',
+        type: 'image/jpeg',
+      }
     ],
   },
+  
+  // Twitter Cards
   twitter: {
     card: 'summary_large_image',
     title: 'Casagrande Geotecnia | Consultores Especializados',
     description: 'Estudios geotécnicos, laboratorio de suelos y control de calidad para proyectos de construcción.',
     creator: '@CasagrandeGeo',
+    site: '@CasagrandeGeo',
     images: ['/twitter-image.jpg'],
   },
+  
+  // Alternates y canonical
   alternates: {
-    canonical: 'https://www.casagrandegeotecnia.com.pe/',
+    canonical: companyInfo.url,
     languages: {
-      'es-PE': 'https://www.casagrandegeotecnia.com.pe/',
+      'es-PE': companyInfo.url,
     },
   },
-  category: 'engineering',
-  classification: 'Consultoría en Ingeniería Civil y Geotecnia'
+  
+  // Metadatos adicionales
+  metadataBase: new URL(companyInfo.url),
+  manifest: '/manifest.json', // Para PWA (opcional)
+  
+  // Format detection
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  
+  // Apple specific
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: companyInfo.name,
+  },
+  
+  // Viewport (se maneja automáticamente en Next.js 15)
 };
+
+// Componente para Structured Data
+function StructuredData() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
 
 export default function RootLayout({
   children,
@@ -99,6 +252,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es-PE" suppressHydrationWarning className={font.variable}>
+      <head>
+        <StructuredData />
+        {/* Preconnects para mejor performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        
+        {/* Preload para fuentes críticas */}
+        <link
+          rel="preload"
+          href={companyInfo.socialMedia.linkedin}
+          as="document"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${font.className} antialiased`}>
         {children}
         <FloatingButtons />
