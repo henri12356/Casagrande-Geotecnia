@@ -159,7 +159,7 @@ const DesktopMenu = ({
       >
         <Link
           href={link.href}
-          className={`relative px-4 py-2 font-medium text-[#1b4772] transition-colors duration-300 ${
+          className={`relative px-4 py-2 font-bold text-[#1b4772] transition-colors duration-300 ${
             pathname === link.href
               ? "font-bold text-[#1b4772]"
               : "hover:text-sky-950"
@@ -292,7 +292,7 @@ const Navbar = () => {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm backdrop-blur-md"
+        className="fixed top-0 left-0 right-0 z-50  bg-white shadow-sm backdrop-blur-md"
         variants={navbarVariants}
         animate={isVisible ? "visible" : "hidden"}
         initial="hidden"
@@ -390,7 +390,7 @@ const Navbar = () => {
                   <motion.div key={link.href} variants={mobileMenuItemVariants}>
                     <Link
                       href={link.href}
-                      className={`block rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+                      className={`block rounded-lg px-4 py-3 text-base font-bold transition-colors ${
                         pathname === link.href
                           ? "bg-gray-300 text-black"
                           : "text-[#1b4772] hover:bg-gray-100"
