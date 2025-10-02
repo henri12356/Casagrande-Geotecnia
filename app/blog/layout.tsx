@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://www.casagrandegeotecnia.com.pe/blog",
     images: [
       {
-        url: "https://www.casagrandegeotecnia.com.pe/blog-geotecnia.jpg",
+        url: "https://www.casagrandegeotecnia.com.pe/fondoblog.webp",
         width: 1200,
         height: 630,
         alt: "Blog de Ingeniería Geotécnica - Casagrande Geotecnia",
