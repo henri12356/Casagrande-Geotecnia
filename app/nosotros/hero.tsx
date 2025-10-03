@@ -109,7 +109,7 @@ export default function HeroServicios() {
           transition={{ duration: 1.5, ease: "easeInOut" }}
         >
           <Image
-            src={activeSlide.imageSrc}
+            src={activeSlide.imageSrc}  
             alt={activeSlide.title}
             fill
             className="object-cover object-center"
