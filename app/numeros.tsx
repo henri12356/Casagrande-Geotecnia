@@ -77,7 +77,7 @@ const Numeros = () => {
         {stats.map((stat) => (
           <motion.div
             key={stat.id}
-            className="flex flex-col items-center justify-center p-6 bg-[#1b4772] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            className="flex flex-col items-center justify-center p-6 bg-[#182C45] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             variants={statCardVariants}
           >
             <div

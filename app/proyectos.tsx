@@ -235,13 +235,13 @@ const MapaProyectos = () => {
     <div className="font-sans py-12 px-4 sm:px-6 lg:px-8 md:pt-56 pt-2">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto gap-8 lg:gap-12">
         <div className="lg:w-1/3 flex flex-col justify-start pt-4">
-          <p className="text-xl font-semibold text-[#1b4772] uppercase tracking-wider mb-2">
+          <p className="text-xl font-semibold text-[#182C45] uppercase tracking-wider mb-2">
             Portfolio Corporativo
           </p>
           <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             Proyectos de Alto Impacto en Perú
           </h1>
-          <p className="text-slate-950 text-lg border-l-4 border-[#1b4772] pl-4 italic">
+          <p className="text-slate-950 text-lg border-l-4 border-[#182C45] pl-4 italic">
             Visualización geoespacial de nuestras inversiones estratégicas y
             desarrollos finalizados y en curso a nivel nacional.
           </p>
@@ -249,7 +249,7 @@ const MapaProyectos = () => {
             <p className="text-sm font-medium text-slate-950">
               Proyectos Totales
             </p>
-            <p className="text-4xl font-black text-[#1b4772] mt-1">
+            <p className="text-4xl font-black text-[#182C45] mt-1">
               + 152 Proyectos
             </p>
           </div>
@@ -471,7 +471,7 @@ const MapaProyectos = () => {
 
                     <Link
                       href={activeProject.url}
-                      className="col-span-2 w-52 text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
+                      className="col-span-2 w-52 text-center bg-[#182C45] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
                     >
                       Ver Proyecto
                     </Link>

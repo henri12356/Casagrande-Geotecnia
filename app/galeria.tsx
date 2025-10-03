@@ -74,7 +74,7 @@ const Galeria = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-black text-[#1b4772] mb-4"
+            className="text-3xl md:text-4xl font-black text-[#182C45] mb-4"
           >
             Portafolio de Servicios
           </motion.h2>
@@ -91,7 +91,7 @@ const Galeria = () => {
             initial={{ width: 0 }}
             animate={{ width: "80px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="h-1 bg-[#1b4772] mx-auto mt-4"
+            className="h-1 bg-[#182C45] mx-auto mt-4"
           />
         </div>
 
@@ -139,7 +139,7 @@ const Galeria = () => {
 
                     {/* Texto */}
                     <div className="flex flex-col flex-1 p-6">
-                      <h3 className="font-semibold text-[#1b4772] mb-3 text-lg">
+                      <h3 className="font-semibold text-[#182C45] mb-3 text-lg">
                         {servicio.title}
                       </h3>
                       <p className="text-black text-sm mb-6 flex-1">
@@ -147,7 +147,7 @@ const Galeria = () => {
                       </p>
                       <p 
                       aria-label="Ver detalles del servicio" 
-                      className="mt-auto flex items-center cursor-pointer text-[#1b4772] font-bold text-sm hover:text-gray-900 transition-colors"
+                      className="mt-auto flex items-center cursor-pointer text-[#182C45] font-bold text-sm hover:text-gray-900 transition-colors"
                       
                       >
                         Ver detalles <FaArrowRight className="ml-2" />
@@ -160,8 +160,8 @@ const Galeria = () => {
           </CarouselContent>
 
           {/* Controles */}
-          <CarouselPrevious className="  left-[-50px] h-10 w-10 bg-[#1b4772] text-white hover:text-white hover:bg-black rounded-full shadow-md max-lg:hidden cursor-pointer" />
-          <CarouselNext className="right-[-30px] h-10 w-10 bg-[#1b4772] text-white hover:bg-gray-900 hover:text-white rounded-full shadow-md max-lg:hidden cursor-pointer" />
+          <CarouselPrevious className="  left-[-50px] h-10 w-10 bg-[#182C45] text-white hover:text-white hover:bg-black rounded-full shadow-md max-lg:hidden cursor-pointer" />
+          <CarouselNext className="right-[-30px] h-10 w-10 bg-[#182C45] text-white hover:bg-gray-900 hover:text-white rounded-full shadow-md max-lg:hidden cursor-pointer" />
         </Carousel>
       </div>
     </section>

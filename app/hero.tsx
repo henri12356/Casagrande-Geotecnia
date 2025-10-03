@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion, Variants, Transition } from "framer-motion";
-import { LuPhone } from "react-icons/lu";
 import Link from "next/link";
 import { ReactNode, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
@@ -22,9 +21,8 @@ const slidesData: {
     title: "BIENVENIDO A CASAGRANDE",
     subtitle: "Acreditados ante el INACAL con ISO/IEC 17025:2017",
     imageSrc: "/hero01.webp",
-    buttonText: "Llámanos: 989 900 609",
+    buttonText: "Descargar Nuestro Brochure",
     buttonLink: "tel:989900609",
-    buttonIcon: <LuPhone className="h-5 w-5" />,
   },
   {
     id: 2,
@@ -35,24 +33,24 @@ const slidesData: {
     buttonText: "Conoce nuestros servicios",
     buttonLink: "/servicios",
   },
-  {
-    id: 3,
-    title: "CONSULTORÍA EN CIMENTACIONES Y TALUDES",
-    subtitle:
-      "Diseños recomendados para cimentaciones, muros de contención y pavimentos, asegurando la correcta ejecución de la obra.",
-    imageSrc: "/hero03.webp",
-    buttonText: "Ver Proyectos",
-    buttonLink: "/proyectos",
-  },
-  {
-    id: 4,
-    title: "LABORATORIO Y CONTROL DE CALIDAD",
-    subtitle:
-      "Pruebas en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar resultados confiables.",
-    imageSrc: "/hero04.webp",
-    buttonText: "Más Información",
-    buttonLink: "/nosotros",
-  },
+  // {
+  //   id: 3,
+  //   title: "CONSULTORÍA EN CIMENTACIONES Y TALUDES",
+  //   subtitle:
+  //     "Diseños recomendados para cimentaciones, muros de contención y pavimentos, asegurando la correcta ejecución de la obra.",
+  //   imageSrc: "/hero03.webp",
+  //   buttonText: "Ver Proyectos",
+  //   buttonLink: "/proyectos",
+  // },
+  // {
+  //   id: 4,
+  //   title: "LABORATORIO Y CONTROL DE CALIDAD",
+  //   subtitle:
+  //     "Pruebas en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar resultados confiables.",
+  //   imageSrc: "/hero04.webp",
+  //   buttonText: "Más Información",
+  //   buttonLink: "/nosotros",
+  // },
 ];
 
 // --- Variantes de Animación (Completamente tipadas) ---
@@ -115,7 +113,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       paginate(1);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [paginate]);
 
@@ -152,7 +150,7 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1b4772] to-[#0f172a]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45] to-[#0f172a]/30" />
         </motion.div>
       </AnimatePresence>
 
@@ -179,7 +177,7 @@ export default function HeroCarousel() {
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg cursor-pointer"
+                className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg cursor-pointer"
               >
                 {activeSlide.title}
               </motion.h1>
@@ -195,7 +193,7 @@ export default function HeroCarousel() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-4 rounded-lg bg-white px-8 py-3 text-base font-bold text-[#1b4772] shadow-lg transition-transform duration-300 hover:bg-[#1b4b52] hover:scale-105 active:scale-95"
+                  className="mt-4 rounded-lg bg-white px-8 py-6 text-base font-bold text-[#182C45] shadow-lg transition-transform duration-300 hover:bg-[#a2babd] hover:scale-105 active:scale-95"
                 >
                   <Link
                     href={activeSlide.buttonLink}
@@ -217,7 +215,7 @@ export default function HeroCarousel() {
             aria-label="Ir a la diapositiva 1"
             key={index}
             className={`h-2 w-2 rounded-full transition-all duration-300 p-2 cursor-pointer   ${
-              index === slideIndex ? "w-6 bg-[#1b4772]" : "bg-gray-400"
+              index === slideIndex ? "w-6 bg-[#182C45]" : "bg-gray-400"
             }`}
             onClick={() => {
               const newDirection = index > slideIndex ? 1 : -1;

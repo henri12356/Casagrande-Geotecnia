@@ -42,7 +42,7 @@ const CompanyLogo = ({ name, logo }: { name:string; logo:string; }) => {
           sizes="(max-width: 768px) 80px, 96px"
         />
       </div>
-      <p className="text-xs text-center text-[#1b4772] mt-1 max-w-[100px] leading-tight">
+      <p className="text-xs text-center text-[#182C45] mt-1 max-w-[100px] leading-tight">
         {name}
       </p>
     </motion.div>
@@ -67,7 +67,7 @@ const Trusted = () => {
   };
 
   return (
-    <div className={cn("w-full overflow-hidden py-8 md:pt-16 relative", "bg-white text-[#1b4772]")}>
+    <div className={cn("w-full overflow-hidden py-8 md:pt-16 relative", "bg-white text-[#182C45]")}>
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center mb-10">
         <motion.div
           initial="hidden"
@@ -80,7 +80,7 @@ const Trusted = () => {
             variants={itemVariants}
           >
             Nuestros {" "}
-            <span className="text-[#1b4772] font-bold">Clientes</span>
+            <span className="text-[#182C45] font-bold">Clientes</span>
           </motion.h2>
           <motion.p
             className="text-base md:text-lg text-slate-950 font-sans leading-relaxed max-w-2xl mx-auto"

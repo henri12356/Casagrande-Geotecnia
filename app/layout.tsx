@@ -102,26 +102,62 @@ export const metadata: Metadata = {
   },
   description: companyInfo.description,
   keywords: [
+   // Servicios principales + Perú
     "estudios geotécnicos Perú",
+    "geotecnia Perú",
+    "laboratorio de suelos Perú",
+    "estudios de cimentación Perú",
+    "control calidad construcción Perú",
+    "mecánica de suelos Perú",
+    
+    // Ciudades principales (las más importantes)
+    "estudios geotécnicos Lima",
     "geotecnia Lima",
-    "laboratorio de suelos",
-    "estudios de cimentación",
-    "geología aplicada construcción",
-    "control de calidad construcción",
-    "estabilidad de taludes",
-    "estudios geofísicos",
-    "consultoría geotécnica",
-    "análisis de suelos",
-    "mecánica de rocas",
-    "hidrogeología",
-    "ensayos de concreto",
-    "estudios de pavimentos",
-    "certificaciones ISO construcción",
-    "ingeniería civil Perú",
-    "consultoría ingeniería Lima",
-    "estudio de suelos para edificios",
-    "geotecnia para minería",
+    "laboratorio suelos Lima",
+    "estudios geotécnicos Arequipa",
+    "geotecnia Arequipa",
+    "estudios geotécnicos Cusco",
+    "geotecnia Cusco",
+    "estudios geotécnicos Trujillo",
+    "geotecnia Trujillo",
+    "estudios geotécnicos Chiclayo",
+    "estudios geotécnicos Piura",
+    "geotecnia Ayacucho",
+    "estudios suelos Ayacucho",
+    "estudios geotécnicos Huancayo",
+    "estudios geotécnicos Iquitos",
+    "estudios geotécnicos Tacna",
+    "estudios geotécnicos Puno",
+    
+    // Regiones geográficas
+    "estudios geotécnicos costa Perú",
+    "geotecnia sierra Perú",
+    "estudios suelos selva peruana",
+    
+    // Servicios específicos
+    "estabilidad taludes Perú",
+    "estudios geofísicos Perú",
+    "análisis suelos construcción",
+    "mecánica rocas Perú",
+    "hidrogeología Perú",
+    "ensayos concreto Perú",
+    "estudios pavimentos Perú",
+    
+    // Sectores
+    "geotecnia minería Perú",
     "estudios geotécnicos carreteras",
+    "geotecnia edificaciones",
+    "estudios suelos puentes",
+    
+    // Certificaciones
+    "consultora ISO 9001 Perú",
+    "ingeniería civil certificada Perú",
+    
+    // Long-tail keywords
+    "estudio de suelos para edificios Lima",
+    "laboratorio mecánica suelos Arequipa",
+    "consultoría geotécnica proyectos construcción",
+    "ensayos laboratorio suelos certificados",
   ].join(", "),
 
   // Metadatos básicos
@@ -153,24 +189,28 @@ export const metadata: Metadata = {
   },
 
   // Íconos y favicon
-  icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-        color: "#5bbad5",
-      },
-    ],
-  },
+ icons: {
+  icon: [
+    { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+    { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+    { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+  ],
+  shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+  apple: [
+    { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+  ],
+  other: [
+    {
+      rel: "mask-icon",
+      url: "/safari-pinned-tab.svg",
+      color: "#5bbad5",
+    },
+  ],
+},
+manifest: "/site.webmanifest",
+
 
   // Open Graph para redes sociales
   openGraph: {
@@ -222,7 +262,6 @@ export const metadata: Metadata = {
 
   // Metadatos adicionales
   metadataBase: new URL(companyInfo.url),
-  manifest: "/manifest.json", // Para PWA (opcional)
 
   // Format detection
   formatDetection: {

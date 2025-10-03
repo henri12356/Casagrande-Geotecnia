@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="hidden md:flex justify-between items-center">
           <Link
             href="/"
-            className="flex items-center group relative h-12 w-48 md:h-16 md:w-64 lg:w-80 xl:w-96"
+            className="flex items-start group relative h-12 w-48 md:h-16 md:w-64 lg:w-80 xl:w-60"
           >
             <motion.div
               className="relative h-full w-full"
@@ -92,7 +92,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             >
               <Image
-                src="/logo.png"
+                src="/logocasagrande.svg"
                 alt="Logo de casagrande geotecnia"
                 fill
                 
@@ -104,7 +104,7 @@ const Footer = () => {
           </Link>
           <button
             onClick={scrollToTop}
-            className="flex items-center text-sm font-medium text-[#1b4772] hover:text-blue-700 transition-colors group cursor-pointer"
+            className="flex items-center text-sm font-medium text-[#182C45] hover:text-blue-700 transition-colors group cursor-pointer"
             aria-label="Volver arriba"
           >
             Volver arriba
@@ -126,11 +126,11 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               >
                 <Image
-                  src="/logo.png"
+                  src="/logocasagrande.svg"
                   alt="logo de casagrande geotecnia"
                   fill
                   sizes="100vw"
-                  className="object-contain transition-transform group-hover:scale-105"
+                  className="object-contain px-2 transition-transform group-hover:scale-105"
                   priority
                 />
               </motion.div>
@@ -141,7 +141,7 @@ const Footer = () => {
         {/* Main Grid Layout for Navigation Links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-y-10 lg:gap-x-12 mb-8 sm:mb-12">
           <div className="py-8 flex flex-col md:items-start items-center">
-            <h2 className="text-lg  font-bold mb-6 text-[#1b4772] text-center">
+            <h2 className="text-lg  font-bold mb-6 text-[#182C45] text-center">
               Nuestras Certificaciones 
             </h2>
             <div className=" w-60">
@@ -156,7 +156,7 @@ const Footer = () => {
           </div>
 
           <div className="py-2">
-            <h2 className="text-lg font-bold mb-4 text-[#1b4772]">
+            <h2 className="text-lg font-bold mb-4 text-[#182C45]">
               Conecta con Nosotros
             </h2>
             <nav className="space-y-4 sm:space-y-6">
@@ -180,7 +180,7 @@ const Footer = () => {
                               : undefined
                           }
                         >
-                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1b4772] mr-2 flex-shrink-0 group-hover:bg-red-600 transition-colors"></span>
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#182C45] mr-2 flex-shrink-0 group-hover:bg-red-600 transition-colors"></span>
                           {link.name}
                         </Link>
                       </li>
@@ -193,7 +193,7 @@ const Footer = () => {
 
           {/* Section: Nuestros productos */}
           <div className="py-2">
-            <h2 className="text-lg font-bold mb-4 text-[#1b4772]">
+            <h2 className="text-lg font-bold mb-4 text-[#182C45]">
               Nuestros productos
             </h2>
             <nav>
@@ -206,7 +206,7 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1b4772] mr-2 flex-shrink-0 group-hover:bg-red-500 transition-colors"></span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#182C45] mr-2 flex-shrink-0 group-hover:bg-red-500 transition-colors"></span>
                       {link.name}
                     </Link>
                   </li>
@@ -225,7 +225,7 @@ const Footer = () => {
                 <Link
                   key={social.name}
                   href={social.href}
-                  className="text-[#1b4772] hover:text-[#0d70af] transition-colors p-2 rounded-full hover:scale-110 transform"
+                  className="text-[#182C45] hover:text-[#0d70af] transition-colors p-2 rounded-full hover:scale-110 transform"
                   aria-label={social.name}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -243,7 +243,7 @@ const Footer = () => {
             <Link
               key={social.name}
               href={social.href}
-              className="text-[#1b4772] hover:text-[#0d70af] transition-colors p-2 sm:p-3 rounded-full hover:scale-110 transform "
+              className="text-[#182C45] hover:text-[#0d70af] transition-colors p-2 sm:p-3 rounded-full hover:scale-110 transform "
               aria-label={social.name}
             >
               <social.icon size={24} className="w-6 h-6" />

@@ -23,10 +23,10 @@ const Sobrenosotros = () => {
 
           {/* Texto y contenido */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-4xl font-extrabold text-[#1b4772] tracking-tight mb-4">
+            <h2 className="text-4xl font-extrabold text-[#182C45] tracking-tight mb-4">
               ¿Quiénes Somos?
             </h2>
-            <h3 className="text-3xl font-bold text-[#1b4772] mb-6">
+            <h3 className="text-3xl font-bold text-[#182C45] mb-6">
               Casagrande Geotecnia
             </h3>
             
@@ -37,21 +37,21 @@ const Sobrenosotros = () => {
             {/* Certificaciones */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#1b4772] text-2xl flex-shrink-0 mt-1" />
+                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
                 <p className="text-black">
-                  <span className="font-bold text-[#1b4772]">ISO 9001 – Sistema de Gestión de Calidad:</span> garantiza procesos claros y eficientes, asegurando confiabilidad en nuestros informes técnicos.
+                  <span className="font-bold text-[#182C45]">ISO 9001 – Sistema de Gestión de Calidad:</span> garantiza procesos claros y eficientes, asegurando confiabilidad en nuestros informes técnicos.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <LuMapPin className="text-[#1b4772] text-2xl flex-shrink-0 mt-1" />
+                <LuMapPin className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
                 <p className="text-black">
-                  <span className="font-bold text-[#1b4772]">ISO 37001 – Sistema de Gestión Antisoborno:</span> protege la transparencia y ética en contratos y supervisiones.
+                  <span className="font-bold text-[#182C45]">ISO 37001 – Sistema de Gestión Antisoborno:</span> protege la transparencia y ética en contratos y supervisiones.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#1b4772] text-2xl flex-shrink-0 mt-1" />
+                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
                 <p className="text-black">
-                  <span className="font-bold text-[#1b4772]">ISO 14001 – Sistema de Gestión Ambiental:</span> asegura que todos nuestros estudios y ensayos respeten el medio ambiente y cumplan regulaciones.
+                  <span className="font-bold text-[#182C45]">ISO 14001 – Sistema de Gestión Ambiental:</span> asegura que todos nuestros estudios y ensayos respeten el medio ambiente y cumplan regulaciones.
                 </p>
               </div>
             </div>
@@ -59,7 +59,7 @@ const Sobrenosotros = () => {
       
 
             {/* Botón de acción */}
-            <button className='px-6 py-3 bg-[#1b4772] text-white font-semibold rounded-lg shadow-md hover:bg-[#2a6cad] transition duration-200 cursor-pointer'>
+            <button className='px-6 py-3 bg-[#182C45] text-white font-semibold rounded-lg shadow-md hover:bg-[#2a6cad] transition duration-200 cursor-pointer'>
               Descargar nuestro brochure
             </button>
           </div>

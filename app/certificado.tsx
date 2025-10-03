@@ -92,13 +92,13 @@ export default function CarouselCertificados() {
           >
             {/* Texto */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <div className="text-sm font-semibold text-[#1b4772] mb-2">
+              <div className="text-sm font-semibold text-[#182C45] mb-2">
                 EMPRESA CERTIFICADA
               </div>
-              <h2 className="text-2xl lg:text-3xl font-extrabold text-[#1b4772] mb-3">
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-[#182C45] mb-3">
                 {certificados[index].title}
                 <br />
-                <span className="text-xl lg:text-2xl font-bold text-[#1b4772]">
+                <span className="text-xl lg:text-2xl font-bold text-[#182C45]">
                   {certificados[index].subtitle}
                 </span>
               </h2>
@@ -118,7 +118,7 @@ export default function CarouselCertificados() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="bg-[#1b4772] hover:bg-gray-900 text-white px-5 py-2 rounded-lg shadow-md cursor-pointer">
+                <Button className="bg-[#182C45] hover:bg-gray-900 text-white px-5 py-2 rounded-lg shadow-md cursor-pointer">
                   {certificados[index].id === 4 ? "Ver más" : "Ver certificado"}
                 </Button>
               </Link>
@@ -151,7 +151,7 @@ export default function CarouselCertificados() {
           <button
             aria-label="Siguiente "
             onClick={prev}
-            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
+            className="bg-[#182C45] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
             <ChevronLeft size={24} />
           </button>
@@ -160,7 +160,7 @@ export default function CarouselCertificados() {
           <button
             aria-label="Anterior"
             onClick={next}
-            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
+            className="bg-[#182C45] hover:bg-gray-900 text-white p-2 cursor-pointer rounded-full shadow transition max-lg:hidden"
           >
             <ChevronRight size={24} />
           </button>
@@ -174,7 +174,7 @@ export default function CarouselCertificados() {
               key={i}
               onClick={() => setIndex(i)}
               className={`h-2 w-2 rounded-full transition-all duration-300 p-2 max-md:hidden cursor-pointer ${
-                i === index ? "w-6 bg-[#1b4772]" : "bg-gray-400"
+                i === index ? "w-6 bg-[#182C45]" : "bg-gray-400"
               }`}
             />
           ))}

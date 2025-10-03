@@ -130,7 +130,7 @@ const SocialLinks = ({ className = "text-white" }: { className?: string }) => (
 );
 
 const TopBar = () => (
-  <div className="hidden bg-[#1b4772] text-white md:block ">
+  <div className="hidden bg-[#182C45] text-white md:block ">
     <div className="container  flex h-10 items-center justify-between px-4 max-w-7xl mx-auto">
       <div className="flex items-center gap-6">
         {contactInfo.map((item) => (
@@ -159,9 +159,9 @@ const DesktopMenu = ({
       >
         <Link
           href={link.href}
-          className={`relative px-4 py-2 font-bold text-[#1b4772] transition-colors duration-300 ${
+          className={`relative px-4 py-2 font-bold text-[#182C45] transition-colors duration-300 ${
             pathname === link.href
-              ? "font-bold text-[#1b4772]"
+              ? "font-bold text-[#182C45]"
               : "hover:text-sky-950"
           }`}
         >
@@ -169,7 +169,7 @@ const DesktopMenu = ({
           {pathname === link.href && (
             <motion.span
               layoutId="nav-underline"
-              className="absolute bottom-0 left-0 h-0.5 w-full bg-[#1b4772]"
+              className="absolute bottom-0 left-0 h-0.5 w-full bg-[#182C45]"
               transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
             />
           )}
@@ -187,7 +187,7 @@ const MobileMenuButton = ({
   toggle: () => void;
 }) => (
   <motion.button
-    className="z-[100] rounded-md p-2 text-[#1b4772] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-[#373737] md:hidden"
+    className="z-[100] rounded-md p-2 text-[#182C45] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-[#373737] md:hidden"
     onClick={toggle}
     aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
     whileTap={{ scale: 0.9 }}
@@ -310,7 +310,7 @@ const Navbar = () => {
                 alt="Logo de Casagrande Geotecnia"
                 width={100}
                 height={48}
-                className="h-11 w-auto md:h-13"
+                className="h-11 w-auto md:h-13 max-md:px-2"
               />
             </motion.div>
           </Link>
@@ -327,7 +327,7 @@ const Navbar = () => {
             >
               <Button
                 size="lg"
-                className="bg-white border cursor-pointer border-[#1b4772] text-[#1b4772] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#1b4772] hover:text-white"
+                className="bg-white border cursor-pointer border-[#182C45] text-[#182C45] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#182C45] hover:text-white"
               >
                 ASESORÍA TÉCNICA
               </Button>
@@ -340,7 +340,7 @@ const Navbar = () => {
             >
               <Button
                 size="lg"
-                className="bg-[#1b4772] cursor-pointer text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-slate-900"
+                className="bg-[#182C45] cursor-pointer text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 border-2 ease-in-out hover:bg-white hover:text-[#182C45] hover:border-[#182C45] border-[#182C45]"
               >
                 ¡COTIZAR AHORA!
               </Button>
@@ -376,11 +376,11 @@ const Navbar = () => {
               className="fixed top-0 right-0 z-50 flex h-full w-4/5 max-w-sm flex-col bg-white shadow-xl"
             >
               <div className="flex items-center justify-between border-b p-4">
-                <span className="font-bold text-[#1b4772]">Menú</span>
+                <span className="font-bold text-[#182C45]">Menú</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Cerrar menú"
-                  className="rounded-md p-1 text-[#1b4772] transition-colors cursor-pointer hover:bg-gray-100 hover:text-[#373737]"
+                  className="rounded-md p-1 text-[#182C45] transition-colors cursor-pointer hover:bg-gray-100 hover:text-[#373737]"
                 >
                   <LuX className="h-6 w-6" />
                 </button>
@@ -393,7 +393,7 @@ const Navbar = () => {
                       className={`block rounded-lg px-4 py-3 text-base font-bold transition-colors ${
                         pathname === link.href
                           ? "bg-gray-300 text-black"
-                          : "text-[#1b4772] hover:bg-gray-100"
+                          : "text-[#182C45] hover:bg-gray-100"
                       }`}
                     >
                       {link.label}
@@ -415,7 +415,7 @@ const Navbar = () => {
                   >
                     <Button
                       size="lg"
-                      className="w-full bg-white border border-[#1b4772] text-[#1b4772] font-semibold rounded-lg transition duration-300 ease-in-out cursor-pointer hover:bg-[#1b4772] hover:text-white"
+                      className="w-full bg-white border border-[#182C45] text-[#182C45] font-semibold rounded-lg transition duration-300 ease-in-out cursor-pointer hover:bg-[#182C45] hover:text-white"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       ASESORÍA TÉCNICA
@@ -430,7 +430,7 @@ const Navbar = () => {
                   >
                     <Button
                       size="lg"
-                      className="w-full bg-[#1b4772] cursor-pointer text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#373737]"
+                      className="w-full bg-[#182C45] cursor-pointer text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#373737]"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       ¡COTIZAR AHORA!
@@ -443,7 +443,7 @@ const Navbar = () => {
                     <a
                       key={item.text}
                       href={item.href}
-                      className="flex items-center gap-3 text-[#1b4772] transition-colors hover:text-red-600"
+                      className="flex items-center gap-3 text-[#182C45] transition-colors hover:text-red-600"
                     >
                       <item.Icon className="h-4 w-4 flex-shrink-0" />
                       <span>{item.text}</span>
@@ -451,7 +451,7 @@ const Navbar = () => {
                   ))}
                 </div>
                 <div className="border-t pt-4">
-                  <SocialLinks className="text-[#1b4772]" />
+                  <SocialLinks className="text-[#182C45]" />
                 </div>
               </div>
             </motion.div>
