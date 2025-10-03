@@ -12,50 +12,65 @@ import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 const servicios = [
   {
     slug: "geologia",
-    titulo: "Geología",
+    titulo: "Estudios Geológicos",
     descripcion:
-      "Análisis del terreno y su historia natural, estudios de riesgos, cartografía y supervisión de zonas críticas.",
+      "Caracterización del terreno, cartografía geológica, identificación de fallas, riesgos sísmicos y evaluación de materiales naturales para proyectos de ingeniería.",
     imagen: "/hero05.jpg",
   },
   {
     slug: "geotecnia",
-    titulo: "Geotecnia",
+    titulo: "Estudios Geotécnicos",
     descripcion:
-      "Estudios de cimentaciones, muros de contención, túneles y estabilidad de taludes para proyectos seguros.",
+      "Investigación del subsuelo, análisis de cimentaciones, estabilidad de taludes, diseño de muros de contención, túneles y presas para obras seguras y sostenibles.",
     imagen: "/hero06.jpg",
   },
   {
-    slug: "laboratorio-geotecnico",
-    titulo: "Laboratorio Geotécnico",
+    slug: "geofisica",
+    titulo: "Estudios Geofísicos",
     descripcion:
-      "Ensayos en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar calidad de materiales.",
+      "Aplicación de métodos sísmicos, eléctricos y electromagnéticos para explorar el subsuelo y obtener información precisa de estructuras geológicas y geotécnicas.",
     imagen: "/hero04.jpg",
   },
   {
-    slug: "geofisica",
-    titulo: "Geofísica",
+    slug: "geomecanica",
+    titulo: "Estudios Geomecánicos",
     descripcion:
-      "Exploración del subsuelo mediante ensayos sísmicos, geoeléctricos y métodos no invasivos para identificar zonas críticas.",
+      "Evaluación del comportamiento de rocas y macizos rocosos mediante ensayos in situ y modelamiento numérico para garantizar estabilidad estructural.",
     imagen: "/hero03.jpg",
   },
   {
-    slug: "geomecanica",
-    titulo: "Geomecánica",
+    slug: "hidrogeologia",
+    titulo: "Estudios Hidrogeológicos",
     descripcion:
-      "Análisis de estabilidad de rocas, taludes y túneles con modelos numéricos y ensayos in situ.",
+      "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
     imagen: "/hero02.jpg",
   },
   {
-    slug: "hidrogeologia",
-    titulo: "Hidrogeología",
+    slug: "ensayo-de-laboratorio",
+    titulo: "Ensayos de Laboratorio",
     descripcion:
-      "Estudio y monitoreo del agua subterránea, interacción con suelos y estructuras, garantizando seguridad hídrica.",
+      "Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.",
+    imagen: "/hero01.jpg",
+  },
+  {
+    slug: "ensayo-de-campo",
+    titulo: "Ensayos de Campo",
+    descripcion:
+      "Pruebas geotécnicas y geofísicas en terreno como SPT, CPT, densidades y permeabilidad, obteniendo información directa y confiable del subsuelo.",
+    imagen: "/hero07.jpg",
+  },
+  {
+    slug: "control-de-calidad",
+    titulo: "Control de Calidad en Obras",
+    descripcion:
+      "Supervisión y aseguramiento de la calidad en obras civiles mediante CQC y CQA, verificando materiales, procesos constructivos y cumplimiento normativo.",
     imagen: "/hero01.jpg",
   },
 ];
 
+
 const Servicios = () => {
-  const youtubeVideoId = "dQw4w9WgXcQ"; // Reemplazar por video real
+  // const youtubeVideoId = "dQw4w9WgXcQ"; // Reemplazar por video real
 
   return (
     <section className="py-16 px-4 md:px-6 max-w-7xl mx-auto">
@@ -106,7 +121,7 @@ const Servicios = () => {
       </div>
 
       {/* --- Video corporativo --- */}
-      <div className="mt-16 md:mt-24">
+      {/* <div className="mt-16 md:mt-24">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -130,7 +145,7 @@ const Servicios = () => {
             allowFullScreen
           />
         </motion.div>
-      </div>
+      </div> */}
 
       {/* --- Sección de contacto --- */}
       <div className="py-16 md:py-24 ">

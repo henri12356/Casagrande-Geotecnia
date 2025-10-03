@@ -13,12 +13,14 @@ interface NavItem {
 
 // Define los datos para los elementos de navegación
 const serviciosNav: NavItem[] = [
-  { slug: "geologia", titulo: "Servicios de Geología" },
-  { slug: "geotecnia", titulo: "Servicios de Geotecnia" },
-  { slug: "laboratorio-geotecnico", titulo: "Laboratorio Geotécnico" },
-  { slug: "geofisica", titulo: "Servicios de Geofísica" },
-  { slug: "geomecanica", titulo: "Servicios de Geomecánica" },
-  { slug: "hidrogeologia", titulo: "Servicios de Hidrogeología" }
+  { slug: "geologia", titulo: "Estudios de Geología" },
+  { slug: "geotecnia", titulo: "Estudios de Geotecnia" },
+  { slug: "geofisica", titulo: "Estudios de Geofísica" },
+  { slug: "geomecanica", titulo: "Estudios de Geomecánica" },
+  { slug: "hidrogeologia", titulo: "Estudios  Hidrogeologicos" },
+  { slug: "ensayo-de-laboratorio", titulo: "Ensayos de Laboratorio" },
+  { slug: "ensayo-de-campo", titulo: "Ensayos de Campo" },
+  { slug: "control-de-calidad", titulo: "Control de Calidad en Obras" },
 ];
 
 const ServicioNav = () => {

@@ -99,7 +99,7 @@ export default function HeroServicios() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-[#1b4772]/40" />
+          <div className="absolute inset-0 bg-[#1b4772]/60" />
         </motion.div>
       </AnimatePresence>
 
@@ -116,7 +116,7 @@ export default function HeroServicios() {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={onDragEnd}
-            className="absolute w-full max-w-3xl"
+            className="absolute w-full max-w-5xl"
           >
             <motion.div
               className="flex flex-col items-center text-center space-y-4 pt-20"
@@ -126,7 +126,7 @@ export default function HeroServicios() {
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl drop-shadow-lg"
+                className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-8xl drop-shadow-lg"
               >
                 {activeSlide.title}
               </motion.h1>
@@ -143,7 +143,7 @@ export default function HeroServicios() {
                   <Button
                     asChild
                     size="lg"
-                    className="mt-4 rounded-lg bg-[#1b4772] px-8 py-3 text-base font-bold text-white shadow-lg transition-transform duration-300 hover:bg-[#1b2a3a] hover:scale-105 active:scale-95"
+                    className="mt-4 rounded-lg bg-[#1b4772] px-10 py-6 text-lg font-bold text-white shadow-lg transition-transform duration-300 hover:bg-[#1b2a3a] hover:scale-105 active:scale-95"
                   >
                     <Link
                       href={activeSlide.buttonLink}
