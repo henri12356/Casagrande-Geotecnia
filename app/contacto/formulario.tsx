@@ -189,7 +189,7 @@ const Formulario = () => {
               </li>
               <li className="flex items-center text-[12px] md:text-base space-x-3">
                 <Phone className="md:w-5 md:h-5 text-[#1b4772]" />
-                <span>(+51) 962 835 65 | gerenciageneral@casagrandegeotecnia.com.pe</span>
+                <span>(+51) 962 835 652 | gerenciageneral@casagrandegeotecnia.com.pe</span>
               </li>
             </ul>
           </div>
