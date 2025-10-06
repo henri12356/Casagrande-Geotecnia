@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Servicios de Ingeniería Geotécnica | Casagrande Geotecnia",
+    default: "Servicios de Geotécnica | Casagrande Geotecnia",
     template: "%s | Casagrande Geotecnia"
   },
   description: "Servicios integrales de geotecnia, geofísica, laboratorio de materiales y estudios especializados. Certificaciones ISO 9001, 14001, 37001 para proyectos de construcción e infraestructura.",
