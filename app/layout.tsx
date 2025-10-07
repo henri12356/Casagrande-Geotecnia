@@ -15,7 +15,7 @@ const font = Plus_Jakarta_Sans({
 const companyInfo = {
   name: "Casagrande Geotecnia",
   description:
-    "Empresa consultora especializada en estudios geotécnicos, geología, laboratorio de suelos y control de calidad. Certificaciones ISO 9001, 14001, 37001. Servicios para construcción segura.",
+  "Consultora en ingeniería civil y geotecnia. Estudios geotécnicos, geología y laboratorio de suelos con certificaciones ISO 9001, 14001 y 37001.",
   url: "https://www.casagrandegeotecnia.com.pe/",
   logo: "https://www.casagrandegeotecnia.com.pe/logo.png",
   phone: "+51 962 835 652", // Reemplaza con tu teléfono real
@@ -97,7 +97,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: {
     default:
-      "Casagrande Geotecnia | Consultores en Ingeniería Civil y Estudios Geotécnicos",
+      "Casagrande Geotecnia | Consultores en Ingeniería y Geotecnia en Perú",
     template: "%s | Casagrande Geotecnia",
   },
   description: companyInfo.description,
