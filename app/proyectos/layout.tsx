@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Proyectos de Ingeniería Geotécnica | Casagrande Geotecnia",
+    default: "Proyectos de Ingeniería Geotécnica ",
     template: "%s | Casagrande Geotecnia"
   },
   description: "Portafolio de proyectos de ingeniería geotécnica: estudios de suelos, laboratorio, geofísica y consultoría para construcción e infraestructura en Perú.",

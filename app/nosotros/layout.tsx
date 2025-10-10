@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Empresa de Geotecnia | Casagrande Geotecnia - Expertos en Ingeniería Geotécnica",
+    default: "Empresa de Geotecnia - Expertos en Ingeniería Geotécnica",
     template: "%s | Casagrande Geotecnia"
   },
-  description: "Conoce nuestro equipo de ingenieros especializados, valores corporativos y certificaciones ISO. Más de 10 años de experiencia en estudios geotécnicos y consultoría en ingeniería civil.",
+  description: "Conoce nuestro equipo de ingenieros especializados, valores corporativos y certificaciones ISO. Más de 20 años de experiencia en estudios geotécnicos y consultoría en ingeniería civil.",
   keywords: [
     "equipo Casagrande Geotecnia",
     "ingenieros geotécnicos Perú",
