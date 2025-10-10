@@ -140,12 +140,12 @@ export default function HeroServicios() {
               initial="initial"
               animate="animate"
             >
-              <motion.h1
+              <motion.h2
                 variants={itemVariants}
                 className="text-3xl md:text-7xl font-black tracking-tight text-white drop-shadow-lg leading-tight"
               >
                 {activeSlide.title}
-              </motion.h1>
+              </motion.h2>
 
               <motion.p
                 variants={itemVariants}

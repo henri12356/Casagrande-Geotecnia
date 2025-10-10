@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     default: "Servicios de Geotécnica | Casagrande Geotecnia",
     template: "%s | Casagrande Geotecnia"
   },
-  description: "Servicios integrales de geotecnia, geofísica, laboratorio de materiales y estudios especializados. Certificaciones ISO 9001, 14001, 37001 para proyectos de construcción e infraestructura.",
+  description: "Servicios de geotecnia, geofísica, laboratorio de materiales y estudios especializados",
   keywords: [
     "servicios geotécnicos",
     "geotecnia",

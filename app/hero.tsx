@@ -175,12 +175,12 @@ export default function HeroCarousel() {
               initial="initial"
               animate="animate"
             >
-              <motion.h1
+              <motion.h2
                 variants={itemVariants}
                 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg cursor-pointer"
               >
                 {activeSlide.title}
-              </motion.h1>
+              </motion.h2>
 
               <motion.p
                 variants={itemVariants}
