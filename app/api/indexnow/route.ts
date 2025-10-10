@@ -45,8 +45,8 @@ export async function POST() {
   // ✅ Enviar a IndexNow
   const body = {
     host: "www.casagrandegeotecnia.com.pe",
-    key: "bccb26c83bfd4c11aee864b7dedc8956",
-    keyLocation: `${baseUrl}/bccb26c83bfd4c11aee864b7dedc8956.txt`,
+    key: "22e9205e7fe44ff6b6a6bfa79f05e116",
+    keyLocation: `${baseUrl}/22e9205e7fe44ff6b6a6bfa79f05e116.txt`,
     urlList: allUrls,
   };
 
