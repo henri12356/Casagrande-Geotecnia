@@ -88,7 +88,7 @@ export default function CertificadosLayout({
             "@type": "Organization",
             name: "Club de Ingenieros",
             url: "https://www.clubdeingenieros.com",
-            logo: "https://www.clubdeingenieros.com/logo.png",
+            logo: "https://www.clubdeingenieros.com/logocasagrande.svg",
             sameAs: [
               "https://www.facebook.com/clubdeingenieros",
               "https://www.linkedin.com/company/clubdeingenieros",

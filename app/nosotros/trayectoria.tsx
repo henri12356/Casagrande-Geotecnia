@@ -25,7 +25,7 @@ const Trayectoria = () => {
             </p>
             <div className="relative w-full max-w-sm h-auto overflow-hidden rounded-lg">
               <Image
-                src="/hero.webp" 
+                src="/historia.jpg" 
                 alt="Imagen de equipo de Geofal S.A.C."
                 width={500}
                 height={500}

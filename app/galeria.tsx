@@ -16,7 +16,7 @@ import {
 const serviciosData = [
   {
     id: 1,
-    imageSrc: "/hero01.webp",
+    imageSrc: "/Ensayos-en-Suelos02.png",
     title: "Servicios de Geología",
     description:
       "Análisis del terreno y su historia natural, estudios de riesgos, cartografía y supervisión de zonas críticas.",
@@ -24,40 +24,40 @@ const serviciosData = [
   },
   {
     id: 2,
-    imageSrc: "/hero02.webp",
-    title: "Servicios de Estudios Geotécnicos",
+    imageSrc: "/estudio-geotecnia.png",
+    title: " Estudios Geotécnicos",
     description:
       "Estudios de cimentaciones, muros de contención, túneles y estabilidad de taludes para proyectos seguros.",
     href: "/servicios/geotecnia",
   },
   {
     id: 3,
-    imageSrc: "/hero03.webp",
-    title: "Laboratorio Geotécnico y Control de Calidad",
+    imageSrc: "/laboratorio-de-ensayos.png",
+    title: "Laboratorio de Ensayos de Materiales",
     description:
       "Ensayos en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar calidad de materiales.",
     href: "/servicios/laboratorio-geotecnico",
   },
   {
     id: 4,
-    imageSrc: "/hero04.webp",
-    title: "Geofísica y Consultoría Técnica",
+    imageSrc: "/Ensayos-Sísmicos01.png",
+    title: "Estudios Geofísicos",
     description:
       "Exploración del subsuelo mediante ensayos sísmicos, geoeléctricos y métodos no invasivos para identificar zonas críticas.",
     href: "/servicios/geofisica",
   },
   {
     id: 5,
-    imageSrc: "/hero05.webp",
-    title: "Hidrogeología y Control de Calidad",
+    imageSrc: "/Hidrogeológicos-Especializados02.jpg",
+    title: "Estudios Hidrogeológicos",
     description:
       "Estudio y monitoreo del agua subterránea, interacción con suelos y estructuras, garantizando seguridad hídrica.",
     href: "/servicios/hidrogeologia",
   },
   {
     id: 6,
-    imageSrc: "/hero06.webp",
-    title: "Geomecánica y Mecánica de Rocas",
+    imageSrc: "/Ensayos-en-Concreto03.png",
+    title: "Estudios Geomecánicos",
     description:
       "Análisis de estabilidad de rocas, taludes y túneles con modelos numéricos y ensayos in situ.",
     href: "/servicios/geomecanica",

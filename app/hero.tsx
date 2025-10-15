@@ -20,7 +20,7 @@ const slidesData: {
     id: 1,
     title: "BIENVENIDO A CASAGRANDE",
     subtitle: "Acreditados ante el INACAL con ISO/IEC 17025:2017",
-    imageSrc: "/hero01.webp",
+    imageSrc: "/hero.png",
     buttonText: "Descargar Nuestro Brochure",
     buttonLink: "tel:989900609",
   },
@@ -29,19 +29,19 @@ const slidesData: {
     title: "ESTUDIOS GEOTÉCNICOS Y DE SUELO",
     subtitle:
       "Garantizamos la seguridad y estabilidad de tu proyecto con análisis precisos de suelo, rocas, agua y materiales.",
-    imageSrc: "/hero02.webp",
+    imageSrc: "/heroprincipal.jpg",
     buttonText: "Conoce nuestros servicios",
     buttonLink: "/servicios",
   },
-  // {
-  //   id: 3,
-  //   title: "CONSULTORÍA EN CIMENTACIONES Y TALUDES",
-  //   subtitle:
-  //     "Diseños recomendados para cimentaciones, muros de contención y pavimentos, asegurando la correcta ejecución de la obra.",
-  //   imageSrc: "/hero03.webp",
-  //   buttonText: "Ver Proyectos",
-  //   buttonLink: "/proyectos",
-  // },
+  {
+    id: 3,
+    title: "CONSULTORÍA EN CIMENTACIONES Y TALUDES",
+    subtitle:
+      "Diseños recomendados para cimentaciones, muros de contención y pavimentos, asegurando la correcta ejecución de la obra.",
+    imageSrc: "/Perforacion.png",
+    buttonText: "Ver Proyectos",
+    buttonLink: "/proyectos",
+  },
   // {
   //   id: 4,
   //   title: "LABORATORIO Y CONTROL DE CALIDAD",
@@ -131,7 +131,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <main className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black px-2">
+    <main className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-2">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -150,7 +150,7 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45] to-[#0f172a]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45] " />
         </motion.div>
       </AnimatePresence>
 

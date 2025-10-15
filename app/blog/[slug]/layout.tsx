@@ -154,7 +154,7 @@ export default async function BlogPostLayout({ children, params }: BlogPostLayou
                 "url": "https://www.casagrandegeotecnia.com.pe",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.casagrandegeotecnia.com.pe/logo.png",
+                  "url": "https://www.casagrandegeotecnia.com.pe/logocasagrande.svg",
                   "width": 200,
                   "height": 60
                 }

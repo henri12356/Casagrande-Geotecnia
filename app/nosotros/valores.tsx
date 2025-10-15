@@ -93,7 +93,7 @@ const Valores = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/hero04.webp"
+                  src="/valores.jpg"
                   alt="Equipo Casagrande"
                   fill
                   className="object-contain"
@@ -120,7 +120,7 @@ const Valores = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/hero03.webp"
+                  src="/nosotroshero02.png"
                   alt="Supervisión de obra"
                   fill
                   className="object-contain"

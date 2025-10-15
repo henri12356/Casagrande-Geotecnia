@@ -3,7 +3,7 @@ import React from 'react';
 import { FaAward } from 'react-icons/fa';
 import { LuMapPin } from "react-icons/lu";
 
-const imageSrc = "/sobrenosotros.webp";
+const imageSrc = "/nosotros.webp";
 
 const Sobrenosotros = () => {
   return (

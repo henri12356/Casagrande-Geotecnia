@@ -21,7 +21,7 @@ const slidesData: {
     title: "NUESTROS PROYECTOS",
     subtitle:
       "Nuestra prioridad es la calidad y la formalidad en cada proyecto. Nos comprometemos con la excelencia y la mejora continua.",
-    imageSrc: "/hero05.jpg",
+    imageSrc: "/hero.png",
     buttonText: "Ver Brouchure",
     buttonLink: "/",
     
