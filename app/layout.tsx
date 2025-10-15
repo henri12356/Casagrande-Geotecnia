@@ -224,7 +224,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: {
     default:
-      "Casagrande Geotecnia | Estudios Geotécnicos y Laboratorio de Suelos en Perú",
+      "Casagrande Geotecnia | Estudios Geotécnicos y Laboratorio de Suelos ",
     template: "%s | Casagrande Geotecnia",
   },
   description: companyInfo.description,

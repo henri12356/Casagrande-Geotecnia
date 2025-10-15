@@ -111,7 +111,7 @@ const FloatingButtons: React.FC = () => {
           label="LinkedIn"
           href="https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/about/"
           bgColor="bg-blue-700"
-          hoverBgColor="hover:bg-[##0A66C2]"
+          hoverBgColor="hover:bg-[#0A66C2]"
         />
         <SocialFloatingButton
           icon={<HiOutlineMail />}
