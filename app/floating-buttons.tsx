@@ -1,12 +1,10 @@
-// components/floating-buttons.tsx
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { FaArrowRight, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineDotsVertical, HiOutlineMail } from "react-icons/hi";
 
-// --- Types ---
 interface SocialFloatingButtonProps {
   icon: React.ReactNode;
   label: string;
@@ -23,7 +21,6 @@ interface MoreOption {
   icon: React.ReactNode;
 }
 
-// --- Reusable Floating Button Component (for WhatsApp & Facebook) ---
 const SocialFloatingButton: React.FC<SocialFloatingButtonProps> = ({
   icon,
   label,
@@ -43,18 +40,15 @@ const SocialFloatingButton: React.FC<SocialFloatingButtonProps> = ({
     aria-label={label}
   >
     {icon}
-    {/* Tooltip for desktop */}
     <span className="absolute right-full mr-3 px-3 py-1 bg-gray-800 text-white text-sm rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden md:block">
       {label}
     </span>
   </motion.a>
 );
 
-// --- New Component for the "More Options" List Items ---
 const MoreOptionItem: React.FC<MoreOption> = ({ text, href, icon }) => (
   <motion.a
     href={href}
-    // CHANGED: Use max-w-full and a responsive width for mobile
     className="flex items-center justify-between w-[calc(100vw-8rem)] max-w-full md:w-72 p-4 bg-black text-white text-base rounded-md shadow-md transition-colors duration-200 hover:bg-[#E60012] group"
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
@@ -71,7 +65,6 @@ const MoreOptionItem: React.FC<MoreOption> = ({ text, href, icon }) => (
   </motion.a>
 );
 
-// --- Main Floating Buttons Component ---
 const FloatingButtons: React.FC = () => {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
 
@@ -82,25 +75,17 @@ const FloatingButtons: React.FC = () => {
     { text: "Proyectos", href: "/proyectos", icon: <FaArrowRight /> },
     { text: "Blog", href: "/blog", icon: <FaArrowRight /> },
     { text: "Contacto", href: "/contacto", icon: <FaArrowRight /> },
-    // { text: "Trabaja con nosotros", href: "/profesor", icon: <FaArrowRight /> },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-      },
+      transition: { when: "beforeChildren", staggerChildren: 0.1 },
     },
     exit: {
       opacity: 0,
-      transition: {
-        when: "afterChildren",
-        staggerChildren: 0.05,
-        staggerDirection: -1,
-      },
+      transition: { when: "afterChildren", staggerChildren: 0.05, staggerDirection: -1 },
     },
   };
 
@@ -112,21 +97,21 @@ const FloatingButtons: React.FC = () => {
 
   return (
     <>
-      {/* Desktop/Tablet Floating Buttons (Fixed right side) */}
+      {/* --- Desktop Buttons --- */}
       <div className="hidden md:flex fixed bottom-6 right-6 flex-col space-y-4 z-50">
         <SocialFloatingButton
           icon={<FaWhatsapp />}
           label="Necesitas Asesoría?"
-          href="https://wa.me/51945513323?text=Quiero%20mayor%20información" // REMEMBER TO REPLACE!
+          href="https://wa.me/51945513323?text=Quiero%20mayor%20información"
           bgColor="bg-green-500"
           hoverBgColor="hover:bg-green-600"
         />
         <SocialFloatingButton
-          icon={<FaFacebookF />}
-          label="Facebook"
-          href="https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA" // REMEMBER TO REPLACE!
-          bgColor="bg-blue-600"
-          hoverBgColor="hover:bg-blue-700"
+          icon={<FaLinkedinIn />}
+          label="LinkedIn"
+          href="https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/about/"
+          bgColor="bg-blue-700"
+          hoverBgColor="hover:bg-[##0A66C2]"
         />
         <SocialFloatingButton
           icon={<HiOutlineMail />}
@@ -136,16 +121,12 @@ const FloatingButtons: React.FC = () => {
           hoverBgColor="hover:bg-red-600"
         />
 
-        {/* "More Options" button for Desktop */}
-        <motion.div
-          className="relative"
-          initial={false}
-          animate={showMoreOptions ? "open" : "closed"}
-        >
+        {/* Botón de más opciones */}
+        <motion.div className="relative" initial={false} animate={showMoreOptions ? "open" : "closed"}>
           <motion.button
             className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-xl bg-gray-700 hover:bg-gray-800 transition-all duration-300 transform hover:scale-110"
             onClick={() => setShowMoreOptions(!showMoreOptions)}
-            aria-label="Más opciones de contacto"
+            aria-label="Más opciones"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -171,22 +152,22 @@ const FloatingButtons: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Mobile Floating Buttons (Fixed bottom bar) */}
+      {/* --- Mobile Buttons --- */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-800 text-white py-3 px-4 flex justify-around items-center shadow-lg z-50">
         <SocialFloatingButton
           icon={<FaWhatsapp />}
           label="WhatsApp"
-          href="https://wa.me/51945513323?text=Quiero%20mayor%20información" // REMEMBER TO REPLACE!
+          href="https://wa.me/51945513323?text=Quiero%20mayor%20información"
           bgColor="bg-green-500"
           hoverBgColor="hover:bg-green-600"
           className="w-10 h-10 text-lg"
         />
         <SocialFloatingButton
-          icon={<FaFacebookF />}
-          label="Facebook"
-          href="https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA" // REMEMBER TO REPLACE!
-          bgColor="bg-blue-600"
-          hoverBgColor="hover:bg-blue-700"
+          icon={<FaLinkedinIn />}
+          label="LinkedIn"
+          href="https://www.linkedin.com/in/henri-delacruz/" // 🔗 reemplaza con tu enlace real
+          bgColor="bg-blue-700"
+          hoverBgColor="hover:bg-blue-800"
           className="w-10 h-10 text-lg"
         />
         <SocialFloatingButton
@@ -196,15 +177,12 @@ const FloatingButtons: React.FC = () => {
           bgColor="bg-red-500"
           hoverBgColor="hover:bg-red-600"
         />
-        <motion.div
-          className="relative flex items-center justify-center"
-          initial={false}
-          animate={showMoreOptions ? "open" : "closed"}
-        >
+
+        <motion.div className="relative flex items-center justify-center" initial={false} animate={showMoreOptions ? "open" : "closed"}>
           <motion.button
             className="flex items-center justify-center w-10 h-10 rounded-full shadow-lg text-white text-lg bg-gray-700 hover:bg-gray-800 transition-all duration-300"
             onClick={() => setShowMoreOptions(!showMoreOptions)}
-            aria-label="Más opciones de contacto"
+            aria-label="Más opciones"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -217,7 +195,6 @@ const FloatingButtons: React.FC = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                // Adjusted width for mobile: takes full width minus some padding
                 className="absolute bottom-full mb-3 flex flex-col space-y-2 left-1/2 -translate-x-1/2 w-[calc(100vw-2rem)] max-w-sm"
               >
                 {moreOptionsData.map((option, index) => (

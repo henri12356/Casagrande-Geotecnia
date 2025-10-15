@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -15,59 +15,58 @@ const servicios = [
     titulo: "Estudios Geológicos",
     descripcion:
       "Caracterización del terreno, cartografía geológica, identificación de fallas, riesgos sísmicos y evaluación de materiales naturales para proyectos de ingeniería.",
-    imagen: "/hero05.jpg",
+    imagen: "/Ensayos-en-Suelos02.png",
   },
   {
     slug: "geotecnia",
     titulo: "Estudios Geotécnicos",
     descripcion:
       "Investigación del subsuelo, análisis de cimentaciones, estabilidad de taludes, diseño de muros de contención, túneles y presas para obras seguras y sostenibles.",
-    imagen: "/hero06.jpg",
+    imagen: "/Perforacion01.png",
   },
   {
     slug: "geofisica",
     titulo: "Estudios Geofísicos",
     descripcion:
       "Aplicación de métodos sísmicos, eléctricos y electromagnéticos para explorar el subsuelo y obtener información precisa de estructuras geológicas y geotécnicas.",
-    imagen: "/hero04.jpg",
+    imagen: "/Ensayos-Sísmicos.png",
   },
   {
     slug: "geomecanica",
     titulo: "Estudios Geomecánicos",
     descripcion:
       "Evaluación del comportamiento de rocas y macizos rocosos mediante ensayos in situ y modelamiento numérico para garantizar estabilidad estructural.",
-    imagen: "/hero03.jpg",
+    imagen: "/Ensayos-en-Concreto03.png",
   },
   {
     slug: "hidrogeologia",
     titulo: "Estudios Hidrogeológicos",
     descripcion:
       "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
-    imagen: "/hero02.jpg",
+    imagen: "/Hidrogeológicos-Especializados02.jpg",
   },
   {
     slug: "ensayo-de-laboratorio",
     titulo: "Ensayos de Laboratorio",
     descripcion:
       "Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.",
-    imagen: "/hero01.jpg",
+    imagen: "/laboratorio-de-ensayos.png",
   },
   {
     slug: "ensayo-de-campo",
     titulo: "Ensayos de Campo",
     descripcion:
       "Pruebas geotécnicas y geofísicas en terreno como SPT, CPT, densidades y permeabilidad, obteniendo información directa y confiable del subsuelo.",
-    imagen: "/hero07.jpg",
+    imagen: "/Ensayos-de-Penetración.png",
   },
   {
     slug: "control-de-calidad",
     titulo: "Control de Calidad en Obras",
     descripcion:
       "Supervisión y aseguramiento de la calidad en obras civiles mediante CQC y CQA, verificando materiales, procesos constructivos y cumplimiento normativo.",
-    imagen: "/hero01.jpg",
+    imagen: "/control-de-calidad.jpeg",
   },
 ];
-
 
 const Servicios = () => {
   // const youtubeVideoId = "dQw4w9WgXcQ"; // Reemplazar por video real
@@ -148,7 +147,7 @@ const Servicios = () => {
       </div> */}
 
       {/* --- Sección de contacto --- */}
-      <div className="py-16 md:py-24 ">
+      <div className="py-16 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -156,41 +155,61 @@ const Servicios = () => {
           className="bg-gray-50 rounded-3xl p-6 md:p-12 border border-gray-200 shadow-xl"
         >
           <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+            {/* Columna Izquierda */}
             <div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772]  mb-6">
+              <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772] mb-6">
                 Contáctanos
               </h3>
               <div className="space-y-4">
                 <p className="flex items-center text-lg">
-                  <FaPhoneAlt className="text-[#1b4772]  w-5 h-5 mr-4" />
+                  <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
                   +51 945 513 323
                 </p>
-                <p className="flex items-center text-sm  md:text-lg">
-                  <FaEnvelope className="text-[#1b4772]  w-5 h-5 mr-4" />
+                <p className="flex items-center text-sm md:text-lg">
+                  <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />
                   comercial@casagrandegeotecnia.com.pe
                 </p>
-                <p className="flex items-center  text-lg">
+                <p className="flex items-center text-lg">
                   <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
                   Lun-Vie: 8:00 AM - 6:00 PM
                 </p>
               </div>
             </div>
 
-            <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-8 md:pl-16 md:pt-0">
+            {/* Columna Derecha */}
+            <div className="border-t md:border-t-0 md:border-l   border-gray-200 pt-8 md:pl-16 md:pt-0">
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">
                 Solicita un Servicio
               </h3>
-              <div className="space-y-4">
-                <Button className="w-full bg-[#1b4772] hover:bg-[#1a242f] text-white py-6 text-lg rounded-xl shadow-lg">
-                  Solicitar cotización
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-[#1b4772]  text-[#1b4772]  hover:bg-gray-100 py-6 text-lg rounded-xl"
+              <div className="space-y-4  ">
+                {/* Botón WhatsApp Cotización */}
+                <a
+                  href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Agendar visita técnica
-                </Button>
-              </div>
+                  <Button className="md:w-full cursor-pointer bg-[#1b4772] hover:bg-[#1a242f] text-white py-6 text-lg rounded-xl shadow-lg">
+                    Solicitar cotización
+                  </Button>
+                </a>
+
+                {/* Botón WhatsApp Visita Técnica */}
+                </div>
+                <div className="pt-2 ">
+
+                <a
+                  href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="md:w-full cursor-pointer  border-[#1b4772] text-[#1b4772] hover:bg-gray-100 py-6 text-lg rounded-xl"
+                  >
+                    Agendar visita técnica
+                  </Button>
+                </a>
+                </div>
             </div>
           </div>
         </motion.div>

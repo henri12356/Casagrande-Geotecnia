@@ -21,7 +21,7 @@ const slidesData: {
     title: "NUESTROS SERVICIOS",
     subtitle:
       "Casagrande ofrece soluciones de ingeniería civil, geotecnia y laboratorio de materiales, asegurando calidad y confiabilidad en cada proyecto.",
-    imageSrc: "/hero01.jpg",
+    imageSrc: "/Perforacion04.png",
     buttonText: "Ver Brochure",
     buttonLink: "/brochure.pdf",
   },

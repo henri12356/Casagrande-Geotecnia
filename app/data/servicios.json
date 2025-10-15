@@ -4,13 +4,13 @@
     "titulo": "Estudios Geológicos",
     "descripcion": "Análisis del terreno y evaluación de riesgos naturales para garantizar la seguridad de tu proyecto.",
     "contenido": "Realizamos estudios geológicos completos que evalúan la historia natural del terreno, identificando fallas, fracturas y riesgos geológicos que puedan comprometer la seguridad de tu construcción.",
-    "imagen": "/hero05.jpg",
+    "imagen": "/Ensayos-en-Suelos02.png",
     "titulo01": "Estudios Geológicos Especializados",
     "subtitulo01": "Cartografía, evaluación de riesgos y exploración con equipos de última generación.",
     "categorias": [
       {
-        "titulo": "Cartografía Geológica-Geotécnica",
-        "imagenes": ["/hero05.jpg"],
+        "titulo": " Geológica-Geotécnica",
+        "imagenes": ["/geologia.png"],
         "ensayos": [
           "Mapeo detallado de suelos, rocas y estructuras geológicas",
           "Identificación de fallas y fracturas",
@@ -22,7 +22,7 @@
       },
       {
         "titulo": "Evaluación de Riesgos Geológicos",
-        "imagenes": ["/hero05.jpg", "/hero02.jpg"],
+        "imagenes": ["/evaluacion.png", "/evalucion.png" , "/evaluacion.jpeg"],
         "ensayos": [
           "Análisis de deslizamientos y derrumbes",
           "Estudios de subsidencia",
@@ -34,7 +34,7 @@
       },
       {
         "titulo": "Estudios de Canteras y Materiales",
-        "imagenes": ["/hero05.jpg"],
+        "imagenes": ["/rocas-y-suelos.jpg"],
         "ensayos": [
           "Exploración y evaluación de bancos de material",
           "Estimación de volúmenes disponibles",
@@ -46,7 +46,7 @@
       },
       {
         "titulo": "Exploración de Campo y Supervisión",
-        "imagenes": ["/hero05.jpg"],
+        "imagenes": ["/exploracion.jpeg", "/exploracion.png"],
         "ensayos": [
           "Reconocimiento geológico en obra",
           "Supervisión de perforaciones exploratorias",
@@ -83,13 +83,13 @@
     "titulo": "Estudios Geotécnicos",
     "descripcion": "Evaluación completa de propiedades físicas y mecánicas de suelos para el diseño seguro de estructuras.",
     "contenido": "Realizamos estudios geotécnicos integrales que analizan la mecánica de suelos y rocas, garantizando cimentaciones seguras, pavimentos duraderos y estructuras estables.",
-    "imagen": "/hero06.jpg",
+    "imagen": "/Perforacion01.png",
     "titulo01": "Estudios Geotécnicos Especializados",
     "subtitulo01": "Mecánica de suelos, cimentaciones, pavimentos y estabilidad de taludes.",
     "categorias": [
       {
         "titulo": "Estudio de Mecánica de Suelos",
-        "imagenes": ["/hero06.jpg"],
+        "imagenes": ["/Ensayos-de-Penetración.png","/mecanica-suelos.png"],
         "ensayos": [
           "Granulometría y clasificación SUCS/AASHTO",
           "Límites líquidos y plásticos",
@@ -103,7 +103,7 @@
       },
       {
         "titulo": "Diseño de Cimentaciones",
-        "imagenes": ["/hero06.jpg"],
+        "imagenes": ["/diseño-de-cimentacion.jpg", "/Geológica-Geotécnica02.png"],
         "ensayos": [
           "Cimentaciones superficiales (zapatas, losas)",
           "Cimentaciones profundas (pilotes, cajones)",
@@ -115,7 +115,7 @@
       },
       {
         "titulo": "Estudios para Pavimentos",
-        "imagenes": ["/hero06.jpg"],
+        "imagenes": ["/control-de-calidad.jpg"],
         "ensayos": [
           "Diseño estructural de pavimentos flexibles y rígidos",
           "Análisis de subrasante (CBR)",
@@ -176,13 +176,13 @@
     "titulo": "Estudios Geofísicos",
     "descripcion": "Exploración del subsuelo mediante tecnologías no invasivas para conocer lo que hay debajo sin excavar.",
     "contenido": "Utilizamos métodos geofísicos avanzados para caracterizar el subsuelo sin intervención directa, detectando anomalías, fallas, cavidades y cambios de material mediante tecnología de punta.",
-    "imagen": "/hero03.jpg",
+    "imagen": "/Ensayos-Sísmicos.png",
     "titulo01": "Estudios Geofísicos Especializados",
     "subtitulo01": "Métodos sísmicos, geoeléctricos y electromagnéticos para exploración no invasiva.",
     "categorias": [
       {
         "titulo": "Ensayos Sísmicos",
-        "imagenes": ["/hero03.jpg"],
+        "imagenes": ["/Ensayos-Sísmicos.png", "/Ensayos-Sísmicos01.png"],
         "ensayos": [
           "Refracción sísmica",
           "MASW (análisis multicanal de ondas superficiales)",
@@ -194,7 +194,7 @@
       },
       {
         "titulo": "Tomografía Eléctrica",
-        "imagenes": ["/hero03.jpg"],
+        "imagenes": ["/Tomografía-Eléctrica.jpeg", "/Tomografía-Eléctrica02.jpeg"],
         "ensayos": [
           "Tomografía eléctrica 2D y 3D",
           "Perfiles de resistividad eléctrica",
@@ -206,7 +206,7 @@
       },
       {
         "titulo": "Resistividad Eléctrica",
-        "imagenes": ["/hero03.jpg"],
+        "imagenes": ["/resistividad-elctrica.jpeg"],
         "ensayos": [
           "Sondeos eléctricos verticales (SEV)",
           "Perfiles de resistividad",
@@ -218,7 +218,7 @@
       },
       {
         "titulo": "Métodos Electromagnéticos",
-        "imagenes": ["/hero03.jpg"],
+        "imagenes": ["/metodo-electicos.png"],
         "ensayos": [
           "Prospección electromagnética EM-31, EM-34",
           "Georradar (GPR) para detección somera",
@@ -255,7 +255,7 @@
     "titulo": "Estudios Geomecánicos",
     "descripcion": "Caracterización de macizos rocosos y análisis de estabilidad para túneles, taludes y excavaciones en roca.",
     "contenido": "Realizamos estudios geomecánicos especializados para evaluar el comportamiento de rocas bajo cargas, garantizando la seguridad de túneles, taludes rocosos y excavaciones subterráneas.",
-    "imagen": "/hero02.jpg",
+    "imagen": "/Ensayos-en-Concreto03.png",
     "titulo01": "Estudios Geomecánicos Especializados",
     "subtitulo01": "Clasificación de macizos rocosos, estabilidad y diseño de sostenimiento.",
     "categorias": [
@@ -335,13 +335,13 @@
     "titulo": "Estudios Hidrogeológicos",
     "descripcion": "Investigación y monitoreo de aguas subterráneas para proyectos de infraestructura y recursos hídricos.",
     "contenido": "Realizamos estudios hidrogeológicos para evaluar el comportamiento de acuíferos, niveles freáticos y la interacción con estructuras, garantizando la gestión segura del agua subterránea.",
-    "imagen": "/hero01.jpg",
+    "imagen": "/Hidrogeológicos-Especializados02.jpg",
     "titulo01": "Estudios Hidrogeológicos Especializados",
     "subtitulo01": "Exploración, monitoreo y modelado de aguas subterráneas.",
     "categorias": [
       {
         "titulo": "Exploración de Recursos Hídricos",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Hidrogeológicos-Especializados08.jpg" , "/Hidrogeológicos-Especializados04.jpg"],
         "ensayos": [
           "Identificación y caracterización de acuíferos",
           "Estimación de caudales sostenibles",
@@ -353,7 +353,7 @@
       },
       {
         "titulo": "Interacción Agua-Suelo-Estructura",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Hidrogeológicos-Especializados09.jpg", "/Hidrogeológicos-Especializados10.jpg"],
         "ensayos": [
           "Evaluación de niveles freáticos en cimentaciones",
           "Análisis de empujes hidrostáticos",
@@ -365,7 +365,7 @@
       },
       {
         "titulo": "Monitoreo de Aguas Subterráneas",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Hidrogeológicos-Especializados11.jpg", "/Hidrogeológicos-Especializados12.jpg"],
         "ensayos": [
           "Instalación de piezómetros y pozos de monitoreo",
           "Medición de niveles de agua",
@@ -377,7 +377,7 @@
       },
       {
         "titulo": "Control de Calidad del Agua",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Hidrogeológicos-Especializados02.jpg", "/Hidrogeológicos-Especializados03.jpg"],
         "ensayos": [
           "Análisis físico-químico del agua",
           "pH, conductividad, sólidos disueltos",
@@ -414,13 +414,13 @@
     "titulo": "Ensayos de Laboratorio",
     "descripcion": "Análisis especializados en laboratorio acreditado para garantizar la calidad de materiales de construcción.",
     "contenido": "Nuestro laboratorio geotécnico acreditado realiza ensayos de control de calidad en suelos, rocas, concreto, asfalto, agregados y agua, cumpliendo normativas nacionales e internacionales.",
-    "imagen": "/hero04.jpg",
+    "imagen": "/laboratorio-de-ensayos.png",
     "titulo01": "Laboratorio Geotécnico Acreditado",
     "subtitulo01": "Ensayos especializados con equipos de última generación y personal calificado.",
     "categorias": [
       {
         "titulo": "Ensayos en Suelos",
-        "imagenes": ["/hero04.jpg"],
+        "imagenes": ["/Ensayos-en-Suelos.png", "/Ensayos-en-Suelos03.png"],
         "ensayos": [
           "Clasificación y granulometría (SUCS, AASHTO)",
           "Límites de consistencia (LL, LP, IP)",
@@ -434,7 +434,7 @@
       },
       {
         "titulo": "Ensayos en Concreto",
-        "imagenes": ["/hero03.jpg", "/hero04.jpg"],
+        "imagenes": ["/Ensayos-en-Concreto.png", "/Ensayos-en-Concreto02.png"],
         "ensayos": [
           "Diseño de mezclas de concreto (ACI, ASTM)",
           "Control de concreto fresco (slump, temperatura, aire)",
@@ -447,7 +447,7 @@
       },
       {
         "titulo": "Ensayos en Rocas",
-        "imagenes": ["/hero04.jpg"],
+        "imagenes": ["/Ensayos-en-Concreto03.png", "/Ensayos-en-Concreto01.png"],
         "ensayos": [
           "Resistencia a compresión simple",
           "Ensayo de carga puntual (Point Load)",
@@ -459,7 +459,7 @@
       },
       {
         "titulo": "Ensayos en Agregados y Asfalto",
-        "imagenes": ["/hero04.jpg"],
+        "imagenes": ["/debrasion.png","/granulometria.png","/Ensayos-en-Suelos02.png"],
         "ensayos": [
           "Certificación de agregados (granulometría, abrasión Los Ángeles)",
           "Peso específico y absorción",
@@ -472,7 +472,7 @@
       },
       {
         "titulo": "Ensayos en Agua, Cemento y Otros",
-        "imagenes": ["/hero04.jpg"],
+        "imagenes": ["/ensayo-de-agua.png"],
         "ensayos": [
           "Análisis químico de agua (pH, sulfatos, cloruros)",
           "Agresividad del agua al concreto",
@@ -509,13 +509,13 @@
     "titulo": "Ensayos de Campo",
     "descripcion": "Pruebas técnicas realizadas directamente en obra para verificación de calidad y control in situ.",
     "contenido": "Realizamos ensayos de campo con equipos especializados para control de compactación, exploración del subsuelo, pruebas de carga y verificación de calidad durante la construcción.",
-    "imagen": "/hero01.jpg",
+    "imagen": "/Ensayos-de-Penetración.png",
     "titulo01": "Ensayos de Campo Especializados",
     "subtitulo01": "Control de calidad y exploración directamente en obra.",
     "categorias": [
       {
         "titulo": "Control de Compactación",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Control-de-Compactación01.png","/Control-de-Compactación02.png"],
         "ensayos": [
           "Densidad de campo (cono de arena, método nuclear)",
           "Verificación de grado de compactación",
@@ -527,7 +527,7 @@
       },
       {
         "titulo": "Perforaciones y Muestreo",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Ensayos-de-Penetración.png"],
         "ensayos": [
           "Perforaciones diamantinas (HQ, NQ, BQ)",
           "Calicatas y trincheras exploratorias",
@@ -539,7 +539,7 @@
       },
       {
         "titulo": "Ensayos de Penetración",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Perforacion01.png", "/Perforacion.png"],
         "ensayos": [
           "SPT (Standard Penetration Test)",
           "DPL (Dynamic Probe Light)",
@@ -551,7 +551,7 @@
       },
       {
         "titulo": "Pruebas de Carga y Permeabilidad",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/diseño-de-cimentacion.jpg"],
         "ensayos": [
           "Ensayo de placa de carga",
           "Pruebas de carga en pilotes (estática y dinámica)",
@@ -588,13 +588,13 @@
     "titulo": "Control de Calidad en Obra",
     "descripcion": "Supervisión técnica continua para asegurar que tu proyecto cumpla con especificaciones y normas.",
     "contenido": "Brindamos servicios de supervisión técnica especializada y control de calidad durante la ejecución de obras, garantizando el cumplimiento de especificaciones técnicas y normativas vigentes.",
-    "imagen": "/hero01.jpg",
+    "imagen": "/control-de-calidad.jpeg",
     "titulo01": "Control de Calidad Integral",
     "subtitulo01": "Supervisión geotécnica y control de materiales durante la construcción.",
     "categorias": [
       {
         "titulo": "Supervisión Técnica Especializada",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/control-de-calidad.jpeg"],
         "ensayos": [
           "Supervisión geotécnica en obra",
           "Verificación de procesos constructivos",
@@ -606,7 +606,7 @@
       },
       {
         "titulo": "Control de Concreto en Obra",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/Ensayos-en-Concreto.png"],
         "ensayos": [
           "Elaboración de testigos cilíndricos en campo",
           "Control de slump, temperatura y contenido de aire",
@@ -618,7 +618,7 @@
       },
       {
         "titulo": "Control de Pavimentos",
-        "imagenes": ["/hero01.jpg"],
+        "imagenes": ["/control-de-calidad.jpg"],
         "ensayos": [
           "Control de mezclas asfálticas en planta y obra",
           "Verificación de temperaturas de compactación",
@@ -627,19 +627,8 @@
           "Control de calidad de base y sub-base"
         ],
         "descripcion": "Supervisión especializada en construcción de pavimentos flexibles y rígidos."
-      },
-      {
-        "titulo": "Control de Materiales",
-        "imagenes": ["/hero01.jpg"],
-        "ensayos": [
-          "Verificación de agregados en cantera y obra",
-          "Control de compactación de rellenos",
-          "Ensayos no destructivos (esclerometría, ultrasonido)",
-          "Muestreo aleatorio de materiales",
-          "Certificación de materiales importados"
-        ],
-        "descripcion": "Verificación continua de la calidad de materiales utilizados en obra."
       }
+    
     ],
     "puntos": [
       "Personal residente en obra disponible",

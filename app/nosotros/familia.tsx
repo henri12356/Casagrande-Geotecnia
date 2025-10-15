@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const imageSrc = "/sobrenosotros.webp";
+const imageSrc = "/nosotros.webp";
 
 const containerTransition = { staggerChildren: 0.2, delayChildren: 0.3 } as const;
 const itemTransition = { duration: 0.6, ease: "easeOut" as const };

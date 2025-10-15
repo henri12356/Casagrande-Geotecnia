@@ -17,7 +17,7 @@ const slidesData: {
     title: "Comprometidos con la innovación",
     subtitle:
       "En cada proyecto garantizamos aseguramiento de calidad y confiabilidad de resultados, fortaleciendo la confianza con nuestros clientes.",
-    imageSrc: "/nosotroshero.png",
+    imageSrc: "/Perforacion.png",
     buttonText: "Ver Servicios",
     buttonLink: "/servicios",
   },
@@ -26,7 +26,7 @@ const slidesData: {
     title: "El Talento Detrás de Cada Logro",
     subtitle:
       "Nuestro equipo humano es el motor de cada logro, combinando experiencia y dedicación para alcanzar la excelencia en cada proyecto.",
-    imageSrc: "/Perforacion.png",
+    imageSrc: "/nosotroshero.png",
     buttonText: "Equipo",
     buttonLink: "/equipo",
   },

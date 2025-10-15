@@ -382,57 +382,76 @@ const ServicioPage = ({ params }: PageProps) => {
               </div>
             ))}
           </div>
-          {servicio.numeros && <Numeros stats={servicio.numeros}  />}
+          {servicio.numeros && <Numeros stats={servicio.numeros} />}
         </motion.div>
 
         {/* Información de contacto */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg"
-        >
-          <div className="grid md:grid-cols-2 gap-10">
-            {/* Contacto */}
-            <div>
-              <h3 className="text-2xl font-bold text-[#1b4772] mb-6 border-b pb-2 border-gray-100">
-                Contáctanos
-              </h3>
-              <div className="space-y-4">
-                <p className="flex items-center text-gray-700">
-                  <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-3" />
-                  +1 (234) 567-8900
-                </p>
-                <p className="flex items-center text-gray-700">
-                  <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-3" />
-                  info@laboratorio.com
-                </p>
-                <p className="flex items-center text-gray-700">
-                  <FaClock className="text-[#1b4772] w-5 h-5 mr-3" />
-                  Lun-Vie: 8:00 AM - 6:00 PM
-                </p>
+        <div className="py-16 md:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="bg-gray-50 rounded-3xl p-6 md:p-12 border border-gray-200 shadow-xl"
+          >
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+              {/* Columna Izquierda */}
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772] mb-6">
+                  Contáctanos
+                </h3>
+                <div className="space-y-4">
+                  <p className="flex items-center text-lg">
+                    <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
+                    +51 945 513 323
+                  </p>
+                  <p className="flex items-center text-sm md:text-lg">
+                    <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />
+                    comercial@casagrandegeotecnia.com.pe
+                  </p>
+                  <p className="flex items-center text-lg">
+                    <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
+                    Lun-Vie: 8:00 AM - 6:00 PM
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Solicitar servicio */}
-            <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-8 md:pl-16 md:pt-0">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">
-                Solicita un Servicio
-              </h3>
-              <div className="space-y-4">
-                <Button className="w-full bg-[#1b4772] hover:bg-[#1a242f] text-white py-6 text-lg rounded-xl shadow-lg">
-                  Solicitar cotización
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-[#1b4772]  text-[#1b4772]  hover:bg-gray-100 py-6 text-lg rounded-xl"
-                >
-                  Agendar visita técnica
-                </Button>
+              {/* Columna Derecha */}
+              <div className="border-t md:border-t-0 md:border-l   border-gray-200 pt-8 md:pl-16 md:pt-0">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">
+                  Solicita un Servicio
+                </h3>
+                <div className="space-y-4  ">
+                  {/* Botón WhatsApp Cotización */}
+                  <a
+                    href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="md:w-full cursor-pointer bg-[#1b4772] hover:bg-[#1a242f] text-white py-6 text-lg rounded-xl shadow-lg">
+                      Solicitar cotización
+                    </Button>
+                  </a>
+
+                  {/* Botón WhatsApp Visita Técnica */}
+                </div>
+                <div className="pt-2 ">
+                  <a
+                    href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="md:w-full cursor-pointer  border-[#1b4772] text-[#1b4772] hover:bg-gray-100 py-6 text-lg rounded-xl"
+                    >
+                      Agendar visita técnica
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Modal para imágenes - MEJORADO con navegación */}
