@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaArrowRight, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineDotsVertical, HiOutlineMail } from "react-icons/hi";
 
@@ -21,6 +21,7 @@ interface MoreOption {
   icon: React.ReactNode;
 }
 
+// 💬 Botón individual con mensaje de WhatsApp animado
 const SocialFloatingButton: React.FC<SocialFloatingButtonProps> = ({
   icon,
   label,
@@ -29,23 +30,59 @@ const SocialFloatingButton: React.FC<SocialFloatingButtonProps> = ({
   bgColor,
   hoverBgColor,
   className,
-}) => (
-  <motion.a
-    href={href}
-    target={target}
-    rel="noopener noreferrer"
-    className={`relative flex items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-xl transition-all duration-300 transform hover:scale-110 group ${bgColor} ${hoverBgColor} ${className}`}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-    aria-label={label}
-  >
-    {icon}
-    <span className="absolute right-full mr-3 px-3 py-1 bg-gray-800 text-white text-sm rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden md:block">
-      {label}
-    </span>
-  </motion.a>
-);
+}) => {
+  const [showMessage, setShowMessage] = useState(false);
 
+  useEffect(() => {
+    // Aparece el mensaje después de 2 segundos
+    const showTimer = setTimeout(() => setShowMessage(true), 2000);
+    // Desaparece después de 20 segundos
+    const hideTimer = setTimeout(() => setShowMessage(false), 22000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
+
+  return (
+    <div className="relative group">
+      <motion.a
+        href={href}
+        target={target}
+        rel="noopener noreferrer"
+        className={`relative flex items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-xl transition-all duration-300 transform hover:scale-110 ${bgColor} ${hoverBgColor} ${className}`}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label={label}
+      >
+        {icon}
+      </motion.a>
+
+      {/* Burbuja de mensaje solo en desktop */}
+      {label.toLowerCase().includes("asesoría") && (
+        <AnimatePresence>
+          {showMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.8 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="hidden md:block absolute right-full mr-3 bottom-2 bg-green-100/90 text-gray-800 text-sm px-4 py-2 rounded-2xl shadow-lg border border-green-200 backdrop-blur-sm whitespace-nowrap"
+            >
+              💬 ¡Hola! 👋 ¿Necesitas ayuda?
+
+              {/* Triángulo del globo */}
+              <div className="absolute -right-2 bottom-3 w-0 h-0 border-l-8 border-l-green-100/90 border-t-8 border-t-transparent border-b-8 border-b-transparent"></div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+    </div>
+  );
+};
+
+// Botón de más opciones
 const MoreOptionItem: React.FC<MoreOption> = ({ text, href, icon }) => (
   <motion.a
     href={href}
@@ -83,10 +120,7 @@ const FloatingButtons: React.FC = () => {
       opacity: 1,
       transition: { when: "beforeChildren", staggerChildren: 0.1 },
     },
-    exit: {
-      opacity: 0,
-      transition: { when: "afterChildren", staggerChildren: 0.05, staggerDirection: -1 },
-    },
+    exit: { opacity: 0, transition: { when: "afterChildren", staggerChildren: 0.05, staggerDirection: -1 } },
   };
 
   const itemVariants = {
@@ -102,10 +136,11 @@ const FloatingButtons: React.FC = () => {
         <SocialFloatingButton
           icon={<FaWhatsapp />}
           label="Necesitas Asesoría?"
-          href="https://wa.me/51945513323?text=Quiero%20mayor%20información"
-          bgColor="bg-green-500"
-          hoverBgColor="hover:bg-green-600"
+          href="https://wa.me/51945513323?text=¡Hola!%20Estoy%20interesado%20en%20sus%20servicios.%20¿Podría%20darme%20más%20información?"
+          bgColor="bg-green-400"
+          hoverBgColor="hover:bg-green-500"
         />
+
         <SocialFloatingButton
           icon={<FaLinkedinIn />}
           label="LinkedIn"
@@ -113,22 +148,20 @@ const FloatingButtons: React.FC = () => {
           bgColor="bg-blue-700"
           hoverBgColor="hover:bg-[#0A66C2]"
         />
+
         <SocialFloatingButton
           icon={<HiOutlineMail />}
           label="Correo"
-          href="https://mail.google.com/mail/?view=cm&to=comercial@casagrandegeotecnia.com.pe"
+          href="mailto:comercial@casagrandegeotecnia.com.pe"
           bgColor="bg-red-500"
           hoverBgColor="hover:bg-red-600"
         />
 
-        {/* Botón de más opciones */}
-        <motion.div className="relative" initial={false} animate={showMoreOptions ? "open" : "closed"}>
+        {/* Botón Más opciones */}
+        <motion.div className="relative">
           <motion.button
-            className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-xl bg-gray-700 hover:bg-gray-800 transition-all duration-300 transform hover:scale-110"
+            className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-xl bg-gray-700 hover:bg-gray-800 transition-all duration-300"
             onClick={() => setShowMoreOptions(!showMoreOptions)}
-            aria-label="Más opciones"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
           >
             <HiOutlineDotsVertical />
           </motion.button>
@@ -141,8 +174,8 @@ const FloatingButtons: React.FC = () => {
                 exit="exit"
                 className="absolute bottom-full right-0 mb-4 flex flex-col space-y-2"
               >
-                {moreOptionsData.map((option, index) => (
-                  <motion.div key={index} variants={itemVariants}>
+                {moreOptionsData.map((option, i) => (
+                  <motion.div key={i} variants={itemVariants}>
                     <MoreOptionItem {...option} />
                   </motion.div>
                 ))}
@@ -156,16 +189,16 @@ const FloatingButtons: React.FC = () => {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-800 text-white py-3 px-4 flex justify-around items-center shadow-lg z-50">
         <SocialFloatingButton
           icon={<FaWhatsapp />}
-          label="WhatsApp"
-          href="https://wa.me/51945513323?text=Quiero%20mayor%20información"
-          bgColor="bg-green-500"
-          hoverBgColor="hover:bg-green-600"
+          label="Asesoría"
+          href="https://wa.me/51945513323?text=¡Hola!%20Estoy%20interesado%20en%20sus%20servicios."
+          bgColor="bg-green-400"
+          hoverBgColor="hover:bg-green-500"
           className="w-10 h-10 text-lg"
         />
         <SocialFloatingButton
           icon={<FaLinkedinIn />}
           label="LinkedIn"
-          href="https://www.linkedin.com/in/henri-delacruz/" // 🔗 reemplaza con tu enlace real
+          href="https://www.linkedin.com/in/henri-delacruz/"
           bgColor="bg-blue-700"
           hoverBgColor="hover:bg-blue-800"
           className="w-10 h-10 text-lg"
@@ -173,18 +206,15 @@ const FloatingButtons: React.FC = () => {
         <SocialFloatingButton
           icon={<HiOutlineMail />}
           label="Correo"
-          href="https://mail.google.com/mail/?view=cm&to=comercial@casagrandegeotecnia.com.pe"
+          href="mailto:comercial@casagrandegeotecnia.com.pe"
           bgColor="bg-red-500"
           hoverBgColor="hover:bg-red-600"
+          className="w-10 h-10 text-lg"
         />
-
-        <motion.div className="relative flex items-center justify-center" initial={false} animate={showMoreOptions ? "open" : "closed"}>
+        <motion.div className="relative">
           <motion.button
             className="flex items-center justify-center w-10 h-10 rounded-full shadow-lg text-white text-lg bg-gray-700 hover:bg-gray-800 transition-all duration-300"
             onClick={() => setShowMoreOptions(!showMoreOptions)}
-            aria-label="Más opciones"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
           >
             <HiOutlineDotsVertical />
           </motion.button>
@@ -197,8 +227,8 @@ const FloatingButtons: React.FC = () => {
                 exit="exit"
                 className="absolute bottom-full mb-3 flex flex-col space-y-2 left-1/2 -translate-x-1/2 w-[calc(100vw-2rem)] max-w-sm"
               >
-                {moreOptionsData.map((option, index) => (
-                  <motion.div key={index} variants={itemVariants}>
+                {moreOptionsData.map((option, i) => (
+                  <motion.div key={i} variants={itemVariants}>
                     <MoreOptionItem {...option} />
                   </motion.div>
                 ))}
