@@ -10,7 +10,7 @@
     "categorias": [
       {
         "titulo": " Geológica-Geotécnica",
-        "imagenes": ["/geologia.png"],
+        "imagenes": ["/geologia.png", "/geologia02.png"],
         "ensayos": [
           "Mapeo detallado de suelos, rocas y estructuras geológicas",
           "Identificación de fallas y fracturas",

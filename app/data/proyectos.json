@@ -1,141 +1,92 @@
 [
   {
-    "slug": "cbr-in-situ",
-    "titulo": "Proyecto CBR In Situ",
-    "cliente": "CAFISAC",
-    "obra": "Puerto del Callao",
-    "trabajo": "CBR In Situ",
-    "categoria": "Laboratorio",
-    "imagen": "/hero01.jpg",
-    "descripcion": "Ensayo de capacidad de soporte del terreno en obra real para garantizar la resistencia del suelo.",
-    "detalles": {
-      "objetivo": "Evaluar la capacidad de carga del suelo en condiciones reales de campo.",
-      "metodologia": "Se realizaron pruebas in situ siguiendo la norma ASTM D1883.",
-      "resultados": [
-        "Determinación del CBR en diferentes profundidades",
-        "Validación de la compactación del terreno",
-        "Informe técnico para el cliente"
-      ]
-    },
-    "numerosClave": [
-      { "label": "Ensayos realizados", "value": 12 },
-      { "label": "Días de trabajo", "value": 5 },
-      { "label": "Ingenieros", "value": 3 },
-      { "label": "Muestras analizadas", "value": 24 }
-    ],
-    "fases": [
-      {
-        "titulo": "Planificación",
-        "descripcion": "Diseño de la estrategia de ensayos en campo."
-      },
-      {
-        "titulo": "Ejecución",
-        "descripcion": "Realización de los ensayos CBR in situ."
-      },
-      {
-        "titulo": "Análisis",
-        "descripcion": "Procesamiento de datos y validación de resultados."
-      },
-      {
-        "titulo": "Informe final",
-        "descripcion": "Entrega del reporte técnico al cliente."
-      }
-    ],
-    "galeria": ["/hero01.jpg", "/hero02.jpg", "/hero03.jpg"]
-  },
-  {
-    "slug": "Aeropuerto",
-    "titulo": "Proyecto Aeropuerto",
-    "cliente": "CAFISAC",
-    "obra": "Puerto del Callao",
-    "trabajo": "CBR In Situ",
-    "categoria": "geotecnia",
-    "imagen": "/hero05.jpg",
-    "descripcion": "Ensayo de capacidad de soporte del terreno en obra real para garantizar la resistencia del suelo.",
-    "detalles": {
-      "objetivo": "Evaluar la capacidad de carga del suelo en condiciones reales de campo.",
-      "metodologia": "Se realizaron pruebas in situ siguiendo la norma ASTM D1883.",
-      "resultados": [
-        "Determinación del CBR en diferentes profundidades",
-        "Validación de la compactación del terreno",
-        "Informe técnico para el cliente"
-      ]
-    },
-    "numerosClave": [
-      { "label": "Ensayos realizados", "value": 12 },
-      { "label": "Días de trabajo", "value": 5 },
-      { "label": "Ingenieros", "value": 3 },
-      { "label": "Muestras analizadas", "value": 24 }
-    ],
-    "fases": [
-      {
-        "titulo": "Planificación",
-        "descripcion": "Diseño de la estrategia de ensayos en campo."
-      },
-      {
-        "titulo": "Ejecución",
-        "descripcion": "Realización de los ensayos CBR in situ."
-      },
-      {
-        "titulo": "Análisis",
-        "descripcion": "Procesamiento de datos y validación de resultados."
-      },
-      {
-        "titulo": "Informe final",
-        "descripcion": "Entrega del reporte técnico al cliente."
-      }
-    ],
-    "galeria": [
-      "/hero04.jpg",
-      "/hero05.jpg",
-      "/hero05.jpg",
-      "/hero.jpg",
-      "/hero.jpg",
-      "/hero.jpg"
+  "slug": "unsch-geotecnia",
+  "titulo": "Mejoramiento de la Escuela Profesional de Ingeniería Agrícola",
+  "cliente": "Universidad Nacional de San Cristóbal de Huamanga",
+  "obra": "Ayacucho - Escuela Profesional de Ingeniería Agrícola",
+  "trabajo": "Servicio de Geotecnia ",
+  "categoria": "Geotecnia",
+  "imagen": "/proyectos/unsch-geotecnia/unsch-geotecnia.png",
+  "descripcion": "Servicio de geotecnia realizado en la obra de mejoramiento de la Escuela Profesional de Ingeniería Agrícola de la UNSCH",
+  "detalles": {
+    "objetivo": "Evaluar las condiciones geotécnicas del suelo y su idoneidad para futuras estructuras en la obra de la UNSCH.",
+    "metodologia": "Se realizaron ensayos de densidad de campo mediante el método del cono de arena y determinación de humedad en laboratorio siguiendo normas ASTM.",
+    "resultados": [
+      "Determinación de la densidad y humedad natural del suelo en distintas zonas del proyecto.",
+      "Verificación de la compactación y uniformidad del terreno.",
+      "Elaboración de informe técnico con conclusiones y recomendaciones geotécnicas para el diseño y planificación de obra."
     ]
   },
-  {
-    "slug": "Callao-pista",
-    "titulo": "Proyecto Callao Pista",
-    "cliente": "CAFISAC",
-    "obra": "Puerto del Callao",
-    "trabajo": "CBR In Situ",
-    "categoria": "ENSAYOS DE CAMPO",
-    "imagen": "/hero03.jpg",
-    "descripcion": "Ensayo de capacidad de soporte del terreno en obra real para garantizar la resistencia del suelo.",
-    "detalles": {
-      "objetivo": "Evaluar la capacidad de carga del suelo en condiciones reales de campo.",
-      "metodologia": "Se realizaron pruebas in situ siguiendo la norma ASTM D1883.",
-      "resultados": [
-        "Determinación del CBR en diferentes profundidades",
-        "Validación de la compactación del terreno",
-        "Informe técnico para el cliente"
-      ]
+  "numerosClave": [
+    { "label": "Ensayos", "value": 12 },
+    { "label": "Días de trabajo", "value": 5 },
+    { "label": "Ingenieros", "value": 5 },
+    { "label": "Muestras analizadas", "value": 24 }
+  ],
+  "fases": [
+    {
+      "titulo": "Planificación",
+      "descripcion": "Diseño de la estrategia de muestreo y ensayos geotécnicos en campo."
     },
-    "numerosClave": [
-      { "label": "Ensayos realizados", "value": 12 },
-      { "label": "Días de trabajo", "value": 5 },
-      { "label": "Ingenieros", "value": 3 },
-      { "label": "Muestras analizadas", "value": 24 }
-    ],
-    "fases": [
-      {
-        "titulo": "Planificación",
-        "descripcion": "Diseño de la estrategia de ensayos en campo."
-      },
-      {
-        "titulo": "Ejecución",
-        "descripcion": "Realización de los ensayos CBR in situ."
-      },
-      {
-        "titulo": "Análisis",
-        "descripcion": "Procesamiento de datos y validación de resultados."
-      },
-      {
-        "titulo": "Informe final",
-        "descripcion": "Entrega del reporte técnico al cliente."
-      }
-    ],
-    "galeria": ["/hero01.jpg", "/hero02.jpg", "/hero03.jpg"]
-  }
+    {
+      "titulo": "Ejecución",
+      "descripcion": "Realización de los ensayos de densidad de campo y recolección de muestras representativas del terreno."
+    },
+    {
+      "titulo": "Análisis",
+      "descripcion": "Procesamiento de resultados y verificación de los datos obtenidos en laboratorio."
+    },
+    {
+      "titulo": "Informe Final",
+      "descripcion": "Entrega del reporte técnico con conclusiones, resultados y recomendaciones al cliente."
+    }
+  ],
+  "galeria": ["/proyectos/unsch-geotecnia/unsch-geotecnia04.png", "/proyectos/unsch-geotecnia/unsch-geotecnia03.png", "/proyectos/unsch-geotecnia/unsch-geotecnia02.png"]
+  },
+  {
+  "slug": "rehabilitacion-canal-tablaza",
+  "titulo": " Servicio de agua para riego del canal Tablaza ",
+  "cliente": "Gobierno Regional de Piura",
+  "obra": "Canal Tablaza, distrito de Tambogrande, provincia de Piura",
+  "trabajo": "Estudios Hidrológicos",
+  "categoria": "Hidrología",
+  "imagen": "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza.jpg",
+  "descripcion": "Evaluación hidrológica integral del sistema de riego del canal Tablaza para garantizar la disponibilidad y sostenibilidad del recurso hídrico.",
+  "detalles": {
+    "objetivo": "Analizar las condiciones hidrológicas del área de estudio y definir los parámetros técnicos para la rehabilitación del canal.",
+    "metodologia": "Se realizaron estudios de precipitación, caudales, avenidas máximas, balance hídrico y modelación hidrológica de la cuenca.",
+    "resultados": [
+      "Determinación de caudales medios y máximos del canal",
+      "Evaluación del balance hídrico anual",
+      "Definición de parámetros para la rehabilitación hidráulica"
+    ]
+  },
+  "numerosClave": [
+    { "label": "Estudios realizados", "value": 8 },
+    { "label": "Días de trabajo", "value": 10 },
+    { "label": "Ingenieros", "value": 4 },
+    { "label": "Puntos evaluados", "value": 15 }
+  ],
+  "fases": [
+    {
+      "titulo": "Planificación",
+      "descripcion": "Diseño del plan de estudios hidrológicos del sistema de riego."
+    },
+    {
+      "titulo": "Ejecución",
+      "descripcion": "Toma de datos de campo y análisis de precipitaciones y caudales."
+    },
+    {
+      "titulo": "Análisis",
+      "descripcion": "Procesamiento de la información hidrológica y modelación de escenarios."
+    },
+    {
+      "titulo": "Informe final",
+      "descripcion": "Elaboración del informe técnico con resultados y conclusiones hidrológicas."
+    }
+  ],
+  "galeria": ["/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza01.jpg", "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza02.jpg", "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza03.jpg"]
+}
+
+  
 ]

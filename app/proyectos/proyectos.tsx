@@ -54,15 +54,15 @@ const ProyectosPage = () => {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority={index < 3}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1b4b52]/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 " />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 text-[#1b4b52] px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
+                    <span className="bg-white/90 text-[#1B4772] px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
                       {proyecto.categoria}
                     </span>
                   </div>
                   <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="text-center w-full">
-                      <span className="inline-block bg-white text-[#1b4b52] px-6 py-2 rounded-full font-semibold shadow">
+                      <span className="inline-block bg-white text-[#1B4772] px-6 py-2 rounded-full font-semibold shadow">
                         Ver Detalles
                       </span>
                     </div>
@@ -71,24 +71,24 @@ const ProyectosPage = () => {
 
                 {/* Info */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#2c3e50] mb-3 group-hover:text-[#1b4b52] transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-[#1B4772] mb-3 group-hover:text-[#1B4772] transition-colors duration-300">
                     {proyecto.titulo}
                   </h3>
                   <div className="space-y-2 mb-4">
                     <div className="flex items-start">
-                      <div className="w-2 h-2 bg-[#1b4b52] rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-[#1B4772] rounded-full mt-2 mr-2 flex-shrink-0"></div>
                       <span className="text-sm text-gray-600">
                         <strong className="font-semibold">Cliente:</strong> {proyecto.cliente}
                       </span>
                     </div>
                     <div className="flex items-start">
-                      <div className="w-2 h-2 bg-[#1b4b52] rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-[#1B4772] rounded-full mt-2 mr-2 flex-shrink-0"></div>
                       <span className="text-sm text-gray-600">
                         <strong className="font-semibold">Obra:</strong> {proyecto.obra}
                       </span>
                     </div>
                   </div>
-                  <span className="inline-flex items-center text-[#1b4b52] font-semibold text-sm group-hover:text-[#2c3e50] transition-colors duration-300">
+                  <span className="inline-flex items-center text-[#1B4772] font-semibold text-sm group-hover:text-[#1B4772] transition-colors duration-300">
                     Ver proyecto completo
                     <svg
                       className="w-4 h-4 ml-2"

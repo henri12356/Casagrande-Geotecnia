@@ -80,7 +80,7 @@ export default function ProyectoPage({ proyecto }: Props) {
 
 
   return (
-    <div className="bg-[#f8f9fa] text-[#111827] min-h-screen">
+    <div className="bg-[#f8f9fa] text-[#111827] min-h-screen py-10">
       <Navbar />
 
       {/* Hero */}
@@ -92,16 +92,16 @@ export default function ProyectoPage({ proyecto }: Props) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16 md:pt-36">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16 md:pt-28">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4"
+            className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4 max-w-7xl"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
           >
             {proyecto.titulo}
           </motion.h1>
           <motion.p
-            className="max-w-2xl text-lg md:text-xl text-gray-200"
+            className="max-w-2xl text-[17px] md:text-xl text-gray-200"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -156,7 +156,7 @@ export default function ProyectoPage({ proyecto }: Props) {
             <h3 className="text-sm font-bold uppercase text-[#1b4772] mb-1">
               Cliente
             </h3>
-            <p className="text-lg font-medium">{proyecto.cliente}</p>
+            <p className="text-[18px] font-medium">{proyecto.cliente}</p>
           </div>
           <div className="bg-white rounded-xl border border-[#e5e7eb] p-6 shadow-sm">
             <h3 className="text-sm font-bold uppercase text-[#1b4772] mb-1">
@@ -214,7 +214,7 @@ export default function ProyectoPage({ proyecto }: Props) {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
               >
-                <div className="w-10 h-10 rounded-full bg-[#1b4772] text-white flex items-center justify-center font-bold">
+                <div className="md:w-10 w-12 h-10 md:h-10 rounded-full bg-[#1b4772] text-white flex items-center justify-center font-bold">
                   {i + 1}
                 </div>
                 <div>

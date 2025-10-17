@@ -102,14 +102,14 @@ const Servicios = () => {
                   sizes="100vw"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-6">
                   <h3 className="text-white text-2xl font-bold mb-2">
                     {servicio.titulo}
                   </h3>
                   <p className="text-white text-sm mb-4">
                     {servicio.descripcion}
                   </p>
-                  <Button className="w-1/2 md:w-1/3 bg-[#1b4772] hover:bg-[#1a242f] text-white cursor-pointer">
+                  <Button className="w-1/2 md:w-1/3 bg-[#182C45] hover:bg-[#1b4772] text-white cursor-pointer">
                     Ver más
                   </Button>
                 </div>
@@ -152,11 +152,11 @@ const Servicios = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gray-50 rounded-3xl p-6 md:p-12 border border-gray-200 shadow-xl"
+          className="bg-gray-50 rounded-3xl p-6 md:p-12 border border-gray-200 shadow-xl "
         >
           <div className="grid md:grid-cols-2 gap-8 md:gap-16">
             {/* Columna Izquierda */}
-            <div>
+            <div className="">
               <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772] mb-6">
                 Contáctanos
               </h3>
@@ -165,7 +165,7 @@ const Servicios = () => {
                   <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
                   +51 945 513 323
                 </p>
-                <p className="flex items-center text-sm md:text-lg">
+                <p className="flex items-center text-[12px] md:text-lg">
                   <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />
                   comercial@casagrandegeotecnia.com.pe
                 </p>

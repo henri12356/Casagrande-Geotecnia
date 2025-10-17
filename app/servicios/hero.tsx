@@ -126,7 +126,7 @@ export default function HeroServicios() {
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-8xl drop-shadow-lg"
+                className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-8xl drop-shadow-lg"
               >
                 {activeSlide.title}
               </motion.h2>

@@ -34,10 +34,10 @@ const Numeros = () => {
   const isInViewContainer = useInView(containerRef, { once: true, amount: 0.3 });
 
   const stats = [
-    { id: 1, label: 'AÑOS DE EXPERIENCIA', value: 15, suffix: '+' },
+    { id: 1, label: 'AÑOS DE EXPERIENCIA', value: 20, suffix: '+' },
     { id: 2, label: 'TRABAJOS REALIZADOS', value: 600, suffix: '+' },
     { id: 3, label: 'CLIENTES SATISFECHOS', value: 500, suffix: '+' },
-    { id: 4, label: 'PROYECTOS EN CURSO', value: 25, suffix: '+' },
+    { id: 4, label: 'PROYECTOS EN CURSO', value: 5, suffix: '+' },
   ];
 
   const sectionVariants: Variants = {
