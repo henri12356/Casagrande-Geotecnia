@@ -61,6 +61,6 @@ export async function POST() {
 // ✅ Método GET solo para verificar si el endpoint está activo
 export async function GET() {
   return NextResponse.json({
-    message: "Ruta /api/indexnow activa. Usa POST para enviar URLs.",
+    message: "esta e sun prueba si esta funcionado el codigo de indexnow",
   });
 }
