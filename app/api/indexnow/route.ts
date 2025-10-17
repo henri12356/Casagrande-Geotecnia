@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+// ✅ Método POST - Envío a IndexNow
 export async function POST() {
   const baseUrl = "https://www.casagrandegeotecnia.com.pe";
 
@@ -55,4 +56,11 @@ export async function POST() {
       details: (error as Error).message,
     });
   }
+}
+
+// ✅ Método GET solo para verificar si el endpoint está activo
+export async function GET() {
+  return NextResponse.json({
+    message: "Ruta /api/indexnow activa. Usa POST para enviar URLs.",
+  });
 }
