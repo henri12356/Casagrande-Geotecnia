@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 export async function POST() {
-  // ✅ Lista de URLs (igual que tu sitemap)
   const baseUrl = "https://www.casagrandegeotecnia.com.pe";
 
   const serviciosSlugs = [
@@ -26,23 +25,14 @@ export async function POST() {
     "centro-comercial",
   ];
 
-  const staticUrls = [
-    "",
-    "servicios",
-    "proyectos",
-    "nosotros",
-    "blog",
-    "contacto",
-  ];
+  const staticUrls = ["", "servicios", "proyectos", "nosotros", "blog", "contacto"];
 
-  // ✅ Combinar todas las URLs
   const allUrls = [
     ...staticUrls.map((slug) => `${baseUrl}/${slug}`.replace(/\/$/, "")),
     ...serviciosSlugs.map((slug) => `${baseUrl}/servicios/${slug}`),
     ...proyectosSlugs.map((slug) => `${baseUrl}/proyectos/${slug}`),
   ];
 
-  // ✅ Enviar a IndexNow
   const body = {
     host: "www.casagrandegeotecnia.com.pe",
     key: "22e9205e7fe44ff6b6a6bfa79f05e116",
@@ -51,7 +41,7 @@ export async function POST() {
   };
 
   try {
-    const res = await fetch("https://api.indexnow.org/IndexNow", {
+    const res = await fetch("https://www.bing.com/indexnow", {
       method: "POST",
       headers: { "Content-Type": "application/json; charset=utf-8" },
       body: JSON.stringify(body),
