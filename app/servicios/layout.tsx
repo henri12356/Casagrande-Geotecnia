@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: "Servicios de Geotécnica | Casagrande Geotecnia",
+    default: "Servicios de Geotécnica ",
     template: "%s | Casagrande Geotecnia"
   },
   description: "Servicios de geotecnia, geofísica, laboratorio de materiales y estudios especializados",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   creator: "Casagrande Geotecnia",
   publisher: "Casagrande Geotecnia",
   openGraph: {
-    title: "Servicios de Ingeniería Geotécnica | Casagrande Geotecnia",
+    title: "Servicios de Ingeniería Geotécnica ",
     description: "Servicios integrales en geotecnia, geofísica, laboratorio y estudios especializados para proyectos de construcción.",
     type: "website",
     url: "https://www.casagrandegeotecnia.com.pe/servicios",

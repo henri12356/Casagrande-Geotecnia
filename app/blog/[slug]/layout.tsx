@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: BlogPostLayoutProps): Promise
   
   if (!articulo) {
     return {
-      title: 'Artículo no encontrado | Casagrande Geotecnia',
+      title: 'Artículo no encontrado ',
       description: 'El artículo que buscas no está disponible en nuestro blog.'
     }
   }
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: BlogPostLayoutProps): Promise
   ].join(", ")
 
   return {
-    title: `${articulo.titulo} | Blog Casagrande Geotecnia`,
+    title: `${articulo.titulo} `,
     description: articulo.extracto,
     keywords: keywords,
     authors: [{ name: articulo.autor.nombre }],

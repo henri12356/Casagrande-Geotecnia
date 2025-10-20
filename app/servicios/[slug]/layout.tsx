@@ -9,68 +9,51 @@ interface ServiceLayoutProps {
 // Configuración SEO específica por servicio para Casagrande Geotecnia
 const serviciosMetadata = {
   'geotecnia': {
-    title: 'Estudios Geotécnicos | Casagrande Geotecnia',
+    title: 'Estudios Geotécnicos ',
     description: 'Servicios completos de geotecnia. Estudios de mecánica de suelos, capacidad portante, cimentaciones y estabilidad de taludes. Certificaciones ISO.',
     keywords: 'geotecnia, estudios geotécnicos, mecánica de suelos, capacidad portante, cimentaciones, estabilidad taludes, estudios geotécnicos edificios',
     image: "/hero06.jpg"
   },
+  'laboratorio-de-suelo': {
+    title: 'Laboratorio de suelo',
+    description: 'Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.',
+    keywords: 'laboratorio geotécnico, ensayos suelos, ensayos rocas, ensayos concreto, ensayos asfalto, control de calidad, pruebas materiales construcción',
+    image: "/laboratorio-de-ensayos.png"
+  },
   'geologia': {
-    title: 'Servicios de Geología Aplicada | Casagrande Geotecnia',
+    title: 'Servicios de Geología Aplicada ',
     description: 'Geología aplicada a la construcción. Cartografía geológica, evaluación de riesgos naturales, estudios de canteras y exploración geotécnica. Especialistas certificados.',
     keywords: 'geología aplicada, cartografía geológica, riesgos naturales, exploración geotécnica, estudios canteras, geología construcción',
     image: "/hero01.jpg"
   },
-  'estudio-de-suelos': {
-    title: 'Estudio de Suelos Profesional | Casagrande Geotecnia',
-    description: 'Estudios completos de mecánica de suelos. Ensayos SPT, análisis de capacidad portante, diseño de cimentaciones. Cumplimiento normas ASTM y NTP.',
-    keywords: 'estudio de suelos, mecánica de suelos profesional, ensayos SPT, capacidad portante suelos, diseño cimentaciones, normas ASTM NTP',
-    image: "/hero05.jpg"
-  },
-  'laboratorio-geotecnico': {
-    title: 'Laboratorio Geotécnico Certificado | Casagrande Geotecnia',
-    description: 'Laboratorio geotécnico con certificación ISO. Ensayos de suelos, concreto, asfalto y agregados. Granulometría, límites Atterberg, CBR, Proctor, resistencia.',
-    keywords: 'laboratorio geotécnico, ensayos de suelos certificados, granulometría suelos, límites Atterberg, CBR, Proctor, ensayos concreto asfalto',
-    image: "/hero04.jpg"
-  },
-  'servicios-pavimento': {
-    title: 'Diseño y Evaluación de Pavimentos | Casagrande Geotecnia',
-    description: 'Servicios especializados en pavimentos: diseño estructural, deflectometría, evaluación PCI, rehabilitación y control de calidad. Experiencia en proyectos viales.',
-    keywords: 'diseño pavimentos, evaluación pavimentos, deflectometría, índice PCI, rehabilitación pavimentos, control calidad viales, proyectos carreteras',
-    image: "/hero02.jpg"
-  },
   'geofisica': {
-    title: 'Estudios Geofísicos Aplicados | Casagrande Geotecnia',
+    title: 'Estudios Geofísicos  ',
     description: 'Geofísica aplicada a la ingeniería civil. Métodos sísmicos, eléctricos y electromagnéticos para investigación del subsuelo. Tecnología no invasiva.',
     keywords: 'estudios geofísicos, métodos sísmicos, tomografía eléctrica, geofísica aplicada, investigación subsuelo, métodos no invasivos geotecnia',
     image: "/hero03.jpg"
   },
   'geomecanica': {
-    title: 'Geomecánica y Estabilidad de Rocas | Casagrande Geotecnia',
+    title: 'Geomecánica',
     description: 'Servicios de geomecánica para túneles, taludes rocosos y minería. Clasificación RMR, Q, GSI. Análisis de estabilidad y diseño de sostenimiento.',
     keywords: 'geomecánica, estabilidad taludes rocosos, túneles, clasificación RMR, sistemas sostenimiento, mecánica rocas, minería geotecnia',
     image: "/hero04.jpg"
   },
   'hidrogeologia': {
-    title: 'Hidrogeología Aplicada a Proyectos | Casagrande Geotecnia',
+    title: 'Estudio hidrogeologico  ',
     description: 'Estudios hidrogeológicos para proyectos civiles y mineros. Investigación de aguas subterráneas, permeabilidad, drenaje y control de filtraciones.',
     keywords: 'hidrogeología, estudios aguas subterráneas, permeabilidad suelos, drenaje proyectos, control filtraciones, hidrogeología construcción',
     image: "/hero05.jpg"
   },
-  'control-calidad': {
-    title: 'Control de Calidad en Construcción | Casagrande Geotecnia',
+  'control-de-calidad': {
+    title: 'Control de Calidad',
     description: 'Servicios de control de calidad para obras civiles. Supervisión de materiales, procesos constructivos y cumplimiento de especificaciones técnicas.',
     keywords: 'control de calidad construcción, supervisión obras civiles, calidad materiales construcción, especificaciones técnicas, auditoría calidad proyectos',
     image: "/hero06.jpg"
   },
-  'materiales-construccion': {
-    title: 'Laboratorio de Materiales de Construcción | Casagrande Geotecnia',
-    description: 'Ensayos especializados de materiales de construcción. Análisis de concreto, acero, agregados, asfalto y otros materiales. Certificaciones INACAL.',
-    keywords: 'laboratorio materiales construcción, ensayos concreto, análisis acero, agregados construcción, ensayos asfalto, certificaciones INACAL',
-    image: "/hero07.jpg"
-  },
-  'estudios-especiales': {
-    title: 'Estudios Especiales de Ingeniería | Casagrande Geotecnia',
-    description: 'Estudios especializados: capacidad de carga, asentamientos, licuación de suelos, dinámica de suelos y análisis sísmicos. Soluciones técnicas avanzadas.',
+  
+  'ensayo-de-campo': {
+    title: 'Estudio de Campo',
+    description: 'Pruebas geotécnicas y geofísicas en terreno como SPT, CPT, densidades y permeabilidad, obteniendo información directa y confiable del subsuelo',
     keywords: 'estudios especiales ingeniería, capacidad carga suelos, asentamientos, licuación suelos, dinámica suelos, análisis sísmicos, estudios especializados',
     image: "/hero08.jpg"
   }

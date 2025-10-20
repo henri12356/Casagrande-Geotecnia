@@ -46,8 +46,8 @@ const servicios = [
     imagen: "/Hidrogeológicos-Especializados02.jpg",
   },
   {
-    slug: "ensayo-de-laboratorio",
-    titulo: "Ensayos de Laboratorio",
+    slug: "laboratorio-de-suelo",
+    titulo: "Laboratorio Geotecnico",
     descripcion:
       "Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.",
     imagen: "/laboratorio-de-ensayos.png",

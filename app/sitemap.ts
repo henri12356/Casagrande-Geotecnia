@@ -5,12 +5,12 @@ const serviciosSlugs = [
   'geotecnia',
   'geologia', 
   'estudio-de-suelos',
-  'laboratorio-geotecnico',
-  'servicios-pavimento',
+  'laboratorio-de-suelo',
+  'ensayo-de-campo',
   'geofisica',
   'geomecanica',
   'hidrogeologia',
-  'control-calidad'
+  'control-de-calidad'
 ]
 
 const proyectosSlugs = [
