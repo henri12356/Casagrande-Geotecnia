@@ -1,320 +1,96 @@
 [
- {
-  "slug": "que-es-geotecnia",
-  "titulo": "Geotecnia: Qué es, Principios y Aplicaciones en Ingeniería Civil",
-  "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad, seguridad y éxito de cada proyecto de construcción.",
-  "categoria": "Articulos",
-  "fecha": "2025-09-22",
-  "imagen": "/articulos/art01-img-03.webp",
-  "extracto": "Descubre qué es la geotecnia, sus principios y cómo se aplica en proyectos de construcción. Aprende con casos reales y ejemplos prácticos en ingeniería civil.",
-  "autor": {
-    "nombre": "Ing. Henri de la Cruz",
-    "cargo": "Especialista en Geotecnia",
-    "avatar": "/articulos/logoprueba.webp"
-  },
-  "contenido": [
-    {
-      "titulo": "Introducción a la Geotecnia: La base de toda construcción segura",
-      "texto": "La geotecnia es una rama de la ingeniería civil dedicada al **estudio del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier proyecto —desde edificios y puentes hasta túneles y carreteras— tenga una **base segura y duradera**.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos analizan cómo reacciona el terreno ante cargas, cambios climáticos o sismos, permitiendo **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia conecta la teoría aprendida en clase con la práctica real en obras. Para profesionales, es una herramienta para diseñar proyectos seguros, eficientes y con menor riesgo de fallas.",
-      "imagen": "/articulos/art01-img-01.webp",
-      "imagenAlt": "Ingeniero geotécnico analizando muestras de suelo en obra"
-    },
-    {
-      "titulo": "Principios fundamentales y aplicaciones prácticas de la geotecnia",
-      "texto": "La geotecnia se basa en varios principios esenciales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Fundamental para definir cimentaciones.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad, que permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** análisis de pendientes naturales y excavaciones para evitar colapsos, diseñando muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad proporcionan datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico:** Antes de construir un hospital en Lima, se realizan perforaciones y ensayos de penetración estándar (SPT). Si los suelos superficiales son débiles, se usan **pilotes profundos**, garantizando estabilidad.\n\nPara ingenieros, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
-      "imagen": "/articulos/art01-img-02.webp",
-      "imagenAlt": "Ingeniero geotécnico realizando ensayo de penetración estándar SPT"
-    },
-    {
-      "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
-      "texto": "La geotecnia aplicada se evidencia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, se realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** extracción de muestras para análisis granulométrico y de resistencia.\n2. **Ensayos SPT:** evaluación de densidad y capacidad de carga por sección.\n3. **Estabilidad de taludes:** identificación de zonas críticas y diseño de muros de contención y anclajes.\n4. **Evaluación de riesgos climáticos:** análisis del impacto de lluvias intensas y erosión.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia convierte la teoría en soluciones prácticas y seguras.\n\nPara estudiantes, este ejemplo ilustra el proceso completo desde la exploración hasta la ejecución. Para profesionales, enfatiza la importancia de decisiones técnicas basadas en datos confiables.",
-      "imagen": "/articulos/art01-img-04.webp",
-      "imagenAlt": "Proyecto vial en Ayacucho con estudios geotécnicos realizados"
-    }
-  ],
-  "relacionados": [
-    "laboratorio-geotecnico",
-    "geologia-aplicada",
-    "proyectos-viales"
-  ],
-  "tags": [
-    "Geotecnia",
-    "Ingeniería Civil",
-    "Suelo",
-    "Construcción",
-    "Casos de Estudio",
-    "Estudiantes",
-    "Ingenieros",
-    "SPT",
-    "Taludes",
-    "Cimentaciones"
-  ],
-  "esPopular": true,
-  "cta": "Si quieres profundizar en geotecnia y proyectos de ingeniería civil, revisa nuestros artículos relacionados y aprende con casos prácticos reales."
-},
   {
-    "slug": "urbanismo",
-    "titulo": "Urbanismo Táctico: Transformando Ciudades con Intervenciones Simples",
-    "subtitulo": "Descubre cómo pequeñas acciones pueden generar grandes cambios en el espacio público, mejorando la habitabilidad y la vida comunitaria.",
+    "slug": "que-es-geotecnia",
+    "titulo": "Geotecnia: Qué es, Principios y Aplicaciones en Ingeniería Civil",
+    "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad, seguridad y éxito de cada proyecto de construcción.",
+    "categoria": "Articulos",
+    "fecha": "2025-09-22",
+    "imagen": "/articulos/art01-img-03.webp",
+    "extracto": "Descubre qué es la geotecnia, sus principios y cómo se aplica en proyectos de construcción. Aprende con casos reales y ejemplos prácticos en ingeniería civil.",
+    "autor": {
+      "nombre": "Ing. Henri de la Cruz",
+      "cargo": "Especialista en Geotecnia",
+      "avatar": "/articulos/logoprueba.webp"
+    },
+    "contenido": [
+      {
+        "titulo": "Introducción a la Geotecnia: La base de toda construcción segura",
+        "texto": "La geotecnia es una rama de la ingeniería civil dedicada al **estudio del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier proyecto —desde edificios y puentes hasta túneles y carreteras— tenga una **base segura y duradera**.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos analizan cómo reacciona el terreno ante cargas, cambios climáticos o sismos, permitiendo **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia conecta la teoría aprendida en clase con la práctica real en obras. Para profesionales, es una herramienta para diseñar proyectos seguros, eficientes y con menor riesgo de fallas.",
+        "imagen": "/articulos/art01-img-01.webp",
+        "imagenAlt": "Ingeniero geotécnico analizando muestras de suelo en obra"
+      },
+      {
+        "titulo": "Principios fundamentales y aplicaciones prácticas de la geotecnia",
+        "texto": "La geotecnia se basa en varios principios esenciales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Fundamental para definir cimentaciones.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad, que permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** análisis de pendientes naturales y excavaciones para evitar colapsos, diseñando muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad proporcionan datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico:** Antes de construir un hospital en Lima, se realizan perforaciones y ensayos de penetración estándar (SPT). Si los suelos superficiales son débiles, se usan **pilotes profundos**, garantizando estabilidad.\n\nPara ingenieros, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
+        "imagen": "/articulos/art01-img-02.webp",
+        "imagenAlt": "Ingeniero geotécnico realizando ensayo de penetración estándar SPT"
+      },
+      {
+        "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
+        "texto": "La geotecnia aplicada se evidencia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, se realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** extracción de muestras para análisis granulométrico y de resistencia.\n2. **Ensayos SPT:** evaluación de densidad y capacidad de carga por sección.\n3. **Estabilidad de taludes:** identificación de zonas críticas y diseño de muros de contención y anclajes.\n4. **Evaluación de riesgos climáticos:** análisis del impacto de lluvias intensas y erosión.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia convierte la teoría en soluciones prácticas y seguras.\n\nPara estudiantes, este ejemplo ilustra el proceso completo desde la exploración hasta la ejecución. Para profesionales, enfatiza la importancia de decisiones técnicas basadas en datos confiables.",
+        "imagen": "/articulos/art01-img-04.webp",
+        "imagenAlt": "Proyecto vial en Ayacucho con estudios geotécnicos realizados"
+      }
+    ],
+    "relacionados": ["laboratorio-geotecnico", "geologia-aplicada", "proyectos-viales"],
+    "tags": [
+      "Geotecnia",
+      "Ingeniería Civil",
+      "Suelo",
+      "Construcción",
+      "Casos de Estudio",
+      "Estudiantes",
+      "Ingenieros",
+      "SPT",
+      "Taludes",
+      "Cimentaciones"
+    ],
+    "esPopular": true,
+    "cta": "Si quieres profundizar en geotecnia y proyectos de ingeniería civil, revisa nuestros artículos relacionados y aprende con casos prácticos reales."
+  },
+  {
+    "slug": "estudios-de-suelo-y-geotecnia",
+    "titulo": "Estudios de suelo y geotecnia en el Perú: base para una construcción segura",
+    "subtitulo": " por qué los estudios geotécnicos y el control de materiales son esenciales para obras seguras y duraderas.",
     "categoria": "Articulos",
     "fecha": "2025-10-20",
-    "imagen": "/hero05.jpg",
-    "extracto": "El urbanismo táctico utiliza intervenciones a corto plazo y bajo costo para revitalizar espacios públicos y probar nuevas ideas de diseño urbano. Una herramienta poderosa para la participación ciudadana.",
+    "imagen": "/articulos/importancia-estudios-de-suelo-peru/importancia-estudios-de-suelo-peru01.webp",
+    "extracto": "Conocer el tipo de suelo antes de construir es vital para evitar fallas estructurales. En Casagrande Geotecnia y Concreto realizamos estudios de suelo y ensayos de materiales que garantizan la seguridad y estabilidad de cada obra en el Perú.",
     "autor": {
-      "nombre": "Arq. Sofía Mendiola",
-      "cargo": "Especialista en Urbanismo Participativo",
-      "avatar": "/autores/sofia-mendiola.jpg"
+      "nombre": "Casagrande Geotecnia y Concreto",
+      "cargo": "Laboratorio de Suelos, Geotecnia y Ensayos de Materiales",
+      "avatar": "/articulos/logoprueba.webp"
     },
     "contenido": [
       {
-        "titulo": "De la teoría a la práctica",
-        "texto": "El urbanismo táctico es una filosofía de diseño urbano que promueve intervenciones reversibles y temporales, como pintar un cruce de peatones o colocar mobiliario urbano portátil. Su objetivo es observar el impacto antes de realizar una inversión a gran escala, permitiendo a las comunidades ser parte activa del proceso.",
-        "imagen": "/tactical-intro.jpg"
+        "titulo": "🔍 ¿Por qué es importante el estudio del suelo antes de construir?",
+        "texto": "Cada terreno en el Perú —ya sea en la costa, sierra o selva— presenta condiciones únicas que influyen directamente en la estabilidad de las edificaciones. Un **estudio geotécnico profesional** permite conocer la resistencia, humedad, compactación y capacidad portante del suelo.\n\nEn **Casagrande Geotecnia y Concreto**, analizamos el comportamiento del terreno mediante ensayos especializados que garantizan **cimentaciones seguras y estructuras duraderas**. Estos estudios ayudan a evitar asentamientos, grietas o fallas estructurales, protegiendo tanto la inversión como la seguridad de las personas.\n\nNuestros servicios incluyen:\n- Análisis granulométrico y límites de Atterberg.\n- Ensayos de compactación y densidad in situ.\n- Pruebas de CBR y contenido de humedad.\n\nCada resultado se interpreta técnicamente para ofrecer soluciones adaptadas a las condiciones del terreno.",
+        "imagen": "/articulos/importancia-estudios-de-suelo-peru/importancia-estudios-de-suelo-peru02.webp",
+        "imagenAlt": "Ingeniero realizando análisis de suelo en laboratorio de geotecnia en Perú"
       },
       {
-        "titulo": "Casos de éxito globales",
-        "texto": "Ciudades como Nueva York y Bogotá han implementado proyectos de urbanismo táctico para crear 'plazas de bolsillo', carriles de bicicleta temporales y zonas de juego en calles que antes eran dominadas por automóviles. Estas intervenciones han demostrado reducir accidentes y fomentar la interacción social.",
-        "imagen": "/tactical-case.jpg"
-      },
-      {
-        "titulo": "Retos y futuro",
-        "texto": "- Falta de financiación: Muchas iniciativas dependen de voluntarios y presupuestos limitados.\n- Marco legal: A menudo, las regulaciones no están adaptadas a este tipo de proyectos.\n- Escalabilidad: Convertir un proyecto temporal en una solución permanente es un desafío.\n\nEl futuro del urbanismo táctico está en la colaboración entre gobiernos, diseñadores y ciudadanos para co-crear ciudades más resilientes y humanas.",
-        "imagen": "/tactical-future.jpg"
+        "titulo": "🏗️ Control de calidad del concreto y materiales de construcción",
+        "texto": "Un proyecto seguro no depende solo del estudio del terreno, sino también del **control de calidad de los materiales** utilizados. En nuestro laboratorio realizamos **ensayos de concreto, agregados y suelos** con equipos certificados, garantizando resultados confiables y precisos.\n\nEntre los principales ensayos que realizamos se encuentran:\n- Resistencia a la compresión del concreto.\n- Análisis de agregados finos y gruesos.\n- Control de mezcla, curado y consistencia del concreto.\n\nEn **Casagrande Geotecnia y Concreto**, acompañamos cada obra desde el estudio del suelo hasta el control final de materiales, asegurando **seguridad, eficiencia y cumplimiento normativo**. Construir con calidad no es un gasto, es una inversión en seguridad y durabilidad.",
+        "imagen": "/articulos/importancia-estudios-de-suelo-peru/importancia-estudios-de-suelo-peru01.webp",
+        "imagenAlt": "Ensayo de resistencia del concreto en laboratorio de Casagrande Geotecnia y Concreto"
       }
     ],
-    "relacionados": ["urbanismo-sostenible", "ciudades-inteligentes"],
-    "tags": ["Urbanismo", "Diseño", "Comunidad", "Ciudades"],
-    "esPopular": true
-  },
-   {
-    "slug": "que",
-    "titulo": "Geotecnia: La Ciencia Fundamental de la Construcción",
-    "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad y seguridad de cada proyecto de ingeniería civil.",
-    "categoria": "blog",
-    "fecha": "2025-09-22",
-    "imagen": "/articulos/art01-img-03.webp",
-    "extracto": "La geotecnia estudia los suelos, rocas y materiales naturales para garantizar construcciones seguras y duraderas. Desde análisis en campo hasta ensayos de laboratorio, es la base de toda obra confiable.",
-    "autor": {
-      "nombre": "Ing. Henri de la Cruz",
-      "cargo": "Especialista en Geotecnia",
-      "avatar": "/autores/henri-de-la-cruz.jpg"
-    },
-    "contenido": [
-      {
-        "titulo": "Introducción a la Geotecnia",
-        "texto": "La geotecnia es una rama de la ingeniería civil que se encarga del **estudio y análisis del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier obra —desde edificios y puentes hasta túneles y carreteras— tenga una base segura y duradera.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos no solo estudian la composición del terreno, sino también cómo reacciona ante cargas, cambios climáticos o sismos. Esto permite **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia es la base que conecta la teoría aprendida en clases de mecánica de suelos con la aplicación práctica en obras reales. Para profesionales, es una herramienta para garantizar proyectos eficientes, seguros y con menor riesgo de fallas.",
-        "imagen": "/articulos/art01-img-02.webp"
-      },
-      {
-        "titulo": "Principios y aplicaciones prácticas",
-        "texto": "La geotecnia se basa en varios principios fundamentales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Es esencial para definir el tipo de cimentación.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad. Estos parámetros permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** se analiza si pendientes naturales o excavaciones podrían colapsar, y se diseñan muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad ofrecen datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico para estudiantes:** Antes de construir un hospital en Lima, un ingeniero geotécnico realiza perforaciones y ensayos de penetración estándar (SPT) para determinar la profundidad de la cimentación. Si los suelos superficiales son débiles, se opta por **pilotes profundos**, garantizando estabilidad y seguridad.\n\nPara ingenieros en ejercicio, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
-        "imagen": "/articulos/art01-img-01.webp"
-      },
-      {
-        "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
-        "texto": "La geotecnia en acción se aprecia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, el equipo de geotecnia realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** se extrajeron muestras para análisis granulométrico y de resistencia.\n2. **Ensayos de penetración estándar (SPT):** evaluaron la densidad y capacidad de carga de cada sección.\n3. **Análisis de estabilidad de taludes:** identificaron zonas críticas y diseñaron muros de contención y anclajes para prevenir derrumbes.\n4. **Evaluación de riesgos climáticos:** se estudió la influencia de lluvias intensas y erosión sobre el terreno.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia traduce la teoría en soluciones tangibles, combinando **análisis técnico, pruebas científicas y experiencia práctica**.\n\nPara estudiantes, este ejemplo muestra el proceso completo desde la exploración hasta la ejecución. Para ingenieros, resalta la importancia de cada decisión técnica basada en datos confiables.",
-        "imagen": "/geotecnia-caso.jpg"
-      }
-    ],
-    "relacionados": [
-      "laboratorio-geotecnico",
-      "geologia-aplicada",
-      "proyectos-viales"
-    ],
+    "relacionados": ["ensayos-de-materiales", "laboratorio-de-concreto", "cimentaciones-seguras"],
     "tags": [
+      "Estudios de Suelo",
       "Geotecnia",
+      "Control de Calidad",
       "Ingeniería Civil",
-      "Suelo",
-      "Construcción",
-      "Casos de Estudio",
-      "Estudiantes",
-      "Ingenieros"
+      "Laboratorio de Suelos",
+      "Ensayos de Concreto",
+      "Construcción Segura",
+      "Casagrande Geotecnia y Concreto",
+      "Cimentaciones",
+      "Perú"
     ],
-    "esPopular": true
-  },
-   {
-    "slug": "nosequeponer",
-    "titulo": "Geotecnia: La Ciencia Fundamental de la Construcción",
-    "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad y seguridad de cada proyecto de ingeniería civil.",
-    "categoria": "noticias",
-    "fecha": "2025-09-22",
-    "imagen": "/articulos/art01-img-03.webp",
-    "extracto": "La geotecnia estudia los suelos, rocas y materiales naturales para garantizar construcciones seguras y duraderas. Desde análisis en campo hasta ensayos de laboratorio, es la base de toda obra confiable.",
-    "autor": {
-      "nombre": "Ing. Henri de la Cruz",
-      "cargo": "Especialista en Geotecnia",
-      "avatar": "/autores/henri-de-la-cruz.jpg"
-    },
-    "contenido": [
-      {
-        "titulo": "Introducción a la Geotecnia",
-        "texto": "La geotecnia es una rama de la ingeniería civil que se encarga del **estudio y análisis del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier obra —desde edificios y puentes hasta túneles y carreteras— tenga una base segura y duradera.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos no solo estudian la composición del terreno, sino también cómo reacciona ante cargas, cambios climáticos o sismos. Esto permite **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia es la base que conecta la teoría aprendida en clases de mecánica de suelos con la aplicación práctica en obras reales. Para profesionales, es una herramienta para garantizar proyectos eficientes, seguros y con menor riesgo de fallas.",
-        "imagen": "/articulos/art01-img-02.webp"
-      },
-      {
-        "titulo": "Principios y aplicaciones prácticas",
-        "texto": "La geotecnia se basa en varios principios fundamentales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Es esencial para definir el tipo de cimentación.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad. Estos parámetros permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** se analiza si pendientes naturales o excavaciones podrían colapsar, y se diseñan muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad ofrecen datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico para estudiantes:** Antes de construir un hospital en Lima, un ingeniero geotécnico realiza perforaciones y ensayos de penetración estándar (SPT) para determinar la profundidad de la cimentación. Si los suelos superficiales son débiles, se opta por **pilotes profundos**, garantizando estabilidad y seguridad.\n\nPara ingenieros en ejercicio, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
-        "imagen": "/articulos/art01-img-01.webp"
-      },
-      {
-        "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
-        "texto": "La geotecnia en acción se aprecia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, el equipo de geotecnia realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** se extrajeron muestras para análisis granulométrico y de resistencia.\n2. **Ensayos de penetración estándar (SPT):** evaluaron la densidad y capacidad de carga de cada sección.\n3. **Análisis de estabilidad de taludes:** identificaron zonas críticas y diseñaron muros de contención y anclajes para prevenir derrumbes.\n4. **Evaluación de riesgos climáticos:** se estudió la influencia de lluvias intensas y erosión sobre el terreno.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia traduce la teoría en soluciones tangibles, combinando **análisis técnico, pruebas científicas y experiencia práctica**.\n\nPara estudiantes, este ejemplo muestra el proceso completo desde la exploración hasta la ejecución. Para ingenieros, resalta la importancia de cada decisión técnica basada en datos confiables.",
-        "imagen": "/geotecnia-caso.jpg"
-      }
-    ],
-    "relacionados": [
-      "laboratorio-geotecnico",
-      "geologia-aplicada",
-      "proyectos-viales"
-    ],
-    "tags": [
-      "Geotecnia",
-      "Ingeniería Civil",
-      "Suelo",
-      "Construcción",
-      "Casos de Estudio",
-      "Estudiantes",
-      "Ingenieros"
-    ],
-    "esPopular": true
-  },
-   {
-    "slug": "quetal",
-    "titulo": "Geotecnia: La Ciencia Fundamental de la Construcción",
-    "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad y seguridad de cada proyecto de ingeniería civil.",
-    "categoria": "proyectos",
-    "fecha": "2025-09-22",
-    "imagen": "/articulos/art01-img-03.webp",
-    "extracto": "La geotecnia estudia los suelos, rocas y materiales naturales para garantizar construcciones seguras y duraderas. Desde análisis en campo hasta ensayos de laboratorio, es la base de toda obra confiable.",
-    "autor": {
-      "nombre": "Ing. Henri de la Cruz",
-      "cargo": "Especialista en Geotecnia",
-      "avatar": "/autores/henri-de-la-cruz.jpg"
-    },
-    "contenido": [
-      {
-        "titulo": "Introducción a la Geotecnia",
-        "texto": "La geotecnia es una rama de la ingeniería civil que se encarga del **estudio y análisis del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier obra —desde edificios y puentes hasta túneles y carreteras— tenga una base segura y duradera.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos no solo estudian la composición del terreno, sino también cómo reacciona ante cargas, cambios climáticos o sismos. Esto permite **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia es la base que conecta la teoría aprendida en clases de mecánica de suelos con la aplicación práctica en obras reales. Para profesionales, es una herramienta para garantizar proyectos eficientes, seguros y con menor riesgo de fallas.",
-        "imagen": "/articulos/art01-img-02.webp"
-      },
-      {
-        "titulo": "Principios y aplicaciones prácticas",
-        "texto": "La geotecnia se basa en varios principios fundamentales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Es esencial para definir el tipo de cimentación.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad. Estos parámetros permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** se analiza si pendientes naturales o excavaciones podrían colapsar, y se diseñan muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad ofrecen datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico para estudiantes:** Antes de construir un hospital en Lima, un ingeniero geotécnico realiza perforaciones y ensayos de penetración estándar (SPT) para determinar la profundidad de la cimentación. Si los suelos superficiales son débiles, se opta por **pilotes profundos**, garantizando estabilidad y seguridad.\n\nPara ingenieros en ejercicio, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
-        "imagen": "/articulos/art01-img-01.webp"
-      },
-      {
-        "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
-        "texto": "La geotecnia en acción se aprecia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, el equipo de geotecnia realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** se extrajeron muestras para análisis granulométrico y de resistencia.\n2. **Ensayos de penetración estándar (SPT):** evaluaron la densidad y capacidad de carga de cada sección.\n3. **Análisis de estabilidad de taludes:** identificaron zonas críticas y diseñaron muros de contención y anclajes para prevenir derrumbes.\n4. **Evaluación de riesgos climáticos:** se estudió la influencia de lluvias intensas y erosión sobre el terreno.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia traduce la teoría en soluciones tangibles, combinando **análisis técnico, pruebas científicas y experiencia práctica**.\n\nPara estudiantes, este ejemplo muestra el proceso completo desde la exploración hasta la ejecución. Para ingenieros, resalta la importancia de cada decisión técnica basada en datos confiables.",
-        "imagen": "/geotecnia-caso.jpg"
-      }
-    ],
-    "relacionados": [
-      "laboratorio-geotecnico",
-      "geologia-aplicada",
-      "proyectos-viales"
-    ],
-    "tags": [
-      "Geotecnia",
-      "Ingeniería Civil",
-      "Suelo",
-      "Construcción",
-      "Casos de Estudio",
-      "Estudiantes",
-      "Ingenieros"
-    ],
-    "esPopular": true
-  },
-  {
-    "slug": "estaesunaprueba",
-    "titulo": "Geotecnia: La Ciencia Fundamental de la Construcción",
-    "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad y seguridad de cada proyecto de ingeniería civil.",
-    "categoria": "Articulos",
-    "fecha": "2025-09-22",
-    "imagen": "/articulos/art01-img-03.webp",
-    "extracto": "La geotecnia estudia los suelos, rocas y materiales naturales para garantizar construcciones seguras y duraderas. Desde análisis en campo hasta ensayos de laboratorio, es la base de toda obra confiable.",
-    "autor": {
-      "nombre": "Ing. Henri de la Cruz",
-      "cargo": "Especialista en Geotecnia",
-      "avatar": "/autores/henri-de-la-cruz.jpg"
-    },
-    "contenido": [
-      {
-        "titulo": "Introducción a la Geotecnia",
-        "texto": "La geotecnia es una rama de la ingeniería civil que se encarga del **estudio y análisis del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier obra —desde edificios y puentes hasta túneles y carreteras— tenga una base segura y duradera.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos no solo estudian la composición del terreno, sino también cómo reacciona ante cargas, cambios climáticos o sismos. Esto permite **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia es la base que conecta la teoría aprendida en clases de mecánica de suelos con la aplicación práctica en obras reales. Para profesionales, es una herramienta para garantizar proyectos eficientes, seguros y con menor riesgo de fallas.",
-        "imagen": "/articulos/art01-img-02.webp"
-      },
-      {
-        "titulo": "Principios y aplicaciones prácticas",
-        "texto": "La geotecnia se basa en varios principios fundamentales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Es esencial para definir el tipo de cimentación.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad. Estos parámetros permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** se analiza si pendientes naturales o excavaciones podrían colapsar, y se diseñan muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad ofrecen datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico para estudiantes:** Antes de construir un hospital en Lima, un ingeniero geotécnico realiza perforaciones y ensayos de penetración estándar (SPT) para determinar la profundidad de la cimentación. Si los suelos superficiales son débiles, se opta por **pilotes profundos**, garantizando estabilidad y seguridad.\n\nPara ingenieros en ejercicio, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
-        "imagen": "/articulos/art01-img-01.webp"
-      },
-      {
-        "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
-        "texto": "La geotecnia en acción se aprecia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, el equipo de geotecnia realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** se extrajeron muestras para análisis granulométrico y de resistencia.\n2. **Ensayos de penetración estándar (SPT):** evaluaron la densidad y capacidad de carga de cada sección.\n3. **Análisis de estabilidad de taludes:** identificaron zonas críticas y diseñaron muros de contención y anclajes para prevenir derrumbes.\n4. **Evaluación de riesgos climáticos:** se estudió la influencia de lluvias intensas y erosión sobre el terreno.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia traduce la teoría en soluciones tangibles, combinando **análisis técnico, pruebas científicas y experiencia práctica**.\n\nPara estudiantes, este ejemplo muestra el proceso completo desde la exploración hasta la ejecución. Para ingenieros, resalta la importancia de cada decisión técnica basada en datos confiables.",
-        "imagen": "/geotecnia-caso.jpg"
-      }
-    ],
-    "relacionados": [
-      "laboratorio-geotecnico",
-      "geologia-aplicada",
-      "proyectos-viales"
-    ],
-    "tags": [
-      "Geotecnia",
-      "Ingeniería Civil",
-      "Suelo",
-      "Construcción",
-      "Casos de Estudio",
-      "Estudiantes",
-      "Ingenieros"
-    ],
-    "esPopular": true
-  },
-  {
-    "slug": "queponernose",
-    "titulo": "Geotecnia: La Ciencia Fundamental de la Construcción",
-    "subtitulo": "Aprende cómo la geotecnia asegura la estabilidad y seguridad de cada proyecto de ingeniería civil.",
-    "categoria": "Articulos",
-    "fecha": "2025-09-22",
-    "imagen": "/articulos/art01-img-03.webp",
-    "extracto": "La geotecnia estudia los suelos, rocas y materiales naturales para garantizar construcciones seguras y duraderas. Desde análisis en campo hasta ensayos de laboratorio, es la base de toda obra confiable.",
-    "autor": {
-      "nombre": "Ing. Henri de la Cruz",
-      "cargo": "Especialista en Geotecnia",
-      "avatar": "/autores/henri-de-la-cruz.jpg"
-    },
-    "contenido": [
-      {
-        "titulo": "Introducción a la Geotecnia",
-        "texto": "La geotecnia es una rama de la ingeniería civil que se encarga del **estudio y análisis del suelo, las rocas y los materiales naturales** donde se construirán estructuras. Su objetivo principal es garantizar que cualquier obra —desde edificios y puentes hasta túneles y carreteras— tenga una base segura y duradera.\n\nEsta disciplina combina conocimientos de **geología, mecánica de suelos, hidráulica y física de materiales**. Los ingenieros geotécnicos no solo estudian la composición del terreno, sino también cómo reacciona ante cargas, cambios climáticos o sismos. Esto permite **prever problemas antes de construir**, optimizar recursos y proteger vidas.\n\nPara estudiantes de ingeniería, la geotecnia es la base que conecta la teoría aprendida en clases de mecánica de suelos con la aplicación práctica en obras reales. Para profesionales, es una herramienta para garantizar proyectos eficientes, seguros y con menor riesgo de fallas.",
-        "imagen": "/articulos/art01-img-02.webp"
-      },
-      {
-        "titulo": "Principios y aplicaciones prácticas",
-        "texto": "La geotecnia se basa en varios principios fundamentales:\n\n- **Capacidad de carga del suelo:** determina cuánto peso puede soportar un terreno sin deformarse. Es esencial para definir el tipo de cimentación.\n- **Propiedades del suelo y rocas:** cohesión, fricción interna, densidad y permeabilidad. Estos parámetros permiten evaluar estabilidad y filtraciones.\n- **Estabilidad de taludes y estructuras:** se analiza si pendientes naturales o excavaciones podrían colapsar, y se diseñan muros, anclajes o refuerzos.\n- **Ensayos de laboratorio y campo:** pruebas como SPT, triaxial, consolidación y permeabilidad ofrecen datos precisos del comportamiento del terreno.\n\n**Ejemplo práctico para estudiantes:** Antes de construir un hospital en Lima, un ingeniero geotécnico realiza perforaciones y ensayos de penetración estándar (SPT) para determinar la profundidad de la cimentación. Si los suelos superficiales son débiles, se opta por **pilotes profundos**, garantizando estabilidad y seguridad.\n\nPara ingenieros en ejercicio, estos estudios permiten ajustar diseños, seleccionar materiales adecuados y prevenir problemas estructurales a largo plazo, reduciendo sobrecostos y riesgos.",
-        "imagen": "/articulos/art01-img-01.webp"
-      },
-      {
-        "titulo": "Caso de estudio: Proyecto vial en Ayacucho",
-        "texto": "La geotecnia en acción se aprecia en proyectos reales. Por ejemplo, en la construcción de una **carretera en Ayacucho**, el equipo de geotecnia realizó un estudio completo del terreno:\n\n1. **Perforaciones de suelos:** se extrajeron muestras para análisis granulométrico y de resistencia.\n2. **Ensayos de penetración estándar (SPT):** evaluaron la densidad y capacidad de carga de cada sección.\n3. **Análisis de estabilidad de taludes:** identificaron zonas críticas y diseñaron muros de contención y anclajes para prevenir derrumbes.\n4. **Evaluación de riesgos climáticos:** se estudió la influencia de lluvias intensas y erosión sobre el terreno.\n\nGracias a estos estudios, la carretera se construyó con **fundaciones seguras y taludes reforzados**, evitando hundimientos y fallas prematuras. Este caso demuestra cómo la geotecnia traduce la teoría en soluciones tangibles, combinando **análisis técnico, pruebas científicas y experiencia práctica**.\n\nPara estudiantes, este ejemplo muestra el proceso completo desde la exploración hasta la ejecución. Para ingenieros, resalta la importancia de cada decisión técnica basada en datos confiables.",
-        "imagen": "/geotecnia-caso.jpg"
-      }
-    ],
-    "relacionados": [
-      "laboratorio-geotecnico",
-      "geologia-aplicada",
-      "proyectos-viales"
-    ],
-    "tags": [
-      "Geotecnia",
-      "Ingeniería Civil",
-      "Suelo",
-      "Construcción",
-      "Casos de Estudio",
-      "Estudiantes",
-      "Ingenieros"
-    ],
-    "esPopular": true
+    "esPopular": true,
+    "metaTitle": "Estudios de suelo y geotecnia en el Perú | Casagrande Geotecnia y Concreto",
+    "metaDescription": "Realiza estudios de suelo y control de materiales con Casagrande Geotecnia y Concreto. Garantizamos seguridad, estabilidad y durabilidad en cada obra en el Perú.",
+    "cta": "Construye sobre bases seguras. Contáctanos en Casagrande Geotecnia y Concreto para estudios de suelo, geotecnia y control de calidad de materiales en todo el Perú."
   }
-
 ]

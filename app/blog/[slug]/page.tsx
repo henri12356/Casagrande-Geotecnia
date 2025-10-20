@@ -198,7 +198,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                       </div>
                     )}
                     {section.imagen && (
-                      <div className="relative w-full max-w-xl h-auto min-h-[100px] cursor-pointer">
+                      <div className="relative w-full max-w-3xl h-auto min-h-[100px] cursor-pointer">
                         <div
                           className="relative w-full h-auto min-h-[100px]"
                           onClick={() =>

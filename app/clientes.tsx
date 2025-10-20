@@ -17,6 +17,7 @@ const companies = [
   { name: "Mafy Ingenieros Contratistas", logo: "/logos/logo-ingenieros-contratistas.webp" },
   { name: "Tractores eirl ", logo: "/logos/logo-tractores.webp" },
   { name: "JC Camila Inversiones EIRL", logo: "/logos/logo-jc-inversiones.webp" },
+  { name: "Universidad Nacional de San Cristóbal de Huamanga", logo: "/logo07.webp" },
 ];
 
 const marqueeItems = [...companies, ...companies, ...companies];
