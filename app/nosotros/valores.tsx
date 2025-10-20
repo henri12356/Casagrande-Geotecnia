@@ -47,7 +47,7 @@ const Valores = () => {
               variants={containerVariants}
             >
               <motion.h2
-                className="text-3xl font-bold text-[#1b4772] mb-4"
+                className="text-3xl font-bold max-md:pt-20 text-[#1b4772] mb-4"
                 variants={itemVariants}
               >
                 VISIÓN
