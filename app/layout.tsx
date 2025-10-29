@@ -1,5 +1,5 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import FloatingButtons from "./floating-buttons";
 import "./globals.css";
@@ -13,7 +13,7 @@ const font = Plus_Jakarta_Sans({
 
 // Datos de la empresa
 const companyInfo = {
-  name: "Casagrande Geotecnia ",
+  name: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
   description:
     "Consultora líder en ingeniería civil y estudios geotécnicos en Perú. Especialistas en mecánica de suelos, laboratorio certificado, estudios de cimentación y control de calidad. Certificaciones ISO 9001, 14001 y 37001. Más de 20 años de experiencia.",
   url: "https://www.casagrandegeotecnia.com.pe",
@@ -27,7 +27,6 @@ const companyInfo = {
     postalCode: "05003",
     country: "PE",
   },
-  // Coordenadas aproximadas - Verifica en Google Maps
   coordinates: {
     latitude: -13.155749,
     longitude: -74.220991,
@@ -41,8 +40,8 @@ const companyInfo = {
   },
 };
 
-// Schema.org - Structured Data Optimizado
-const jsonLd = {
+// ---------- Schema.org (JSON-LD) ----------
+const organizationLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${companyInfo.url}#organization`,
@@ -56,7 +55,7 @@ const jsonLd = {
     width: "512",
     height: "512",
   },
-  image: [companyInfo.logo, `${companyInfo.url}/og-image.jpg`],
+  image: [companyInfo.logo, `${companyInfo.url}/hero.png`],
   telephone: companyInfo.phone,
   email: companyInfo.email,
   priceRange: "$$",
@@ -75,28 +74,12 @@ const jsonLd = {
   },
   sameAs: Object.values(companyInfo.socialMedia),
   areaServed: [
-    {
-      "@type": "Country",
-      name: "Perú",
-    },
-    {
-      "@type": "City",
-      name: "Lima",
-    },
-    {
-      "@type": "City",
-      name: "Arequipa",
-    },
-    {
-      "@type": "City",
-      name: "Cusco",
-    },
-    {
-      "@type": "City",
-      name: "Ayacucho",
-    },
+    { "@type": "Country", name: "Perú" },
+    { "@type": "City", name: "Lima" },
+    { "@type": "City", name: "Arequipa" },
+    { "@type": "City", name: "Cusco" },
+    { "@type": "City", name: "Ayacucho" },
   ],
-  // Servicios ofrecidos - Esto ayuda MUCHO al SEO
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Servicios de Geotecnia e Ingeniería Civil",
@@ -108,10 +91,7 @@ const jsonLd = {
           name: "Estudios Geotécnicos",
           description:
             "Estudios de mecánica de suelos, análisis geotécnico completo para proyectos de construcción, evaluación de capacidad portante y estudios de cimentación.",
-          provider: {
-            "@type": "Organization",
-            name: companyInfo.name,
-          },
+          provider: { "@type": "Organization", name: companyInfo.name },
         },
       },
       {
@@ -121,10 +101,7 @@ const jsonLd = {
           name: "Laboratorio de Suelos",
           description:
             "Ensayos de laboratorio certificados: granulometría, límites de Atterberg, proctor, CBR, corte directo y más. Laboratorio certificado ISO 9001.",
-          provider: {
-            "@type": "Organization",
-            name: companyInfo.name,
-          },
+          provider: { "@type": "Organization", name: companyInfo.name },
         },
       },
       {
@@ -134,10 +111,7 @@ const jsonLd = {
           name: "Estudios de Cimentación",
           description:
             "Análisis de capacidad portante, diseño de fundaciones, estudios de suelos para edificios y estructuras.",
-          provider: {
-            "@type": "Organization",
-            name: companyInfo.name,
-          },
+          provider: { "@type": "Organization", name: companyInfo.name },
         },
       },
       {
@@ -147,10 +121,7 @@ const jsonLd = {
           name: "Control de Calidad en Construcción",
           description:
             "Supervisión técnica, control de compactación, ensayos de concreto, verificación de especificaciones técnicas.",
-          provider: {
-            "@type": "Organization",
-            name: companyInfo.name,
-          },
+          provider: { "@type": "Organization", name: companyInfo.name },
         },
       },
       {
@@ -160,10 +131,7 @@ const jsonLd = {
           name: "Estudios Geofísicos",
           description:
             "Prospección geofísica, refracción sísmica, estudios de resistividad eléctrica.",
-          provider: {
-            "@type": "Organization",
-            name: companyInfo.name,
-          },
+          provider: { "@type": "Organization", name: companyInfo.name },
         },
       },
       {
@@ -173,15 +141,11 @@ const jsonLd = {
           name: "Estabilidad de Taludes",
           description:
             "Análisis de estabilidad, diseño de sistemas de contención, estudios de riesgo geotécnico.",
-          provider: {
-            "@type": "Organization",
-            name: companyInfo.name,
-          },
+          provider: { "@type": "Organization", name: companyInfo.name },
         },
       },
     ],
   },
-  // Certificaciones
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
@@ -199,14 +163,7 @@ const jsonLd = {
       name: "ISO 37001:2016 - Sistemas de Gestión Antisoborno",
     },
   ],
-  // Agrega esto si tienes reseñas reales
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "45",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  // Importante: NO incluir aggregateRating si no hay reseñas visibles en la página
   foundingDate: "2005",
   knowsAbout: [
     "Geotecnia",
@@ -219,18 +176,50 @@ const jsonLd = {
     "Estabilidad de Taludes",
     "Geofísica",
   ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: companyInfo.phone,
+      contactType: "customer service",
+      areaServed: "PE",
+      availableLanguage: ["es"],
+    },
+  ],
 };
 
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${companyInfo.url}#website`,
+  url: companyInfo.url,
+  name: companyInfo.name,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${companyInfo.url}/buscar?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
+// Componente para inyectar JSON-LD
+function StructuredData() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify([organizationLd, websiteLd]),
+      }}
+    />
+  );
+}
+
+// ---------- Next.js Metadata ----------
 export const metadata: Metadata = {
   title: {
     default:
-      "Casagrande Geotecnia | Estudios Geotécnicos y Laboratorio de Suelos ",
+      "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
     template: "%s | Casagrande Geotecnia",
   },
   description: companyInfo.description,
-
-  // ✅ SIN keywords - Google las ignora
-  // En su lugar, el contenido de tus páginas debe tener estas palabras naturalmente
 
   authors: [{ name: "Casagrande Geotecnia" }],
   creator: "Casagrande Geotecnia",
@@ -250,11 +239,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // Completa después de verificar en Google Search Console
-  verification: {
-    google: "G-HSYFNDRHDW",
-    // Obtén en: https://search.google.com/search-console
-  },
 
   icons: {
     icon: [
@@ -262,56 +246,40 @@ export const metadata: Metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     other: [
-      {
-        rel: "icon",
-        url: "/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: "/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
+      { rel: "icon", url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { rel: "icon", url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
     ],
   },
+
   manifest: "/site.webmanifest",
 
-  // Open Graph - Optimizado
   openGraph: {
     type: "website",
     locale: "es_PE",
     url: companyInfo.url,
     siteName: companyInfo.name,
-    title:
-      "Casagrande Geotecnia | Estudios Geotécnicos y Laboratorio de Suelos Certificado",
+    title: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
     description:
       "Consultora especializada en estudios geotécnicos, mecánica de suelos y control de calidad en Perú. Laboratorio certificado ISO 9001. Más de 20 años de experiencia.",
-    emails: [companyInfo.email],
-    phoneNumbers: [companyInfo.phone],
     images: [
       {
-        url: `${companyInfo.url}/og-image.jpg`,
+        url: `${companyInfo.url}/hero.png`,
         width: 1200,
         height: 630,
-        alt: "Casagrande Geotecnia - Estudios Geotécnicos y Laboratorio de Suelos en Perú",
-        type: "image/jpeg",
+        alt: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
+        type: "image/png", // coherente con .png
       },
     ],
   },
 
-  // Twitter Cards
   twitter: {
     card: "summary_large_image",
-    title: "Casagrande Geotecnia | Estudios Geotécnicos Perú",
+    title: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
     description:
       "Especialistas en estudios geotécnicos, laboratorio de suelos certificado y control de calidad en construcción. ISO 9001, 14001, 37001.",
-    images: [`${companyInfo.url}/og-image.jpg`],
+    images: [`${companyInfo.url}/hero.png`],
     creator: "@CasagrandeGeo",
     site: "@CasagrandeGeo",
   },
@@ -320,6 +288,7 @@ export const metadata: Metadata = {
     canonical: companyInfo.url,
     languages: {
       "es-PE": companyInfo.url,
+      "x-default": companyInfo.url,
     },
   },
 
@@ -343,15 +312,12 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured Data Component
-function StructuredData() {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
-}
+// Viewport recomendado para móviles
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+};
 
 export default function RootLayout({
   children,
@@ -369,6 +335,7 @@ export default function RootLayout({
       <body className={`${font.className} antialiased`}>
         {children}
         <FloatingButtons />
+        {/* Mantén GA4 aquí: */}
         <GoogleAnalytics gaId="G-HSYFNDRHDW" />
       </body>
     </html>

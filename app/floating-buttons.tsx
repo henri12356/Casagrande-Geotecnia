@@ -71,7 +71,6 @@ const SocialFloatingButton: React.FC<SocialFloatingButtonProps> = ({
               className="hidden md:block absolute right-full mr-3 bottom-2 bg-green-100/90 text-gray-800 text-sm px-4 py-2 rounded-2xl shadow-lg border border-green-200 backdrop-blur-sm whitespace-nowrap"
             >
               💬 ¡Hola! 👋 ¿Necesitas ayuda?
-
               {/* Triángulo del globo */}
               <div className="absolute -right-2 bottom-3 w-0 h-0 border-l-8 border-l-green-100/90 border-t-8 border-t-transparent border-b-8 border-b-transparent"></div>
             </motion.div>
@@ -120,7 +119,14 @@ const FloatingButtons: React.FC = () => {
       opacity: 1,
       transition: { when: "beforeChildren", staggerChildren: 0.1 },
     },
-    exit: { opacity: 0, transition: { when: "afterChildren", staggerChildren: 0.05, staggerDirection: -1 } },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -136,7 +142,7 @@ const FloatingButtons: React.FC = () => {
         <SocialFloatingButton
           icon={<FaWhatsapp />}
           label="Necesitas Asesoría?"
-          href="https://wa.me/51945513323?text=¡Hola!%20Estoy%20interesado%20en%20sus%20servicios.%20¿Podría%20darme%20más%20información?"
+          href="https://api.whatsapp.com/send?phone=51945513323&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
           bgColor="bg-green-400"
           hoverBgColor="hover:bg-green-500"
         />
@@ -190,7 +196,7 @@ const FloatingButtons: React.FC = () => {
         <SocialFloatingButton
           icon={<FaWhatsapp />}
           label="Asesoría"
-          href="https://wa.me/51945513323?text=¡Hola!%20Estoy%20interesado%20en%20sus%20servicios."
+          href="https://api.whatsapp.com/send?phone=51945513323&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
           bgColor="bg-green-400"
           hoverBgColor="hover:bg-green-500"
           className="w-10 h-10 text-lg"

@@ -321,7 +321,7 @@ const Navbar = () => {
           {/* Botones de acción en el escritorio */}
           <div className="hidden items-center space-x-4 md:flex lg:flex">
             <a
-              href="https://wa.me/51962835652?text=Hola,%20quiero%20asesoría%20técnica"
+              href="https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -334,7 +334,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="https://wa.me/51945513323?text=Hola,%20quiero%20una%20cotización"
+              href="https://api.whatsapp.com/send?phone=51945513323&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -409,7 +409,8 @@ const Navbar = () => {
                 >
                   {/* Botón WhatsApp Asesoría Técnica */}
                   <a
-                    href="https://wa.me/51962835652?text=Hola,%20quiero%20asesoría%20técnica"
+                    href="https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
+
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -424,7 +425,7 @@ const Navbar = () => {
 
                   {/* Botón WhatsApp Cotización */}
                   <a
-                    href="https://wa.me/51945513323?text=Hola,%20quiero%20una%20cotización"
+                    href="https://api.whatsapp.com/send?phone=51945513323&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
