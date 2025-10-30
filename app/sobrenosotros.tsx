@@ -23,10 +23,10 @@ const Sobrenosotros = () => {
 
           {/* Texto y contenido */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-4xl font-extrabold text-[#182C45] tracking-tight mb-4">
+            {/* <h2 className="text-4xl font-extrabold text-[#182C45] tracking-tight mb-4">
               ¿Quiénes Somos?
-            </h2>
-            <h3 className="text-3xl font-bold text-[#182C45] mb-6">
+            </h2> */}
+            <h3 className="text-5xl font-black text-[#182C45] mb-6">
               Casagrande Geotecnia
             </h3>
             

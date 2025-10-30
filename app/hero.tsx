@@ -16,32 +16,35 @@ const slidesData: {
   buttonLink: string;
   buttonIcon?: ReactNode;
 }[] = [
-  {
-    id: 1,
-    title: "BIENVENIDO A CASAGRANDE",
-    subtitle: "Acreditados ante el INACAL con ISO/IEC 17025:2017",
-    imageSrc: "/hero.png",
-    buttonText: "Descargar Nuestro Brochure",
-    buttonLink: "tel:989900609",
-  },
-  {
-    id: 2,
-    title: "ESTUDIOS GEOTÉCNICOS Y DE SUELO",
-    subtitle:
-      "Garantizamos la seguridad y estabilidad de tu proyecto con análisis precisos de suelo, rocas, agua y materiales.",
-    imageSrc: "/heroprincipal.jpg",
-    buttonText: "Conoce nuestros servicios",
-    buttonLink: "/servicios",
-  },
-  {
-    id: 3,
-    title: "CONSULTORÍA EN CIMENTACIONES Y TALUDES",
-    subtitle:
-      "Diseños recomendados para cimentaciones, muros de contención y pavimentos, asegurando la correcta ejecución de la obra.",
-    imageSrc: "/Perforacion.png",
-    buttonText: "Ver Proyectos",
-    buttonLink: "/proyectos",
-  },
+{
+  id: 1,
+  title: "BIENVENIDO A CASAGRANDE",
+  subtitle:
+    "Líderes en ingenieria geotecnica acreditados por INACAL bajo la norma ISO/IEC 17025:2017. Ofrecemos soluciones con precisión, confiabilidad y excelencia técnica en cada proyecto.",
+  imageSrc: "/hero.png",
+  buttonText: "Descargar Nuestro Brochure",
+  buttonLink: "tel:989900609",
+},
+{
+  id: 2,
+  title: "SERVICIOS GEOTÉCNICOS ",
+  subtitle:
+    "Ofrecemos servicios de alta precisión y calidad, respaldados por tecnología avanzada y personal especializado, garantizando resultados confiables para cada obra.",
+  imageSrc: "/heroprincipal.jpg",
+  buttonText: "Conoce nuestros servicios",
+  buttonLink: "/servicios",
+},
+{
+  id: 3,
+  title: "ESTUDIOS REALIZADOS",
+  subtitle:
+    "Más de una década brindando soluciones técnicas confiables. Nuestros estudios, ensayos y proyectos ejecutados reflejan precisión, compromiso y excelencia profesional.",
+  imageSrc: "/Perforacion.png",
+  buttonText: "Ver Proyectos",
+  buttonLink: "/proyectos",
+},
+
+
   // {
   //   id: 4,
   //   title: "LABORATORIO Y CONTROL DE CALIDAD",
@@ -150,7 +153,7 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45] " />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45]/80" />
         </motion.div>
       </AnimatePresence>
 
@@ -167,7 +170,7 @@ export default function HeroCarousel() {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={onDragEnd}
-            className="absolute w-full max-w-2xl md:pt-36 pt-10"
+            className="absolute w-full max-w-4xl md:pt-36 pt-10"
           >
             <motion.div
               className="flex flex-col items-center space-y-4 text-center lg:items-start lg:space-y-5 lg:text-left"
@@ -177,14 +180,14 @@ export default function HeroCarousel() {
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg cursor-pointer"
+                className="text-4xl font-bold -tracking-normal text-white sm:text-5xl lg:text-7xl  cursor-pointer"
               >
                 {activeSlide.title}
               </motion.h2>
 
               <motion.p
                 variants={itemVariants}
-                className="text-base font-medium leading-relaxed text-gray-200 sm:text-lg lg:text-xl drop-shadow-md"
+                className="text-base font-medium leading-relaxed text-white sm:text-lg lg:text-xl drop-shadow-md"
               >
                 {activeSlide.subtitle}
               </motion.p>

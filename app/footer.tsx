@@ -21,14 +21,14 @@ const Footer = () => {
     {
       title: "Soporte al cliente",
       links: [
-        { name: "(+51) 945 513 323", href: "tel:+51945513323" },
+        { name: "945 513 323 - 962 835 652", href: "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios." },
         {
           name: "comercial@casagrandegeotecnia.com.pe",
           href: "https://mail.google.com/mail/?view=cm&to=comercial@casagrandegeotecnia.com.pe",
         },
         {
           name: "Redes sociales",
-          href: "https://wa.me/51927545815?text=Hola%20quiero%hacerme%20vip",
+          href: "https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA",
         },
       ],
     },
@@ -115,7 +115,7 @@ const Footer = () => {
         {/* Mobile Logo */}
         <div className="flex flex-col items-center mb-6 md:hidden">
           <div className="flex items-center justify-center w-full max-w-xs">
-            <Link
+            <Link 
               href="/"
               className="flex items-center group relative h-16 md:h-12 w-full"
             >

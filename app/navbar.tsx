@@ -88,7 +88,7 @@ const contactInfo: ContactInfoItemProps[] = [
     Icon: MdOutgoingMail,
   },
   {
-    text: "(+51) 945 513 323",
+    text: "945 513 323",
     href: "https://wa.me/51945513323?text=Quiero%20mayor%20información",
     Icon: FaWhatsapp,
   },
@@ -131,7 +131,7 @@ const SocialLinks = ({ className = "text-white" }: { className?: string }) => (
 
 const TopBar = () => (
   <div className="hidden bg-[#182C45] text-white md:block ">
-    <div className="container  flex h-10 items-center justify-between px-4 max-w-7xl mx-auto">
+    <div className="container  flex h-10 items-center justify-between px-4 max-w-7xl  mx-auto">
       <div className="flex items-center gap-6">
         {contactInfo.map((item) => (
           <ContactInfoItem key={item.text} {...item} />
@@ -298,7 +298,7 @@ const Navbar = () => {
         initial="hidden"
       >
         <TopBar />
-        <div className="  max-w-7xl container mx-auto flex h-20 items-center justify-between  md:h-28">
+        <div className="  max-w-7xl   container mx-auto flex h-20 items-center justify-between  md:h-28">
           <Link href="/" className="flex items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
