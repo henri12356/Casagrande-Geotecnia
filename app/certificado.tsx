@@ -170,20 +170,7 @@ export default function CarouselCertificados() {
                   ))}
                 </ul>
 
-                {/* Logo INACAL */}
-                <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-                  <Image
-                    src="/logo-inacal.png"
-                    alt="INACAL - Organismo Nacional de Acreditación del Perú"
-                    width={150}
-                    height={40}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                  <span className="text-xs text-[#182C45]">
-                    Reconocimiento y acreditación en el Perú
-                  </span>
-                </div>
+            
 
                 <Link
                   href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA"

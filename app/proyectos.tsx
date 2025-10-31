@@ -4,7 +4,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 interface Proyecto {
   id: number;
@@ -24,7 +23,8 @@ const proyectos: Proyecto[] = [
     id: 1,
     provincia: "Ayacucho",
     nombre: "Universidad Nacional de San Cristobal de Huamanga",
-    descripcion: "Mejoramiento de los servicios de formacion profecional de ingenieria agricola",
+    descripcion:
+      "Mejoramiento de los servicios de formacion profecional de ingenieria agricola",
     estado: "En desarrollo",
     inversion: "S/66M",
     x: 55,
@@ -32,19 +32,20 @@ const proyectos: Proyecto[] = [
     imagen: "/proyectos/unsch-geotecnia/unsch-geotecnia.png",
     url: "/proyectos/unsch-geotecnia",
   },
-   {
+  {
     id: 2,
     provincia: "Piura",
     nombre: "servicio de agua para riego del canal Tablaza",
-    descripcion: "Mejoramiento de los servicios de formacion profecional de ingenieria agricola",
+    descripcion:
+      "Mejoramiento de los servicios de formacion profecional de ingenieria agricola",
     estado: "Completado",
     inversion: "S/88M",
     x: 12,
     y: 28,
-    imagen: "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza.jpg",
+    imagen:
+      "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza.jpg",
     url: "/proyectos/rehabilitacion-canal-tablaza",
   },
-
 ];
 
 const getEstadoColor = (estado: string) => {
@@ -162,33 +163,22 @@ const MapaProyectos = () => {
   };
 
   return (
-    <div className="font-sans py-12 px-4 sm:px-6 lg:px-8 md:pt-56 pt-2">
+    <div className="font-sans py-12 px-4 sm:px-6 lg:px-8 md:pt-56 pt-22">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto gap-8 lg:gap-12">
         <div className="lg:w-1/3 flex flex-col justify-start pt-4">
-          <p className="text-xl font-semibold text-[#182C45] uppercase tracking-wider mb-2">
+          <p className="text-xl font-semibold text-[#1b4772] uppercase tracking-wider mb-2">
             Portfolio Corporativo
           </p>
-          <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-            Proyectos de Alto Impacto en Perú
+          <h1 className="text-4xl lg:text-5xl max-md:text-center font-extrabold text-gray-900 leading-tight mb-6">
+            Nuestros Proyectos a Nivel Nacional
           </h1>
-           <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-                            <Image
-                              src="/logo-inacal.png"
-                              alt="INACAL - Organismo Nacional de Acreditación del Perú"
-                              width={150}
-                              height={40}
-                              className="object-contain"
-                              loading="lazy"
-                            />
-                            <span className="text-xs text-[#182C45]">
-                              Reconocimiento y acreditación en el Perú
-                            </span>
-                          </div>
+          
+          
           <div className=" p-4 bg-white rounded-lg shadow-md border-t-4 border-gray-200">
             <p className="text-sm font-medium text-slate-950">
               Proyectos Totales
             </p>
-            <p className="text-4xl font-black text-[#182C45] mt-1">
+            <p className="text-4xl font-black text-[#1b4772] mt-1">
               + 152 Proyectos
             </p>
           </div>
@@ -224,8 +214,6 @@ const MapaProyectos = () => {
                 >
                   <div className="relative z-10">
                     <motion.div
-                      role="button"
-                      aria-label={`Ver proyecto ${proyecto.nombre} en ${proyecto.provincia}`}
                       className={`w-3 h-3 rounded-full shadow-lg hover:scale-150 transition-transform ${getMarkerColorClass(
                         proyecto.estado
                       )} ${
@@ -238,8 +226,6 @@ const MapaProyectos = () => {
                         ease: "easeInOut",
                       }}
                     />
-                        <span className="sr-only">Ir al proyecto {proyecto.nombre} en {proyecto.provincia}</span>
-
                   </div>
                 </Link>
               ))}
@@ -316,9 +302,9 @@ const MapaProyectos = () => {
             </div>
 
             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 text-xs border border-gray-200 z-30 hidden lg:block">
-              <h2 className="font-bold text-gray-800 mb-2 border-b pb-1">
+              <h3 className="font-bold text-gray-800 mb-2 border-b pb-1">
                 Leyenda de Estado
-              </h2>
+              </h3>
               <div className="space-y-1">
                 {[
                   "Completado",
@@ -410,7 +396,7 @@ const MapaProyectos = () => {
 
                     <Link
                       href={activeProject.url}
-                      className="col-span-2 w-52 text-center bg-[#182C45] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
+                      className="col-span-2 w-52 text-center bg-[#1b4772] text-white font-semibold py-2 rounded-lg shadow hover:bg-sky-700 transition-colors"
                     >
                       Ver Proyecto
                     </Link>

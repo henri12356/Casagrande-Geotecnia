@@ -4,7 +4,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 interface Proyecto {
   id: number;
@@ -173,19 +172,8 @@ const MapaProyectos = () => {
           <h1 className="text-4xl lg:text-5xl max-md:text-center font-extrabold text-gray-900 leading-tight mb-6">
             Nuestros Proyectos a Nivel Nacional
           </h1>
-          <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-            <Image
-              src="/logo-inacal.png"
-              alt="INACAL - Organismo Nacional de Acreditación del Perú"
-              width={150}
-              height={40}
-              className="object-contain"
-              loading="lazy"
-            />
-            <span className="text-xs text-[#182C45]">
-              Reconocimiento y acreditación en el Perú
-            </span>
-          </div>
+          
+          
           <div className=" p-4 bg-white rounded-lg shadow-md border-t-4 border-gray-200">
             <p className="text-sm font-medium text-slate-950">
               Proyectos Totales
