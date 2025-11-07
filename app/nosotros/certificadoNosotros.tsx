@@ -201,7 +201,6 @@ export default function CarouselCertificados() {
                     height={320}
                     sizes="(max-width: 1024px) 90vw, 460px"
                     loading="lazy"
-                    quality={80}
                     className="rounded-lg shadow-md object-contain"
                   />
                 </Link>

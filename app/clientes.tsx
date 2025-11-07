@@ -3,21 +3,22 @@ import { Marquee } from "@/components/magicui/marquee";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
-// CAMBIO: Se elimina useState porque ya no es necesario
-// import { useState } from "react"; 
 
-// Logos de empresas (sin cambios)
 const companies = [
   { name: "Municipalidad Distrital Andrés Avelino Cáceres", logo: "/logos/logo-andres-avelino.webp" },
   { name: "Prider Ayacucho GRA", logo: "/logos/logo-prider.webp" },
   { name: "Municipalidad Provincial de Huamanga", logo: "/logos/logo-mucipalidad-huamanga.webp" },
   { name: "Constructora ECP Ingenieros", logo: "/logos/logo-constructora-ECP.webp" },
-  { name: "Geomecánica Latinoamericana", logo: "/logos/logo-geomecanica.webp" },
-  { name: "Compañía Crow", logo: "/logos/logo-compañia-crow.webp" },
-  { name: "Mafy Ingenieros Contratistas", logo: "/logos/logo-ingenieros-contratistas.webp" },
-  { name: "Tractores eirl ", logo: "/logos/logo-tractores.webp" },
   { name: "JC Camila Inversiones EIRL", logo: "/logos/logo-jc-inversiones.webp" },
   { name: "Universidad Nacional de San Cristóbal de Huamanga", logo: "/logo07.webp" },
+  { name: "PRONIS", logo: "/logos/logopronis.webp" },
+  { name: "Programa Subsectorial de Irrigaciones", logo: "/logos/logopsi.webp" },
+  { name: "Municipalidad provincial de la Mar", logo: "/logos/lamar.webp" },
+  { name: "SUNAT", logo: "/logos/sunat.webp" },
+  { name: "Municipalidad Metropolitana de Lima", logo: "/logos/municipalidadelima.webp" },
+  { name: "Contraloría General de la República", logo: "/logos/logo-cgr.webp" },
+  { name: "Municipalidad Distrital de Sacsamarca", logo: "/logos/sacamarca.webp" },
+  { name: "Gobierno regional de Ayacucho", logo: "/logos/ayacucho.webp" }
 ];
 
 const marqueeItems = [...companies, ...companies, ...companies];

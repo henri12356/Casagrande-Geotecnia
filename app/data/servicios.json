@@ -22,7 +22,7 @@
       },
       {
         "titulo": "Evaluación de Riesgos Geológicos",
-        "imagenes": ["/evaluacion.png", "/evalucion.png" , "/evaluacion.jpeg"],
+        "imagenes": ["/evaluacion.png", "/evalucion.png", "/evaluacion.jpeg"],
         "ensayos": [
           "Análisis de deslizamientos y derrumbes",
           "Estudios de subsidencia",
@@ -89,7 +89,7 @@
     "categorias": [
       {
         "titulo": "Estudio de Mecánica de Suelos",
-        "imagenes": ["/Ensayos-de-Penetración.png","/mecanica-suelos.png"],
+        "imagenes": ["/Ensayos-de-Penetración.png", "/mecanica-suelos.png"],
         "ensayos": [
           "Granulometría y clasificación SUCS/AASHTO",
           "Límites líquidos y plásticos",
@@ -103,7 +103,10 @@
       },
       {
         "titulo": "Diseño de Cimentaciones",
-        "imagenes": ["/diseño-de-cimentacion.jpg", "/Geológica-Geotécnica02.png"],
+        "imagenes": [
+          "/diseño-de-cimentacion.jpg",
+          "/Geológica-Geotécnica02.png"
+        ],
         "ensayos": [
           "Cimentaciones superficiales (zapatas, losas)",
           "Cimentaciones profundas (pilotes, cajones)",
@@ -167,7 +170,12 @@
     "numeros": [
       { "id": 1, "label": "ESTUDIOS REALIZADOS", "value": 300, "suffix": "+" },
       { "id": 2, "label": "CALICATAS EXCAVADAS", "value": 1500, "suffix": "+" },
-      { "id": 3, "label": "ENSAYOS DE LABORATORIO", "value": 5000, "suffix": "+" },
+      {
+        "id": 3,
+        "label": "ENSAYOS DE LABORATORIO",
+        "value": 5000,
+        "suffix": "+"
+      },
       { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 98, "suffix": "%" }
     ]
   },
@@ -194,7 +202,10 @@
       },
       {
         "titulo": "Tomografía Eléctrica",
-        "imagenes": ["/Tomografía-Eléctrica.jpeg", "/Tomografía-Eléctrica02.jpeg"],
+        "imagenes": [
+          "/Tomografía-Eléctrica.jpeg",
+          "/Tomografía-Eléctrica02.jpeg"
+        ],
         "ensayos": [
           "Tomografía eléctrica 2D y 3D",
           "Perfiles de resistividad eléctrica",
@@ -341,7 +352,10 @@
     "categorias": [
       {
         "titulo": "Exploración de Recursos Hídricos",
-        "imagenes": ["/Hidrogeológicos-Especializados08.jpg" , "/Hidrogeológicos-Especializados04.jpg"],
+        "imagenes": [
+          "/Hidrogeológicos-Especializados08.jpg",
+          "/Hidrogeológicos-Especializados04.jpg"
+        ],
         "ensayos": [
           "Identificación y caracterización de acuíferos",
           "Estimación de caudales sostenibles",
@@ -353,7 +367,10 @@
       },
       {
         "titulo": "Interacción Agua-Suelo-Estructura",
-        "imagenes": ["/Hidrogeológicos-Especializados09.jpg", "/Hidrogeológicos-Especializados10.jpg"],
+        "imagenes": [
+          "/Hidrogeológicos-Especializados09.jpg",
+          "/Hidrogeológicos-Especializados10.jpg"
+        ],
         "ensayos": [
           "Evaluación de niveles freáticos en cimentaciones",
           "Análisis de empujes hidrostáticos",
@@ -365,7 +382,10 @@
       },
       {
         "titulo": "Monitoreo de Aguas Subterráneas",
-        "imagenes": ["/Hidrogeológicos-Especializados11.jpg", "/Hidrogeológicos-Especializados12.jpg"],
+        "imagenes": [
+          "/Hidrogeológicos-Especializados11.jpg",
+          "/Hidrogeológicos-Especializados12.jpg"
+        ],
         "ensayos": [
           "Instalación de piezómetros y pozos de monitoreo",
           "Medición de niveles de agua",
@@ -377,7 +397,10 @@
       },
       {
         "titulo": "Control de Calidad del Agua",
-        "imagenes": ["/Hidrogeológicos-Especializados02.jpg", "/Hidrogeológicos-Especializados03.jpg"],
+        "imagenes": [
+          "/Hidrogeológicos-Especializados02.jpg",
+          "/Hidrogeológicos-Especializados03.jpg"
+        ],
         "ensayos": [
           "Análisis físico-químico del agua",
           "pH, conductividad, sólidos disueltos",
@@ -404,7 +427,12 @@
     ],
     "numeros": [
       { "id": 1, "label": "POZOS EVALUADOS", "value": 150, "suffix": "+" },
-      { "id": 2, "label": "PIEZÓMETROS INSTALADOS", "value": 300, "suffix": "+" },
+      {
+        "id": 2,
+        "label": "PIEZÓMETROS INSTALADOS",
+        "value": 300,
+        "suffix": "+"
+      },
       { "id": 3, "label": "ANÁLISIS DE AGUA", "value": 800, "suffix": "+" },
       { "id": 4, "label": "PROYECTOS REALIZADOS", "value": 90, "suffix": "+" }
     ]
@@ -447,7 +475,10 @@
       },
       {
         "titulo": "Ensayos en Rocas",
-        "imagenes": ["/Ensayos-en-Concreto03.png", "/Ensayos-en-Concreto01.png"],
+        "imagenes": [
+          "/Ensayos-en-Concreto03.png",
+          "/Ensayos-en-Concreto01.png"
+        ],
         "ensayos": [
           "Resistencia a compresión simple",
           "Ensayo de carga puntual (Point Load)",
@@ -459,7 +490,11 @@
       },
       {
         "titulo": "Ensayos en Agregados y Asfalto",
-        "imagenes": ["/debrasion.png","/granulometria.png","/Ensayos-en-Suelos02.png"],
+        "imagenes": [
+          "/debrasion.png",
+          "/granulometria.png",
+          "/Ensayos-en-Suelos02.png"
+        ],
         "ensayos": [
           "Certificación de agregados (granulometría, abrasión Los Ángeles)",
           "Peso específico y absorción",
@@ -515,7 +550,10 @@
     "categorias": [
       {
         "titulo": "Control de Compactación",
-        "imagenes": ["/Control-de-Compactación01.png","/Control-de-Compactación02.png"],
+        "imagenes": [
+          "/Control-de-Compactación01.png",
+          "/Control-de-Compactación02.png"
+        ],
         "ensayos": [
           "Densidad de campo (cono de arena, método nuclear)",
           "Verificación de grado de compactación",
@@ -577,9 +615,19 @@
       "Certificación ISO 9001"
     ],
     "numeros": [
-      { "id": 1, "label": "ENSAYOS DE CAMPO ANUALES", "value": 8000, "suffix": "+" },
+      {
+        "id": 1,
+        "label": "ENSAYOS DE CAMPO ANUALES",
+        "value": 8000,
+        "suffix": "+"
+      },
       { "id": 2, "label": "METROS PERFORADOS", "value": 12000, "suffix": "+" },
-      { "id": 3, "label": "CALICATAS EJECUTADAS", "value": 2000, "suffix": "+" },
+      {
+        "id": 3,
+        "label": "CALICATAS EJECUTADAS",
+        "value": 2000,
+        "suffix": "+"
+      },
       { "id": 4, "label": "OBRAS ATENDIDAS", "value": 400, "suffix": "+" }
     ]
   },
@@ -628,7 +676,6 @@
         ],
         "descripcion": "Supervisión especializada en construcción de pavimentos flexibles y rígidos."
       }
-    
     ],
     "puntos": [
       "Personal residente en obra disponible",
@@ -646,9 +693,232 @@
     ],
     "numeros": [
       { "id": 1, "label": "OBRAS SUPERVISADAS", "value": 250, "suffix": "+" },
-      { "id": 2, "label": "CONTROLES DE CALIDAD", "value": 20000, "suffix": "+" },
-      { "id": 3, "label": "METROS CÚBICOS CONTROLADOS", "value": 100000, "suffix": "+" },
+      {
+        "id": 2,
+        "label": "CONTROLES DE CALIDAD",
+        "value": 20000,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "METROS CÚBICOS CONTROLADOS",
+        "value": 100000,
+        "suffix": "+"
+      },
       { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 97, "suffix": "%" }
+    ]
+  },
+  {
+    "slug": "mecanica-de-suelos",
+    "titulo": "Estudio de Mecánica de Suelos",
+    "descripcion": "En Casagrande analizamos el comportamiento del terreno con equipos calibrados por INACAL y personal geotecnista certificado",
+    "contenido": "El estudio de mecánica de suelos es esencial para determinar las propiedades físicas y mecánicas del terreno donde se cimentará una estructura. En Casagrande ejecutamos investigaciones geotécnicas completas, tanto para edificaciones como para proyectos viales e industriales. Nuestros ensayos se realizan con equipos certificados por INACAL y bajo normas ASTM, AASHTO y E.050, asegurando resultados trazables, interpretaciones confiables y soluciones técnicas adaptadas a cada proyecto.",
+    "imagen": "/mecanica-de-suelos.webp",
+
+    "titulo01": "Estudio de Mecánica de Suelos",
+    "subtitulo01": "Determinamos con precisión la capacidad, resistencia y comportamiento del terreno para cimentaciones seguras, estructuras estables y pavimentos duraderos.",
+
+    "categorias": [
+      {
+        "titulo": "Estudio de Mecánica de Suelos y Roca para Cimentación",
+        "imagenes": ["/estudio-cimentacion.webp"],
+        "ensayos": [
+          "Determinación de la capacidad portante admisible del suelo o roca",
+          "Definición de la profundidad y tipo de cimentación óptima",
+          "Evaluación de asentamientos totales y diferenciales",
+          "Identificación de estratos compresibles y problemas geotécnicos potenciales",
+          "Ensayo de penetración estándar (SPT) y recuperación de muestras inalteradas",
+          "Ensayo de carga con placa y permeabilidad en campo"
+        ],
+        "descripcion": "Analizamos el terreno de cimentación para garantizar estabilidad y seguridad estructural. Nuestros estudios proporcionan parámetros geotécnicos precisos y recomendaciones para el diseño de zapatas, losas, pilotes y cimentaciones profundas."
+      },
+      {
+        "titulo": "Estudio de Mecánica de Suelos para Pavimentación",
+        "imagenes": ["/estudio-pavimentos.webp"],
+        "ensayos": [
+          "Determinación del CBR y capacidad de soporte de la subrasante",
+          "Ensayos Proctor estándar y modificado",
+          "Control de compactación y densidad in situ (arena, nuclear, cono de arena)",
+          "Análisis granulométrico y límites de Atterberg",
+          "Evaluación de subrasante, subbase y base granular",
+          "Deflectometría con Viga Benkelman o FWD para evaluación estructural"
+        ],
+        "descripcion": "Determinamos las condiciones del terreno a pavimentar y los parámetros necesarios para el diseño del paquete estructural (subrasante, subbase, base y carpeta). Garantizamos durabilidad, economía y desempeño óptimo en vías urbanas, carreteras y pavimentos industriales."
+      },
+      {
+        "titulo": "Ensayos de Laboratorio y Campo",
+        "imagenes": ["/ensayos-laboratorio.webp"],
+        "ensayos": [
+          "Análisis granulométrico por tamizado e hidrómetro",
+          "Límites de Atterberg (líquido, plástico y contracción)",
+          "Ensayo de corte directo, triaxial y consolidación unidimensional",
+          "Determinación del peso específico, humedad natural y densidad seca",
+          "Ensayos de compresibilidad, expansión y resistencia al corte",
+          "Determinación del contenido orgánico, salinidad y clasificación SUCS / AASHTO"
+        ],
+        "descripcion": "Nuestro laboratorio acreditado ofrece más de 130 ensayos de suelos, rocas y materiales, garantizando resultados confiables, repetibles y trazables, esenciales para el diseño y control de calidad de tus proyectos."
+      }
+    ],
+
+    "puntos": [
+      "Cumplimiento estricto de la Norma Técnica E.050 de edificaciones",
+      "Equipos calibrados y certificados por proveedores acreditados por INACAL (como Pizuar)",
+      "Ensayos realizados bajo normas ASTM y AASHTO vigentes",
+      "Personal geotecnista, laboratorista y de campo altamente especializado",
+      "Resultados digitales con trazabilidad metrológica y respaldo técnico"
+    ],
+
+    "detalles": [
+      "Laboratorio acreditado bajo la norma ISO/IEC 17025:2017",
+      "Más de 20 años de experiencia en ingeniería geotécnica y de pavimentos",
+      "Asesoría técnica integral durante el estudio y la ejecución de obra",
+      "Reportes con parámetros geotécnicos listos para diseño estructural y vial",
+      "Cobertura a nivel nacional con presencia en obras públicas y privadas"
+    ],
+
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS GEOTÉCNICOS",
+        "value": 50000,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "PROYECTOS DE EDIFICACIÓN Y VÍAS",
+        "value": 350,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "CIMIENTACIONES ANALIZADAS",
+        "value": 1200,
+        "suffix": "+"
+      },
+      { "id": 4, "label": "PRECISIÓN GARANTIZADA", "value": 99, "suffix": "%" }
+    ]
+  },
+  {
+    "slug": "evaluacion-estructural",
+    "titulo": "Evaluación Estructural",
+    "descripcion": "Servicio integral para diagnosticar, verificar y rehabilitar estructuras existentes ante cambio de uso, deterioro, ampliaciones o nuevas demandas operativas. ",
+    "contenido": "Evaluamos el estado y desempeño de edificaciones e infraestructura mediante patología estructural, auscultación no destructiva, pruebas de carga, análisis sísmico de sitio, modelación y planes de rehabilitación. Entregamos conclusiones técnicas, criterios de aceptación y soluciones de refuerzo listas para implementar según E.030, E.060, E.070, E.090, ACI y ASTM.",
+    "imagen": "/evaluacion-estructural.webp",
+    "titulo01": "Servicios de Evaluación Estructural",
+    "subtitulo01": "Diagnóstico, verificación y rehabilitación con datos trazables y criterios normativos claros.",
+    "categorias": [
+      {
+        "titulo": "Patología e Inspección Estructural",
+        "imagenes": ["/inspeccion-estructural.webp"],
+        "ensayos": [
+          "Levantamiento de fisuras, deformaciones y desplomes",
+          "Mapeo de recubrimientos y armaduras (pacómetro/GPR)",
+          "Identificación de mecanismos de daño y causa raíz",
+          "Clasificación de severidad y priorización de intervenciones",
+          "Informe de condición y aptitud de servicio"
+        ],
+        "descripcion": "Diagnóstico del estado actual para definir riesgos, restricciones de uso y acciones de intervención."
+      },
+      {
+        "titulo": "Ensayos No Destructivos (END/NDT)",
+        "imagenes": ["/end-ndt.webp"],
+        "ensayos": [
+          "Ultrasonido (UPV) e impacto-eco en concreto",
+          "Esclerometría (Schmidt) y pull-off",
+          "GPR para detección de vacíos, delaminaciones y armaduras",
+          "Half-cell para potencial de corrosión",
+          "Termografía infrarroja (cuando aplica)"
+        ],
+        "descripcion": "Auscultación rápida de elementos para estimar integridad, homogeneidad y durabilidad sin extracción masiva."
+      },
+      {
+        "titulo": "Pruebas de Carga y Monitoreo",
+        "imagenes": ["/prueba-de-carga.webp"],
+        "ensayos": [
+          "Pruebas de carga en losas, vigas y cubiertas",
+          "Pruebas estáticas y PDA en pilotes",
+          "Placa de carga en fundaciones y rellenos estructurales",
+          "Deflectometría en pavimentos (FWD/Benkelman)",
+          "Instrumentación con LVDT, strain gauges y vibración"
+        ],
+        "descripcion": "Validación del comportamiento en servicio y verificación de criterios de aceptación."
+      },
+      {
+        "titulo": "Vulnerabilidad y Desempeño Sísmico",
+        "imagenes": ["/vulnerabilidad-sismica.webp"],
+        "ensayos": [
+          "Clasificación de sitio (Vs30, MASW, HVSR) y parámetros E.030",
+          "Identificación modal operacional (OMA) y vibraciones",
+          "Modelación y verificación de desempeño",
+          "Pushover / análisis no lineal (cuando aplica)",
+          "Plan de intervención y reducción de riesgo"
+        ],
+        "descripcion": "Cuantificación de demanda-capacidad y definición de niveles de desempeño objetivo."
+      },
+      {
+        "titulo": "Integridad de Pilotes y Cimentaciones",
+        "imagenes": ["/integridad-pilotes.webp"],
+        "ensayos": [
+          "PIT (Low Strain) y CSL (Crosshole Sonic Logging)",
+          "Prueba de carga estática en pilotes",
+          "Back-analysis de asentamientos y rotaciones",
+          "Permeabilidad (Lefranc/Lugeon) y verificación de drenajes",
+          "Recomendaciones de recalce y mejoramiento"
+        ],
+        "descripcion": "Verificación de integridad y capacidad de fundaciones existentes y nuevas."
+      },
+      {
+        "titulo": "Rehabilitación y Refuerzo",
+        "imagenes": ["/refuerzo-estructural.webp"],
+        "ensayos": [
+          "Diseño con FRP, encamisados de acero/hormigón y anclajes",
+          "Mejoras de conexión y diafragmas",
+          "Recalce con micropilotes y grouting",
+          "Planes de mantenimiento y monitoreo post-refuerzo",
+          "Criterios de aceptación y control de calidad en obra"
+        ],
+        "descripcion": "Soluciones de refuerzo constructibles, verificables y alineadas a normas vigentes."
+      }
+    ],
+    "puntos": [
+      "Equipos calibrados por proveedores acreditados ante INACAL",
+      "Laboratorio con ISO/IEC 17025 para ensayos de respaldo",
+      "Criterios de aceptación según E.030, E.060, E.070, E.090, ACI y ASTM",
+      "Modelos numéricos y reportes ejecutivos para toma de decisiones",
+      "Resultados digitales trazables y entregables listos para obra"
+    ],
+    "detalles": [
+      "Plazos típicos: 10–20 días según complejidad y alcance",
+      "Incluye inspección, END y/o pruebas de carga según requerimiento",
+      "Informe con conclusiones, riesgos y plan de intervención",
+      "Acompañamiento técnico durante la ejecución del refuerzo",
+      "Cobertura nacional en obras públicas y privadas"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ESTRUCTURAS EVALUADAS",
+        "value": 650,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "PRUEBAS DE CARGA EJECUTADAS",
+        "value": 240,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "ELEMENTOS AUSCULTADOS (END)",
+        "value": 4800,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "REDUCCIÓN DE RIESGO PROM.",
+        "value": 85,
+        "suffix": "%"
+      }
     ]
   }
 ]

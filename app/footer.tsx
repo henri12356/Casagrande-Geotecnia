@@ -27,9 +27,14 @@ const Footer = () => {
           href: "https://mail.google.com/mail/?view=cm&to=comercial@casagrandegeotecnia.com.pe",
         },
         {
-          name: "Redes sociales",
-          href: "https://www.facebook.com/profile.php?id=100077864046528&locale=es_LA",
+          name: "Jirón Quinua 570, Ayacucho 05003",
+          href: "https://maps.app.goo.gl/ZLD7hVDrudfbnSTd6",
         },
+        {
+
+          name: "Av. Alfonso Ugarte 595, Lima 15001", 
+          href: "https://maps.app.goo.gl/d5gJNMX8ZyHvmnyS8",
+        }
       ],
     },
   ];
@@ -78,7 +83,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-50 border-t max-md:pb-20 border-gray-200 text-gray-800">
-      <div className="max-w-7xl container mx-auto px-4 py-8  ">
+      <div className="max-w-7xl 2xl:max-w-[1500px] container mx-auto px-4 py-8  ">
         {/* Top section: Logo and back to top */}
         <div className="hidden md:flex justify-between items-center">
           <Link

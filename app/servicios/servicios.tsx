@@ -12,35 +12,35 @@ import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 const servicios = [
   {
     slug: "geologia",
-    titulo: "Estudios Geológicos",
+    titulo: "Geológia",
     descripcion:
       "Caracterización del terreno, cartografía geológica, identificación de fallas, riesgos sísmicos y evaluación de materiales naturales para proyectos de ingeniería.",
     imagen: "/Ensayos-en-Suelos02.png",
   },
   {
     slug: "geotecnia",
-    titulo: "Estudios Geotécnicos",
+    titulo: " Geotecnia",
     descripcion:
       "Investigación del subsuelo, análisis de cimentaciones, estabilidad de taludes, diseño de muros de contención, túneles y presas para obras seguras y sostenibles.",
     imagen: "/Perforacion01.png",
   },
   {
     slug: "geofisica",
-    titulo: "Estudios Geofísicos",
+    titulo: "Geofísica",
     descripcion:
       "Aplicación de métodos sísmicos, eléctricos y electromagnéticos para explorar el subsuelo y obtener información precisa de estructuras geológicas y geotécnicas.",
     imagen: "/Ensayos-Sísmicos.png",
   },
   {
     slug: "geomecanica",
-    titulo: "Estudios Geomecánicos",
+    titulo: "Geomecánica",
     descripcion:
       "Evaluación del comportamiento de rocas y macizos rocosos mediante ensayos in situ y modelamiento numérico para garantizar estabilidad estructural.",
     imagen: "/Ensayos-en-Concreto03.png",
   },
   {
     slug: "hidrogeologia",
-    titulo: "Estudios Hidrogeológicos",
+    titulo: "Hidrología e Hidrogeología",
     descripcion:
       "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
     imagen: "/Hidrogeológicos-Especializados02.jpg",
@@ -65,6 +65,20 @@ const servicios = [
     descripcion:
       "Supervisión y aseguramiento de la calidad en obras civiles mediante CQC y CQA, verificando materiales, procesos constructivos y cumplimiento normativo.",
     imagen: "/control-de-calidad.jpeg",
+  },
+  {
+    slug: "evaluacion-estructural",
+    titulo: "Evaluación Estructural",
+    descripcion:
+      "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural, garantizando seguridad y cumplimiento normativo.",
+    imagen: "/evaluacion-estructural.webp",
+  },
+  {
+    slug: "mecanica-de-suelos",
+    titulo: "Mecánica de Suelos",
+    descripcion:
+      "Determinación de las propiedades físicas y mecánicas del suelo mediante ensayos in situ y de laboratorio, asegurando la estabilidad y diseño adecuado de cimentaciones.",
+    imagen: "/estudio-mecanico-suelos.webp",
   },
 ];
 
@@ -194,9 +208,8 @@ const Servicios = () => {
                 </a>
 
                 {/* Botón WhatsApp Visita Técnica */}
-                </div>
-                <div className="pt-2 ">
-
+              </div>
+              <div className="pt-2 ">
                 <a
                   href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica."
                   target="_blank"
@@ -209,7 +222,7 @@ const Servicios = () => {
                     Agendar visita técnica
                   </Button>
                 </a>
-                </div>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -25,11 +25,12 @@ const Valores = () => {
   };
 
   const valores = [
-    "Integridad",
+    "Calidad",
     "Compromiso",
-    "Responsabilidad",
-    "Respeto",
-    "Transparencia",
+    "Innovación",
+    "Sostenibilidad",
+    "Formación ",
+    "Trabajo ",
   ];
 
   return (

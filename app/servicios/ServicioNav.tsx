@@ -21,6 +21,8 @@ const serviciosNav: NavItem[] = [
   { slug: "laboratorio-de-suelo", titulo: "Laboratorio Geotecnico" },
   { slug: "ensayo-de-campo", titulo: "Ensayos de Campo" },
   { slug: "control-de-calidad", titulo: "Control de Calidad en Obras" },
+  { slug: "mecanica-de-suelos", titulo: "Mecánica de Suelos" },
+  { slug: "evaluacion-estructural", titulo: "Evaluación Estructural" },
 ];
 
 const ServicioNav = () => {
@@ -70,11 +72,7 @@ const ServicioNav = () => {
                 <div
                   className={`
                   absolute inset-0 opacity-5 transition-all duration-300
-                  ${
-                    isActive
-                      ? "bg-white"
-                      : "bg-blue-500 group-hover:bg-blue-600"
-                  }
+                  ${isActive ? "bg-white" : "bg-blue-500 "}
                 `}
                 ></div>
               </Link>

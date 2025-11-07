@@ -2,17 +2,17 @@ import Link from "next/link";
 import Footer from "../footer";
 import Navbar from "../navbar";
 import Proyecto from "./proyectos";
-import Trusted from "@/app/clientes";
 import MapaProyectos from "./mapa";
+import Trusted from "./clienteproyectos";
 
 const Projects = () => {
   return (
     <div className="">
       <Navbar />
 
+      <Proyecto />
       <MapaProyectos />
       {/* <HeroProyectos /> */}
-      <Proyecto />
       <Trusted />
       <section className="bg-gradient-to-r bg-[#1b4772] text-white py-20 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">

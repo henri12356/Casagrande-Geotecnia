@@ -1,115 +1,75 @@
-'use client';
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import { motion } from 'framer-motion';
+import { FaAward } from 'react-icons/fa';
 
 const imageSrc = "/nosotros.webp";
 
-const containerTransition = { staggerChildren: 0.2, delayChildren: 0.3 } as const;
-const itemTransition = { duration: 0.6, ease: "easeOut" as const };
-const imageTransition = { duration: 0.8, ease: "easeOut" as const };
-// const buttonTransition = { duration: 0.5, ease: "easeOut" as const };
-// const buttonHoverTransition = { duration: 0.2, ease: "easeInOut" as const };
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: containerTransition }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: itemTransition }
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: { opacity: 1, x: 0, transition: imageTransition }
-};
-
-// const buttonVariants = {
-//   hidden: { opacity: 0, scale: 0.8 },
-//   visible: { opacity: 1, scale: 1, transition: buttonTransition },
-//   hover: { scale: 1.05, transition: buttonHoverTransition }
-// };
-
-const Familia = () => {
+const Sobrenosotros = () => {
   return (
-    <div className="bg-white md:py-16 pt-16 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden">
+    <div className="bg-white md:py-28 py-10 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
+          
           {/* Imagen */}
-          <motion.div className="relative w-full lg:w-1/2" variants={imageVariants}>
-            <motion.div className="rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-              <motion.img
-                src={imageSrc}
-                loading='lazy'
-                alt="Equipo Casagrande"
-                className="object-cover w-full h-full"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
-              />
-            </motion.div>
-          </motion.div>
+          <div className="relative w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src={imageSrc}
+              alt="Equipo de Casagrande"
+              className="object-cover w-full h-full"
+              loading="lazy"
+            />
+          </div>
 
-          {/* Texto */}
-          <motion.div className="w-full lg:w-1/2" variants={containerVariants}>
-            <motion.div className="" variants={itemVariants}>
-              <motion.span 
-                className="inline-block bg-[#1b4772] text-white text-sm font-semibold px-4 py-1 rounded-full mb-4"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Nuestra Familia
-              </motion.span>
-              <motion.h2 
-                className="text-4xl font-extrabold text-[#1b4772] tracking-tight mb-2"
-                variants={itemVariants}
-              >
-                Casagrande S.A.C. <br /> Experiencia y Confiabilidad
-              </motion.h2>
-            </motion.div>
+          {/* Texto y contenido */}
+          <div className="w-full lg:w-1/2">
+            <h3 className="text-5xl font-black text-[#182C45] mb-4">
+              Casagrande Geotecnia
+            </h3>
+            
+            <p className="text-gray-600 leading-relaxed mb-4">
+              <strong>Casagrande Geotecnia</strong> es una empresa peruana de ingeniería y construcción 
+              especializada en <strong>estudios técnicos, control de calidad y servicios geotécnicos integrales</strong> 
+              para obras de infraestructura, edificación y proyectos públicos y privados en todo el país. 
+              Con más de <strong>6 años de experiencia</strong> y más de <strong>130 ensayos de calidad</strong>, 
+              garantizamos resultados precisos, trazables y confiables en cada proyecto.  
+              Nuestros equipos, adquiridos a <strong>PIZUAR</strong> proveedor acreditado por <strong>INACAL</strong>, 
+              cuentan con certificaciones y calibraciones oficiales que respaldan la precisión de cada medición.
+            </p>
 
-            <motion.div className="space-y-2" variants={containerVariants}>
-              <motion.p className="text-gray-700 leading-relaxed text-md" variants={itemVariants}>
-                En <span className="font-semibold text-[#1b4772]">Casagrande</span>, desde nuestra fundación, nos dedicamos a la <span className="font-semibold">investigación de suelos, rocas, agua y materiales</span>, asegurando que cada proyecto de construcción tenga bases sólidas y resultados confiables.
-              </motion.p>
+            {/* Certificaciones */}
+            <div className="space-y-4 mb-4">
+              <div className="flex items-start gap-3">
+                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
+                <p className="text-black">
+                  <span className="font-bold text-[#182C45]">ISO 9001 – Sistema de Gestión de Calidad:</span> 
+                 
+                </p>
+              </div>
 
-              <motion.p className="text-gray-700 leading-relaxed text-md" variants={itemVariants}>
-                Contamos con más de <span className="font-semibold text-[#1b4772]">12 años de experiencia</span> en consultoría de ingeniería civil, realizando estudios geológicos, geotécnicos, de laboratorio, geofísica y geomecánica para garantizar la seguridad y eficiencia de cada obra.
-              </motion.p>
+              <div className="flex items-start gap-3">
+                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
+                <p className="text-black">
+                  <span className="font-bold text-[#182C45]">ISO 37001 – Sistema de Gestión Antisoborno:</span> 
+                </p>
+              </div>
 
-              <motion.p className="text-gray-700 leading-relaxed text-md" variants={itemVariants}>
-                Nuestro equipo de profesionales altamente capacitados ofrece un servicio <span className="font-semibold text-[#1b4772]">transparente, confiable y certificado</span>, siguiendo normas ISO 9001, ISO 14001 e ISO 37001, asegurando calidad, ética y sostenibilidad en todos nuestros proyectos.
-              </motion.p>
-            </motion.div>
+              <div className="flex items-start gap-3">
+                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
+                <p className="text-black">
+                  <span className="font-bold text-[#182C45]">ISO 14001 – Sistema de Gestión Ambiental:</span> 
+                </p>
+              </div>
+            </div>
 
-            {/* Botón */}
-            {/* <motion.button 
-              className='group mt-8 px-4 py-4 md:px-8 md:py-4 cursor-pointer bg-[#1b4772] text-white font-semibold rounded-lg shadow-lg transition-all duration-300'
-              variants={buttonVariants}
-              whileHover="hover"
-            >
+            {/* Botón de acción */}
+            <button className="px-6 py-3 bg-[#182C45] text-white font-semibold rounded-lg shadow-md hover:bg-[#2a6cad] transition duration-200 cursor-pointer">
               Descargar nuestro brochure
-              <motion.span 
-                className="ml-2 inline-block"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
-              >
-                →
-              </motion.span>
-            </motion.button> */}
-          </motion.div>
-        </motion.div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Familia;
+export default Sobrenosotros;

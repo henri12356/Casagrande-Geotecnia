@@ -1,4 +1,5 @@
 import Brochure from "../brochure";
+import Mapa from "../contacto/mapa";
 import Footer from "../footer";
 import Navbar from "../navbar";
 import CertificadoNosotros from "./certificadoNosotros";
@@ -18,6 +19,7 @@ const Projects = () => {
       <Valores />
       <Trayectoria />
       <CertificadoNosotros />
+        <Mapa />
         <Brochure />
       <Footer />
     </div>

@@ -9,10 +9,10 @@ interface ServiceLayoutProps {
 // Configuración SEO específica por servicio para Casagrande Geotecnia
 const serviciosMetadata = {
   'geotecnia': {
-    title: 'Estudios Geotécnicos ',
+    title: 'Servicios Geotécnia ',
     description: 'Servicios completos de geotecnia. Estudios de mecánica de suelos, capacidad portante, cimentaciones y estabilidad de taludes. Certificaciones ISO.',
     keywords: 'geotecnia, estudios geotécnicos, mecánica de suelos, capacidad portante, cimentaciones, estabilidad taludes, estudios geotécnicos edificios',
-    image: "/hero06.jpg"
+    image: "/Perforacion01.webp"
   },
   'laboratorio-de-suelo': {
     title: 'Laboratorio de suelo',
@@ -21,13 +21,13 @@ const serviciosMetadata = {
     image: "/laboratorio-de-ensayos.png"
   },
   'geologia': {
-    title: 'Servicios de Geología Aplicada ',
+    title: 'Servicios de Geología  ',
     description: 'Geología aplicada a la construcción. Cartografía geológica, evaluación de riesgos naturales, estudios de canteras y exploración geotécnica. Especialistas certificados.',
     keywords: 'geología aplicada, cartografía geológica, riesgos naturales, exploración geotécnica, estudios canteras, geología construcción',
     image: "/hero01.jpg"
   },
   'geofisica': {
-    title: 'Estudios Geofísicos  ',
+    title: 'servicios de geofisica',
     description: 'Geofísica aplicada a la ingeniería civil. Métodos sísmicos, eléctricos y electromagnéticos para investigación del subsuelo. Tecnología no invasiva.',
     keywords: 'estudios geofísicos, métodos sísmicos, tomografía eléctrica, geofísica aplicada, investigación subsuelo, métodos no invasivos geotecnia',
     image: "/hero03.jpg"
@@ -39,7 +39,7 @@ const serviciosMetadata = {
     image: "/hero04.jpg"
   },
   'hidrogeologia': {
-    title: 'Estudio hidrogeologico  ',
+    title: 'Estudios hidrogeológicos  ',
     description: 'Estudios hidrogeológicos para proyectos civiles y mineros. Investigación de aguas subterráneas, permeabilidad, drenaje y control de filtraciones.',
     keywords: 'hidrogeología, estudios aguas subterráneas, permeabilidad suelos, drenaje proyectos, control filtraciones, hidrogeología construcción',
     image: "/hero05.jpg"
