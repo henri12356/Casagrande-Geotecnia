@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, Suspense } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -17,7 +17,8 @@ type Proyecto = {
   descripcion?: string;
 };
 
-export default function ProyectosPage() {
+// --- Mueve tu lógica a un sub-componente que sí usa useSearchParams ---
+function ProyectosContent() {
   const searchParams = useSearchParams();
   const categoriaQP = (searchParams.get("categoria") || "").trim();
 
@@ -161,5 +162,14 @@ export default function ProyectosPage() {
         )}
       </section>
     </div>
+  );
+}
+
+// --- Export por defecto: envuelve en Suspense ---
+export default function ProyectosPage() {
+  return (
+    <Suspense fallback={<div className="py-28 text-center text-gray-600">Cargando proyectos…</div>}>
+      <ProyectosContent />
+    </Suspense>
   );
 }
