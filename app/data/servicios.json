@@ -713,7 +713,7 @@
     "titulo": "Estudio de Mecánica de Suelos",
     "descripcion": "En Casagrande analizamos el comportamiento del terreno con equipos calibrados por INACAL y personal geotecnista certificado",
     "contenido": "El estudio de mecánica de suelos es esencial para determinar las propiedades físicas y mecánicas del terreno donde se cimentará una estructura. En Casagrande ejecutamos investigaciones geotécnicas completas, tanto para edificaciones como para proyectos viales e industriales. Nuestros ensayos se realizan con equipos certificados por INACAL y bajo normas ASTM, AASHTO y E.050, asegurando resultados trazables, interpretaciones confiables y soluciones técnicas adaptadas a cada proyecto.",
-    "imagen": "/mecanica-de-suelos.webp",
+    "imagen": "/estudio-mecanico-suelos.webp",
 
     "titulo01": "Estudio de Mecánica de Suelos",
     "subtitulo01": "Determinamos con precisión la capacidad, resistencia y comportamiento del terreno para cimentaciones seguras, estructuras estables y pavimentos duraderos.",
@@ -721,7 +721,7 @@
     "categorias": [
       {
         "titulo": "Estudio de Mecánica de Suelos y Roca para Cimentación",
-        "imagenes": ["/estudio-cimentacion.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Determinación de la capacidad portante admisible del suelo o roca",
           "Definición de la profundidad y tipo de cimentación óptima",
@@ -734,7 +734,7 @@
       },
       {
         "titulo": "Estudio de Mecánica de Suelos para Pavimentación",
-        "imagenes": ["/estudio-pavimentos.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Determinación del CBR y capacidad de soporte de la subrasante",
           "Ensayos Proctor estándar y modificado",
@@ -747,7 +747,7 @@
       },
       {
         "titulo": "Ensayos de Laboratorio y Campo",
-        "imagenes": ["/ensayos-laboratorio.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Análisis granulométrico por tamizado e hidrómetro",
           "Límites de Atterberg (líquido, plástico y contracción)",
@@ -803,13 +803,13 @@
     "titulo": "Evaluación Estructural",
     "descripcion": "Servicio integral para diagnosticar, verificar y rehabilitar estructuras existentes ante cambio de uso, deterioro, ampliaciones o nuevas demandas operativas. ",
     "contenido": "Evaluamos el estado y desempeño de edificaciones e infraestructura mediante patología estructural, auscultación no destructiva, pruebas de carga, análisis sísmico de sitio, modelación y planes de rehabilitación. Entregamos conclusiones técnicas, criterios de aceptación y soluciones de refuerzo listas para implementar según E.030, E.060, E.070, E.090, ACI y ASTM.",
-    "imagen": "/evaluacion-estructural.webp",
+    "imagen": "/estudio-mecanico-suelos.webp",
     "titulo01": "Servicios de Evaluación Estructural",
     "subtitulo01": "Diagnóstico, verificación y rehabilitación con datos trazables y criterios normativos claros.",
     "categorias": [
       {
         "titulo": "Patología e Inspección Estructural",
-        "imagenes": ["/inspeccion-estructural.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Levantamiento de fisuras, deformaciones y desplomes",
           "Mapeo de recubrimientos y armaduras (pacómetro/GPR)",
@@ -821,7 +821,7 @@
       },
       {
         "titulo": "Ensayos No Destructivos (END/NDT)",
-        "imagenes": ["/end-ndt.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Ultrasonido (UPV) e impacto-eco en concreto",
           "Esclerometría (Schmidt) y pull-off",
@@ -833,7 +833,7 @@
       },
       {
         "titulo": "Pruebas de Carga y Monitoreo",
-        "imagenes": ["/prueba-de-carga.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Pruebas de carga en losas, vigas y cubiertas",
           "Pruebas estáticas y PDA en pilotes",
@@ -845,7 +845,7 @@
       },
       {
         "titulo": "Vulnerabilidad y Desempeño Sísmico",
-        "imagenes": ["/vulnerabilidad-sismica.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Clasificación de sitio (Vs30, MASW, HVSR) y parámetros E.030",
           "Identificación modal operacional (OMA) y vibraciones",
@@ -857,7 +857,7 @@
       },
       {
         "titulo": "Integridad de Pilotes y Cimentaciones",
-        "imagenes": ["/integridad-pilotes.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "PIT (Low Strain) y CSL (Crosshole Sonic Logging)",
           "Prueba de carga estática en pilotes",
@@ -869,7 +869,7 @@
       },
       {
         "titulo": "Rehabilitación y Refuerzo",
-        "imagenes": ["/refuerzo-estructural.webp"],
+        "imagenes": ["/estudio-mecanico-suelos.webp"],
         "ensayos": [
           "Diseño con FRP, encamisados de acero/hormigón y anclajes",
           "Mejoras de conexión y diafragmas",

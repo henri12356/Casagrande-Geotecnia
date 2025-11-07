@@ -71,7 +71,7 @@ const servicios = [
     titulo: "Evaluación Estructural",
     descripcion:
       "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural, garantizando seguridad y cumplimiento normativo.",
-    imagen: "/evaluacion-estructural.webp",
+    imagen: "/estudio-mecanico-suelos.webp",
   },
   {
     slug: "mecanica-de-suelos",
