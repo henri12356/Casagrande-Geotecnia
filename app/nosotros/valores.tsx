@@ -94,8 +94,8 @@ const Valores = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/valores.jpg"
-                  alt="Equipo Casagrande"
+                  src="/valores.webp"
+                  alt="Empresa Casagrande geotecnia"
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -121,8 +121,8 @@ const Valores = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/nosotroshero02.png"
-                  alt="Supervisión de obra"
+                  src="/valores01.webp"
+                  alt="grupo de trabajo casagrande"
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

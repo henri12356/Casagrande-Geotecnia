@@ -17,7 +17,7 @@ const slidesData: {
     title: "Comprometidos con la innovación",
     subtitle:
       "En cada proyecto garantizamos aseguramiento de calidad y confiabilidad de resultados, fortaleciendo la confianza con nuestros clientes.",
-    imageSrc: "/Perforacion.png",
+    imageSrc: "/hero03.webp",
     buttonText: "Ver Servicios",
     buttonLink: "/servicios",
   },
@@ -26,7 +26,7 @@ const slidesData: {
     title: "El Talento Detrás de Cada Logro",
     subtitle:
       "Nuestro equipo humano es el motor de cada logro, combinando experiencia y dedicación para alcanzar la excelencia en cada proyecto.",
-    imageSrc: "/nosotroshero.png",
+    imageSrc: "/hero04.webp",
     buttonText: "Equipo",
     buttonLink: "/equipo",
   },
@@ -115,7 +115,7 @@ export default function HeroServicios() {
             className="object-cover object-center"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/35 via-[#1b4772]/35 to-transparent" />
         </motion.div>
       </AnimatePresence>
 

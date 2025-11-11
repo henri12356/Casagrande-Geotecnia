@@ -52,7 +52,7 @@ const Trayectoria = () => {
             <div className="relative w-full max-w-sm h-auto overflow-hidden rounded-lg">
               <Image
                 src="/historia.jpg"
-                alt="Imagen de equipo de Geofal S.A.C."
+                alt="Historia casagrande geotecnia"
                 width={500}
                 height={500}
                 layout="responsive"

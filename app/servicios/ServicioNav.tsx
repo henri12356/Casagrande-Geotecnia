@@ -15,13 +15,13 @@ interface NavItem {
 const serviciosNav: NavItem[] = [
   { slug: "geologia", titulo: "Estudios de Geología" },
   { slug: "geotecnia", titulo: "Estudios de Geotecnia" },
-  { slug: "geofisica", titulo: "Estudios de Geofísica" },
-  { slug: "geomecanica", titulo: "Estudios de Geomecánica" },
-  { slug: "hidrogeologia", titulo: "Estudios  Hidrogeologicos" },
   { slug: "laboratorio-de-suelo", titulo: "Laboratorio Geotecnico" },
+  { slug: "geofisica", titulo: "Estudios de Geofísica" },
+  { slug: "hidrogeologia", titulo: "Hidrogeologia e Hidrogeologia" },
+  { slug: "geomecanica", titulo: "Estudios de Geomecánica" },
   { slug: "ensayo-de-campo", titulo: "Ensayos de Campo" },
-  { slug: "control-de-calidad", titulo: "Control de Calidad en Obras" },
   { slug: "mecanica-de-suelos", titulo: "Mecánica de Suelos" },
+  { slug: "control-de-calidad", titulo: "Control de Calidad en Obras" },
   { slug: "evaluacion-estructural", titulo: "Evaluación Estructural" },
 ];
 

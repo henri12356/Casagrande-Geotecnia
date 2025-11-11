@@ -20,8 +20,8 @@ const slidesData: {
     id: 1,
     title: "NUESTROS SERVICIOS",
     subtitle:
-      "Casagrande ofrece soluciones de ingeniería civil, geotecnia y laboratorio de materiales, asegurando calidad y confiabilidad en cada proyecto.",
-    imageSrc: "/Perforacion04.png",
+   "",
+    imageSrc: "/heroservicios.webp",
     buttonText: "Ver Brochure",
     buttonLink: "/brochure.pdf",
   },
@@ -67,7 +67,7 @@ export default function HeroServicios() {
   useEffect(() => {
     const interval = setInterval(() => {
       paginate(1);
-    }, 70000);
+    }, 700000);
     return () => clearInterval(interval);
   }, [paginate]);
 
@@ -99,7 +99,7 @@ export default function HeroServicios() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-[#1b4772]/60" />
+          <div className="absolute inset-0 bg-[#1b4772]/30" />
         </motion.div>
       </AnimatePresence>
 
@@ -119,24 +119,18 @@ export default function HeroServicios() {
             className="absolute w-full max-w-5xl"
           >
             <motion.div
-              className="flex flex-col items-center text-center space-y-4 pt-20"
+              className="flex flex-col items-center text-center space-y-2  pt-24"
               variants={contentVariants}
               initial="initial"
               animate="animate"
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-8xl drop-shadow-lg"
+                className="text-6xl font-semibold tracking-tight text-white lg:text-[100px] "
               >
                 {activeSlide.title}
               </motion.h2>
 
-              <motion.p
-                variants={itemVariants}
-                className="text-base font-medium leading-relaxed text-white sm:text-lg lg:text-xl drop-shadow-md"
-              >
-                {activeSlide.subtitle}
-              </motion.p>
 
               {activeSlide.buttonText && activeSlide.buttonLink && (
                 <motion.div variants={itemVariants}>

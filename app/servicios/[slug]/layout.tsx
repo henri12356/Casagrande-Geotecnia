@@ -8,54 +8,65 @@ interface ServiceLayoutProps {
 
 // Configuración SEO específica por servicio para Casagrande Geotecnia
 const serviciosMetadata = {
+  'geologia': {
+    title: 'Servicios de Geología Aplicada | Estudios Geológicos  ',
+    description: 'Servicios profesionales de geología aplicada en Perú. Cartografía geológica detallada, evaluación de riesgos geológicos, estudios de canteras, exploración geotécnica y mapeo geológico. Geólogos certificados con experiencia en proyectos mineros y civiles.',
+    keywords: 'geología aplicada perú, cartografía geológica, mapeo geológico, evaluación riesgos naturales, estudios geológicos construcción, exploración geotécnica, estudios canteras perú, geología minera, geólogos certificados lima, investigación geológica, servicios geológicos perú, geología ingeniería civil',
+    image: "/servicios/geologia.webp"
+  },
   'geotecnia': {
-    title: 'Servicios Geotécnia ',
-    description: 'Servicios completos de geotecnia. Estudios de mecánica de suelos, capacidad portante, cimentaciones y estabilidad de taludes. Certificaciones ISO.',
-    keywords: 'geotecnia, estudios geotécnicos, mecánica de suelos, capacidad portante, cimentaciones, estabilidad taludes, estudios geotécnicos edificios',
-    image: "/Perforacion01.webp"
+    title: 'Estudios Geotécnicos  | Mecánica de Suelos',
+    description: 'Estudios geotécnicos completos en Perú certificados ISO 9001. Mecánica de suelos, capacidad portante, diseño de cimentaciones, estabilidad de taludes, análisis de asentamientos. Más de 15 años de experiencia en proyectos de construcción.',
+    keywords: 'estudios geotécnicos perú, geotecnia lima, mecánica de suelos, estudio de suelos construcción, capacidad portante suelo, diseño cimentaciones, estabilidad taludes, estudio geotécnico edificios, análisis geotécnico, ingeniería geotécnica perú, estudios ems perú, geotecnia certificada iso',
+    image: "/servicios/geologia.webp"
   },
   'laboratorio-de-suelo': {
-    title: 'Laboratorio de suelo',
-    description: 'Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.',
-    keywords: 'laboratorio geotécnico, ensayos suelos, ensayos rocas, ensayos concreto, ensayos asfalto, control de calidad, pruebas materiales construcción',
-    image: "/laboratorio-de-ensayos.png"
-  },
-  'geologia': {
-    title: 'Servicios de Geología  ',
-    description: 'Geología aplicada a la construcción. Cartografía geológica, evaluación de riesgos naturales, estudios de canteras y exploración geotécnica. Especialistas certificados.',
-    keywords: 'geología aplicada, cartografía geológica, riesgos naturales, exploración geotécnica, estudios canteras, geología construcción',
-    image: "/hero01.jpg"
+    title: 'Laboratorio Geotécnico Certificado | Ensayos de Suelos ',
+    description: 'Laboratorio geotécnico acreditado en Lima, Perú. Ensayos especializados de suelos, rocas, concreto, asfalto y aguas según normas ASTM, NTP y AASHTO. Control de calidad certificado para materiales de construcción. Resultados confiables y rápidos.',
+    keywords: 'laboratorio geotécnico perú, ensayos de suelos lima, laboratorio mecánica suelos, ensayos concreto, pruebas asfalto, análisis agua construcción, laboratorio certificado astm, ensayos granulometría, límites atterberg, proctor modificado, cbr suelos, laboratorio acreditado perú',
+    image: "/servicios/geologia.webp"
   },
   'geofisica': {
-    title: 'servicios de geofisica',
-    description: 'Geofísica aplicada a la ingeniería civil. Métodos sísmicos, eléctricos y electromagnéticos para investigación del subsuelo. Tecnología no invasiva.',
-    keywords: 'estudios geofísicos, métodos sísmicos, tomografía eléctrica, geofísica aplicada, investigación subsuelo, métodos no invasivos geotecnia',
-    image: "/hero03.jpg"
-  },
-  'geomecanica': {
-    title: 'Geomecánica',
-    description: 'Servicios de geomecánica para túneles, taludes rocosos y minería. Clasificación RMR, Q, GSI. Análisis de estabilidad y diseño de sostenimiento.',
-    keywords: 'geomecánica, estabilidad taludes rocosos, túneles, clasificación RMR, sistemas sostenimiento, mecánica rocas, minería geotecnia',
-    image: "/hero04.jpg"
+    title: 'Estudios Geofísicos | Prospección Geofísica',
+    description: 'Estudios geofísicos avanzados para ingeniería en Perú. Sísmica de refracción, tomografía eléctrica, georradar GPR, métodos electromagnéticos. Investigación no invasiva del subsuelo para proyectos civiles y mineros. Equipos de última tecnología.',
+    keywords: 'estudios geofísicos perú, geofísica aplicada ingeniería, sísmica refracción, tomografía eléctrica, georradar gpr perú, prospección geofísica, métodos geofísicos subsuelo, geofísica no invasiva, sondeos geofísicos, estudios sísmicos construcción, geofísica lima perú',
+    image: "/servicios/geologia.webp"
   },
   'hidrogeologia': {
-    title: 'Estudios hidrogeológicos  ',
-    description: 'Estudios hidrogeológicos para proyectos civiles y mineros. Investigación de aguas subterráneas, permeabilidad, drenaje y control de filtraciones.',
-    keywords: 'hidrogeología, estudios aguas subterráneas, permeabilidad suelos, drenaje proyectos, control filtraciones, hidrogeología construcción',
-    image: "/hero05.jpg"
+    title: 'Estudios Hidrogeológicos Aguas Subterráneas',
+    description: 'Estudios hidrogeológicos especializados en Perú. Exploración de acuíferos, análisis de aguas subterráneas, pruebas de permeabilidad, diseño de sistemas de drenaje, control de filtraciones. Servicios para proyectos civiles, mineros e industriales.',
+    keywords: 'hidrogeología perú, estudios hidrogeológicos, aguas subterráneas perú, exploración acuíferos, permeabilidad suelos, pruebas bombeo pozos, sistemas drenaje, control filtraciones, hidrogeología minera, estudios hidrológicos construcción, napa freática, pozos agua perú',
+    image: "/servicios/geologia.webp"
+  },
+  'geomecanica': {
+    title: 'Geomecánica de Rocas | Estabilidad de Taludes',
+    description: 'Servicios especializados de geomecánica en Perú. Clasificación geomecánica RMR, Q-Barton, GSI. Análisis de estabilidad de taludes rocosos, diseño de túneles, sostenimiento de excavaciones. Expertise en minería subterránea y proyectos civiles.',
+    keywords: 'geomecánica perú, mecánica de rocas, clasificación rmr, índice q barton, gsi rocas, estabilidad taludes rocosos, diseño túneles, sostenimiento excavaciones, geomecánica minera perú, análisis discontinuidades, ensayos mecánica rocas, ingeniería túneles perú',
+    image: "/servicios/geologia.webp"
   },
   'control-de-calidad': {
-    title: 'Control de Calidad',
-    description: 'Servicios de control de calidad para obras civiles. Supervisión de materiales, procesos constructivos y cumplimiento de especificaciones técnicas.',
-    keywords: 'control de calidad construcción, supervisión obras civiles, calidad materiales construcción, especificaciones técnicas, auditoría calidad proyectos',
-    image: "/hero06.jpg"
+    title: 'Control de Calidad en Construcción | Supervisión de Obra',
+    description: 'Servicios integrales de control de calidad para obras civiles en Perú. Supervisión técnica especializada, control de materiales de construcción, verificación de procesos constructivos, cumplimiento de especificaciones técnicas. Certificación ISO 9001.',
+    keywords: 'control calidad construcción perú, supervisión obras civiles, control materiales construcción, inspección técnica obra, auditoría calidad proyectos, control concreto obra, ensayos campo construcción, verificación especificaciones técnicas, qaqc construcción perú, supervisor calidad certificado',
+    image: "/servicios/geologia.webp"
   },
-  
   'ensayo-de-campo': {
-    title: 'Estudio de Campo',
-    description: 'Pruebas geotécnicas y geofísicas en terreno como SPT, CPT, densidades y permeabilidad, obteniendo información directa y confiable del subsuelo',
-    keywords: 'estudios especiales ingeniería, capacidad carga suelos, asentamientos, licuación suelos, dinámica suelos, análisis sísmicos, estudios especializados',
-    image: "/hero08.jpg"
+    title: 'Ensayos de Campo Geotécnicos | Pruebas In Situ Perú',
+    description: 'Ensayos geotécnicos de campo en Perú. Pruebas SPT, CPT, ensayos de penetración dinámica, densidad de campo, permeabilidad in situ, veleta corte, placa de carga. Equipos calibrados y personal certificado para obtener datos confiables del subsuelo.',
+    keywords: 'ensayos campo geotécnicos, pruebas spt perú, cpt penetrómetro, densidad campo, permeabilidad in situ, veleta corte, placa carga, pruebas penetración suelo, ensayos geofísicos campo, dpsh ensayo, presiómetro, estudios campo construcción perú',
+    image: "/servicios/geologia.webp"
+  },
+  'mecanica-de-suelos': {
+    title: 'Estudio de Mecánica de Suelos | EMS Certificado',
+    description: 'Estudios completos de mecánica de suelos (EMS) en todo Perú. Investigación del subsuelo, capacidad portante, análisis de cimentaciones, potencial de licuefacción, expansividad de suelos. Informes técnicos detallados según normativa peruana y estándares internacionales.',
+    keywords: 'estudio mecánica suelos perú, ems perú, estudio suelos edificación, capacidad portante terreno, licuefacción suelos, suelos expansivos, investigación subsuelo, clasificación sucs, límites consistencia, compresibilidad suelos, estudio ems lima, geotecnia edificaciones',
+    image: "/servicios/geologia.webp"
+  },
+  'evaluacion-estructural': {
+    title: 'Evaluación Estructural de Edificaciones | Inspección Técnica Perú',
+    description: 'Evaluaciones estructurales especializadas en Perú. Inspección técnica de edificaciones, diagnóstico patológico, evaluación sísmica, reforzamiento estructural, estudios de vulnerabilidad. Ingenieros estructurales certificados con experiencia en rehabilitación de estructuras.',
+    keywords: 'evaluación estructural perú, inspección técnica edificaciones, diagnóstico estructural, evaluación sísmica edificios, reforzamiento estructural, vulnerabilidad sísmica, patología construcción, dictamen estructural, peritaje estructural perú, estudio estructuras existentes, evaluación post sismo',
+    image: "/servicios/geologia.webp"
   }
 } as const
 
@@ -143,8 +154,8 @@ export default async function ServiceLayout({ children, params }: ServiceLayoutP
               "@type": "EngineeringFirm",
               "name": "Casagrande Geotecnia",
               "url": "https://www.casagrandegeotecnia.com.pe",
-              "telephone": "+51 123 456 789",
-              "email": "info@casagrandegeotecnia.com.pe",
+              "telephone": "+51 945 513 323",
+              "email": "comercial@casagrandegeotecnia.com.pe",
               "hasCertification": [
                 "ISO 9001:2015",
                 "ISO 14001:2015", 

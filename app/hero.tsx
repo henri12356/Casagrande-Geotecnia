@@ -21,7 +21,7 @@ const slidesData: {
   title: "BIENVENIDO A CASAGRANDE",
   subtitle:
     "Líderes en ingenieria geotecnica acreditados por INACAL bajo la norma ISO/IEC 17025:2017. Ofrecemos soluciones con precisión, confiabilidad y excelencia técnica en cada proyecto.",
-  imageSrc: "/hero.png",
+  imageSrc: "/hero01.webp",
   buttonText: "Descargar Nuestro Brochure",
   buttonLink: "tel:989900609",
 },
@@ -30,7 +30,7 @@ const slidesData: {
   title: "SERVICIOS GEOTÉCNICOS ",
   subtitle:
     "Ofrecemos servicios de alta precisión y calidad, respaldados por tecnología avanzada y personal especializado, garantizando resultados confiables para cada obra.",
-  imageSrc: "/heroprincipal.jpg",
+  imageSrc: "/hero02.webp",
   buttonText: "Conoce nuestros servicios",
   buttonLink: "/servicios",
 },
@@ -39,7 +39,7 @@ const slidesData: {
   title: "ESTUDIOS REALIZADOS",
   subtitle:
     "Más de una década brindando soluciones técnicas confiables. Nuestros estudios, ensayos y proyectos ejecutados reflejan precisión, compromiso y excelencia profesional.",
-  imageSrc: "/Perforacion.png",
+  imageSrc: "/hero03.webp",
   buttonText: "Ver Proyectos",
   buttonLink: "/proyectos",
 },

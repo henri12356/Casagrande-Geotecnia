@@ -16,7 +16,7 @@ import {
 const serviciosData = [
   {
     id: 1,
-    imageSrc: "/Ensayos-en-Suelos02.png",
+    imageSrc: "/servicios/geologia.webp",
     title: "Servicios de Geología",
     description:
       "Análisis del terreno y su historia natural, estudios de riesgos, cartografía y supervisión de zonas críticas.",
@@ -24,7 +24,7 @@ const serviciosData = [
   },
   {
     id: 2,
-    imageSrc: "/estudio-geotecnia.png",
+    imageSrc: "/servicios/geotecnia.webp",
     title: " Estudios Geotécnicos",
     description:
       "Estudios de cimentaciones, muros de contención, túneles y estabilidad de taludes para proyectos seguros.",
@@ -32,15 +32,15 @@ const serviciosData = [
   },
   {
     id: 3,
-    imageSrc: "/laboratorio-de-ensayos.png",
-    title: "Laboratorio de Ensayos de Materiales",
+    imageSrc: "/servicios/laboratorio.webp",
+    title: "Laboratorio de Suelos",
     description:
       "Ensayos en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar calidad de materiales.",
     href: "/servicios/laboratorio-geotecnico",
   },
   {
     id: 4,
-    imageSrc: "/Ensayos-Sísmicos01.png",
+    imageSrc: "/servicios/geofisica.webp",
     title: "Estudios Geofísicos",
     description:
       "Exploración del subsuelo mediante ensayos sísmicos, geoeléctricos y métodos no invasivos para identificar zonas críticas.",
@@ -48,18 +48,34 @@ const serviciosData = [
   },
   {
     id: 5,
-    imageSrc: "/Hidrogeológicos-Especializados02.jpg",
-    title: "Estudios Hidrogeológicos",
+    imageSrc: "/servicios/hidrologia.webp",
+    title: "Estudios Hidrológicos e Hidrogeológicos",
     description:
       "Estudio y monitoreo del agua subterránea, interacción con suelos y estructuras, garantizando seguridad hídrica.",
     href: "/servicios/hidrogeologia",
   },
   {
     id: 6,
-    imageSrc: "/Ensayos-en-Concreto03.png",
+    imageSrc: "/servicios/geomecanica.webp",
     title: "Estudios Geomecánicos",
     description:
       "Análisis de estabilidad de rocas, taludes y túneles con modelos numéricos y ensayos in situ.",
+    href: "/servicios/geomecanica",
+  },
+  {
+    id: 7,
+    imageSrc: "/servicios/mecanica.webp",
+    title: "Estudio de Mecánica de Suelos",
+    description:
+      "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
+    href: "/servicios/geomecanica",
+  },
+  {
+    id: 8,
+    imageSrc: "/servicios/evaluacion.webp",
+    title: "Evaluación Estructural",
+    description:
+      "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural, garantizando seguridad y cumplimiento normativo.",
     href: "/servicios/geomecanica",
   },
 ];

@@ -356,32 +356,100 @@ const ServicioPage = ({ params }: PageProps) => {
         </div>
 
         {/* --- SECCIÓN DE NÚMEROS AÑADIDA AQUÍ --- */}
-
-        {/* Sección de acreditación INACAL */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-blue-50 rounded-lg p-4 md:p-8 border border-blue-200 mb-12"
+          className="rounded-2xl p-6 md:p-10 mb-12 text-[#182C45]"
         >
-          <h3 className="text-2xl font-bold text-[#1b4772] text-center mb-6">
-            ACREDITACIONES
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-3">
+            CALIBRACIÓN CERTIFICADA E ISO
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[...Array(6)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg p-4 shadow-sm text-center"
-              >
-                <div className="text-[#1b4772] font-bold text-lg mb-2">
-                  ACREDITADO ANTE INACAL
-                </div>
-                <div className="text-sm text-gray-600">
-                  Normas internacionales ISO/IEC 17025
-                </div>
+          <p className="text-center text-sm md:text-base text-gray-700 mb-8">
+            En <strong>Casagrande</strong> garantizamos la precisión de cada
+            ensayo. Nuestras{" "}
+            <strong>máquinas y equipos están calibrados</strong> por
+            <strong> Pizuar</strong>, laboratorio{" "}
+            <strong>acreditado ante INACAL</strong>
+            bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una
+            <strong> trazabilidad metrológica</strong> completa y resultados
+            <strong> confiables, verificables y certificados.</strong>
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Tarjeta: Trazabilidad metrológica */}
+            <div className="rounded-xl p-6 border border-gray-200 bg-white shadow-sm">
+              <div className="font-semibold text-lg mb-3 text-[#182C45]">
+                Trazabilidad Metrológica (INACAL)
               </div>
-            ))}
+              <ul className="space-y-2 text-gray-700 text-sm md:text-base leading-relaxed">
+                <li>
+                  <strong>Equipos de campo y laboratorio</strong> calibrados por
+                  <strong> Pizuar</strong>, laboratorio acreditado ante{" "}
+                  <strong>INACAL</strong>.
+                </li>
+                <li>
+                  Certificados con trazabilidad según la norma{" "}
+                  <strong>ISO/IEC 17025</strong>.
+                </li>
+                <li>
+                  Control de <strong>vigencia</strong>, número de certificado y
+                  verificación interna periódica.
+                </li>
+                <li>
+                  Registro digital y físico de calibraciones y mantenimiento
+                  preventivo.
+                </li>
+                <li>
+                  Verificación previa a cada campaña o ensayo para garantizar la
+                  exactitud.
+                </li>
+              </ul>
+            </div>
+
+            {/* Tarjeta: Sistema de Gestión Integrado */}
+            <div className="rounded-xl p-6 border border-gray-200 bg-white shadow-sm">
+              <div className="font-semibold text-lg mb-3 text-[#182C45]">
+                Sistema de Gestión Integrado
+              </div>
+              <ul className="space-y-2 text-gray-700 text-sm md:text-base leading-relaxed">
+                <li>
+                  <strong>ISO 9001:2015</strong> – Calidad: procesos
+                  estandarizados y mejora continua.
+                </li>
+                <li>
+                  <strong>ISO 14001:2015</strong> – Ambiental: compromiso con la
+                  sostenibilidad.
+                </li>
+                <li>
+                  <strong>ISO 37001:2016</strong> – Antisoborno: ética,
+                  transparencia y control contractual.
+                </li>
+                <li>
+                  Procedimientos normalizados (MTC, ASTM, NTP) para campo,
+                  laboratorio e informes.
+                </li>
+                <li>
+                  Seguimiento de indicadores y auditorías internas de calidad y
+                  cumplimiento.
+                </li>
+              </ul>
+            </div>
           </div>
+
+          {/* Chips informativos */}
+          <div className="flex flex-wrap gap-2 mt-8 justify-center">
+            <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
+              +130 ensayos calidad (suelos, rocas, concreto y asfalto)
+            </span>
+            <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
+              Equipos calibrados con trazabilidad INACAL
+            </span>
+            <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
+              Resultados precisos y verificables
+            </span>
+          </div>
+
           {servicio.numeros && <Numeros stats={servicio.numeros} />}
         </motion.div>
 
@@ -454,79 +522,81 @@ const ServicioPage = ({ params }: PageProps) => {
         </div>
       </div>
 
-      {/* Modal para imágenes - MEJORADO con navegación */}
+      {/* Modal para imágenes - FONDO OSCURO Y GRANDE */}
       {imagenModal.abierto && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
           onClick={cerrarModalImagen}
         >
           <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            className="relative max-w-4xl w-full max-h-full"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative w-full max-w-7xl max-h-[90vh] flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Botón cerrar */}
             <button
               onClick={cerrarModalImagen}
-              className="absolute -top-12 right-0 text-white cursor-pointer hover:text-blue-300 transition-colors z-10 bg-blue-600 rounded-full p-2"
+              className="absolute -top-14 right-0 text-white cursor-pointer hover:text-blue-300 transition-colors z-10 bg-black/60 hover:bg-black/80 rounded-full p-2 backdrop-blur-md"
             >
-              <X className="w-6 h-6" />
+              <X className="w-7 h-7" />
             </button>
 
-            <div className="bg-white rounded-lg overflow-hidden shadow-2xl">
-              <div className="relative aspect-video">
-                <Image
-                  src={imagenModal.src}
-                  alt={imagenModal.titulo}
-                  fill
-                  className="object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAgMzAwTDMwMCAyMDBINTAwTDQwMCAzMDBaIiBmaWxsPSIjOTlBQUJDIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pgo8L3N2Zz4K";
-                  }}
-                />
+            {/* Contenedor principal de imagen */}
+            <div className="relative w-full h-[80vh] bg-black rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src={imagenModal.src}
+                alt={imagenModal.titulo}
+                fill
+                className="object-contain"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAgMzAwTDMwMCAyMDBINTAwTDQwMCAzMDBaIiBmaWxsPSIjOTlBQUJDIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pgo8L3N2Zz4K";
+                }}
+              />
 
-                {/* Botones de navegación */}
-                {imagenModal.imagenes.length > 1 && (
-                  <>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        anteriorImagen();
-                      }}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200"
-                      aria-label="Imagen anterior"
-                    >
-                      <ChevronLeft className="w-6 h-6" />
-                    </button>
+              {/* Navegación izquierda y derecha */}
+              {imagenModal.imagenes.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      anteriorImagen();
+                    }}
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all duration-200"
+                    aria-label="Anterior imagen"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
 
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        siguienteImagen();
-                      }}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200"
-                      aria-label="Siguiente imagen"
-                    >
-                      <ChevronRight className="w-6 h-6" />
-                    </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      siguienteImagen();
+                    }}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all duration-200"
+                    aria-label="Siguiente imagen"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
 
-                    {/* Indicador de posición */}
-                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                      {imagenModal.indiceActual + 1} /{" "}
-                      {imagenModal.imagenes.length}
-                    </div>
-                  </>
-                )}
-              </div>
+                  {/* Indicador de posición */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-1.5 rounded-full text-sm tracking-wide">
+                    {imagenModal.indiceActual + 1} /{" "}
+                    {imagenModal.imagenes.length}
+                  </div>
+                </>
+              )}
+            </div>
 
-              <div className="p-4 bg-[#1b4772]">
-                <h4 className="text-white font-semibold text-center text-lg">
-                  {imagenModal.titulo}
-                </h4>
-              </div>
+            {/* Título de la imagen */}
+            <div className="mt-4 text-center">
+              <h4 className="text-white font-semibold text-lg">
+                {imagenModal.titulo}
+              </h4>
             </div>
           </motion.div>
         </motion.div>
