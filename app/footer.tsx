@@ -41,10 +41,10 @@ const Footer = () => {
 
   // Data for "Nuestros productos" section links
   const productLinks = [
-    { name: "Nosotros", href: "#" },
-    { name: "Marca", href: "#" },
+    { name: "Nosotros", href: "/nosotros" },
+    { name: "Servicios", href: "/servicios" },
     { name: "Blog", href: "/blog" },
-    { name: "Libros", href: "#" },
+    { name: "Laboratorio", href: "/servicios/laboratorio-de-suelo" },
   ];
 
   // Data for social media links
@@ -175,7 +175,7 @@ const Footer = () => {
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-gray-700 hover:text-red-600 hover:underline transition-colors flex items-center text-sm group"
+                          className="text-gray-700 hover:text-red-600 hover:underline transition-colors flex items-center text-[13px] md:text-sm group"
                           target={
                             link.href.startsWith("http") ? "_blank" : undefined
                           }
@@ -223,7 +223,7 @@ const Footer = () => {
           {/* About description and Social Media (Desktop Only) */}
           <div className="hidden md:flex flex-col items-start py-2">
             <p className="text-gray-700 mb-4 sm:mb-6 text-sm leading-relaxed">
-              Más de 20 años asegurando estabilidad y eficiencia en proyectos de ingeniería
+              Más de 6 años asegurando estabilidad y eficiencia en proyectos de ingeniería
             </p>
             <div className="flex gap-3 mt-auto">
               {socialLinks.map((social) => (

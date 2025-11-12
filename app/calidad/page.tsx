@@ -44,7 +44,7 @@ const certificadosData: Cert[] = [
   },
   {
     id: 4,
-    titulo: "Constancia producto CO22.01258", 
+    titulo: "Constancia producto CO22.01258",
     archivo: "/ConstanciaproductoCO22.01258.pdf",
     fecha: "2024",
     categoria: "Personal",
@@ -52,22 +52,21 @@ const certificadosData: Cert[] = [
   },
   {
     id: 5,
-    titulo: "Certificado producto CO22.01258", 
+    titulo: "Certificado producto CO22.01258",
     archivo: "/CertificadoproductoCO22.01258.pdf",
     fecha: "2024",
     categoria: "Personal",
     imagenPreview: "/CertificadoproductoCO22.01258.webp",
   },
-    {
+  {
     id: 6,
-    titulo: "Certificado producto CO22.01258", 
+    titulo: "Certificado producto CO22.01258",
     archivo: "/CertificadoISO9001-CO22.08421.webp",
     fecha: "2024",
     categoria: "Personal",
     imagenPreview: "/CertificadoproductoCO22.01258.webp",
   },
 ];
-  
 
 // ====== COMPONENTE PRINCIPAL ======
 const CertificadosPage = () => {
@@ -81,7 +80,9 @@ const CertificadosPage = () => {
 
   const certificadosFiltrados = useMemo(() => {
     if (categoriaActiva === "Todos") return certificadosData;
-    return certificadosData.filter((cert) => cert.categoria === categoriaActiva);
+    return certificadosData.filter(
+      (cert) => cert.categoria === categoriaActiva
+    );
   }, [categoriaActiva]);
 
   const handleVerCertificado = (archivo: string) => {
@@ -94,8 +95,6 @@ const CertificadosPage = () => {
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden pt-28 md:pt-56 pb-16 max-w-7xl mx-auto ">
- 
-
         {/* Título principal */}
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
@@ -113,39 +112,42 @@ const CertificadosPage = () => {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="relative z-[1] mt-3 text-center text-[15px] md:text-base text-gray-700  mx-auto"
         >
-          Equipos <strong>calibrados y verificados</strong> por proveedor acreditado
-          <strong> INACAL</strong>, garantizando <strong>precisión y trazabilidad</strong> en cada ensayo geotécnico.
+          Equipos <strong>calibrados y verificados</strong> por proveedor
+          acreditado
+          <strong> INACAL</strong>, garantizando{" "}
+          <strong>precisión y trazabilidad</strong> en cada ensayo geotécnico.
         </motion.p>
 
         <div className="relative z-[1] container mx-auto px-4 max-w-7xl mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* IZQUIERDA: logos + botón */}
-            <div className="text-center">
+            {/* IZQUIERDA: logos + botón */}
+            <div className="flex flex-col items-center justify-center text-center w-full">
               <motion.div
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center justify-center gap-8 px-6 "
+                className="flex flex-col sm:flex-row items-center justify-center gap-6 px-4 sm:px-6"
               >
                 <Image
                   src="/logocasagrande.svg"
                   alt="Casagrande Geotecnia"
-                  width={240}
-                  height={64}
-                  className="h-14 w-auto"
+                  width={220}
+                  height={60}
+                  className="h-14 w-auto mb-3 sm:mb-0"
                   priority
                 />
-                <span className="text-5xl font-black text-[#182C45] leading-none">+</span>
+                <span className="text-4xl sm:text-5xl font-black text-[#182C45] leading-none">
+                  +
+                </span>
                 <Image
                   src="/logopinzuar.webp"
                   alt="Pizuar (INACAL)"
-                  width={240}
-                  height={64}
-                  className="h-14 w-auto"
+                  width={220}
+                  height={60}
+                  className="h-14 w-auto mt-3 sm:mt-0"
                 />
               </motion.div>
-
-              {/* Botón: Ver nuestros equipos */}
 
               {/* Badges técnicos */}
               <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-[11px]">
@@ -161,15 +163,18 @@ const CertificadosPage = () => {
               </div>
 
               {/* Nota */}
-              <p className="mt-3 text-[11px] text-gray-500 italic max-w-xl mx-auto">
-                Nota: Casagrande no posee acreditación INACAL corporativa; la evidencia corresponde a la
-                calibración/verificación de equipos realizada por Pizuar (acreditado por INACAL).
+              <p className="mt-3 text-[11px] text-gray-500 italic max-w-xl mx-auto px-3">
+                Nota: Casagrande no posee acreditación INACAL corporativa; la
+                evidencia corresponde a la calibración/verificación de equipos
+                realizada por Pizuar (acreditado por INACAL).
               </p>
+
+              {/* Botón: Ver nuestros equipos */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="mt-6"
+                className="mt-6 w-full flex justify-center"
               >
                 <a
                   href="/equipos"
@@ -192,8 +197,6 @@ const CertificadosPage = () => {
                 className="relative aspect-[4/3] w-full rounded-3xl border border-gray-200 overflow-hidden shadow-2xl cursor-pointer group"
                 title="Ver documento"
               >
-           
-
                 {/* Imagen */}
                 <Image
                   src={certificadoHero.imagenPreview}
@@ -213,8 +216,6 @@ const CertificadosPage = () => {
                     Ver documento
                   </span>
                 </div>
-
-              
               </div>
 
               {/* Título pequeño */}
@@ -237,8 +238,12 @@ const CertificadosPage = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-[#182C45]">Nuestros Certificados</h2>
-            <p className="text-gray-600 mt-1 text-sm">Selecciona una categoría.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#182C45]">
+              Nuestros Certificados
+            </h2>
+            <p className="text-gray-600 mt-1 text-sm">
+              Selecciona una categoría.
+            </p>
           </motion.div>
 
           {/* Filtros */}

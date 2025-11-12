@@ -4,7 +4,7 @@
   "titulo": "Estudios Geológicos",
   "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
   "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/Ensayos-en-Suelos02.png",
+  "imagen": "/geologia/geologia01.webp",
   "titulo01": "Estudios Geológicos Especializados",
   "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
   "categorias": [
@@ -65,7 +65,7 @@
     "titulo": "Estudios Geotécnicos",
     "descripcion": "Evaluación integral de las propiedades físicas y mecánicas del suelo y la roca para garantizar cimentaciones seguras, pavimentos duraderos y estructuras estables.",
     "contenido": "En Casagrande desarrollamos estudios geotécnicos completos orientados al análisis del comportamiento del terreno, abarcando la mecánica de suelos y rocas, estabilidad de taludes, diseño de cimentaciones y pavimentos, así como el control de calidad de materiales. Nuestros servicios se ejecutan bajo normativas ASTM, AASHTO y E.050, con equipos certificados por INACAL y personal especializado que asegura resultados confiables y técnicamente sustentados.",
-    "imagen": "/Perforacion01.png",
+    "imagen": "/geotecnia/geotecnia08.webp",
     "titulo01": "Estudios Geotécnicos ",
     "subtitulo01": "Investigación del terreno, estabilidad de taludes, diseño de cimentaciones y control geotécnico de materiales.",
     "categorias": [
@@ -130,6 +130,117 @@
       { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 98, "suffix": "%" }
     ]
   },
+  
+
+  {
+   "slug": "laboratorio-de-suelo",
+   "titulo": "Laboratorio Geotécnico",
+   "descripcion": "Ensayos especializados en laboratorio acreditado para el control y aseguramiento de la calidad de materiales de construcción e infraestructura.",
+   "contenido": "Nuestro laboratorio geotécnico acreditado por INACAL realiza ensayos de campo y laboratorio en suelos, rocas, concreto, asfalto, agregados y agua. Garantizamos resultados confiables mediante equipos calibrados, procedimientos normalizados y personal técnico altamente calificado bajo normas nacionales e internacionales.",
+   "imagen": "/laboratorio/laboratorio10.webp",
+   "titulo01": "Laboratorio Geotécnico Acreditado",
+   "subtitulo01": "Ensayos dinámicos, especiales y convencionales con precisión certificada bajo norma ISO/IEC 17025.",
+   "categorias": [
+     {
+       "titulo": "Ensayos de Campo y Suelos",
+       "imagenes": [
+         "/laboratorio/laboratorio02.webp",
+         "/laboratorio/laboratorio01.webp",
+         "/laboratorio/laboratorio04.webp",
+         "/laboratorio/laboratorio03.webp"
+       ],
+       "ensayos": [
+         "Auscultaciones y sondeos: DPL, PDC, SPT, DPSH, CPT, CPTu, SCPTu, cono tipo Peck, veleta de campo, Torvaine, penetrómetro de bolsillo.",
+         "Ensayos de permeabilidad: percolación, permeámetro de Guelph, infiltración con doble anillo, Lugeon y Lefranc.",
+         "Determinación de densidad y humedad de campo: cono de arena, densímetro eléctrico o nuclear.",
+         "Ensayos estándar de laboratorio: análisis granulométrico, límites de Atterberg, compactación Proctor, gravedad específica, humedad y densidad.",
+         "Ensayos de resistencia: triaxial UU, CU, CD; corte directo, compresión simple, CBR.",
+         "Ensayos edométricos: consolidación, colapsabilidad, expansión.",
+         "Ensayos químicos: sales, sulfatos, cloruros, pH, materia orgánica, dispersión.",
+         "Certificación de materiales de préstamo (subbase, base, afirmado y rellenos controlados)."
+       ],
+       "descripcion": "Ensayos geotécnicos de campo y laboratorio para la caracterización física, mecánica y química de suelos según normas ASTM, AASHTO y MTC."
+     },
+     {
+       "titulo": "Ensayos Especiales y Dinámicos",
+       "imagenes": [
+         "/laboratorio/laboratorio10.webp",
+         "/laboratorio/laboratorio09.webp",
+         "/laboratorio/laboratorio11.webp",
+         "/laboratorio/laboratorio12.webp"
+         
+  
+       ],
+       "ensayos": [
+         "Ensayo de Columna Resonante y Corte Torsional (ASTM D4015)",
+         "Ensayos Triaxiales: CU (ASTM D4767), CD (ASTM D7181) y UU (ASTM D2850).",
+         "Ensayo de Corte Directo a Gran Escala (ASTM D5321).",
+         "Ensayo de Permeabilidad de Pared Flexible (ASTM D5084).",
+         "Ensayo de Permeabilidad de Pared Rígida (ASTM D2434).",
+         "Ensayo de Consolidación Unidimensional (ASTM D2435).",
+         "Ensayo de Punzonamiento en materiales finos y suelos cohesivos.",
+         "Curvas de amortiguamiento y módulo dinámico para respuesta sísmica de presas, pilas de lixiviación y desmontes de mina."
+       ],
+       "descripcion": "Ensayos avanzados de caracterización dinámica y triaxial de suelos para modelación sísmica, estabilidad de presas y diseño geotécnico de alto nivel."
+     },
+     {
+       "titulo": "Ensayos de Concreto, Asfalto y Materiales",
+       "imagenes": [
+         "/laboratorio/laboratorio08.webp",
+         "/laboratorio/laboratorio05.webp",
+         "/laboratorio/laboratorio06.webp",
+         "/laboratorio/laboratorio07.webp"
+       ],
+       "ensayos": [
+         "Certificación de agregados para concreto y asfalto: granulometría, abrasión Los Ángeles, equivalente de arena, angularidad, azul de metileno.",
+         "Ensayos de mezclas asfálticas: diseño Marshall, Rice, compresión simple, TSR, rueda de Hamburgo, pérdida por cántabro.",
+         "Ensayos de concreto fresco: slump, temperatura, peso unitario, contenido de aire, exudación y tiempo de fraguado.",
+         "Ensayos de concreto endurecido: compresión, tracción indirecta, flexión, esclerometría y extracción de núcleos diamantinos.",
+         "Ensayos en ladrillos y bloques: densidad, absorción, alabeo, resistencia a compresión y tracción.",
+         "Ensayos de agua: sulfatos, cloruros, alcalinidad total, sólidos disueltos, pH y materia orgánica."
+       ],
+       "descripcion": "Control de calidad de materiales estructurales y pavimentos para garantizar durabilidad, resistencia y cumplimiento de especificaciones técnicas."
+     },
+     {
+       "titulo": "Ensayos en Rocas",
+       "imagenes": [
+          "/laboratorio/laboratorio13.webp",
+         "/laboratorio/laboratorio14.webp",
+         "/laboratorio/laboratorio15.webp",
+         "/laboratorio/laboratorio16.webp"
+       ],
+       "ensayos": [
+         "Ensayo de carga puntual (ASTM D5731).",
+         "Ensayo de compresión simple y constantes elásticas (ASTM D2938).",
+         "Ensayos triaxiales en roca y corte directo.",
+         "Determinación de densidad, porosidad, absorción y resistencia estructural.",
+         "Martillo de Schmidt y medición de velocidad de onda para evaluación no destructiva."
+       ],
+       "descripcion": "Caracterización mecánica, estructural y física de macizos rocosos para minería, presas, cimentaciones y obras subterráneas."
+     }
+   ],
+   "puntos": [
+     "Laboratorio acreditado por INACAL bajo norma ISO/IEC 17025.",
+     "Único laboratorio en Perú y Sudamérica con equipo RCTS (Columna Resonante y Corte Torsional).",
+     "Equipos calibrados y certificados por proveedores acreditados por INACAL.",
+     "Personal técnico especializado en mecánica de suelos dinámica y estática.",
+     "Aplicación de normas ASTM, AASHTO, NTP y MTC en todos los procedimientos.",
+     "Sistema de Gestión certificado bajo ISO 9001, ISO 14001 e ISO 37001."
+   ],
+   "detalles": [
+     "Tiempo de entrega: 3 a 10 días hábiles según tipo de ensayo.",
+     "Muestreo y toma de muestras en campo disponibles a nivel nacional.",
+     "Entrega de certificados y reportes digitales con trazabilidad metrológica.",
+     "Resultados respaldados por procedimientos normalizados y calibraciones vigentes.",
+     "Asesoría técnica para interpretación geotécnica y análisis de resultados."
+   ],
+   "numeros": [
+     { "id": 1, "label": "ENSAYOS ANUALES", "value": 15000, "suffix": "+" },
+     { "id": 2, "label": "PROYECTOS ATENDIDOS", "value": 500, "suffix": "+" },
+     { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 98, "suffix": "%" }
+   ]
+  },
 
 
  {
@@ -137,7 +248,7 @@
   "titulo": "Estudios Geofísicos",
   "descripcion": "Exploración no invasiva del subsuelo para identificar estratigrafía, discontinuidades y zonas problemáticas con alta confiabilidad.",
   "contenido": "Aplicamos métodos geofísicos avanzados para caracterizar el subsuelo sin excavaciones: sísmica de refracción/ondas superficiales, microtrepidaciones y sondeos sísmicos; además de técnicas geoeléctricas, electromagnéticas y potenciales. Integramos adquisición, procesamiento e interpretación para entregar perfiles y modelos que respaldan diseños geotécnicos y decisiones de ingeniería.",
-  "imagen": "/Ensayos-Sísmicos.png",
+  "imagen": "/geofisica/geofisica08.webp",
   "titulo01": "Estudios Geofísicos Especializados",
   "subtitulo01": "Métodos geosísmicos, geoeléctricos, electromagnéticos y potenciales para exploración precisa del subsuelo.",
   "categorias": [
@@ -190,12 +301,89 @@
 },
 
 
+{
+"slug": "hidrogeologia",
+"titulo": "Estudios Hidrológicos e Hidrogeológicos",
+"descripcion": "Evaluación integral del recurso hídrico superficial y subterráneo para una gestión técnica y sostenible del agua en proyectos de ingeniería.",
+"contenido": "Desarrollamos estudios de hidrología, hidrogeología e ingeniería hidráulica para analizar el comportamiento del agua en superficie y subsuelo, su disponibilidad, calidad y relación con las obras civiles. Integramos modelamiento, monitoreo y diseño hidráulico para garantizar una gestión eficiente, segura y ambientalmente responsable del recurso hídrico.",
+"imagen": "/hidrologia/hidrologia05.webp",
+"titulo01": "Estudios Hidrológicos e Hidrogeológicos Especializados",
+"subtitulo01": "Monitoreo, modelamiento y diseño hidráulico para la gestión sostenible del agua superficial y subterránea.",
+"categorias": [
   {
+    "titulo": "Hidrología e Ingeniería Hidráulica",
+    "imagenes": [
+      "/hidrologia/hidrologia02.webp",
+      "/hidrologia/hidrologia06.webp",
+      "/hidrologia/hidrologia01.webp",
+      "/hidrologia/hidrologia04.webp"
+    ],
+    "ensayos": [
+      "Estudios hidrológicos y climatológicos de cuencas.",
+      "Batimetría y levantamientos hidrométricos.",
+      "Aforo de líquidos y sólidos en cauces y canales.",
+      "Balances hídricos en pilas de lixiviación, relaves y operaciones mineras.",
+      "Diseño de estructuras hidráulicas: pozas, drenajes, canales y alcantarillas.",
+      "Simulación 1D y 2D de flujos hidráulicos (HEC-RAS, Flow2D).",
+      "Plan de manejo integral de drenaje superficial.",
+      "Diseño de sistemas de bombeo, subdrenaje y control de caudales.",
+      "Evaluación de avenidas, sequías y drenaje urbano.",
+      "Estudios de caudal ecológico y aprovechamiento hídrico."
+    ],
+    "descripcion": "Estudios técnicos de hidrología e hidráulica para diseño, control y aprovechamiento del recurso hídrico superficial en obras de ingeniería civil, minera y ambiental."
+  },
+  {
+    "titulo": "Hidrogeología y Calidad del Agua",
+    "imagenes": [
+      "/hidrologia/hidrologia05.webp",
+      "/hidrologia/hidrologia03.webp",
+      "/hidrologia/hidrologia07.webp",
+      "/hidrologia/hidrologia08.webp"
+    ],
+    "ensayos": [
+      "Identificación y caracterización de acuíferos.",
+      "Testificación y monitoreo de pozos.",
+      "Mapeo piezométrico y niveles freáticos.",
+      "Modelamiento de flujo subterráneo (MODFLOW, HYDRUS).",
+      "Evaluación de recarga, descarga y caudales sostenibles.",
+      "Monitoreo de calidad de agua: pH, conductividad, sólidos disueltos, sulfatos y sales.",
+      "Evaluación de agresividad del agua sobre concreto y estructuras.",
+      "Estudios de filtraciones y drenaje subterráneo.",
+      "Asesoría técnica en permisos, usos de agua y cumplimiento ambiental.",
+      "Balances globales de agua y sedimentos."
+    ],
+    "descripcion": "Evaluación hidrogeológica y control de calidad de aguas subterráneas mediante instrumentación, modelamiento y análisis físico-químico para la gestión sostenible del recurso."
+  }
+],
+"puntos": [
+  "Equipos de monitoreo automatizado y estaciones meteorológicas propias.",
+  "Laboratorio certificado para análisis físico-químico de agua.",
+  "Software de modelamiento hidrológico e hidrogeológico (HEC-RAS, MODFLOW, HYDRUS).",
+  "Personal especializado en recursos hídricos e ingeniería ambiental.",
+  "Informes técnicos con modelos, mapas piezométricos y recomendaciones precisas."
+],
+"detalles": [
+  "Tiempo de entrega: 10–20 días hábiles según alcance del estudio.",
+  "Incluye trabajo de campo, instrumentación y modelamiento hidráulico–hidrogeológico.",
+  "Ensayos y análisis con trazabilidad metrológica (equipos calibrados por laboratorios acreditados ante INACAL).",
+  "Informes técnicos en formato digital y físico con planos, simulaciones y resultados certificados.",
+  "Sistema de Gestión ISO 9001 y 14001, garantizando precisión y sostenibilidad en cada estudio."
+],
+"numeros": [
+  { "id": 1, "label": "POZOS EVALUADOS", "value": 150, "suffix": "+" },
+  { "id": 2, "label": "BALANCES HÍDRICOS SIMULADOS", "value": 250, "suffix": "+" },
+  { "id": 3, "label": "ESTRUCTURAS HIDRÁULICAS DISEÑADAS", "value": 120, "suffix": "+" },
+  { "id": 4, "label": "PROYECTOS HÍDRICOS EJECUTADOS", "value": 100, "suffix": "+" }
+]
+},
+
+
+{
   "slug": "geomecanica",
   "titulo": "Estudios Geomecánicos",
   "descripcion": "Evaluación del macizo rocoso, estabilidad y sostenimiento para taludes, túneles y excavaciones subterráneas.",
   "contenido": "Ejecutamos estudios geomecánicos integrales para caracterizar el macizo rocoso, determinar su resistencia y analizar su estabilidad frente a diferentes condiciones de carga. Nuestros análisis combinan mapeo estructural, ensayos in situ, modelamiento numérico y diseño de sostenimiento, garantizando soluciones seguras y eficientes para obras civiles y mineras.",
-  "imagen": "/Ensayos-en-Concreto03.png",
+  "imagen": "/laboratorio/laboratorio08.webp",
   "titulo01": "Estudios Geomecánicos Especializados",
   "subtitulo01": "Investigación, evaluación y diseño geomecánico de macizos rocosos para obras superficiales y subterráneas.",
   "categorias": [
@@ -243,200 +431,12 @@
 },
 
 
-  {
-  "slug": "hidrogeologia",
-  "titulo": "Estudios Hidrológicos e Hidrogeológicos",
-  "descripcion": "Evaluación integral del recurso hídrico superficial y subterráneo para una gestión técnica y sostenible del agua en proyectos de ingeniería.",
-  "contenido": "Desarrollamos estudios de hidrología, hidrogeología e ingeniería hidráulica para analizar el comportamiento del agua en superficie y subsuelo, su disponibilidad, calidad y relación con las obras civiles. Integramos modelamiento, monitoreo y diseño hidráulico para garantizar una gestión eficiente, segura y ambientalmente responsable del recurso hídrico.",
-  "imagen": "/Hidrogeológicos-Especializados02.jpg",
-  "titulo01": "Estudios Hidrológicos e Hidrogeológicos Especializados",
-  "subtitulo01": "Monitoreo, modelamiento y diseño hidráulico para la gestión sostenible del agua superficial y subterránea.",
-  "categorias": [
-    {
-      "titulo": "Hidrología e Ingeniería Hidráulica",
-      "imagenes": [
-        "/hidrologia/hidrologia02.webp",
-        "/hidrologia/hidrologia06.webp",
-        "/hidrologia/hidrologia01.webp",
-        "/hidrologia/hidrologia04.webp"
-      ],
-      "ensayos": [
-        "Estudios hidrológicos y climatológicos de cuencas.",
-        "Batimetría y levantamientos hidrométricos.",
-        "Aforo de líquidos y sólidos en cauces y canales.",
-        "Balances hídricos en pilas de lixiviación, relaves y operaciones mineras.",
-        "Diseño de estructuras hidráulicas: pozas, drenajes, canales y alcantarillas.",
-        "Simulación 1D y 2D de flujos hidráulicos (HEC-RAS, Flow2D).",
-        "Plan de manejo integral de drenaje superficial.",
-        "Diseño de sistemas de bombeo, subdrenaje y control de caudales.",
-        "Evaluación de avenidas, sequías y drenaje urbano.",
-        "Estudios de caudal ecológico y aprovechamiento hídrico."
-      ],
-      "descripcion": "Estudios técnicos de hidrología e hidráulica para diseño, control y aprovechamiento del recurso hídrico superficial en obras de ingeniería civil, minera y ambiental."
-    },
-    {
-      "titulo": "Hidrogeología y Calidad del Agua",
-      "imagenes": [
-        "/hidrologia/hidrologia05.webp",
-        "/hidrologia/hidrologia03.webp",
-        "/hidrologia/hidrologia07.webp",
-        "/hidrologia/hidrologia08.webp"
-      ],
-      "ensayos": [
-        "Identificación y caracterización de acuíferos.",
-        "Testificación y monitoreo de pozos.",
-        "Mapeo piezométrico y niveles freáticos.",
-        "Modelamiento de flujo subterráneo (MODFLOW, HYDRUS).",
-        "Evaluación de recarga, descarga y caudales sostenibles.",
-        "Monitoreo de calidad de agua: pH, conductividad, sólidos disueltos, sulfatos y sales.",
-        "Evaluación de agresividad del agua sobre concreto y estructuras.",
-        "Estudios de filtraciones y drenaje subterráneo.",
-        "Asesoría técnica en permisos, usos de agua y cumplimiento ambiental.",
-        "Balances globales de agua y sedimentos."
-      ],
-      "descripcion": "Evaluación hidrogeológica y control de calidad de aguas subterráneas mediante instrumentación, modelamiento y análisis físico-químico para la gestión sostenible del recurso."
-    }
-  ],
-  "puntos": [
-    "Equipos de monitoreo automatizado y estaciones meteorológicas propias.",
-    "Laboratorio certificado para análisis físico-químico de agua.",
-    "Software de modelamiento hidrológico e hidrogeológico (HEC-RAS, MODFLOW, HYDRUS).",
-    "Personal especializado en recursos hídricos e ingeniería ambiental.",
-    "Informes técnicos con modelos, mapas piezométricos y recomendaciones precisas."
-  ],
-  "detalles": [
-    "Tiempo de entrega: 10–20 días hábiles según alcance del estudio.",
-    "Incluye trabajo de campo, instrumentación y modelamiento hidráulico–hidrogeológico.",
-    "Ensayos y análisis con trazabilidad metrológica (equipos calibrados por laboratorios acreditados ante INACAL).",
-    "Informes técnicos en formato digital y físico con planos, simulaciones y resultados certificados.",
-    "Sistema de Gestión ISO 9001 y 14001, garantizando precisión y sostenibilidad en cada estudio."
-  ],
-  "numeros": [
-    { "id": 1, "label": "POZOS EVALUADOS", "value": 150, "suffix": "+" },
-    { "id": 2, "label": "BALANCES HÍDRICOS SIMULADOS", "value": 250, "suffix": "+" },
-    { "id": 3, "label": "ESTRUCTURAS HIDRÁULICAS DISEÑADAS", "value": 120, "suffix": "+" },
-    { "id": 4, "label": "PROYECTOS HÍDRICOS EJECUTADOS", "value": 100, "suffix": "+" }
-  ]
-},
-
-
- {
-  "slug": "laboratorio-de-suelo",
-  "titulo": "Laboratorio Geotécnico",
-  "descripcion": "Ensayos especializados en laboratorio acreditado para el control y aseguramiento de la calidad de materiales de construcción e infraestructura.",
-  "contenido": "Nuestro laboratorio geotécnico acreditado por INACAL realiza ensayos de campo y laboratorio en suelos, rocas, concreto, asfalto, agregados y agua. Garantizamos resultados confiables mediante equipos calibrados, procedimientos normalizados y personal técnico altamente calificado bajo normas nacionales e internacionales.",
-  "imagen": "/laboratorio-geotecnico.webp",
-  "titulo01": "Laboratorio Geotécnico Acreditado",
-  "subtitulo01": "Ensayos dinámicos, especiales y convencionales con precisión certificada bajo norma ISO/IEC 17025.",
-  "categorias": [
-    {
-      "titulo": "Ensayos de Campo y Suelos",
-      "imagenes": [
-        "/laboratorio/laboratorio02.webp",
-        "/laboratorio/laboratorio01.webp",
-        "/laboratorio/laboratorio04.webp",
-        "/laboratorio/laboratorio03.webp"
-      ],
-      "ensayos": [
-        "Auscultaciones y sondeos: DPL, PDC, SPT, DPSH, CPT, CPTu, SCPTu, cono tipo Peck, veleta de campo, Torvaine, penetrómetro de bolsillo.",
-        "Ensayos de permeabilidad: percolación, permeámetro de Guelph, infiltración con doble anillo, Lugeon y Lefranc.",
-        "Determinación de densidad y humedad de campo: cono de arena, densímetro eléctrico o nuclear.",
-        "Ensayos estándar de laboratorio: análisis granulométrico, límites de Atterberg, compactación Proctor, gravedad específica, humedad y densidad.",
-        "Ensayos de resistencia: triaxial UU, CU, CD; corte directo, compresión simple, CBR.",
-        "Ensayos edométricos: consolidación, colapsabilidad, expansión.",
-        "Ensayos químicos: sales, sulfatos, cloruros, pH, materia orgánica, dispersión.",
-        "Certificación de materiales de préstamo (subbase, base, afirmado y rellenos controlados)."
-      ],
-      "descripcion": "Ensayos geotécnicos de campo y laboratorio para la caracterización física, mecánica y química de suelos según normas ASTM, AASHTO y MTC."
-    },
-    {
-      "titulo": "Ensayos Especiales y Dinámicos",
-      "imagenes": [
-        "/laboratorio/laboratorio10.webp",
-        "/laboratorio/laboratorio09.webp",
-        "/laboratorio/laboratorio11.webp",
-        "/laboratorio/laboratorio12.webp"
-        
-
-      ],
-      "ensayos": [
-        "Ensayo de Columna Resonante y Corte Torsional (ASTM D4015)",
-        "Ensayos Triaxiales: CU (ASTM D4767), CD (ASTM D7181) y UU (ASTM D2850).",
-        "Ensayo de Corte Directo a Gran Escala (ASTM D5321).",
-        "Ensayo de Permeabilidad de Pared Flexible (ASTM D5084).",
-        "Ensayo de Permeabilidad de Pared Rígida (ASTM D2434).",
-        "Ensayo de Consolidación Unidimensional (ASTM D2435).",
-        "Ensayo de Punzonamiento en materiales finos y suelos cohesivos.",
-        "Curvas de amortiguamiento y módulo dinámico para respuesta sísmica de presas, pilas de lixiviación y desmontes de mina."
-      ],
-      "descripcion": "Ensayos avanzados de caracterización dinámica y triaxial de suelos para modelación sísmica, estabilidad de presas y diseño geotécnico de alto nivel."
-    },
-    {
-      "titulo": "Ensayos de Concreto, Asfalto y Materiales",
-      "imagenes": [
-        "/laboratorio/laboratorio08.webp",
-        "/laboratorio/laboratorio05.webp",
-        "/laboratorio/laboratorio06.webp",
-        "/laboratorio/laboratorio07.webp"
-      ],
-      "ensayos": [
-        "Certificación de agregados para concreto y asfalto: granulometría, abrasión Los Ángeles, equivalente de arena, angularidad, azul de metileno.",
-        "Ensayos de mezclas asfálticas: diseño Marshall, Rice, compresión simple, TSR, rueda de Hamburgo, pérdida por cántabro.",
-        "Ensayos de concreto fresco: slump, temperatura, peso unitario, contenido de aire, exudación y tiempo de fraguado.",
-        "Ensayos de concreto endurecido: compresión, tracción indirecta, flexión, esclerometría y extracción de núcleos diamantinos.",
-        "Ensayos en ladrillos y bloques: densidad, absorción, alabeo, resistencia a compresión y tracción.",
-        "Ensayos de agua: sulfatos, cloruros, alcalinidad total, sólidos disueltos, pH y materia orgánica."
-      ],
-      "descripcion": "Control de calidad de materiales estructurales y pavimentos para garantizar durabilidad, resistencia y cumplimiento de especificaciones técnicas."
-    },
-    {
-      "titulo": "Ensayos en Rocas",
-      "imagenes": [
-         "/laboratorio/laboratorio13.webp",
-        "/laboratorio/laboratorio14.webp",
-        "/laboratorio/laboratorio15.webp",
-        "/laboratorio/laboratorio16.webp"
-      ],
-      "ensayos": [
-        "Ensayo de carga puntual (ASTM D5731).",
-        "Ensayo de compresión simple y constantes elásticas (ASTM D2938).",
-        "Ensayos triaxiales en roca y corte directo.",
-        "Determinación de densidad, porosidad, absorción y resistencia estructural.",
-        "Martillo de Schmidt y medición de velocidad de onda para evaluación no destructiva."
-      ],
-      "descripcion": "Caracterización mecánica, estructural y física de macizos rocosos para minería, presas, cimentaciones y obras subterráneas."
-    }
-  ],
-  "puntos": [
-    "Laboratorio acreditado por INACAL bajo norma ISO/IEC 17025.",
-    "Único laboratorio en Perú y Sudamérica con equipo RCTS (Columna Resonante y Corte Torsional).",
-    "Equipos calibrados y certificados por proveedores acreditados por INACAL.",
-    "Personal técnico especializado en mecánica de suelos dinámica y estática.",
-    "Aplicación de normas ASTM, AASHTO, NTP y MTC en todos los procedimientos.",
-    "Sistema de Gestión certificado bajo ISO 9001, ISO 14001 e ISO 37001."
-  ],
-  "detalles": [
-    "Tiempo de entrega: 3 a 10 días hábiles según tipo de ensayo.",
-    "Muestreo y toma de muestras en campo disponibles a nivel nacional.",
-    "Entrega de certificados y reportes digitales con trazabilidad metrológica.",
-    "Resultados respaldados por procedimientos normalizados y calibraciones vigentes.",
-    "Asesoría técnica para interpretación geotécnica y análisis de resultados."
-  ],
-  "numeros": [
-    { "id": 1, "label": "ENSAYOS ANUALES", "value": 15000, "suffix": "+" },
-    { "id": 2, "label": "PROYECTOS ATENDIDOS", "value": 500, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 98, "suffix": "%" }
-  ]
-},
-
-
  {
   "slug": "ensayo-de-campo",
   "titulo": "Ensayos de Campo",
   "descripcion": "Pruebas técnicas ejecutadas directamente en obra para el control de calidad, exploración del subsuelo y verificación de diseño geotécnico.",
   "contenido": "Casagrande realiza ensayos de campo con equipos especializados para evaluar las propiedades del terreno, controlar la compactación, medir la permeabilidad y validar la capacidad portante de cimentaciones y estructuras. Nuestros procedimientos cumplen con las normas ASTM, AASHTO y MTC, garantizando resultados confiables y trazables.",
-  "imagen": "/ensayos-de-campo.webp",
+  "imagen": "/campo/campo05.webp",
   "titulo01": "Ensayos de Campo Especializados",
   "subtitulo01": "Control de calidad, exploración del subsuelo y verificación de diseño in situ.",
   "categorias": [
@@ -501,18 +501,80 @@
   ]
 },
 
+
+{
+"slug": "mecanica-de-suelos",
+"titulo": "Estudio de Mecánica de Suelos",
+"descripcion": "Determinamos con precisión las propiedades del terreno para cimentaciones seguras, pavimentos duraderos y obras de infraestructura confiables.",
+"contenido": "El estudio de mecánica de suelos permite conocer la resistencia, compresibilidad y comportamiento del terreno ante cargas estructurales. En Casagrande realizamos investigaciones geotécnicas completas para edificaciones, pavimentos, saneamiento y habilitaciones urbanas. Todos los ensayos se ejecutan con equipos calibrados por INACAL y bajo normas ASTM, AASHTO y la Norma Técnica E.050, garantizando resultados trazables y soluciones geotécnicas precisas.",
+"imagen": "/geologia/geologia04.webp",
+"titulo01": "Estudios de Mecánica de Suelos y Roca",
+"subtitulo01": "Caracterización geotécnica del terreno para cimentaciones, pavimentos y obras civiles.",
+"categorias": [
   {
+    "titulo": "Estudio de Mecánica de Suelos y Roca para Cimentación",
+    "imagenes": ["/mecanica/mecanica01.webp", "/mecanica/mecanica02.webp", "/mecanica/mecanica03.webp"],
+    "ensayos": [
+      "Determinación de la capacidad portante admisible del suelo o roca.",
+      "Definición de profundidad y tipo de cimentación óptima.",
+      "Evaluación de asentamientos totales y diferenciales.",
+      "Identificación de estratos compresibles y problemas geotécnicos potenciales.",
+      "Ensayo de penetración estándar (SPT) y recuperación de muestras inalteradas.",
+      "Ensayo de carga con placa y permeabilidad en campo (Lugeon, Lefranc).",
+      "Estudio de mecánica de suelos con fines de saneamiento y habilitación urbana."
+    ],
+    "descripcion": "Evaluamos las características del terreno de cimentación para establecer parámetros de diseño y garantizar la estabilidad de estructuras. Nuestros estudios incluyen interpretación geotécnica y recomendaciones específicas para zapatas, losas, pilotes y cimentaciones profundas."
+  },
+  {
+    "titulo": "Estudio de Mecánica de Suelos para Pavimentos e Infraestructura",
+    "imagenes": ["/mecanica/mecanica05.webp", "/mecanica/mecanica04.webp", "/mecanica/mecanica06.webp", "/mecanica/mecanica07.webp"],
+    "ensayos": [
+      "Determinación del CBR y capacidad de soporte de la subrasante.",
+      "Ensayos Proctor estándar y modificado para control de compactación.",
+      "Control de densidad in situ (cono de arena, método nuclear).",
+      "Análisis granulométrico y límites de Atterberg.",
+      "Evaluación de subrasante, subbase y base granular.",
+      "Deflectometría con Viga Benkelman o LWD para evaluación estructural.",
+      "Estudio de mecánica de suelos con fines de pavimentación urbana o vial."
+    ],
+    "descripcion": "Determinamos las condiciones del terreno para el diseño del paquete estructural de pavimentos (subrasante, subbase, base y carpeta), garantizando durabilidad, desempeño y seguridad en vías, carreteras, plataformas y obras hidráulicas."
+  }
+],
+"puntos": [
+  "Cumplimiento estricto de la Norma Técnica E.050 de edificaciones.",
+  "Equipos calibrados y certificados por proveedores acreditados por INACAL (como Pizuar).",
+  "Ensayos realizados bajo normas ASTM, AASHTO y MTC vigentes.",
+  "Personal geotecnista y laboratorista con certificación técnica.",
+  "Resultados con trazabilidad metrológica y respaldo técnico Casagrande."
+],
+"detalles": [
+  "Laboratorio acreditado bajo la norma ISO/IEC 17025:2017.",
+  "Más de 20 años de experiencia en estudios geotécnicos y de pavimentos.",
+  "Asesoría técnica integral durante el estudio y la ejecución de obra.",
+  "Reportes con parámetros geotécnicos listos para diseño estructural y vial.",
+  "Cobertura nacional con atención a proyectos públicos y privados."
+],
+"numeros": [
+  { "id": 1, "label": "ENSAYOS GEOTÉCNICOS", "value": 50000, "suffix": "+" },
+  { "id": 2, "label": "PROYECTOS ANALIZADOS", "value": 350, "suffix": "+" },
+  { "id": 3, "label": "CIMIENTACIONES EVALUADAS", "value": 1200, "suffix": "+" },
+  { "id": 4, "label": "PRECISIÓN GARANTIZADA", "value": 99, "suffix": "%" }
+]
+},
+
+
+{
     "slug": "control-de-calidad",
     "titulo": "Control de Calidad en Obra",
     "descripcion": "Supervisión técnica continua para asegurar que tu proyecto cumpla con especificaciones y normas.",
     "contenido": "Brindamos servicios de supervisión técnica especializada y control de calidad durante la ejecución de obras, garantizando el cumplimiento de especificaciones técnicas y normativas vigentes.",
-    "imagen": "/control-de-calidad.jpeg",
+    "imagen": "/control/control01.webp",
     "titulo01": "Control de Calidad Integral",
     "subtitulo01": "Supervisión geotécnica y control de materiales durante la construcción.",
     "categorias": [
       {
         "titulo": "Supervisión Técnica Especializada",
-        "imagenes": ["/control-de-calidad.jpeg"],
+        "imagenes": ["/control/control01.webp"],
         "ensayos": [
           "Supervisión geotécnica en obra",
           "Verificación de procesos constructivos",
@@ -524,7 +586,7 @@
       },
       {
         "titulo": "Control de Concreto en Obra",
-        "imagenes": ["/Ensayos-en-Concreto.png"],
+        "imagenes": ["/control/control02.webp"],
         "ensayos": [
           "Elaboración de testigos cilíndricos en campo",
           "Control de slump, temperatura y contenido de aire",
@@ -536,7 +598,7 @@
       },
       {
         "titulo": "Control de Pavimentos",
-        "imagenes": ["/control-de-calidad.jpg"],
+        "imagenes": ["/control/control03.webp"],
         "ensayos": [
           "Control de mezclas asfálticas en planta y obra",
           "Verificación de temperaturas de compactación",
@@ -579,72 +641,13 @@
     ]
   },
 
-  {
-  "slug": "mecanica-de-suelos",
-  "titulo": "Estudio de Mecánica de Suelos",
-  "descripcion": "Determinamos con precisión las propiedades del terreno para cimentaciones seguras, pavimentos duraderos y obras de infraestructura confiables.",
-  "contenido": "El estudio de mecánica de suelos permite conocer la resistencia, compresibilidad y comportamiento del terreno ante cargas estructurales. En Casagrande realizamos investigaciones geotécnicas completas para edificaciones, pavimentos, saneamiento y habilitaciones urbanas. Todos los ensayos se ejecutan con equipos calibrados por INACAL y bajo normas ASTM, AASHTO y la Norma Técnica E.050, garantizando resultados trazables y soluciones geotécnicas precisas.",
-  "imagen": "/estudio-mecanico-suelos.webp",
-  "titulo01": "Estudios de Mecánica de Suelos y Roca",
-  "subtitulo01": "Caracterización geotécnica del terreno para cimentaciones, pavimentos y obras civiles.",
-  "categorias": [
-    {
-      "titulo": "Estudio de Mecánica de Suelos y Roca para Cimentación",
-      "imagenes": ["/mecanica/mecanica01.webp", "/mecanica/mecanica02.webp", "/mecanica/mecanica03.webp"],
-      "ensayos": [
-        "Determinación de la capacidad portante admisible del suelo o roca.",
-        "Definición de profundidad y tipo de cimentación óptima.",
-        "Evaluación de asentamientos totales y diferenciales.",
-        "Identificación de estratos compresibles y problemas geotécnicos potenciales.",
-        "Ensayo de penetración estándar (SPT) y recuperación de muestras inalteradas.",
-        "Ensayo de carga con placa y permeabilidad en campo (Lugeon, Lefranc).",
-        "Estudio de mecánica de suelos con fines de saneamiento y habilitación urbana."
-      ],
-      "descripcion": "Evaluamos las características del terreno de cimentación para establecer parámetros de diseño y garantizar la estabilidad de estructuras. Nuestros estudios incluyen interpretación geotécnica y recomendaciones específicas para zapatas, losas, pilotes y cimentaciones profundas."
-    },
-    {
-      "titulo": "Estudio de Mecánica de Suelos para Pavimentos e Infraestructura",
-      "imagenes": ["/mecanica/mecanica05.webp", "/mecanica/mecanica04.webp", "/mecanica/mecanica06.webp", "/mecanica/mecanica07.webp"],
-      "ensayos": [
-        "Determinación del CBR y capacidad de soporte de la subrasante.",
-        "Ensayos Proctor estándar y modificado para control de compactación.",
-        "Control de densidad in situ (cono de arena, método nuclear).",
-        "Análisis granulométrico y límites de Atterberg.",
-        "Evaluación de subrasante, subbase y base granular.",
-        "Deflectometría con Viga Benkelman o LWD para evaluación estructural.",
-        "Estudio de mecánica de suelos con fines de pavimentación urbana o vial."
-      ],
-      "descripcion": "Determinamos las condiciones del terreno para el diseño del paquete estructural de pavimentos (subrasante, subbase, base y carpeta), garantizando durabilidad, desempeño y seguridad en vías, carreteras, plataformas y obras hidráulicas."
-    }
-  ],
-  "puntos": [
-    "Cumplimiento estricto de la Norma Técnica E.050 de edificaciones.",
-    "Equipos calibrados y certificados por proveedores acreditados por INACAL (como Pizuar).",
-    "Ensayos realizados bajo normas ASTM, AASHTO y MTC vigentes.",
-    "Personal geotecnista y laboratorista con certificación técnica.",
-    "Resultados con trazabilidad metrológica y respaldo técnico Casagrande."
-  ],
-  "detalles": [
-    "Laboratorio acreditado bajo la norma ISO/IEC 17025:2017.",
-    "Más de 20 años de experiencia en estudios geotécnicos y de pavimentos.",
-    "Asesoría técnica integral durante el estudio y la ejecución de obra.",
-    "Reportes con parámetros geotécnicos listos para diseño estructural y vial.",
-    "Cobertura nacional con atención a proyectos públicos y privados."
-  ],
-  "numeros": [
-    { "id": 1, "label": "ENSAYOS GEOTÉCNICOS", "value": 50000, "suffix": "+" },
-    { "id": 2, "label": "PROYECTOS ANALIZADOS", "value": 350, "suffix": "+" },
-    { "id": 3, "label": "CIMIENTACIONES EVALUADAS", "value": 1200, "suffix": "+" },
-    { "id": 4, "label": "PRECISIÓN GARANTIZADA", "value": 99, "suffix": "%" }
-  ]
-},
 
   {
   "slug": "evaluacion-estructural",
   "titulo": "Evaluación Estructural",
   "descripcion": "Servicio integral para diagnosticar, verificar y rehabilitar estructuras existentes ante cambio de uso, deterioro, ampliaciones o nuevas demandas operativas.",
   "contenido": "Casagrande realiza evaluaciones estructurales completas para edificaciones e infraestructura, aplicando patología, auscultación no destructiva, análisis sísmico de sitio, pruebas de carga y modelamiento numérico. Identificamos deficiencias, determinamos el desempeño estructural y planteamos soluciones de refuerzo seguras y normativamente sustentadas, según E.030, E.060, E.070, E.090, ACI y ASTM.",
-  "imagen": "/evaluacion-estructural.webp",
+  "imagen": "/laboratorio/laboratorio10.webp",
   "titulo01": "Evaluaciones Estructurales Integrales",
   "subtitulo01": "Diagnóstico, auscultación y rehabilitación estructural con respaldo técnico y normativo.",
   "categorias": [

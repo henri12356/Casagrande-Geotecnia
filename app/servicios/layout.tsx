@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   publisher: "Casagrande Geotecnia",
   openGraph: {
     title: "Servicios de Ingeniería Geotécnica ",
-    description: "Servicios integrales en geotecnia, geofísica, laboratorio y estudios especializados para proyectos de construcción.",
+    description: "Servicios integrales en geotecnia, geofísica, laboratorio de suelos y estudios especializados para proyectos de construcción.",
     type: "website",
     url: "https://www.casagrandegeotecnia.com.pe/servicios",
     images: [
       {
-        url: "https://www.casagrandegeotecnia.com.pe/fondoservicio.webp",
+        url: "https://www.casagrandegeotecnia.com.pe/bannerservicio.webp",
         width: 1200,
         height: 630,
         alt: "Servicios de Ingeniería Geotécnica - Casagrande Geotecnia",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Servicios de Ingeniería Geotécnica | Casagrande Geotecnia",
-    description: "Especialistas en geotecnia, geofísica y laboratorio para proyectos de construcción.",
-    images: ["https://www.casagrandegeotecnia.com.pe/fondoservicio.webp"],
+    description: "Especialistas en geotecnia, geofísica y laboratorio de suelos para proyectos de construcción.",
+    images: ["https://www.casagrandegeotecnia.com.pe/banner.webp"],
     site: "@CasagrandeGeo",
     creator: "@CasagrandeGeo",
   },
@@ -132,7 +132,7 @@ export default function ServiciosLayout({
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Laboratorio de Materiales"
+                    "name": "Laboratorio de Suelos"
                   }
                 },
                 {

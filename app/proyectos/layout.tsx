@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: "https://www.casagrandegeotecnia.com.pe/proyectos",
     images: [
       {
-        url: "https://www.casagrandegeotecnia.com.pe/fondoproyectos.webp",
+        url: "https://www.casagrandegeotecnia.com.pe/bannerproyecto.webp",
         width: 1200,
         height: 630,
         alt: "Proyectos de Ingeniería Geotécnica - Casagrande Geotecnia",

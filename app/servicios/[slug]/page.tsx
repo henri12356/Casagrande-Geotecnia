@@ -1,15 +1,97 @@
+// src/app/servicios/[slug]/page.tsx (o donde tengas este componente)
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView, animate, Variants } from "framer-motion";
 import servicios from "@/app/data/servicios.json";
 import Navbar from "@/app/navbar";
 import Footer from "@/app/footer";
 import ServicioNav from "@/app/servicios/ServicioNav";
 import NotFoundPage from "@/app/not-found";
-import { ZoomIn, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+
+/* ========= NUEVO HERO (mobile-first) ========= */
+function HeroServicio({
+  titulo,
+  descripcion,
+  imagen,
+}: {
+  titulo: string;
+  descripcion: string;
+  imagen: string;
+}) {
+  return (
+    <section className="relative md:pt-36 pt-10">
+      {/* Alto pensado para móvil; desktop estable */}
+      <div className="relative h-[56vh] min-h-[450px] md:h-80 lg:h-96 w-full overflow-hidden bg-[#1b4772]">
+        <Image src={imagen} alt={titulo} fill priority className="object-cover" />
+
+        {/* Overlay para legibilidad en móvil */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(27,71,114,0.85),rgba(27,71,114,0.60)_35%,rgba(27,71,114,0.15)_70%,transparent_100%)]" />
+
+        {/* Contenido */}
+        <div className="absolute inset-0 flex items-end md:items-center">
+          <div className="w-full px-4 max-w-7xl mx-auto pb-6 md:pb-0">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="
+                
+                
+                rounded-2xl p-4 md:p-0 md:rounded-none md:border-0
+                text-white 
+              "
+            >
+              
+
+              <h1 className="text-2xl leading-tight md:text-6xl font-bold">{titulo}</h1>
+
+              <p
+                className="mt-2 md:mt-3 text-sm md:text-lg text-white overflow-hidden"
+                style={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: 3,
+                  WebkitBoxOrient: "vertical",
+                }}
+              >
+                {descripcion}
+              </p>
+
+              {/* CTAs */}
+              <div className="mt-4 md:mt-5 flex flex-wrap gap-2">
+                <Link
+                  href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
+                  target="_blank"
+                  className="inline-flex items-center justify-center rounded-xl bg-white text-[#1b4772] font-semibold px-4 py-2 text-sm md:text-base shadow-sm hover:shadow transition"
+                >
+                  Solicitar cotización
+                </Link>
+                <Link
+                  href="#contenido"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/40 text-white px-4 py-2 text-sm md:text-base hover:bg-white/10 transition"
+                >
+                  Ver detalles
+                </Link>
+              </div>
+
+             
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Indicador scroll en móvil */}
+        <div className="absolute inset-x-0 bottom-2 md:hidden flex justify-center">
+          <div className="h-1 w-12 rounded-full bg-white/30" />
+        </div>
+      </div>
+    </section>
+  );
+}
+/* ========= FIN NUEVO HERO ========= */
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,7 +104,7 @@ interface Stat {
   suffix: string;
 }
 
-// Componente para animar el conteo de un número
+/* ====== contador ====== */
 const CountingNumber: React.FC<{
   value: number;
   duration?: number;
@@ -48,23 +130,17 @@ const CountingNumber: React.FC<{
   return <span ref={nodeRef}>0{suffix}</span>;
 };
 
-// Componente de la sección de números
+/* ====== sección de números ====== */
 const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInViewContainer = useInView(containerRef, {
-    once: true,
-    amount: 0.3,
-  });
+  const isInViewContainer = useInView(containerRef, { once: true, amount: 0.3 });
 
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        staggerChildren: 0.15,
-        when: "beforeChildren",
-      },
+      transition: { staggerChildren: 0.15, when: "beforeChildren" },
     },
   };
 
@@ -73,19 +149,15 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 150,
-        damping: 18,
-      },
+      transition: { type: "spring", stiffness: 150, damping: 18 },
     },
   };
 
   return (
-    <section className="py-20 sm:py-28 lg:px-6 relative overflow-hidden">
+    <section className="md:py-20  max-md:pt-10 lg:px-6 relative overflow-hidden">
       <motion.div
         ref={containerRef}
-        className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center"
+        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center"
         variants={sectionVariants}
         initial="hidden"
         animate={isInViewContainer ? "visible" : "hidden"}
@@ -96,15 +168,10 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
             className="flex flex-col items-center justify-center p-6 bg-[#1b4772] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             variants={statCardVariants}
           >
-            <div className="md:text-5xl text-6xl lg::text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-              <CountingNumber
-                value={stat.value}
-                suffix={stat.suffix}
-                duration={6}
-                start={isInViewContainer}
-              />
+            <div className="md:text-6xl text-5xl  font-extrabold mb-1 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+              <CountingNumber value={stat.value} suffix={stat.suffix} duration={6} start={isInViewContainer} />
             </div>
-            <p className="text-sm sm:text-base text-gray-200 uppercase tracking-wide font-medium">
+            <p className="text-sm sm:text-base text-white uppercase tracking-wide font-medium">
               {stat.label}
             </p>
           </motion.div>
@@ -117,6 +184,7 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
 const ServicioPage = ({ params }: PageProps) => {
   const { slug } = React.use(params);
   const servicio = servicios.find((s) => s.slug === slug);
+
   const [imagenModal, setImagenModal] = useState({
     abierto: false,
     src: "",
@@ -127,62 +195,35 @@ const ServicioPage = ({ params }: PageProps) => {
 
   if (!servicio) return <NotFoundPage />;
 
-  const abrirModalImagen = (
-    src: string,
-    titulo: string,
-    categoriaIndex?: number
-  ) => {
+  const abrirModalImagen = (src: string, titulo: string, categoriaIndex?: number) => {
     let imagenes: string[] = [];
     let indiceActual = 0;
 
-    // Si se proporciona el índice de categoría, obtener todas las imágenes de esa categoría
     if (categoriaIndex !== undefined && servicio.categorias) {
       imagenes = servicio.categorias[categoriaIndex].imagenes;
       indiceActual = imagenes.indexOf(src);
     } else {
-      // Si no, usar solo la imagen actual
       imagenes = [src];
     }
 
-    setImagenModal({
-      abierto: true,
-      src,
-      titulo,
-      imagenes,
-      indiceActual,
-    });
+    setImagenModal({ abierto: true, src, titulo, imagenes, indiceActual });
   };
 
   const cerrarModalImagen = () => {
-    setImagenModal({
-      abierto: false,
-      src: "",
-      titulo: "",
-      imagenes: [],
-      indiceActual: 0,
-    });
+    setImagenModal({ abierto: false, src: "", titulo: "", imagenes: [], indiceActual: 0 });
   };
 
   const siguienteImagen = () => {
     setImagenModal((prev) => {
       const nuevoIndice = (prev.indiceActual + 1) % prev.imagenes.length;
-      return {
-        ...prev,
-        indiceActual: nuevoIndice,
-        src: prev.imagenes[nuevoIndice],
-      };
+      return { ...prev, indiceActual: nuevoIndice, src: prev.imagenes[nuevoIndice] };
     });
   };
 
   const anteriorImagen = () => {
     setImagenModal((prev) => {
-      const nuevoIndice =
-        (prev.indiceActual - 1 + prev.imagenes.length) % prev.imagenes.length;
-      return {
-        ...prev,
-        indiceActual: nuevoIndice,
-        src: prev.imagenes[nuevoIndice],
-      };
+      const nuevoIndice = (prev.indiceActual - 1 + prev.imagenes.length) % prev.imagenes.length;
+      return { ...prev, indiceActual: nuevoIndice, src: prev.imagenes[nuevoIndice] };
     });
   };
 
@@ -190,42 +231,13 @@ const ServicioPage = ({ params }: PageProps) => {
     <>
       <Navbar />
 
-      {/* Hero Section */}
-      <div className="relative bg-[#1b4772] pt-12 md:pt-20">
-        <div className="relative h-64 md:h-80">
-          <Image
-            src={servicio.imagen}
-            alt={servicio.titulo}
-            fill
-            className="object-cover brightness-75"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1b4772]/90 via-[#1b4772]/60 to-transparent"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold mb-4"
-            >
-              {servicio.titulo}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg max-w-3xl text-gray-100"
-            >
-              {servicio.descripcion}
-            </motion.p>
-          </div>
-        </div>
-      </div>
+      {/* ====== HERO NUEVO (solo se cambió esta sección) ====== */}
+      <HeroServicio titulo={servicio.titulo} descripcion={servicio.descripcion} imagen={servicio.imagen} />
 
       <ServicioNav />
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* ====== CONTENIDO PRINCIPAL ====== */}
+      <div id="contenido" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Introducción */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -241,7 +253,7 @@ const ServicioPage = ({ params }: PageProps) => {
           </p>
         </motion.div>
 
-        {/* Grid de categorías de ensayos */}
+        {/* Categorías */}
         <div className="space-y-12 mb-16">
           {servicio.categorias?.map((categoria, index) => (
             <motion.div
@@ -252,7 +264,7 @@ const ServicioPage = ({ params }: PageProps) => {
               className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
             >
               <div className="grid md:grid-cols-2 gap-8">
-                {/* Contenido textual */}
+                {/* Texto */}
                 <div>
                   <h3 className="text-xl font-bold text-[#1b4772] mb-4 border-b-2 border-[#1b4772] pb-2">
                     {categoria.titulo}
@@ -268,24 +280,15 @@ const ServicioPage = ({ params }: PageProps) => {
                   </ul>
                 </div>
 
-                {/* Galería de imágenes - MEJORADA */}
+                {/* Galería */}
                 <div>
-                  <h4 className="text-lg font-semibold text-[#1b4772] mb-4">
-                    Galería
-                  </h4>
+                  <h4 className="text-lg font-semibold text-[#1b4772] mb-4">Galería</h4>
                   <div className="space-y-4">
-                    {/* Imagen principal grande */}
                     {categoria.imagenes.length > 0 && (
                       <motion.div
                         whileHover={{ scale: 1.02 }}
                         className="relative group cursor-pointer rounded-lg overflow-hidden border-2 border-gray-300"
-                        onClick={() =>
-                          abrirModalImagen(
-                            categoria.imagenes[0],
-                            categoria.titulo,
-                            index
-                          )
-                        }
+                        onClick={() => abrirModalImagen(categoria.imagenes[0], categoria.titulo, index)}
                       >
                         <div className="aspect-video relative">
                           <Image
@@ -294,58 +297,40 @@ const ServicioPage = ({ params }: PageProps) => {
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                             onError={(e) => {
-                              // Fallback para imagen que no carga
                               e.currentTarget.src =
-                                "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRo IGQ9Ik0yMDAgMTUwTDE1MCAxMDBIMjUwTDIwMCAxNTBaIiBmaWxsPSIjOTlBQUJDIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBlbmNvbnRyYWRhPC90ZXh0Pgo8L3N2Zz4K";
+                                "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNMjAwIDE1MEwxNTAgMTAwSDI1MEwyMDAgMTUwWiIgZmlsbD0iIzk5QUFCQyIvPjx0ZXh0IHg9IjIwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBlbmNvbnRyYWRhPC90ZXh0Pjwvc3ZnPg==";
                             }}
                           />
                         </div>
-                        <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                          <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                        <div className="absolute bottom-0 left-0 right-0 bg-[#1b4772]  bg-opacity-60 text-white p-2 text-center text-sm">
+                        <div className="absolute bottom-0 left-0 right-0 bg-[#1b4772] bg-opacity-60 text-white p-2 text-center text-sm">
                           Imagen principal - Click para ampliar
                         </div>
                       </motion.div>
                     )}
 
-                    {/* Miniaturas de las otras imágenes */}
                     {categoria.imagenes.length > 1 && (
                       <div className="grid grid-cols-3 gap-2">
-                        {categoria.imagenes
-                          .slice(1, 4)
-                          .map((imagen, imgIndex) => (
-                            <motion.div
-                              key={imgIndex + 1}
-                              whileHover={{ scale: 1.05 }}
-                              className="relative group cursor-pointer rounded-md overflow-hidden border border-gray-200"
-                              onClick={() =>
-                                abrirModalImagen(
-                                  imagen,
-                                  categoria.titulo,
-                                  index
-                                )
-                              }
-                            >
-                              <div className="aspect-square relative">
-                                <Image
-                                  src={imagen}
-                                  alt={`${categoria.titulo} - Imagen ${
-                                    imgIndex + 2
-                                  }`}
-                                  fill
-                                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                  onError={(e) => {
-                                    e.currentTarget.src =
-                                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik01MCA1MEwzNy41IDM3LjVINjIuNUw1MCA1MFoiIGZpbGw9IiM5OUFBQkMiLz4KPC9zdmc+Cg==";
-                                  }}
-                                />
-                              </div>
-                              <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                                <ZoomIn className="w-4 h-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                              </div>
-                            </motion.div>
-                          ))}
+                        {categoria.imagenes.slice(1, 4).map((imagen, imgIndex) => (
+                          <motion.div
+                            key={imgIndex + 1}
+                            whileHover={{ scale: 1.05 }}
+                            className="relative group cursor-pointer rounded-md overflow-hidden border border-gray-200"
+                            onClick={() => abrirModalImagen(imagen, categoria.titulo, index)}
+                          >
+                            <div className="aspect-square relative">
+                              <Image
+                                src={imagen}
+                                alt={`${categoria.titulo} - Imagen ${imgIndex + 2}`}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                onError={(e) => {
+                                  e.currentTarget.src =
+                                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNTA gNTBMMzcuNSAzNy41SDYyLjVMNTAgNTBaIiBmaWxsPSIjOTlBQUJDIi8+PC9zdmc+";
+                                }}
+                              />
+                            </div>
+                          </motion.div>
+                        ))}
                       </div>
                     )}
                   </div>
@@ -355,89 +340,58 @@ const ServicioPage = ({ params }: PageProps) => {
           ))}
         </div>
 
-        {/* --- SECCIÓN DE NÚMEROS AÑADIDA AQUÍ --- */}
+        {/* Bloque de certificaciones + números */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="rounded-2xl p-6 md:p-10 mb-12 text-[#182C45]"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-3">
-            CALIBRACIÓN CERTIFICADA E ISO
-          </h3>
-          <p className="text-center text-sm md:text-base text-gray-700 mb-8">
-            En <strong>Casagrande</strong> garantizamos la precisión de cada
-            ensayo. Nuestras{" "}
-            <strong>máquinas y equipos están calibrados</strong> por
-            <strong> Pizuar</strong>, laboratorio{" "}
-            <strong>acreditado ante INACAL</strong>
-            bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una
-            <strong> trazabilidad metrológica</strong> completa y resultados
-            <strong> confiables, verificables y certificados.</strong>
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-3 text-[#182C45]">CALIBRACIÓN CERTIFICADA E ISO</h3>
+          <p className="text-center text-sm md:text-base text-[#182C45]] mb-8">
+            En <strong>Casagrande</strong> garantizamos la precisión de cada ensayo. Nuestras{" "}
+            <strong>máquinas y equipos están calibrados</strong> por <strong>Pizuar</strong>, laboratorio{" "}
+            <strong>acreditado ante INACAL</strong> bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una{" "}
+            <strong>trazabilidad metrológica</strong> completa y resultados <strong>confiables, verificables y certificados.</strong>
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Tarjeta: Trazabilidad metrológica */}
             <div className="rounded-xl p-6 border border-gray-200 bg-white shadow-sm">
-              <div className="font-semibold text-lg mb-3 text-[#182C45]">
-                Trazabilidad Metrológica (INACAL)
-              </div>
-              <ul className="space-y-2 text-gray-700 text-sm md:text-base leading-relaxed">
+              <div className="font-semibold text-lg mb-3 text-[#182C45]">Trazabilidad Metrológica (INACAL)</div>
+              <ul className="space-y-2 text-[#182C45] text-sm md:text-base leading-relaxed">
                 <li>
-                  <strong>Equipos de campo y laboratorio</strong> calibrados por
-                  <strong> Pizuar</strong>, laboratorio acreditado ante{" "}
-                  <strong>INACAL</strong>.
+                  <strong>Equipos de campo y laboratorio</strong> calibrados por <strong>Pizuar</strong>, laboratorio
+                  acreditado ante <strong>INACAL</strong>.
                 </li>
                 <li>
-                  Certificados con trazabilidad según la norma{" "}
-                  <strong>ISO/IEC 17025</strong>.
+                  Certificados con trazabilidad según la norma <strong>ISO/IEC 17025</strong>.
                 </li>
                 <li>
-                  Control de <strong>vigencia</strong>, número de certificado y
-                  verificación interna periódica.
+                  Control de <strong>vigencia</strong>, número de certificado y verificación interna periódica.
                 </li>
-                <li>
-                  Registro digital y físico de calibraciones y mantenimiento
-                  preventivo.
-                </li>
-                <li>
-                  Verificación previa a cada campaña o ensayo para garantizar la
-                  exactitud.
-                </li>
+                <li>Registro digital y físico de calibraciones y mantenimiento preventivo.</li>
+                <li>Verificación previa a cada campaña o ensayo para garantizar la exactitud.</li>
               </ul>
             </div>
 
-            {/* Tarjeta: Sistema de Gestión Integrado */}
             <div className="rounded-xl p-6 border border-gray-200 bg-white shadow-sm">
-              <div className="font-semibold text-lg mb-3 text-[#182C45]">
-                Sistema de Gestión Integrado
-              </div>
-              <ul className="space-y-2 text-gray-700 text-sm md:text-base leading-relaxed">
+              <div className="font-semibold text-lg mb-3 text-[#182C45]">Sistema de Gestión Integrado</div>
+              <ul className="space-y-2 text-[#182C45] text-sm md:text-base leading-relaxed">
                 <li>
-                  <strong>ISO 9001:2015</strong> – Calidad: procesos
-                  estandarizados y mejora continua.
+                  <strong>ISO 9001:2015</strong> – Calidad: procesos estandarizados y mejora continua.
                 </li>
                 <li>
-                  <strong>ISO 14001:2015</strong> – Ambiental: compromiso con la
-                  sostenibilidad.
+                  <strong>ISO 14001:2015</strong> – Ambiental: compromiso con la sostenibilidad.
                 </li>
                 <li>
-                  <strong>ISO 37001:2016</strong> – Antisoborno: ética,
-                  transparencia y control contractual.
+                  <strong>ISO 37001:2016</strong> – Antisoborno: ética, transparencia y control contractual.
                 </li>
-                <li>
-                  Procedimientos normalizados (MTC, ASTM, NTP) para campo,
-                  laboratorio e informes.
-                </li>
-                <li>
-                  Seguimiento de indicadores y auditorías internas de calidad y
-                  cumplimiento.
-                </li>
+                <li>Procedimientos normalizados (MTC, ASTM, NTP) para campo, laboratorio e informes.</li>
+                <li>Seguimiento de indicadores y auditorías internas de calidad y cumplimiento.</li>
               </ul>
             </div>
           </div>
 
-          {/* Chips informativos */}
           <div className="flex flex-wrap gap-2 mt-8 justify-center">
             <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
               +130 ensayos calidad (suelos, rocas, concreto y asfalto)
@@ -453,8 +407,8 @@ const ServicioPage = ({ params }: PageProps) => {
           {servicio.numeros && <Numeros stats={servicio.numeros} />}
         </motion.div>
 
-        {/* Información de contacto */}
-        <div className="py-16 md:py-24">
+        {/* Contacto */}
+        <div className=" ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -462,17 +416,14 @@ const ServicioPage = ({ params }: PageProps) => {
             className="bg-gray-50 rounded-3xl p-6 md:p-12 border border-gray-200 shadow-xl"
           >
             <div className="grid md:grid-cols-2 gap-8 md:gap-16">
-              {/* Columna Izquierda */}
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772] mb-6">
-                  Contáctanos
-                </h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772] mb-6">Contáctanos</h3>
                 <div className="space-y-4">
                   <p className="flex items-center text-lg">
                     <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
                     +51 945 513 323
                   </p>
-                  <p className="flex items-center text-sm md:text-lg">
+                  <p className="flex items-center text-[10px] md:text-lg">
                     <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />
                     comercial@casagrandegeotecnia.com.pe
                   </p>
@@ -483,13 +434,9 @@ const ServicioPage = ({ params }: PageProps) => {
                 </div>
               </div>
 
-              {/* Columna Derecha */}
-              <div className="border-t md:border-t-0 md:border-l   border-gray-200 pt-8 md:pl-16 md:pt-0">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">
-                  Solicita un Servicio
-                </h3>
-                <div className="space-y-4  ">
-                  {/* Botón WhatsApp Cotización */}
+              <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-8 md:pl-16 md:pt-0">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">Solicita un Servicio</h3>
+                <div className="space-y-4">
                   <a
                     href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
                     target="_blank"
@@ -499,10 +446,8 @@ const ServicioPage = ({ params }: PageProps) => {
                       Solicitar cotización
                     </Button>
                   </a>
-
-                  {/* Botón WhatsApp Visita Técnica */}
                 </div>
-                <div className="pt-2 ">
+                <div className="pt-2">
                   <a
                     href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica."
                     target="_blank"
@@ -510,7 +455,7 @@ const ServicioPage = ({ params }: PageProps) => {
                   >
                     <Button
                       variant="outline"
-                      className="md:w-full cursor-pointer  border-[#1b4772] text-[#1b4772] hover:bg-gray-100 py-6 text-lg rounded-xl"
+                      className="md:w-full cursor-pointer border-[#1b4772] text-[#1b4772] hover:bg-gray-100 py-6 text-lg rounded-xl"
                     >
                       Agendar visita técnica
                     </Button>
@@ -522,14 +467,9 @@ const ServicioPage = ({ params }: PageProps) => {
         </div>
       </div>
 
-      {/* Modal para imágenes - FONDO OSCURO Y GRANDE */}
+      {/* Modal imágenes */}
       {imagenModal.abierto && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-          onClick={cerrarModalImagen}
-        >
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4" onClick={cerrarModalImagen}>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -537,7 +477,6 @@ const ServicioPage = ({ params }: PageProps) => {
             className="relative w-full max-w-7xl max-h-[90vh] flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Botón cerrar */}
             <button
               onClick={cerrarModalImagen}
               className="absolute -top-14 right-0 text-white cursor-pointer hover:text-blue-300 transition-colors z-10 bg-black/60 hover:bg-black/80 rounded-full p-2 backdrop-blur-md"
@@ -545,7 +484,6 @@ const ServicioPage = ({ params }: PageProps) => {
               <X className="w-7 h-7" />
             </button>
 
-            {/* Contenedor principal de imagen */}
             <div className="relative w-full h-[80vh] bg-black rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src={imagenModal.src}
@@ -554,11 +492,10 @@ const ServicioPage = ({ params }: PageProps) => {
                 className="object-contain"
                 onError={(e) => {
                   e.currentTarget.src =
-                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MDAgMzAwTDMwMCAyMDBINTAwTDQwMCAzMDBaIiBmaWxsPSIjOTlBQUJDIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pgo8L3N2Zz4K";
+                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNDAwIDMwMEwzMDAgMjAwSDUwMEw0MDAgMzAwWiIgZmlsbD0iIzk5QUFCQyIvPjx0ZXh0IHg9IjQwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pjwvc3ZnPg==";
                 }}
               />
 
-              {/* Navegación izquierda y derecha */}
               {imagenModal.imagenes.length > 1 && (
                 <>
                   <button
@@ -583,20 +520,15 @@ const ServicioPage = ({ params }: PageProps) => {
                     <ChevronRight className="w-6 h-6" />
                   </button>
 
-                  {/* Indicador de posición */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-1.5 rounded-full text-sm tracking-wide">
-                    {imagenModal.indiceActual + 1} /{" "}
-                    {imagenModal.imagenes.length}
+                    {imagenModal.indiceActual + 1} / {imagenModal.imagenes.length}
                   </div>
                 </>
               )}
             </div>
 
-            {/* Título de la imagen */}
             <div className="mt-4 text-center">
-              <h4 className="text-white font-semibold text-lg">
-                {imagenModal.titulo}
-              </h4>
+              <h4 className="text-white font-semibold text-lg">{imagenModal.titulo}</h4>
             </div>
           </motion.div>
         </motion.div>

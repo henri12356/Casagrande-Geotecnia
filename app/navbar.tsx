@@ -69,7 +69,7 @@ const socialLinks: SocialLink[] = [
 ];
 
 const contactInfo: ContactInfoItemProps[] = [
-  { text: "Clientes", href: "/" },
+  { text: "Equipos", href: "/equipos" },
   { text: "Blog", href: "/blog" },
   { text: "Contacto", href: "/contacto" },
 ];
@@ -422,6 +422,13 @@ const Navbar = () => {
                     )}
                   </motion.div>
                 ))}
+                <div className="space-y-5">
+                  {contactInfo.map((item) => (
+                    <a key={item.text} href={item.href} className="flex font-bold pl-4  items-center gap-3 text-[#182C45] transition-colors hover:text-red-600">
+                      <span>{item.text}</span>
+                    </a>
+                  ))}
+                </div>
               </nav>
 
               <div className="space-y-4 border-t p-4 pb-20 text-sm">
@@ -438,13 +445,6 @@ const Navbar = () => {
                   </a>
                 </div>
 
-                <div className="space-y-3">
-                  {contactInfo.map((item) => (
-                    <a key={item.text} href={item.href} className="flex items-center gap-3 text-[#182C45] transition-colors hover:text-red-600">
-                      <span>{item.text}</span>
-                    </a>
-                  ))}
-                </div>
                 <div className="border-t pt-4">
                   <SocialLinks className="text-[#182C45]" />
                 </div>

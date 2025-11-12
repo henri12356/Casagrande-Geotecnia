@@ -55,11 +55,12 @@ const organizationLd = {
     width: "512",
     height: "512",
   },
-  image: [companyInfo.logo, `${companyInfo.url}/hero.png`],
+  image: [companyInfo.logo, `${companyInfo.url}/geologia/geologia04.webp`],
   telephone: companyInfo.phone,
   email: companyInfo.email,
   priceRange: "$$",
-  address: {
+  address: [
+  {
     "@type": "PostalAddress",
     streetAddress: companyInfo.address.street,
     addressLocality: companyInfo.address.city,
@@ -67,6 +68,15 @@ const organizationLd = {
     postalCode: companyInfo.address.postalCode,
     addressCountry: companyInfo.address.country,
   },
+  {
+    "@type": "PostalAddress",
+    streetAddress: "Av. Los Ingenieros 235",
+    addressLocality: "Lima",
+    addressRegion: "Lima",
+    postalCode: "15024",
+    addressCountry: "PE",
+  }
+],
   geo: {
     "@type": "GeoCoordinates",
     latitude: companyInfo.coordinates.latitude,
@@ -265,7 +275,7 @@ export const metadata: Metadata = {
       "Consultora especializada en estudios geotécnicos, mecánica de suelos y control de calidad en Perú. Laboratorio certificado ISO 9001. Más de 20 años de experiencia.",
     images: [
       {
-        url: `${companyInfo.url}/hero.png`,
+        url: `${companyInfo.url}/geologia/geologia04.webp`,
         width: 1200,
         height: 630,
         alt: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
@@ -279,7 +289,7 @@ export const metadata: Metadata = {
     title: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
     description:
       "Especialistas en estudios geotécnicos, laboratorio de suelos certificado y control de calidad en construcción. ISO 9001, 14001, 37001.",
-    images: [`${companyInfo.url}/hero.png`],
+    images: [`${companyInfo.url}/geologia/geologia04.webp`],
     creator: "@CasagrandeGeo",
     site: "@CasagrandeGeo",
   },

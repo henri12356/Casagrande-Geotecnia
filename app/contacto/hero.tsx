@@ -149,14 +149,14 @@ export default function HeroContacto() {
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg"
+                className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl xl:text-7xl drop-shadow-lg"
               >
                 {activeSlide.title}
               </motion.h2>
 
               <motion.p
                 variants={itemVariants}
-                className="max-w-2xl text-base font-medium leading-relaxed text-gray-200 sm:text-lg lg:text-xl drop-shadow-md"
+                className="max-w-2xl text-base font-medium leading-relaxed text-white sm:text-lg lg:text-xl drop-shadow-md"
               >
                 {activeSlide.subtitle}
               </motion.p>

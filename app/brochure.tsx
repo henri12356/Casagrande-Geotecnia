@@ -26,8 +26,8 @@ const Brochure = () => {
         </a>
 
         <a
-          href="/path/to/curriculum-pilas.pdf"
-          download="Curriculum-Hincado-de-Pilas.pdf"
+          href="/calidad"
+         
           className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
         >
           Documento de calidad

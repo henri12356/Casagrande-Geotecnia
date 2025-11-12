@@ -2,8 +2,8 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Casagrande Geotecnia - Expertos en Estudios Geotécnicos",
-  description: "Consultora especializada en ingeniería geotécnica con más de 20 años de experiencia. Equipo de ingenieros certificados, laboratorio propio y certificaciones ISO 9001, 14001 y 37001.",
+  title: "Empresa de Geotecnia | geotecnia peru  ",
+  description: "Consultora especializada en ingeniería geotécnica con más de 6 años de experiencia. Equipo de ingenieros certificados, laboratorio propio y certificaciones ISO 9001, 14001 y 37001.",
   
 
   authors: [{ name: "Casagrande Geotecnia" }],
@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   
   openGraph: {
     title: "Casagrande Geotecnia - Trayectoria y Equipo Profesional",
-    description: "Más de 20 años brindando soluciones geotécnicas en Perú. Equipo de ingenieros especializados, laboratorio certificado y compromiso con la excelencia.",
+    description: "Más de 6 años brindando soluciones geotécnicas en Perú. Equipo de ingenieros especializados, laboratorio certificado y compromiso con la excelencia.",
     type: "website",
     url: "https://www.casagrandegeotecnia.com.pe/nosotros",
     images: [
       {
-        url: "https://www.casagrandegeotecnia.com.pe/fondo.webp",
+        url: "https://www.casagrandegeotecnia.com.pe/valores.webp",
         width: 1200,
         height: 630,
         alt: "Equipo Casagrande Geotecnia - Expertos en Estudios Geotécnicos",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nosotros | Casagrande Geotecnia - Expertos en Geotecnia",
     description: "Equipo de ingenieros geotécnicos con experiencia en proyectos de construcción e infraestructura en todo el Perú.",
-    images: ["https://www.casagrandegeotecnia.com.pe/fondo.webp"],
+    images: ["https://www.casagrandegeotecnia.com.pe/valores.webp"],
     site: "@CasagrandeGeo",
     creator: "@CasagrandeGeo",
   },
@@ -97,7 +97,7 @@ export default function NosotrosLayout({
               "legalName": "Casagrande Geotecnia S.A.C.", // ⚠️ Confirma razón social exacta
               "url": "https://www.casagrandegeotecnia.com.pe",
               "logo": "https://www.casagrandegeotecnia.com.pe/logo.png",
-              "image": "https://www.casagrandegeotecnia.com.pe/fondo.webp",
+              "image": "https://www.casagrandegeotecnia.com.pe/valores.webp",
               "telephone": "+51962835652",
               "email": "comercial@casagrandegeotecnia.com.pe",
               "address": {
