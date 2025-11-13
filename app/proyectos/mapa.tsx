@@ -172,8 +172,7 @@ const MapaProyectos = () => {
           <h1 className="text-4xl lg:text-5xl max-md:text-center font-extrabold text-gray-900 leading-tight mb-6">
             Nuestros Proyectos a Nivel Nacional
           </h1>
-          
-          
+
           <div className=" p-4 bg-white rounded-lg shadow-md border-t-4 border-gray-200">
             <p className="text-sm font-medium text-slate-950">
               Proyectos Totales
@@ -187,9 +186,13 @@ const MapaProyectos = () => {
         <div className="lg:w-2/3 relative h-[320px] lg:h-[550px] rounded-2xl">
           <div className="relative w-full h-full">
             <img
+              rel="preload"
               ref={mapImageRef}
+              width={800}
+              height={1000}
               src="/mapa.svg"
               alt="Mapa de Perú"
+              fetchPriority="high"
               className="absolute inset-0 w-full h-full object-contain opacity-90"
             />
 
@@ -198,6 +201,7 @@ const MapaProyectos = () => {
                 <Link
                   key={proyecto.id}
                   href={proyecto.url}
+                  aria-label={`Ver proyecto ${proyecto.nombre}`}
                   className="absolute transform -translate-x-1/2 -translate-y-1/2 block cursor-pointer"
                   style={{
                     left: mapOffset.left + (proyecto.x / 100) * mapOffset.width,
