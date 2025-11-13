@@ -166,7 +166,8 @@ const FloatingButtons: React.FC = () => {
         {/* Botón Más opciones */}
         <motion.div className="relative">
           <motion.button
-            className="flex cursor-pointer items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-xl bg-gray-700 hover:bg-gray-800 transition-all duration-300"
+            className="flex cursor-pointer items-center justify-center w-12 h-12 rounded-full shadow-lg text-white text-2xl bg-gray-700 hover:bg-gray-800 transition-all duration-300"
+              aria-label="Abrir menú de navegación principal"
             onClick={() => setShowMoreOptions(!showMoreOptions)}
           >
             <HiOutlineDotsVertical />

@@ -302,9 +302,9 @@ const MapaProyectos = () => {
             </div>
 
             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 text-xs border border-gray-200 z-30 hidden lg:block">
-              <h3 className="font-bold text-gray-800 mb-2 border-b pb-1">
+              <h2 className="font-semibold text-gray-800 mb-2 border-b pb-1">
                 Leyenda de Estado
-              </h3>
+              </h2>
               <div className="space-y-1">
                 {[
                   "Completado",
