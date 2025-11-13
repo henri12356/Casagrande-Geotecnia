@@ -149,10 +149,10 @@ const Footer = () => {
             <h2 className="text-lg  font-bold mb-6 text-[#182C45] text-center">
               Nuestras Certificaciones 
             </h2>
-            <div className=" w-60">
+            <div className=" w-60 aspect-[4/3] relative">
               <Image
                 src="/certicados.png" // ruta de tu imagen
-                alt="Certificaciones"
+                alt="Certificaciones"   
                 width={800} // ancho grande
                 height={600} // alto proporcional
                 className="w-full h-auto object-contain"
