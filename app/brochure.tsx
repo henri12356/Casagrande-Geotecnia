@@ -7,7 +7,7 @@ const Brochure = () => {
       {/* Contenedor del Texto */}
       <div className="flex-1 text-center md:text-left max-w-xl">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mb-2">
-          Descarga nuestro <span className="text-red-500">Archivos</span>
+          Descarga nuestro <span className="text-white">Archivos</span>
         </h2>
         <p className="text-gray-300 opacity-90 text-base md:text-lg max-w-md mx-auto md:mx-0">
           Accede a nuestra experiencia y proyectos destacados en ingeniería
@@ -20,7 +20,7 @@ const Brochure = () => {
         <a
           href="/path/to/curriculum-corporativo.pdf"
           download="Curriculum-Corporativo.pdf"
-          className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
+          className="bg-white hover:bg-slate-300 text-[#1b4772] font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
         >
           Ver brochure
         </a>
@@ -28,7 +28,7 @@ const Brochure = () => {
         <a
           href="/calidad"
          
-          className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
+          className="bg-white hover:bg-slate-300 text-[#1b4772] font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
         >
           Documento de calidad
         </a>
