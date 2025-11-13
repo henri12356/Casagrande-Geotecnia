@@ -139,14 +139,14 @@ export default function BlogPage() {
                     <Image
                       src={mainHero.imagen}
                       alt={mainHero.titulo}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 1024px) 100vw, 66vw"
-                      priority
+                      width={1200} // ajusta según tu imagen real
+                      height={700}
                       fetchPriority="high"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 w-full h-auto"
+                      priority 
                     />
                   </div>
-                  <div className="p-2 md:p-6">
+                  <div className="p-2 md:p-6">  
                     <span
                       className="text-sm uppercase tracking-wide font-semibold bg-[#1b4772] text-white px-3 py-1 rounded-full inline-block mb-3"
                       aria-label={`Categoría: ${activeCategory.nombre}`}
@@ -193,9 +193,8 @@ export default function BlogPage() {
                           <Image
                             src={blog.imagen}
                             alt={blog.titulo}
-                             width={400}
-                  height={280}
-           
+                            width={400}
+                            height={280}
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                             sizes="128px"
                           />
@@ -226,21 +225,20 @@ export default function BlogPage() {
                     No hay más artículos en esta categoría.
                   </p>
                 )}
-            <div className="flex md:justify-end pt-8 md:pt-20">
-              <Link
-                href={`/blog/categoria/${activeCategory.id}`}
-                className="inline-flex items-center px-6 py-3 rounded-full bg-[#1b4772] text-white font-semibold hover:bg-blue-700 transition-colors duration-300 group"
-                aria-label={`Ver todos los artículos de ${activeCategory.nombre}`}
-              >
-                Ver más artículos de {activeCategory.nombre}
-                <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </Link>
-            </div>
+                <div className="flex md:justify-end pt-8 md:pt-20">
+                  <Link
+                    href={`/blog/categoria/${activeCategory.id}`}
+                    className="inline-flex items-center px-6 py-3 rounded-full bg-[#1b4772] text-white font-semibold hover:bg-blue-700 transition-colors duration-300 group"
+                    aria-label={`Ver todos los artículos de ${activeCategory.nombre}`}
+                  >
+                    Ver más artículos de {activeCategory.nombre}
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </Link>
+                </div>
               </aside>
             </div>
-
           </section>
         )}
 
@@ -297,8 +295,8 @@ export default function BlogPage() {
                         <Image
                           src={blog.imagen}
                           alt={blog.titulo}
-                           width={400}
-                  height={280}
+                          width={400}
+                          height={280}
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />
@@ -345,8 +343,6 @@ export default function BlogPage() {
             </section>
           );
         })}
-
- 
       </main>
     </div>
   );
