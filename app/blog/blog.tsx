@@ -143,6 +143,7 @@ export default function BlogPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 1024px) 100vw, 66vw"
                       priority
+                      fetchPriority="high"
                     />
                   </div>
                   <div className="p-2 md:p-6">
