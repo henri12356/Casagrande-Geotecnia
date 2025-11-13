@@ -21,7 +21,7 @@ const serviciosMetadata = {
     image: "/geotecnia/geotecnia08.webp"
   },
   'laboratorio-de-suelo': {
-    title: 'Laboratorio Geotécnico Certificado | Ensayos de Suelos ',
+    title: 'Laboratorio de suelos | Ensayos de Suelos ',
     description: 'Laboratorio geotécnico acreditado en Lima, Perú. Ensayos especializados de suelos, rocas, concreto, asfalto y aguas según normas ASTM, NTP y AASHTO. Control de calidad certificado para materiales de construcción. Resultados confiables y rápidos.',
     keywords: 'laboratorio geotécnico perú, ensayos de suelos lima, laboratorio mecánica suelos, ensayos concreto, pruebas asfalto, análisis agua construcción, laboratorio certificado astm, ensayos granulometría, límites atterberg, proctor modificado, cbr suelos, laboratorio acreditado perú',
     image: "/laboratorio/laboratorio10.webp"
