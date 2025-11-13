@@ -67,7 +67,7 @@ const Formulario = () => {
           <div className="relative z-10 w-full h-full flex items-center justify-center">
             <div className="relative w-full h-full">
               <Image
-                src="/historia.jpg"
+                src="/conctacto.webp"
                 alt="Persona de Contacto"
                 layout="fill"
                 objectFit="contain"

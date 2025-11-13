@@ -10,7 +10,7 @@ const companies = [
   { name: "Municipalidad Provincial de Huamanga", logo: "/logos/logo-mucipalidad-huamanga.webp" },
   { name: "Constructora ECP Ingenieros", logo: "/logos/logo-constructora-ECP.webp" },
   { name: "JC Camila Inversiones EIRL", logo: "/logos/logo-jc-inversiones.webp" },
-  { name: "Universidad Nacional de San Cristóbal de Huamanga", logo: "/logo07.webp" },
+  { name: "Universidad Nacional de San Cristóbal de Huamanga", logo: "/logos/logo07.webp" },
   { name: "PRONIS", logo: "/logos/logopronis.webp" },
   { name: "Programa Subsectorial de Irrigaciones", logo: "/logos/logopsi.webp" },
   { name: "Municipalidad provincial de la Mar", logo: "/logos/lamar.webp" },

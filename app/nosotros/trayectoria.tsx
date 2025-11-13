@@ -51,7 +51,7 @@ const Trayectoria = () => {
             </p>
             <div className="relative w-full max-w-sm h-auto overflow-hidden rounded-lg">
               <Image
-                src="/historia.jpg"
+                src="/conctacto.webp"
                 alt="Historia casagrande geotecnia"
                 width={500}
                 height={500}

@@ -10,7 +10,7 @@
   "categorias": [
     {
       "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia.webp" ,"/geologia/geologia03.webp"],
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
       "ensayos": [
         "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
         "Análisis estructural a escala local y regional.",
