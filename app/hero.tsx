@@ -20,7 +20,7 @@ const slidesData: {
   id: 1,
   title: "BIENVENIDO A CASAGRANDE",
   subtitle:
-    "Líderes en ingenieria geotecnica acreditados por INACAL bajo la norma ISO/IEC 17025:2017. Ofrecemos soluciones con precisión, confiabilidad y excelencia técnica en cada proyecto.",
+    "Líderes en ingenieria geotecnica con equipos certificados por INACAL y PINZUAR . Ofrecemos soluciones con precisión, confiabilidad y excelencia técnica en cada proyecto.",
   imageSrc: "/hero01.webp",
   buttonText: "Descargar Nuestro Brochure",
   buttonLink: "tel:989900609",

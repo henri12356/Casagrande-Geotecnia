@@ -351,7 +351,7 @@ const ServicioPage = ({ params }: PageProps) => {
           <p className="text-center text-sm md:text-base text-[#182C45]] mb-8">
             En <strong>Casagrande</strong> garantizamos la precisión de cada ensayo. Nuestras{" "}
             <strong>máquinas y equipos están calibrados</strong> por <strong>Pizuar</strong>, laboratorio{" "}
-            <strong>acreditado ante INACAL</strong> bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una{" "}
+            <strong>Equipos acreditados por Pinzuar que esta acreditado por inacal </strong> bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una{" "}
             <strong>trazabilidad metrológica</strong> completa y resultados <strong>confiables, verificables y certificados.</strong>
           </p>
 
@@ -397,7 +397,7 @@ const ServicioPage = ({ params }: PageProps) => {
               +130 ensayos calidad (suelos, rocas, concreto y asfalto)
             </span>
             <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
-              Equipos calibrados con trazabilidad INACAL
+              Los equipos esta calibrado por el provedor de Pinzuar que esta certificado por inacal 
             </span>
             <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
               Resultados precisos y verificables

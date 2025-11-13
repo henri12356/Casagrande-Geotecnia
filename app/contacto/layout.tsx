@@ -146,7 +146,7 @@ export default function ContactoLayout({
               },
               {
                 "@type": "EducationalOccupationalCredential",
-                name: "Métodos de ensayo acreditados ante INACAL",
+                name: "Métodos de ensayo acreditados",
               },
             ],
           }),

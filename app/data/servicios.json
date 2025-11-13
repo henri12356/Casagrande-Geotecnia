@@ -64,7 +64,7 @@
     "slug": "geotecnia",
     "titulo": "Estudios Geotécnicos",
     "descripcion": "Evaluación integral de las propiedades físicas y mecánicas del suelo y la roca para garantizar cimentaciones seguras, pavimentos duraderos y estructuras estables.",
-    "contenido": "En Casagrande desarrollamos estudios geotécnicos completos orientados al análisis del comportamiento del terreno, abarcando la mecánica de suelos y rocas, estabilidad de taludes, diseño de cimentaciones y pavimentos, así como el control de calidad de materiales. Nuestros servicios se ejecutan bajo normativas ASTM, AASHTO y E.050, con equipos certificados por INACAL y personal especializado que asegura resultados confiables y técnicamente sustentados.",
+    "contenido": "En Casagrande desarrollamos estudios geotécnicos completos orientados al análisis del comportamiento del terreno, abarcando la mecánica de suelos y rocas, estabilidad de taludes, diseño de cimentaciones y pavimentos, así como el control de calidad de materiales. Nuestros servicios se ejecutan bajo normativas ASTM, AASHTO y E.050, con equipos certificados por INACAL (PINZUAR) y personal especializado que asegura resultados confiables y técnicamente sustentados.",
     "imagen": "/geotecnia/geotecnia08.webp",
     "titulo01": "Estudios Geotécnicos ",
     "subtitulo01": "Investigación del terreno, estabilidad de taludes, diseño de cimentaciones y control geotécnico de materiales.",
@@ -105,7 +105,7 @@
       }
     ],
     "puntos": [
-      "Laboratorio acreditado y calibrado por INACAL",
+      "Laboratorio acreditado y calibrado por INACAL (PINZUAR)",
       "Software especializado de modelamiento geotécnico (GeoStudio, Plaxis, Civil 3D)",
       "Cumplimiento estricto de normas NTP, ASTM, AASHTO y E.050",
       "Equipos de última generación para campo y laboratorio",
@@ -136,7 +136,7 @@
    "slug": "laboratorio-de-suelo",
    "titulo": "Laboratorio Geotécnico",
    "descripcion": "Ensayos especializados en laboratorio acreditado para el control y aseguramiento de la calidad de materiales de construcción e infraestructura.",
-   "contenido": "Nuestro laboratorio geotécnico acreditado por INACAL realiza ensayos de campo y laboratorio en suelos, rocas, concreto, asfalto, agregados y agua. Garantizamos resultados confiables mediante equipos calibrados, procedimientos normalizados y personal técnico altamente calificado bajo normas nacionales e internacionales.",
+   "contenido": "Nuestro laboratorio geotécnico acreditado por Por Pizuar (INACAL) realiza ensayos de campo y laboratorio en suelos, rocas, concreto, asfalto, agregados y agua. Garantizamos resultados confiables mediante equipos calibrados, procedimientos normalizados y personal técnico altamente calificado bajo normas nacionales e internacionales.",
    "imagen": "/laboratorio/laboratorio10.webp",
    "titulo01": "Laboratorio Geotécnico Acreditado",
    "subtitulo01": "Ensayos dinámicos, especiales y convencionales con precisión certificada bajo norma ISO/IEC 17025.",
@@ -220,7 +220,7 @@
      }
    ],
    "puntos": [
-     "Laboratorio acreditado por INACAL bajo norma ISO/IEC 17025.",
+     "Equipos calibrados y certificados por proveedores acreditados por INACAL (como Pizuar).",
      "Único laboratorio en Perú y Sudamérica con equipo RCTS (Columna Resonante y Corte Torsional).",
      "Equipos calibrados y certificados por proveedores acreditados por INACAL.",
      "Personal técnico especializado en mecánica de suelos dinámica y estática.",

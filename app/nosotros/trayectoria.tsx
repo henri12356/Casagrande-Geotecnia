@@ -21,7 +21,7 @@ const Trayectoria = () => {
     {
       fecha: "May 2023",
       descripcion:
-        "Acreditación oficial de métodos de ensayo ante INACAL, fortaleciendo la confiabilidad técnica y cumplimiento de estándares nacionales e internacionales.",
+        "Nuestro equipos esta acreditado por Pinzuar (INACAL), fortaleciendo la confiabilidad técnica y cumplimiento de estándares nacionales e internacionales.",
     },
     {
       fecha: "Nov 2024",

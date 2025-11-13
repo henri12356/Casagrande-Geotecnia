@@ -247,7 +247,7 @@ export default function EquiposLayout({
     mainEntity: [
       {
         "@type": "Question",
-        name: "¿Los equipos están calibrados y con trazabilidad INACAL?",
+        name: "¿Los equipos están calibrados y con trazabilidad INACAL (Pinzuar)?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
