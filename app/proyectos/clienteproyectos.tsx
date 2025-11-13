@@ -1,34 +1,58 @@
-'use client';
+"use client";
 import { Marquee } from "@/components/magicui/marquee";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const companies = [
-  { name: "Municipalidad Distrital Andrés Avelino Cáceres", logo: "/logos/logo-andres-avelino.webp" },
+  {
+    name: "Municipalidad Distrital Andrés Avelino Cáceres",
+    logo: "/logos/logo-andres-avelino.webp",
+  },
   { name: "Prider Ayacucho GRA", logo: "/logos/logo-prider.webp" },
-  { name: "Municipalidad Provincial de Huamanga", logo: "/logos/logo-mucipalidad-huamanga.webp" },
-  { name: "Constructora ECP Ingenieros", logo: "/logos/logo-constructora-ECP.webp" },
-  { name: "JC Camila Inversiones EIRL", logo: "/logos/logo-jc-inversiones.webp" },
-  { name: "Universidad Nacional de San Cristóbal de Huamanga", logo: "/logo07.webp" },
+  {
+    name: "Municipalidad Provincial de Huamanga",
+    logo: "/logos/logo-mucipalidad-huamanga.webp",
+  },
+  {
+    name: "Constructora ECP Ingenieros",
+    logo: "/logos/logo-constructora-ECP.webp",
+  },
+  {
+    name: "JC Camila Inversiones EIRL",
+    logo: "/logos/logo-jc-inversiones.webp",
+  },
+  {
+    name: "Universidad Nacional de San Cristóbal de Huamanga",
+    logo: "/logo07.webp",
+  },
   { name: "PRONIS", logo: "/logos/logopronis.webp" },
-  { name: "Programa Subsectorial de Irrigaciones", logo: "/logos/logopsi.webp" },
+  {
+    name: "Programa Subsectorial de Irrigaciones",
+    logo: "/logos/logopsi.webp",
+  },
   { name: "Municipalidad provincial de la Mar", logo: "/logos/lamar.webp" },
   { name: "SUNAT", logo: "/logos/sunat.webp" },
-  { name: "Municipalidad Metropolitana de Lima", logo: "/logos/municipalidadelima.webp" },
+  {
+    name: "Municipalidad Metropolitana de Lima",
+    logo: "/logos/municipalidadelima.webp",
+  },
   { name: "Contraloría General de la República", logo: "/logos/logo-cgr.webp" },
-  { name: "Municipalidad Distrital de Sacsamarca", logo: "/logos/sacamarca.webp" },
-  { name: "Gobierno regional de Ayacucho", logo: "/logos/ayacucho.webp" }
+  {
+    name: "Municipalidad Distrital de Sacsamarca",
+    logo: "/logos/sacamarca.webp",
+  },
+  { name: "Gobierno regional de Ayacucho", logo: "/logos/ayacucho.webp" },
 ];
 
 const marqueeItems = [...companies, ...companies, ...companies];
 
 // CAMBIO: Se eliminan las props onMouseEnter y onMouseLeave para simplificar
-const CompanyLogo = ({ name, logo }: { name:string; logo:string; }) => {
+const CompanyLogo = ({ name, logo }: { name: string; logo: string }) => {
   return (
     <motion.div
       // CAMBIO 2: Se añade la clase 'force-gpu' para mejorar la fluidez
-      className="mx-4 flex flex-col items-center justify-center p-2 duration-300 cursor-pointer force-gpu" 
+      className="mx-4 flex flex-col items-center justify-center p-2 duration-300 cursor-pointer force-gpu"
       whileHover={{ scale: 1.05, y: -3 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
@@ -36,12 +60,11 @@ const CompanyLogo = ({ name, logo }: { name:string; logo:string; }) => {
         <Image
           priority
           fill
-          
           src={logo}
           alt={`${name} logo`}
           className="object-contain transition-all duration-300"
           // Añadimos tamaños para optimizar la carga de la imagen
-          sizes="(max-width: 768px) 80px, 96px"
+          sizes="(max-width: 768px) 80px, 80px"
         />
       </div>
       <p className="text-xs text-center text-[#182C45] mt-1 max-w-[100px] leading-tight">
@@ -54,8 +77,12 @@ const CompanyLogo = ({ name, logo }: { name:string; logo:string; }) => {
 const Trusted = () => {
   // CAMBIO: Se eliminan el estado y las funciones handleMouseEnter/Leave
   // const [isPaused, setIsPaused] = useState(false);
-  
-  const textTransition = { duration: 0.7, ease: "easeOut" as const, staggerChildren: 0.15 };
+
+  const textTransition = {
+    duration: 0.7,
+    ease: "easeOut" as const,
+    staggerChildren: 0.15,
+  };
   const itemTransition = { duration: 0.5, ease: "easeOut" as const };
 
   const textVariants = {
@@ -69,7 +96,12 @@ const Trusted = () => {
   };
 
   return (
-    <div className={cn("w-full overflow-hidden py-8 md:pt-16 relative", "bg-white text-[#182C45]")}>
+    <div
+      className={cn(
+        "w-full overflow-hidden py-8 md:pt-16 relative",
+        "bg-white text-[#182C45]"
+      )}
+    >
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center mb-10">
         <motion.div
           initial="hidden"
@@ -81,14 +113,14 @@ const Trusted = () => {
             className="text-3xl md:text-4xl font-bold mb-3 leading-tight"
             variants={itemVariants}
           >
-            Nuestros {" "}
-            <span className="text-[#182C45] font-bold">Clientes</span>
+            Nuestros <span className="text-[#182C45] font-bold">Clientes</span>
           </motion.h2>
           <motion.p
             className="text-base md:text-lg text-slate-950 font-sans leading-relaxed max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            Trabajamos de la mano con nuestros clientes, asegurando profesionalismo y confiabilidad en cada proyecto.
+            Trabajamos de la mano con nuestros clientes, asegurando
+            profesionalismo y confiabilidad en cada proyecto.
           </motion.p>
         </motion.div>
       </div>
@@ -99,10 +131,7 @@ const Trusted = () => {
         <Marquee className="[--duration:80s] gap-6" pauseOnHover={true}>
           {marqueeItems.map((company, idx) => (
             // CAMBIO: Se eliminan las props que ya no se usan
-            <CompanyLogo 
-              key={`company-${company.name}-${idx}`} 
-              {...company} 
-            />
+            <CompanyLogo key={`company-${company.name}-${idx}`} {...company} />
           ))}
         </Marquee>
       </div>

@@ -24,7 +24,9 @@ function ProyectosContent() {
 
   const categorias = useMemo(() => {
     const set = new Set<string>();
-    (proyectos as Proyecto[]).forEach((p) => p.categoria && set.add(p.categoria.trim()));
+    (proyectos as Proyecto[]).forEach(
+      (p) => p.categoria && set.add(p.categoria.trim())
+    );
     return Array.from(set).sort((a, b) => a.localeCompare(b, "es"));
   }, []);
 
@@ -41,23 +43,31 @@ function ProyectosContent() {
   const listaFiltrada = useMemo(() => {
     if (!categoriaQP) return proyectos as Proyecto[];
     return (proyectos as Proyecto[]).filter(
-      (p) => (p.categoria || "").trim().toLowerCase() === categoriaQP.toLowerCase()
+      (p) =>
+        (p.categoria || "").trim().toLowerCase() === categoriaQP.toLowerCase()
     );
   }, [categoriaQP]);
 
-  const titulo = categoriaQP ? `Proyectos – ${categoriaQP}` : "Nuestros Proyectos";
+  const titulo = categoriaQP
+    ? `Proyectos – ${categoriaQP}`
+    : "Nuestros Proyectos";
 
   return (
     <div className="">
       {/* Hero */}
       <section className="py-16 pt-28 md:pt-56 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-16 text-center">
-          <div className="inline-block bg-[#1b4772] rounded-lg px-6 py-3 mb-4 shadow-md">
-            <span className="text-white text-sm font-semibold uppercase tracking-wider">Portafolio</span>
-          </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#1b4772]  mb-4">{titulo}</h2>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-3xl lg:text-7xl font-bold text-[#1b4772]  mb-4">
+            {titulo}
+          </h2>
           <p className="text-gray-600 text-base lg:text-lg max-w-3xl mx-auto">
-            Descubre nuestra trayectoria y experiencia en proyectos de ingeniería geotécnica a nivel nacional.
+            Descubre nuestra trayectoria y experiencia en proyectos de
+            ingeniería geotécnica a nivel nacional.
           </p>
         </motion.div>
 
@@ -66,7 +76,11 @@ function ProyectosContent() {
           <Link
             href="/proyectos"
             className={`px-4 py-2 rounded-full border text-sm transition
-              ${!categoriaQP ? "bg-[#1b4772] text-white border-[#1b4772]" : "text-[#1b4772] border-[#1b4772] hover:bg-[#1b4772]/10"}`}
+              ${
+                !categoriaQP
+                  ? "bg-[#1b4772] text-white border-[#1b4772]"
+                  : "text-[#1b4772] border-[#1b4772] hover:bg-[#1b4772]/10"
+              }`}
           >
             Todas ({(proyectos as Proyecto[]).length})
           </Link>
@@ -76,9 +90,11 @@ function ProyectosContent() {
               key={cat}
               href={`/proyectos?categoria=${encodeURIComponent(cat)}`}
               className={`px-4 py-2 rounded-full border text-sm transition
-                ${categoriaQP.toLowerCase() === cat.toLowerCase()
-                  ? "bg-[#1b4772] text-white border-[#1b4772]"
-                  : "text-[#1b4772] border-[#1b4772] hover:bg-[#1b4772]/10"}`}
+                ${
+                  categoriaQP.toLowerCase() === cat.toLowerCase()
+                    ? "bg-[#1b4772] text-white border-[#1b4772]"
+                    : "text-[#1b4772] border-[#1b4772] hover:bg-[#1b4772]/10"
+                }`}
             >
               {cat} {counts.get(cat) ? `(${counts.get(cat)})` : ""}
             </Link>
@@ -98,7 +114,11 @@ function ProyectosContent() {
                 href={`/proyectos/${proyecto.slug}`}
                 className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white block"
               >
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.06 }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.06 }}
+                >
                   {/* Imagen */}
                   <div className="relative h-64 lg:h-72 overflow-hidden">
                     <Image
@@ -107,7 +127,9 @@ function ProyectosContent() {
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      priority={index < 3}
+                      priority={index === 0}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                      loading={index === 0 ? "eager" : "lazy"}
                     />
                     <div className="absolute top-4 left-4">
                       {proyecto.categoria && (
@@ -135,7 +157,8 @@ function ProyectosContent() {
                         <div className="flex items-start">
                           <div className="w-2 h-2 bg-[#1B4772] rounded-full mt-2 mr-2 flex-shrink-0"></div>
                           <span className="text-sm text-gray-600">
-                            <strong className="font-semibold">Cliente:</strong> {proyecto.cliente}
+                            <strong className="font-semibold">Cliente:</strong>{" "}
+                            {proyecto.cliente}
                           </span>
                         </div>
                       )}
@@ -143,15 +166,26 @@ function ProyectosContent() {
                         <div className="flex items-start">
                           <div className="w-2 h-2 bg-[#1B4772] rounded-full mt-2 mr-2 flex-shrink-0"></div>
                           <span className="text-sm text-gray-600">
-                            <strong className="font-semibold">Obra:</strong> {proyecto.obra}
+                            <strong className="font-semibold">Obra:</strong>{" "}
+                            {proyecto.obra}
                           </span>
                         </div>
                       )}
                     </div>
                     <span className="inline-flex items-center text-[#1B4772] font-semibold text-sm">
                       Ver proyecto completo
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
                       </svg>
                     </span>
                   </div>
@@ -168,7 +202,13 @@ function ProyectosContent() {
 // --- Export por defecto: envuelve en Suspense ---
 export default function ProyectosPage() {
   return (
-    <Suspense fallback={<div className="py-28 text-center text-gray-600">Cargando proyectos…</div>}>
+    <Suspense
+      fallback={
+        <div className="py-28 text-center text-gray-600">
+          Cargando proyectos…
+        </div>
+      }
+    >
       <ProyectosContent />
     </Suspense>
   );
