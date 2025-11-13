@@ -29,7 +29,7 @@ const proyectos: Proyecto[] = [
     inversion: "S/66M",
     x: 55,
     y: 78,
-    imagen: "/proyectos/unsch-geotecnia/unsch-geotecnia.png",
+    imagen: "/proyectos/unsch-geotecnia/unsch-geotecnia.webp",
     url: "/proyectos/unsch-geotecnia",
   },
   {
@@ -43,7 +43,7 @@ const proyectos: Proyecto[] = [
     x: 12,
     y: 28,
     imagen:
-      "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza.jpg",
+      "/proyectos/proyecto-hidrologia-tablaza/proyecto-hidrologia-tablaza01.webp",
     url: "/proyectos/rehabilitacion-canal-tablaza",
   },
 ];
