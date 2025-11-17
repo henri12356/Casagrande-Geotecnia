@@ -36,7 +36,7 @@ const serviciosData = [
     title: "Laboratorio de Suelos",
     description:
       "Ensayos en campo y laboratorio de suelos, rocas, concreto, asfalto y agua para garantizar calidad de materiales.",
-    href: "/servicios/laboratorio-geotecnico",
+    href: "/servicios/laboratorio-de-suelo",
   },
   {
     id: 4,
@@ -68,7 +68,7 @@ const serviciosData = [
     title: "Estudio de Mecánica de Suelos",
     description:
       "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
-    href: "/servicios/geomecanica",
+    href: "/servicios/mecanica-de-suelos",
   },
   {
     id: 8,
@@ -76,7 +76,7 @@ const serviciosData = [
     title: "Evaluación Estructural",
     description:
       "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural, garantizando seguridad y cumplimiento normativo.",
-    href: "/servicios/geomecanica",
+    href: "/servicios/evaluacion-estructural",
   },
 ];
 
