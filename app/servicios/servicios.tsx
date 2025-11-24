@@ -11,25 +11,11 @@ import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 // --- Servicios ---
 const servicios = [
   {
-    slug: "geologia",
-    titulo: "Geológia",
-    descripcion:
-      "Caracterización del terreno, cartografía geológica, identificación de fallas, riesgos sísmicos y evaluación de materiales naturales para proyectos de ingeniería.",
-    imagen: "/servicios/geologia.webp",
-  },
-  {
     slug: "geotecnia",
     titulo: " Geotecnia",
     descripcion:
-    "Investigación del subsuelo, análisis de cimentaciones, estabilidad de taludes, diseño de muros de contención, túneles y presas para obras seguras y sostenibles.",
+      "Investigación del subsuelo, análisis de cimentaciones, estabilidad de taludes, diseño de muros de contención, túneles y presas para obras seguras y sostenibles.",
     imagen: "/servicios/geotecnia.webp",
-  },
-  {
-    slug: "laboratorio-de-suelo",
-    titulo: "Laboratorio Geotecnico",
-    descripcion:
-      "Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.",
-    imagen: "/servicios/laboratorio.webp",
   },
   {
     slug: "geofisica",
@@ -39,40 +25,41 @@ const servicios = [
     imagen: "/servicios/geofisica.webp",
   },
   {
-    slug: "hidrogeologia",
-    titulo: "Hidrología e Hidrogeología",
-    descripcion:
-      "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
-    imagen: "/servicios/hidrologia.webp",
-  },
-  {
-    slug: "geomecanica",
-    titulo: "Geomecánica",
-    descripcion:
-      "Evaluación del comportamiento de rocas y macizos rocosos mediante ensayos in situ y modelamiento numérico para garantizar estabilidad estructural.",
-    imagen: "/servicios/geomecanica.webp",
-  },
-  {
-    slug: "ensayo-de-campo",
-    titulo: "Ensayos de Campo",
+    slug: "control-de-calidad",
+    titulo: "Peligro sísmico",
     descripcion:
       "Pruebas geotécnicas y geofísicas en terreno como SPT, CPT, densidades y permeabilidad, obteniendo información directa y confiable del subsuelo.",
     imagen: "/servicios/campo.webp",
   },
   {
-    slug: "mecanica-de-suelos",
-    titulo: "Mecánica de Suelos",
+    slug: "geologia",
+    titulo: "Geología y geomecánica",
     descripcion:
-      "Determinación de las propiedades físicas y mecánicas del suelo mediante ensayos in situ y de laboratorio, asegurando la estabilidad y diseño adecuado de cimentaciones.",
-    imagen: "/servicios/mecanica.webp",
+      "Caracterización del terreno, cartografía geológica, identificación de fallas, riesgos sísmicos y evaluación de materiales naturales para proyectos de ingeniería.",
+    imagen: "/servicios/geologia.webp",
   },
   {
-    slug: "control-de-calidad",
-    titulo: "Control de Calidad en Obras",
+    slug: "hidrogeologia",
+    titulo: "Hidrología e hidrogeología",
     descripcion:
-      "Supervisión y aseguramiento de la calidad en obras civiles mediante CQC y CQA, verificando materiales, procesos constructivos y cumplimiento normativo.",
-    imagen: "/servicios/control-de-calidad.webp",
+      "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
+    imagen: "/servicios/hidrologia.webp",
   },
+  {
+    slug: "laboratorio-de-suelos",
+    titulo: "Laboratorio de materiales",
+    descripcion:
+      "Ensayos especializados en suelos, rocas, concreto, asfalto y agua, aplicando normas nacionales e internacionales para garantizar la calidad de materiales.",
+    imagen: "/servicios/laboratorio.webp",
+  },
+  {
+    slug: "ensayo-de-campo",
+    titulo: "Control de calidad y ensayos de campo",
+    descripcion:
+      "Evaluación del comportamiento de rocas y macizos rocosos mediante ensayos in situ y modelamiento numérico para garantizar estabilidad estructural.",
+    imagen: "/servicios/geomecanica.webp",
+  },
+ 
   {
     slug: "evaluacion-estructural",
     titulo: "Evaluación Estructural",
@@ -101,7 +88,7 @@ const Servicios = () => {
           geotécnica moderna.
         </p>
         <div className="border-t border-[#182C45]/20 "></div>
-      </motion.div> 
+      </motion.div>
 
       {/* --- Grid de servicios --- */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -112,7 +99,14 @@ const Servicios = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <Link href={`/servicios/${servicio.slug}`} passHref>
+            <Link
+              href={
+                servicio.slug === "laboratorio-de-suelos"
+                  ? "/laboratorio/laboratorio-de-suelos" // 👈 AQUÍ EL CAMBIO
+                  : `/servicios/${servicio.slug}`
+              }
+              passHref
+            >
               <Card className="relative shadow-lg rounded-2xl hover:shadow-2xl transition-all duration-500 overflow-hidden group h-80">
                 <Image
                   src={servicio.imagen}
@@ -156,7 +150,7 @@ const Servicios = () => {
               <div className="space-y-4">
                 <p className="flex items-center text-lg">
                   <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
-                  +51 945 513 323 
+                  +51 945 513 323
                 </p>
                 <p className="flex items-center max-sm:text-[10px] md:text-lg">
                   <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />

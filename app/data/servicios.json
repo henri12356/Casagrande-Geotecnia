@@ -433,7 +433,7 @@
 
  {
   "slug": "ensayo-de-campo",
-  "titulo": "Ensayos de Campo",
+  "titulo": "Control de calidad y ensayos de campo",
   "descripcion": "Pruebas técnicas ejecutadas directamente en obra para el control de calidad, exploración del subsuelo y verificación de diseño geotécnico.",
   "contenido": "Casagrande realiza ensayos de campo con equipos especializados para evaluar las propiedades del terreno, controlar la compactación, medir la permeabilidad y validar la capacidad portante de cimentaciones y estructuras. Nuestros procedimientos cumplen con las normas ASTM, AASHTO y MTC, garantizando resultados confiables y trazables.",
   "imagen": "/campo/campo05.webp",
@@ -565,7 +565,7 @@
 
 {
     "slug": "control-de-calidad",
-    "titulo": "Control de Calidad en Obra",
+    "titulo": "Peligro sismico",
     "descripcion": "Supervisión técnica continua para asegurar que tu proyecto cumpla con especificaciones y normas.",
     "contenido": "Brindamos servicios de supervisión técnica especializada y control de calidad durante la ejecución de obras, garantizando el cumplimiento de especificaciones técnicas y normativas vigentes.",
     "imagen": "/control/control01.webp",

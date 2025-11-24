@@ -1,0 +1,357 @@
+[
+  {
+  "slug": "laboratorio-de-suelos",
+  "titulo": "Laboratorio de Suelos",
+  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
+  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
+  "imagen": "/geologia/geologia01.webp",
+  "titulo01": "Estudios Geológicos Especializados",
+  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
+  "categorias": [
+    {
+      "titulo": "Cartografía y Evaluación Geodinámica",
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
+      "ensayos": [
+        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
+        "Análisis estructural a escala local y regional.",
+        "Estudios geomorfológicos y fotointerpretación satelital.",
+        "Identificación de zonas geodinámicas activas.",
+        "Mapeos geomorfológicos temáticos.",
+        "Estudios y criterios para excavabilidad.",
+        "Evaluación e identificación de peligros por geodinámica externa.",
+        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
+      ],
+      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
+    },
+    {
+      "titulo": "Investigaciones de Campo y Canteras",
+      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
+      "ensayos": [
+        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
+        "Logueo geológico y geotécnico.",
+        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
+        "Identificación, evaluación y estudios de canteras.",
+        "Muestreo geológico y control de calidad de agregados.",
+        "Estimación de volúmenes y viabilidad técnica de bancos de material."
+      ],
+      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
+    }
+  ],
+  "puntos": [
+    "Equipos de alta precisión para cartografía y topografía",
+    "Integración con estudios geotécnicos y de pavimentos",
+    "Informes técnicos con mapas temáticos y recomendaciones",
+    "Personal especialista en geología aplicada a la ingeniería",
+    "Trazabilidad y metodología estandarizada"
+  ],
+  "detalles": [
+    "Tiempo de entrega: 7–15 días hábiles según alcance",
+    "Incluye visitas técnicas y verificación en campo",
+    "Reportes en formato digital y físico con perfiles y secciones",
+    "Compatibles con normas y guías vigentes",
+    "Certificación ISO 9001"
+  ],
+  "numeros": [
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
+  ]
+},
+ {
+  "slug": "laboratorio-de-rocas",
+  "titulo": "Laboratorio de Rocas",
+  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
+  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
+  "imagen": "/geologia/geologia01.webp",
+  "titulo01": "Estudios Geológicos Especializados",
+  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
+  "categorias": [
+    {
+      "titulo": "Cartografía y Evaluación Geodinámica",
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
+      "ensayos": [
+        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
+        "Análisis estructural a escala local y regional.",
+        "Estudios geomorfológicos y fotointerpretación satelital.",
+        "Identificación de zonas geodinámicas activas.",
+        "Mapeos geomorfológicos temáticos.",
+        "Estudios y criterios para excavabilidad.",
+        "Evaluación e identificación de peligros por geodinámica externa.",
+        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
+      ],
+      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
+    },
+    {
+      "titulo": "Investigaciones de Campo y Canteras",
+      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
+      "ensayos": [
+        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
+        "Logueo geológico y geotécnico.",
+        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
+        "Identificación, evaluación y estudios de canteras.",
+        "Muestreo geológico y control de calidad de agregados.",
+        "Estimación de volúmenes y viabilidad técnica de bancos de material."
+      ],
+      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
+    }
+  ],
+  "puntos": [
+    "Equipos de alta precisión para cartografía y topografía",
+    "Integración con estudios geotécnicos y de pavimentos",
+    "Informes técnicos con mapas temáticos y recomendaciones",
+    "Personal especialista en geología aplicada a la ingeniería",
+    "Trazabilidad y metodología estandarizada"
+  ],
+  "detalles": [
+    "Tiempo de entrega: 7–15 días hábiles según alcance",
+    "Incluye visitas técnicas y verificación en campo",
+    "Reportes en formato digital y físico con perfiles y secciones",
+    "Compatibles con normas y guías vigentes",
+    "Certificación ISO 9001"
+  ],
+  "numeros": [
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
+  ]
+},
+{
+  "slug": "laboratorio-de-concreto",
+  "titulo": "Laboratorio de Concreto",
+  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
+  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
+  "imagen": "/geologia/geologia01.webp",
+  "titulo01": "Estudios Geológicos Especializados",
+  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
+  "categorias": [
+    {
+      "titulo": "Cartografía y Evaluación Geodinámica",
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
+      "ensayos": [
+        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
+        "Análisis estructural a escala local y regional.",
+        "Estudios geomorfológicos y fotointerpretación satelital.",
+        "Identificación de zonas geodinámicas activas.",
+        "Mapeos geomorfológicos temáticos.",
+        "Estudios y criterios para excavabilidad.",
+        "Evaluación e identificación de peligros por geodinámica externa.",
+        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
+      ],
+      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
+    },
+    {
+      "titulo": "Investigaciones de Campo y Canteras",
+      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
+      "ensayos": [
+        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
+        "Logueo geológico y geotécnico.",
+        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
+        "Identificación, evaluación y estudios de canteras.",
+        "Muestreo geológico y control de calidad de agregados.",
+        "Estimación de volúmenes y viabilidad técnica de bancos de material."
+      ],
+      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
+    }
+  ],
+  "puntos": [
+    "Equipos de alta precisión para cartografía y topografía",
+    "Integración con estudios geotécnicos y de pavimentos",
+    "Informes técnicos con mapas temáticos y recomendaciones",
+    "Personal especialista en geología aplicada a la ingeniería",
+    "Trazabilidad y metodología estandarizada"
+  ],
+  "detalles": [
+    "Tiempo de entrega: 7–15 días hábiles según alcance",
+    "Incluye visitas técnicas y verificación en campo",
+    "Reportes en formato digital y físico con perfiles y secciones",
+    "Compatibles con normas y guías vigentes",
+    "Certificación ISO 9001"
+  ],
+  "numeros": [
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
+  ]
+},
+{
+  "slug": "laboratorio-de-pavimentos",
+  "titulo": "Laboratorio de Pavimentos",
+  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
+  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
+  "imagen": "/geologia/geologia01.webp",
+  "titulo01": "Estudios Geológicos Especializados",
+  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
+  "categorias": [
+    {
+      "titulo": "Cartografía y Evaluación Geodinámica",
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
+      "ensayos": [
+        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
+        "Análisis estructural a escala local y regional.",
+        "Estudios geomorfológicos y fotointerpretación satelital.",
+        "Identificación de zonas geodinámicas activas.",
+        "Mapeos geomorfológicos temáticos.",
+        "Estudios y criterios para excavabilidad.",
+        "Evaluación e identificación de peligros por geodinámica externa.",
+        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
+      ],
+      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
+    },
+    {
+      "titulo": "Investigaciones de Campo y Canteras",
+      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
+      "ensayos": [
+        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
+        "Logueo geológico y geotécnico.",
+        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
+        "Identificación, evaluación y estudios de canteras.",
+        "Muestreo geológico y control de calidad de agregados.",
+        "Estimación de volúmenes y viabilidad técnica de bancos de material."
+      ],
+      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
+    }
+  ],
+  "puntos": [
+    "Equipos de alta precisión para cartografía y topografía",
+    "Integración con estudios geotécnicos y de pavimentos",
+    "Informes técnicos con mapas temáticos y recomendaciones",
+    "Personal especialista en geología aplicada a la ingeniería",
+    "Trazabilidad y metodología estandarizada"
+  ],
+  "detalles": [
+    "Tiempo de entrega: 7–15 días hábiles según alcance",
+    "Incluye visitas técnicas y verificación en campo",
+    "Reportes en formato digital y físico con perfiles y secciones",
+    "Compatibles con normas y guías vigentes",
+    "Certificación ISO 9001"
+  ],
+  "numeros": [
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
+  ]
+},
+{
+  "slug": "laboratorio-quimico",
+  "titulo": "Laboratorio Químico",
+  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
+  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
+  "imagen": "/geologia/geologia01.webp",
+  "titulo01": "Estudios Geológicos Especializados",
+  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
+  "categorias": [
+    {
+      "titulo": "Cartografía y Evaluación Geodinámica",
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
+      "ensayos": [
+        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
+        "Análisis estructural a escala local y regional.",
+        "Estudios geomorfológicos y fotointerpretación satelital.",
+        "Identificación de zonas geodinámicas activas.",
+        "Mapeos geomorfológicos temáticos.",
+        "Estudios y criterios para excavabilidad.",
+        "Evaluación e identificación de peligros por geodinámica externa.",
+        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
+      ],
+      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
+    },
+    {
+      "titulo": "Investigaciones de Campo y Canteras",
+      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
+      "ensayos": [
+        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
+        "Logueo geológico y geotécnico.",
+        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
+        "Identificación, evaluación y estudios de canteras.",
+        "Muestreo geológico y control de calidad de agregados.",
+        "Estimación de volúmenes y viabilidad técnica de bancos de material."
+      ],
+      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
+    }
+  ],
+  "puntos": [
+    "Equipos de alta precisión para cartografía y topografía",
+    "Integración con estudios geotécnicos y de pavimentos",
+    "Informes técnicos con mapas temáticos y recomendaciones",
+    "Personal especialista en geología aplicada a la ingeniería",
+    "Trazabilidad y metodología estandarizada"
+  ],
+  "detalles": [
+    "Tiempo de entrega: 7–15 días hábiles según alcance",
+    "Incluye visitas técnicas y verificación en campo",
+    "Reportes en formato digital y físico con perfiles y secciones",
+    "Compatibles con normas y guías vigentes",
+    "Certificación ISO 9001"
+  ],
+  "numeros": [
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
+  ]
+},
+{
+  "slug": "laboratorio-complementario",
+  "titulo": "Laboratorio Complementario",
+  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
+  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
+  "imagen": "/geologia/geologia01.webp",
+  "titulo01": "Estudios Geológicos Especializados",
+  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
+  "categorias": [
+    {
+      "titulo": "Cartografía y Evaluación Geodinámica",
+      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
+      "ensayos": [
+        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
+        "Análisis estructural a escala local y regional.",
+        "Estudios geomorfológicos y fotointerpretación satelital.",
+        "Identificación de zonas geodinámicas activas.",
+        "Mapeos geomorfológicos temáticos.",
+        "Estudios y criterios para excavabilidad.",
+        "Evaluación e identificación de peligros por geodinámica externa.",
+        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
+      ],
+      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
+    },
+    {
+      "titulo": "Investigaciones de Campo y Canteras",
+      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
+      "ensayos": [
+        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
+        "Logueo geológico y geotécnico.",
+        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
+        "Identificación, evaluación y estudios de canteras.",
+        "Muestreo geológico y control de calidad de agregados.",
+        "Estimación de volúmenes y viabilidad técnica de bancos de material."
+      ],
+      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
+    }
+  ],
+  "puntos": [
+    "Equipos de alta precisión para cartografía y topografía",
+    "Integración con estudios geotécnicos y de pavimentos",
+    "Informes técnicos con mapas temáticos y recomendaciones",
+    "Personal especialista en geología aplicada a la ingeniería",
+    "Trazabilidad y metodología estandarizada"
+  ],
+  "detalles": [
+    "Tiempo de entrega: 7–15 días hábiles según alcance",
+    "Incluye visitas técnicas y verificación en campo",
+    "Reportes en formato digital y físico con perfiles y secciones",
+    "Compatibles con normas y guías vigentes",
+    "Certificación ISO 9001"
+  ],
+  "numeros": [
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
+  ]
+}
+
+]

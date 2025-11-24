@@ -42,18 +42,17 @@ const baseNavLinks: NavLink[] = [
   {
     href: "/servicios",
     label: "Servicios",
-    subLinks: [
-      { href: "/servicios/geologia", label: " Geológicos" },
-      { href: "/servicios/geotecnia", label: " Geotécnicos" },
-      { href: "/servicios/laboratorio-de-suelo", label: "Laboratorio de suelos" },
-      { href: "/servicios/geofisica", label: " Geofísicos" },
-      { href: "/servicios/hidrogeologia", label: " Hidrológicos e Hidrogeológicos" },
-      { href: "/servicios/geomecanica", label: " Geomecánicos" },
-      { href: "/servicios/ensayo-de-campo", label: "Ensayos de Campo" },
-      { href: "/servicios/mecanica-de-suelos", label: "Mecánica de Suelos" },
-      { href: "/servicios/control-de-calidad", label: "Control de Calidad en Obra" },
-      { href: "/servicios/evaluacion-estructural", label: "Evaluación Estructural" },
-    ],
+   subLinks: [
+  { href: "/servicios/geotecnia", label: "Geotecnia" },
+  { href: "/servicios/geofisica", label: "Geofísica" },
+  { href: "/servicios/ensayo-de-campo", label: "Peligro sísmico" },
+  { href: "/servicios/geologia", label: "Geología y geomecánica" },
+  { href: "/servicios/hidrogeologia", label: "Hidrología e hidrogeología" },
+  { href: "/laboratorio/laboratorio-de-suelos", label: "Laboratorio de materiales" },
+  { href: "/servicios/geomecanica", label: "Control de calidad y ensayos de campo" },
+  { href: "/servicios/evaluacion-estructural", label: "Evaluación estructural" },
+]
+
   },
   { href: "/proyectos", label: "Proyectos", subLinks: [] }, // <- se rellena dinámicamente
   { href: "/calidad", label: "Gestion de calidad" },
