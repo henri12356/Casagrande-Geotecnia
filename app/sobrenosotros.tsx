@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
 import { FaAward } from 'react-icons/fa';
 
 const imageSrc = "/nosotros.webp";
@@ -23,7 +22,7 @@ const Sobrenosotros = () => {
           {/* Texto y contenido */}
           <div className="w-full lg:w-1/2">
             <h3 className="text-5xl font-black text-[#182C45] mb-4">
-              Casagrande Geotecnia
+              Casagrande Geotecniaaaaaaaaaaaaaaa
             </h3>
             
             <p className="text-gray-600 leading-relaxed mb-4">
