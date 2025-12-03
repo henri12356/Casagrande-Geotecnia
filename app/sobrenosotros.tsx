@@ -22,7 +22,7 @@ const Sobrenosotros = () => {
           {/* Texto y contenido */}
           <div className="w-full lg:w-1/2">
             <h3 className="text-5xl font-black text-[#182C45] mb-4">
-              Casagrande Geotecniaaaaaaaaaaaaaaa
+              Casagrande Geotecnia
             </h3>
             
             <p className="text-gray-600 leading-relaxed mb-4">

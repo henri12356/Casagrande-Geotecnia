@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google"; // ⬅️ Importamos Poppins
 import FloatingButtons from "./floating-buttons";
 import "./globals.css";
+import UpdateModal from "./UpdateModal";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -343,6 +344,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       <body className={`${font.className} antialiased`}>
+        <UpdateModal />
         {children}
         <FloatingButtons />
         {/* Mantén GA4 aquí: */}
