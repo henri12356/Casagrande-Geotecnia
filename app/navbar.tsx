@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   AnimatePresence,
   motion,
@@ -7,14 +8,13 @@ import {
   useScroll,
   Variants,
 } from "framer-motion";
-import { LuMenu, LuX, LuChevronRight } from "react-icons/lu";
-import { IconType } from "react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { IconType } from "react-icons";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import { LuChevronRight, LuMenu, LuX } from "react-icons/lu";
 
 // 👇 importa tus proyectos para leer categorías
 import proyectos from "@/app/data/proyectos.json";
@@ -42,15 +42,17 @@ const baseNavLinks: NavLink[] = [
   {
     href: "/servicios",
     label: "Servicios",
-   subLinks: [
+  subLinks: [
+  { href: "/servicios/geologia", label: "Geología" },
   { href: "/servicios/geotecnia", label: "Geotecnia" },
   { href: "/servicios/geofisica", label: "Geofísica" },
-  { href: "/servicios/ensayo-de-campo", label: "Peligro sísmico" },
-  { href: "/servicios/geologia", label: "Geología y geomecánica" },
-  { href: "/servicios/hidrogeologia", label: "Hidrología e hidrogeología" },
-  { href: "/laboratorio/laboratorio-de-suelos", label: "Laboratorio de materiales" },
-  { href: "/servicios/geomecanica", label: "Control de calidad y ensayos de campo" },
+  { href: "/servicios/geomecanica", label: "Geomecánica" },
+  { href: "/servicios/ensayo-de-campo", label: "Ensayos de campo" },
+  { href: "/servicios/mecanica-de-suelos", label: "Mecánica de suelos" },
   { href: "/servicios/evaluacion-estructural", label: "Evaluación estructural" },
+  { href: "/servicios/hidrogeologia", label: "Hidrología e hidrogeología" },
+  { href: "/servicios/control-de-calidad", label: "Control de calidad en obras" },
+  { href: "/laboratorio/laboratorio-de-suelos", label: "Laboratorio de materiales" }
 ]
 
   },

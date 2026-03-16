@@ -1,5 +1,5 @@
-import { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Metadata } from 'next'
 
 interface ServiceLayoutProps {
   children: React.ReactNode
@@ -16,7 +16,7 @@ const serviciosMetadata = {
   },
   'geotecnia': {
     title: 'Estudios Geotécnicos  | Mecánica de Suelos',
-    description: 'Estudios geotécnicos completos en Perú certificados ISO 9001. Mecánica de suelos, capacidad portante, diseño de cimentaciones, estabilidad de taludes, análisis de asentamientos. Más de 15 años de experiencia en proyectos de construcción.',
+    description: 'Estudios geotécnicos completos en Perú certificados ISO 9001. Mecánica de suelos, capacidad portante, diseño de cimentaciones, estabilidad de taludes, análisis de asentamientos. Más de 6 años de experiencia en proyectos de construcción.',
     keywords: 'estudios geotécnicos perú, geotecnia lima, mecánica de suelos, estudio de suelos construcción, capacidad portante suelo, diseño cimentaciones, estabilidad taludes, estudio geotécnico edificios, análisis geotécnico, ingeniería geotécnica perú, estudios ems perú, geotecnia certificada iso',
     image: "/geotecnia/geotecnia08.webp"
   },

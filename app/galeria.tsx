@@ -1,10 +1,5 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const serviciosData = [
   {
@@ -19,7 +18,7 @@ const serviciosData = [
     imageSrc: "/servicios/geologia.webp",
     title: "Servicios de Geología",
     description:
-      "Análisis del terreno y su historia natural, estudios de riesgos, cartografía y supervisión de zonas críticas.",
+      "Análisis detallado del terreno, elaboración de cartografía geológica y evaluación de peligros naturales, proporcionando información confiable para la toma de decisiones de diseño y planificación de obras.",
     href: "/servicios/geologia",
   },
   {
@@ -100,8 +99,7 @@ const Galeria = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-black"
           >
-            Servicios especializados en ingeniería geotécnica, laboratorio y
-            control de calidad.
+            Ofrecemos soluciones integrales en ingeniería geotécnica, ensayos de laboratorio y control de calidad, orientadas a garantizar seguridad, cumplimiento normativo y confiabilidad técnica en cada proyecto.
           </motion.p>
           <motion.div
             initial={{ width: 0 }}

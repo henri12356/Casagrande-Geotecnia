@@ -13,11 +13,11 @@ const LOGO_URL = `${BASE_URL}/logocasagrande.svg`;
 // —— METADATA SEO —— //
 export const metadata: Metadata = {
   title: {
-    default: "Equipos Geotécnicos Calibrados (INACAL) — Pizuar",
+    default: "Equipos Geotécnicos Calibrados (INACAL) — Pinzuar",
     template: "%s | " + SITE_NAME,
   },
   description:
-    "Parque de equipos geotécnicos y de laboratorio de suelos (triaxial, consolidómetro, corte directo, compresión, horno de secado, Los Ángeles), con calibración/verificación por Pizuar (INACAL). Resultados precisos y trazables.",
+    "Parque de equipos geotécnicos y de laboratorio de suelos (triaxial, consolidómetro, corte directo, compresión, horno de secado, Los Ángeles), con calibración/verificación por Pinzuar (INACAL). Resultados precisos y trazables.",
   keywords: [
     "equipos geotécnicos",
     "laboratorio de suelos",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "horno de secado",
     "Los Ángeles",
     "calibración INACAL",
-    "Pizuar",
+    "Pinzuar",
     "ensayos geotécnicos",
     "Casagrande",
     "geotecnia",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   ].join(", "),
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Equipos Geotécnicos Calibrados (INACAL) — Pizuar",
+    title: "Equipos Geotécnicos Calibrados (INACAL) — Pinzuar",
     description:
-      "Equipos geotécnicos con trazabilidad metrológica y certificados Pizuar (INACAL) para ensayos confiables de suelos y agregados.",
+      "Equipos geotécnicos con trazabilidad metrológica y certificados Pinzuar (INACAL) para ensayos confiables de suelos y agregados.",
     type: "website",
     url: PAGE_URL,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Equipos geotécnicos y de laboratorio de suelos" }],
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Equipos Geotécnicos Calibrados (INACAL) — Pizuar",
+    title: "Equipos Geotécnicos Calibrados (INACAL) — Pinzuar",
     description:
-      "Triaxial, consolidómetro, corte directo, compresión, horno y Los Ángeles con certificación y verificación Pizuar (INACAL).",
+      "Triaxial, consolidómetro, corte directo, compresión, horno y Los Ángeles con certificación y verificación Pinzuar (INACAL).",
     images: [OG_IMAGE],
     site: "@CasagrandePE",
     creator: "@CasagrandePE",
@@ -85,7 +85,7 @@ export default function EquiposLayout({
       "@type": "DigitalDocument",
       "@id": `${BASE_URL}/certificados#triaxial-2024-08-15`,
       name: "Calibración – Prensa Triaxial / Consolidación",
-      issuer: { "@type": "Organization", name: "Pizuar", url: "https://pizuar.com.pe" },
+      issuer: { "@type": "Organization", name: "Pinzuar", url: "https://Pinzuar.com.pe" },
       dateIssued: "2024-08-15",
       identifier: "CZ-TRX-2024-0815",
       url: `${BASE_URL}/certificados/certificado-triaxial-2024.pdf`,
@@ -94,7 +94,7 @@ export default function EquiposLayout({
       "@type": "DigitalDocument",
       "@id": `${BASE_URL}/certificados#horno-2024-07-10`,
       name: "Verificación – Horno / Estufa de Secado (Control de Temperatura)",
-      issuer: { "@type": "Organization", name: "Pizuar", url: "https://pizuar.com.pe" },
+      issuer: { "@type": "Organization", name: "Pinzuar", url: "https://Pinzuar.com.pe" },
       dateIssued: "2024-07-10",
       identifier: "VR-HORNO-2024-0710",
       url: `${BASE_URL}/certificados/certificado-horno-2024.pdf`,
@@ -103,7 +103,7 @@ export default function EquiposLayout({
       "@type": "DigitalDocument",
       "@id": `${BASE_URL}/certificados#balanza-2024-06-20`,
       name: "Calibración – Balanza Analítica (Exactitud y Repetibilidad)",
-      issuer: { "@type": "Organization", name: "Pizuar", url: "https://pizuar.com.pe" },
+      issuer: { "@type": "Organization", name: "Pinzuar", url: "https://Pinzuar.com.pe" },
       dateIssued: "2024-06-20",
       identifier: "CL-BAL-2024-0620",
       url: `${BASE_URL}/certificados/certificado-balanza-2024.pdf`,
@@ -207,10 +207,10 @@ export default function EquiposLayout({
   const collectionPageLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Equipos Geotécnicos Calibrados (INACAL) — Pizuar",
+    name: "Equipos Geotécnicos Calibrados (INACAL) — Pinzuar",
     url: PAGE_URL,
     description:
-      "Listado de equipos geotécnicos con calibración/verificación por Pizuar (INACAL) y trazabilidad metrológica.",
+      "Listado de equipos geotécnicos con calibración/verificación por Pinzuar (INACAL) y trazabilidad metrológica.",
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: breadcrumb.map((b, i) => ({
@@ -225,7 +225,7 @@ export default function EquiposLayout({
       { "@type": "Thing", name: "equipos geotécnicos" },
       { "@type": "Thing", name: "laboratorio de suelos" },
       { "@type": "Thing", name: "calibración INACAL" },
-      { "@type": "Thing", name: "Pizuar" },
+      { "@type": "Thing", name: "Pinzuar" },
     ],
   };
 
@@ -251,7 +251,7 @@ export default function EquiposLayout({
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Sí. Los equipos se calibran y/o verifican con certificados emitidos por Pizuar, laboratorio acreditado ante INACAL. Los documentos están disponibles en nuestra página de certificados.",
+            "Sí. Los equipos se calibran y/o verifican con certificados emitidos por Pinzuar, laboratorio acreditado ante INACAL. Los documentos están disponibles en nuestra página de certificados.",
         },
       },
       {

@@ -1,17 +1,17 @@
 // src/app/servicios/[slug]/page.tsx (o donde tengas este componente)
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import servicios from "@/app/data/servicios.json";
+import Footer from "@/app/footer";
+import Navbar from "@/app/navbar";
+import NotFoundPage from "@/app/not-found";
+import ServicioNav from "@/app/servicios/ServicioNav";
+import { Button } from "@/components/ui/button";
+import { animate, motion, useInView, Variants } from "framer-motion";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView, animate, Variants } from "framer-motion";
-import servicios from "@/app/data/servicios.json";
-import Navbar from "@/app/navbar";
-import Footer from "@/app/footer";
-import ServicioNav from "@/app/servicios/ServicioNav";
-import NotFoundPage from "@/app/not-found";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
 
 /* ========= NUEVO HERO (mobile-first) ========= */
 function HeroServicio({
@@ -350,7 +350,7 @@ const ServicioPage = ({ params }: PageProps) => {
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-3 text-[#182C45]">CALIBRACIÓN CERTIFICADA E ISO</h3>
           <p className="text-center text-sm md:text-base text-[#182C45]] mb-8">
             En <strong>Casagrande</strong> garantizamos la precisión de cada ensayo. Nuestras{" "}
-            <strong>máquinas y equipos están calibrados</strong> por <strong>Pizuar</strong>, laboratorio{" "}
+            <strong>máquinas y equipos están calibrados</strong> por <strong>Pinzuar</strong>, laboratorio{" "}
             <strong>Equipos acreditados por Pinzuar que esta acreditado por inacal </strong> bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una{" "}
             <strong>trazabilidad metrológica</strong> completa y resultados <strong>confiables, verificables y certificados.</strong>
           </p>
@@ -360,7 +360,7 @@ const ServicioPage = ({ params }: PageProps) => {
               <div className="font-semibold text-lg mb-3 text-[#182C45]">Trazabilidad Metrológica (INACAL)</div>
               <ul className="space-y-2 text-[#182C45] text-sm md:text-base leading-relaxed">
                 <li>
-                  <strong>Equipos de campo y laboratorio</strong> calibrados por <strong>Pizuar</strong>, laboratorio
+                  <strong>Equipos de campo y laboratorio</strong> calibrados por <strong>Pinzuar</strong>, laboratorio
                   acreditado ante <strong>INACAL</strong>.
                 </li>
                 <li>
@@ -430,6 +430,11 @@ const ServicioPage = ({ params }: PageProps) => {
                   <p className="flex items-center text-lg">
                     <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
                     Lun-Vie: 8:00 AM - 6:00 PM
+                  </p>
+              
+                  <p className="flex items-center text-lg">
+                    <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
+                    Sab: 8:30 AM - 2:00 PM
                   </p>
                 </div>
               </div>

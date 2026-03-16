@@ -16,7 +16,7 @@ const font = Poppins({
 const companyInfo = {
   name: "CASAGRANDE | LABORATORIO DE SUELOS",
   description:
-    "Consultora líder en ingeniería civil y estudios geotécnicos en Perú. Especialistas en mecánica de suelos, laboratorio certificado, estudios de cimentación y control de calidad. Certificaciones ISO 9001, 14001 y 37001. Más de 20 años de experiencia.",
+    "Consultora líder en ingeniería civil y estudios geotécnicos en Perú. Especialistas en mecánica de suelos, laboratorio certificado, estudios de cimentación y control de calidad. Certificaciones ISO 9001, 14001 y 37001. Más de 6 años de experiencia.",
   url: "https://www.casagrandegeotecnia.com.pe",
   logo: "https://www.casagrandegeotecnia.com.pe/logocasagrande.svg",
   phone: "+51962835652",
@@ -273,7 +273,7 @@ export const metadata: Metadata = {
     siteName: companyInfo.name,
     title: "CASAGRANDE GEOTECNIA - GEOFISICA | LABORATORIO DE SUELOS",
     description:
-      "Consultora especializada en estudios geotécnicos, mecánica de suelos y control de calidad en Perú. Laboratorio certificado ISO 9001. Más de 20 años de experiencia.",
+      "Consultora especializada en estudios geotécnicos, mecánica de suelos y control de calidad en Perú. Laboratorio certificado ISO 9001. Más de 6 años de experiencia.",
     images: [
       {
         url: `${companyInfo.url}/geologia/geologia04.webp`,

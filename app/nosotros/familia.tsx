@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
 import { FaAward } from 'react-icons/fa';
 
 const imageSrc = "/nosotros.webp";
@@ -32,7 +31,7 @@ const Sobrenosotros = () => {
               para obras de infraestructura, edificación y proyectos públicos y privados en todo el país. 
               Con más de <strong>6 años de experiencia</strong> y más de <strong>130 ensayos de calidad</strong>, 
               garantizamos resultados precisos, trazables y confiables en cada proyecto.  
-              Nuestros equipos, adquiridos a <strong>PIZUAR</strong> proveedor acreditado por <strong>INACAL</strong>, 
+              Nuestros equipos, adquiridos a <strong>Pinzuar</strong> proveedor acreditado por <strong>INACAL</strong>, 
               cuentan con certificaciones y calibraciones oficiales que respaldan la precisión de cada medición.
             </p>
 

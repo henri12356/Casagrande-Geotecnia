@@ -8,8 +8,8 @@ import {
   PiFacebookLogo,
   PiInstagramLogo,
   PiLinkedinLogo,
-  PiYoutubeLogo,
   PiTiktokLogo,
+  PiYoutubeLogo,
 } from "react-icons/pi";
 
 const Footer = () => {
@@ -18,34 +18,39 @@ const Footer = () => {
 
   // Data for "Conecta con EDteam" sections
   const connectLinks = [
-    {
-      title: "Soporte al cliente",
-      links: [
-        { name: "945 513 323 - 962 835 652", href: "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios." },
-        {
-          name: "comercial@casagrandegeotecnia.com.pe",
-          href: "https://mail.google.com/mail/?view=cm&to=comercial@casagrandegeotecnia.com.pe",
-        },
-        {
-          name: "Jirón Quinua 570, Ayacucho 05003",
-          href: "https://maps.app.goo.gl/ZLD7hVDrudfbnSTd6",
-        },
-        {
-
-          name: "Av. Alfonso Ugarte 595, Lima 15001", 
-          href: "https://maps.app.goo.gl/d5gJNMX8ZyHvmnyS8",
-        }
-      ],
-    },
-  ];
+  {
+    title: "Atención al cliente",
+    links: [
+      {
+        name: "945 513 323 | 962 835 652",
+        href: "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.",
+      },
+      {
+        name: "comercial@casagrandegeotecnia.com.pe",
+        href: "mailto:comercial@casagrandegeotecnia.com.pe",
+      },
+      {
+        name: "Sede Ayacucho – Jirón Quinua 570, Ayacucho 05003",
+        href: "https://maps.app.goo.gl/ZLD7hVDrudfbnSTd6",
+      },
+      {
+        name: "Sede Lima – Av. Alfonso Ugarte 595, Lima 15001",
+        href: "https://maps.app.goo.gl/d5gJNMX8ZyHvmnyS8",
+      },
+    ],
+  },
+];
 
   // Data for "Nuestros productos" section links
   const productLinks = [
-    { name: "Nosotros", href: "/nosotros" },
-    { name: "Servicios", href: "/servicios" },
-    { name: "Blog", href: "/blog" },
-    { name: "Laboratorio", href: "/servicios/laboratorio-de-suelo" },
-  ];
+  { name: "Inicio", href: "/" },
+  { name: "Quiénes Somos", href: "/nosotros" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Laboratorio de Ensayos", href: "/servicios/laboratorio-de-suelo" },
+  { name: "Proyectos", href: "/proyectos" },
+  { name: "Blog Técnico", href: "/blog" },
+  { name: "Contacto", href: "/contacto" },
+];
 
   // Data for social media links
   const socialLinks = [
@@ -162,7 +167,7 @@ const Footer = () => {
 
           <div className="py-2">
             <h2 className="text-lg font-bold mb-4 text-[#182C45]">
-              Conecta con Nosotros
+              Contáctanos
             </h2>
             <nav className="space-y-4 sm:space-y-6">
               {connectLinks.map((section) => (
@@ -199,7 +204,7 @@ const Footer = () => {
           {/* Section: Nuestros productos */}
           <div className="py-2">
             <h2 className="text-lg font-bold mb-4 text-[#182C45]">
-              Nuestros productos
+              Proyectos
             </h2>
             <nav>
               <ul className="space-y-2 sm:space-y-3">

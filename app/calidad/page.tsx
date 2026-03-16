@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useMemo, useState } from "react";
 import Footer from "../footer";
 import Navbar from "../navbar";
 
 // ====== CERTIFICADO PRINCIPAL (HERO) ======
 const certificadoHero = {
-  titulo: "Calibración y verificación de equipos — Pizuar (INACAL)",
+  titulo: "Calibración y verificación de equipos — Pinzuar (INACAL)",
   archivo: "/certificadoinacal.webp",
   fecha: "2024",
   categoria: "Equipos",
@@ -102,7 +102,7 @@ const CertificadosPage = () => {
           transition={{ duration: 0.45 }}
           className="relative z-[1] text-center text-4xl md:text-6xl font-extrabold text-[#182C45] leading-tight"
         >
-          Alianza técnica Casagrande × Pizuar
+          Alianza técnica Casagrande × Pinzuar
         </motion.h1>
 
         {/* Subtexto */}
@@ -112,10 +112,7 @@ const CertificadosPage = () => {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="relative z-[1] mt-3 text-center text-[15px] md:text-base text-gray-700  mx-auto"
         >
-          Equipos <strong>calibrados y verificados</strong> por proveedor
-          acreditado
-          <strong> INACAL</strong>, garantizando{" "}
-          <strong>precisión y trazabilidad</strong> en cada ensayo geotécnico.
+         Equipos calibrados y verificados por un proveedor acreditado ante INACAL, garantizando precisión y trazabilidad en todos nuestros ensayos geotécnicos.
         </motion.p>
 
         <div className="relative z-[1] container mx-auto px-4 max-w-7xl mt-10">
@@ -142,7 +139,7 @@ const CertificadosPage = () => {
                 </span>
                 <Image
                   src="/logopinzuar.webp"
-                  alt="Pizuar (INACAL)"
+                  alt="Pinzuar (INACAL)"
                   width={220}
                   height={60}
                   className="h-14 w-auto mt-3 sm:mt-0"
@@ -166,7 +163,7 @@ const CertificadosPage = () => {
               <p className="mt-3 text-[11px] text-gray-500 italic max-w-xl mx-auto px-3">
                 Nota: Casagrande no posee acreditación INACAL corporativa; la
                 evidencia corresponde a la calibración/verificación de equipos
-                realizada por Pizuar (acreditado por INACAL).
+                realizada por Pinzuar (acreditado por INACAL).
               </p>
 
               {/* Botón: Ver nuestros equipos */}

@@ -95,7 +95,7 @@ export default function ContactoLayout({
             url: "https://www.casagrandegeotecnia.com",
             logo: "https://www.casagrandegeotecnia.com/logocasagrande.svg",
             description:
-              "Empresa peruana de ingeniería y construcción especializada en estudios geotécnicos, geofísicos, geológicos y laboratorio de suelos. Más de 6 años de experiencia, más de 130 ensayos y equipos calibrados por proveedores acreditados por INACAL como PIZUAR.",
+              "Empresa peruana de ingeniería y construcción especializada en estudios geotécnicos, geofísicos, geológicos y laboratorio de suelos. Más de 6 años de experiencia, más de 130 ensayos y equipos calibrados por proveedores acreditados por INACAL como Pinzuar.",
             address: [
               {
                 "@type": "PostalAddress",

@@ -52,9 +52,9 @@
     "Certificación ISO 9001"
   ],
   "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
+    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 160, "suffix": "+" },
     { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
   ]
 },
@@ -113,7 +113,7 @@
   "numeros": [
     { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
     { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
   ]
 },
@@ -172,7 +172,7 @@
   "numeros": [
     { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
     { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
   ]
 },
@@ -231,7 +231,7 @@
   "numeros": [
     { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
     { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
   ]
 },
@@ -290,7 +290,7 @@
   "numeros": [
     { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
     { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
   ]
 },
@@ -349,7 +349,7 @@
   "numeros": [
     { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
     { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 15, "suffix": "+" },
+    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
   ]
 }

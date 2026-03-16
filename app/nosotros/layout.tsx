@@ -92,7 +92,7 @@ export default function NosotrosLayout({
               "@id": "https://www.casagrandegeotecnia.com.pe#organization",
               "name": "Casagrande Geotecnia",
               "alternateName": "Casagrande Geotecnia y Concreto",
-              "description": "Consultora líder en estudios geotécnicos, mecánica de suelos, laboratorio certificado y control de calidad en construcción. Más de 20 años de experiencia en proyectos en todo el Perú.",
+              "description": "Consultora líder en estudios geotécnicos, mecánica de suelos, laboratorio certificado y control de calidad en construcción. Más de 6 años de experiencia en proyectos en todo el Perú.",
               "foundingDate": "2005", // ⚠️ Confirma el año real de fundación
               "legalName": "Casagrande Geotecnia S.A.C.", // ⚠️ Confirma razón social exacta
               "url": "https://www.casagrandegeotecnia.com.pe",

@@ -13,17 +13,17 @@ const LOGO_URL = `${BASE_URL}/logocasagrande.svg`;
 export const metadata: Metadata = {
   title: {
     default:
-      "Certificados INACAL (Pizuar) – Calibración y Verificación de Equipos",
+      "Certificados INACAL (Pinzuar) – Calibración y Verificación de Equipos",
     template: "" + SITE_NAME,
   },
   description:
-    "Calibración y verificación de equipos con trazabilidad metrológica: certificados emitidos por Pizuar, proveedor acreditado ante INACAL. Evidencia de precisión y confiabilidad de nuestros ensayos.",
+    "Calibración y verificación de equipos con trazabilidad metrológica: certificados emitidos por Pinzuar, proveedor acreditado ante INACAL. Evidencia de precisión y confiabilidad de nuestros ensayos.",
   keywords: [
     "calibración de equipos",
     "verificación de equipos",
     "trazabilidad metrológica",
     "INACAL",
-    "Pizuar",
+    "Pinzuar",
     "laboratorio de suelos",
     "geotecnia",
     "geofísica",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title:
-      "Certificados Pizuar (INACAL) – Calibración y Verificación de Equipos",
+      "Certificados Pinzuar (INACAL) – Calibración y Verificación de Equipos",
     description:
-      "Trazabilidad metrológica y evidencias de calibración/verificación de nuestros equipos. Certificados por Pizuar (INACAL).",
+      "Trazabilidad metrológica y evidencias de calibración/verificación de nuestros equipos. Certificados por Pinzuar (INACAL).",
     type: "website",
     url: PAGE_URL,
     images: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Certificado Pizuar (INACAL) – Calibración de Equipos",
+        alt: "Certificado Pinzuar (INACAL) – Calibración de Equipos",
       },
     ],
     siteName: SITE_NAME,
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Certificados Pizuar (INACAL) – Calibración y Verificación de Equipos",
+      "Certificados Pinzuar (INACAL) – Calibración y Verificación de Equipos",
     description:
-      "Evidencias de trazabilidad metrológica de nuestros equipos de ensayo. Certificados por Pizuar (INACAL).",
+      "Evidencias de trazabilidad metrológica de nuestros equipos de ensayo. Certificados por Pinzuar (INACAL).",
     images: [OG_IMAGE],
     site: "@CasagrandePE",
     creator: "@CasagrandePE",
@@ -87,7 +87,7 @@ export default function CertificadosLayout({
     {
       "@type": "DigitalDocument",
       name: "Calibración – Prensa Triaxial / Consolidación",
-      issuer: { "@type": "Organization", name: "Pizuar", url: "https://pizuar.com.pe" },
+      issuer: { "@type": "Organization", name: "Pinzuar", url: "https://Pinzuar.com.pe" },
       dateIssued: "2024-08-15",
       identifier: "CZ-TRX-2024-0815",
       url: `${BASE_URL}/certificados/certificado-triaxial-2024.pdf`,
@@ -95,7 +95,7 @@ export default function CertificadosLayout({
     {
       "@type": "DigitalDocument",
       name: "Verificación – Horno / Estufa de Secado (Control de Temperatura)",
-      issuer: { "@type": "Organization", name: "Pizuar", url: "https://pizuar.com.pe" },
+      issuer: { "@type": "Organization", name: "Pinzuar", url: "https://Pinzuar.com.pe" },
       dateIssued: "2024-07-10",
       identifier: "VR-HORNO-2024-0710",
       url: `${BASE_URL}/certificados/certificado-horno-2024.pdf`,
@@ -103,7 +103,7 @@ export default function CertificadosLayout({
     {
       "@type": "DigitalDocument",
       name: "Calibración – Balanza Analítica (Exactitud y Repetibilidad)",
-      issuer: { "@type": "Organization", name: "Pizuar", url: "https://pizuar.com.pe" },
+      issuer: { "@type": "Organization", name: "Pinzuar", url: "https://Pinzuar.com.pe" },
       dateIssued: "2024-06-20",
       identifier: "CL-BAL-2024-0620",
       url: `${BASE_URL}/certificados/certificado-balanza-2024.pdf`,
@@ -122,10 +122,10 @@ export default function CertificadosLayout({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name:
-      "Certificados Pizuar (INACAL) – Calibración y Verificación de Equipos",
+      "Certificados Pinzuar (INACAL) – Calibración y Verificación de Equipos",
     url: PAGE_URL,
     description:
-      "Relación de certificados de calibración y verificación emitidos por Pizuar (INACAL) que respaldan la precisión de nuestros equipos.",
+      "Relación de certificados de calibración y verificación emitidos por Pinzuar (INACAL) que respaldan la precisión de nuestros equipos.",
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: breadcrumb.map((b, i) => ({
@@ -142,7 +142,7 @@ export default function CertificadosLayout({
     "@context": "https://schema.org",
     "@type": "ItemList",
     name:
-      "Listado de Certificados de Calibración y Verificación – Pizuar (INACAL)",
+      "Listado de Certificados de Calibración y Verificación – Pinzuar (INACAL)",
     itemListElement: certificados.map((doc, idx) => ({
       "@type": "ListItem",
       position: idx + 1,

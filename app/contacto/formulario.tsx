@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import { CheckCircle2, Phone } from "lucide-react";
 import Image from "next/image";
-import { Phone, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
 
 const Formulario = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -185,11 +185,11 @@ const Formulario = () => {
             <ul className="space-y-3 text-gray-700">
               <li className="flex text-[12px] items-center space-x-3 md:text-base">
                 <Phone className="md:w-5 md:h-5 text-[#1b4772]" />
-                <span>(+51) 945 513 323 | comercial@casagrandegeotecnia.com.pe</span>
+                <span>945 513 323 | comercial@casagrandegeotecnia.com.pe</span>
               </li>
               <li className="flex items-center text-[12px] md:text-base space-x-3">
                 <Phone className="md:w-5 md:h-5 text-[#1b4772]" />
-                <span>(+51) 962 835 652 | gerenciageneral@casagrandegeotecnia.com.pe</span>
+                <span>962 835 652 | gerenciageneral@casagrandegeotecnia.com.pe</span>
               </li>
             </ul>
           </div>

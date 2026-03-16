@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 const Trayectoria = () => {
@@ -6,32 +5,32 @@ const Trayectoria = () => {
     {
       fecha: "Dic 2020",
       descripcion:
-        "Inicio de operaciones de Casagrande Geotecnia como empresa especializada en estudios geotécnicos, ensayos de laboratorio y consultoría en ingeniería civil.",
+        "Fundación de Casagrande Geotecnia e inicio de operaciones como empresa especializada en estudios geotécnicos, geología aplicada, control de calidad y ensayos de laboratorio para proyectos de ingeniería civil e infraestructura.",
     },
     {
       fecha: "Jul 2021",
       descripcion:
-        "Obtención de las certificaciones ISO 9001, ISO 14001 e ISO 37001, consolidando la gestión de calidad, sostenibilidad y ética empresarial.",
+        "Implementación del Sistema de Gestión Integrado y obtención de certificaciones ISO 9001, ISO 14001 e ISO 37001, fortaleciendo la gestión de calidad, sostenibilidad ambiental y transparencia institucional.",
     },
     {
       fecha: "Ago 2022",
       descripcion:
-        "Adquisición de nuevos equipos geotécnicos y de laboratorio, incrementando la capacidad técnica para el control de calidad en obras y proyectos de infraestructura.",
+        "Ampliación de la infraestructura técnica mediante la adquisición de nuevos equipos de campo y laboratorio, incrementando la capacidad operativa para ensayos geotécnicos, control de calidad y supervisión de obras.",
     },
     {
       fecha: "May 2023",
       descripcion:
-        "Nuestro equipos esta acreditado por Pinzuar (INACAL), fortaleciendo la confiabilidad técnica y cumplimiento de estándares nacionales e internacionales.",
+        "Equipos calibrados y certificados por el laboratorio Pinzuar, acreditado ante INACAL bajo la norma ISO/IEC 17025, garantizando trazabilidad metrológica y resultados confiables en los ensayos.",
     },
     {
       fecha: "Nov 2024",
       descripcion:
-        "Ampliación del alcance de acreditación del laboratorio e implementación de un sistema de gestión integral enfocado en mejora continua y resultados verificables.",
+        "Fortalecimiento del sistema de gestión técnica mediante la ampliación de servicios de laboratorio y la optimización de procesos orientados a la mejora continua y a la confiabilidad de los resultados.",
     },
     {
       fecha: "Oct 2025",
       descripcion:
-        "Modernización del laboratorio con tecnología avanzada, automatización de procesos y fortalecimiento del equipo profesional para afrontar nuevos desafíos en ingeniería geotécnica.",
+        "Modernización del laboratorio con tecnología avanzada, automatización de procesos y consolidación del equipo profesional para afrontar proyectos de mayor complejidad en geotecnia e ingeniería civil.",
     },
   ];
 

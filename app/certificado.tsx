@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 
 type CertItem = {
   id: number;
@@ -21,13 +21,13 @@ const certificados: CertItem[] = [
     id: 1,
     imageSrc: "/certificadodecalidad.webp",
     title: "ISO 9001:2015 – Sistema de Gestión de Calidad",
-    subtitle: "Calidad y confiabilidad en nuestros servicios",
+    subtitle: "Precisión y confiabilidad en cada proyecto",
     description:
-      "Garantiza que todos los estudios, ensayos de laboratorio y supervisión de obras se realicen con procedimientos estandarizados, minimizando errores y asegurando confiabilidad en los informes técnicos.",
+      "Garantiza que todos nuestros procesos técnicos, desde los estudios geotécnicos hasta el control de calidad y la supervisión de obras, se ejecuten bajo estándares documentados y controlados, asegurando precisión, trazabilidad y confiabilidad en cada proyecto.",
     services: [
-      "Estudios geotécnicos y geológicos confiables.",
-      "Control de calidad de materiales en laboratorio y en obra.",
-      "Supervisión y recomendaciones técnicas para cimentaciones, pavimentos y estructuras.",
+      "Estudios geotécnicos y geológicos confiables",
+      "Control de calidad de materiales en laboratorio y en obra",
+      "Supervisión y recomendaciones técnicas para cimentaciones, pavimentos y estructuras",
     ],
   },
   {
