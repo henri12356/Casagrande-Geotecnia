@@ -153,7 +153,7 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45]/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#182C45]/50" />
         </motion.div>
       </AnimatePresence>
 
@@ -196,7 +196,7 @@ export default function HeroCarousel() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-4 rounded-lg bg-white px-8 py-6 text-base font-bold text-[#182C45] shadow-lg transition-transform duration-300 hover:bg-[#a2babd] hover:scale-105 active:scale-95"
+                  className="mt-4 rounded-lg bg-white px-8 py-6 text-base font-bold text-[#182C45] shadow-lg transition-transform duration-300 hover:bg-[#C9A66B] hover:scale-105 active:scale-95"
                 >
                   <Link
                     href={activeSlide.buttonLink}
@@ -218,7 +218,7 @@ export default function HeroCarousel() {
             aria-label="Ir a la diapositiva 1"
             key={index}
             className={`h-2 w-2 rounded-full transition-all duration-300 p-2 cursor-pointer   ${
-              index === slideIndex ? "w-6 bg-[#182C45]" : "bg-gray-400"
+              index === slideIndex ? "w-6 bg-[#C9A66B]" : "bg-gray-400"
             }`}
             onClick={() => {
               const newDirection = index > slideIndex ? 1 : -1;

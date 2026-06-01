@@ -143,7 +143,7 @@ export default function CarouselCertificados() {
             >
               {/* Texto */}
               <div className="w-full lg:w-1/2 text-center lg:text-left">
-                <div className="text-sm font-semibold text-[#182C45] mb-2 tracking-wide">
+                <div className="text-sm font-semibold text-[#C9A66B] mb-2 tracking-wide">
                   EMPRESA CERTIFICADA
                 </div>
 
@@ -162,7 +162,7 @@ export default function CarouselCertificados() {
                 <ul className="text-left text-[#182C45] space-y-2 mb-6 pl-4 lg:pl-0">
                   {certificados[index].services.map((s, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="mr-2" aria-hidden>
+                      <span className="mr-2  text-[#C9A66B]" aria-hidden>
                         ✔
                       </span>
                       <span>{s}</span>
@@ -178,7 +178,7 @@ export default function CarouselCertificados() {
                   rel="noopener noreferrer"
                 >
                   <Button
-                    className="bg-[#182C45] hover:bg-gray-900 text-white px-14 py-7 text-[16px] font-bold rounded-lg shadow-md cursor-pointer"
+                    className="bg-[#182C45] hover:bg-[#C9A66B] text-white px-14 py-7 text-[16px] font-bold rounded-lg shadow-md cursor-pointer"
                     aria-label={`Abrir certificado: ${certificados[index].title}`}
                   >
                     {certificados[index].id === 4 ? "Ver más" : "Ver certificado"}

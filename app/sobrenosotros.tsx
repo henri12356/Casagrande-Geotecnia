@@ -50,7 +50,7 @@ const Sobrenosotros = () => {
             <div className="space-y-4 mb-8">
 
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
+                <FaAward className="text-[#C9A66B] text-2xl flex-shrink-0 mt-1" />
                 <p className="text-black">
                   <span className="font-bold text-[#182C45]">
                     ISO 9001:2015 – Sistema de Gestión de la Calidad
@@ -59,7 +59,7 @@ const Sobrenosotros = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
+                <FaAward className="text-[#C9A66B] text-2xl flex-shrink-0 mt-1" />
                 <p className="text-black">
                   <span className="font-bold text-[#182C45]">
                     ISO 37001:2016 – Sistema de Gestión Antisoborno
@@ -68,7 +68,7 @@ const Sobrenosotros = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <FaAward className="text-[#182C45] text-2xl flex-shrink-0 mt-1" />
+                <FaAward className="text-[#C9A66B] text-2xl flex-shrink-0 mt-1" />
                 <p className="text-black">
                   <span className="font-bold text-[#182C45]">
                     ISO 14001:2015 – Sistema de Gestión Ambiental
@@ -79,7 +79,7 @@ const Sobrenosotros = () => {
             </div>
 
             {/* Botón */}
-            <button className="px-6 py-3 bg-[#182C45] text-white font-semibold rounded-lg shadow-md hover:bg-[#2a6cad] transition duration-200 cursor-pointer">
+            <button className="px-6 py-3 bg-[#182C45] text-white hover:text-[#182C45] font-semibold rounded-lg shadow-md hover:bg-[#C9A66B] transition duration-200 cursor-pointer">
               Descargar nuestro brochure
             </button>
 

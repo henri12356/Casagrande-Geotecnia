@@ -94,7 +94,7 @@ function useClickOutside<T extends HTMLElement>(onOutside: () => void) {
 const ContactInfoItem = ({ text, href }: ContactInfoItemProps) => (
   <a
     href={href}
-    className="flex items-center gap-2 text-xs hover:bg-white/5 py-3 rounded-2xl px-3 text-white transition-colors duration-200"
+    className="flex items-center gap-2 text-xs hover:bg-[#C9A66B]/100 py-3 hover:text-[#182C45]   rounded-2xl px-3 text-white transition-colors duration-200"
     rel="noopener noreferrer"
   >
     <span className="text-[15px] font-bold">{text}</span>
@@ -205,7 +205,7 @@ const DesktopMenu = ({
                           href={link.href}
                           prefetch={false}
                           onClick={() => setTimeout(() => setOpenDropdown(null), 0)}
-                          className="block w-full rounded-md px-3 py-2 text-left text-sm font-medium text-[#182C45] hover:bg-[#182C45]/10"
+                          className="block w-full rounded-md px-3 py-2 text-left text-sm font-medium text-[#182C45] hover:bg-[#182C45]/20"
                         >
                           Ver todos {link.label.toLowerCase()}
                         </Link>
@@ -239,7 +239,6 @@ const DesktopMenu = ({
   );
 };
 
-// --- Mobile (sin cambios visuales) ---
 const MobileMenuButton = ({ isOpen, toggle }: { isOpen: boolean; toggle: () => void }) => (
   <motion.button
     className="z-[100] rounded-md p-2 text-[#182C45] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-[#373737] md:hidden"
@@ -357,7 +356,7 @@ const Navbar = () => {
           {/* Botones (sin cambios) */}
           <div className="hidden items-center space-x-4 md:flex lg:flex">
             <a href="https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios." target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white border cursor-pointer border-[#182C45] text-[#182C45] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#182C45] hover:text-white">
+              <Button size="lg" className="bg-white border cursor-pointer border-[#182C45] text-[#182C45] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#C9A66B] hover:text-[#182C45]">
                 ASESORÍA TÉCNICA
               </Button>
             </a>

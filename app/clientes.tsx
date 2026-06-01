@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const companies = [
+  { name: "Universidad Tecnológica del Perú", logo: "/logos/logo-utp.png"},  
+  { name: "Municipalidad de Megantoni", logo: "/logos/logo-megatoni.png"},
+  { name: "plazaVea", logo: "/logos/logo-plazavea.png"},
+  { name: "Grupo 5 SAC Constructora Inmobiliaria", logo: "/logos/logo-grupo5.png" },
   { name: "Municipalidad Distrital Andrés Avelino Cáceres", logo: "/logos/logo-andres-avelino.webp" },
   { name: "Prider Ayacucho GRA", logo: "/logos/logo-prider.webp" },
   { name: "Municipalidad Provincial de Huamanga", logo: "/logos/logo-mucipalidad-huamanga.webp" },
