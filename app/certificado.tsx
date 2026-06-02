@@ -143,7 +143,7 @@ export default function CarouselCertificados() {
             >
               {/* Texto */}
               <div className="w-full lg:w-1/2 text-center lg:text-left">
-                <div className="text-sm font-semibold text-[#C9A66B] mb-2 tracking-wide">
+                <div className="text-sm font-semibold text-[#1b4772] mb-2 tracking-wide">
                   EMPRESA CERTIFICADA
                 </div>
 
@@ -162,7 +162,7 @@ export default function CarouselCertificados() {
                 <ul className="text-left text-[#182C45] space-y-2 mb-6 pl-4 lg:pl-0">
                   {certificados[index].services.map((s, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="mr-2  text-[#C9A66B]" aria-hidden>
+                      <span className="mr-2  text-[#1b4772]" aria-hidden>
                         ✔
                       </span>
                       <span>{s}</span>
@@ -215,7 +215,7 @@ export default function CarouselCertificados() {
           <button
             aria-label="Anterior"
             onClick={prev}
-            className="bg-[#182C45] hover:bg-gray-900 text-white p-2 rounded-full shadow transition cursor-pointer"
+            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 rounded-full shadow transition cursor-pointer"
           >
             <ChevronLeft size={24} />
           </button>
@@ -225,7 +225,7 @@ export default function CarouselCertificados() {
           <button
             aria-label="Siguiente"
             onClick={next}
-            className="bg-[#182C45] hover:bg-gray-900 text-white p-2 rounded-full shadow transition cursor-pointer"
+            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 rounded-full shadow transition cursor-pointer"
           >
             <ChevronRight size={24} />
           </button>

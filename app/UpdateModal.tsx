@@ -8,10 +8,36 @@ export default function UpdateModal() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    const modalKey = "update-modal-shown";
+
+    // Detecta si el usuario actualizó la página
+    const navigation = performance.getEntriesByType(
+      "navigation"
+    )[0] as PerformanceNavigationTiming;
+
+    if (navigation?.type === "reload") {
+      sessionStorage.removeItem(modalKey);
+    }
+
+    // Si ya se mostró, no volver a mostrarlo mientras navega
+    const alreadyShown = sessionStorage.getItem(modalKey);
+
+    if (alreadyShown) return;
+
+    // Mostrar modal una sola vez
     setShow(true);
-    const timer = setTimeout(() => setShow(false), 12000); // 12 segundos
+    sessionStorage.setItem(modalKey, "true");
+
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 12000);
+
     return () => clearTimeout(timer);
   }, []);
+
+  const handleClose = () => {
+    setShow(false);
+  };
 
   return (
     <AnimatePresence>
@@ -30,7 +56,6 @@ export default function UpdateModal() {
             transition={{ duration: 0.45, type: "spring" }}
             className="bg-white/20 backdrop-blur-2xl border border-white/30 shadow-2xl rounded-3xl p-8 w-[90%] max-w-md text-center text-white relative"
           >
-            {/* Icono animado */}
             <motion.div
               initial={{ scale: 0.7, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -45,24 +70,24 @@ export default function UpdateModal() {
             </h2>
 
             <p className="text-white/90 text-[16px] leading-relaxed">
-              Estamos actualizando la información de nuestros servicios de ingeniería geotécnica,
-              ensayos de laboratorio, control de calidad y proyectos en ejecución.  
-              Es posible que algunos contenidos no estén disponibles momentáneamente.
+              Estamos actualizando la información de nuestros servicios de
+              ingeniería geotécnica, ensayos de laboratorio, control de calidad
+              y proyectos en ejecución. Es posible que algunos contenidos no
+              estén disponibles momentáneamente.
             </p>
 
             <motion.button
-              onClick={() => setShow(false)}
+              onClick={handleClose}
               whileTap={{ scale: 0.95 }}
               className="mt-6 w-full py-3 rounded-2xl bg-yellow-400 text-gray-900 font-semibold shadow-md hover:bg-yellow-300 transition-all"
             >
               Entendido
             </motion.button>
 
-            {/* Barra animada inferior (12 segundos) */}
             <motion.div
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
-              transition={{ duration: 12, ease: "linear" }} // sincronizado con el modal
+              transition={{ duration: 12, ease: "linear" }}
               className="h-[3px] bg-yellow-300 rounded-full mt-6"
             />
           </motion.div>

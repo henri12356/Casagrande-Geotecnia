@@ -40,7 +40,7 @@ const Mapa = () => {
           </a>
 
           <p className="text-center mt-3 text-sm text-gray-600">
-            📍 Av. Alfonso Ugarte 595, Lima 15001
+            📍 Jr. Santa Carolina 513, Palao - S.M.P - Lima
           </p>
         </div>
 

@@ -34,7 +34,7 @@ const Footer = () => {
         href: "https://maps.app.goo.gl/ZLD7hVDrudfbnSTd6",
       },
       {
-        name: "Sede Lima – Av. Alfonso Ugarte 595, Lima 15001",
+        name: "Sede Lima – Jr. Santa Carolina 513, Palao - S.M.P - Lima",
         href: "https://maps.app.goo.gl/d5gJNMX8ZyHvmnyS8",
       },
     ],
