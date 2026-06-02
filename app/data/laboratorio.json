@@ -1,357 +1,528 @@
 [
   {
-  "slug": "laboratorio-de-suelos",
-  "titulo": "Laboratorio de Suelos",
-  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
-  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/geologia/geologia01.webp",
-  "titulo01": "Estudios Geológicos Especializados",
-  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
-  "categorias": [
-    {
-      "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
-      "ensayos": [
-        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
-        "Análisis estructural a escala local y regional.",
-        "Estudios geomorfológicos y fotointerpretación satelital.",
-        "Identificación de zonas geodinámicas activas.",
-        "Mapeos geomorfológicos temáticos.",
-        "Estudios y criterios para excavabilidad.",
-        "Evaluación e identificación de peligros por geodinámica externa.",
-        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
-      ],
-      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
-    },
-    {
-      "titulo": "Investigaciones de Campo y Canteras",
-      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
-      "ensayos": [
-        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
-        "Logueo geológico y geotécnico.",
-        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
-        "Identificación, evaluación y estudios de canteras.",
-        "Muestreo geológico y control de calidad de agregados.",
-        "Estimación de volúmenes y viabilidad técnica de bancos de material."
-      ],
-      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
-    }
-  ],
-  "puntos": [
-    "Equipos de alta precisión para cartografía y topografía",
-    "Integración con estudios geotécnicos y de pavimentos",
-    "Informes técnicos con mapas temáticos y recomendaciones",
-    "Personal especialista en geología aplicada a la ingeniería",
-    "Trazabilidad y metodología estandarizada"
-  ],
-  "detalles": [
-    "Tiempo de entrega: 7–15 días hábiles según alcance",
-    "Incluye visitas técnicas y verificación en campo",
-    "Reportes en formato digital y físico con perfiles y secciones",
-    "Compatibles con normas y guías vigentes",
-    "Certificación ISO 9001"
-  ],
-  "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 160, "suffix": "+" },
-    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
-  ]
-},
- {
-  "slug": "laboratorio-de-rocas",
-  "titulo": "Laboratorio de Rocas",
-  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
-  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/geologia/geologia01.webp",
-  "titulo01": "Estudios Geológicos Especializados",
-  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
-  "categorias": [
-    {
-      "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
-      "ensayos": [
-        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
-        "Análisis estructural a escala local y regional.",
-        "Estudios geomorfológicos y fotointerpretación satelital.",
-        "Identificación de zonas geodinámicas activas.",
-        "Mapeos geomorfológicos temáticos.",
-        "Estudios y criterios para excavabilidad.",
-        "Evaluación e identificación de peligros por geodinámica externa.",
-        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
-      ],
-      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
-    },
-    {
-      "titulo": "Investigaciones de Campo y Canteras",
-      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
-      "ensayos": [
-        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
-        "Logueo geológico y geotécnico.",
-        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
-        "Identificación, evaluación y estudios de canteras.",
-        "Muestreo geológico y control de calidad de agregados.",
-        "Estimación de volúmenes y viabilidad técnica de bancos de material."
-      ],
-      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
-    }
-  ],
-  "puntos": [
-    "Equipos de alta precisión para cartografía y topografía",
-    "Integración con estudios geotécnicos y de pavimentos",
-    "Informes técnicos con mapas temáticos y recomendaciones",
-    "Personal especialista en geología aplicada a la ingeniería",
-    "Trazabilidad y metodología estandarizada"
-  ],
-  "detalles": [
-    "Tiempo de entrega: 7–15 días hábiles según alcance",
-    "Incluye visitas técnicas y verificación en campo",
-    "Reportes en formato digital y físico con perfiles y secciones",
-    "Compatibles con normas y guías vigentes",
-    "Certificación ISO 9001"
-  ],
-  "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
-    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
-  ]
-},
-{
-  "slug": "laboratorio-de-concreto",
-  "titulo": "Laboratorio de Concreto",
-  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
-  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/geologia/geologia01.webp",
-  "titulo01": "Estudios Geológicos Especializados",
-  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
-  "categorias": [
-    {
-      "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
-      "ensayos": [
-        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
-        "Análisis estructural a escala local y regional.",
-        "Estudios geomorfológicos y fotointerpretación satelital.",
-        "Identificación de zonas geodinámicas activas.",
-        "Mapeos geomorfológicos temáticos.",
-        "Estudios y criterios para excavabilidad.",
-        "Evaluación e identificación de peligros por geodinámica externa.",
-        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
-      ],
-      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
-    },
-    {
-      "titulo": "Investigaciones de Campo y Canteras",
-      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
-      "ensayos": [
-        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
-        "Logueo geológico y geotécnico.",
-        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
-        "Identificación, evaluación y estudios de canteras.",
-        "Muestreo geológico y control de calidad de agregados.",
-        "Estimación de volúmenes y viabilidad técnica de bancos de material."
-      ],
-      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
-    }
-  ],
-  "puntos": [
-    "Equipos de alta precisión para cartografía y topografía",
-    "Integración con estudios geotécnicos y de pavimentos",
-    "Informes técnicos con mapas temáticos y recomendaciones",
-    "Personal especialista en geología aplicada a la ingeniería",
-    "Trazabilidad y metodología estandarizada"
-  ],
-  "detalles": [
-    "Tiempo de entrega: 7–15 días hábiles según alcance",
-    "Incluye visitas técnicas y verificación en campo",
-    "Reportes en formato digital y físico con perfiles y secciones",
-    "Compatibles con normas y guías vigentes",
-    "Certificación ISO 9001"
-  ],
-  "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
-    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
-  ]
-},
-{
-  "slug": "laboratorio-de-pavimentos",
-  "titulo": "Laboratorio de Pavimentos",
-  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
-  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/geologia/geologia01.webp",
-  "titulo01": "Estudios Geológicos Especializados",
-  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
-  "categorias": [
-    {
-      "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
-      "ensayos": [
-        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
-        "Análisis estructural a escala local y regional.",
-        "Estudios geomorfológicos y fotointerpretación satelital.",
-        "Identificación de zonas geodinámicas activas.",
-        "Mapeos geomorfológicos temáticos.",
-        "Estudios y criterios para excavabilidad.",
-        "Evaluación e identificación de peligros por geodinámica externa.",
-        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
-      ],
-      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
-    },
-    {
-      "titulo": "Investigaciones de Campo y Canteras",
-      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
-      "ensayos": [
-        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
-        "Logueo geológico y geotécnico.",
-        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
-        "Identificación, evaluación y estudios de canteras.",
-        "Muestreo geológico y control de calidad de agregados.",
-        "Estimación de volúmenes y viabilidad técnica de bancos de material."
-      ],
-      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
-    }
-  ],
-  "puntos": [
-    "Equipos de alta precisión para cartografía y topografía",
-    "Integración con estudios geotécnicos y de pavimentos",
-    "Informes técnicos con mapas temáticos y recomendaciones",
-    "Personal especialista en geología aplicada a la ingeniería",
-    "Trazabilidad y metodología estandarizada"
-  ],
-  "detalles": [
-    "Tiempo de entrega: 7–15 días hábiles según alcance",
-    "Incluye visitas técnicas y verificación en campo",
-    "Reportes en formato digital y físico con perfiles y secciones",
-    "Compatibles con normas y guías vigentes",
-    "Certificación ISO 9001"
-  ],
-  "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
-    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
-  ]
-},
-{
-  "slug": "laboratorio-quimico",
-  "titulo": "Laboratorio Químico",
-  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
-  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/geologia/geologia01.webp",
-  "titulo01": "Estudios Geológicos Especializados",
-  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
-  "categorias": [
-    {
-      "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
-      "ensayos": [
-        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
-        "Análisis estructural a escala local y regional.",
-        "Estudios geomorfológicos y fotointerpretación satelital.",
-        "Identificación de zonas geodinámicas activas.",
-        "Mapeos geomorfológicos temáticos.",
-        "Estudios y criterios para excavabilidad.",
-        "Evaluación e identificación de peligros por geodinámica externa.",
-        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
-      ],
-      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
-    },
-    {
-      "titulo": "Investigaciones de Campo y Canteras",
-      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
-      "ensayos": [
-        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
-        "Logueo geológico y geotécnico.",
-        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
-        "Identificación, evaluación y estudios de canteras.",
-        "Muestreo geológico y control de calidad de agregados.",
-        "Estimación de volúmenes y viabilidad técnica de bancos de material."
-      ],
-      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
-    }
-  ],
-  "puntos": [
-    "Equipos de alta precisión para cartografía y topografía",
-    "Integración con estudios geotécnicos y de pavimentos",
-    "Informes técnicos con mapas temáticos y recomendaciones",
-    "Personal especialista en geología aplicada a la ingeniería",
-    "Trazabilidad y metodología estandarizada"
-  ],
-  "detalles": [
-    "Tiempo de entrega: 7–15 días hábiles según alcance",
-    "Incluye visitas técnicas y verificación en campo",
-    "Reportes en formato digital y físico con perfiles y secciones",
-    "Compatibles con normas y guías vigentes",
-    "Certificación ISO 9001"
-  ],
-  "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
-    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
-  ]
-},
-{
-  "slug": "laboratorio-complementario",
-  "titulo": "Laboratorio Complementario",
-  "descripcion": "Análisis del terreno, cartografía y evaluación de peligros naturales para asegurar decisiones de diseño confiables.",
-  "contenido": "Desarrollamos estudios geológicos orientados a caracterizar el terreno, identificar estructuras y discontinuidades, evaluar peligros geodinámicos y validar fuentes de materiales. Integramos cartografía, geomorfología y exploración de campo con ensayos específicos para entregar recomendaciones claras y trazables.",
-  "imagen": "/geologia/geologia01.webp",
-  "titulo01": "Estudios Geológicos Especializados",
-  "subtitulo01": "Cartografía geológica–geotécnica, evaluación geodinámica y exploración de campo con control técnico.",
-  "categorias": [
-    {
-      "titulo": "Cartografía y Evaluación Geodinámica",
-      "imagenes": ["/geologia/geologia01.webp", "/geologia/geologia02.webp", "/geologia/geologia.webp" ,"/geologia/geologia03.webp"],
-      "ensayos": [
-        "Cartografiado geológico–geotécnico: identificación de alteraciones, discontinuidades y canteras.",
-        "Análisis estructural a escala local y regional.",
-        "Estudios geomorfológicos y fotointerpretación satelital.",
-        "Identificación de zonas geodinámicas activas.",
-        "Mapeos geomorfológicos temáticos.",
-        "Estudios y criterios para excavabilidad.",
-        "Evaluación e identificación de peligros por geodinámica externa.",
-        "Mapeo de zonas críticas: deslizamientos, derrumbes y subsidencias."
-      ],
-      "descripcion": "Levantamiento y análisis multiescala del medio geológico–geomorfológico para definir estructuras, procesos activos y niveles de peligrosidad."
-    },
-    {
-      "titulo": "Investigaciones de Campo y Canteras",
-      "imagenes": ["/geologia/geologia04.webp", "/geologia/geologia05.webp", "/geologia/geologia06.webp", "/geotecnia/geotecnia03.webp"],
-      "ensayos": [
-        "Supervisión y ejecución de perforaciones diamantinas y sondeos geotécnicos (SPT, LPT, CPT, CPTu, SCPTu).",
-        "Logueo geológico y geotécnico.",
-        "Ensayos de permeabilidad in situ: Lugeon y Lefranc.",
-        "Identificación, evaluación y estudios de canteras.",
-        "Muestreo geológico y control de calidad de agregados.",
-        "Estimación de volúmenes y viabilidad técnica de bancos de material."
-      ],
-      "descripcion": "Trabajo directo en obra para obtener parámetros del terreno, validar diseños y asegurar la calidad de fuentes de materiales."
-    }
-  ],
-  "puntos": [
-    "Equipos de alta precisión para cartografía y topografía",
-    "Integración con estudios geotécnicos y de pavimentos",
-    "Informes técnicos con mapas temáticos y recomendaciones",
-    "Personal especialista en geología aplicada a la ingeniería",
-    "Trazabilidad y metodología estandarizada"
-  ],
-  "detalles": [
-    "Tiempo de entrega: 7–15 días hábiles según alcance",
-    "Incluye visitas técnicas y verificación en campo",
-    "Reportes en formato digital y físico con perfiles y secciones",
-    "Compatibles con normas y guías vigentes",
-    "Certificación ISO 9001"
-  ],
-  "numeros": [
-    { "id": 1, "label": "PROYECTOS REALIZADOS", "value": 150, "suffix": "+" },
-    { "id": 2, "label": "HECTÁREAS EVALUADAS", "value": 5000, "suffix": "+" },
-    { "id": 3, "label": "AÑOS DE EXPERIENCIA", "value": 6, "suffix": "+" },
-    { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 95, "suffix": "%" }
-  ]
-}
-
+    "slug": "laboratorio-de-suelos",
+    "titulo": "Laboratorio de Suelos",
+    "descripcion": "Ensayos físicos, mecánicos e hidráulicos de suelos para cimentaciones, carreteras, plataformas y obras civiles.",
+    "contenido": "Realizamos ensayos de laboratorio orientados a identificar, clasificar y determinar el comportamiento mecánico de los suelos. Los resultados permiten definir parámetros de diseño para cimentaciones, taludes, rellenos, pavimentos y obras de infraestructura, con procedimientos técnicos trazables y controlados.",
+    "imagen": "/laboratorio/laboratorio08.webp",
+    "titulo01": "Ensayos Especializados en Suelos",
+    "subtitulo01": "Clasificación, resistencia, deformabilidad, compactación y permeabilidad para proyectos geotécnicos.",
+    "categorias": [
+      {
+        "titulo": "Identificación y Clasificación de Suelos",
+        "imagenes": [
+          "/laboratorio/laboratorio05.webp"
+         
+        ],
+        "ensayos": [
+          "Contenido de humedad natural.",
+          "Análisis granulométrico por tamizado.",
+          "Análisis granulométrico por sedimentación o hidrómetro.",
+          "Límite líquido, límite plástico e índice de plasticidad.",
+          "Clasificación de suelos por sistemas SUCS y AASHTO.",
+          "Peso específico relativo de sólidos.",
+          "Determinación de materia orgánica en suelos.",
+          "Preparación y descripción técnica de muestras alteradas e inalteradas."
+        ],
+        "descripcion": "Ensayos básicos para reconocer el tipo de suelo, su composición granulométrica, plasticidad y comportamiento esperado en obra."
+      },
+      {
+        "titulo": "Resistencia, Compactación y Deformabilidad",
+        "imagenes": [
+          "/laboratorio/laboratorio07.webp"
+         
+        ],
+        "ensayos": [
+          "Ensayo Proctor estándar y Proctor modificado.",
+          "Relación de soporte California CBR.",
+          "Corte directo en suelos.",
+          "Compresión no confinada en suelos cohesivos.",
+          "Ensayo triaxial UU, CU o CD según requerimiento del proyecto.",
+          "Consolidación unidimensional.",
+          "Densidad máxima y mínima en suelos granulares.",
+          "Permeabilidad en carga constante o carga variable."
+        ],
+        "descripcion": "Determinación de parámetros de resistencia, capacidad de soporte, deformación y comportamiento hidráulico para diseño geotécnico."
+      }
+    ],
+    "puntos": [
+      "Resultados aplicables a cimentaciones, rellenos, taludes y pavimentos",
+      "Clasificación técnica mediante SUCS y AASHTO",
+      "Ensayos de resistencia, compactación, consolidación y permeabilidad",
+      "Control de calidad para movimiento de tierras y plataformas",
+      "Equipos calibrados con trazabilidad metrológica"
+    ],
+    "detalles": [
+      "Tiempo de entrega según cantidad de muestras y tipo de ensayo",
+      "Recepción, codificación y preparación controlada de muestras",
+      "Informes con resultados, tablas, gráficos y observaciones técnicas",
+      "Procedimientos alineados a normas MTC, ASTM y NTP aplicables",
+      "Soporte técnico para interpretación geotécnica de resultados"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS DISPONIBLES",
+        "value": 130,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "CLIENTES ATENDIDOS",
+        "value": 150,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "AÑOS DE EXPERIENCIA",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "TRAZABILIDAD TÉCNICA",
+        "value": 100,
+        "suffix": "%"
+      }
+    ]
+  },
+  {
+    "slug": "laboratorio-de-rocas",
+    "titulo": "Laboratorio de Rocas",
+    "descripcion": "Ensayos físicos y mecánicos en roca intacta para minería, túneles, taludes, cimentaciones y obras subterráneas.",
+    "contenido": "Ejecutamos ensayos de laboratorio en testigos y muestras de roca para determinar su resistencia, durabilidad, densidad, absorción y comportamiento mecánico. Esta información es fundamental para estudios geomecánicos, estabilidad de excavaciones, diseño de taludes, túneles y estructuras cimentadas sobre macizos rocosos.",
+    "imagen": "/laboratorio/laboratorio08.webp",
+    "titulo01": "Ensayos Mecánicos y Físicos en Roca",
+    "subtitulo01": "Caracterización de roca intacta para análisis geomecánico y diseño de ingeniería.",
+    "categorias": [
+      {
+        "titulo": "Propiedades Físicas y Preparación de Muestras",
+        "imagenes": [
+          "/laboratorio/laboratorio08.webp"
+        ],
+        "ensayos": [
+          "Corte, tallado y preparación de probetas de roca.",
+          "Densidad, peso unitario y gravedad específica.",
+          "Porosidad y absorción de agua.",
+          "Contenido de humedad en muestras de roca.",
+          "Descripción litológica y verificación dimensional de probetas.",
+          "Determinación de durabilidad al desleimiento.",
+          "Índice de carga puntual.",
+          "Velocidad de pulso ultrasónico en roca."
+        ],
+        "descripcion": "Caracterización inicial de la roca para evaluar calidad, estado físico y aptitud de las muestras antes de los ensayos mecánicos."
+      },
+      {
+        "titulo": "Resistencia y Comportamiento Mecánico",
+        "imagenes": [
+          "/laboratorio/laboratorio08.webp"
+        ],
+        "ensayos": [
+          "Compresión simple uniaxial en roca.",
+          "Compresión triaxial en roca.",
+          "Ensayo brasileño para resistencia a la tracción indirecta.",
+          "Determinación de módulo de elasticidad y relación de Poisson.",
+          "Corte directo en discontinuidades de roca.",
+          "Resistencia a la carga puntual en testigos o fragmentos.",
+          "Evaluación de anisotropía según orientación de la muestra.",
+          "Interpretación de parámetros para análisis geomecánico."
+        ],
+        "descripcion": "Ensayos para obtener parámetros de resistencia y deformabilidad utilizados en túneles, taludes, excavaciones y cimentaciones en roca."
+      }
+    ],
+    "puntos": [
+      "Ensayos orientados a geomecánica, minería y obras subterráneas",
+      "Caracterización física y mecánica de roca intacta",
+      "Preparación controlada de probetas y testigos diamantinos",
+      "Parámetros útiles para estabilidad de taludes y excavaciones",
+      "Resultados compatibles con análisis RMR, Q y GSI"
+    ],
+    "detalles": [
+      "Tiempo de entrega según preparación de probetas y cantidad de ensayos",
+      "Control dimensional y registro fotográfico de muestras",
+      "Informes con curvas, parámetros y observaciones técnicas",
+      "Procedimientos alineados a normas ASTM, ISRM y NTP aplicables",
+      "Equipos calibrados para ensayos de resistencia y deformabilidad"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS DISPONIBLES",
+        "value": 130,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "CLIENTES ATENDIDOS",
+        "value": 150,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "AÑOS DE EXPERIENCIA",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "TRAZABILIDAD TÉCNICA",
+        "value": 100,
+        "suffix": "%"
+      }
+    ]
+  },
+  {
+    "slug": "laboratorio-de-concreto",
+    "titulo": "Laboratorio de Concreto",
+    "descripcion": "Ensayos de concreto fresco, concreto endurecido y agregados para control de calidad en obras civiles.",
+    "contenido": "Brindamos control de calidad del concreto y sus componentes, desde el muestreo en obra hasta la evaluación de resistencia en laboratorio. Nuestros ensayos permiten verificar trabajabilidad, resistencia, uniformidad y cumplimiento técnico en edificaciones, pavimentos rígidos, estructuras hidráulicas y obras de infraestructura.",
+    "imagen": "/laboratorio/laboratorio09.webp",
+    "titulo01": "Control de Calidad de Concreto",
+    "subtitulo01": "Ensayos en concreto fresco, endurecido, testigos diamantinos y agregados para construcción.",
+    "categorias": [
+      {
+        "titulo": "Concreto Fresco y Agregados",
+        "imagenes": [
+          "/laboratorio/laboratorio09.webp"
+        ],
+        "ensayos": [
+          "Muestreo de concreto fresco en obra.",
+          "Asentamiento del concreto mediante cono de Abrams.",
+          "Temperatura del concreto fresco.",
+          "Peso unitario, rendimiento y contenido de aire.",
+          "Elaboración y curado de probetas cilíndricas o prismáticas.",
+          "Granulometría de agregados fino y grueso.",
+          "Peso específico, absorción y peso unitario de agregados.",
+          "Contenido de humedad, material fino y partículas perjudiciales en agregados."
+        ],
+        "descripcion": "Control inicial del concreto y sus materiales para verificar trabajabilidad, dosificación, uniformidad y calidad de mezcla."
+      },
+      {
+        "titulo": "Concreto Endurecido y Evaluación de Resistencia",
+        "imagenes": [
+          "/laboratorio/laboratorio09.webp"
+        ],
+        "ensayos": [
+          "Resistencia a la compresión de probetas cilíndricas.",
+          "Resistencia a la flexión en vigas de concreto.",
+          "Tracción indirecta o ensayo brasileño en concreto.",
+          "Extracción y ensayo de testigos diamantinos.",
+          "Densidad, absorción y vacíos en concreto endurecido.",
+          "Esclerometría como evaluación no destructiva referencial.",
+          "Verificación de edad, curado y condiciones de rotura.",
+          "Análisis de resultados para aceptación o control de obra."
+        ],
+        "descripcion": "Ensayos para confirmar la resistencia real del concreto y respaldar decisiones de control, aceptación o evaluación estructural."
+      }
+    ],
+    "puntos": [
+      "Control de calidad para edificaciones, puentes, losas y pavimentos rígidos",
+      "Ensayos en concreto fresco y concreto endurecido",
+      "Rotura de probetas y evaluación de testigos diamantinos",
+      "Control técnico de agregados para diseño y producción de concreto",
+      "Informes claros para valorizaciones, supervisión y recepción de obra"
+    ],
+    "detalles": [
+      "Programación de roturas a 7, 14, 28 días u otras edades requeridas",
+      "Registro de muestra, fecha de vaciado, elemento y resistencia especificada",
+      "Resultados con carga máxima, área corregida y resistencia obtenida",
+      "Procedimientos alineados a normas ASTM, NTP y MTC aplicables",
+      "Equipos calibrados para ensayos de compresión y flexión"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS DISPONIBLES",
+        "value": 130,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "CLIENTES ATENDIDOS",
+        "value": 150,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "AÑOS DE EXPERIENCIA",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "TRAZABILIDAD TÉCNICA",
+        "value": 100,
+        "suffix": "%"
+      }
+    ]
+  },
+  {
+    "slug": "laboratorio-de-pavimentos",
+    "titulo": "Laboratorio de Pavimentos",
+    "descripcion": "Ensayos para diseño, evaluación y control de calidad de subrasantes, bases, subbases, agregados y mezclas asfálticas.",
+    "contenido": "Realizamos ensayos especializados para proyectos viales, carreteras, calles, plataformas industriales y pavimentos urbanos. Evaluamos la capacidad de soporte de suelos, calidad de materiales granulares, propiedades de mezclas asfálticas y parámetros necesarios para diseño, mantenimiento y control de pavimentos.",
+    "imagen": "/laboratorio/laboratorio10.webp",
+    "titulo01": "Ensayos para Diseño y Control de Pavimentos",
+    "subtitulo01": "Evaluación de subrasante, base, subbase, agregados y mezclas asfálticas.",
+    "categorias": [
+      {
+        "titulo": "Subrasante, Base, Subbase y Material Granular",
+        "imagenes": [
+          "/laboratorio/laboratorio10.webp",
+          "/laboratorio/laboratorio11.webp",
+          "/laboratorio/laboratorio12.webp",
+          "/laboratorio/laboratorio13.webp"
+        ],
+        "ensayos": [
+          "CBR de laboratorio para subrasante, base y subbase.",
+          "Proctor estándar y Proctor modificado.",
+          "Granulometría de materiales granulares.",
+          "Límites de Atterberg en suelos de subrasante.",
+          "Equivalente de arena.",
+          "Abrasión Los Ángeles en agregados.",
+          "Índice de forma, caras fracturadas y partículas chatas o alargadas.",
+          "Densidad de campo y control de compactación en obra."
+        ],
+        "descripcion": "Ensayos para determinar la calidad, compactación y capacidad de soporte de materiales empleados en estructuras de pavimento."
+      },
+      {
+        "titulo": "Mezclas Asfálticas y Evaluación Vial",
+        "imagenes": [
+          "/laboratorio/laboratorio10.webp",
+          "/laboratorio/laboratorio11.webp",
+          "/laboratorio/laboratorio12.webp",
+          "/laboratorio/laboratorio13.webp"
+        ],
+        "ensayos": [
+          "Extracción cuantitativa de asfalto en mezclas bituminosas.",
+          "Granulometría de agregados recuperados de mezcla asfáltica.",
+          "Estabilidad y flujo Marshall.",
+          "Densidad bulk de briquetas asfálticas.",
+          "Vacíos de aire, VMA y VFA en mezcla compactada.",
+          "Contenido óptimo de cemento asfáltico según diseño Marshall.",
+          "Control de temperatura y compactación de mezcla asfáltica.",
+          "Evaluación de materiales para mantenimiento y rehabilitación vial."
+        ],
+        "descripcion": "Control de calidad de mezclas asfálticas y parámetros de diseño para pavimentos flexibles y rehabilitación de vías."
+      }
+    ],
+    "puntos": [
+      "Ensayos para carreteras, vías urbanas y plataformas industriales",
+      "Control de subrasante, base, subbase y materiales granulares",
+      "Evaluación de mezclas asfálticas y diseño Marshall",
+      "Soporte para diseño estructural y mantenimiento vial",
+      "Resultados aplicables a expedientes técnicos y control de obra"
+    ],
+    "detalles": [
+      "Tiempo de entrega según tipo de material y cantidad de muestras",
+      "Informes con curvas granulométricas, densidades y parámetros de diseño",
+      "Procedimientos alineados a normas MTC, ASTM y NTP aplicables",
+      "Control de calidad para ejecución, supervisión y recepción de vías",
+      "Equipos calibrados para ensayos de pavimentos y agregados"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS DISPONIBLES",
+        "value": 130,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "CLIENTES ATENDIDOS",
+        "value": 150,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "AÑOS DE EXPERIENCIA",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "TRAZABILIDAD TÉCNICA",
+        "value": 100,
+        "suffix": "%"
+      }
+    ]
+  },
+  {
+    "slug": "laboratorio-quimico",
+    "titulo": "Laboratorio Químico",
+    "descripcion": "Análisis químico de suelos, aguas, agregados y materiales para evaluar agresividad, durabilidad y compatibilidad en obras civiles.",
+    "contenido": "Desarrollamos ensayos químicos aplicados a la ingeniería geotécnica, construcción y control de materiales. Estos análisis permiten identificar sales, sulfatos, cloruros, pH y otros componentes que pueden afectar cimentaciones, concreto, acero de refuerzo, tuberías, materiales de préstamo y durabilidad de las estructuras.",
+    "imagen": "/laboratorio/laboratorio03.webp",
+    "titulo01": "Ensayos Químicos Aplicados a Ingeniería",
+    "subtitulo01": "Evaluación de agresividad química, sales, sulfatos, cloruros y calidad de materiales.",
+    "categorias": [
+      {
+        "titulo": "Análisis Químico en Suelos y Aguas",
+        "imagenes": [
+          "/laboratorio/laboratorio03.webp",
+          "/laboratorio/laboratorio04.webp",
+          "/laboratorio/laboratorio05.webp"
+          
+        ],
+        "ensayos": [
+          "Determinación de pH en suelos y aguas.",
+          "Contenido de sulfatos solubles.",
+          "Contenido de cloruros solubles.",
+          "Sales solubles totales.",
+          "Conductividad eléctrica.",
+          "Materia orgánica en suelos.",
+          "Carbonatos y bicarbonatos según requerimiento del estudio.",
+          "Evaluación de agresividad química del suelo o agua hacia el concreto y acero."
+        ],
+        "descripcion": "Ensayos orientados a identificar condiciones químicas que pueden afectar cimentaciones, estructuras enterradas y durabilidad del concreto."
+      },
+      {
+        "titulo": "Control Químico de Materiales de Construcción",
+        "imagenes": [
+          "/laboratorio/laboratorio03.webp",
+          "/laboratorio/laboratorio04.webp",
+          "/laboratorio/laboratorio05.webp"
+        ],
+        "ensayos": [
+          "Análisis químico de agregados para concreto.",
+          "Determinación de impurezas orgánicas en agregados finos.",
+          "Contenido de sales en materiales de préstamo.",
+          "Evaluación de agua para mezclas de concreto.",
+          "Determinación de sólidos disueltos y parámetros de calidad de agua.",
+          "Control químico para materiales usados en rellenos y terraplenes.",
+          "Compatibilidad química de materiales con obras de concreto.",
+          "Interpretación de resultados para recomendaciones de durabilidad."
+        ],
+        "descripcion": "Control de componentes químicos en materiales utilizados en concreto, rellenos y obras de infraestructura para reducir riesgos de deterioro."
+      }
+    ],
+    "puntos": [
+      "Análisis químico aplicado a geotecnia, concreto y materiales",
+      "Evaluación de sulfatos, cloruros, sales, pH y conductividad",
+      "Soporte para diseño de cimentaciones y durabilidad estructural",
+      "Control de calidad de agua, suelos y agregados",
+      "Resultados útiles para especificaciones técnicas y recomendaciones de obra"
+    ],
+    "detalles": [
+      "Tiempo de entrega según matriz de muestra y paquete de análisis",
+      "Recepción y conservación adecuada de muestras",
+      "Informes con resultados, unidades, límites de referencia y observaciones",
+      "Procedimientos alineados a normas ASTM, NTP y MTC aplicables",
+      "Aplicable a estudios geotécnicos, concreto, pavimentos e infraestructura"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS DISPONIBLES",
+        "value": 130,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "CLIENTES ATENDIDOS",
+        "value": 150,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "AÑOS DE EXPERIENCIA",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "TRAZABILIDAD TÉCNICA",
+        "value": 100,
+        "suffix": "%"
+      }
+    ]
+  },
+  {
+    "slug": "laboratorio-complementario",
+    "titulo": "Laboratorio Complementario",
+    "descripcion": "Ensayos adicionales de apoyo para control de calidad, caracterización de materiales y verificación técnica en proyectos de ingeniería.",
+    "contenido": "Nuestro laboratorio complementario reúne ensayos de soporte que fortalecen la caracterización de materiales y el control técnico de obra. Incluye pruebas en agregados, materiales especiales, elementos de construcción y verificaciones complementarias que ayudan a completar expedientes, validar especificaciones y respaldar decisiones de supervisión.",
+    "imagen": "/laboratorio/laboratorio09.webp",
+    "titulo01": "Ensayos Complementarios para Control Técnico",
+    "subtitulo01": "Pruebas de apoyo para agregados, materiales de construcción, control de obra y verificación de calidad.",
+    "categorias": [
+      {
+        "titulo": "Agregados, Canteras y Materiales de Préstamo",
+        "imagenes": [
+          "/laboratorio/laboratorio09.webp",
+          "/laboratorio/laboratorio10.webp",
+          "/laboratorio/laboratorio11.webp",
+          "/geologia/geologia05.webp"
+        ],
+        "ensayos": [
+          "Granulometría de agregados y materiales de cantera.",
+          "Peso unitario suelto y compactado.",
+          "Peso específico y absorción de agregado fino y grueso.",
+          "Contenido de humedad en agregados.",
+          "Material más fino que pasa la malla N.° 200.",
+          "Abrasión Los Ángeles.",
+          "Durabilidad de agregados frente a sulfatos.",
+          "Evaluación técnica de materiales de préstamo para rellenos y obras civiles."
+        ],
+        "descripcion": "Ensayos de apoyo para validar la calidad de canteras, agregados y materiales usados en concreto, pavimentos y movimiento de tierras."
+      },
+      {
+        "titulo": "Control Complementario de Obra y Materiales",
+        "imagenes": [
+          "/laboratorio/laboratorio09.webp"
+        ],
+        "ensayos": [
+          "Densidad de campo por cono de arena.",
+          "Densidad in situ por métodos nucleares cuando aplique.",
+          "Control de compactación de rellenos y plataformas.",
+          "Verificación de espesor y conformidad de capas compactadas.",
+          "Ensayos de absorción en unidades de albañilería.",
+          "Resistencia a compresión de unidades de albañilería.",
+          "Muestreo y control de materiales en obra.",
+          "Ensayos especiales según especificaciones del expediente técnico."
+        ],
+        "descripcion": "Pruebas de campo y laboratorio que complementan el control de calidad durante la ejecución de obras civiles."
+      }
+    ],
+    "puntos": [
+      "Ensayos de soporte para agregados, canteras y materiales de préstamo",
+      "Control de compactación y verificación de capas en campo",
+      "Pruebas complementarias para expedientes técnicos y supervisión",
+      "Aplicable a obras de concreto, pavimentos, rellenos y edificaciones",
+      "Flexibilidad para ensayos especiales según requerimiento del proyecto"
+    ],
+    "detalles": [
+      "Tiempo de entrega según ensayo, muestra y alcance solicitado",
+      "Informes técnicos con resultados y observaciones de conformidad",
+      "Procedimientos alineados a normas MTC, ASTM y NTP aplicables",
+      "Coordinación de muestreo en campo y recepción en laboratorio",
+      "Soporte para control de calidad, valorizaciones y recepción de obra"
+    ],
+    "numeros": [
+      {
+        "id": 1,
+        "label": "ENSAYOS DISPONIBLES",
+        "value": 130,
+        "suffix": "+"
+      },
+      {
+        "id": 2,
+        "label": "CLIENTES ATENDIDOS",
+        "value": 150,
+        "suffix": "+"
+      },
+      {
+        "id": 3,
+        "label": "AÑOS DE EXPERIENCIA",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "id": 4,
+        "label": "TRAZABILIDAD TÉCNICA",
+        "value": 100,
+        "suffix": "%"
+      }
+    ]
+  }
 ]
