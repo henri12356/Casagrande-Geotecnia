@@ -344,7 +344,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       <body className={`${font.className} antialiased`}>
-        <UpdateModal />
+        {/* <UpdateModal /> */}
         {children}
         <FloatingButtons />
         {/* Mantén GA4 aquí: */}

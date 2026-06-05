@@ -15,42 +15,45 @@ import {
 const Footer = () => {
   // Data for "Acerca de" section links
 
-
   // Data for "Conecta con EDteam" sections
   const connectLinks = [
-  {
-    title: "Atención al cliente",
-    links: [
-      {
-        name: "945 513 323 | 962 835 652",
-        href: "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.",
-      },
-      {
-        name: "comercial@casagrandegeotecnia.com.pe",
-        href: "mailto:comercial@casagrandegeotecnia.com.pe",
-      },
-      {
-        name: "Sede Ayacucho – Jirón Quinua 570, Ayacucho 05003",
-        href: "https://maps.app.goo.gl/ZLD7hVDrudfbnSTd6",
-      },
-      {
-        name: "Sede Lima – Jr. Santa Carolina 513, Palao - S.M.P - Lima",
-        href: "https://maps.app.goo.gl/d5gJNMX8ZyHvmnyS8",
-      },
-    ],
-  },
-];
+    {
+      title: "Atención al cliente",
+      links: [
+        {
+          name: "962 835 652",
+          href: "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.",
+        },
+        {
+          name: "945 513 323",
+          href: "https://api.whatsapp.com/send?phone=51945513323&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.",
+        },
+        {
+          name: "comercial@casagrandegeotecnia.com.pe",
+          href: "https://mail.google.com/mail/?view=cm&fs=1&to=comercial@casagrandegeotecnia.com.pe&su=Consulta%20sobre%20servicios",
+        },
+        {
+          name: "Sede Lima – Jr. Santa Carolina 513, Palao - S.M.P - Lima",
+          href: "https://maps.app.goo.gl/d5gJNMX8ZyHvmnyS8",
+        },
+        {
+          name: "Sede Ayacucho – Jirón Quinua 570, Ayacucho 05003",
+          href: "https://maps.app.goo.gl/ZLD7hVDrudfbnSTd6",
+        },
+      ],
+    },
+  ];
 
   // Data for "Nuestros productos" section links
   const productLinks = [
-  { name: "Inicio", href: "/" },
-  { name: "Quiénes Somos", href: "/nosotros" },
-  { name: "Servicios", href: "/servicios" },
-  { name: "Laboratorio de Ensayos", href: "/servicios/laboratorio-de-suelo" },
-  { name: "Proyectos", href: "/proyectos" },
-  { name: "Blog Técnico", href: "/blog" },
-  { name: "Contacto", href: "/contacto" },
-];
+    { name: "Inicio", href: "/" },
+    { name: "Quiénes Somos", href: "/nosotros" },
+    { name: "Servicios", href: "/servicios" },
+    { name: "Laboratorio de Ensayos", href: "/servicios/laboratorio-de-suelo" },
+    { name: "Proyectos", href: "/proyectos" },
+    { name: "Blog Técnico", href: "/blog" },
+    { name: "Contacto", href: "/contacto" },
+  ];
 
   // Data for social media links
   const socialLinks = [
@@ -72,7 +75,7 @@ const Footer = () => {
     {
       icon: PiLinkedinLogo,
       name: "LinkedIn",
-      href: "https://www.linkedin.com/in/david-guerra-4a9b44385/",
+      href: "https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/",
     },
     {
       icon: PiYoutubeLogo,
@@ -105,7 +108,6 @@ const Footer = () => {
                 src="/logocasagrande.svg"
                 alt="Logo de casagrande geotecnia"
                 fill
-                
                 sizes="(max-width: 768px) 192px, (max-width: 1200px) 256px, 384px"
                 className="object-contain object-left transition-transform group-hover:scale-105"
                 priority
@@ -125,7 +127,7 @@ const Footer = () => {
         {/* Mobile Logo */}
         <div className="flex flex-col items-center mb-6 md:hidden">
           <div className="flex items-center justify-center w-full max-w-xs">
-            <Link 
+            <Link
               href="/"
               className="flex items-center group relative h-16 md:h-12 w-full"
             >
@@ -152,12 +154,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-y-10 lg:gap-x-12 mb-8 sm:mb-12">
           <div className="py-8 flex flex-col md:items-start items-center">
             <h2 className="text-lg  font-bold mb-6 text-[#182C45] text-center">
-              Nuestras Certificaciones 
+              Nuestras Certificaciones
             </h2>
             <div className=" w-60 aspect-[4/3] relative">
               <Image
                 src="/certicados.png" // ruta de tu imagen
-                alt="Certificaciones"   
+                alt="Certificaciones"
                 width={800} // ancho grande
                 height={600} // alto proporcional
                 className="w-full h-auto object-contain"
@@ -203,9 +205,7 @@ const Footer = () => {
 
           {/* Section: Nuestros productos */}
           <div className="py-2">
-            <h2 className="text-lg font-bold mb-4 text-[#182C45]">
-              Proyectos
-            </h2>
+            <h2 className="text-lg font-bold mb-4 text-[#182C45]">Proyectos</h2>
             <nav>
               <ul className="space-y-2 sm:space-y-3">
                 {productLinks.map((link) => (
@@ -228,7 +228,8 @@ const Footer = () => {
           {/* About description and Social Media (Desktop Only) */}
           <div className="hidden md:flex flex-col items-start py-2">
             <p className="text-gray-700 mb-4 sm:mb-6 text-sm leading-relaxed">
-              Más de 6 años asegurando estabilidad y eficiencia en proyectos de ingeniería
+              Más de 6 años asegurando estabilidad y eficiencia en proyectos de
+              ingeniería
             </p>
             <div className="flex gap-3 mt-auto">
               {socialLinks.map((social) => (

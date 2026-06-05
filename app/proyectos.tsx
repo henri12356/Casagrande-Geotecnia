@@ -277,14 +277,14 @@ const MapaProyectos = () => {
                               {proyecto.provincia}
                             </div>
                             <div className="flex justify-between items-center mt-3 pt-2 border-t border-gray-100">
-                              <div className="flex flex-col">
+                              {/* <div className="flex flex-col">
                                 <span className="text-xs text-gray-500">
                                   Inversión
                                 </span>
                                 <span className="font-bold text-lg text-emerald-700">
                                   {proyecto.inversion}
                                 </span>
-                              </div>
+                              </div> */}
                               <span
                                 className={`text-xs font-semibold py-1 px-2 rounded-full ${getEstadoColor(
                                   proyecto.estado
@@ -401,14 +401,14 @@ const MapaProyectos = () => {
                       Ver Proyecto
                     </Link>
 
-                    <div className="col-span-2 flex flex-col pt-2">
+                    {/* <div className="col-span-2 flex flex-col pt-2">
                       <span className="text-xs text-gray-500 uppercase font-medium">
                         Inversión Estimada
                       </span>
                       <span className="font-bold text-xl text-emerald-700">
                         {activeProject.inversion}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </motion.div>
