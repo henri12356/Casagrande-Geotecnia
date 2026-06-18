@@ -11,7 +11,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  Suspense,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { IconType } from "react-icons";
 import {
   FaFacebook,
@@ -44,8 +50,6 @@ interface ContactInfoItemProps {
 }
 
 type Proyecto = { categoria?: string };
-
-const GOLD_COLOR = "#b79770";
 
 // --- Data base ---
 const baseNavLinks: NavLink[] = [
@@ -313,11 +317,7 @@ const DesktopMenu = ({
                   className={`
                     group relative rounded-2xl px-6 py-2 font-semibold transition-all duration-300
                     hover:bg-[#182C45]/5 hover:text-[#b79770]
-                    ${
-                      active
-                        ? "font-bold text-[#182C45]"
-                        : "text-[#182C45]"
-                    }
+                    ${active ? "font-bold text-[#182C45]" : "text-[#182C45]"}
                   `}
                 >
                   {link.label}
@@ -446,8 +446,8 @@ const MobileMenuButton = ({
   </motion.button>
 );
 
-// --- Navbar principal ---
-const Navbar = () => {
+// --- Navbar interno que usa useSearchParams ---
+const NavbarContent = () => {
   const pathname = usePathname() || "";
   const searchParams = useSearchParams();
   const currentQuery = searchParams.toString();
@@ -622,11 +622,7 @@ const Navbar = () => {
               </Button>
             </a>
 
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="cursor-pointer rounded-lg border-2 border-[#182C45] bg-[#182C45] px-4 py-2 font-bold text-white shadow-md transition duration-300 ease-in-out hover:bg-white hover:text-[#182C45]"
@@ -680,7 +676,10 @@ const Navbar = () => {
                   const active = isNavLinkActive(pathname, currentQuery, link);
 
                   return (
-                    <motion.div key={link.label} variants={mobileMenuItemVariants}>
+                    <motion.div
+                      key={link.label}
+                      variants={mobileMenuItemVariants}
+                    >
                       {!link.subLinks || link.subLinks.length === 0 ? (
                         <Link
                           href={link.href}
@@ -867,4 +866,11 @@ function MobileAccordion({
   );
 }
 
-export default Navbar;
+// --- Export corregido con Suspense ---
+export default function Navbar() {
+  return (
+    <Suspense fallback={null}>
+      <NavbarContent />
+    </Suspense>
+  );
+}
