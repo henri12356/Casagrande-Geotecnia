@@ -23,7 +23,7 @@ const slidesData: {
    "",
     imageSrc: "/heroservicios.webp",
     buttonText: "Ver Brochure",
-    buttonLink: "/brochure.pdf",
+    buttonLink: "/BROCHURE_CASAGRANDE_ GEOTECNIA_2026.pdf",
   },
 ];
 

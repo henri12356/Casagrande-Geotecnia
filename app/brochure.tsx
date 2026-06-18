@@ -18,7 +18,7 @@ const Brochure = () => {
       {/* Contenedor de los Botones */}
       <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-3">
         <a
-          href="/path/to/curriculum-corporativo.pdf"
+          href="/BROCHURE_CASAGRANDE_ GEOTECNIA_2026.pdf"
           download="Curriculum-Corporativo.pdf"
           className="bg-white hover:bg-slate-300 text-[#1b4772] font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
         >

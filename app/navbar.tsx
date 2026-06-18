@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import {
@@ -23,7 +23,6 @@ import {
 } from "react-icons/fa";
 import { LuChevronRight, LuMenu, LuX } from "react-icons/lu";
 
-// 👇 importa tus proyectos para leer categorías
 import proyectos from "@/app/data/proyectos.json";
 
 // --- Tipos ---
@@ -45,6 +44,8 @@ interface ContactInfoItemProps {
 }
 
 type Proyecto = { categoria?: string };
+
+const GOLD_COLOR = "#b79770";
 
 // --- Data base ---
 const baseNavLinks: NavLink[] = [
@@ -78,7 +79,7 @@ const baseNavLinks: NavLink[] = [
     ],
   },
   { href: "/proyectos", label: "Proyectos", subLinks: [] },
-  { href: "/calidad", label: "Gestion de calidad" },
+  { href: "/calidad", label: "Gestión de calidad" },
   { href: "/nosotros", label: "Nosotros" },
 ];
 
@@ -119,6 +120,46 @@ const contactInfo: ContactInfoItemProps[] = [
 const whatsappLink =
   "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.";
 
+// --- Validar página activa ---
+const isHrefActive = (
+  pathname: string,
+  currentQuery: string,
+  href: string
+) => {
+  if (href === "/") return pathname === "/";
+
+  // Para links con query, por ejemplo: /proyectos?categoria=Geotecnia
+  if (href.includes("?")) {
+    const [hrefPath, hrefQuery] = href.split("?");
+
+    if (pathname !== hrefPath) return false;
+
+    const targetParams = new URLSearchParams(hrefQuery);
+    const currentParams = new URLSearchParams(currentQuery);
+
+    return Array.from(targetParams.entries()).every(
+      ([key, value]) => currentParams.get(key) === value
+    );
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+};
+
+const isNavLinkActive = (
+  pathname: string,
+  currentQuery: string,
+  link: NavLink
+) => {
+  const parentActive = isHrefActive(pathname, currentQuery, link.href);
+
+  const childActive =
+    link.subLinks?.some((subLink) =>
+      isHrefActive(pathname, currentQuery, subLink.href)
+    ) ?? false;
+
+  return parentActive || childActive;
+};
+
 // ===== utilidad: click-outside sin romper clicks internos =====
 function useClickOutside<T extends HTMLElement>(onOutside: () => void) {
   const ref = useRef<T | null>(null);
@@ -141,7 +182,7 @@ function useClickOutside<T extends HTMLElement>(onOutside: () => void) {
 const ContactInfoItem = ({ text, href }: ContactInfoItemProps) => (
   <a
     href={href}
-    className="flex items-center gap-2 text-xs hover:bg-[#C9A66B]/100 py-3 hover:text-[#182C45] rounded-2xl px-3 text-white transition-colors duration-200"
+    className="flex items-center gap-2 rounded-2xl px-3 py-3 text-xs text-white transition-all duration-300 hover:bg-[#b79770] hover:text-[#182C45]"
     rel="noopener noreferrer"
   >
     <span className="text-[15px] font-bold">{text}</span>
@@ -157,9 +198,14 @@ const SocialLinks = ({ className = "text-white" }: { className?: string }) => (
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
-        className={`transition-opacity hover:opacity-80 ${className}`}
+        className={`
+          group flex h-9 w-9 items-center justify-center rounded-full
+          transition-all duration-300 ease-out
+          hover:-translate-y-1 hover:scale-110 hover:bg-[#b79770] hover:shadow-[0_8px_20px_rgba(183,151,112,0.35)]
+          ${className}
+        `}
       >
-        <Icon className="h-5 w-5" />
+        <Icon className="h-5 w-5 transition-all duration-300 group-hover:rotate-6 group-hover:text-[#182C45]" />
       </a>
     ))}
   </div>
@@ -183,12 +229,11 @@ const WhatsAppNumber = ({ mobile = false }: { mobile?: boolean }) => (
 );
 
 const TopBar = () => (
-  <div className="hidden bg-[#182C45] text-white md:block py-2">
-    <div className="container flex h-10 items-center justify-between px-4 max-w-7xl 2xl:max-w-[1500px] mx-auto">
+  <div className="hidden bg-[#182C45] py-2 text-white md:block">
+    <div className="container mx-auto flex h-10 max-w-7xl items-center justify-between px-4 2xl:max-w-[1500px]">
       <SocialLinks />
 
       <div className="flex items-center gap-4">
-
         {contactInfo.map((item) => (
           <ContactInfoItem key={item.text} {...item} />
         ))}
@@ -198,15 +243,33 @@ const TopBar = () => (
   </div>
 );
 
+// --- Línea activa del menú ---
+const NavUnderline = ({ active }: { active: boolean }) => (
+  <span
+    className={`
+      absolute left-1/2 -bottom-1 h-[3px] -translate-x-1/2 rounded-full bg-[#b79770]
+      shadow-[0_0_12px_rgba(183,151,112,0.65)]
+      transition-all duration-300 ease-out
+      ${
+        active
+          ? "w-9 opacity-100"
+          : "w-0 opacity-0 group-hover:w-9 group-hover:opacity-100"
+      }
+    `}
+  />
+);
+
 // ===== DesktopMenu =====
 const DesktopMenu = ({
   pathname,
+  currentQuery,
   hoverVariants,
   openDropdown,
   setOpenDropdown,
   navLinksData,
 }: {
   pathname: string;
+  currentQuery: string;
   hoverVariants: Variants;
   openDropdown: string | null;
   setOpenDropdown: (label: string | null) => void;
@@ -232,104 +295,125 @@ const DesktopMenu = ({
   return (
     <div ref={wrapRef}>
       <nav className="hidden items-center md:flex lg:flex">
-        {navLinksData.map((link) => (
-          <motion.div
-            key={link.label}
-            initial="initial"
-            whileHover="hover"
-            variants={hoverVariants}
-            className="relative"
-          >
-            {!link.subLinks || link.subLinks.length === 0 ? (
-              <Link
-                href={link.href}
-                className={`relative px-6 py-2 font-semibold text-[#182C45] transition-colors duration-300 hover:bg-[#182C45]/5 rounded-2xl ${
-                  pathname === link.href
-                    ? "font-bold text-[#182C45]"
-                    : "hover:text-sky-950"
-                }`}
-              >
-                {link.label}
+        {navLinksData.map((link) => {
+          const active = isNavLinkActive(pathname, currentQuery, link);
+          const dropdownActive = openDropdown === link.label || active;
 
-                {pathname === link.href && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className="absolute bottom-1 left-0 h-0.5 w-full bg-[#182C45]"
-                    transition={{
-                      type: "spring",
-                      bounce: 0.25,
-                      duration: 0.6,
-                    }}
-                  />
-                )}
-              </Link>
-            ) : (
-              <>
-                <button
-                  onClick={() =>
-                    setOpenDropdown(
-                      openDropdown === link.label ? null : link.label
-                    )
-                  }
-                  className={`dropdown-toggle-button relative cursor-pointer flex items-center gap-1 px-4 py-2 font-semibold text-[#182C45] transition-colors duration-300 hover:bg-[#182C45]/5 rounded-2xl ${
-                    openDropdown === link.label
-                      ? "font-bold text-[#182C45]"
-                      : "hover:text-sky-950"
-                  } focus:outline-none`}
+          return (
+            <motion.div
+              key={link.label}
+              initial="initial"
+              whileHover="hover"
+              variants={hoverVariants}
+              className="relative"
+            >
+              {!link.subLinks || link.subLinks.length === 0 ? (
+                <Link
+                  href={link.href}
+                  className={`
+                    group relative rounded-2xl px-6 py-2 font-semibold transition-all duration-300
+                    hover:bg-[#182C45]/5 hover:text-[#b79770]
+                    ${
+                      active
+                        ? "font-bold text-[#182C45]"
+                        : "text-[#182C45]"
+                    }
+                  `}
                 >
                   {link.label}
-                </button>
+                  <NavUnderline active={active} />
+                </Link>
+              ) : (
+                <>
+                  <button
+                    onClick={() =>
+                      setOpenDropdown(
+                        openDropdown === link.label ? null : link.label
+                      )
+                    }
+                    className={`
+                      dropdown-toggle-button group relative flex cursor-pointer items-center gap-1 rounded-2xl px-4 py-2
+                      font-semibold transition-all duration-300 hover:bg-[#182C45]/5 hover:text-[#b79770] focus:outline-none
+                      ${
+                        dropdownActive
+                          ? "font-bold text-[#182C45]"
+                          : "text-[#182C45]"
+                      }
+                    `}
+                  >
+                    {link.label}
+                    <NavUnderline active={active} />
+                  </button>
 
-                <AnimatePresence>
-                  {openDropdown === link.label && (
-                    <motion.ul
-                      variants={dropdownVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="hidden"
-                      className="absolute top-full left-0 mt-2 w-64 origin-top-left rounded-md bg-white p-2 shadow-lg"
-                      onClickCapture={(e) => e.stopPropagation()}
-                    >
-                      <li>
-                        <Link
-                          href={link.href}
-                          prefetch={false}
-                          onClick={() =>
-                            setTimeout(() => setOpenDropdown(null), 0)
-                          }
-                          className="block w-full rounded-md px-3 py-2 text-left text-sm font-medium text-[#182C45] hover:bg-[#182C45]/20"
-                        >
-                          Ver todos {link.label.toLowerCase()}
-                        </Link>
-                      </li>
-
-                      <li className="my-1 h-px bg-gray-200" />
-
-                      {link.subLinks.map((subLink) => (
-                        <li key={subLink.href}>
+                  <AnimatePresence>
+                    {openDropdown === link.label && (
+                      <motion.ul
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        className="absolute left-0 top-full z-50 mt-3 w-72 origin-top-left rounded-2xl border border-[#182C45]/10 bg-white p-2 shadow-[0_18px_45px_rgba(24,44,69,0.18)]"
+                        onClickCapture={(e) => e.stopPropagation()}
+                      >
+                        <li>
                           <Link
-                            href={subLink.href}
+                            href={link.href}
                             prefetch={false}
-                            className={`block rounded-md px-3 py-2 text-sm ${
-                              pathname === subLink.href
-                                ? "font-semibold text-sky-900 bg-gray-100"
-                                : "text-gray-700 hover:bg-gray-100"
-                            }`}
                             onClick={() =>
                               setTimeout(() => setOpenDropdown(null), 0)
                             }
+                            className={`
+                              block w-full rounded-xl px-4 py-3 text-left text-sm font-bold transition-all duration-300
+                              ${
+                                isHrefActive(pathname, currentQuery, link.href)
+                                  ? "bg-[#b79770]/15 text-[#182C45]"
+                                  : "text-[#182C45] hover:bg-[#b79770]/15 hover:text-[#182C45]"
+                              }
+                            `}
                           >
-                            {subLink.label}
+                            Ver todos {link.label.toLowerCase()}
                           </Link>
                         </li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-              </>
-            )}
-          </motion.div>
-        ))}
+
+                        <li className="my-2 h-px bg-[#182C45]/10" />
+
+                        {link.subLinks.map((subLink) => {
+                          const subActive = isHrefActive(
+                            pathname,
+                            currentQuery,
+                            subLink.href
+                          );
+
+                          return (
+                            <li key={subLink.href}>
+                              <Link
+                                href={subLink.href}
+                                prefetch={false}
+                                className={`
+                                  block rounded-xl px-4 py-2.5 text-sm transition-all duration-300
+                                  ${
+                                    subActive
+                                      ? "bg-[#b79770]/15 font-semibold text-[#182C45]"
+                                      : "text-gray-700 hover:bg-[#182C45]/5 hover:text-[#b79770]"
+                                  }
+                                `}
+                                onClick={() =>
+                                  setTimeout(() => setOpenDropdown(null), 0)
+                                }
+                              >
+                                {subLink.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </>
+              )}
+            </motion.div>
+          );
+        })}
       </nav>
     </div>
   );
@@ -343,7 +427,7 @@ const MobileMenuButton = ({
   toggle: () => void;
 }) => (
   <motion.button
-    className="z-[100] rounded-md p-2 text-[#182C45] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-[#373737] md:hidden"
+    className="z-[100] rounded-md p-2 text-[#182C45] transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b79770] md:hidden"
     onClick={toggle}
     aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
     whileTap={{ scale: 0.9 }}
@@ -365,6 +449,9 @@ const MobileMenuButton = ({
 // --- Navbar principal ---
 const Navbar = () => {
   const pathname = usePathname() || "";
+  const searchParams = useSearchParams();
+  const currentQuery = searchParams.toString();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const [isVisible, setIsVisible] = useState(false);
@@ -385,8 +472,10 @@ const Navbar = () => {
       label: cat,
     }));
 
-    return baseNavLinks.map((l) =>
-      l.label === "Proyectos" ? { ...l, subLinks: subLinksProyectos } : l
+    return baseNavLinks.map((link) =>
+      link.label === "Proyectos"
+        ? { ...link, subLinks: subLinksProyectos }
+        : link
     );
   }, []);
 
@@ -405,7 +494,7 @@ const Navbar = () => {
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpenDropdown(null);
-  }, [pathname]);
+  }, [pathname, currentQuery]);
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
@@ -478,7 +567,7 @@ const Navbar = () => {
   };
 
   const linkHoverVariants: Variants = {
-    hover: { scale: 1.05 },
+    hover: { scale: 1.04 },
     initial: { scale: 1 },
   };
 
@@ -490,14 +579,14 @@ const Navbar = () => {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm backdrop-blur-md"
+        className="fixed left-0 right-0 top-0 z-50 bg-white shadow-sm backdrop-blur-md"
         variants={navbarVariants}
         animate={isVisible ? "visible" : "hidden"}
         initial="hidden"
       >
         <TopBar />
 
-        <div className="max-w-7xl 2xl:max-w-[1500px] container mx-auto flex h-20 items-center justify-between md:h-[110px]">
+        <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between md:h-[110px] 2xl:max-w-[1500px]">
           <Link href="/" className="flex items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -509,13 +598,14 @@ const Navbar = () => {
                 alt="Logo de Casagrande Geotecnia"
                 width={100}
                 height={48}
-                className="h-11 w-auto md:h-13 max-md:px-2"
+                className="h-11 w-auto max-md:px-2 md:h-13"
               />
             </motion.div>
           </Link>
 
           <DesktopMenu
             pathname={pathname}
+            currentQuery={currentQuery}
             hoverVariants={linkHoverVariants}
             openDropdown={openDropdown}
             setOpenDropdown={setOpenDropdown}
@@ -526,20 +616,20 @@ const Navbar = () => {
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="bg-white border cursor-pointer border-[#182C45] text-[#182C45] font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#C9A66B] hover:text-[#182C45]"
+                className="cursor-pointer rounded-lg border border-[#182C45] bg-white px-4 py-2 font-bold text-[#182C45] shadow-md transition duration-300 ease-in-out hover:bg-[#b79770] hover:text-[#182C45]"
               >
                 ASESORÍA TÉCNICA
               </Button>
             </a>
 
             <a
-              href="https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button
                 size="lg"
-                className="bg-[#182C45] cursor-pointer text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 border-2 ease-in-out hover:bg-white hover:text-[#182C45] hover:border-[#182C45] border-[#182C45]"
+                className="cursor-pointer rounded-lg border-2 border-[#182C45] bg-[#182C45] px-4 py-2 font-bold text-white shadow-md transition duration-300 ease-in-out hover:bg-white hover:text-[#182C45]"
               >
                 ¡COTIZAR AHORA!
               </Button>
@@ -571,7 +661,7 @@ const Navbar = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed top-0 right-0 z-50 flex h-full w-4/5 max-w-sm flex-col bg-white shadow-xl"
+              className="fixed right-0 top-0 z-50 flex h-full w-4/5 max-w-sm flex-col bg-white shadow-xl"
             >
               <div className="flex items-center justify-between border-b p-4">
                 <span className="font-bold text-[#182C45]">Menú</span>
@@ -579,44 +669,52 @@ const Navbar = () => {
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="Cerrar menú"
-                  className="rounded-md p-1 text-[#182C4E] transition-colors cursor-pointer hover:bg-gray-100 hover:text-[#373737]"
+                  className="cursor-pointer rounded-md p-1 text-[#182C4E] transition-colors hover:bg-gray-100 hover:text-[#373737]"
                 >
                   <LuX className="h-6 w-6" />
                 </button>
               </div>
 
               <nav className="flex-grow space-y-2 overflow-y-auto p-4">
-                {navLinksData.map((link) => (
-                  <motion.div key={link.label} variants={mobileMenuItemVariants}>
-                    {!link.subLinks || link.subLinks.length === 0 ? (
-                      <Link
-                        href={link.href}
-                        className={`block rounded-lg px-4 py-3 text-base font-bold transition-colors ${
-                          pathname === link.href
-                            ? "bg-gray-300 text-black"
-                            : "text-[#182C45] hover:bg-gray-100"
-                        }`}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <MobileAccordion
-                        link={link}
-                        pathname={pathname}
-                        onNavigate={() => setMobileMenuOpen(false)}
-                        mobileSubmenuVariants={mobileSubmenuVariants}
-                      />
-                    )}
-                  </motion.div>
-                ))}
+                {navLinksData.map((link) => {
+                  const active = isNavLinkActive(pathname, currentQuery, link);
+
+                  return (
+                    <motion.div key={link.label} variants={mobileMenuItemVariants}>
+                      {!link.subLinks || link.subLinks.length === 0 ? (
+                        <Link
+                          href={link.href}
+                          className={`
+                            block rounded-lg border-l-4 px-4 py-3 text-base font-bold transition-all duration-300
+                            ${
+                              active
+                                ? "border-[#b79770] bg-[#b79770]/15 text-[#182C45]"
+                                : "border-transparent text-[#182C45] hover:bg-gray-100"
+                            }
+                          `}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <MobileAccordion
+                          link={link}
+                          pathname={pathname}
+                          currentQuery={currentQuery}
+                          onNavigate={() => setMobileMenuOpen(false)}
+                          mobileSubmenuVariants={mobileSubmenuVariants}
+                        />
+                      )}
+                    </motion.div>
+                  );
+                })}
 
                 <div className="space-y-5 pt-2">
                   {contactInfo.map((item) => (
                     <a
                       key={item.text}
                       href={item.href}
-                      className="flex font-bold pl-4 items-center gap-3 text-[#182C45] transition-colors hover:text-red-600"
+                      className="flex items-center gap-3 pl-4 font-bold text-[#182C45] transition-colors hover:text-[#b79770]"
                     >
                       <span>{item.text}</span>
                     </a>
@@ -631,20 +729,16 @@ const Navbar = () => {
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
-                      className="w-full bg-white border border-[#182C45] text-[#182C45] font-semibold rounded-lg transition duration-300 ease-in-out cursor-pointer hover:bg-[#182C45] hover:text-white"
+                      className="w-full cursor-pointer rounded-lg border border-[#182C45] bg-white font-semibold text-[#182C45] transition duration-300 ease-in-out hover:bg-[#182C45] hover:text-white"
                     >
                       ASESORÍA TÉCNICA
                     </Button>
                   </a>
 
-                  <a
-                    href="https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
-                      className="w-full bg-[#182C45] cursor-pointer text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-[#373737]"
+                      className="w-full cursor-pointer rounded-lg bg-[#182C45] font-semibold text-white shadow-md transition duration-300 ease-in-out hover:bg-[#373737]"
                     >
                       ¡COTIZAR AHORA!
                     </Button>
@@ -667,29 +761,50 @@ const Navbar = () => {
 function MobileAccordion({
   link,
   pathname,
+  currentQuery,
   onNavigate,
   mobileSubmenuVariants,
 }: {
   link: NavLink;
   pathname: string;
+  currentQuery: string;
   onNavigate: () => void;
   mobileSubmenuVariants: Variants;
 }) {
-  const [open, setOpen] = useState(false);
+  const parentActive = isNavLinkActive(pathname, currentQuery, link);
+  const [open, setOpen] = useState(parentActive);
+
+  useEffect(() => {
+    if (parentActive) setOpen(true);
+  }, [parentActive]);
 
   return (
-    <div className="rounded-lg border">
+    <div
+      className={`
+        rounded-lg border transition-all duration-300
+        ${
+          parentActive
+            ? "border-[#b79770]/40 bg-[#b79770]/10"
+            : "border-gray-200"
+        }
+      `}
+    >
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-bold ${
-          open ? "text-sky-900" : "text-[#182C45] hover:bg-gray-100"
-        }`}
+        className={`
+          flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-bold transition-all duration-300
+          ${
+            parentActive
+              ? "text-[#182C45]"
+              : "text-[#182C45] hover:bg-gray-100"
+          }
+        `}
       >
         <span>{link.label}</span>
         <LuChevronRight
-          className={`h-5 w-5 transition-transform ${
-            open ? "rotate-90" : ""
+          className={`h-5 w-5 transition-transform duration-300 ${
+            open ? "rotate-90 text-[#b79770]" : ""
           }`}
         />
       </button>
@@ -706,26 +821,44 @@ function MobileAccordion({
             <div className="flex flex-col border-t">
               <Link
                 href={link.href}
-                className="block px-5 py-3 text-[15px] font-medium text-sky-800 hover:bg-sky-50"
+                className={`
+                  block px-5 py-3 text-[15px] font-medium transition-all duration-300
+                  ${
+                    isHrefActive(pathname, currentQuery, link.href)
+                      ? "bg-[#b79770]/15 text-[#182C45]"
+                      : "text-[#182C45] hover:bg-[#b79770]/10"
+                  }
+                `}
                 onClick={onNavigate}
               >
                 Ver todos {link.label.toLowerCase()}
               </Link>
 
-              {link.subLinks?.map((s) => (
-                <Link
-                  key={s.href}
-                  href={s.href}
-                  className={`block px-5 py-3 text-[15px] ${
-                    pathname === s.href
-                      ? "bg-gray-100 text-sky-900 font-medium"
-                      : "text-[#182C45] hover:bg-gray-50"
-                  }`}
-                  onClick={onNavigate}
-                >
-                  {s.label}
-                </Link>
-              ))}
+              {link.subLinks?.map((subLink) => {
+                const subActive = isHrefActive(
+                  pathname,
+                  currentQuery,
+                  subLink.href
+                );
+
+                return (
+                  <Link
+                    key={subLink.href}
+                    href={subLink.href}
+                    className={`
+                      block px-5 py-3 text-[15px] transition-all duration-300
+                      ${
+                        subActive
+                          ? "bg-[#b79770]/15 font-semibold text-[#182C45]"
+                          : "text-[#182C45] hover:bg-gray-50 hover:text-[#b79770]"
+                      }
+                    `}
+                    onClick={onNavigate}
+                  >
+                    {subLink.label}
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}

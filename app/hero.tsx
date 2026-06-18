@@ -23,7 +23,7 @@ const slidesData: {
     "Líderes en ingenieria geotecnica con equipos certificados por INACAL y PINZUAR . Ofrecemos soluciones con precisión, confiabilidad y excelencia técnica en cada proyecto.",
   imageSrc: "/hero01.webp",
   buttonText: "Descargar Nuestro Brochure",
-  buttonLink: "tel:989900609",
+  buttonLink: "/BROCHURE_CASAGRANDE_ GEOTECNIA_2026.pdf",
 },
 {
   id: 2,
