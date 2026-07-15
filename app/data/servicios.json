@@ -84,8 +84,8 @@
       "imagenes": [
         "/geotecnia/geotecnia01.webp",
         "/geotecnia/geotecnia02.webp",
-        "/geotecnia/geotecnia03.webp",
-        "/geotecnia/geotecnia04.webp"
+        "/geotecnia/geotecnia03.webp"
+        
       ],
       "ensayos": [
         "Investigaciones geotécnicas para edificaciones, puentes y obras de infraestructura.",
@@ -341,9 +341,7 @@
       "titulo": "Hidrología e Ingeniería Hidráulica",
       "imagenes": [
         "/hidrologia/hidrologia02.webp",
-        "/hidrologia/hidrologia06.webp",
-        "/hidrologia/hidrologia01.webp",
-        "/hidrologia/hidrologia04.webp"
+        "/hidrologia/hidrologia06.webp"
       ],
       "ensayos": [
         "Estudios hidrológicos y climatológicos de cuencas.",
@@ -364,10 +362,10 @@
     {
       "titulo": "Hidrogeología y Calidad del Agua",
       "imagenes": [
+        "/hidrologia/hidrologia09.webp",
         "/hidrologia/hidrologia05.webp",
-        "/hidrologia/hidrologia03.webp",
-        "/hidrologia/hidrologia07.webp",
-        "/hidrologia/hidrologia08.webp"
+        "/hidrologia/hidrologia03.webp"
+        
       ],
       "ensayos": [
         "Identificación y caracterización de acuíferos.",
