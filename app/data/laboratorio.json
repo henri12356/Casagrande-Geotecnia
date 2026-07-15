@@ -11,7 +11,10 @@
       {
         "titulo": "Identificación y Clasificación de Suelos",
         "imagenes": [
-          "/laboratorio/laboratorio05.webp"
+          "/laboratorio/Laboratorio-Suelos/IdentificaciónSuelos01.webp",
+          "/laboratorio/Laboratorio-Suelos/IdentificaciónSuelos02.webp",
+          "/laboratorio/Laboratorio-Suelos/IdentificaciónSuelos03.webp", 
+          "/laboratorio/Laboratorio-Suelos/IdentificaciónSuelos04.webp"
          
         ],
         "ensayos": [
@@ -29,7 +32,9 @@
       {
         "titulo": "Resistencia, Compactación y Deformabilidad",
         "imagenes": [
-          "/laboratorio/laboratorio07.webp"
+          "/laboratorio/Laboratorio-Suelos/ResistenciaCompactación01.webp",
+          "/laboratorio/Laboratorio-Suelos/ResistenciaCompactación02.webp",
+          "/laboratorio/Laboratorio-Suelos/ResistenciaCompactación03.webp"
          
         ],
         "ensayos": [
@@ -98,7 +103,8 @@
       {
         "titulo": "Propiedades Físicas y Preparación de Muestras",
         "imagenes": [
-          "/laboratorio/laboratorio08.webp"
+          "/laboratorio/Laboratorio-Rocas/PropiedadesFísicas02.webp",
+          "/laboratorio/Laboratorio-Rocas/PropiedadesFísicas01.webp"
         ],
         "ensayos": [
           "Corte, tallado y preparación de probetas de roca.",
@@ -115,7 +121,7 @@
       {
         "titulo": "Resistencia y Comportamiento Mecánico",
         "imagenes": [
-          "/laboratorio/laboratorio08.webp"
+          "/laboratorio/Laboratorio-Rocas/ResistenciaComportamiento01.webp"
         ],
         "ensayos": [
           "Compresión simple uniaxial en roca.",
