@@ -1,98 +1,217 @@
-'use client';
+"use client";
 
-import { motion, useInView, animate, Variants } from 'framer-motion';
-import React, { useEffect, useRef } from 'react';
+import {
+  animate,
+  motion,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import React, { useEffect, useRef } from "react";
 
-// Componente para animar el conteo de un número
-const CountingNumber: React.FC<{ value: number; duration?: number; suffix?: string; start?: boolean }> = ({ 
-  value, 
-  duration = 2, 
-  suffix = '', 
-  start = false
+interface Stat {
+  id: number;
+  label: string;
+  value: number;
+  suffix: string;
+}
+
+const stats: Stat[] = [
+  {
+    id: 1,
+    label: "AÑOS DE EXPERIENCIA",
+    value: 6,
+    suffix: "+",
+  },
+  {
+    id: 2,
+    label: "TRABAJOS REALIZADOS",
+    value: 600,
+    suffix: "+",
+  },
+  {
+    id: 3,
+    label: "CLIENTES SATISFECHOS",
+    value: 500,
+    suffix: "+",
+  },
+  {
+    id: 4,
+    label: "PROYECTOS EN CURSO",
+    value: 5,
+    suffix: "+",
+  },
+];
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const statCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.58,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const CountingNumber: React.FC<{
+  value: number;
+  duration?: number;
+  suffix?: string;
+  start?: boolean;
+}> = ({
+  value,
+  duration = 2.5,
+  suffix = "",
+  start = false,
 }) => {
   const nodeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const node = nodeRef.current;
-    if (node && start) {
-      const controller = animate(0, value, {
-        duration,
-        ease: "easeOut",
-        onUpdate: (latest) => {
-          node.textContent = Math.round(latest).toLocaleString() + suffix;
-        },
-      });
-      return () => controller.stop();
-    }
+
+    if (!node || !start) return;
+
+    const controller = animate(0, value, {
+      duration,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (latest) => {
+        node.textContent =
+          Math.round(latest).toLocaleString("es-PE") + suffix;
+      },
+    });
+
+    return () => controller.stop();
   }, [value, duration, suffix, start]);
 
   return <span ref={nodeRef}>0{suffix}</span>;
 };
 
 const Numeros = () => {
+  const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInViewContainer = useInView(containerRef, { once: true, amount: 0.3 });
 
-  const stats = [
-    { id: 1, label: 'AÑOS DE EXPERIENCIA', value: 6, suffix: '+' },
-    { id: 2, label: 'TRABAJOS REALIZADOS', value: 600, suffix: '+' },
-    { id: 3, label: 'CLIENTES SATISFECHOS', value: 500, suffix: '+' },
-    { id: 4, label: 'PROYECTOS EN CURSO', value: 5, suffix: '+' },
-  ];
-
-  const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.15,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const statCardVariants: Variants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 150,
-        damping: 18,
-      },
-    },
-  };
+  const isInViewContainer = useInView(containerRef, {
+    once: true,
+    amount: 0.25,
+  });
 
   return (
-    <section className=" py-20 sm:py-28 px-6 relative overflow-hidden">
+    <section className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <motion.div
         ref={containerRef}
-        className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center"
         variants={sectionVariants}
-        initial="hidden"
-        animate={isInViewContainer ? "visible" : "hidden"}
+        initial={reduceMotion ? false : "hidden"}
+        animate={
+          reduceMotion
+            ? undefined
+            : isInViewContainer
+              ? "visible"
+              : "hidden"
+        }
+        className="mx-auto grid max-w-7xl grid-cols-1 gap-5 text-center sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
       >
         {stats.map((stat) => (
           <motion.div
             key={stat.id}
-            className="flex flex-col items-center justify-center p-6 bg-[#182C45] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             variants={statCardVariants}
+            whileHover={
+              reduceMotion
+                ? undefined
+                : {
+                    y: -6,
+                  }
+            }
+            transition={{
+              duration: 0.28,
+              ease: "easeOut",
+            }}
+            className="
+              group relative flex min-h-[190px]
+              flex-col items-center justify-center
+              overflow-hidden rounded-2xl
+              bg-[#182C45] p-6
+              shadow-[0_14px_34px_rgba(24,44,69,0.15)]
+              transition-shadow duration-300
+              hover:shadow-[0_22px_48px_rgba(24,44,69,0.24)]
+            "
           >
+            <motion.span
+              aria-hidden="true"
+              initial={reduceMotion ? false : { scaleX: 0 }}
+              animate={
+                isInViewContainer
+                  ? {
+                      scaleX: 1,
+                    }
+                  : {
+                      scaleX: 0,
+                    }
+              }
+              transition={{
+                duration: 0.7,
+                delay: 0.2 + stat.id * 0.06,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="
+                absolute inset-x-0 top-0 h-1
+                origin-left bg-[#C9A66B]
+              "
+            />
+
             <div
-              className="text-6xl sm:text-7xl font-bold mb-4 bg-gradient-to-r text-white bg-clip-text "
+              className="
+                text-5xl font-black leading-none
+                tracking-[-0.04em] text-[#C9A66B]
+                sm:text-6xl lg:text-7xl
+              "
             >
-              <CountingNumber 
-                value={stat.value} 
-                suffix={stat.suffix} 
-                duration={4} 
-                start={isInViewContainer} 
+              <CountingNumber
+                value={stat.value}
+                suffix={stat.suffix}
+                duration={3}
+                start={isInViewContainer}
               />
             </div>
-            <p className="text-sm sm:text-base text-white uppercase tracking-wide font-bold">
+
+            <div className="my-5 h-px w-10 bg-white/20 transition-all duration-300 group-hover:w-16 group-hover:bg-[#C9A66B]/70" />
+
+            <p
+              className="
+                text-xs font-bold uppercase
+                leading-5 tracking-[0.1em]
+                text-white/90 sm:text-sm
+              "
+            >
               {stat.label}
             </p>
+
+            <span
+              aria-hidden="true"
+              className="
+                absolute -bottom-14 -right-14
+                h-32 w-32 rounded-full
+                bg-[#C9A66B]/5
+                transition-transform duration-500
+                group-hover:scale-125
+              "
+            />
           </motion.div>
         ))}
       </motion.div>

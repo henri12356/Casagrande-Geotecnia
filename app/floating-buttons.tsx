@@ -35,9 +35,9 @@ const SocialFloatingButton: React.FC<SocialFloatingButtonProps> = ({
 
   useEffect(() => {
     // Aparece el mensaje después de 2 segundos
-    const showTimer = setTimeout(() => setShowMessage(true), 2000);
+    const showTimer = setTimeout(() => setShowMessage(true), 3000);
     // Desaparece después de 20 segundos
-    const hideTimer = setTimeout(() => setShowMessage(false), 22000);
+    const hideTimer = setTimeout(() => setShowMessage(false), 6000);
 
     return () => {
       clearTimeout(showTimer);

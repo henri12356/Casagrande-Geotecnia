@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// src/app/laboratorio/[slug]/page.tsx
-
 "use client";
 
 import laboratorioData from "@/app/data/laboratorio.json";
@@ -8,12 +5,35 @@ import Footer from "@/app/footer";
 import Navbar from "@/app/navbar";
 import NotFoundPage from "@/app/not-found";
 import { Button } from "@/components/ui/button";
-import { animate, motion, useInView, Variants } from "framer-motion";
+import {
+  AnimatePresence,
+  animate,
+  motion,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import {
+  BadgeCheck,
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { use, useEffect, useRef, useState } from "react";
-import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import ServicioNav from "../ServicioNav";
+import {
+  use,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  FaClock,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import LaboratorioNav from "../ServicioNav";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -26,8 +46,37 @@ interface Stat {
   suffix: string;
 }
 
-/* HERO */
-function HeroServicio({
+interface CategoriaLaboratorio {
+  titulo: string;
+  descripcion: string;
+  ensayos: string[];
+  imagenes: string[];
+}
+
+interface Laboratorio {
+  slug: string;
+  titulo: string;
+  descripcion: string;
+  imagen: string;
+  titulo01?: string;
+  subtitulo01?: string;
+  categorias?: CategoriaLaboratorio[];
+  numeros?: Stat[];
+}
+
+interface ImagenModal {
+  abierto: boolean;
+  src: string;
+  titulo: string;
+  imagenes: string[];
+  indiceActual: number;
+}
+
+/* =========================
+   HERO DEL LABORATORIO
+========================= */
+
+function HeroLaboratorio({
   titulo,
   descripcion,
   imagen,
@@ -36,127 +85,264 @@ function HeroServicio({
   descripcion: string;
   imagen: string;
 }) {
-  return (
-    <section className="relative md:pt-36 pt-10">
-      <div className="relative h-[56vh] min-h-[450px] md:h-80 lg:h-96 w-full overflow-hidden bg-[#1b4772]">
-        <Image src={imagen} alt={titulo} fill priority className="object-cover" />
+  const reduceMotion = useReducedMotion();
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(27,71,114,0.85),rgba(27,71,114,0.60)_35%,rgba(27,71,114,0.15)_70%,transparent_100%)]" />
+  return (
+    <section className="relative pt-10 md:pt-36">
+      <div className="relative h-[56vh] min-h-[450px] w-full overflow-hidden bg-[#182C45] md:h-80 lg:h-96">
+        <motion.div
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  scale: 1.06,
+                }
+          }
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.25,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={imagen}
+            alt={titulo}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </motion.div>
+
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(24,44,69,0.94),rgba(24,44,69,0.66)_38%,rgba(24,44,69,0.24)_72%,rgba(24,44,69,0.12)_100%)]" />
 
         <div className="absolute inset-0 flex items-end md:items-center">
-          <div className="w-full px-4 max-w-7xl mx-auto pb-6 md:pb-0">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-7 sm:px-6 md:pb-0 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-white"
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 24,
+                    }
+              }
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.72,
+                delay: 0.18,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="max-w-4xl text-white"
             >
-              <h1 className="text-2xl md:text-6xl font-bold leading-tight">
+              <motion.div
+                initial={reduceMotion ? false : { scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.34,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="mb-4 h-0.5 w-14 origin-left bg-[#C9A66B]"
+              />
+
+              <h1 className="text-2xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-6xl">
                 {titulo}
               </h1>
 
-              <p className="mt-3 text-sm md:text-lg max-w-3xl">
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-white/90 md:text-lg md:leading-8">
                 {descripcion}
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link
-                  href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios%20de%20laboratorio."
-                  target="_blank"
-                  className="bg-white text-[#1b4772] px-4 py-2 rounded-xl font-semibold"
+                <motion.div
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          y: -3,
+                        }
+                  }
+                  whileTap={{ scale: 0.97 }}
                 >
-                  Solicitar cotización
-                </Link>
+                  <Link
+                    href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios%20de%20laboratorio."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl bg-[#C9A66B] px-4 py-2 text-sm font-bold text-[#182C45] shadow-md transition-colors duration-300 hover:bg-white md:text-base"
+                  >
+                    Solicitar cotización
+                  </Link>
+                </motion.div>
 
-                <Link
-                  href="#contenido"
-                  className="border border-white/50 px-4 py-2 rounded-xl"
+                <motion.div
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          y: -3,
+                        }
+                  }
+                  whileTap={{ scale: 0.97 }}
                 >
-                  Ver detalles
-                </Link>
+                  <Link
+                    href="#contenido"
+                    className="inline-flex items-center justify-center rounded-xl border border-white/45 bg-white/5 px-4 py-2 text-sm font-bold text-white backdrop-blur-sm transition-colors duration-300 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45] md:text-base"
+                  >
+                    Ver detalles
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
+
+        <motion.div
+          initial={reduceMotion ? false : { scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.45,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="absolute bottom-0 left-0 h-1 w-full origin-left bg-[#C9A66B]"
+        />
       </div>
     </section>
   );
 }
 
-/* CONTADOR */
-const CountingNumber: React.FC<{
+/* =========================
+   CONTADOR
+========================= */
+
+const CountingNumber = ({
+  value,
+  duration = 3,
+  suffix = "",
+  start = false,
+}: {
   value: number;
   duration?: number;
   suffix?: string;
   start?: boolean;
-}> = ({ value, duration = 3, suffix = "", start = false }) => {
+}) => {
   const nodeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const node = nodeRef.current;
 
-    if (node && start) {
-      const controller = animate(0, value, {
-        duration,
-        ease: "easeOut",
-        onUpdate: (latest) => {
-          node.textContent = Math.round(latest).toLocaleString() + suffix;
-        },
-      });
+    if (!node || !start) return;
 
-      return () => controller.stop();
-    }
+    const controller = animate(0, value, {
+      duration,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (latest) => {
+        node.textContent =
+          Math.round(latest).toLocaleString("es-PE") + suffix;
+      },
+    });
+
+    return () => controller.stop();
   }, [value, duration, suffix, start]);
 
   return <span ref={nodeRef}>0{suffix}</span>;
 };
 
-/* SECCIÓN NÚMEROS */
-const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
+/* =========================
+   NÚMEROS
+========================= */
+
+const Numeros = ({ stats }: { stats: Stat[] }) => {
+  const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
+
   const isInView = useInView(containerRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.25,
   });
 
   const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: {},
     visible: {
-      opacity: 1,
-      y: 0,
-      transition: { staggerChildren: 0.15 },
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.08,
+      },
     },
   };
 
   const statVariants: Variants = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.98,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 150 },
+      scale: 1,
+      transition: {
+        duration: 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
   };
 
   return (
-    <section className="py-16">
+    <section className="py-12 md:py-16">
       <motion.div
         ref={containerRef}
-        className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
         variants={sectionVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        initial={reduceMotion ? false : "hidden"}
+        animate={
+          reduceMotion
+            ? undefined
+            : isInView
+              ? "visible"
+              : "hidden"
+        }
+        className="mx-auto grid max-w-7xl grid-cols-2 gap-4 text-center md:grid-cols-4 md:gap-6"
       >
         {stats.map((stat) => (
           <motion.div
             key={stat.id}
-            className="p-6 bg-[#1b4772] rounded-2xl shadow-lg flex flex-col items-center justify-center"
             variants={statVariants}
+            whileHover={
+              reduceMotion
+                ? undefined
+                : {
+                    y: -5,
+                  }
+            }
+            transition={{
+              duration: 0.25,
+              ease: "easeOut",
+            }}
+            className="relative flex min-h-[170px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#182C45] p-5 shadow-[0_14px_34px_rgba(24,44,69,0.16)] md:p-6"
           >
-            <div className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-              <CountingNumber value={stat.value} suffix={stat.suffix} start={isInView} />
+            <span className="absolute inset-x-0 top-0 h-1 bg-[#C9A66B]" />
+
+            <div className="text-4xl font-black text-[#C9A66B] sm:text-5xl md:text-6xl">
+              <CountingNumber
+                value={stat.value}
+                suffix={stat.suffix}
+                duration={3}
+                start={isInView}
+              />
             </div>
 
-            <p className="text-white uppercase text-sm tracking-wide mt-2">
+            <div className="my-4 h-px w-10 bg-white/20" />
+
+            <p className="text-xs font-bold uppercase leading-5 tracking-[0.08em] text-white/90 sm:text-sm">
               {stat.label}
             </p>
           </motion.div>
@@ -166,323 +352,700 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
   );
 };
 
+/* =========================
+   PÁGINA DEL LABORATORIO
+========================= */
+
 const LaboratorioPage = ({ params }: PageProps) => {
   const { slug } = use(params);
-  const servicio = (laboratorioData as any[]).find((s) => s.slug === slug);
+  const reduceMotion = useReducedMotion();
 
-  const [imagenModal, setImagenModal] = useState({
+  const servicio = (laboratorioData as Laboratorio[]).find(
+    (item) => item.slug === slug
+  );
+
+  const [imagenModal, setImagenModal] = useState<ImagenModal>({
     abierto: false,
     src: "",
     titulo: "",
+    imagenes: [],
+    indiceActual: 0,
   });
 
-  if (!servicio) return <NotFoundPage />;
+  const abrirModal = (
+    src: string,
+    titulo: string,
+    imagenes: string[]
+  ) => {
+    const indiceActual = Math.max(imagenes.indexOf(src), 0);
 
-  const abrirModal = (src: string, titulo: string) => {
-    setImagenModal({ abierto: true, src, titulo });
+    setImagenModal({
+      abierto: true,
+      src,
+      titulo,
+      imagenes,
+      indiceActual,
+    });
   };
 
   const cerrarModal = () => {
-    setImagenModal({ abierto: false, src: "", titulo: "" });
+    setImagenModal({
+      abierto: false,
+      src: "",
+      titulo: "",
+      imagenes: [],
+      indiceActual: 0,
+    });
   };
+
+  const siguienteImagen = () => {
+    setImagenModal((prev) => {
+      if (!prev.imagenes.length) return prev;
+
+      const indiceActual =
+        (prev.indiceActual + 1) % prev.imagenes.length;
+
+      return {
+        ...prev,
+        indiceActual,
+        src: prev.imagenes[indiceActual],
+      };
+    });
+  };
+
+  const anteriorImagen = () => {
+    setImagenModal((prev) => {
+      if (!prev.imagenes.length) return prev;
+
+      const indiceActual =
+        (prev.indiceActual - 1 + prev.imagenes.length) %
+        prev.imagenes.length;
+
+      return {
+        ...prev,
+        indiceActual,
+        src: prev.imagenes[indiceActual],
+      };
+    });
+  };
+
+  useEffect(() => {
+    if (!imagenModal.abierto) return;
+
+    const overflowAnterior = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        cerrarModal();
+      }
+
+      if (
+        event.key === "ArrowRight" &&
+        imagenModal.imagenes.length > 1
+      ) {
+        siguienteImagen();
+      }
+
+      if (
+        event.key === "ArrowLeft" &&
+        imagenModal.imagenes.length > 1
+      ) {
+        anteriorImagen();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = overflowAnterior;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [imagenModal.abierto, imagenModal.imagenes.length]);
+
+  if (!servicio) return <NotFoundPage />;
 
   return (
     <>
       <Navbar />
 
-      <HeroServicio
+      <HeroLaboratorio
         titulo={servicio.titulo}
         descripcion={servicio.descripcion}
         imagen={servicio.imagen}
       />
 
-      <ServicioNav />
+      <LaboratorioNav />
 
-      <div id="contenido" className="max-w-7xl mx-auto px-4 py-12">
-        {/* INTRO */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-lg p-8 shadow-sm border mb-12"
+      <main
+        id="contenido"
+        className="mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-6 lg:px-8"
+      >
+        {/* INTRODUCCIÓN */}
+        <motion.section
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 24,
+                }
+          }
+          whileInView={
+            reduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{
+            duration: 0.65,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mb-12 overflow-hidden rounded-2xl border border-[#182C45]/10 bg-white p-6 shadow-[0_12px_34px_rgba(24,44,69,0.08)] sm:p-8"
         >
-          <h2 className="text-3xl font-bold text-[#1b4772] mb-4">
+          <div className="mb-4 h-0.5 w-12 bg-[#C9A66B]" />
+
+          <h2 className="mb-4 text-2xl font-extrabold text-[#182C45] md:text-3xl">
             {servicio.titulo01 || servicio.titulo}
           </h2>
 
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-base leading-8 text-slate-600 md:text-lg">
             {servicio.subtitulo01 || servicio.descripcion}
           </p>
-        </motion.div>
+        </motion.section>
 
-        {/* CATEGORIAS - AHORA CON MÚLTIPLES IMÁGENES */}
-        <div className="space-y-12 mb-16">
-          {servicio.categorias?.map((categoria: any, index: number) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-sm border">
-              <div className="grid md:grid-cols-2 gap-8">
+        {/* CATEGORÍAS */}
+        <div className="mb-16 space-y-10">
+          {servicio.categorias?.map((categoria, index) => (
+            <motion.section
+              key={`${categoria.titulo}-${index}`}
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 30,
+                    }
+              }
+              whileInView={
+                reduceMotion
+                  ? undefined
+                  : {
+                      opacity: 1,
+                      y: 0,
+                    }
+              }
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.62,
+                delay: index * 0.05,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="overflow-hidden rounded-2xl border border-[#182C45]/10 bg-white p-5 shadow-[0_12px_34px_rgba(24,44,69,0.07)] sm:p-6"
+            >
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* TEXTO */}
                 <div>
-                  <h3 className="text-xl font-bold text-[#1b4772] mb-4 border-b-2 border-[#1b4772] pb-2">
-                    {categoria.titulo}
-                  </h3>
+                  <div className="mb-4 flex items-center gap-3 border-b border-[#182C45]/10 pb-3">
+                    <span className="h-0.5 w-8 shrink-0 bg-[#C9A66B]" />
 
-                  <p className="text-gray-600 mb-4">{categoria.descripcion}</p>
+                    <h3 className="text-xl font-extrabold text-[#182C45]">
+                      {categoria.titulo}
+                    </h3>
+                  </div>
 
-                  <ul className="space-y-2">
-                    {categoria.ensayos.map((ensayo: string, idx: number) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-[#1b4772] font-bold mr-2">•</span>
-                        <span className="text-gray-700">{ensayo}</span>
+                  <p className="mb-5 leading-7 text-slate-600">
+                    {categoria.descripcion}
+                  </p>
+
+                  <ul className="space-y-3">
+                    {categoria.ensayos.map((ensayo, idx) => (
+                      <li
+                        key={`${ensayo}-${idx}`}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#C9A66B]" />
+
+                        <span className="leading-6 text-slate-700">
+                          {ensayo}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* GALERÍA DE MÚLTIPLES IMÁGENES */}
+                {/* GALERÍA */}
                 <div>
-                  <h4 className="text-lg font-semibold text-[#1b4772] mb-4">Galería de imágenes</h4>
-                  
-                  {/* Primera imagen destacada */}
-                  {categoria.imagenes.length > 0 && (
-                    <div 
-                      className="mb-4 cursor-pointer rounded-lg overflow-hidden border-2 border-gray-200 hover:border-[#1b4772] transition-all"
-                      onClick={() => abrirModal(categoria.imagenes[0], categoria.titulo)}
-                    >
-                      <div className="relative aspect-video">
-                        <Image
-                          src={categoria.imagenes[0]}
-                          alt={`${categoria.titulo} - Principal`}
-                          fill
-                          className="object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    </div>
-                  )}
+                  <h4 className="mb-4 text-lg font-bold text-[#182C45]">
+                    Galería de imágenes
+                  </h4>
 
-                  {/* Grid de imágenes secundarias */}
-                  {categoria.imagenes.length > 1 && (
-                    <div className="grid grid-cols-3 gap-2">
-                      {categoria.imagenes.slice(1).map((img: string, imgIdx: number) => (
-                        <div
-                          key={imgIdx}
-                          className="relative aspect-square cursor-pointer rounded-md overflow-hidden border border-gray-200 hover:border-[#1b4772] transition-all"
-                          onClick={() => abrirModal(img, categoria.titulo)}
-                        >
+                  <div className="space-y-4">
+                    {categoria.imagenes.length > 0 && (
+                      <motion.button
+                        type="button"
+                        whileHover={
+                          reduceMotion
+                            ? undefined
+                            : {
+                                y: -3,
+                              }
+                        }
+                        whileTap={{ scale: 0.99 }}
+                        onClick={() =>
+                          abrirModal(
+                            categoria.imagenes[0],
+                            categoria.titulo,
+                            categoria.imagenes
+                          )
+                        }
+                        className="group relative block w-full cursor-pointer overflow-hidden rounded-xl border border-[#182C45]/15 bg-slate-100 text-left shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A66B]"
+                        aria-label={`Ampliar imagen principal de ${categoria.titulo}`}
+                      >
+                        <div className="relative aspect-video">
                           <Image
-                            src={img}
-                            alt={`${categoria.titulo} - ${imgIdx + 2}`}
+                            src={categoria.imagenes[0]}
+                            alt={`${categoria.titulo} - Imagen principal`}
                             fill
-                            className="object-cover hover:scale-110 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                           />
+
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#182C45]/70 via-transparent to-transparent opacity-80" />
                         </div>
-                      ))}
-                    </div>
-                  )}
+
+                        <div className="absolute inset-x-0 bottom-0 bg-[#182C45]/82 p-2.5 text-center text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#C9A66B] group-hover:text-[#182C45]">
+                          Imagen principal — clic para ampliar
+                        </div>
+                      </motion.button>
+                    )}
+
+                    {categoria.imagenes.length > 1 && (
+                      <div className="grid grid-cols-3 gap-2.5">
+                        {categoria.imagenes
+                          .slice(1)
+                          .map((imagen, imgIndex) => (
+                            <motion.button
+                              type="button"
+                              key={`${imagen}-${imgIndex}`}
+                              whileHover={
+                                reduceMotion
+                                  ? undefined
+                                  : {
+                                      y: -3,
+                                    }
+                              }
+                              whileTap={{ scale: 0.97 }}
+                              onClick={() =>
+                                abrirModal(
+                                  imagen,
+                                  categoria.titulo,
+                                  categoria.imagenes
+                                )
+                              }
+                              className="group relative cursor-pointer overflow-hidden rounded-lg border border-[#182C45]/12 bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A66B]"
+                              aria-label={`Ampliar imagen ${imgIndex + 2} de ${categoria.titulo}`}
+                            >
+                              <div className="relative aspect-square">
+                                <Image
+                                  src={imagen}
+                                  alt={`${categoria.titulo} - Imagen ${imgIndex + 2}`}
+                                  fill
+                                  sizes="(max-width: 768px) 33vw, 16vw"
+                                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+
+                                <div className="absolute inset-0 bg-[#182C45]/0 transition-colors duration-300 group-hover:bg-[#182C45]/15" />
+                              </div>
+                            </motion.button>
+                          ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.section>
           ))}
         </div>
 
-        {/* CERTIFICACIONES - MEJORADO CON DISEÑO DE SERVICIOS */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-16"
+        {/* CERTIFICACIONES */}
+        <motion.section
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 28,
+                }
+          }
+          whileInView={
+            reduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{
+            duration: 0.68,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mb-16 rounded-3xl bg-[#182C45]/[0.035] p-6 md:p-10"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-3 text-[#182C45]">
-            CALIBRACIÓN CERTIFICADA E ISO
-          </h3>
-          
-          <p className="text-center text-sm md:text-base text-[#182C45] mb-8 max-w-3xl mx-auto">
-            En <strong>Casagrande</strong> garantizamos la precisión de cada ensayo. Nuestras{" "}
-            <strong>máquinas y equipos están calibrados</strong> por <strong>Pinzuar</strong>, laboratorio{" "}
-            <strong>acreditado por INACAL</strong> bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una{" "}
-            <strong>trazabilidad metrológica</strong> completa y resultados <strong>confiables, verificables y certificados.</strong>
-          </p>
+          <div className="mx-auto mb-8 max-w-4xl text-center">
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <span className="h-0.5 w-10 bg-[#C9A66B]" />
+              <BadgeCheck className="h-6 w-6 text-[#C9A66B]" />
+              <span className="h-0.5 w-10 bg-[#C9A66B]" />
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            {/* Trazabilidad Metrológica */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h4 className="font-semibold text-lg mb-4 text-[#182C45] border-b border-[#1b4772]/20 pb-2">
+            <h3 className="text-2xl font-black text-[#182C45] md:text-3xl">
+              CALIBRACIÓN CERTIFICADA E ISO
+            </h3>
+
+            <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-600 md:text-base">
+              En <strong className="text-[#182C45]">Casagrande</strong>{" "}
+              garantizamos la precisión de cada ensayo. Nuestros{" "}
+              <strong className="text-[#182C45]">
+                equipos de campo y laboratorio
+              </strong>{" "}
+              son suministrados y calibrados por{" "}
+              <strong className="text-[#182C45]">Pinzuar</strong>,
+              proveedor acreditado ante{" "}
+              <strong className="text-[#182C45]">INACAL</strong>{" "}
+              bajo la norma{" "}
+              <strong className="text-[#182C45]">
+                ISO/IEC 17025
+              </strong>
+              .
+            </p>
+          </div>
+
+          <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <motion.div
+              whileHover={
+                reduceMotion
+                  ? undefined
+                  : {
+                      y: -4,
+                    }
+              }
+              className="rounded-2xl border border-[#182C45]/10 bg-white p-6 shadow-[0_10px_28px_rgba(24,44,69,0.07)]"
+            >
+              <div className="mb-4 h-0.5 w-10 bg-[#C9A66B]" />
+
+              <h4 className="mb-4 text-lg font-extrabold text-[#182C45]">
                 Trazabilidad Metrológica (INACAL)
               </h4>
-              <ul className="space-y-3 text-sm md:text-base leading-relaxed text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span><strong>Equipos de campo y laboratorio</strong> suministrados y calibrados por <strong>Pinzuar</strong>, proveedor con certificación acreditada ante <strong>INACAL</strong>.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span>Certificados con trazabilidad conforme a la norma <strong>ISO/IEC 17025:2017</strong>.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span>Control de <strong>vigencia</strong>, número de certificado y verificación interna periódica.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span>Registro digital y físico de calibraciones y mantenimiento preventivo.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span>Verificación previa a cada campaña o ensayo para garantizar la exactitud de los resultados.</span>
-                </li>
-              </ul>
-            </div>
 
-            {/* Sistema de Gestión */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h4 className="font-semibold text-lg mb-4 text-[#182C45] border-b border-[#1b4772]/20 pb-2">
+              <ul className="space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+                {[
+                  "Equipos de campo y laboratorio suministrados y calibrados por Pinzuar, proveedor acreditado ante INACAL.",
+                  "Certificados con trazabilidad conforme a la norma ISO/IEC 17025:2017.",
+                  "Control de vigencia, número de certificado y verificación interna periódica.",
+                  "Registro digital y físico de calibraciones y mantenimiento preventivo.",
+                  "Verificación previa a cada campaña o ensayo para garantizar resultados exactos.",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#C9A66B]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              whileHover={
+                reduceMotion
+                  ? undefined
+                  : {
+                      y: -4,
+                    }
+              }
+              className="rounded-2xl border border-[#182C45]/10 bg-white p-6 shadow-[0_10px_28px_rgba(24,44,69,0.07)]"
+            >
+              <div className="mb-4 h-0.5 w-10 bg-[#C9A66B]" />
+
+              <h4 className="mb-4 text-lg font-extrabold text-[#182C45]">
                 Sistema de Gestión Integrado
               </h4>
-              <ul className="space-y-3 text-sm md:text-base leading-relaxed text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span><strong>ISO 9001:2015</strong> – Sistema de Gestión de la Calidad: procesos estandarizados y mejora continua.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span><strong>ISO 14001:2015</strong> – Sistema de Gestión Ambiental: compromiso con la sostenibilidad.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span><strong>ISO 37001:2016</strong> – Sistema de Gestión Antisoborno: ética y transparencia.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span>Procedimientos técnicos normalizados (MTC, ASTM, NTP).</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#1b4772] font-bold mr-2">•</span>
-                  <span>Seguimiento de indicadores y auditorías internas.</span>
-                </li>
+
+              <ul className="space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+                {[
+                  "ISO 9001:2015 – Sistema de Gestión de la Calidad.",
+                  "ISO 14001:2015 – Sistema de Gestión Ambiental.",
+                  "ISO 37001:2016 – Sistema de Gestión Antisoborno.",
+                  "Procedimientos técnicos normalizados MTC, ASTM y NTP.",
+                  "Seguimiento de indicadores y auditorías internas.",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#C9A66B]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Tags informativos */}
-          <div className="flex flex-wrap gap-2 justify-center">
-            <span className="px-4 py-2 bg-[#182C45]/5 border border-[#182C45]/10 rounded-full text-sm text-[#182C45]">
-              +130 proyectos ejecutados
-            </span>
-            <span className="px-4 py-2 bg-[#182C45]/5 border border-[#182C45]/10 rounded-full text-sm text-[#182C45]">
-              Ensayos en suelos, rocas, concreto y asfalto
-            </span>
-            <span className="px-4 py-2 bg-[#182C45]/5 border border-[#182C45]/10 rounded-full text-sm text-[#182C45]">
-              Equipos calibrados por Pinzuar (INACAL)
-            </span>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {[
+              "+130 proyectos ejecutados",
+              "Ensayos en suelos, rocas, concreto y asfalto",
+              "Equipos calibrados por Pinzuar con respaldo de INACAL",
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-[#C9A66B]/45 bg-[#C9A66B]/10 px-4 py-2 text-sm font-semibold text-[#182C45]"
+              >
+                {item}
+              </span>
+            ))}
           </div>
 
-          {/* NUMEROS */}
-          {servicio.numeros && <Numeros stats={servicio.numeros} />}
-        </motion.div>
+          {servicio.numeros && (
+            <Numeros stats={servicio.numeros} />
+          )}
+        </motion.section>
 
         {/* CONTACTO */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200 shadow-sm"
+        <motion.section
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 28,
+                }
+          }
+          whileInView={
+            reduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.68,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="overflow-hidden rounded-3xl bg-[#182C45] shadow-[0_22px_55px_rgba(24,44,69,0.2)]"
         >
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#1b4772] mb-6">
+          <div className="grid md:grid-cols-2">
+            <div className="p-6 sm:p-8 md:p-12">
+              <div className="mb-5 h-0.5 w-12 bg-[#C9A66B]" />
+
+              <h3 className="mb-7 text-2xl font-extrabold text-white md:text-3xl">
                 Contáctanos
               </h3>
 
-              <div className="space-y-4">
-                <p className="flex items-center text-gray-700">
-                  <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
-                  +51 945 513 323
+              <div className="space-y-5">
+                <a
+                  href="tel:+51945513323"
+                  className="group flex items-center gap-4 text-base text-white/85 transition-colors hover:text-[#C9A66B] sm:text-lg"
+                >
+                  <FaPhoneAlt className="h-5 w-5 shrink-0 text-[#C9A66B] transition-transform duration-300 group-hover:scale-110" />
+                  <span>+51 945 513 323</span>
+                </a>
+
+                <a
+                  href="mailto:comercial@casagrandegeotecnia.com.pe"
+                  className="group flex items-start gap-4 text-base text-white/85 transition-colors hover:text-[#C9A66B] sm:text-lg"
+                >
+                  <FaEnvelope className="mt-1 h-5 w-5 shrink-0 text-[#C9A66B] transition-transform duration-300 group-hover:scale-110" />
+
+                  <span className="break-all sm:break-normal">
+                    comercial@casagrandegeotecnia.com.pe
+                  </span>
+                </a>
+
+                <p className="flex items-center gap-4 text-base text-white/85 sm:text-lg">
+                  <FaClock className="h-5 w-5 shrink-0 text-[#C9A66B]" />
+                  <span>Lun - Vie: 8:00 AM - 6:00 PM</span>
                 </p>
 
-                <p className="flex items-center text-gray-700">
-                  <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />
-                  comercial@casagrandegeotecnia.com.pe
-                </p>
-
-                <p className="flex items-center text-gray-700">
-                  <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
-                  Lun-Vie: 8:00 AM - 6:00 PM
-                </p>
-
-                <p className="flex items-center text-gray-700">
-                  <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
-                  Sáb: 8:30 AM - 2:00 PM
+                <p className="flex items-center gap-4 text-base text-white/85 sm:text-lg">
+                  <FaClock className="h-5 w-5 shrink-0 text-[#C9A66B]" />
+                  <span>Sáb: 8:30 AM - 2:00 PM</span>
                 </p>
               </div>
             </div>
 
-            <div className="border-t md:border-t-0 md:border-l border-gray-300 pt-8 md:pl-12 md:pt-0">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+            <div className="border-t border-white/10 bg-white/[0.045] p-6 sm:p-8 md:border-l md:border-t-0 md:p-12">
+              <div className="mb-5 h-0.5 w-12 bg-[#C9A66B]" />
+
+              <h3 className="mb-7 text-2xl font-extrabold text-white md:text-3xl">
                 Solicita un Servicio
               </h3>
 
               <div className="space-y-4">
-                <Link
-                  href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios%20de%20laboratorio."
-                  target="_blank"
+                <Button
+                  asChild
+                  className="h-14 w-full rounded-xl bg-[#C9A66B] px-6 text-base font-extrabold text-[#182C45] shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:text-lg"
                 >
-                  <Button className="w-full bg-[#1b4772] hover:bg-[#1a3a5e] text-white py-6 text-lg rounded-xl shadow-lg transition-all hover:shadow-xl">
+                  <a
+                    href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios%20de%20laboratorio."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Solicitar cotización
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
 
-                <Link
-                  href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica%20para%20laboratorio."
-                  target="_blank"
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-14 w-full rounded-xl border-white/45 bg-transparent px-6 text-base font-extrabold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-[#182C45] sm:text-lg"
                 >
-                  <Button
-                    variant="outline"
-                    className="w-full border-2 border-[#1b4772] text-[#1b4772] hover:bg-[#1b4772] hover:text-white py-6 text-lg rounded-xl transition-all"
+                  <a
+                    href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica%20para%20laboratorio."
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Agendar visita técnica
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </motion.section>
+      </main>
 
-      {/* MODAL DE IMAGEN */}
-      {imagenModal.abierto && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-          onClick={cerrarModal}
-        >
+      {/* MODAL DE IMÁGENES */}
+      <AnimatePresence>
+        {imagenModal.abierto && (
           <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            className="relative max-w-7xl max-h-[90vh] w-full"
-            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#08111C]/95 p-4 backdrop-blur-sm"
+            onClick={cerrarModal}
+            role="dialog"
+            aria-modal="true"
+            aria-label={imagenModal.titulo}
           >
-            <button
-              onClick={cerrarModal}
-              className="absolute -top-12 right-0 text-white hover:text-[#1b4772] transition-colors"
+            <motion.div
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      scale: 0.94,
+                      y: 20,
+                    }
+              }
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.96,
+                y: 12,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative flex max-h-[92vh] w-full max-w-7xl flex-col items-center justify-center"
+              onClick={(event) => event.stopPropagation()}
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            
-            <div className="relative w-full h-[80vh]">
-              <Image
-                src={imagenModal.src}
-                alt={imagenModal.titulo}
-                fill
-                className="object-contain"
-              />
-            </div>
-            
-            <p className="text-white text-center mt-4 text-lg">
-              {imagenModal.titulo}
-            </p>
+              <button
+                type="button"
+                onClick={cerrarModal}
+                className="absolute -top-12 right-0 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors duration-300 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                aria-label="Cerrar galería"
+              >
+                <X className="h-6 w-6" />
+              </button>
+
+              <div className="relative h-[78vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={imagenModal.src}
+                    initial={
+                      reduceMotion
+                        ? false
+                        : {
+                            opacity: 0,
+                            scale: 0.985,
+                          }
+                    }
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0.99,
+                    }}
+                    transition={{ duration: 0.25 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={imagenModal.src}
+                      alt={imagenModal.titulo}
+                      fill
+                      sizes="100vw"
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {imagenModal.imagenes.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        anteriorImagen();
+                      }}
+                      className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/75 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                      aria-label="Imagen anterior"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        siguienteImagen();
+                      }}
+                      className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/75 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                      aria-label="Imagen siguiente"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-[#182C45]/80 px-4 py-1.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm">
+                      {imagenModal.indiceActual + 1} /{" "}
+                      {imagenModal.imagenes.length}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <h4 className="mt-4 text-center text-lg font-semibold text-white">
+                {imagenModal.titulo}
+              </h4>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </AnimatePresence>
 
       <Footer />
     </>

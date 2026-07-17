@@ -1,7 +1,12 @@
 "use client";
+
 import { Marquee } from "@/components/magicui/marquee";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
 import Image from "next/image";
 
 const companies = [
@@ -9,7 +14,10 @@ const companies = [
     name: "Municipalidad Distrital Andrés Avelino Cáceres",
     logo: "/logos/logo-andres-avelino.webp",
   },
-  { name: "Prider Ayacucho GRA", logo: "/logos/logo-prider.webp" },
+  {
+    name: "Prider Ayacucho GRA",
+    logo: "/logos/logo-prider.webp",
+  },
   {
     name: "Municipalidad Provincial de Huamanga",
     logo: "/logos/logo-mucipalidad-huamanga.webp",
@@ -26,48 +34,130 @@ const companies = [
     name: "Universidad Nacional de San Cristóbal de Huamanga",
     logo: "/logo07.webp",
   },
-  { name: "PRONIS", logo: "/logos/logopronis.webp" },
+  {
+    name: "PRONIS",
+    logo: "/logos/logopronis.webp",
+  },
   {
     name: "Programa Subsectorial de Irrigaciones",
     logo: "/logos/logopsi.webp",
   },
-  { name: "Municipalidad provincial de la Mar", logo: "/logos/lamar.webp" },
-  { name: "SUNAT", logo: "/logos/sunat.webp" },
+  {
+    name: "Municipalidad Provincial de La Mar",
+    logo: "/logos/lamar.webp",
+  },
+  {
+    name: "SUNAT",
+    logo: "/logos/sunat.webp",
+  },
   {
     name: "Municipalidad Metropolitana de Lima",
     logo: "/logos/municipalidadelima.webp",
   },
-  { name: "Contraloría General de la República", logo: "/logos/logo-cgr.webp" },
+  {
+    name: "Contraloría General de la República",
+    logo: "/logos/logo-cgr.webp",
+  },
   {
     name: "Municipalidad Distrital de Sacsamarca",
     logo: "/logos/sacamarca.webp",
   },
-  { name: "Gobierno regional de Ayacucho", logo: "/logos/ayacucho.webp" },
+  {
+    name: "Gobierno Regional de Ayacucho",
+    logo: "/logos/ayacucho.webp",
+  },
 ];
 
 const marqueeItems = [...companies, ...companies, ...companies];
 
-// CAMBIO: Se eliminan las props onMouseEnter y onMouseLeave para simplificar
-const CompanyLogo = ({ name, logo }: { name: string; logo: string }) => {
+const headerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const headerItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.58,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+type CompanyLogoProps = {
+  name: string;
+  logo: string;
+  priority?: boolean;
+};
+
+const CompanyLogo = ({
+  name,
+  logo,
+  priority = false,
+}: CompanyLogoProps) => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      // CAMBIO 2: Se añade la clase 'force-gpu' para mejorar la fluidez
-      className="mx-4 flex flex-col items-center justify-center p-2 duration-300 cursor-pointer force-gpu"
-      whileHover={{ scale: 1.05, y: -3 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+      whileHover={
+        reduceMotion
+          ? undefined
+          : {
+              y: -5,
+              scale: 1.04,
+            }
+      }
+      transition={{
+        duration: 0.25,
+        ease: "easeOut",
+      }}
+      className="
+        mx-4 flex w-[132px] shrink-0 cursor-pointer
+        flex-col items-center justify-start
+        py-2 sm:mx-5 sm:w-[148px]
+      "
     >
-      <div className="relative w-20 h-20 md:w-28 md:h-28 flex items-center justify-center cursor-pointer">
+      <div
+        className="
+          relative flex h-24 w-24 items-center justify-center
+          sm:h-28 sm:w-28
+        "
+      >
         <Image
-          priority
           fill
           src={logo}
-          alt={`${name} logo`}
-          className="object-contain transition-all duration-300"
-          // Añadimos tamaños para optimizar la carga de la imagen
-          sizes="(max-width: 768px) 80px, 80px"
+          alt={`Logo de ${name}`}
+          priority={priority}
+          sizes="(max-width: 640px) 96px, 112px"
+          className="
+            object-contain
+            opacity-90
+            transition-all duration-300
+            group-hover:opacity-100
+          "
         />
       </div>
-      <p className="text-xs text-center text-[#182C45] mt-1 max-w-[100px] leading-tight">
+
+      <p
+        className="
+          mt-3 max-w-[132px] text-center
+          text-xs font-semibold leading-4
+          text-[#182C45]/80
+          transition-colors duration-300
+          sm:max-w-[148px]
+        "
+      >
         {name}
       </p>
     </motion.div>
@@ -75,67 +165,124 @@ const CompanyLogo = ({ name, logo }: { name: string; logo: string }) => {
 };
 
 const Trusted = () => {
-  // CAMBIO: Se eliminan el estado y las funciones handleMouseEnter/Leave
-  // const [isPaused, setIsPaused] = useState(false);
-
-  const textTransition = {
-    duration: 0.7,
-    ease: "easeOut" as const,
-    staggerChildren: 0.15,
-  };
-  const itemTransition = { duration: 0.5, ease: "easeOut" as const };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: textTransition },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: { opacity: 1, y: 0, transition: itemTransition },
-  };
+  const reduceMotion = useReducedMotion();
 
   return (
-    <div
+    <section
       className={cn(
-        "w-full overflow-hidden py-8 md:pt-16 relative",
-        "bg-white text-[#182C45]"
+        "relative w-full overflow-hidden bg-white",
+        "py-12 md:py-16"
       )}
     >
-      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center mb-10">
+      <motion.div
+        variants={headerVariants}
+        initial={reduceMotion ? false : "hidden"}
+        whileInView={reduceMotion ? undefined : "visible"}
+        viewport={{ once: true, amount: 0.35 }}
+        className="relative z-10 mx-auto mb-10 max-w-3xl px-4 text-center"
+      >
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={textVariants}
+          variants={headerItemVariants}
+          className="mb-4 flex items-center justify-center gap-3"
         >
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-3 leading-tight"
-            variants={itemVariants}
-          >
-            Nuestros <span className="text-[#182C45] font-bold">Clientes</span>
-          </motion.h2>
-          <motion.p
-            className="text-base md:text-lg text-slate-950 font-sans leading-relaxed max-w-2xl mx-auto"
-            variants={itemVariants}
-          >
-            Trabajamos de la mano con nuestros clientes, asegurando
-            profesionalismo y confiabilidad en cada proyecto.
-          </motion.p>
-        </motion.div>
-      </div>
+          <span className="h-0.5 w-10 bg-[#C9A66B]" />
 
-      <div className="relative z-10 flex w-full flex-col items-center">
-        {/* CAMBIO 1: Se aumenta la duración para que sea más lento */}
-        {/* CAMBIO 3: Se usa 'pauseOnHover={true}' directamente */}
-        <Marquee className="[--duration:80s] gap-6" pauseOnHover={true}>
-          {marqueeItems.map((company, idx) => (
-            // CAMBIO: Se eliminan las props que ya no se usan
-            <CompanyLogo key={`company-${company.name}-${idx}`} {...company} />
+          <span
+            className="
+              text-xs font-bold uppercase
+              tracking-[0.18em] text-[#C9A66B]
+              sm:text-sm
+            "
+          >
+            Confían en nosotros
+          </span>
+
+          <span className="h-0.5 w-10 bg-[#C9A66B]" />
+        </motion.div>
+
+        <motion.h2
+          variants={headerItemVariants}
+          className="
+            text-3xl font-black leading-tight
+            tracking-[-0.03em] text-[#182C45]
+            sm:text-4xl
+          "
+        >
+          Nuestros Clientes
+        </motion.h2>
+
+        <motion.p
+          variants={headerItemVariants}
+          className="
+            mx-auto mt-4 max-w-2xl
+            text-sm leading-7 text-slate-600
+            sm:text-base md:text-lg md:leading-8
+          "
+        >
+          Trabajamos de la mano con nuestros clientes, asegurando
+          profesionalismo y confiabilidad en cada proyecto.
+        </motion.p>
+      </motion.div>
+
+      <motion.div
+        initial={
+          reduceMotion
+            ? false
+            : {
+                opacity: 0,
+                y: 18,
+              }
+        }
+        whileInView={
+          reduceMotion
+            ? undefined
+            : {
+                opacity: 1,
+                y: 0,
+              }
+        }
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{
+          duration: 0.7,
+          delay: 0.12,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          relative z-10 flex w-full flex-col items-center
+          [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]
+          [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]
+        "
+      >
+        <Marquee
+          className="[--duration:85s] [--gap:0rem]"
+          pauseOnHover
+        >
+          {marqueeItems.map((company, index) => (
+            <CompanyLogo
+              key={`${company.name}-${index}`}
+              {...company}
+              priority={index < 4}
+            />
           ))}
         </Marquee>
-      </div>
-    </div>
+      </motion.div>
+
+      <motion.div
+        initial={reduceMotion ? false : { scaleX: 0 }}
+        whileInView={reduceMotion ? undefined : { scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.9,
+          delay: 0.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          mx-auto mt-10 h-px max-w-7xl origin-center
+          bg-gradient-to-r from-transparent
+          via-[#C9A66B]/60 to-transparent
+        "
+      />
+    </section>
   );
 };
 

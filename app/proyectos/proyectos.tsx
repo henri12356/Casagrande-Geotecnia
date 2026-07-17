@@ -1,10 +1,15 @@
 "use client";
 
-import React, { useMemo, Suspense } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense, useMemo } from "react";
 import proyectos from "@/app/data/proyectos.json";
 
 type Proyecto = {
@@ -17,34 +22,83 @@ type Proyecto = {
   descripcion?: string;
 };
 
-// --- Mueve tu lógica a un sub-componente que sí usa useSearchParams ---
+const BRAND = {
+  navy: "#182C45",
+  gold: "#C9A66B",
+};
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    scale: 0.985,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.58,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 function ProyectosContent() {
+  const reduceMotion = useReducedMotion();
   const searchParams = useSearchParams();
+
   const categoriaQP = (searchParams.get("categoria") || "").trim();
 
   const categorias = useMemo(() => {
-    const set = new Set<string>();
-    (proyectos as Proyecto[]).forEach(
-      (p) => p.categoria && set.add(p.categoria.trim())
+    const categoriasSet = new Set<string>();
+
+    (proyectos as Proyecto[]).forEach((proyecto) => {
+      const categoria = proyecto.categoria?.trim();
+
+      if (categoria) {
+        categoriasSet.add(categoria);
+      }
+    });
+
+    return Array.from(categoriasSet).sort((a, b) =>
+      a.localeCompare(b, "es")
     );
-    return Array.from(set).sort((a, b) => a.localeCompare(b, "es"));
   }, []);
 
   const counts = useMemo(() => {
-    const m = new Map<string, number>();
-    (proyectos as Proyecto[]).forEach((p) => {
-      const cat = (p.categoria || "").trim();
-      if (!cat) return;
-      m.set(cat, (m.get(cat) || 0) + 1);
+    const contador = new Map<string, number>();
+
+    (proyectos as Proyecto[]).forEach((proyecto) => {
+      const categoria = proyecto.categoria?.trim();
+
+      if (!categoria) return;
+
+      contador.set(categoria, (contador.get(categoria) || 0) + 1);
     });
-    return m;
+
+    return contador;
   }, []);
 
   const listaFiltrada = useMemo(() => {
-    if (!categoriaQP) return proyectos as Proyecto[];
+    if (!categoriaQP) {
+      return proyectos as Proyecto[];
+    }
+
     return (proyectos as Proyecto[]).filter(
-      (p) =>
-        (p.categoria || "").trim().toLowerCase() === categoriaQP.toLowerCase()
+      (proyecto) =>
+        proyecto.categoria?.trim().toLowerCase() ===
+        categoriaQP.toLowerCase()
     );
   }, [categoriaQP]);
 
@@ -53,159 +107,286 @@ function ProyectosContent() {
     : "Nuestros Proyectos";
 
   return (
-    <div className="">
-      {/* Hero */}
-      <section className="py-16 pt-28 md:pt-56 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <main className="bg-white">
+      <section className="mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 md:pt-44 lg:px-8 lg:pb-24 lg:pt-52">
+        {/* ENCABEZADO */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 24,
+                }
+          }
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mx-auto mb-12 max-w-4xl text-center lg:mb-14"
         >
-          <h2 className="text-3xl lg:text-7xl font-bold text-[#1b4772]  mb-4">
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-0.5 w-10 bg-[#C9A66B]" />
+
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A66B] sm:text-sm">
+              Experiencia comprobada
+            </span>
+
+            <span className="h-0.5 w-10 bg-[#C9A66B]" />
+          </div>
+
+          <h1 className="text-4xl font-black leading-tight tracking-[-0.035em] text-[#182C45] sm:text-5xl lg:text-7xl">
             {titulo}
-          </h2>
-          <p className="text-gray-600 text-base lg:text-lg max-w-3xl mx-auto">
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Descubre nuestra trayectoria y experiencia en proyectos de
-            ingeniería geotécnica a nivel nacional.
+            ingeniería geotécnica desarrollados a nivel nacional.
           </p>
         </motion.div>
 
-        {/* Chips de categorías */}
-        <div className="mb-10 flex flex-wrap items-center gap-2 justify-center">
+        {/* CATEGORÍAS */}
+        <motion.nav
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 18,
+                }
+          }
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.12,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          aria-label="Categorías de proyectos"
+          className="mb-12 flex flex-wrap items-center justify-center gap-2.5"
+        >
           <Link
             href="/proyectos"
-            className={`px-4 py-2 rounded-full border text-sm transition
-              ${
-                !categoriaQP
-                  ? "bg-[#1b4772] text-white border-[#1b4772]"
-                  : "text-[#1b4772] border-[#1b4772] hover:bg-[#1b4772]/10"
-              }`}
+            className={`inline-flex min-h-10 items-center justify-center rounded-full border px-4 py-2 text-sm font-bold transition-all duration-300 ${
+              !categoriaQP
+                ? "border-[#182C45] bg-[#182C45] text-white shadow-[0_8px_20px_rgba(24,44,69,0.16)]"
+                : "border-[#182C45]/25 bg-white text-[#182C45] hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+            }`}
           >
             Todas ({(proyectos as Proyecto[]).length})
           </Link>
 
-          {categorias.map((cat) => (
-            <Link
-              key={cat}
-              href={`/proyectos?categoria=${encodeURIComponent(cat)}`}
-              className={`px-4 py-2 rounded-full border text-sm transition
-                ${
-                  categoriaQP.toLowerCase() === cat.toLowerCase()
-                    ? "bg-[#1b4772] text-white border-[#1b4772]"
-                    : "text-[#1b4772] border-[#1b4772] hover:bg-[#1b4772]/10"
-                }`}
-            >
-              {cat} {counts.get(cat) ? `(${counts.get(cat)})` : ""}
-            </Link>
-          ))}
-        </div>
+          {categorias.map((categoria) => {
+            const active =
+              categoriaQP.toLowerCase() === categoria.toLowerCase();
 
-        {/* Grid de proyectos */}
-        {listaFiltrada.length === 0 ? (
-          <div className="text-center text-gray-600 py-16">
-            No encontramos proyectos en <strong>{categoriaQP}</strong>.
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {listaFiltrada.map((proyecto: Proyecto, index: number) => (
+            return (
               <Link
-                key={proyecto.slug}
-                href={`/proyectos/${proyecto.slug}`}
-                className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white block"
+                key={categoria}
+                href={`/proyectos?categoria=${encodeURIComponent(categoria)}`}
+                className={`inline-flex min-h-10 items-center justify-center rounded-full border px-4 py-2 text-sm font-bold transition-all duration-300 ${
+                  active
+                    ? "border-[#182C45] bg-[#182C45] text-white shadow-[0_8px_20px_rgba(24,44,69,0.16)]"
+                    : "border-[#182C45]/25 bg-white text-[#182C45] hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                }`}
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.06 }}
+                {categoria}
+                {counts.get(categoria)
+                  ? ` (${counts.get(categoria)})`
+                  : ""}
+              </Link>
+            );
+          })}
+        </motion.nav>
+
+        {/* RESULTADOS */}
+        <AnimatePresence mode="wait">
+          {listaFiltrada.length === 0 ? (
+            <motion.div
+              key="sin-resultados"
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 20,
+                    }
+              }
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -12,
+              }}
+              transition={{ duration: 0.4 }}
+              className="rounded-2xl border border-[#182C45]/10 bg-slate-50 px-6 py-14 text-center"
+            >
+              <p className="text-base text-slate-600 sm:text-lg">
+                No encontramos proyectos en{" "}
+                <strong className="text-[#182C45]">
+                  {categoriaQP}
+                </strong>
+                .
+              </p>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={categoriaQP || "todos"}
+              variants={containerVariants}
+              initial={reduceMotion ? false : "hidden"}
+              animate={reduceMotion ? undefined : "visible"}
+              exit={
+                reduceMotion
+                  ? undefined
+                  : {
+                      opacity: 0,
+                      y: 12,
+                    }
+              }
+              className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
+            >
+              {listaFiltrada.map((proyecto, index) => (
+                <motion.article
+                  key={proyecto.slug}
+                  variants={cardVariants}
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          y: -8,
+                        }
+                  }
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeOut",
+                  }}
+                  className="h-full"
                 >
-                  {/* Imagen */}
-                  <div className="relative h-64 lg:h-72 overflow-hidden">
-                    <Image
-                      src={proyecto.imagen}
-                      alt={proyecto.titulo}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      priority={index === 0}
-                      fetchPriority={index === 0 ? "high" : "auto"}
-                      loading={index === 0 ? "eager" : "lazy"}
-                    />
-                    <div className="absolute top-4 left-4">
-                      {proyecto.categoria && (
-                        <span className="bg-white/90 text-[#1B4772] px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
-                          {proyecto.categoria}
-                        </span>
-                      )}
-                    </div>
-                    <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="text-center w-full">
-                        <span className="inline-block bg-white text-[#1B4772] px-6 py-2 rounded-full font-semibold shadow">
-                          Ver Detalles
+                  <Link
+                    href={`/proyectos/${proyecto.slug}`}
+                    aria-label={`Ver proyecto ${proyecto.titulo}`}
+                    className="group block h-full"
+                  >
+                    <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#182C45]/10 bg-white shadow-[0_12px_34px_rgba(24,44,69,0.09)] transition-all duration-500 group-hover:border-[#C9A66B]/65 group-hover:shadow-[0_22px_52px_rgba(24,44,69,0.16)]">
+                      {/* IMAGEN */}
+                      <div className="relative h-64 overflow-hidden lg:h-72">
+                        <Image
+                          src={proyecto.imagen}
+                          alt={proyecto.titulo}
+                          fill
+                          priority={index === 0}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.07]"
+                        />
+
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#182C45]/75 via-[#182C45]/10 to-transparent opacity-75 transition-opacity duration-500 group-hover:opacity-90" />
+
+                        {proyecto.categoria && (
+                          <span className="absolute left-4 top-4 rounded-full border border-white/40 bg-[#182C45]/88 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-white backdrop-blur-sm">
+                            {proyecto.categoria}
+                          </span>
+                        )}
+
+                        <div className="absolute inset-x-0 bottom-0 flex translate-y-3 justify-center p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                          <span className="inline-flex rounded-full bg-[#C9A66B] px-5 py-2 text-sm font-bold text-[#182C45] shadow-lg">
+                            Ver detalles
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* INFORMACIÓN */}
+                      <div className="flex flex-1 flex-col p-5 sm:p-6">
+                        <div className="mb-4 h-0.5 w-10 bg-[#C9A66B] transition-all duration-500 group-hover:w-16" />
+
+                        <h2 className="text-xl font-extrabold leading-snug text-[#182C45] transition-colors duration-300 group-hover:text-[#C9A66B]">
+                          {proyecto.titulo}
+                        </h2>
+
+                        <div className="mt-4 flex-1 space-y-3">
+                          {proyecto.cliente && (
+                            <div className="flex items-start gap-3">
+                              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#C9A66B]" />
+
+                              <p className="text-sm leading-6 text-slate-600">
+                                <strong className="font-bold text-[#182C45]">
+                                  Cliente:
+                                </strong>{" "}
+                                {proyecto.cliente}
+                              </p>
+                            </div>
+                          )}
+
+                          {proyecto.obra && (
+                            <div className="flex items-start gap-3">
+                              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#C9A66B]" />
+
+                              <p className="text-sm leading-6 text-slate-600">
+                                <strong className="font-bold text-[#182C45]">
+                                  Obra:
+                                </strong>{" "}
+                                {proyecto.obra}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+
+                        <span className="mt-6 inline-flex items-center text-sm font-bold text-[#182C45] transition-colors duration-300 group-hover:text-[#C9A66B]">
+                          Ver proyecto completo
+
+                          <svg
+                            aria-hidden="true"
+                            className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
                         </span>
                       </div>
-                    </div>
-                  </div>
 
-                  {/* Info */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-[#1B4772] mb-3 group-hover:text-[#1B4772] transition-colors duration-300">
-                      {proyecto.titulo}
-                    </h3>
-                    <div className="space-y-2 mb-4">
-                      {proyecto.cliente && (
-                        <div className="flex items-start">
-                          <div className="w-2 h-2 bg-[#1B4772] rounded-full mt-2 mr-2 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-600">
-                            <strong className="font-semibold">Cliente:</strong>{" "}
-                            {proyecto.cliente}
-                          </span>
-                        </div>
-                      )}
-                      {proyecto.obra && (
-                        <div className="flex items-start">
-                          <div className="w-2 h-2 bg-[#1B4772] rounded-full mt-2 mr-2 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-600">
-                            <strong className="font-semibold">Obra:</strong>{" "}
-                            {proyecto.obra}
-                          </span>
-                        </div>
-                      )}
+                      <span className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-[#C9A66B] transition-transform duration-500 group-hover:scale-x-100" />
                     </div>
-                    <span className="inline-flex items-center text-[#1B4772] font-semibold text-sm">
-                      Ver proyecto completo
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        )}
+                  </Link>
+                </motion.article>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
-    </div>
+    </main>
   );
 }
 
-// --- Export por defecto: envuelve en Suspense ---
 export default function ProyectosPage() {
   return (
     <Suspense
       fallback={
-        <div className="py-28 text-center text-gray-600">
-          Cargando proyectos…
+        <div className="flex min-h-[420px] items-center justify-center bg-white px-4 pt-28 text-center text-slate-600">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex flex-col items-center gap-4"
+          >
+            <span className="h-9 w-9 animate-spin rounded-full border-2 border-[#182C45]/20 border-t-[#C9A66B]" />
+
+            <span className="text-sm font-semibold">
+              Cargando proyectos…
+            </span>
+          </motion.div>
         </div>
       }
     >

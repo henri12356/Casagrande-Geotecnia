@@ -1,13 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import {
+  ChevronLeft,
+  ChevronRight,
+  X,
+  ZoomIn,
+} from "lucide-react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { Badge } from "@/components/ui/badge";
-// No necesitas Button si los filtros están comentados
-// import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card";
 
 interface Equipo {
   id: number;
@@ -24,7 +39,7 @@ const equiposData: Equipo[] = [
     nombre: "Equipo Triaxial",
     categoria: "Laboratorio de Suelos",
     descripcion:
-      "Equipo para ensayos triaxiales UU, CU y CD que determina parámetros de resistencia al corte del suelo bajo condiciones controladas de esfuerzo y drenaje",
+      "Equipo para ensayos triaxiales UU, CU y CD que determina parámetros de resistencia al corte del suelo bajo condiciones controladas de esfuerzo y drenaje.",
     imagen: "/equipos/triaxial.webp",
     especificaciones: [
       "Capacidad: 50 kN",
@@ -38,10 +53,10 @@ const equiposData: Equipo[] = [
     nombre: "Horno de Secado",
     categoria: "Laboratorio de Suelos",
     descripcion:
-      "Horno eléctrico de precisión para determinación de contenido de humedad y secado de muestras de suelo a temperatura controlada",
+      "Horno eléctrico de precisión para determinar el contenido de humedad y realizar el secado controlado de muestras de suelo.",
     imagen: "/equipos/Horno.webp",
     especificaciones: [
-      "Temperatura: 110°C ± 5°C",
+      "Temperatura: 110 °C ± 5 °C",
       "Capacidad: 200 litros",
       "Control digital de temperatura",
       "Norma ASTM D2216 / NTP 339.127",
@@ -52,25 +67,25 @@ const equiposData: Equipo[] = [
     nombre: "Consolidómetro",
     categoria: "Laboratorio de Suelos",
     descripcion:
-      "Equipo de consolidación unidimensional para determinar propiedades de compresibilidad y velocidad de consolidación de suelos saturados",
+      "Equipo de consolidación unidimensional para determinar la compresibilidad y velocidad de consolidación de suelos saturados.",
     imagen: "/equipos/consolidometro.webp",
     especificaciones: [
       "6 celdas simultáneas",
       "Rango de carga: 1-2500 kPa",
-      "Deformímetros digitales 0.001mm",
+      "Deformímetros digitales de 0.001 mm",
       "Norma ASTM D2435 / NTP 339.154",
     ],
   },
   {
     id: 4,
-    nombre: "Equipo Corte Directo",
+    nombre: "Equipo de Corte Directo",
     categoria: "Laboratorio de Suelos",
     descripcion:
-      "Máquina de corte directo para determinación de ángulo de fricción interna y cohesión del suelo mediante aplicación de esfuerzos normales y tangenciales",
+      "Equipo para determinar el ángulo de fricción interna y la cohesión del suelo mediante esfuerzos normales y tangenciales.",
     imagen: "/equipos/cortedirecto.webp",
     especificaciones: [
       "Carga normal: hasta 10 kN",
-      "Velocidad deformación: 0.01-10 mm/min",
+      "Velocidad de deformación: 0.01-10 mm/min",
       "Deformación horizontal: 15 mm",
       "Norma ASTM D3080 / NTP 339.171",
     ],
@@ -80,7 +95,7 @@ const equiposData: Equipo[] = [
     nombre: "Equipo de Compresión",
     categoria: "Laboratorio de Suelos",
     descripcion:
-      "Prensa de compresión no confinada para determinar resistencia a la compresión simple de suelos cohesivos y cilindros de concreto",
+      "Prensa para determinar la resistencia a la compresión simple de suelos cohesivos y cilindros de concreto.",
     imagen: "/equipos/compresion.webp",
     especificaciones: [
       "Capacidad: 100 kN (10 toneladas)",
@@ -94,7 +109,7 @@ const equiposData: Equipo[] = [
     nombre: "Máquina de Abrasión Los Ángeles",
     categoria: "Laboratorio de Suelos",
     descripcion:
-      "Equipo para ensayo de abrasión Los Ángeles que evalúa la resistencia al desgaste de agregados gruesos por impacto y fricción",
+      "Equipo que evalúa la resistencia al desgaste de agregados gruesos mediante impacto y fricción.",
     imagen: "/equipos/abrazion.webp",
     especificaciones: [
       "Velocidad: 30-33 rpm",
@@ -105,232 +120,396 @@ const equiposData: Equipo[] = [
   },
 ];
 
-const categorias = ["Todos", "Laboratorio de Suelos"];
+const gridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    scale: 0.985,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.52,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 const Equipos = () => {
-  const [filtroCategoria, setFiltroCategoria] = useState("Todos");
-  const [equipoSeleccionado, setEquipoSeleccionado] = useState<Equipo | null>(
-    null
-  );
+  const reduceMotion = useReducedMotion();
+
+  const [equipoSeleccionado, setEquipoSeleccionado] =
+    useState<Equipo | null>(null);
+
   const [imagenActual, setImagenActual] = useState(0);
 
-  const equiposFiltrados =
-    filtroCategoria === "Todos"
-      ? equiposData
-      : equiposData.filter((equipo) => equipo.categoria === filtroCategoria);
-
-  const abrirModal = (equipo: Equipo, index: number) => {
+  const abrirModal = (
+    equipo: Equipo,
+    index: number
+  ) => {
     setEquipoSeleccionado(equipo);
     setImagenActual(index);
   };
 
-  const cerrarModal = () => {
+  const cerrarModal = useCallback(() => {
     setEquipoSeleccionado(null);
-  };
+  }, []);
 
-  const navegarImagen = (direccion: "prev" | "next") => {
-    const equiposActuales = equiposFiltrados;
-    if (direccion === "next") {
-      const nuevoIndex = (imagenActual + 1) % equiposActuales.length;
-      setImagenActual(nuevoIndex);
-      setEquipoSeleccionado(equiposActuales[nuevoIndex]);
-    } else {
-      const nuevoIndex =
-        imagenActual === 0 ? equiposActuales.length - 1 : imagenActual - 1;
-      setImagenActual(nuevoIndex);
-      setEquipoSeleccionado(equiposActuales[nuevoIndex]);
-    }
-  };
+  const navegarImagen = useCallback(
+    (direccion: "prev" | "next") => {
+      setImagenActual((indiceAnterior) => {
+        const nuevoIndice =
+          direccion === "next"
+            ? (indiceAnterior + 1) % equiposData.length
+            : (indiceAnterior - 1 + equiposData.length) %
+              equiposData.length;
+
+        setEquipoSeleccionado(equiposData[nuevoIndice]);
+
+        return nuevoIndice;
+      });
+    },
+    []
+  );
+
+  useEffect(() => {
+    if (!equipoSeleccionado) return;
+
+    const overflowAnterior =
+      document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+
+    const controlarTeclado = (
+      event: KeyboardEvent
+    ) => {
+      if (event.key === "Escape") {
+        cerrarModal();
+      }
+
+      if (event.key === "ArrowRight") {
+        navegarImagen("next");
+      }
+
+      if (event.key === "ArrowLeft") {
+        navegarImagen("prev");
+      }
+    };
+
+    window.addEventListener(
+      "keydown",
+      controlarTeclado
+    );
+
+    return () => {
+      document.body.style.overflow =
+        overflowAnterior;
+
+      window.removeEventListener(
+        "keydown",
+        controlarTeclado
+      );
+    };
+  }, [
+    equipoSeleccionado,
+    cerrarModal,
+    navegarImagen,
+  ]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto pt-14 md:pt-44">
+    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-[#182C45]/[0.04] px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl pt-14 md:pt-44">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: -18,
+                }
+          }
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.58,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mb-12 text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-[#182C45] mb-4">
-            Nuestros Equipos
-            Geotécnicos
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-0.5 w-10 bg-[#C9A66B]" />
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A66B] sm:text-sm">
+              Tecnología especializada
+            </span>
+            <span className="h-0.5 w-10 bg-[#C9A66B]" />
+          </div>
+
+          <h1 className="text-4xl font-black tracking-[-0.035em] text-[#182C45] md:text-6xl">
+            Nuestros Equipos Geotécnicos
           </h1>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Contamos con equipos de última generación para garantizar resultados
-            precisos y confiables en todos nuestros servicios geotécnicos
+
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
+            Equipamiento especializado para obtener
+            resultados precisos, confiables y
+            técnicamente verificables.
           </p>
         </motion.div>
 
-        {/* Filtros (comentados, por si quieres volver a activarlos) */}
-        {/*
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+        {/* Grid de equipos */}
+        <motion.div
+          variants={gridVariants}
+          initial={reduceMotion ? false : "hidden"}
+          animate={reduceMotion ? undefined : "visible"}
+          className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {categorias.map((categoria) => (
-            <Button
-              key={categoria}
-              onClick={() => setFiltroCategoria(categoria)}
-              variant={filtroCategoria === categoria ? "default" : "outline"}
-              className={`
-                transition-all duration-300 
-                ${filtroCategoria === categoria 
-                  ? 'bg-[#182C45] hover:bg-blue-700 text-white shadow-lg scale-105' 
-                  : 'hover:bg-blue-50 hover:border-blue-300'
-                }
-              `}
+          {equiposData.map((equipo, index) => (
+            <motion.div
+              key={equipo.id}
+              variants={cardVariants}
+              whileHover={
+                reduceMotion
+                  ? undefined
+                  : {
+                      y: -6,
+                    }
+              }
+              transition={{
+                duration: 0.26,
+                ease: "easeOut",
+              }}
             >
-              {categoria}
-            </Button>
+              <Card
+                onClick={() =>
+                  abrirModal(equipo, index)
+                }
+                className="group h-full cursor-pointer overflow-hidden rounded-2xl border border-[#182C45]/10 bg-white shadow-[0_10px_30px_rgba(24,44,69,0.08)] transition-all duration-300 hover:border-[#C9A66B]/60 hover:shadow-[0_18px_45px_rgba(24,44,69,0.15)]"
+              >
+                <CardContent className="p-0">
+                  <div className="relative aspect-video overflow-hidden bg-slate-100">
+                    <Image
+                      src={equipo.imagen}
+                      alt={equipo.nombre}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                    />
+
+                    <div className="absolute inset-0 flex items-center justify-center bg-[#182C45]/0 transition-colors duration-300 group-hover:bg-[#182C45]/55">
+                      <div className="translate-y-3 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        <ZoomIn className="mx-auto mb-2 h-7 w-7" />
+
+                        <p className="text-sm font-semibold">
+                          Ver detalles
+                        </p>
+                      </div>
+                    </div>
+
+                    <Badge className="absolute right-3 top-3 border-none bg-[#182C45]/90 text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#C9A66B] group-hover:text-[#182C45]">
+                      {equipo.categoria}
+                    </Badge>
+                  </div>
+
+                  <div className="relative p-5">
+                    <h2 className="mb-2 line-clamp-1 text-lg font-extrabold text-[#182C45]">
+                      {equipo.nombre}
+                    </h2>
+
+                    <p className="line-clamp-2 text-sm leading-6 text-slate-600">
+                      {equipo.descripcion}
+                    </p>
+
+                    <span className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-[#C9A66B] transition-transform duration-500 group-hover:scale-x-100" />
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </motion.div>
-        */}
 
-        {/* Grid de Equipos */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {equiposFiltrados.map((equipo, index) => (
-              <motion.div
-                key={equipo.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card
-                
-               
-                  className="group cursor-pointer overflow-hidden transition-all duration-300 border-2 border-transparent  bg-transparent shadow-none"
-                  onClick={() => abrirModal(equipo, index)}
-                >
-                  <CardContent className="p-0">
-                    <div className="relative aspect-video overflow-hidden ">
-                      <Image
-                        src={equipo.imagen}
-                        alt={equipo.nombre}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-t-lg" // Añadido rounded-t-lg
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#182C45]/70 via-[#182C45]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                          <ZoomIn className="w-8 h-8 mx-auto mb-2" />
-                          <p className="text-sm text-center">
-                            Click para ampliar
-                          </p>
-                        </div>
-                      </div>
-                      <Badge className="absolute top-3 right-3 bg-[#182C45] text-white">
-                        {equipo.categoria}
-                      </Badge>
-                    </div>
-                    {/* ================================================================== */}
-                    {/* CAMBIO 2: Fondo oscuro para el texto para que contraste bien con   */}
-                    {/* el fondo de la página. Se usa un degradado oscuro y padding.       */}
-                    {/* Añadido 'rounded-b-lg' para que coincida con la imagen.           */}
-                    {/* ================================================================== */}
-                    <div className="p-4 bg-gradient-to-t  text-[#182C45] rounded-b-lg">
-                      <h3 className="font-bold text-lg mb-2 line-clamp-1">
-                        {equipo.nombre}
-                      </h3>
-                      <p className="text-sm text-[#182C45] line-clamp-2">
-                        {equipo.descripcion}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Modal Lightbox */}
+        {/* Modal */}
         <AnimatePresence>
           {equipoSeleccionado && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+              transition={{ duration: 0.22 }}
               onClick={cerrarModal}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-[#07111D]/95 p-4 backdrop-blur-sm"
+              role="dialog"
+              aria-modal="true"
+              aria-label={equipoSeleccionado.nombre}
             >
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ type: "spring", damping: 25 }}
-                className="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
-                onClick={(e) => e.stopPropagation()}
+                initial={
+                  reduceMotion
+                    ? false
+                    : {
+                        opacity: 0,
+                        scale: 0.95,
+                        y: 18,
+                      }
+                }
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.97,
+                  y: 12,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                onClick={(event) =>
+                  event.stopPropagation()
+                }
+                className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl"
               >
-                {/* Botón Cerrar */}
+                {/* Cerrar */}
                 <button
+                  type="button"
                   onClick={cerrarModal}
-                  className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 transition-all hover:scale-110"
+                  aria-label="Cerrar detalles del equipo"
+                  className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/85 text-white backdrop-blur-sm transition-all duration-300 hover:bg-[#C9A66B] hover:text-[#182C45]"
                 >
-                  <X className="w-6 h-6 text-slate-900" />
+                  <X className="h-5 w-5" />
                 </button>
 
-                {/* Botones Navegación */}
+                {/* Navegación */}
                 <button
-                  onClick={() => navegarImagen("prev")}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-3 transition-all hover:scale-110"
+                  type="button"
+                  onClick={() =>
+                    navegarImagen("prev")
+                  }
+                  aria-label="Equipo anterior"
+                  className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/80 text-white backdrop-blur-sm transition-all duration-300 hover:bg-[#C9A66B] hover:text-[#182C45]"
                 >
-                  <ChevronLeft className="w-6 h-6 text-slate-900" />
-                </button>
-                <button
-                  onClick={() => navegarImagen("next")}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-3 transition-all hover:scale-110"
-                >
-                  <ChevronRight className="w-6 h-6 text-slate-900" />
+                  <ChevronLeft className="h-6 w-6" />
                 </button>
 
-                <div className="grid md:grid-cols-2 gap-0">
+                <button
+                  type="button"
+                  onClick={() =>
+                    navegarImagen("next")
+                  }
+                  aria-label="Siguiente equipo"
+                  className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/80 text-white backdrop-blur-sm transition-all duration-300 hover:bg-[#C9A66B] hover:text-[#182C45]"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+
+                <div className="grid gap-0 md:grid-cols-2">
                   {/* Imagen */}
-                  <div className="relative aspect-video md:aspect-auto md:min-h-[500px] bg-slate-900">
-                    <Image
-                      src={equipoSeleccionado.imagen}
-                      alt={equipoSeleccionado.nombre}
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative aspect-video bg-slate-950 md:aspect-auto md:min-h-[500px]">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={equipoSeleccionado.id}
+                        initial={
+                          reduceMotion
+                            ? false
+                            : {
+                                opacity: 0,
+                                scale: 0.985,
+                              }
+                        }
+                        animate={{
+                          opacity: 1,
+                          scale: 1,
+                        }}
+                        exit={{
+                          opacity: 0,
+                          scale: 0.99,
+                        }}
+                        transition={{
+                          duration: 0.22,
+                        }}
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src={
+                            equipoSeleccionado.imagen
+                          }
+                          alt={
+                            equipoSeleccionado.nombre
+                          }
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-contain"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+
+                    <span className="absolute inset-x-0 bottom-0 h-1 bg-[#C9A66B]" />
                   </div>
 
                   {/* Información */}
-                  <div className="p-8 flex flex-col justify-between max-h-[80vh] md:max-h-none md:min-h-[500px] overflow-y-auto">
+                  <div className="flex max-h-[80vh] min-h-[500px] flex-col justify-between overflow-y-auto p-7 md:max-h-none md:p-8">
                     <div>
-                      <Badge className="mb-4 bg-[#182C45] text-white">
-                        {equipoSeleccionado.categoria}
+                      <Badge className="mb-4 border-none bg-[#182C45] text-white">
+                        {
+                          equipoSeleccionado.categoria
+                        }
                       </Badge>
-                      <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                        {equipoSeleccionado.nombre}
+
+                      <h2 className="mb-4 text-2xl font-black tracking-[-0.025em] text-[#182C45] md:text-3xl">
+                        {
+                          equipoSeleccionado.nombre
+                        }
                       </h2>
-                      <p className="text-slate-600 mb-6 leading-relaxed">
-                        {equipoSeleccionado.descripcion}
+
+                      <p className="mb-6 leading-7 text-slate-600">
+                        {
+                          equipoSeleccionado.descripcion
+                        }
                       </p>
 
-                      <div className="space-y-3">
-                        <h3 className="font-semibold text-slate-900 text-lg mb-3">
-                          Especificaciones Técnicas
+                      <div>
+                        <h3 className="mb-4 text-lg font-extrabold text-[#182C45]">
+                          Especificaciones técnicas
                         </h3>
-                        {equipoSeleccionado.especificaciones.map(
-                          (spec, idx) => (
-                            <div key={idx} className="flex items-start gap-3">
-                              <div className="w-2 h-2 rounded-full bg-[#182C45] mt-2 flex-shrink-0" />
-                              <p className="text-slate-700">{spec}</p>
-                            </div>
-                          )
-                        )}
+
+                        <div className="space-y-3">
+                          {equipoSeleccionado.especificaciones.map(
+                            (especificacion) => (
+                              <div
+                                key={especificacion}
+                                className="flex items-start gap-3"
+                              >
+                                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#C9A66B]" />
+
+                                <p className="text-sm leading-6 text-slate-700">
+                                  {especificacion}
+                                </p>
+                              </div>
+                            )
+                          )}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="mt-6 pt-6 border-t border-slate-200">
-                      <p className="text-sm text-slate-500 text-center">
-                        {imagenActual + 1} / {equiposFiltrados.length}
+                    <div className="mt-6 border-t border-slate-200 pt-5">
+                      <p className="text-center text-sm font-semibold text-slate-500">
+                        {imagenActual + 1} /{" "}
+                        {equiposData.length}
                       </p>
                     </div>
                   </div>
@@ -339,21 +518,8 @@ const Equipos = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Mensaje sin resultados */}
-        {equiposFiltrados.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-20"
-          >
-            <p className="text-slate-600 text-lg">
-              No se encontraron equipos en esta categoría
-            </p>
-          </motion.div>
-        )}
       </div>
-    </div>
+    </section>
   );
 };
 

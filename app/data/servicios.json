@@ -417,10 +417,8 @@
     {
       "titulo": "Evaluación Geomecánica y Estabilidad Estructural",
       "imagenes": [
-        "/geomecanica/geomecanica04.webp",
         "/geomecanica/geomecanica01.webp",
-        "/geomecanica/geomecanica02.webp",
-        "/geomecanica/geomecanica03.webp"
+        "/geomecanica/geomecanica02.webp"
       ],
       "ensayos": [
         "Mapeo geológico–estructural y análisis de discontinuidades.",
@@ -548,21 +546,19 @@
 "categorias": [
   {
     "titulo": "Estudio de Mecánica de Suelos ",
-    "imagenes": ["/mecanica/mecanica01.webp", "/mecanica/mecanica02.webp", "/mecanica/mecanica03.webp"],
+    "imagenes": ["/mecanica/mecanica01.webp"],
     "ensayos": [
-      "Determinación de la capacidad portante admisible del suelo o roca.",
-      "Definición de profundidad y tipo de cimentación óptima.",
-      "Evaluación de asentamientos totales y diferenciales.",
-      "Identificación de estratos compresibles y problemas geotécnicos potenciales.",
-      "Ensayo de penetración estándar (SPT) y recuperación de muestras inalteradas.",
-      "Ensayo de carga con placa y permeabilidad en campo (Lugeon, Lefranc).",
+      "Planificación de la investigación geotécnica según tipo de proyecto.",
+      "Interpretación de ensayos de campo (SPT y otros) y resultados de laboratorio.",
+      "Caracterización estratigráfica y clasificación geotécnica del suelo.",
+      "Determinación de parámetros de resistencia y deformabilidad.",
       "Estudio de mecánica de suelos con fines de saneamiento y habilitación urbana."
     ],
-    "descripcion": "Evaluamos las características del terreno de cimentación para establecer parámetros de diseño y garantizar la estabilidad de estructuras. Nuestros estudios incluyen interpretación geotécnica y recomendaciones específicas para zapatas, losas, pilotes y cimentaciones profundas."
+    "descripcion": "Investigación y análisis geotécnico del subsuelo para la determinación de parámetros de diseño que garanticen cimentaciones seguras y el adecuado desempeño estructural de las obras."
   },
   {
     "titulo": "Estudio de Mecánica de Suelos para Pavimentos e Infraestructura",
-    "imagenes": ["/mecanica/mecanica05.webp", "/mecanica/mecanica04.webp", "/mecanica/mecanica06.webp", "/mecanica/mecanica07.webp"],
+    "imagenes": ["/mecanica/mecanica05.webp", "/mecanica/mecanica04.webp"],
     "ensayos": [
       "Determinación del CBR y capacidad de soporte de la subrasante.",
       "Ensayos Proctor estándar y modificado para control de compactación.",
@@ -704,7 +700,9 @@
     {
       "titulo": "Diagnóstico, Auscultación y Pruebas de Carga",
       "imagenes": [
-        "/laboratorio/laboratorio10.webp"
+        "/evaluacion/evalucion01.webp",
+        "/evaluacion/evalucion02.webp",
+        "/evaluacion/evalucion03.webp"
       ],
       "ensayos": [
         "Inspección visual detallada y levantamiento de fisuras, deformaciones y desplomes.",
@@ -722,7 +720,8 @@
     {
       "titulo": "Evaluación Estructural ",
       "imagenes": [
-        "/laboratorio/laboratorio10.webp"
+        "/evaluacion/evalucion04.webp",
+        "/evaluacion/evalucion05.webp"
       ],
       "ensayos": [
         "Inspección visual y levantamiento de fisuras, deformaciones y desplomes.",

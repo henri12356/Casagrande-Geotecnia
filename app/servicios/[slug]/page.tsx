@@ -1,19 +1,43 @@
-// src/app/servicios/[slug]/page.tsx (o donde tengas este componente)
 "use client";
+
 import servicios from "@/app/data/servicios.json";
 import Footer from "@/app/footer";
 import Navbar from "@/app/navbar";
 import NotFoundPage from "@/app/not-found";
 import ServicioNav from "@/app/servicios/ServicioNav";
 import { Button } from "@/components/ui/button";
-import { animate, motion, useInView, Variants } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import {
+  AnimatePresence,
+  animate,
+  motion,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import {
+  BadgeCheck,
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  FaClock,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
-/* ========= NUEVO HERO (mobile-first) ========= */
+/* =========================
+   HERO DEL SERVICIO
+========================= */
+
 function HeroServicio({
   titulo,
   descripcion,
@@ -23,35 +47,81 @@ function HeroServicio({
   descripcion: string;
   imagen: string;
 }) {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section className="relative md:pt-36 pt-10">
-      {/* Alto pensado para móvil; desktop estable */}
-      <div className="relative h-[56vh] min-h-[450px] md:h-80 lg:h-96 w-full overflow-hidden bg-[#1b4772]">
-        <Image src={imagen} alt={titulo} fill priority className="object-cover" />
+    <section className="relative pt-10 md:pt-36">
+      <div className="relative h-[56vh] min-h-[450px] w-full overflow-hidden bg-[#182C45] md:h-80 lg:h-96">
+        <motion.div
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  scale: 1.06,
+                }
+          }
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.25,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={imagen}
+            alt={titulo}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </motion.div>
 
-        {/* Overlay para legibilidad en móvil */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(27,71,114,0.85),rgba(27,71,114,0.60)_35%,rgba(27,71,114,0.15)_70%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(24,44,69,0.94),rgba(24,44,69,0.66)_38%,rgba(24,44,69,0.24)_72%,rgba(24,44,69,0.12)_100%)]" />
 
-        {/* Contenido */}
         <div className="absolute inset-0 flex items-end md:items-center">
-          <div className="w-full px-4 max-w-7xl mx-auto pb-6 md:pb-0">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-7 sm:px-6 md:pb-0 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="
-                
-                
-                rounded-2xl p-4 md:p-0 md:rounded-none md:border-0
-                text-white 
-              "
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 24,
+                    }
+              }
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.72,
+                delay: 0.18,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="max-w-4xl rounded-2xl p-4 text-white md:rounded-none md:p-0"
             >
-              
+              <motion.div
+                initial={reduceMotion ? false : { scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.34,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="mb-4 h-0.5 w-14 origin-left bg-[#C9A66B]"
+              />
 
-              <h1 className="text-2xl leading-tight md:text-6xl font-bold">{titulo}</h1>
+              <h1 className="text-2xl font-extrabold leading-tight tracking-[-0.025em] text-white md:text-6xl">
+                {titulo}
+              </h1>
 
               <p
-                className="mt-2 md:mt-3 text-sm md:text-lg text-white overflow-hidden"
+                className="mt-3 max-w-3xl overflow-hidden text-sm leading-6 text-white/90 md:text-lg md:leading-8"
                 style={{
                   display: "-webkit-box",
                   WebkitLineClamp: 3,
@@ -61,37 +131,71 @@ function HeroServicio({
                 {descripcion}
               </p>
 
-              {/* CTAs */}
-              <div className="mt-4 md:mt-5 flex flex-wrap gap-2">
-                <Link
-                  href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
-                  target="_blank"
-                  className="inline-flex items-center justify-center rounded-xl bg-white text-[#1b4772] font-semibold px-4 py-2 text-sm md:text-base shadow-sm hover:shadow transition"
+              <div className="mt-5 flex flex-wrap gap-3">
+                <motion.div
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          y: -3,
+                        }
+                  }
+                  whileTap={{ scale: 0.97 }}
                 >
-                  Solicitar cotización
-                </Link>
-                <Link
-                  href="#contenido"
-                  className="inline-flex items-center justify-center rounded-xl border border-white/40 text-white px-4 py-2 text-sm md:text-base hover:bg-white/10 transition"
-                >
-                  Ver detalles
-                </Link>
-              </div>
+                  <Link
+                    href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl bg-[#C9A66B] px-4 py-2 text-sm font-bold text-[#182C45] shadow-md transition-colors duration-300 hover:bg-white md:text-base"
+                  >
+                    Solicitar cotización
+                  </Link>
+                </motion.div>
 
-             
+                <motion.div
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          y: -3,
+                        }
+                  }
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Link
+                    href="#contenido"
+                    className="inline-flex items-center justify-center rounded-xl border border-white/45 bg-white/5 px-4 py-2 text-sm font-bold text-white backdrop-blur-sm transition-colors duration-300 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45] md:text-base"
+                  >
+                    Ver detalles
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Indicador scroll en móvil */}
-        <div className="absolute inset-x-0 bottom-2 md:hidden flex justify-center">
-          <div className="h-1 w-12 rounded-full bg-white/30" />
+        <motion.div
+          initial={reduceMotion ? false : { scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.45,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="absolute bottom-0 left-0 h-1 w-full origin-left bg-[#C9A66B]"
+        />
+
+        <div className="absolute inset-x-0 bottom-3 flex justify-center md:hidden">
+          <div className="h-1 w-12 rounded-full bg-white/35" />
         </div>
       </div>
     </section>
   );
 }
-/* ========= FIN NUEVO HERO ========= */
+
+/* =========================
+   TIPOS
+========================= */
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -104,74 +208,127 @@ interface Stat {
   suffix: string;
 }
 
-/* ====== contador ====== */
+/* =========================
+   CONTADOR
+========================= */
+
 const CountingNumber: React.FC<{
   value: number;
   duration?: number;
   suffix?: string;
   start?: boolean;
-}> = ({ value, duration = 2, suffix = "", start = false }) => {
+}> = ({
+  value,
+  duration = 2,
+  suffix = "",
+  start = false,
+}) => {
   const nodeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const node = nodeRef.current;
-    if (node && start) {
-      const controller = animate(0, value, {
-        duration,
-        ease: "easeOut",
-        onUpdate: (latest) => {
-          node.textContent = Math.round(latest).toLocaleString() + suffix;
-        },
-      });
-      return () => controller.stop();
-    }
+
+    if (!node || !start) return;
+
+    const controller = animate(0, value, {
+      duration,
+      ease: "easeOut",
+      onUpdate: (latest) => {
+        node.textContent =
+          Math.round(latest).toLocaleString("es-PE") + suffix;
+      },
+    });
+
+    return () => controller.stop();
   }, [value, duration, suffix, start]);
 
   return <span ref={nodeRef}>0{suffix}</span>;
 };
 
-/* ====== sección de números ====== */
+/* =========================
+   SECCIÓN DE NÚMEROS
+========================= */
+
 const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
+  const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInViewContainer = useInView(containerRef, { once: true, amount: 0.3 });
+
+  const isInViewContainer = useInView(containerRef, {
+    once: true,
+    amount: 0.25,
+  });
 
   const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: {},
     visible: {
-      opacity: 1,
-      y: 0,
-      transition: { staggerChildren: 0.15, when: "beforeChildren" },
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.08,
+      },
     },
   };
 
   const statCardVariants: Variants = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.98,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 150, damping: 18 },
+      scale: 1,
+      transition: {
+        duration: 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
   };
 
   return (
-    <section className="md:py-20  max-md:pt-10 lg:px-6 relative overflow-hidden">
+    <section className="relative overflow-hidden pt-10 md:py-16 lg:px-6">
       <motion.div
         ref={containerRef}
-        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center"
         variants={sectionVariants}
-        initial="hidden"
-        animate={isInViewContainer ? "visible" : "hidden"}
+        initial={reduceMotion ? false : "hidden"}
+        animate={
+          reduceMotion
+            ? undefined
+            : isInViewContainer
+              ? "visible"
+              : "hidden"
+        }
+        className="mx-auto grid max-w-7xl grid-cols-1 gap-5 text-center sm:grid-cols-2 md:grid-cols-4"
       >
         {stats.map((stat) => (
           <motion.div
             key={stat.id}
-            className="flex flex-col items-center justify-center p-6 bg-[#1b4772] rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             variants={statCardVariants}
+            whileHover={
+              reduceMotion
+                ? undefined
+                : {
+                    y: -5,
+                  }
+            }
+            transition={{
+              duration: 0.25,
+              ease: "easeOut",
+            }}
+            className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#182C45] p-6 shadow-[0_14px_34px_rgba(24,44,69,0.16)]"
           >
-            <div className="md:text-6xl text-5xl  font-extrabold mb-1 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-              <CountingNumber value={stat.value} suffix={stat.suffix} duration={6} start={isInViewContainer} />
+            <span className="absolute inset-x-0 bottom-0 h-1 bg-[#C9A66B]" />
+
+            <div className="mb-1 text-5xl font-black text-[#C9A66B] md:text-6xl">
+              <CountingNumber
+                value={stat.value}
+                suffix={stat.suffix}
+                duration={3}
+                start={isInViewContainer}
+              />
             </div>
-            <p className="text-sm sm:text-base text-white uppercase tracking-wide font-medium">
+
+            <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white/90 sm:text-base">
               {stat.label}
             </p>
           </motion.div>
@@ -181,9 +338,14 @@ const Numeros: React.FC<{ stats: Stat[] }> = ({ stats }) => {
   );
 };
 
+/* =========================
+   PÁGINA DEL SERVICIO
+========================= */
+
 const ServicioPage = ({ params }: PageProps) => {
   const { slug } = React.use(params);
-  const servicio = servicios.find((s) => s.slug === slug);
+  const servicio = servicios.find((item) => item.slug === slug);
+  const reduceMotion = useReducedMotion();
 
   const [imagenModal, setImagenModal] = useState({
     abierto: false,
@@ -193,351 +355,693 @@ const ServicioPage = ({ params }: PageProps) => {
     indiceActual: 0,
   });
 
-  if (!servicio) return <NotFoundPage />;
-
-  const abrirModalImagen = (src: string, titulo: string, categoriaIndex?: number) => {
+  const abrirModalImagen = (
+    src: string,
+    titulo: string,
+    categoriaIndex?: number
+  ) => {
     let imagenes: string[] = [];
     let indiceActual = 0;
 
-    if (categoriaIndex !== undefined && servicio.categorias) {
-      imagenes = servicio.categorias[categoriaIndex].imagenes;
+    if (
+      categoriaIndex !== undefined &&
+      servicio?.categorias
+    ) {
+      imagenes =
+        servicio.categorias[categoriaIndex].imagenes;
       indiceActual = imagenes.indexOf(src);
     } else {
       imagenes = [src];
     }
 
-    setImagenModal({ abierto: true, src, titulo, imagenes, indiceActual });
+    setImagenModal({
+      abierto: true,
+      src,
+      titulo,
+      imagenes,
+      indiceActual,
+    });
   };
 
   const cerrarModalImagen = () => {
-    setImagenModal({ abierto: false, src: "", titulo: "", imagenes: [], indiceActual: 0 });
+    setImagenModal({
+      abierto: false,
+      src: "",
+      titulo: "",
+      imagenes: [],
+      indiceActual: 0,
+    });
   };
 
   const siguienteImagen = () => {
     setImagenModal((prev) => {
-      const nuevoIndice = (prev.indiceActual + 1) % prev.imagenes.length;
-      return { ...prev, indiceActual: nuevoIndice, src: prev.imagenes[nuevoIndice] };
+      if (!prev.imagenes.length) return prev;
+
+      const nuevoIndice =
+        (prev.indiceActual + 1) % prev.imagenes.length;
+
+      return {
+        ...prev,
+        indiceActual: nuevoIndice,
+        src: prev.imagenes[nuevoIndice],
+      };
     });
   };
 
   const anteriorImagen = () => {
     setImagenModal((prev) => {
-      const nuevoIndice = (prev.indiceActual - 1 + prev.imagenes.length) % prev.imagenes.length;
-      return { ...prev, indiceActual: nuevoIndice, src: prev.imagenes[nuevoIndice] };
+      if (!prev.imagenes.length) return prev;
+
+      const nuevoIndice =
+        (prev.indiceActual - 1 + prev.imagenes.length) %
+        prev.imagenes.length;
+
+      return {
+        ...prev,
+        indiceActual: nuevoIndice,
+        src: prev.imagenes[nuevoIndice],
+      };
     });
   };
+
+  useEffect(() => {
+    if (!imagenModal.abierto) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        cerrarModalImagen();
+      }
+
+      if (
+        event.key === "ArrowRight" &&
+        imagenModal.imagenes.length > 1
+      ) {
+        siguienteImagen();
+      }
+
+      if (
+        event.key === "ArrowLeft" &&
+        imagenModal.imagenes.length > 1
+      ) {
+        anteriorImagen();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [imagenModal.abierto, imagenModal.imagenes.length]);
+
+  if (!servicio) return <NotFoundPage />;
 
   return (
     <>
       <Navbar />
 
-      {/* ====== HERO NUEVO (solo se cambió esta sección) ====== */}
-      <HeroServicio titulo={servicio.titulo} descripcion={servicio.descripcion} imagen={servicio.imagen} />
+      <HeroServicio
+        titulo={servicio.titulo}
+        descripcion={servicio.descripcion}
+        imagen={servicio.imagen}
+      />
 
       <ServicioNav />
 
-      {/* ====== CONTENIDO PRINCIPAL ====== */}
-      <div id="contenido" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Introducción */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-white rounded-lg p-8 shadow-sm border border-gray-200 mb-12"
+      <main
+        id="contenido"
+        className="mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-6 lg:px-8"
+      >
+        {/* INTRODUCCIÓN */}
+        <motion.section
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 24,
+                }
+          }
+          whileInView={
+            reduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{
+            duration: 0.65,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mb-12 overflow-hidden rounded-2xl border border-[#182C45]/10 bg-white p-6 shadow-[0_12px_34px_rgba(24,44,69,0.08)] sm:p-8"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1b4772] mb-4">
+          <div className="mb-4 h-0.5 w-12 bg-[#C9A66B]" />
+
+          <h2 className="mb-4 text-2xl font-extrabold text-[#182C45] md:text-3xl">
             {servicio.titulo01 || servicio.titulo}
           </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
+
+          <p className="text-base leading-8 text-slate-600 md:text-lg">
             {servicio.subtitulo01 || servicio.descripcion}
           </p>
-        </motion.div>
+        </motion.section>
 
-        {/* Categorías */}
-        <div className="space-y-12 mb-16">
+        {/* CATEGORÍAS */}
+        <div className="mb-16 space-y-10">
           {servicio.categorias?.map((categoria, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+            <motion.section
+              key={`${categoria.titulo}-${index}`}
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 30,
+                    }
+              }
+              whileInView={
+                reduceMotion
+                  ? undefined
+                  : {
+                      opacity: 1,
+                      y: 0,
+                    }
+              }
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.62,
+                delay: index * 0.05,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="overflow-hidden rounded-2xl border border-[#182C45]/10 bg-white p-5 shadow-[0_12px_34px_rgba(24,44,69,0.07)] sm:p-6"
             >
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Texto */}
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* TEXTO */}
                 <div>
-                  <h3 className="text-xl font-bold text-[#1b4772] mb-4 border-b-2 border-[#1b4772] pb-2">
-                    {categoria.titulo}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{categoria.descripcion}</p>
-                  <ul className="space-y-2">
+                  <div className="mb-4 flex items-center gap-3 border-b border-[#182C45]/10 pb-3">
+                    <span className="h-0.5 w-8 shrink-0 bg-[#C9A66B]" />
+
+                    <h3 className="text-xl font-extrabold text-[#182C45]">
+                      {categoria.titulo}
+                    </h3>
+                  </div>
+
+                  <p className="mb-5 leading-7 text-slate-600">
+                    {categoria.descripcion}
+                  </p>
+
+                  <ul className="space-y-3">
                     {categoria.ensayos.map((ensayo, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="w-1.5 h-1.5 bg-[#1b4772] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-gray-700">{ensayo}</span>
+                      <li
+                        key={`${ensayo}-${idx}`}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#C9A66B]" />
+
+                        <span className="leading-6 text-slate-700">
+                          {ensayo}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Galería */}
+                {/* GALERÍA */}
                 <div>
-                  <h4 className="text-lg font-semibold text-[#1b4772] mb-4">Galería</h4>
+                  <h4 className="mb-4 text-lg font-bold text-[#182C45]">
+                    Galería
+                  </h4>
+
                   <div className="space-y-4">
                     {categoria.imagenes.length > 0 && (
-                      <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        className="relative group cursor-pointer rounded-lg overflow-hidden border-2 border-gray-300"
-                        onClick={() => abrirModalImagen(categoria.imagenes[0], categoria.titulo, index)}
+                      <motion.button
+                        type="button"
+                        whileHover={
+                          reduceMotion
+                            ? undefined
+                            : {
+                                y: -3,
+                              }
+                        }
+                        whileTap={{ scale: 0.99 }}
+                        onClick={() =>
+                          abrirModalImagen(
+                            categoria.imagenes[0],
+                            categoria.titulo,
+                            index
+                          )
+                        }
+                        className="group relative block w-full cursor-pointer overflow-hidden rounded-xl border border-[#182C45]/15 bg-slate-100 text-left shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A66B]"
+                        aria-label={`Ampliar imagen principal de ${categoria.titulo}`}
                       >
-                        <div className="aspect-video relative">
+                        <div className="relative aspect-video">
                           <Image
                             src={categoria.imagenes[0]}
                             alt={`${categoria.titulo} - Imagen principal`}
                             fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            onError={(e) => {
-                              e.currentTarget.src =
-                                "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNMjAwIDE1MEwxNTAgMTAwSDI1MEwyMDAgMTUwWiIgZmlsbD0iIzk5QUFCQyIvPjx0ZXh0IHg9IjIwMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBlbmNvbnRyYWRhPC90ZXh0Pjwvc3ZnPg==";
-                            }}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                           />
+
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#182C45]/75 via-transparent to-transparent opacity-80" />
                         </div>
-                        <div className="absolute bottom-0 left-0 right-0 bg-[#1b4772] bg-opacity-60 text-white p-2 text-center text-sm">
-                          Imagen principal - Click para ampliar
+
+                        <div className="absolute inset-x-0 bottom-0 bg-[#182C45]/82 p-2.5 text-center text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#C9A66B] group-hover:text-[#182C45]">
+                          Imagen principal — clic para ampliar
                         </div>
-                      </motion.div>
+                      </motion.button>
                     )}
 
                     {categoria.imagenes.length > 1 && (
-                      <div className="grid grid-cols-3 gap-2">
-                        {categoria.imagenes.slice(1, 4).map((imagen, imgIndex) => (
-                          <motion.div
-                            key={imgIndex + 1}
-                            whileHover={{ scale: 1.05 }}
-                            className="relative group cursor-pointer rounded-md overflow-hidden border border-gray-200"
-                            onClick={() => abrirModalImagen(imagen, categoria.titulo, index)}
-                          >
-                            <div className="aspect-square relative">
-                              <Image
-                                src={imagen}
-                                alt={`${categoria.titulo} - Imagen ${imgIndex + 2}`}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                onError={(e) => {
-                                  e.currentTarget.src =
-                                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNTA gNTBMMzcuNSAzNy41SDYyLjVMNTAgNTBaIiBmaWxsPSIjOTlBQUJDIi8+PC9zdmc+";
-                                }}
-                              />
-                            </div>
-                          </motion.div>
-                        ))}
+                      <div className="grid grid-cols-3 gap-2.5">
+                        {categoria.imagenes
+                          .slice(1, 4)
+                          .map((imagen, imgIndex) => (
+                            <motion.button
+                              type="button"
+                              key={`${imagen}-${imgIndex}`}
+                              whileHover={
+                                reduceMotion
+                                  ? undefined
+                                  : {
+                                      y: -3,
+                                    }
+                              }
+                              whileTap={{ scale: 0.97 }}
+                              onClick={() =>
+                                abrirModalImagen(
+                                  imagen,
+                                  categoria.titulo,
+                                  index
+                                )
+                              }
+                              className="group relative cursor-pointer overflow-hidden rounded-lg border border-[#182C45]/12 bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A66B]"
+                              aria-label={`Ampliar imagen ${imgIndex + 2} de ${categoria.titulo}`}
+                            >
+                              <div className="relative aspect-square">
+                                <Image
+                                  src={imagen}
+                                  alt={`${categoria.titulo} - Imagen ${imgIndex + 2}`}
+                                  fill
+                                  sizes="(max-width: 768px) 33vw, 16vw"
+                                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+
+                                <div className="absolute inset-0 bg-[#182C45]/0 transition-colors duration-300 group-hover:bg-[#182C45]/15" />
+                              </div>
+                            </motion.button>
+                          ))}
                       </div>
                     )}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.section>
           ))}
         </div>
 
-        {/* Bloque de certificaciones + números */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="rounded-2xl p-6 md:p-10 mb-12 text-[#182C45]"
+        {/* CERTIFICACIONES */}
+        <motion.section
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 28,
+                }
+          }
+          whileInView={
+            reduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{
+            duration: 0.68,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mb-12 rounded-3xl bg-[#182C45]/[0.035] p-6 text-[#182C45] md:p-10"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-3 text-[#182C45]">CALIBRACIÓN CERTIFICADA E ISO</h3>
-          <p className="text-center text-sm md:text-base text-[#182C45]] mb-8">
-            En <strong>Casagrande</strong> garantizamos la precisión de cada ensayo. Nuestras{" "}
-            <strong>máquinas y equipos están calibrados</strong> por <strong>Pinzuar</strong>, laboratorio{" "}
-            <strong>Equipos acreditados por Pinzuar que esta acreditado por inacal </strong> bajo la norma <strong>ISO/IEC 17025</strong>. Esto asegura una{" "}
-            <strong>trazabilidad metrológica</strong> completa y resultados <strong>confiables, verificables y certificados.</strong>
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="rounded-xl p-6 border border-gray-200 bg-white shadow-sm">
-              <div className="font-semibold text-lg mb-3 text-[#182C45]">Trazabilidad Metrológica (INACAL)</div>
-              <ul className="space-y-2 text-[#182C45] text-sm md:text-base leading-relaxed">
-                <li>
-                  <strong>Equipos de campo y laboratorio</strong> calibrados por <strong>Pinzuar</strong>, laboratorio
-                  acreditado ante <strong>INACAL</strong>.
-                </li>
-                <li>
-                  Certificados con trazabilidad según la norma <strong>ISO/IEC 17025</strong>.
-                </li>
-                <li>
-                  Control de <strong>vigencia</strong>, número de certificado y verificación interna periódica.
-                </li>
-                <li>Registro digital y físico de calibraciones y mantenimiento preventivo.</li>
-                <li>Verificación previa a cada campaña o ensayo para garantizar la exactitud.</li>
-              </ul>
+          <div className="mx-auto mb-8 max-w-4xl text-center">
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <span className="h-0.5 w-10 bg-[#C9A66B]" />
+              <BadgeCheck className="h-6 w-6 text-[#C9A66B]" />
+              <span className="h-0.5 w-10 bg-[#C9A66B]" />
             </div>
 
-            <div className="rounded-xl p-6 border border-gray-200 bg-white shadow-sm">
-              <div className="font-semibold text-lg mb-3 text-[#182C45]">Sistema de Gestión Integrado</div>
-              <ul className="space-y-2 text-[#182C45] text-sm md:text-base leading-relaxed">
-                <li>
-                  <strong>ISO 9001:2015</strong> – Calidad: procesos estandarizados y mejora continua.
-                </li>
-                <li>
-                  <strong>ISO 14001:2015</strong> – Ambiental: compromiso con la sostenibilidad.
-                </li>
-                <li>
-                  <strong>ISO 37001:2016</strong> – Antisoborno: ética, transparencia y control contractual.
-                </li>
-                <li>Procedimientos normalizados (MTC, ASTM, NTP) para campo, laboratorio e informes.</li>
-                <li>Seguimiento de indicadores y auditorías internas de calidad y cumplimiento.</li>
+            <h3 className="text-2xl font-black text-[#182C45] md:text-3xl">
+              CALIBRACIÓN CERTIFICADA E ISO
+            </h3>
+
+            <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
+              En <strong className="text-[#182C45]">Casagrande</strong>{" "}
+              garantizamos la precisión de cada ensayo. Nuestros{" "}
+              <strong className="text-[#182C45]">
+                equipos de campo y laboratorio
+              </strong>{" "}
+              son calibrados por{" "}
+              <strong className="text-[#182C45]">Pinzuar</strong>,
+              proveedor acreditado ante{" "}
+              <strong className="text-[#182C45]">INACAL</strong>{" "}
+              bajo la norma{" "}
+              <strong className="text-[#182C45]">
+                ISO/IEC 17025
+              </strong>
+              . Esto respalda una trazabilidad metrológica completa y
+              resultados confiables, verificables y certificados.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <motion.div
+              whileHover={
+                reduceMotion
+                  ? undefined
+                  : {
+                      y: -4,
+                    }
+              }
+              className="rounded-2xl border border-[#182C45]/10 bg-white p-6 shadow-[0_10px_28px_rgba(24,44,69,0.07)]"
+            >
+              <div className="mb-4 h-0.5 w-10 bg-[#C9A66B]" />
+
+              <h4 className="mb-4 text-lg font-extrabold text-[#182C45]">
+                Trazabilidad Metrológica (INACAL)
+              </h4>
+
+              <ul className="space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+                {[
+                  "Equipos de campo y laboratorio calibrados por Pinzuar, laboratorio acreditado ante INACAL.",
+                  "Certificados con trazabilidad según la norma ISO/IEC 17025.",
+                  "Control de vigencia, número de certificado y verificación interna periódica.",
+                  "Registro digital y físico de calibraciones y mantenimiento preventivo.",
+                  "Verificación previa a cada campaña o ensayo para garantizar la exactitud.",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#C9A66B]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={
+                reduceMotion
+                  ? undefined
+                  : {
+                      y: -4,
+                    }
+              }
+              className="rounded-2xl border border-[#182C45]/10 bg-white p-6 shadow-[0_10px_28px_rgba(24,44,69,0.07)]"
+            >
+              <div className="mb-4 h-0.5 w-10 bg-[#C9A66B]" />
+
+              <h4 className="mb-4 text-lg font-extrabold text-[#182C45]">
+                Sistema de Gestión Integrado
+              </h4>
+
+              <ul className="space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+                {[
+                  "ISO 9001:2015 – Calidad: procesos estandarizados y mejora continua.",
+                  "ISO 14001:2015 – Ambiental: compromiso con la sostenibilidad.",
+                  "ISO 37001:2016 – Antisoborno: ética, transparencia y control contractual.",
+                  "Procedimientos normalizados MTC, ASTM y NTP para campo, laboratorio e informes.",
+                  "Seguimiento de indicadores y auditorías internas de calidad y cumplimiento.",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#C9A66B]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-8 justify-center">
-            <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
-              +130 ensayos calidad (suelos, rocas, concreto y asfalto)
-            </span>
-            <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
-              Los equipos esta calibrado por el provedor de Pinzuar que esta certificado por inacal 
-            </span>
-            <span className="px-3 py-1 rounded-full text-xs md:text-sm bg-[#182C45]/5 border border-[#182C45]/10 text-[#182C45]">
-              Resultados precisos y verificables
-            </span>
+          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+            {[
+              "+130 ensayos de calidad en suelos, rocas, concreto y asfalto",
+              "Equipos calibrados por Pinzuar con respaldo de INACAL",
+              "Resultados precisos y verificables",
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-[#C9A66B]/45 bg-[#C9A66B]/10 px-3 py-1.5 text-xs font-semibold text-[#182C45] md:text-sm"
+              >
+                {item}
+              </span>
+            ))}
           </div>
 
-          {servicio.numeros && <Numeros stats={servicio.numeros} />}
-        </motion.div>
+          {servicio.numeros && (
+            <Numeros stats={servicio.numeros} />
+          )}
+        </motion.section>
 
-        {/* Contacto */}
-        <div className=" ">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-gray-50 rounded-3xl p-6 md:p-12 border border-gray-200 shadow-xl"
-          >
-            <div className="grid md:grid-cols-2 gap-8 md:gap-16">
-              <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-[#1b4772] mb-6">Contáctanos</h3>
-                <div className="space-y-4">
-                  <p className="flex items-center text-lg">
-                    <FaPhoneAlt className="text-[#1b4772] w-5 h-5 mr-4" />
-                    +51 945 513 323
-                  </p>
-                  <p className="flex items-center text-[10px] md:text-lg">
-                    <FaEnvelope className="text-[#1b4772] w-5 h-5 mr-4" />
+        {/* CONTACTO */}
+        <motion.section
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 28,
+                }
+          }
+          whileInView={
+            reduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.68,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="overflow-hidden rounded-3xl bg-[#182C45] shadow-[0_22px_55px_rgba(24,44,69,0.2)]"
+        >
+          <div className="grid md:grid-cols-2">
+            <div className="p-6 sm:p-8 md:p-12">
+              <div className="mb-5 h-0.5 w-12 bg-[#C9A66B]" />
+
+              <h3 className="mb-7 text-2xl font-extrabold text-white lg:text-3xl">
+                Contáctanos
+              </h3>
+
+              <div className="space-y-5">
+                <a
+                  href="tel:+51945513323"
+                  className="group flex items-center gap-4 text-base text-white/85 transition-colors hover:text-[#C9A66B] sm:text-lg"
+                >
+                  <FaPhoneAlt className="h-5 w-5 shrink-0 text-[#C9A66B] transition-transform duration-300 group-hover:scale-110" />
+                  <span>+51 945 513 323</span>
+                </a>
+
+                <a
+                  href="mailto:comercial@casagrandegeotecnia.com.pe"
+                  className="group flex items-start gap-4 text-base text-white/85 transition-colors hover:text-[#C9A66B] sm:text-lg"
+                >
+                  <FaEnvelope className="mt-1 h-5 w-5 shrink-0 text-[#C9A66B] transition-transform duration-300 group-hover:scale-110" />
+
+                  <span className="break-all sm:break-normal">
                     comercial@casagrandegeotecnia.com.pe
-                  </p>
-                  <p className="flex items-center text-lg">
-                    <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
-                    Lun-Vie: 8:00 AM - 6:00 PM
-                  </p>
-              
-                  <p className="flex items-center text-lg">
-                    <FaClock className="text-[#1b4772] w-5 h-5 mr-4" />
-                    Sab: 8:30 AM - 2:00 PM
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </a>
 
-              <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-8 md:pl-16 md:pt-0">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">Solicita un Servicio</h3>
-                <div className="space-y-4">
+                <p className="flex items-center gap-4 text-base text-white/85 sm:text-lg">
+                  <FaClock className="h-5 w-5 shrink-0 text-[#C9A66B]" />
+                  <span>Lun - Vie: 8:00 AM - 6:00 PM</span>
+                </p>
+
+                <p className="flex items-center gap-4 text-base text-white/85 sm:text-lg">
+                  <FaClock className="h-5 w-5 shrink-0 text-[#C9A66B]" />
+                  <span>Sáb: 8:30 AM - 2:00 PM</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 bg-white/[0.045] p-6 sm:p-8 md:border-l md:border-t-0 md:p-12">
+              <div className="mb-5 h-0.5 w-12 bg-[#C9A66B]" />
+
+              <h3 className="mb-7 text-2xl font-extrabold text-white lg:text-3xl">
+                Solicita un Servicio
+              </h3>
+
+              <div className="space-y-4">
+                <Button
+                  asChild
+                  className="h-14 w-full rounded-xl bg-[#C9A66B] px-6 text-base font-extrabold text-[#182C45] shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:text-lg"
+                >
                   <a
                     href="https://wa.me/51945513323?text=Hola,%20quiero%20solicitar%20una%20cotización%20de%20sus%20servicios."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button className="md:w-full cursor-pointer bg-[#1b4772] hover:bg-[#1a242f] text-white py-6 text-lg rounded-xl shadow-lg">
-                      Solicitar cotización
-                    </Button>
+                    Solicitar cotización
                   </a>
-                </div>
-                <div className="pt-2">
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-14 w-full rounded-xl border-white/45 bg-transparent px-6 text-base font-extrabold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-[#182C45] sm:text-lg"
+                >
                   <a
                     href="https://wa.me/51945513323?text=Hola,%20quisiera%20agendar%20una%20visita%20técnica."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button
-                      variant="outline"
-                      className="md:w-full cursor-pointer border-[#1b4772] text-[#1b4772] hover:bg-gray-100 py-6 text-lg rounded-xl"
-                    >
-                      Agendar visita técnica
-                    </Button>
+                    Agendar visita técnica
                   </a>
-                </div>
+                </Button>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </div>
+          </div>
+        </motion.section>
+      </main>
 
-      {/* Modal imágenes */}
-      {imagenModal.abierto && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4" onClick={cerrarModalImagen}>
+      {/* MODAL DE IMÁGENES */}
+      <AnimatePresence>
+        {imagenModal.abierto && (
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-full max-w-7xl max-h-[90vh] flex flex-col items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#08111C]/95 p-4 backdrop-blur-sm"
+            onClick={cerrarModalImagen}
+            role="dialog"
+            aria-modal="true"
+            aria-label={imagenModal.titulo}
           >
-            <button
-              onClick={cerrarModalImagen}
-              className="absolute -top-14 right-0 text-white cursor-pointer hover:text-blue-300 transition-colors z-10 bg-black/60 hover:bg-black/80 rounded-full p-2 backdrop-blur-md"
+            <motion.div
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      scale: 0.94,
+                      y: 20,
+                    }
+              }
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.96,
+                y: 12,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative flex max-h-[92vh] w-full max-w-7xl flex-col items-center justify-center"
+              onClick={(event) => event.stopPropagation()}
             >
-              <X className="w-7 h-7" />
-            </button>
+              <button
+                type="button"
+                onClick={cerrarModalImagen}
+                className="absolute -top-12 right-0 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors duration-300 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                aria-label="Cerrar galería"
+              >
+                <X className="h-6 w-6" />
+              </button>
 
-            <div className="relative w-full h-[80vh] bg-black rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src={imagenModal.src}
-                alt={imagenModal.titulo}
-                fill
-                className="object-contain"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNDAwIDMwMEwzMDAgMjAwSDUwMEw0MDAgMzAwWiIgZmlsbD0iIzk5QUFCQyIvPjx0ZXh0IHg9IjQwMCIgeT0iMzYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2QzczODAiPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pjwvc3ZnPg==";
-                }}
-              />
-
-              {imagenModal.imagenes.length > 1 && (
-                <>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      anteriorImagen();
+              <div className="relative h-[78vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={imagenModal.src}
+                    initial={
+                      reduceMotion
+                        ? false
+                        : {
+                            opacity: 0,
+                            scale: 0.985,
+                          }
+                    }
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
                     }}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all duration-200"
-                    aria-label="Anterior imagen"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      siguienteImagen();
+                    exit={{
+                      opacity: 0,
+                      scale: 0.99,
                     }}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all duration-200"
-                    aria-label="Siguiente imagen"
+                    transition={{ duration: 0.25 }}
+                    className="absolute inset-0"
                   >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
+                    <Image
+                      src={imagenModal.src}
+                      alt={imagenModal.titulo}
+                      fill
+                      sizes="100vw"
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </AnimatePresence>
 
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-1.5 rounded-full text-sm tracking-wide">
-                    {imagenModal.indiceActual + 1} / {imagenModal.imagenes.length}
-                  </div>
-                </>
-              )}
-            </div>
+                {imagenModal.imagenes.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        anteriorImagen();
+                      }}
+                      className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/75 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                      aria-label="Imagen anterior"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
 
-            <div className="mt-4 text-center">
-              <h4 className="text-white font-semibold text-lg">{imagenModal.titulo}</h4>
-            </div>
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        siguienteImagen();
+                      }}
+                      className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#182C45]/75 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#C9A66B] hover:bg-[#C9A66B] hover:text-[#182C45]"
+                      aria-label="Imagen siguiente"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-[#182C45]/80 px-4 py-1.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm">
+                      {imagenModal.indiceActual + 1} /{" "}
+                      {imagenModal.imagenes.length}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <h4 className="mt-4 text-center text-lg font-semibold text-white">
+                {imagenModal.titulo}
+              </h4>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </AnimatePresence>
 
       <Footer />
     </>

@@ -99,7 +99,7 @@ export default function HeroServicios() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-[#1b4772]/30" />
+          <div className="absolute inset-0 bg-[#1b4772]/60" />
         </motion.div>
       </AnimatePresence>
 
@@ -126,7 +126,7 @@ export default function HeroServicios() {
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-6xl font-semibold tracking-tight text-white lg:text-[100px] "
+                className="text-6xl font-black tracking-tight text-white lg:text-[90px] "
               >
                 {activeSlide.title}
               </motion.h2>

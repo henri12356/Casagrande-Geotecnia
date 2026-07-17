@@ -26,7 +26,7 @@ const slidesData: {
     title: "El Talento Detrás de Cada Logro",
     subtitle:
       "Nuestro equipo humano es el motor de cada logro, combinando experiencia y dedicación para alcanzar la excelencia en cada proyecto.",
-    imageSrc: "/hero04.webp",
+    imageSrc: "/hero01.webp",
     buttonText: "Equipo",
     buttonLink: "/equipo",
   },

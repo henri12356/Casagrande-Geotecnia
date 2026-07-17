@@ -58,6 +58,49 @@ const certificados: CertItem[] = [
   },
 ];
 
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 60 : -60,
+    opacity: 0,
+    scale: 0.98,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 60 : -60,
+    opacity: 0,
+    scale: 0.98,
+  }),
+};
+
+const contentVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  },
+};
+
 export default function CarouselCertificados() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -74,58 +117,46 @@ export default function CarouselCertificados() {
   }, [total]);
 
   const goToSlide = (i: number) => {
+    if (i === index) return;
+
     setDirection(i > index ? 1 : -1);
     setIndex(i);
   };
 
-  // Soporte con teclado (flechas)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") next();
       if (e.key === "ArrowLeft") prev();
     };
+
     window.addEventListener("keydown", onKey);
+
     return () => window.removeEventListener("keydown", onKey);
   }, [next, prev]);
 
-  // Variantes para animación más suave
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 50 : -50,
-      opacity: 0,
-      scale: 0.98,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 50 : -50,
-      opacity: 0,
-      scale: 0.98,
-    })
-  };
-
   return (
     <section
-      className="px-4 sm:px-6 lg:px-8 font-sans md:py-40 py-5 overflow-hidden"
+      className="overflow-hidden px-4 py-5 font-sans sm:px-6 md:py-40 lg:px-8"
       aria-label="Carrusel de certificaciones"
     >
-      <div className="2xl:max-w-7xl max-w-6xl mx-auto relative">
-        {/* Contenedor para el área de drag */}
+      <div className="relative mx-auto max-w-6xl 2xl:max-w-7xl">
         <motion.div
           className="relative"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.1}
-          onDragEnd={(e, { offset, velocity }) => {
+          onDragEnd={(_event, { offset, velocity }) => {
             const swipe = offset.x * velocity.x;
+
             if (swipe < -4000) next();
             else if (swipe > 4000) prev();
           }}
         >
-          <AnimatePresence mode="popLayout" initial={false} custom={direction}>
+          <AnimatePresence
+            mode="popLayout"
+            initial={false}
+            custom={direction}
+          >
             <motion.div
               key={certificados[index].id}
               custom={direction}
@@ -134,112 +165,191 @@ export default function CarouselCertificados() {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 400, damping: 40 },
-                opacity: { duration: 0.4 },
-                scale: { duration: 0.4 }
+                x: {
+                  type: "spring",
+                  stiffness: 320,
+                  damping: 34,
+                },
+                opacity: {
+                  duration: 0.4,
+                },
+                scale: {
+                  duration: 0.4,
+                },
               }}
-              className="flex flex-col-reverse md:flex-row items-center gap-6"
+              className="flex flex-col-reverse items-center gap-6 md:flex-row"
               aria-live="polite"
             >
               {/* Texto */}
-              <div className="w-full lg:w-1/2 text-center lg:text-left">
-                <div className="text-sm font-semibold text-[#1b4772] mb-2 tracking-wide">
+              <motion.div
+                variants={contentVariants}
+                initial="hidden"
+                animate="visible"
+                className="w-full text-center lg:w-1/2 lg:text-left"
+              >
+                <motion.div
+                  variants={itemVariants}
+                  className="mb-2 text-sm font-semibold tracking-wide text-[#C9A66B]"
+                >
                   EMPRESA CERTIFICADA
-                </div>
+                </motion.div>
 
-                <h2 className="text-2xl lg:text-3xl font-black text-[#182C45] mb-3">
+                <motion.h2
+                  variants={itemVariants}
+                  className="mb-3 text-2xl font-black text-[#182C45] lg:text-3xl"
+                >
                   {certificados[index].title}
                   <br />
-                  <span className="text-xl lg:text-2xl font-bold text-[#182C45]">
+
+                  <span className="text-xl font-bold text-[#C9A66B] lg:text-2xl">
                     {certificados[index].subtitle}
                   </span>
-                </h2>
+                </motion.h2>
 
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {certificados[index].description}
-                </p>
-
-                <ul className="text-left text-[#182C45] space-y-2 mb-6 pl-4 lg:pl-0">
-                  {certificados[index].services.map((s, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="mr-2  text-[#1b4772]" aria-hidden>
-                        ✔
-                      </span>
-                      <span>{s}</span>
-                    </li>
-                  ))}
-                </ul>
-
-            
-
-                <Link
-                  href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.p
+                  variants={itemVariants}
+                  className="mb-4 leading-relaxed text-slate-600"
                 >
-                  <Button
-                    className="bg-[#182C45] hover:bg-[#C9A66B] text-white px-14 py-7 text-[16px] font-bold rounded-lg shadow-md cursor-pointer"
-                    aria-label={`Abrir certificado: ${certificados[index].title}`}
+                  {certificados[index].description}
+                </motion.p>
+
+                <motion.ul
+                  variants={contentVariants}
+                  className="mb-6 space-y-2 pl-4 text-left text-[#182C45] lg:pl-0"
+                >
+                  {certificados[index].services.map((service, serviceIndex) => (
+                    <motion.li
+                      key={serviceIndex}
+                      variants={itemVariants}
+                      className="flex items-start"
+                    >
+                      <motion.span
+                        aria-hidden
+                        whileHover={{ scale: 1.2 }}
+                        className="mr-2 text-[#C9A66B]"
+                      >
+                        ✔
+                      </motion.span>
+
+                      <span>{service}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {certificados[index].id === 4 ? "Ver más" : "Ver certificado"}
-                  </Button>
-                </Link>
-              </div>
+                    <Button
+                      className="cursor-pointer rounded-lg bg-[#182C45] px-14 py-7 text-[16px] font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C9A66B]"
+                      aria-label={`Abrir certificado: ${certificados[index].title}`}
+                    >
+                      {certificados[index].id === 4
+                        ? "Ver más"
+                        : "Ver certificado"}
+                    </Button>
+                  </Link>
+                </motion.div>
+              </motion.div>
 
               {/* Imagen */}
-              <div className="w-full lg:w-1/2 flex justify-center mb-6 lg:mb-0">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.94,
+                  rotate: direction > 0 ? 1.5 : -1.5,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: 0,
+                }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="mb-6 flex w-full justify-center lg:mb-0 lg:w-1/2"
+              >
                 <Link
                   href="https://www.iafcertsearch.org/certified-entity/nIQz372OiZZnlhjFuOw0YUjA"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Abrir detalle del certificado actual en IAF CertSearch"
+                  className="group"
                 >
-                  <Image
-                    src={certificados[index].imageSrc}
-                    alt={`Certificado: ${certificados[index].title}`}
-                    width={460}
-                    height={320}
-                    sizes="(max-width: 1024px) 90vw, 460px"
-                    loading="lazy"
-                   
-                    className="rounded-lg shadow-md object-contain"
-                  />
+                  <motion.div
+                    whileHover={{
+                      y: -5,
+                      scale: 1.02,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <Image
+                      src={certificados[index].imageSrc}
+                      alt={`Certificado: ${certificados[index].title}`}
+                      width={460}
+                      height={320}
+                      sizes="(max-width: 1024px) 90vw, 460px"
+                      loading="lazy"
+                      className="rounded-lg object-contain shadow-md transition-shadow duration-300 group-hover:shadow-xl"
+                    />
+                  </motion.div>
                 </Link>
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </motion.div>
 
         {/* Botones de navegación */}
-        <div className="absolute top-1/2 left-[-60px] -translate-y-1/2 max-lg:hidden">
-          <button
+        <div className="absolute left-[-60px] top-1/2 hidden -translate-y-1/2 lg:block">
+          <motion.button
             aria-label="Anterior"
             onClick={prev}
-            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 rounded-full shadow transition cursor-pointer"
+            whileHover={{
+              scale: 1.08,
+              x: -2,
+            }}
+            whileTap={{ scale: 0.94 }}
+            className="cursor-pointer rounded-full bg-[#182C45] p-2 text-white shadow transition-colors duration-300 hover:bg-[#C9A66B]"
           >
             <ChevronLeft size={24} />
-          </button>
+          </motion.button>
         </div>
 
-        <div className="absolute top-1/2 right-[10px] -translate-y-1/2 max-lg:hidden">
-          <button
+        <div className="absolute right-[10px] top-1/2 hidden -translate-y-1/2 lg:block">
+          <motion.button
             aria-label="Siguiente"
             onClick={next}
-            className="bg-[#1b4772] hover:bg-gray-900 text-white p-2 rounded-full shadow transition cursor-pointer"
+            whileHover={{
+              scale: 1.08,
+              x: 2,
+            }}
+            whileTap={{ scale: 0.94 }}
+            className="cursor-pointer rounded-full bg-[#182C45] p-2 text-white shadow transition-colors duration-300 hover:bg-[#C9A66B]"
           >
             <ChevronRight size={24} />
-          </button>
+          </motion.button>
         </div>
 
         {/* Indicadores */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="mt-6 flex justify-center space-x-2">
           {certificados.map((item, i) => (
-            <button
+            <motion.button
               key={item.id}
               aria-label={`Ir a la diapositiva ${i + 1}: ${item.title}`}
               onClick={() => goToSlide(i)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 p-2 max-md:hidden cursor-pointer ${
-                i === index ? "w-6 bg-[#182C45]" : "bg-gray-400"
+              whileHover={{ scale: 1.12 }}
+              whileTap={{ scale: 0.92 }}
+              className={`hidden h-2 w-2 cursor-pointer rounded-full p-2 transition-all duration-300 md:block ${
+                i === index
+                  ? "w-6 bg-[#182C45]"
+                  : "bg-[#C9A66B]/60 hover:bg-[#C9A66B]"
               }`}
             />
           ))}
