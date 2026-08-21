@@ -52,7 +52,7 @@ const serviciosData = [
   {
     id: 5,
     imageSrc: "/servicios/hidrologia.webp",
-    title: "Estudios Hidrológicos e Hidrogeológicos",
+    title: "Estudios Hidrogeológicos",
     description:
       "Estudio y monitoreo del agua subterránea, interacción con suelos y estructuras, garantizando seguridad hídrica.",
     href: "/servicios/hidrogeologia",
@@ -73,14 +73,14 @@ const serviciosData = [
       "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
     href: "/servicios/mecanica-de-suelos",
   },
-  {
-    id: 8,
-    imageSrc:"/evaluacion/evalucion01.webp",
-    title: "Evaluación Estructural",
-    description:
-      "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural, garantizando seguridad y cumplimiento normativo.",
-    href: "/servicios/evaluacion-estructural",
-  },
+  // {
+  //   id: 8,
+  //   imageSrc:"/evaluacion/evalucion01.webp",
+  //   title: "Evaluación Estructural",
+  //   description:
+  //     "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural, garantizando seguridad y cumplimiento normativo.",
+  //   href: "/servicios/evaluacion-estructural",
+  // },
 ];
 
 const headingVariants: Variants = {

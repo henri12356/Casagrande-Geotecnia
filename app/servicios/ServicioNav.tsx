@@ -54,7 +54,7 @@ const serviciosNav: NavItem[] = [
   },
   {
     slug: "hidrogeologia",
-    titulo: "Hidrología e Hidrogeología",
+    titulo: "Hidrogeología",
     icon: <Waves className="w-4 h-4" />,
   },
   {
@@ -77,11 +77,11 @@ const serviciosNav: NavItem[] = [
     titulo: "Control de Calidad en Obras",
     icon: <ShieldCheck className="w-4 h-4" />,
   },
-  {
-    slug: "evaluacion-estructural",
-    titulo: "Evaluación Estructural",
-    icon: <Building2 className="w-4 h-4" />,
-  },
+  // {
+  //   slug: "evaluacion-estructural",
+  //   titulo: "Evaluación Estructural",
+  //   icon: <Building2 className="w-4 h-4" />,
+  // },
 ];
 
 const containerVariants: Variants = {

@@ -1,0 +1,67 @@
+{
+  "slug": "evaluacion-estructural",
+  "titulo": "Evaluación Estructural",
+  "descripcion": "Servicio integral para diagnosticar, verificar y rehabilitar estructuras existentes ante cambio de uso, deterioro, ampliaciones o nuevas demandas operativas.",
+  "contenido": "Casagrande realiza evaluaciones estructurales completas para edificaciones e infraestructura, aplicando patología estructural, auscultación no destructiva, pruebas de carga y análisis técnico para determinar la seguridad, capacidad resistente y desempeño de las estructuras existentes.",
+  "imagen": "/laboratorio/laboratorio10.webp",
+  "titulo01": "Evaluaciones Estructurales Integrales",
+  "subtitulo01": "Diagnóstico, auscultación y verificación estructural para determinar seguridad y capacidad resistente.",
+  "categorias": [
+    {
+      "titulo": "Diagnóstico, Auscultación y Pruebas de Carga",
+      "imagenes": [
+        "/evaluacion/evalucion01.webp",
+        "/evaluacion/evalucion02.webp",
+        "/evaluacion/evalucion03.webp"
+      ],
+      "ensayos": [
+        "Inspección visual detallada y levantamiento de fisuras, deformaciones y desplomes.",
+        "Evaluación de elementos estructurales: losas, vigas, columnas y cimentaciones.",
+        "Pacometría y georradar (GPR) para detección de armaduras y medición de recubrimientos.",
+        "Ensayos no destructivos (ultrasonido – UPV, impacto-eco, esclerometría, pull-off).",
+        "Extracción de testigos de concreto para verificación de resistencia.",
+        "Pruebas de carga estáticas en losas, vigas y elementos estructurales.",
+        "Evaluación de integridad de pilotes mediante PIT o CSL cuando corresponda.",
+        "Monitoreo de deformaciones con LVDT y strain gauges.",
+        "Clasificación de severidad del daño y determinación de aptitud de servicio."
+      ],
+      "descripcion": "Evaluación integral del estado estructural mediante inspección técnica, ensayos no destructivos y pruebas de carga para determinar condición, capacidad resistente y seguridad en servicio."
+    },
+    {
+      "titulo": "Evaluación Estructural ",
+      "imagenes": [
+        "/evaluacion/evalucion04.webp",
+        "/evaluacion/evalucion05.webp"
+      ],
+      "ensayos": [
+        "Inspección visual y levantamiento de fisuras, deformaciones y desplomes.",
+        "Ensayos no destructivos (UPV, esclerometría, pull-off) y extracción de testigos de concreto.",
+        "Pruebas de carga en losas, vigas y elementos estructurales.",
+        "Evaluación de asentamientos diferenciales y su efecto en la estructura.",
+        "Verificación de cumplimiento de normas y capacidad de la estructura frente a nuevas cargas.",
+        "Informe técnico con conclusiones sobre seguridad, aptitud de servicio y recomendaciones."
+      ],
+      "descripcion": "Diagnóstico estructural para verificar el estado real de edificaciones existentes y determinar su seguridad, capacidad resistente y condiciones de servicio frente a nuevas demandas estructurales."
+    }
+  ],
+  "puntos": [
+    "Equipos calibrados y certificados por proveedores acreditados ante INACAL.",
+    "Ensayos realizados bajo normas ASTM, ACI y normativa peruana vigente.",
+    "Personal especializado en patología y diagnóstico estructural.",
+    "Resultados trazables para toma de decisiones técnicas.",
+    "Integración con estudios geotécnicos y de materiales."
+  ],
+  "detalles": [
+    "Plazos típicos: 10–20 días según complejidad del proyecto.",
+    "Incluye inspección técnica, END y pruebas de carga según requerimiento.",
+    "Informe técnico con diagnóstico estructural y recomendaciones.",
+    "Evaluación de seguridad estructural y condiciones de servicio.",
+    "Cobertura nacional en edificaciones, puentes y obras civiles."
+  ],
+  "numeros": [
+    { "id": 1, "label": "ESTRUCTURAS EVALUADAS", "value": 650, "suffix": "+" },
+    { "id": 2, "label": "PRUEBAS DE CARGA EJECUTADAS", "value": 240, "suffix": "+" },
+    { "id": 3, "label": "ELEMENTOS AUSCULTADOS (END)", "value": 4800, "suffix": "+" },
+    { "id": 4, "label": "REDUCCIÓN DE RIESGO PROM.", "value": 85, "suffix": "%" }
+  ]
+}

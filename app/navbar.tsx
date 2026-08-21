@@ -64,13 +64,13 @@ const baseNavLinks: NavLink[] = [
       { href: "/servicios/geomecanica", label: "Geomecánica" },
       { href: "/servicios/ensayo-de-campo", label: "Ensayos de campo" },
       { href: "/servicios/mecanica-de-suelos", label: "Mecánica de suelos" },
-      {
-        href: "/servicios/evaluacion-estructural",
-        label: "Evaluación estructural",
-      },
+      // {
+      //   href: "/servicios/evaluacion-estructural",
+      //   label: "Evaluación estructural",
+      // },
       {
         href: "/servicios/hidrogeologia",
-        label: "Hidrología e hidrogeología",
+        label: "Hidrogeología",
       },
       {
         href: "/servicios/control-de-calidad",

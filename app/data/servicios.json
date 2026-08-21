@@ -330,35 +330,13 @@
 
 {
   "slug": "hidrogeologia",
-  "titulo": "Estudios Hidrológicos e Hidrogeológicos",
+  "titulo": "Estudios Hidrogeológicos",
   "descripcion": "Evaluación integral del recurso hídrico superficial y subterráneo para una gestión técnica y sostenible del agua en proyectos de ingeniería.",
   "contenido": "Desarrollamos estudios de hidrología, hidrogeología e ingeniería hidráulica orientados a analizar el comportamiento del agua en superficie y subsuelo, su disponibilidad, calidad y relación con las obras civiles. Integramos monitoreo, modelamiento numérico y diseño hidráulico para garantizar una gestión eficiente, segura y ambientalmente responsable del recurso hídrico en proyectos de infraestructura, minería y desarrollo urbano.",
   "imagen": "/hidrologia/hidrologia05.webp",
-  "titulo01": "Estudios Hidrológicos e Hidrogeológicos Especializados",
+  "titulo01": "Estudios Hidrogeológicos Especializados",
   "subtitulo01": "Monitoreo, modelamiento numérico y diseño hidráulico orientados a la gestión sostenible del agua superficial y subterránea en proyectos de ingeniería.",
   "categorias": [
-    {
-      "titulo": "Hidrología e Ingeniería Hidráulica",
-      "imagenes": [
-        "/hidrologia/hidrologia02.webp",
-        "/hidrologia/hidrologia06.webp"
-      ],
-      "ensayos": [
-        "Estudios hidrológicos y climatológicos de cuencas.",
-        "Evaluación de avenidas, sequías y drenaje urbano.",
-        "Estudios de caudal ecológico y disponibilidad hídrica.",
-        "Batimetría y levantamientos hidrométricos.",
-        "Aforo de caudales líquidos y sólidos en cauces y canales.",
-        "Balances hídricos en pilas de lixiviación, relaves y operaciones mineras.",
-        "Simulación hidráulica 1D y 2D (HEC-RAS, Flow2D).",
-        "Modelamiento hidrológico de cuencas (WMS).",
-        "Modelamiento de redes hidráulicas y sistemas de distribución (WaterCAD, EPANET).",
-        "Diseño de estructuras hidráulicas: pozas, drenajes, canales y alcantarillas.",
-        "Diseño de sistemas de bombeo, subdrenaje y control de caudales.",
-        "Planes de manejo integral de drenaje superficial."
-      ],
-      "descripcion": "Estudios técnicos de hidrología e hidráulica orientados al diseño, control y aprovechamiento del recurso hídrico superficial en proyectos civiles, mineros y ambientales."
-    },
     {
       "titulo": "Hidrogeología y Calidad del Agua",
       "imagenes": [
@@ -605,7 +583,7 @@
   "categorias": [
     {
       "titulo": "Supervisión Técnica Especializada",
-      "imagenes": ["/control/control01.webp"],
+      "imagenes": ["/control/control01.webp","/control/control04.webp"],
       "ensayos": [
         "Supervisión geotécnica y de cimentaciones en obra.",
         "Verificación de procesos constructivos y control de ejecución.",
@@ -653,17 +631,8 @@
         "Evaluación del comportamiento del suelo bajo carga inicial."
       ],
       "descripcion": "Control geotécnico orientado a garantizar el adecuado desempeño estructural de pavimentos mediante la evaluación de la subrasante."
-    },
-    {
-      "titulo": "Control Hidrogeotécnico",
-      "imagenes": ["/control/control01.webp"],
-      "ensayos": [
-        "Supervisión de drenajes y subdrenes.",
-        "Control de abatimiento de nivel freático.",
-        "Evaluación de filtraciones en excavaciones."
-      ],
-      "descripcion": "Supervisión de condiciones hidrogeológicas que puedan afectar la estabilidad de excavaciones, cimentaciones y obras de infraestructura."
     }
+    
   ],
   "puntos": [
     "Supervisión geotécnica y control de calidad durante la ejecución de obra.",
@@ -685,74 +654,7 @@
     { "id": 3, "label": "METROS CÚBICOS CONTROLADOS", "value": 100000, "suffix": "+" },
     { "id": 4, "label": "CLIENTES SATISFECHOS", "value": 97, "suffix": "%" }
   ]
-},
-
-
-{
-  "slug": "evaluacion-estructural",
-  "titulo": "Evaluación Estructural",
-  "descripcion": "Servicio integral para diagnosticar, verificar y rehabilitar estructuras existentes ante cambio de uso, deterioro, ampliaciones o nuevas demandas operativas.",
-  "contenido": "Casagrande realiza evaluaciones estructurales completas para edificaciones e infraestructura, aplicando patología estructural, auscultación no destructiva, pruebas de carga y análisis técnico para determinar la seguridad, capacidad resistente y desempeño de las estructuras existentes.",
-  "imagen": "/laboratorio/laboratorio10.webp",
-  "titulo01": "Evaluaciones Estructurales Integrales",
-  "subtitulo01": "Diagnóstico, auscultación y verificación estructural para determinar seguridad y capacidad resistente.",
-  "categorias": [
-    {
-      "titulo": "Diagnóstico, Auscultación y Pruebas de Carga",
-      "imagenes": [
-        "/evaluacion/evalucion01.webp",
-        "/evaluacion/evalucion02.webp",
-        "/evaluacion/evalucion03.webp"
-      ],
-      "ensayos": [
-        "Inspección visual detallada y levantamiento de fisuras, deformaciones y desplomes.",
-        "Evaluación de elementos estructurales: losas, vigas, columnas y cimentaciones.",
-        "Pacometría y georradar (GPR) para detección de armaduras y medición de recubrimientos.",
-        "Ensayos no destructivos (ultrasonido – UPV, impacto-eco, esclerometría, pull-off).",
-        "Extracción de testigos de concreto para verificación de resistencia.",
-        "Pruebas de carga estáticas en losas, vigas y elementos estructurales.",
-        "Evaluación de integridad de pilotes mediante PIT o CSL cuando corresponda.",
-        "Monitoreo de deformaciones con LVDT y strain gauges.",
-        "Clasificación de severidad del daño y determinación de aptitud de servicio."
-      ],
-      "descripcion": "Evaluación integral del estado estructural mediante inspección técnica, ensayos no destructivos y pruebas de carga para determinar condición, capacidad resistente y seguridad en servicio."
-    },
-    {
-      "titulo": "Evaluación Estructural ",
-      "imagenes": [
-        "/evaluacion/evalucion04.webp",
-        "/evaluacion/evalucion05.webp"
-      ],
-      "ensayos": [
-        "Inspección visual y levantamiento de fisuras, deformaciones y desplomes.",
-        "Ensayos no destructivos (UPV, esclerometría, pull-off) y extracción de testigos de concreto.",
-        "Pruebas de carga en losas, vigas y elementos estructurales.",
-        "Evaluación de asentamientos diferenciales y su efecto en la estructura.",
-        "Verificación de cumplimiento de normas y capacidad de la estructura frente a nuevas cargas.",
-        "Informe técnico con conclusiones sobre seguridad, aptitud de servicio y recomendaciones."
-      ],
-      "descripcion": "Diagnóstico estructural para verificar el estado real de edificaciones existentes y determinar su seguridad, capacidad resistente y condiciones de servicio frente a nuevas demandas estructurales."
-    }
-  ],
-  "puntos": [
-    "Equipos calibrados y certificados por proveedores acreditados ante INACAL.",
-    "Ensayos realizados bajo normas ASTM, ACI y normativa peruana vigente.",
-    "Personal especializado en patología y diagnóstico estructural.",
-    "Resultados trazables para toma de decisiones técnicas.",
-    "Integración con estudios geotécnicos y de materiales."
-  ],
-  "detalles": [
-    "Plazos típicos: 10–20 días según complejidad del proyecto.",
-    "Incluye inspección técnica, END y pruebas de carga según requerimiento.",
-    "Informe técnico con diagnóstico estructural y recomendaciones.",
-    "Evaluación de seguridad estructural y condiciones de servicio.",
-    "Cobertura nacional en edificaciones, puentes y obras civiles."
-  ],
-  "numeros": [
-    { "id": 1, "label": "ESTRUCTURAS EVALUADAS", "value": 650, "suffix": "+" },
-    { "id": 2, "label": "PRUEBAS DE CARGA EJECUTADAS", "value": 240, "suffix": "+" },
-    { "id": 3, "label": "ELEMENTOS AUSCULTADOS (END)", "value": 4800, "suffix": "+" },
-    { "id": 4, "label": "REDUCCIÓN DE RIESGO PROM.", "value": 85, "suffix": "%" }
-  ]
 }
+
+
 ]

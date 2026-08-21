@@ -808,9 +808,9 @@ const ServicioPage = ({ params }: PageProps) => {
             ))}
           </div>
 
-          {servicio.numeros && (
+          {/* {servicio.numeros && (
             <Numeros stats={servicio.numeros} />
-          )}
+          )} */}
         </motion.section>
 
         {/* CONTACTO */}

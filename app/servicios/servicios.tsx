@@ -63,16 +63,16 @@ const servicios = [
       "Determinamos con precisión las propiedades del terreno para cimentaciones seguras, pavimentos duraderos y obras de infraestructura confiables.",
     imagen: "/mecanica/mecanica01.webp",
   },
-  {
-    slug: "evaluacion-estructural",
-    titulo: "Evaluación estructural",
-    descripcion:
-      "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural.",
-    imagen: "/evaluacion/evalucion01.webp",
-  },
+  // {
+  //   slug: "evaluacion-estructural",
+  //   titulo: "Evaluación estructural",
+  //   descripcion:
+  //     "Análisis técnico de edificaciones y estructuras existentes para determinar su capacidad portante, nivel de deterioro y necesidad de refuerzo estructural.",
+  //   imagen: "/evaluacion/evalucion01.webp",
+  // },
   {
     slug: "hidrogeologia",
-    titulo: "Hidrología e hidrogeología",
+    titulo: "hidrogeología",
     descripcion:
       "Análisis de aguas subterráneas, interacción con suelos y estructuras, estudios de recarga y calidad hídrica para proyectos de infraestructura y minería.",
     imagen: "/servicios/hidrologia.webp",
