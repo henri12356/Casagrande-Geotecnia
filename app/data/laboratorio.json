@@ -189,7 +189,8 @@
       {
         "titulo": "Concreto Fresco y Agregados",
         "imagenes": [
-          "/laboratorio/laboratorio09.webp"
+          "/laboratorio/ConcretoFresco02.webp",
+          "/laboratorio/ConcretoFresco01.webp"
         ],
         "ensayos": [
           "Muestreo de concreto fresco en obra.",
@@ -206,7 +207,8 @@
       {
         "titulo": "Concreto Endurecido y Evaluación de Resistencia",
         "imagenes": [
-          "/laboratorio/laboratorio09.webp"
+          "/laboratorio/concretoendurecido01.webp",
+          "/laboratorio/concretoendurecido02.webp"
         ],
         "ensayos": [
           "Resistencia a la compresión de probetas cilíndricas.",
@@ -276,7 +278,7 @@
         "imagenes": [
           "/laboratorio/laboratorio10.webp",
           "/laboratorio/laboratorio11.webp",
-          "/laboratorio/laboratorio12.webp",
+          "/laboratorio/Subrasante01.webp",
           "/laboratorio/laboratorio13.webp"
         ],
         "ensayos": [
@@ -294,10 +296,9 @@
       {
         "titulo": "Mezclas Asfálticas y Evaluación Vial",
         "imagenes": [
-          "/laboratorio/laboratorio10.webp",
-          "/laboratorio/laboratorio11.webp",
-          "/laboratorio/laboratorio12.webp",
-          "/laboratorio/laboratorio13.webp"
+          "/laboratorio/granulometria01.webp",
+          "/laboratorio/granulometria02.webp"
+         
         ],
         "ensayos": [
           "Extracción cuantitativa de asfalto en mezclas bituminosas.",
@@ -365,9 +366,8 @@
       {
         "titulo": "Análisis Químico en Suelos y Aguas",
         "imagenes": [
-          "/laboratorio/laboratorio03.webp",
-          "/laboratorio/laboratorio04.webp",
-          "/laboratorio/laboratorio05.webp"
+          "/laboratorio/AnálisisQuímico01.webp",
+         "/laboratorio/AnálisisQuímico02.webp"
           
         ],
         "ensayos": [
@@ -385,9 +385,8 @@
       {
         "titulo": "Control Químico de Materiales de Construcción",
         "imagenes": [
-          "/laboratorio/laboratorio03.webp",
-          "/laboratorio/laboratorio04.webp",
-          "/laboratorio/laboratorio05.webp"
+          "/laboratorio/controlquimico01.webp",
+          "/laboratorio/controlquimico02.webp"
         ],
         "ensayos": [
           "Análisis químico de agregados para concreto.",
@@ -455,10 +454,8 @@
       {
         "titulo": "Agregados, Canteras y Materiales de Préstamo",
         "imagenes": [
-          "/laboratorio/laboratorio09.webp",
-          "/laboratorio/laboratorio10.webp",
-          "/laboratorio/laboratorio11.webp",
-          "/geologia/geologia05.webp"
+          "/laboratorio/complementario01.webp",
+          "/laboratorio/complementario02.webp"
         ],
         "ensayos": [
           "Granulometría de agregados y materiales de cantera.",
@@ -475,7 +472,7 @@
       {
         "titulo": "Control Complementario de Obra y Materiales",
         "imagenes": [
-          "/laboratorio/laboratorio09.webp"
+          "/laboratorio/complementario03.webp"
         ],
         "ensayos": [
           "Densidad de campo por cono de arena.",
