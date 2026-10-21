@@ -122,7 +122,7 @@ const contactInfo: ContactInfoItemProps[] = [
 ];
 
 const whatsappLink =
-  "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.";
+  "https://api.whatsapp.com/send?phone=51918480957&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.";
 
 // --- Validar página activa ---
 const isHrefActive = (
@@ -220,7 +220,7 @@ const WhatsAppNumber = ({ mobile = false }: { mobile?: boolean }) => (
     href={whatsappLink}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Escribir por WhatsApp al 962 835 652"
+    aria-label="Escribir por WhatsApp al 918 480 957"
     className={`flex items-center gap-2 font-bold transition-all duration-300 ${
       mobile
         ? "w-full justify-center rounded-xl bg-[#25D366] px-4 py-3 text-base text-white shadow-md hover:bg-[#1ebe5d]"
@@ -228,7 +228,7 @@ const WhatsAppNumber = ({ mobile = false }: { mobile?: boolean }) => (
     }`}
   >
     <FaWhatsapp className={mobile ? "h-5 w-5" : "h-4 w-4"} />
-    <span>{mobile ? "WhatsApp: 962 835 652" : "962 835 652"}</span>
+    <span>{mobile ? "WhatsApp: 918 480 957" : "918 480 957"}</span>
   </a>
 );
 

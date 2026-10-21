@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Casagrande Geotecnia",
     locale: "es_PE",
     emails: ["comercial@casagrandegeotecnia.com.pe"],
-    phoneNumbers: ["+51962835652"],
+    phoneNumbers: ["+51918480957"],
   },
   
   twitter: {
@@ -98,7 +98,7 @@ export default function NosotrosLayout({
               "url": "https://www.casagrandegeotecnia.com.pe",
               "logo": "https://www.casagrandegeotecnia.com.pe/logo.png",
               "image": "https://www.casagrandegeotecnia.com.pe/valores.webp",
-              "telephone": "+51962835652",
+              "telephone": "+51918480957",
               "email": "comercial@casagrandegeotecnia.com.pe",
               "address": {
                 "@type": "PostalAddress",

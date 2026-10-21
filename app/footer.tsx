@@ -22,8 +22,8 @@ const connectLinks = [
     title: "Atención al cliente",
     links: [
       {
-        name: "962 835 652",
-        href: "https://api.whatsapp.com/send?phone=51962835652&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.",
+        name: "918 480 957",
+        href: "https://api.whatsapp.com/send?phone=51918480957&text=Hola!%20Estoy%20interesado%20en%20sus%20servicios.",
       },
       {
         name: "945 513 323",

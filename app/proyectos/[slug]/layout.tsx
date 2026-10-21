@@ -176,7 +176,7 @@ export default async function ProjectLayout({ children, params }: ProjectLayoutP
                 "name": "Casagrande Geotecnia",
                 "url": "https://www.casagrandegeotecnia.com.pe",
                 "email": "comercial@casagrandegeotecnia.com.pe",
-                "telephone": "+51 962 835 652",
+                "telephone": "+51 918 480 957",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Jirón Quinua 570, Ayacucho 05003",

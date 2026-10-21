@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Casagrande Geotecnia",
     locale: "es_PE",
     emails: ["comercial@casagrandegeotecnia.com.pe"],
-    phoneNumbers: ["+51 962 835 652"],
+    phoneNumbers: ["+51 918 480 957"],
   },
   twitter: {
     card: "summary_large_image",
@@ -107,7 +107,7 @@ export default function ProyectosLayout({
               "name": "Casagrande Geotecnia",
               "url": "https://www.casagrandegeotecnia.com.pe",
               "email": "comercial@casagrandegeotecnia.com.pe",
-              "telephone": "+51 962 835 652",
+              "telephone": "+51 918 480 957",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Jirón Quinua 570, Ayacucho 05003",

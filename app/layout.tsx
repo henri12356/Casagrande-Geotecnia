@@ -19,7 +19,7 @@ const companyInfo = {
     "Consultora líder en ingeniería civil y estudios geotécnicos en Perú. Especialistas en mecánica de suelos, laboratorio certificado, estudios de cimentación y control de calidad. Certificaciones ISO 9001, 14001 y 37001. Más de 6 años de experiencia.",
   url: "https://www.casagrandegeotecnia.com.pe",
   logo: "https://www.casagrandegeotecnia.com.pe/logocasagrande.svg",
-  phone: "+51962835652",
+  phone: "+51918480957",
   email: "comercial@casagrandegeotecnia.com.pe",
   address: {
     street: "Jirón Quinua 570",

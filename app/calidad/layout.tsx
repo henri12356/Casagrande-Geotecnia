@@ -157,7 +157,7 @@ export default function CertificadosLayout({
     url: BASE_URL,
     logo: LOGO_URL,
     email: "comercial@casagrandegeotecnia.com.pe",
-    telephone: "+51 962 835 652",
+    telephone: "+51 918 480 957",
     address: { "@type": "PostalAddress", addressCountry: "PE" },
     sameAs: [
       "https://www.linkedin.com/company/casagrande-geotecnia-y-concreto/",
