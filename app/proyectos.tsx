@@ -334,7 +334,7 @@ const MapaProyectos = () => {
             />
 
             {/* Marcadores */}
-            <div className="absolute inset-0 z-10">
+            {/* <div className="absolute inset-0 z-10">
               {proyectos.map((proyecto, markerIndex) => {
                 const colors = getMarkerColorClass(proyecto.estado);
                 const isActive =
@@ -433,7 +433,7 @@ const MapaProyectos = () => {
                   </Link>
                 );
               })}
-            </div>
+            </div> */}
 
             {/* Tooltips de escritorio */}
             <div className="pointer-events-none absolute inset-0 z-20">
@@ -571,6 +571,8 @@ const MapaProyectos = () => {
             </motion.div>
           </div>
         </motion.div>
+
+        
       </div>
 
       {/* Panel móvil */}

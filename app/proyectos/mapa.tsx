@@ -367,7 +367,7 @@ const MapaProyectos = () => {
               className="object-contain opacity-95"
             />
 
-            <div className="absolute inset-0 z-10">
+            {/* <div className="absolute inset-0 z-10">
               {proyectos.map((proyecto, index) => {
                 const colors = getMarkerClasses(proyecto.estado);
                 const highlighted =
@@ -486,7 +486,7 @@ const MapaProyectos = () => {
                   </Link>
                 );
               })}
-            </div>
+            </div> */}
 
             <div className="pointer-events-none absolute inset-0 z-20">
               {proyectos.map((proyecto) => (
